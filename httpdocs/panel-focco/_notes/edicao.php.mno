@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_edicao" value="name:idviagens;datatype:int,name:idcategoria;datatype:string,name:cidadedestino;datatype:string,name:incluido;datatype:string,name:fotochamada;datatype:string,name:foto1;datatype:string,name:foto2;datatype:string,name:foto3;datatype:string,name:foto4;datatype:string,name:foto5;datatype:string,name:foto6;datatype:string,name:destaque;datatype:string,name:valor;datatype:string,name:promocao;datatype:string" />
+	<infoitem key="UD_categorias" value="name:idcategorias;datatype:int,name:categorias;datatype:string" />
+</info>

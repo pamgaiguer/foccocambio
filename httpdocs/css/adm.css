@@ -1,0 +1,76 @@
+.interna-all {
+	min-height: 290px;
+	border: none;
+}
+.interna-meio {
+	min-height: 200px;
+	width: 675px;
+	margin-left: 300px;
+	margin-top: 0;
+}
+.interna-left {
+	float: left;
+	min-height: 280px;
+	width: 295px;
+	margin-top: 0px;
+	border: none;
+}
+.interna-left p {
+	font-family: 'Eurostile LT Medium';
+	font-size: 24px;
+	color: #002750;
+	text-transform: uppercase;
+	text-align: right;
+	line-height: 135%;
+	margin-top: 50px;
+	margin-right: 60px;
+}
+.interna-left p span {
+	font-weight: bolder;
+}
+input {
+	width: 100px;
+	box-shadow: 1px 1px 1px #CCC;
+	margin-top: 10px;
+	border: 1px solid #002750;
+	padding: 8px;
+}
+input[type^="submit"] {
+	width: 60px;
+	background-color: #FAFAFA;
+	border-radius: 4px;
+	margin-right: 445px;
+}
+#form-access, #form-info {
+	font-weight: bold;
+	color: #002750;
+}
+#form-access {
+	margin-top: 25px;
+	font-size: 24px;
+}
+#form-info {
+	font-size: 16px;
+}
+#button-save {
+	margin-right: 100px;
+	margin-top: -240px;
+	padding: 15px;
+	width: 100px;
+	height: 50px;
+}
+#button-save:active {
+	margin-top: -238px;
+}
+table {
+	margin: 25px 0 25px 25px;
+	width: 450px;
+}
+table tr td {
+	border: none;
+}
+thead tr td {
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+}

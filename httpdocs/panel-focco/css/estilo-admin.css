@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-image: url(../../img/background.jpg);
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+}
+#gerallogin {
+	float: left;
+	width: 100%;
+}
+#login {
+	width: 800px;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}
+.logintitulo {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #F00;
+}
+.logintxt {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000;
+}
+.caixalogin {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000;
+	background-color: #CCC;
+	border: 1px solid #000;
+}
+#geraltopo {
+	float: left;
+	width: 100%;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+}
+#geral {
+	float: left;
+	width: 100%;
+}
+#centroprinc {
+	margin: auto;
+	width: 900px;
+}
+.titulos {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #900;
+}
+#topo {
+	width: 900px;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #F00;
+}
+.txtgeral {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000;
+}
+.imgeditar {
+	height: 100px;
+	width: 110px;
+}
