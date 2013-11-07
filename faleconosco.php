@@ -45,9 +45,9 @@
 					<fieldset>
 						<form action="faleconoscoaction.php" method="post" onsubmit="return valida(this);">
 							<input type="hidden" name="recipient" value="pamella.gaiguer@gmail.com">							
-							<input type="text" name="nome" required placeholder="Nome">
+							<input type="text" name="nome" placeholder="Nome">
 							<br>
-							<input type="email" name="email" required placeholder="E-mail">
+							<input type="email" name="email" placeholder="E-mail">
 							<br>
 							<input type="tel" name="telefone" placeholder="Telefone">
 							<br>
