@@ -19,7 +19,6 @@
 }
 /* --------------------- CSS PARA PAGINAS INTERNAS ---------------------*/
 .pdf-down {margin-left: 60px;}
-/*.interna-cordourada, .interna-corazul {text-indent: 45px;}*/
 .interna-cordourada {color: #977B4D; line-height: 120%;} /*dourado*/
 .interna-corazul {color: #00305f; line-height: 150%; text-align:justify;} /*azul*/
 .interna-corazul-notextindent{color: #00305f; line-height: 150%;}

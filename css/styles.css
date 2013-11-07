@@ -131,6 +131,7 @@ footer{
 	width: 980px;
 	height: auto;
 	font-size: 13px;
+	margin-top: -25px;	
 }
 footer ul {
 	display: inline-block;
@@ -162,5 +163,6 @@ footer ul {
 }
 #corretora-logo{
 	float: right;
+	margin-top: 25px;	
 }
 /* ----------------------------- FOOTER --------------------------------*/
