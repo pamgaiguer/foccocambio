@@ -23,8 +23,8 @@
 					<li>Fique por dentro das campanhas</li>
 					<li>e novidades da Focco Câmbio</li>
 					<li>Siga-nos!</li>
-					<a href="http://www.facebook.com/pages/Focco-Cambio-E-Turismo/162981180415704?ref=ts&fref=ts" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-					<a href="http://twitter.com/foccocambioetur" target="_blank"><img src="images/twitter.png" alt="twitter"></a>
+					<li><a href="http://www.facebook.com/pages/Focco-Cambio-E-Turismo/162981180415704?ref=ts&fref=ts" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
+					<a href="http://twitter.com/foccocambioetur" target="_blank"><img src="images/twitter.png" alt="twitter"></a></li>
 				</ul>
 				<img src="images/logo_corretora.png" alt="corretora" id="corretora-logo">
 			</div>		
