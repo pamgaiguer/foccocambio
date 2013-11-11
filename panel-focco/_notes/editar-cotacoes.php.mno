@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_cotacao" value="name:idcotacao;datatype:int,name:moeda;datatype:string,name:compra;datatype:string,name:venda;datatype:string,name:data;datatype:string" />
-</info>

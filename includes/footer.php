@@ -23,8 +23,8 @@
 					<li>Fique por dentro das campanhas</li>
 					<li>e novidades da Focco Câmbio</li>
 					<li>Siga-nos!</li>
-					<li class="facebook-img"><a href="http://www.facebook.com/pages/Focco-Cambio-E-Turismo/162981180415704?ref=ts&fref=ts" target="_blank"><img src="images/facebook.png" alt="facebook"></a></li>
-					<li class="twitter-img"><a href="http://twitter.com/foccocambioetur" target="_blank"><img src="images/twitter.png" alt="twitter"></a></li>
+					<li><a href="http://www.facebook.com/pages/Focco-Cambio-E-Turismo/162981180415704?ref=ts&fref=ts" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
+					<a href="http://twitter.com/foccocambioetur" target="_blank"><img src="images/twitter.png" alt="twitter"></a></li>
 				</ul>
 				<img src="images/logo_corretora.png" alt="corretora" id="corretora-logo">
 			</div>		
@@ -33,5 +33,16 @@
 		<script src="js/jquery.1.10.min.js"></script>
 		<script src="js/jquery.slides.min.js"></script>
 		<script src="js/slider.js"></script>
-	</body>
-</html>
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-42904042-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>

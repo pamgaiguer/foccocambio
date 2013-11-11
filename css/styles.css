@@ -131,6 +131,7 @@ footer{
 	width: 980px;
 	height: auto;
 	font-size: 13px;
+	margin-top: -25px;	
 }
 footer ul {
 	display: inline-block;
@@ -150,7 +151,7 @@ footer ul {
 	top: 6px;
 }
 .footer-quadro4{
-	top: -2px;
+	top: 35px;
 }
 .footer-uppercase{
 	text-transform: uppercase;
@@ -162,5 +163,6 @@ footer ul {
 }
 #corretora-logo{
 	float: right;
+	margin-top: 25px;	
 }
 /* ----------------------------- FOOTER --------------------------------*/
