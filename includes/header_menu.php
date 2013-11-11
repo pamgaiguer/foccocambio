@@ -19,12 +19,9 @@
 								<li class="pureCssMenui">
 									<a class="pureCssMenui" href="prod_transfinternacionais.php">Transferências Internacionais</a>
 								</li>
-<<<<<<< HEAD
 								<li class="pureCssMenui">
 									<a class="pureCssMenui" href="prod_westernunion.php">Western Union</a>
 								</li>								
-=======
->>>>>>> 59a67f1d2ae2a412b9b0f1a8c7ad35327c93f37a
 							</ul>
 							<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 						</li>

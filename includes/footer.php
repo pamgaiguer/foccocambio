@@ -11,6 +11,7 @@
 					<li><a href="prod_cartoesprepagos.php" target="_self">Cartões Pré-Pagos</a></li>
 					<li><a href="prod_moedaestrangeira.php" target="_self">Moedas Estrangeiras</a></li>
 					<li><a href="prod_transfinternacionais.php" target="_self">Transferências Internacionais</a></li>
+					<li><a href="prod_westernunion.php" target="_self">Western Union</a></li>
 				</ul>
 				<ul class="footer-quadro3">
 					<li class="footer-uppercase">Dúvidas e Sugestões</li>

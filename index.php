@@ -53,16 +53,20 @@ while ($row = mysql_fetch_assoc($result)) {
 					<a href="serv_delivery.php"><img src="images/slider-banner003.png"></a>
 					<img src="images/slider-banner004.png">
 					<a href="http://www.rendimento.com.br//?c=3493" target="_blank"><img src="images/slider-banner005.jpg"></a>
+					<a href="prod_westernunion.php"><img src="images/slider-banner006.jpg"></a>
 				</div>
 			</div>
 			<br><br>
 			<div class="banner-cartoes">
 				<figure id="cartao001">
-					<a href="prod_cartoesprepagos.php" target="_self"><img src="images/home-cartoes001-img.png" alt="cartao001"></a>
+					<a href="prod_cartoesprepagos.php" target="_self"><img src="images/home-cartoes001-img.png" alt="cartao001" style="width: 400px;"></a>
 				</figure>
 				<figure id="cartao002">
-					<a href="prod_moedaestrangeira.php" target="_self"><img src="images/home-cartoes002-img.png" alt="cartao002"></a>
+					<a href="prod_moedaestrangeira.php" target="_self"><img src="images/home-cartoes002-img.png" alt="cartao002" style="height: 237px;"></a>
 				</figure>
+				<figure id="cartao003">
+					<a href="prod_westernunion.php" target="_self"><img src="images/home-cartoes003-img.png" alt="cartao003" style="height: 205px"></a>
+				</figure>				
 			</div>
 			<br>
 		</div>	

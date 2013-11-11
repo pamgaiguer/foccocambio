@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
     // $to = 'contato@foccocambio.com.br';
     // $subject= "Contato Focco - Enviado pelo Site";
     // $nome = $_POST['nome'];
@@ -16,24 +15,6 @@
 	    // $headers .= "Return-Path: " . $to . $quebra_linha; // Se "não for Postfix"
 	    // mail($to, $subject, $message, $headers );
 	// }			
-=======
-    $to = 'contato@foccocambio.com.br';
-    $subject= "Contato Focco - Enviado pelo Site";
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $tel = $_POST['telefone'];
-	
-    $message = "Email enviado pelo Fale Conosco do Site \n
-		Nome: ".$nome." \n 
-		E-mail: ".$email." \n
-		Telefone: ".$tel." \n
-		Mensagem: ".$msg."  \n";
-		
-	if(!mail($to, $subject, $message, $headers ,"-r".$to)){ // Se for Postfix
-	    $headers .= "Return-Path: " . $to . $quebra_linha; // Se "não for Postfix"
-	    mail($to, $subject, $message, $headers );
-	}			
->>>>>>> 59a67f1d2ae2a412b9b0f1a8c7ad35327c93f37a
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
