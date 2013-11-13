@@ -32,4 +32,4 @@ input[type^="submit"] {width: 50px; float: right;}
 .western-titles{ display: block; background-color: #00305f; color: white; padding: 5px; border-radius: 8px; }
 .western-numbers{ display: inline-block; background-color: #00305f; color: white; padding: 5px; border-radius: 8px; width: 14px; font-weight: bold; font-size: 24px; }
 .western-main-title{ font-family: 'Eurostile LT Medium'; font-size: 24px; }
-.western-subtitle {font-family: 'Eurostile LT Medium'}
+.western-subtitle {font-family: 'Eurostile LT Medium', font-size: 20px; font-weight: bold;}

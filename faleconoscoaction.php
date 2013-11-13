@@ -1,9 +1,29 @@
+<?php
+    $to = 'contato@foccocambio.com.br';
+    $subject= "Contato Focco - Enviado pelo Site";
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $tel = $_POST['telefone'];
+ 	
+    $message = "Email enviado pelo Fale Conosco do Site \n
+		 Nome: ".$nome." \n 
+		 E-mail: ".$email." \n
+		 Telefone: ".$tel." \n
+		 Mensagem: ".$msg."  \n";
+		
+	if(!mail($to, $subject, $message, $headers ,"-r".$to)){ // Se for Postfix
+	   $headers .= "Return-Path: " . $to . $quebra_linha; // Se "não for Postfix"
+	   mail($to, $subject, $message, $headers );
+	}			
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
 		<?php include 'includes/seo.php'; ?>
 	</head>
 	<body>
+	
 		<div class="body-background-blueline"></div>
 		<div class="body-background-goldline"></div>
 		<div class="main-page">

@@ -12,11 +12,11 @@
 				<div class="interna-left">
 					<img src="images/left-figure-westernunion.png" alt="western union" class="img-westernunion">
 				</div>
-				<div class="interna-meio">
+				<div class="interna-meio" style="margin-top: 120px;">
 					<p class="interna-corazul espacamento-moedas">
 					<br><br>
 					<span class="western-main-title"><strong>WESTERN UNION</strong></span> 
-					<br><br>				 
+					<br>			 
 					<span class="western-subtitle">Enviar dinheiro é fácil? Sim!</span>
 					<br><br>
 					A Western Union atua no mercado há mais de 150 anos. Hoje, com mais de 486.000 pontos de atendimento espalhados por mais de 200 países e territórios, 
