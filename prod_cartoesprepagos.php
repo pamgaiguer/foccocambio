@@ -30,7 +30,6 @@
 						<br><br>
 						<strong>Quais são as suas vantagens?</strong><br>
 						<strong>.</strong>  Sem risco de variação cambial; <br>
-						<strong>.</strong>  Sem incidência de 6,38% de IOF* como com o cartão de crédito;<br>
 						<strong>.</strong>  Rede de aceitação Visa, presente em mais de 200 países e territórios**;<br>
 						<strong>.</strong>  Mais de 30 milhões de estabelecimentos credenciados para fazer suas compras;<br>
 						<strong>.</strong>  Para sua segurança, podemos gravar o nome no cartão.<br>
