@@ -22,6 +22,9 @@
 					<img src="images/title-cartoes-prepagos.png" alt="title-cartoes">
 					<img src="images/right-figure-cartoesprepagos.jpg" alt="figure-cartoes-right" class="right-figure-cartoes">
 					<br><br>
+										<?php
+					echo $_GET['url'];
+					?>
 					<p class="interna-corazul">
 						<strong>Cartão Visa Travel Money</strong><br>
 						O Cartão Visa Travel Money é um cartão pré-pago, recarregável, que pode ser utilizado para compras e saques em suas viagens internacionais. 

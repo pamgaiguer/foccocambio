@@ -12,6 +12,7 @@ $rows = array();
 while ($row = mysql_fetch_assoc($result)) {
 	array_push($rows, $row);
 }
+header('Content-Type: text/html; charset=UTF-8');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,6 +20,14 @@ while ($row = mysql_fetch_assoc($result)) {
 		<?php include 'includes/seo.php'?>
 	</head>
 	<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>		
 		<div class="body-background-blueline"></div>
 		<div class="body-background-goldline"></div>
 		<div class="main-page">
@@ -48,6 +57,9 @@ while ($row = mysql_fetch_assoc($result)) {
 				</table>
 				<div id="info-cotacoes">*Nossas cotações representam o valor efetivo <br>total, compreendido taxas e impostos.</div>
 				<div id="slides">
+					<?php
+					echo $_GET['url'];
+					?>
 					<a href="prod_moedaestrangeira.php" target="_self"><img src="images/slider-banner001.jpg"></a>
 					<a href="prod_cartoesprepagos.php"><img src="images/slider-banner002.jpg"></a>
 					<a href="serv_delivery.php"><img src="images/slider-banner003.png"></a>
@@ -58,7 +70,7 @@ while ($row = mysql_fetch_assoc($result)) {
 			</div>
 			<br><br>
 			<div class="banner-cartoes">
-				<figure id="cartao001">
+				<figure id="cartao001" style="display: none">
 					<a href="prod_cartoesprepagos.php" target="_self"><img src="images/home-cartoes001-img.png" alt="cartao001" style="width: 400px;"></a>
 				</figure>
 				<figure id="cartao002">
@@ -66,7 +78,8 @@ while ($row = mysql_fetch_assoc($result)) {
 				</figure>
 				<figure id="cartao003">
 					<a href="prod_westernunion.php" target="_self"><img src="images/home-cartoes003-img.png" alt="cartao003" style="height: 205px"></a>
-				</figure>				
+				</figure>
+				<div class="fb-like-box" data-href="https://www.facebook.com/focco.cambioeturismo" data-width="430" data-height="200" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"> </div>				
 			</div>
 			<br>
 		</div>	

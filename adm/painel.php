@@ -4,7 +4,7 @@ if(!isset($_SESSION)) {
 session_start();
 }
 mysql_select_db('site1375891718');
-
+header('Content-Type: text/html; charset=UTF-8');
 if($_POST){
 	$i = 0;
 	foreach($_POST['id'] as $id){		

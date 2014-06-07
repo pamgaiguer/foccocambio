@@ -115,6 +115,9 @@ figure {
 	margin-top: -13px;
 	margin-left: 15px;
 }
+.fb_iframe_widget{
+	top: -15px !important;
+}
 /* ----------------------------- FOOTER --------------------------------*/
 footer{
 	bottom: 0px;

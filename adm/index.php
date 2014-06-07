@@ -1,6 +1,6 @@
 <?php
 require_once ('../adm/conexao.php');
-
+header('Content-Type: text/html; charset=UTF-8');
 if (!function_exists("GetSQLValueString")) {
 	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 	{

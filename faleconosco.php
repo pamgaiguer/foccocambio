@@ -1,3 +1,6 @@
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
@@ -25,8 +28,7 @@
 					</p>
 					<br>
 					<fieldset>
-						<form action="faleconoscoaction.php" method="post" onsubmit="return valida(this);">
-							<input type="hidden" name="recipient" value="pamella.gaiguer@gmail.com">							
+						<form action="faleconoscoaction.php" method="post" onsubmit="return valida(this);">							
 							<input type="text" name="nome" placeholder="Nome">
 							<br>
 							<input type="email" name="email" placeholder="E-mail">

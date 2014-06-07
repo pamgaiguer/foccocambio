@@ -3,18 +3,39 @@
     $subject= "Contato Focco - Enviado pelo Site";
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $tel = $_POST['telefone'];
- 	
-    $message = "Email enviado pelo Fale Conosco do Site \n
-		 Nome: ".$nome." \n 
-		 E-mail: ".$email." \n
-		 Telefone: ".$tel." \n
-		 Mensagem: ".$msg."  \n";
-		
+    $tel = $_POST['telefone'];   	
+    $message = "Email enviado pelo Fale Conosco do Site <br>
+		 Nome: ".$nome. "<br> 
+		 E-mail: ".$email." <br>
+		 Telefone: ".$tel." <br>
+		 Mensagem: ".$msg."  <br>";
+	$headers .= "Content-type: text/html; charset=utf-8\n";	
 	if(!mail($to, $subject, $message, $headers ,"-r".$to)){ // Se for Postfix
 	   $headers .= "Return-Path: " . $to . $quebra_linha; // Se "não for Postfix"
 	   mail($to, $subject, $message, $headers );
-	}			
+	}
+	
+// $mensagem = $_POST['mensagem']; 
+// $para = 'abc@gmail.com'; 
+// $assunto = 'Teste de Formulário'; 
+// $header = "MIME-Version: 1.0" . "\r\n". 
+// "Content-type: text/html; charset=utf-8" . "\r\n". 
+// "From: " . "\r\n" . 
+// "Reply-To: #"; 
+// $corpo .= "Text-Area: $mensagem"; 
+// 
+// $enviaForm = mail($para, $assunto, $corpo, $header); 
+// 
+// if ($enviaForm) 
+// echo "<script> alert('Enviado!'); </script>"; 
+
+	//$headers = "MIME-Version: 1.0\n"; 
+	//$headers .= "Content-type: text/html; charset=iso-8859-1\n"; // Aqui você informa o formato e o charset do e-mail 
+	//$headers .= "From: Seu nome <seuemail@dominio.com.br>\n"; 
+	//$headers .= "Return-Path: <seuemail@dominio.com.br>\n"; 
+
+	//mail($email, $assunto, $mensagem, $headers); 	
+					
 ?>
 
 <!DOCTYPE html>
