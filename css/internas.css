@@ -1,3 +1,6 @@
+body{
+	font-family: 'Eurostile-LT-Medium';
+}
 /* --------------------- CSS PARA PAGINAS INTERNAS ---------------------*/
 .interna-all {
 	min-height: 800px;
@@ -26,6 +29,7 @@
 	color: #00305f;
 	line-height: 150%;
 	text-align: justify;
+	font-family: 'Eurostile-LT-Medium';
 }/*azul*/
 .interna-corazul-notextindent {
 	color: #00305f;
@@ -135,11 +139,11 @@ input[type^="submit"] {
 	font-size: 24px;
 }
 .western-main-title {
-	font-family: 'Eurostile LT Medium';
+	font-family: 'Eurostile-LT-Medium';
 	font-size: 24px;
 }
 .western-subtitle {
-	font-family: 'Eurostile LT Medium', font-size : 20px;
+	font-family: 'Eurostile-LT-Medium', font-size : 20px;
 	font-weight: bold;
 }
 #img-tamlateral {
@@ -147,7 +151,4 @@ input[type^="submit"] {
 	height: 303px;
 	margin-top: -130px;
 	margin-left: 35px;
-}
-.texto-tam-19 {
-	font-family: 'Eurostile LT Medium';
 }

@@ -11,4 +11,5 @@
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="css/menu.css">
 		<link rel="stylesheet" href="css/slidesjs.css">
+        <link rel="stylesheet" href="css/typografy.css"> 		
 		<link rel="stylesheet" href="css/internas.css">	
