@@ -60,6 +60,7 @@ header('Content-Type: text/html; charset=UTF-8');
 					<?php
 					echo $_GET['url'];
 					?>
+					<a href="info_tamviagens.php"><img src="images/tam-bannerfocco.jpg"></a>
 					<a href="prod_moedaestrangeira.php" target="_self"><img src="images/slider-banner001.jpg"></a>
 					<a href="prod_cartoesprepagos.php"><img src="images/slider-banner002.jpg"></a>
 					<a href="serv_delivery.php"><img src="images/slider-banner003.png"></a>

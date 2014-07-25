@@ -1,9 +1,0 @@
-RewriteEngine On
-RewriteRule ^/cartao-pre-pago$ /prod_cartoesprepagos.php [NC]
-RewriteRule ^/moeda-estrangeira$ /prod_moedaestrangeira.php [NC]
-RewriteRule ^/transf-inter$ /prod_transfinternacionais.php [NC]
-RewriteRule ^/western$ /prod_westernunion.php [NC]
-RewriteRule ^/corporativo$ /serv_atendCorporativo.php [NC]
-RewriteRule ^/delivery$ /serv_delivery.php [NC]
-RewriteRule ^/duvidas$ /serv_duvidasfrequentes.php [NC]
-RewriteRule ^/fale-conosco$ /faleconosco.php [NC]

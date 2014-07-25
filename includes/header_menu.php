@@ -1,14 +1,13 @@
 			<header>
-				<h1 id="logo-foco">Focco Cambio</h1>
+				<a href="/"><h1 id="logo-foco">Focco Cambio</h1></a>
 				<img src="images/linha-cidade.png" alt="linha-cidade">
 				<div class="menu">
 					<ul class="pureCssMenu pureCssMenum" style="width: 541px; height: 37px;">
 						<li class="pureCssMenui">
-							<a class="pureCssMenui" href="index.php" style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Home<![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-							<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+							<a class="pureCssMenui" href="index.php" style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Home</a>
 						</li>
 						<li class="pureCssMenui">
-							<a class="pureCssMenui" href="#"><span style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Produtos</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+							<a class="pureCssMenui" href="#"><span style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Produtos</span></a><![endif]>
 							<ul class="pureCssMenum">
 								<li class="pureCssMenui">
 									<a class="pureCssMenui" href="prod_cartoesprepagos.php">Cartões Pré-Pagos</a>
@@ -23,7 +22,6 @@
 									<a class="pureCssMenui" href="prod_westernunion.php">Western Union</a>
 								</li>								
 							</ul>
-							<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 						</li>
 						<li class="pureCssMenui">
 							<a class="pureCssMenui" href="#"><span style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Serviços</span></a>

@@ -58,7 +58,7 @@ ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
 	font: 16px Trebuchet MS;
 	color: #3d2104;
 	text-decoration: none;
-	cursor: default;
+	cursor: pointer;
 }
 ul.pureCssMenu span {
 	overflow: hidden;
