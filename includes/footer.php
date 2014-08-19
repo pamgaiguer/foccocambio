@@ -30,11 +30,10 @@
 				<img src="images/logo_corretora.png" alt="corretora" id="corretora-logo">
 			</div>		
 		</footer>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<script src="js/jquery.1.10.min.js"></script>
+		<script src="js/jquery-2.1.1.min.js"></script>
 		<script src="js/jquery.slides.min.js"></script>
 		<script src="js/slider.js"></script>
-		<script type="text/javascript">
+		<script>
 		
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-42904042-1']);

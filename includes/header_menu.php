@@ -1,53 +1,54 @@
-			<header>
-				<a href="/"><h1 id="logo-foco">Focco Cambio</h1></a>
-				<img src="images/linha-cidade.png" alt="linha-cidade">
-				<div class="menu">
-					<ul class="pureCssMenu pureCssMenum" style="width: 541px; height: 37px;">
-						<li class="pureCssMenui">
-							<a class="pureCssMenui" href="index.php" style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Home</a>
-						</li>
-						<li class="pureCssMenui">
-							<a class="pureCssMenui" href="#"><span style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Produtos</span></a><![endif]>
-							<ul class="pureCssMenum">
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="prod_cartoesprepagos.php">Cartões Pré-Pagos</a>
-								</li>
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="prod_moedaestrangeira.php">Moeda Estrangeira</a>
-								</li>
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="prod_transfinternacionais.php">Transferências Internacionais</a>
-								</li>
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="prod_westernunion.php">Western Union</a>
-								</li>								
-							</ul>
-						</li>
-						<li class="pureCssMenui">
-							<a class="pureCssMenui" href="#"><span style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Serviços</span></a>
-							<ul class="pureCssMenum">
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="serv_atendCorporativo.php">Atendimento Corporativo</a>
-								</li>
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="serv_delivery.php#delivery">Delivery</a>
-								</li>
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="serv_duvidasfrequentes.php">Dúvidas Frequentes</a>
+			<header style="border:1px solid orange;">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" id="logo-foco" href="#">Focco Cambio</a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="#">Link</a></li>
+								<li><a href="#">Link</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+										<li class="divider"></li>
+										<li><a href="#">One more separated link</a></li>
+									</ul>
 								</li>
 							</ul>
-						</li>
-						<li class="pureCssMenui">
-							<a class="pureCssMenui" href="#"><span style="margin-top: 5px; margin-left: 20px; margin-right: 20px;">Contato</span></a>
-							<ul class="pureCssMenum" style="width: 150px;">
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="faleconosco.php">Fale Conosco</a>
-								</li>
-								<li class="pureCssMenui">
-									<a class="pureCssMenui" href="faleconosco.php#lojas">Lojas</a>
+							<form class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#">Link</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									</ul>
 								</li>
 							</ul>
-						</li>
-					</ul>
-				</div>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+				<img src="images/linha-cidade.png" alt="linha-cidade">							
 			</header>

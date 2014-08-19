@@ -1,2 +1,6 @@
 .settings/
 *.project
+.bash_history
+.bashrc
+.settings/com.aptana.editor.php.prefs
+
