@@ -63,9 +63,7 @@ header('Content-Type: text/html; charset=UTF-8');
 							<br>
 							DELIVERY
 							<br>
-							<strong>Horário de Atendimento</strong>
-							<br>
-							Seg. a Sex. das 09:00h às 18:00h
+							Entregas para São Paulo e Grande São Paulo
 							<br>
 							<strong>Tel: (11) 5051 - 5299</strong>
 						</p>
