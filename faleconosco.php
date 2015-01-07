@@ -61,17 +61,13 @@ header('Content-Type: text/html; charset=UTF-8');
 							End: Rua Carlos Vicari, 155 - Loja 11
 							<br>
 							<br>
-							MOEMA
+							DELIVERY
 							<br>
 							<strong>Horário de Atendimento</strong>
 							<br>
 							Seg. a Sex. das 09:00h às 18:00h
 							<br>
-							*Atendimento <strong>somente</strong> com agendamento
-							<br>							
 							<strong>Tel: (11) 5051 - 5299</strong>
-							<br>
-							End: Alameda dos Maracatins, 780, conjunto 1110
 						</p>
 					</div>
 				</div>
