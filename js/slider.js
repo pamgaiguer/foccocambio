@@ -4,7 +4,7 @@ $(function() {
 		height : 200,
 		play : {
 			active : true,
-			auto : true,
+			auto : false, //mudar para true
 			interval : 7000,
 			swap : true
 		}

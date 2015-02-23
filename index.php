@@ -17,10 +17,9 @@ header('Content-Type: text/html; charset=UTF-8');
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<?php include 'includes/seo.php';?>
+	<?php include 'includes/seo.php'?>
 </head>
 <body>
-	<!-- plugin do facebook -->
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
@@ -28,19 +27,12 @@ header('Content-Type: text/html; charset=UTF-8');
 		js = d.createElement(s); js.id = id;
 		js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
 		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-	</script>
-	<!-- /plugin do facebook -->
-	<div class="container-fluid">
-		<div class="body-background-blueline"></div>
-		<div class="body-background-goldline"></div>		
-	</div>
-	<div class="container">
-		<p class="tel-home">Delivery Câmbio - (11) 5051-5299</p>
-		<?php include 'includes/header_menu.php';?>
-	</div>
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<div class="body-background-blueline"></div>
+	<div class="body-background-goldline"></div>
 	<div class="main-page">
-
+		<h1 id="tels-home">DELIVERY CÂMBIO - (11) 5051-5299</h1>
+		<?php include 'includes/header_menu.php'?>
 		<div class="cotacao">
 			<table>
 				<tbody>
@@ -58,40 +50,38 @@ header('Content-Type: text/html; charset=UTF-8');
 						<td style='font-weight: bold;'>{$val['moeda']}</td>
 						<td class='cor-cotacao-compras' style='font-weight: bold;'>{$val['compra']}</td>
 						<td class='cor-cotacao-vendas' style='font-weight: bold;'>{$val['venda']}</td>
-						</tr>";
-					}
-					?>							
-				</tbody>
-			</table>
-			<div id="info-cotacoes">*Nossas cotações representam o valor efetivo <br>total, compreendido taxas e impostos.</div>
-			<div id="slides">
-				<?php
-				echo $_GET['url'];
+					</tr>";
+				}
 				?>
-				<a href="info_tamviagens.php"><img src="images/tam-bannerfocco.jpg"></a>
-				<a href="prod_moedaestrangeira.php" target="_self"><img src="images/slider-banner001.jpg"></a>
-				<a href="prod_cartoesprepagos.php"><img src="images/slider-banner002.jpg"></a>
-				<a href="serv_delivery.php"><img src="images/slider-banner003.png"></a>
-				<img src="images/slider-banner004.png">
-				<a href="http://www.rendimento.com.br//?c=3493" target="_blank"><img src="images/slider-banner005.jpg"></a>
-				<a href="prod_westernunion.php"><img src="images/slider-banner006.jpg"></a>
-			</div>
+			</tbody>
+		</table>
+		<div id="info-cotacoes">*Nossas cotações representam o valor efetivo <br>total, compreendido taxas e impostos.</div>
+		<div id="slides">
+			<img src="images/slider-aviso.jpg">
+			<a href="info_tamviagens.php"><img src="images/tam-bannerfocco.jpg"></a>
+			<a href="prod_moedaestrangeira.php" target="_self"><img src="images/slider-banner001.jpg"></a>
+			<a href="prod_cartoesprepagos.php"><img src="images/slider-banner002.jpg"></a>
+			<a href="serv_delivery.php"><img src="images/slider-banner003.png"></a>
+			<img src="images/slider-banner004.png">
+			<a href="http://www.rendimento.com.br//?c=3493" target="_blank"><img src="images/slider-banner005.jpg"></a>
+			<a href="prod_westernunion.php"><img src="images/slider-banner006.jpg"></a>
 		</div>
-		<br><br>
-		<div class="banner-cartoes">
-			<figure id="cartao001" style="display: none">
-				<a href="prod_cartoesprepagos.php" target="_self"><img src="images/home-cartoes001-img.png" alt="cartao001" style="width: 400px;"></a>
-			</figure>
-			<figure id="cartao002">
-				<a href="prod_moedaestrangeira.php" target="_self"><img src="images/home-cartoes002-img.png" alt="cartao002" style="height: 237px;"></a>
-			</figure>
-			<figure id="cartao003">
-				<a href="prod_westernunion.php" target="_self"><img src="images/home-cartoes003-img.png" alt="cartao003" style="height: 205px"></a>
-			</figure>
-			<div class="fb-like-box" data-href="https://www.facebook.com/focco.cambioeturismo" data-width="430" data-height="200" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"> </div>				
-		</div>
-		<br>
-	</div>	
-	<?php include 'includes/footer.php'; ?>
+	</div>
+	<br><br>
+	<div class="banner-cartoes">
+		<figure id="cartao001" style="display: none">
+			<a href="prod_cartoesprepagos.php" target="_self"><img src="images/home-cartoes001-img.png" alt="cartao001" style="width: 400px;"></a>
+		</figure>
+		<figure id="cartao002">
+			<a href="prod_moedaestrangeira.php" target="_self"><img src="images/home-cartoes002-img.png" alt="cartao002" style="height: 237px;"></a>
+		</figure>
+		<figure id="cartao003">
+			<a href="prod_westernunion.php" target="_self"><img src="images/home-cartoes003-img.png" alt="cartao003" style="height: 205px"></a>
+		</figure>
+		<div class="fb-like-box" data-href="https://www.facebook.com/focco.cambioeturismo" data-width="430" data-height="200" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"> </div>
+	</div>
+	<br>
+</div>
+<?php include 'includes/footer.php'; ?>
 </body>
 </html>

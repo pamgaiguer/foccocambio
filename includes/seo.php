@@ -5,9 +5,11 @@
 		<meta name="keywords" content="casa, câmbio, financeiro, western, union, yes, cash, passport, visa,
 		mastercard, dólar, euro, libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery,
 		moeda, casa, espécie, especie, real">
-		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="shortcut icon" href="../favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/typografy.css"> 
-		<link rel="stylesheet" href="css/slidesjs.css">		
-		<link rel="stylesheet" href="css/main.css"> 
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/menu.css">
+		<link rel="stylesheet" href="css/slidesjs.css">
+		<link rel="stylesheet" href="css/typografy.css">
+		<link rel="stylesheet" href="css/internas.css">
