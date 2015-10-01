@@ -27,19 +27,20 @@ header('Content-Type: text/html; charset=UTF-8');
             Para informações sobre produtos e/ou serviços específicos ou reclamações, use o formulário abaixo que o responderemos o mais breve possível.
           </p>
           <br>
-          <fieldset>
-            <form action="faleconoscoaction.php" method="post" onsubmit="return valida(this);">              
-              <input type="text" name="nome" placeholder="Nome">
+          <h1>Em reformulação</h1>
+<!--           <fieldset>
+            <form action="faleconoscoaction.php" method="post" onsubmit="return valida(this);">
+              <input type="text" name="nome" placeholder="Nome" required>
               <br>
-              <input type="email" name="email" placeholder="E-mail">
+              <input type="email" name="email" placeholder="E-mail" required>
               <br>
-              <input type="tel" name="telefone" placeholder="Telefone">
+              <input type="tel" name="telefone" placeholder="Telefone" required>
               <br>
               <textarea name="msg"></textarea>
               <input type="submit" value="Enviar" id="btn-submit">
               <br>
             </form>
-          </fieldset>
+          </fieldset> -->
           <img src="images/right-figure-faleconosco.png" alt="SAC" class="img-sac">
           <br>
           <br>
@@ -78,7 +79,7 @@ header('Content-Type: text/html; charset=UTF-8');
           alert("Preencha o nome corretamente.");
           form.nome.focus();
         return false;
-      }  
+      }
       var filtro_mail = /^.+@.+\..{2,3}$/
         if (!filtro_mail.test(form.email.value) || form.email.value=="") {
           alert("Preencha o e-mail corretamente.");
@@ -89,8 +90,8 @@ header('Content-Type: text/html; charset=UTF-8');
           alert("Preencha o telefone corretamente.");
           form.tel.focus();
           return false;
-        }          
-      }        
-    </script>        
+        }
+      }
+    </script>
   </body>
 </html>
