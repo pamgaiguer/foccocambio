@@ -1,3 +1,48 @@
+body{
+  font-family: 'Avenir-Regular';
+}
+header {
+  text-transform: uppercase;
+  box-shadow: 0px -5px 30px #313131;
+}
+.navbar{
+  min-height: 0;
+  height: 41px;
+}
+.navbar-toggle {
+    border-color: #ddd;
+}
+.navbar-toggle:hover {
+    background-color: #ddd;
+}
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+.navbar-toggle .icon-bar {
+    background-color: #888;
+}
+.nav-pills>li>a {
+    border-radius: 0px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #fff;
+  background-color: #15325c;
+}
+
+.top-phone{
+  color: #15325c;
+}
+.top-phone span{
+  color: #525252;
+  font-weight: bold;
+}
+
 .blue-line{
   background-color: #15325c;
   text-indent: -9999px;
@@ -8,10 +53,9 @@
   text-indent: -9999px;
   height: 5px;
 }
-
 /*
 
 shadow para topo!
-box-shadow 0px -5px 30px #313131
+
 
 */
