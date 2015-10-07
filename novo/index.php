@@ -20,7 +20,44 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <p><span>Delivery: </span> 11 5051-5299</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <h1>logotipo</h1>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <p><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs"><img src="images/logo_fb.jpg"></i></p>
+        </div>
+      </div>
+    </div>
   </header>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav nav-pills nav-justified">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">O que fazemos</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Produtos e serviços</a></li>
+          <li><a href="#">Seguro Viagem</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
 
   <script src="js/jquery-2.1.3.min.js"></script>
