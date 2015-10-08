@@ -4,10 +4,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=emulateIE10">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Câmbio financeiro, Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra" />
+  <meta name="author" content="Pamella Gaiguer, Leonardo Zaccur" />
+  <meta name="keywords" content="casa, câmbio, financeiro, western, union, yes, cash, passport, visa,
+  mastercard, dólar, euro, libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery,
+  moeda, casa, espécie, especie, real">
   <title>Focco Câmbio - Câmbio e Turismo</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-avenir.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="../favicon.ico" />
 </head>
 <body>
   <header>
@@ -30,32 +36,49 @@
           <h1><img src="images/logo_topo.png" height="53" width="264" alt=""></h1>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <p><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs"><img src="images/logo_fb.jpg"></i></p>
+          <p class="link-face"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs"><img src="images/logo_fb.jpg"></i></p>
         </div>
       </div>
     </div>
-  <nav class="navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav nav-pills nav-justified">
-          <li><a href="#">O que fazemos <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Delivery</a></li>
-          <li><a href="#">Produtos e serviços</a></li>
-          <li><a href="#">Seguro Viagem</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav nav-pills nav-justified">
+            <li><a href="#">O que fazemos <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Produtos e serviços</a></li>
+            <li><a href="#">Seguro Viagem</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
   </header>
+  <div class="container-fluid">
+    <div id="slideshow" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/slide1.jpg" alt="focco1" class="img-responsive center-block">
+        </div>
+        <div class="item">
+          <img src="images/slide2.jpg" alt="focco2" class="img-responsive center-block">
+        </div>
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+        <li data-target="#slideshow" data-slide-to="1"></li>
+      </ol>
+    </div>
+  </div>
+
 
 
 
