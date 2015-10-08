@@ -74,6 +74,12 @@ header {
 .carousel-control, .carousel-indicators li{
   z-index: 1;
 }
+
+
+footer{
+  background-color: #EBEAED;
+  padding: 15px 0;
+}
 @media (min-width: 1px) and (max-width: 767px){
   .nav {
     background-color: rgba(255,255,255,0.9);
