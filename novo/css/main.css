@@ -95,6 +95,18 @@ header {
   font-family: 'Avenir-Black';
   font-size: 28px;
 }
+.bg-products-services{
+  background: url(../images/bg-products-services.jpg) no-repeat top center;
+  min-height: 988px;
+}
+.bg-travel-insurance{
+  background: url(../images/bg-travel-insurance.jpg) no-repeat top center;
+  min-height: 905px;
+}
+.bg-contact-us{
+  background: white;
+  min-height: 905px;
+}
 
 footer{
   background-color: #EBEAED;

@@ -88,7 +88,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="delivery-text">
-            <span>*Frete Grátis</span>
+              <span>*Frete Grátis</span>
               <h3><em><strong>Delivery Focco</strong></em></h3>
               <h3><strong>11 5051 5299</strong></h3>
               <p>Seu dinheiro de forma prática e segura <br> e o melhor <strong>*sem custo para entrega.</strong></p>
@@ -100,61 +100,115 @@
     </div>
   </section>
 
-  <section class="products-services"></section>
-  <section class="travel-insurance"></section>
-  <section class="contact-us"></section>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
-        texto header azul
-      </div>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <div class="media">
-            <div class="media-left media-middle">
-              <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">
-                <img class="media-object" src="images/logo_fb_footer.png" alt="facebook">
-              </a>
+  <section class="products-services">
+    <div class="bg-products-services">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="products-text">
+              <h1>Serviços e Produtos</h1>
+              <p>A Focco Câmbio tem produtos especialmente feitos e planejados para facilitar suas <br> viagens para o exterior, desde operações cambiais até seguros de viagem.</p>
+              <h2>Nosso focco é buscar os melhores produtos para superar sempre as suas expectativas</h2>
             </div>
-            <div class="media-body">
-              <p class="media-heading">
-                Acompanhe nossa fanpage e fique por dentro de dicas e novidades de viagens
-              </p>
-            </div>
-            <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook/focco.cambioeturismo</a>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <ul class="list-unstyled">
-            <li>O que fazemos</li>
-            <li>Delivery</li>
-            <li>Produtos e Serviços</li>
-            <li>Seguro Viagem</li>
-            <li>Contato</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <ul class="list-unstyled">
-            <li>Contato</li>
-            <li>11 5051 5299</li>
-            <li><a href="mailto:contato@foccocambio.com.br">contato@foccocambio.com.br</a></li>
-            <li>R. Carlos Vicari, 155 - Pompeia/SP</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <img src="images/logo_footer.png" alt="">
-        </div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" src="images/icon_moeda.png" class="img-responsive" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Moeda Estrangeira</h4>
+                <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
+                <p>Então chegou ao lugar certo.</p>
+                <a href="#">Saiba Mais</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="travel-insurance">
+      <div class="bg-travel-insurance">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-us">
+      <div class="bg-contact-us">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
+          texto header azul
+        </div>
       </div>
     </div>
-  </footer>
-  <script src="js/jquery-2.1.3.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">
+                  <img class="media-object" src="images/logo_fb_footer.png" alt="facebook">
+                </a>
+              </div>
+              <div class="media-body">
+                <p class="media-heading">
+                  Acompanhe nossa fanpage e fique por dentro de dicas e novidades de viagens
+                </p>
+              </div>
+              <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook/focco.cambioeturismo</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <ul class="list-unstyled">
+              <li>O que fazemos</li>
+              <li>Delivery</li>
+              <li>Produtos e Serviços</li>
+              <li>Seguro Viagem</li>
+              <li>Contato</li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <ul class="list-unstyled">
+              <li>Contato</li>
+              <li>11 5051 5299</li>
+              <li><a href="mailto:contato@foccocambio.com.br">contato@foccocambio.com.br</a></li>
+              <li>R. Carlos Vicari, 155 - Pompeia/SP</li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <img src="images/logo_footer.png" alt="">
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+  </html>
