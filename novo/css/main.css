@@ -74,7 +74,27 @@ header {
 .carousel-control, .carousel-indicators li{
   z-index: 1;
 }
-
+.bg-delivery{
+  background: url(../images/bg_delivery.jpg) no-repeat top center;
+  min-height: 675px;
+}
+.delivery-text{
+  padding-top: 50px;
+  text-transform: uppercase;
+}
+.delivery-text p, .delivery-text span{
+  color: #525252;
+  font-size: 24px;
+}
+.delivery-text p small{
+  text-transform: none;
+  font-size: 16px;
+}
+.delivery-text h3{
+  color: #15325C;
+  font-family: 'Avenir-Black';
+  font-size: 28px;
+}
 
 footer{
   background-color: #EBEAED;
@@ -85,6 +105,16 @@ footer{
 @media (min-width: 1px) and (max-width: 767px){
   .nav {
     background-color: rgba(255,255,255,0.9);
+  }
+  .top-phone{
+    text-align: center;
+  }
+  .link-face{
+    text-align: center;
+  }
+  .logo-topo{
+    text-align: center;
+
   }
   footer{
     text-align: center;
