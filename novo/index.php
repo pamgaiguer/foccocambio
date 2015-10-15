@@ -127,88 +127,171 @@
                 <a href="#">Saiba Mais</a>
               </div>
             </div>
-          </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <section class="travel-insurance">
-      <div class="bg-travel-insurance">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-us">
-      <div class="bg-contact-us">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
-          texto header azul
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div class="media">
               <div class="media-left media-middle">
-                <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">
-                  <img class="media-object" src="images/logo_fb_footer.png" alt="facebook">
+                <a href="#">
+                  <img class="media-object" src="images/icon_transf.png" class="img-responsive" alt="...">
                 </a>
               </div>
               <div class="media-body">
-                <p class="media-heading">
-                  Acompanhe nossa fanpage e fique por dentro de dicas e novidades de viagens
-                </p>
+                <h4 class="media-heading">Transferencia Internacional</h4>
+                <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
+                <p>Então chegou ao lugar certo.</p>
+                <a href="#">Saiba Mais</a>
               </div>
-              <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook/focco.cambioeturismo</a>
+            </div>
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" src="images/icon_wester.png" class="img-responsive" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Western Union</h4>
+                <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
+                <p>Então chegou ao lugar certo.</p>
+                <a href="#">Saiba Mais</a>
+              </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <ul class="list-unstyled">
-              <li>O que fazemos</li>
-              <li>Delivery</li>
-              <li>Produtos e Serviços</li>
-              <li>Seguro Viagem</li>
-              <li>Contato</li>
-            </ul>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" src="images/icon_corp.png" class="img-responsive" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Atendimento Corporativo</h4>
+                <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
+                <p>Então chegou ao lugar certo.</p>
+                <a href="#">Saiba Mais</a>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" src="images/icon_seguro.png"  class="img-responsive" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Seguro Viagem</h4>
+                <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
+                <p>Então chegou ao lugar certo.</p>
+                <a href="#">Saiba Mais</a>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" src="images/icon_cartoes.png" class="img-responsive" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Cartão Pré Pago</h4>
+                <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
+                <p>Então chegou ao lugar certo.</p>
+                <a href="#">Saiba Mais</a>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <ul class="list-unstyled">
-              <li>Contato</li>
-              <li>11 5051 5299</li>
-              <li><a href="mailto:contato@foccocambio.com.br">contato@foccocambio.com.br</a></li>
-              <li>R. Carlos Vicari, 155 - Pompeia/SP</li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <img src="images/logo_footer.png" alt="">
-          </div>
-
         </div>
       </div>
-    </footer>
-    <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-  </html>
+    </div>
+  </section>
+
+  <section class="travel-insurance">
+    <div class="bg-travel-insurance">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us">
+    <div class="bg-contact-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="contact-text">
+              <h1>Fale Conosco</h1>
+              <p>Fale com a nossa equipe por telefone, e-mail ou através do formuláro abaixo.</p>
+              <p>Você também pode pedir cotação de moeda através deste formulário!</p>
+              <h3>Envie sua mensagem para nós!</h3>
+            </div>
+            <form action="" role="form">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nome completo" required>
+                <input type="text" class="form-control" placeholder="Cidade">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="E-mail" required>
+                <input type="tel" class="form-control" placeholder="Telefone">
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="10" required class="form-control"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
+        texto header azul
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <div class="media">
+            <div class="media-left media-middle">
+              <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">
+                <img class="media-object" src="images/logo_fb_footer.png" alt="facebook">
+              </a>
+            </div>
+            <div class="media-body">
+              <p class="media-heading">
+                Acompanhe nossa fanpage e fique por dentro de dicas e novidades de viagens
+              </p>
+            </div>
+            <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook/focco.cambioeturismo</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <ul class="list-unstyled">
+            <li>O que fazemos</li>
+            <li>Delivery</li>
+            <li>Produtos e Serviços</li>
+            <li>Seguro Viagem</li>
+            <li>Contato</li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <ul class="list-unstyled">
+            <li>Contato</li>
+            <li>11 5051 5299</li>
+            <li><a href="mailto:contato@foccocambio.com.br">contato@foccocambio.com.br</a></li>
+            <li>R. Carlos Vicari, 155 - Pompeia/SP</li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <img src="images/logo_footer.png" alt="">
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
