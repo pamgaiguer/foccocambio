@@ -102,14 +102,46 @@ header {
   background: url(../images/bg-products-services.jpg) no-repeat top center;
   min-height: 988px;
 }
+.products-services .products-text h1{
+  color: #15325c;
+}
+.products-text p, .products-text h3{
+  text-transform: uppercase;
+}
+.products-text p{
+  padding: 20px 0;
+  color: #525252;
+  font-size: 18px;
+}
+.products-text h3{
+  color: #15325c;
+  padding-bottom: 50px;
+}
+.media{
+  padding: 25px 0;
+}
+.media .media-body .media-heading, .media .media-body a{
+  text-transform: uppercase;
+  color: #15325c;
+  font-weight: bold;
+}
 .bg-travel-insurance{
   background: url(../images/bg-travel-insurance.jpg) no-repeat top center;
   min-height: 905px;
+}
+.travel-text {
+  background-color: #093879;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px 25px;
+  vertical-align: middle;
+  margin-top: 250px;
 }
 .bg-contact-us{
   background: white;
   min-height: 600px;
 }
+
 
 footer{
   background-color: #EBEAED;
