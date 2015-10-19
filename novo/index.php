@@ -226,41 +226,45 @@
             <p class="text-center">Fale com a nossa equipe por telefone, e-mail ou através do formuláro abaixo. <br>Você também pode pedir cotação de moeda através deste formulário!</p>
             <h3 class="text-center">Envie sua mensagem para nós!</h3>
           </div>
-          <form role="form"  id="formulario">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+
+          <div  id="formulario">
+            <div id="retornoHTML">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+                  </div>
                 </div>
               </div>
 
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <input type="tel" class="form-control phone" name="telefone" id="telefone" placeholder="Telefone">
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
-                </div>
+              <div class="form-group">
+                <textarea cols="30" rows="10" placeholder="Mensagem" name="mensagem" class="form-control"></textarea>
               </div>
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="tel" class="form-control phone" name="telefone" id="telefone" placeholder="Telefone">
-                </div>
+              <div class="form-group">
+                <button class="btn btn-default btn-primary center-block" id="btn-enviar">Enviar</button>
               </div>
             </div>
+          </div>
 
-            <div class="form-group">
-              <textarea cols="30" rows="10" placeholder="Mensagem" name="mensagem" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-default btn-primary center-block" id="btn-enviar">Enviar</button>
-            </div>
-          </form>
         </div>
       </div>
     </div>

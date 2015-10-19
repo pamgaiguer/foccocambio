@@ -23,26 +23,28 @@ $(document).ready(function(){
   });
 
 $('#btn-enviar').click(function() {
-  var $requestResult = $("#request-result");
+  var $requestResult = $("#retornoHTML");
 
   $.ajax({
     url: '../mail.php',
     type: 'POST',
     data:{
-      nome: $("#nome").val(),
-      email: $("#email").val(),
-      telefone: $("#telefone").val(),
-      cidade: $("#cidade").val(),
-      msg: $("#msg").val()
+      // nome: $("#nome").val(),
+      // email: $("#email").val(),
+      // telefone: $("#telefone").val(),
+      // cidade: $("#cidade").val(),
+      // msg: $("#msg").val()
     },
     error: function() {
+      console.log("Deu erro!");
       $requestResult.append($("<div>", {
         "class": "alert alert-danger",
         "text": "E-mail não enviado!"
       }));
     },
     success: function(msg){
-      console.log(msg);
+
+      console.log("Enviado com sucesso!");
       $requestResult.append($("<div>", {
         "class": "alert alert-success",
         "text": "E-mail enviado com sucesso."
