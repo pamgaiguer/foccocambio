@@ -1,13 +1,12 @@
 body{
   font-family: 'Avenir-Regular';
-    padding-top: 170px;
+  padding-top: 170px;
 }
 header {
   text-transform: uppercase;
   box-shadow: 0px -5px 30px #313131;
   background: white;
   height: 149px;
-
 }
 .blue-line{
   background-color: #15325c;
@@ -119,6 +118,18 @@ footer{
   font-size: 12px;
 }
 @media (min-width: 1px) and (max-width: 767px){
+  body{
+    padding-top: 170px;
+  }
+  header {
+    text-transform: uppercase;
+    box-shadow: 0px -5px 30px #313131;
+    background: white;
+    height: 149px;
+  }
+  .navbar-fixed-top{
+    height: 230px;
+  }
   .nav {
     background-color: rgba(255,255,255,0.9);
   }
@@ -130,7 +141,12 @@ footer{
   }
   .logo-topo{
     text-align: center;
-
+  }
+  .products-services .products-text{
+    text-align: center;
+  }
+  .contact-us .contact-text{
+    text-align: center;
   }
   footer{
     text-align: center;

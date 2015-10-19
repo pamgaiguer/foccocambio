@@ -113,7 +113,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="media">
               <div class="media-left media-middle">
                 <a href="#">
@@ -154,7 +154,7 @@
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="media">
               <div class="media-left media-middle">
                 <a href="#">
@@ -222,17 +222,27 @@
               <p>Você também pode pedir cotação de moeda através deste formulário!</p>
               <h3>Envie sua mensagem para nós!</h3>
             </div>
-            <form action="" role="form">
+            <form role="form"  id="formulario">
+<input type="hidden" name="emailsender" value="contato@foccocambio.com.br"/>
+<input type="hidden" name="emaildestinatario" value="contato@foccocambio.com.br"/>
+<input type="hidden" name="assunto" value="FormMail Teste Locaweb"/>
+<input type="hidden" name="redirect" value="http://seudominio.com/obrigado.html"/>
+
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nome completo" required>
+                <input type="text" class="form-control" placeholder="Nome completo" >
+                <br>
                 <input type="text" class="form-control" placeholder="Cidade">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="E-mail" required>
+                <input type="email" class="form-control" placeholder="E-mail" >
+                <br>
                 <input type="tel" class="form-control" placeholder="Telefone">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="10" required class="form-control"></textarea>
+                <textarea name="" id="" cols="30" rows="10"  class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-default btn-primary btn-block" value="Enviar">
               </div>
             </form>
           </div>
@@ -293,5 +303,11 @@
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    function submitOk(){
+      alert("Testando onsubmit");
+      console.log("enviei email");
+    }
+  </script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 $(document).ready(function(){
   var target = {
     'index': 'index.php',
-    'empresa': 'empresa.php',
-    'propolis': 'propolis.php',
-    'producao': 'producao.php',
-    'eventos': 'eventos.php',
-    'contato': 'contato.php'
+    'contact': 'contact.php',
+    'delivery': 'delivery.php',
+    'travel-insurance': 'travel-insurance.php',
+    'what': 'what.php',
+    'products-services': 'products-services.php'
   };
   var pageName = 'index';
   var address = window.location.href.split('/');
@@ -21,4 +21,10 @@ $(document).ready(function(){
     $(".nav").find(".active").removeClass("active");
     $(this).parent().addClass("active");
   });
+
+$("#formulario").submit(function(){
+  console.log("Testando");
+})
+
+
 });
