@@ -170,7 +170,9 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color:#15325C !important;
 }
-
+textarea{
+  resize: none;
+}
 
 .btn-primary{
   background-color: #15325C;

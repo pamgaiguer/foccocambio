@@ -227,21 +227,16 @@
             <h3 class="text-center">Envie sua mensagem para nós!</h3>
           </div>
           <form role="form"  id="formulario">
-            <input type="hidden" name="emailsender" value="contato@foccocambio.com.br"/>
-            <input type="hidden" name="emaildestinatario" value="contato@foccocambio.com.br"/>
-            <input type="hidden" name="assunto" value="FormMail Teste Locaweb"/>
-            <input type="hidden" name="redirect" value="http://seudominio.com/obrigado.html"/>
-
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Nome completo" >
+                  <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
                 </div>
               </div>
 
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Cidade">
+                  <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
                 </div>
               </div>
             </div>
@@ -249,21 +244,21 @@
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="E-mail" >
+                  <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="tel" class="form-control" placeholder="Telefone">
+                  <input type="tel" class="form-control phone" name="telefone" id="telefone" placeholder="Telefone">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="10" placeholder="Mensagem"  class="form-control"></textarea>
+              <textarea cols="30" rows="10" placeholder="Mensagem" name="mensagem" class="form-control"></textarea>
             </div>
             <div class="form-group">
-              <input type="submit" class="btn btn-default btn-primary center-block" value="Enviar">
+              <button class="btn btn-default btn-primary center-block" id="btn-enviar">Enviar</button>
             </div>
           </form>
         </div>
@@ -323,6 +318,7 @@
 </footer>
 <script src="js/jquery-2.1.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
 <script src="js/main.js"></script>
 <script>
   function submitOk(){
