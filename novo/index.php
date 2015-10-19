@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="BR">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=emulateIE10">
@@ -222,10 +222,9 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="contact-text">
-            <h1>Fale Conosco</h1>
-            <p>Fale com a nossa equipe por telefone, e-mail ou através do formuláro abaixo.</p>
-            <p>Você também pode pedir cotação de moeda através deste formulário!</p>
-            <h3>Envie sua mensagem para nós!</h3>
+            <h1 class="text-center">Fale Conosco</h1>
+            <p class="text-center">Fale com a nossa equipe por telefone, e-mail ou através do formuláro abaixo. <br>Você também pode pedir cotação de moeda através deste formulário!</p>
+            <h3 class="text-center">Envie sua mensagem para nós!</h3>
           </div>
           <form role="form"  id="formulario">
             <input type="hidden" name="emailsender" value="contato@foccocambio.com.br"/>
@@ -233,21 +232,38 @@
             <input type="hidden" name="assunto" value="FormMail Teste Locaweb"/>
             <input type="hidden" name="redirect" value="http://seudominio.com/obrigado.html"/>
 
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Nome completo" >
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Cidade">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="E-mail" >
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="tel" class="form-control" placeholder="Telefone">
+                </div>
+              </div>
+            </div>
+
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nome completo" >
-              <br>
-              <input type="text" class="form-control" placeholder="Cidade">
+              <textarea name="" id="" cols="30" rows="10" placeholder="Mensagem"  class="form-control"></textarea>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="E-mail" >
-              <br>
-              <input type="tel" class="form-control" placeholder="Telefone">
-            </div>
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="10"  class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn-default btn-primary btn-block" value="Enviar">
+              <input type="submit" class="btn btn-default btn-primary center-block" value="Enviar">
             </div>
           </form>
         </div>

@@ -141,8 +141,41 @@ header {
   background: white;
   min-height: 600px;
 }
+.contact-text h1{
+  color: #15325c;
+  font-weight: bold;
+}
+.contact-text h3{
+  color: #15325c;
+}
+.contact-text p{
+  color: #525252;
+  font-size: 16px;
+}
+#formulario input[type='text'], #formulario input[type='email'], #formulario input[type='tel'], #formulario textarea{
+  border: 1px solid #15325c;
+}
+/*input[type^='text']::-webkit-input-placeholder, input[type^='email']::-webkit-input-placeholder{ color: #15325C; }
+input[type^='tel']::-webkit-input-placeholder{color: #15325C;}*/
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #15325C !important;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#15325C !important;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#15325C !important;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#15325C !important;
+}
 
 
+.btn-primary{
+  background-color: #15325C;
+  border-color: #15325C;
+}
 footer{
   background-color: #EBEAED;
   padding: 15px 0;
