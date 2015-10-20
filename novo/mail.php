@@ -9,17 +9,22 @@ $quebra_linha = "\n";
 $emailsender = "contato@foccocambio.com.br";
 $emaildestinatario = "contato@foccocambio.com.br";
 $assunto = "Focco Cambio - Enviado pelo Site";
-$nomeremetente = $_POST['nome'];
-$cidaderemetente = $_POST['cidade'];
-$emailremetente = $_POST['email'];
-$telefoneremetente = $_POST['telefone'];
-$mensagem = $_POST['mensagem'];
+
+$nome = $_POST['nome'];
+$cidade = $_POST['cidade'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];
+$msg = $_POST['mensagem'];
+
+//montando email
 $mensagemHTML = '<h3><strong>E-mail enviado pelo site:</strong></h3>
-<p>Nome: '.$nomeremetente.'</p>
-<p>Cidade: '.$cidaderemetente.'</p>
-<p>E-mail: '.$emailremetente.'</p>
-<p>Telefone:'.$telefoneremetente.'</p>
-<p>Mensagem: '.$mensagem.'</p>';
+<p>Nome: '.$nome.'</p>
+<p>Cidade: '.$cidade.'</p>
+<p>E-mail: '.$email.'</p>
+<p>Telefone:'.$telefone.'</p>
+<p>Mensagem: '.$msg.'</p>';
+
+echo $nome, $cidade, $email, $telefone, $msg;
 
 $headers  = "MIME-Version: 1.1".$quebra_linha;
 $headers .= "Content-type: text/html; charset=utf-8".$quebra_linha;

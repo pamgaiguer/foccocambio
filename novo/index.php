@@ -232,13 +232,13 @@
               <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+                    <input type="text" class="form-control" id="nome" placeholder="Nome completo">
                   </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+                    <input type="text" class="form-control" id="cidade" placeholder="Cidade">
                   </div>
                 </div>
               </div>
@@ -246,21 +246,22 @@
               <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                    <input type="email" class="form-control" id="email" placeholder="E-mail">
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
-                    <input type="tel" class="form-control phone" name="telefone" id="telefone" placeholder="Telefone">
+                    <input type="tel" class="form-control phone" id="telefone" placeholder="Telefone">
                   </div>
                 </div>
               </div>
 
               <div class="form-group">
-                <textarea cols="30" rows="10" placeholder="Mensagem" name="mensagem" class="form-control"></textarea>
+                <textarea cols="20" rows="10" placeholder="Envie sua mensagem" id="mensagem" class="form-control"></textarea>
               </div>
+
               <div class="form-group">
-                <button class="btn btn-default btn-primary center-block" id="btn-enviar">Enviar</button>
+                <button class="btn btn-default btn-primary" id="btn">Enviar</button>
               </div>
             </div>
           </div>
@@ -324,11 +325,5 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 <script src="js/main.js"></script>
-<script>
-  function submitOk(){
-    alert("Testando onsubmit");
-    console.log("enviei email");
-  }
-</script>
 </body>
 </html>

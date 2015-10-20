@@ -22,46 +22,49 @@ $(document).ready(function(){
     $(this).parent().addClass("active");
   });
 
-$('#btn-enviar').click(function() {
-  var $requestResult = $("#retornoHTML");
-
-  $.ajax({
-    url: '../mail.php',
-    type: 'POST',
-    data:{
-      // nome: $("#nome").val(),
-      // email: $("#email").val(),
-      // telefone: $("#telefone").val(),
-      // cidade: $("#cidade").val(),
-      // msg: $("#msg").val()
-    },
-    error: function() {
-      console.log("Deu erro!");
-      $requestResult.append($("<div>", {
-        "class": "alert alert-danger",
-        "text": "E-mail não enviado!"
-      }));
-    },
-    success: function(msg){
-
-      console.log("Enviado com sucesso!");
-      $requestResult.append($("<div>", {
-        "class": "alert alert-success",
-        "text": "E-mail enviado com sucesso."
-      }));
-    }
-  });
-});
-
   var maskBehavior = function (val) {
-   return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
- },
- options = {onKeyPress: function(val, e, field, options) {
+    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+  },
+  options = {onKeyPress: function(val, e, field, options) {
    field.mask(maskBehavior.apply({}, arguments), options);
  }
 };
 
-$('.phone').mask(maskBehavior, options);
+  $('.phone').mask(maskBehavior, options);
 
+  $('#btn').click(function() {
+    var $requestResult = $("#retornoHTML");
 
+    var nome = $("#nome").val();
+    var email = $("#email").val();
+    var telefone = $("#telefone").val();
+    var cidade = $("#cidade").val();
+    var msg = $("#mensagem").val();
+
+    $.ajax({
+      url: 'mail.php',
+      type: 'POST',
+      data: {
+         name:  nome,
+         city: cidade,
+         e_mail: email,
+         phone:  telefone,
+         message: mensagem
+      },
+      error: function() {
+        console.log("Deu erro!");
+        $requestResult.append($("<div>", {
+          "class": "alert alert-danger",
+          "text": "E-mail não enviado!"
+        }));
+      },
+      success: function(msg){
+        console.log("Enviado com sucesso!");
+        $requestResult.append($("<div>", {
+          "class": "alert alert-success",
+          "text": "E-mail enviado com sucesso."
+        }));
+      }
+    });
+  });
 });
