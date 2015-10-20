@@ -173,7 +173,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 textarea{
   resize: none;
 }
-
 .btn-primary{
   background-color: #15325C;
   border-color: #15325C;
@@ -184,6 +183,14 @@ footer{
   text-transform: uppercase;
   font-size: 12px;
 }
+
+/*Classes a serem removidas*/
+.delivery-img{
+  background: url('../images/internas/delivery.jpg') no-repeat top center;
+  min-height: 946px;
+}
+
+
 @media (min-width: 1px) and (max-width: 767px){
   body{
     padding-top: 170px;

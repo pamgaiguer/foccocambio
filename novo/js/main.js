@@ -32,6 +32,11 @@ $(document).ready(function(){
 
   $('.phone').mask(maskBehavior, options);
 
+$('.collapse').collapse({
+  toggle: false
+})
+
+
   $('#btn').click(function() {
     var $requestResult = $("#retornoHTML");
 
