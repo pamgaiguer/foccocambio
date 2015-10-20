@@ -52,7 +52,7 @@
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="media">
               <div class="media-left media-middle">
-                <a href="#">
+                <a href="int_moeda.php">
                   <img class="media-object" src="images/icon_moeda.png" class="img-responsive" alt="...">
                 </a>
               </div>
@@ -60,12 +60,12 @@
                 <h4 class="media-heading">Moeda Estrangeira</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
-                <a href="#">Saiba Mais</a>
+                <a href="int_moeda.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="#">
+                <a href="int_transf_internacional.php">
                   <img class="media-object" src="images/icon_transf.png" class="img-responsive" alt="...">
                 </a>
               </div>
@@ -73,12 +73,12 @@
                 <h4 class="media-heading">Transferencia Internacional</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
-                <a href="#">Saiba Mais</a>
+                <a href="int_transf_internacional.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="#">
+                <a href="int_western_union.php">
                   <img class="media-object" src="images/icon_wester.png" class="img-responsive" alt="...">
                 </a>
               </div>
@@ -86,14 +86,14 @@
                 <h4 class="media-heading">Western Union</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
-                <a href="#">Saiba Mais</a>
+                <a href="int_western_union.php">Saiba Mais</a>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="media">
               <div class="media-left media-middle">
-                <a href="#">
+                <a href="int_atend_corporativo.php">
                   <img class="media-object" src="images/icon_corp.png" class="img-responsive" alt="...">
                 </a>
               </div>
@@ -101,12 +101,12 @@
                 <h4 class="media-heading">Atendimento Corporativo</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
-                <a href="#">Saiba Mais</a>
+                <a href="int_atend_corporativo.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="#">
+                <a href="travel-insurance.php">
                   <img class="media-object" src="images/icon_seguro.png"  class="img-responsive" alt="...">
                 </a>
               </div>
@@ -114,12 +114,12 @@
                 <h4 class="media-heading">Seguro Viagem</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
-                <a href="#">Saiba Mais</a>
+                <a href="travel-insurance.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="#">
+                <a href="int_cartao_prepago.php">
                   <img class="media-object" src="images/icon_cartoes.png" class="img-responsive" alt="...">
                 </a>
               </div>
@@ -127,7 +127,7 @@
                 <h4 class="media-heading">Cartão Pré Pago</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
-                <a href="#">Saiba Mais</a>
+                <a href="int_cartao_prepago.php">Saiba Mais</a>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@
         <div class="row">
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-           <a href="#">
+           <a href="travel-insurance.php">
              <h4 class="travel-text text-center">Faça uma <strong>cotação</strong> e descubra quanto custa para <strong>viajar tranquilo</strong></h4>
            </a>
          </div>

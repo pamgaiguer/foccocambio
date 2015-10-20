@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-avenir.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" href="../favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
   <header class="navbar-fixed-top">
