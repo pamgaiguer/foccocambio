@@ -189,7 +189,26 @@ footer{
   background: url('../images/internas/delivery.jpg') no-repeat top center;
   min-height: 946px;
 }
-
+.int-moeda{
+  background: url('../images/internas/interna moeda.jpg') no-repeat top center;
+  min-height: 1153px;
+}
+.int-transf{
+  background: url('../images/internas/interna transfer.jpg') no-repeat top center;
+  min-height: 1448px;
+}
+.int-western{
+  background: url('../images/internas/interna WU aberta.jpg') no-repeat top center;
+  min-height: 2058px;
+}
+.int-atendimento{
+  background: url('../images/internas/atendimento_corporativo.jpg') no-repeat top center;
+  min-height: 984px;
+}
+.int-seguro{
+  background: url('../images/internas/interna seguro.jpg') no-repeat top center;
+  min-height: 1154px;
+}
 
 @media (min-width: 1px) and (max-width: 767px){
   body{
