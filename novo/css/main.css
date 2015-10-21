@@ -8,6 +8,9 @@ header {
   background: white;
   height: 149px;
 }
+.blue-text{
+  color: #15325c;
+}
 .blue-line{
   background-color: #15325c;
   text-indent: -9999px;
