@@ -47,7 +47,7 @@
     </div>
   </div>
 </footer>
-<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 <script src="js/main.js"></script>

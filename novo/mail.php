@@ -10,21 +10,21 @@ $emailsender = "contato@foccocambio.com.br";
 $emaildestinatario = "contato@foccocambio.com.br";
 $assunto = "Focco Cambio - Enviado pelo Site";
 
-$nome = $_POST['nome'];
-$cidade = $_POST['cidade'];
-$email = $_POST['email'];
-$telefone = $_POST['telefone'];
-$msg = $_POST['mensagem'];
+$name = $_POST['name'];
+$city = $_POST['city'];
+$e_mail = $_POST['e_mail'];
+$phone = $_POST['phone'];
+$msg = $_POST['msg'];
 
 //montando email
 $mensagemHTML = '<h3><strong>E-mail enviado pelo site:</strong></h3>
-<p>Nome: '.$nome.'</p>
-<p>Cidade: '.$cidade.'</p>
-<p>E-mail: '.$email.'</p>
-<p>Telefone:'.$telefone.'</p>
+<p>Nome: '.$name.'</p>
+<p>Cidade: '.$city.'</p>
+<p>E-mail: '.$e_mail.'</p>
+<p>Telefone:'.$phone.'</p>
 <p>Mensagem: '.$msg.'</p>';
 
-echo $nome, $cidade, $email, $telefone, $msg;
+echo $name, $city, $e_mail, $phone, $msg;
 
 $headers  = "MIME-Version: 1.1".$quebra_linha;
 $headers .= "Content-type: text/html; charset=utf-8".$quebra_linha;
