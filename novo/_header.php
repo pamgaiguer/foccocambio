@@ -2,13 +2,13 @@
 <html lang="BR">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=emulateIE10">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Câmbio financeiro, Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra" />
+  <meta name="description" content="Papel Moeda, Cartões de Viagem, Transferências Internacionais e tudo que você precisa para viajar tranquilo!" />
   <meta name="author" content="Pamella Gaiguer, Leonardo Zaccur" />
-  <meta name="keywords" content="casa, câmbio, financeiro, western, union, yes, cash, passport, visa,
-  mastercard, dólar, euro, libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery,
-  moeda, casa, espécie, especie, real">
+  <meta name="keywords" content="casa, câmbio, financeiro, western, union, yes, cash, passport, visa, mastercard, dólar, euro,
+  libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery, moeda, casa, espécie, especie, real, Câmbio financeiro,
+  Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra">
   <title>Focco Câmbio - Câmbio e Turismo</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-avenir.css">
@@ -36,7 +36,7 @@
           <a href="index.php" title=""><h1 class="logo-topo"><img src="images/logo_topo.png" height="53" width="264" alt=""></h1></a>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-          <p class="link-face"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs"><img src="images/logo_fb.jpg"></i></p>
+          <p class="link-face"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs"><img src="images/logo_fb.jpg" alt="facebook"></i></p>
         </div>
       </div>
     </div>

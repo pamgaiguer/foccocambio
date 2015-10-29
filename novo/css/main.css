@@ -8,6 +8,9 @@ header {
   background: white;
   height: 149px;
 }
+a {
+  color: #15325C;
+}
 .blue-text{
   color: #15325c;
 }
@@ -52,6 +55,10 @@ header {
   color: #fff;
   background-color: #15325c;
   font-weight: bolder;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+  color: white;
+  background-color: #15325C;
 }
 .top-phone{
   color: #15325c;

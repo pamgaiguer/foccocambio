@@ -1,6 +1,6 @@
 <?php include '_header.php';?>
 <div class="container-fluid">
-  <img src="images/banner_int_produtos_servicos.jpg" class="img-responsive" alt="Produtos e Serviços" title="Produtos e Serviços">
+  <img src="images/banner_int_produtos_servicos.jpg" alt="Produtos e Serviços" title="Produtos e Serviços">
 </div>
 
 <div class="container">
@@ -20,7 +20,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_moeda.php">
-            <img class="media-object" src="images/icon_money_circle.png" class="img-responsive">
+            <img class="media-object img-responsive" src="images/icon_money_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -33,7 +33,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_transf_internacional.php">
-            <img class="media-object" src="images/icon_transfer_circle.png" class="img-responsive">
+            <img class="media-object img-responsive" src="images/icon_transfer_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -50,7 +50,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="travel-insurance.php">
-            <img class="media-object" src="images/icon_seguro_circle.png" class="img-responsive">
+            <img class="media-object img-responsive" src="images/icon_seguro_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -68,7 +68,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_atend_corporativo.php">
-            <img class="media-object" src="images/icon_corporativo_circle.png" class="img-responsive">
+            <img class="media-object img-responsive" src="images/icon_corporativo_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -87,7 +87,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_cartao_prepago.php">
-            <img class="media-object" src="images/icon_cartao_circle.png" class="img-responsive">
+            <img class="media-object img-responsive" src="images/icon_cartao_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -102,7 +102,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="delivery.php">
-            <img class="media-object" src="images/icon_delivery_circle.png" class="img-responsive">
+            <img class="media-object img-responsive" src="images/icon_delivery_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -119,7 +119,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_western_union.php">
-            <img class="media-object" src="images/icon_wu_circle.png" class="img-responsive">
+            <img class="media-object img-responsive" src="images/icon_wu_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">

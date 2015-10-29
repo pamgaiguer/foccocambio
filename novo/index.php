@@ -53,7 +53,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="int_moeda.php">
-                  <img class="media-object" src="images/icon_moeda.png" class="img-responsive" alt="...">
+                  <img class="media-object img-responsive" src="images/icon_moeda.png" alt="...">
                 </a>
               </div>
               <div class="media-body">
@@ -66,7 +66,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="int_transf_internacional.php">
-                  <img class="media-object" src="images/icon_transf.png" class="img-responsive" alt="...">
+                  <img class="media-object img-responsive" src="images/icon_transf.png" alt="...">
                 </a>
               </div>
               <div class="media-body">
@@ -79,7 +79,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="int_western_union.php">
-                  <img class="media-object" src="images/icon_wester.png" class="img-responsive" alt="...">
+                  <img class="media-object img-responsive" src="images/icon_wester.png" alt="...">
                 </a>
               </div>
               <div class="media-body">
@@ -94,7 +94,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="int_atend_corporativo.php">
-                  <img class="media-object" src="images/icon_corp.png" class="img-responsive" alt="...">
+                  <img class="media-object img-responsive" src="images/icon_corp.png" alt="...">
                 </a>
               </div>
               <div class="media-body">
@@ -107,7 +107,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="travel-insurance.php">
-                  <img class="media-object" src="images/icon_seguro.png"  class="img-responsive" alt="...">
+                  <img class="media-object img-responsive" src="images/icon_seguro.png" alt="...">
                 </a>
               </div>
               <div class="media-body">
@@ -120,7 +120,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="int_cartao_prepago.php">
-                  <img class="media-object" src="images/icon_cartoes.png" class="img-responsive" alt="...">
+                  <img class="media-object img-responsive" src="images/icon_cartoes.png" alt="...">
                 </a>
               </div>
               <div class="media-body">
