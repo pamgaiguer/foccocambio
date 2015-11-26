@@ -17,6 +17,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <?php include 'includes/seo.php'; ?>
 </head>
 <body>
@@ -118,6 +119,27 @@
   </div>
   <br>
 </div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      <img src="images/focco_popup.jpg" height="400" width="600" alt="" class="img-responsive center-block">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <?php include 'includes/footer.php'; ?>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+</script>
 </body>
 </html>
