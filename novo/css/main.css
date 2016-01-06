@@ -1,3 +1,4 @@
+
 body{
   font-family: 'Avenir-Regular';
   padding-top: 170px;
@@ -10,6 +11,10 @@ header {
 }
 a {
   color: #15325C;
+}
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
 }
 .blue-text{
   color: #15325c;
@@ -86,6 +91,9 @@ a {
 }
 .carousel-control, .carousel-indicators li{
   z-index: 1;
+}
+.delivery{
+  margin-top: -30px;
 }
 .bg-delivery{
   background: url(../images/bg_delivery.jpg) no-repeat top center;
@@ -169,16 +177,16 @@ a {
 input[type^='tel']::-webkit-input-placeholder{color: #15325C;}*/
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: #15325C !important;
+  color: #15325C !important;
 }
 input:-moz-placeholder, textarea:-moz-placeholder {
-    color:#15325C !important;
+  color:#15325C !important;
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-    color:#15325C !important;
+  color:#15325C !important;
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    color:#15325C !important;
+  color:#15325C !important;
 }
 textarea{
   resize: none;

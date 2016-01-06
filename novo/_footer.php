@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-        <div class="media">
+        <div>
           <div class="media-left media-middle">
             <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">
               <img class="media-object" src="images/logo_fb_footer.png" alt="facebook">
@@ -25,6 +25,7 @@
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <ul class="list-unstyled">
+        <li class="text-hide">teste</li>
           <li>O que fazemos</li>
           <li>Delivery</li>
           <li>Produtos e Serviços</li>
