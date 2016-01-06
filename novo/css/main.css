@@ -1,4 +1,3 @@
-
 body{
   font-family: 'Avenir-Regular';
   padding-top: 170px;
@@ -18,6 +17,9 @@ a {
 }
 .blue-text{
   color: #15325c;
+}
+.yellow-text{
+  color: #FCD900;
 }
 .blue-line{
   background-color: #15325c;
@@ -202,23 +204,45 @@ footer{
   font-size: 12px;
 }
 
+/*Sessão Delivery*/
+.delivery-int {
+  color: #15325C;
+}
+
+/*sessão interna - transferencias internacionais*/
+hr {
+    border-top: 1px solid #15325C;
+}
+.box-transf{
+  background-color: #252A5D;
+  color: white;
+  border-radius: 6px;
+  width: 685px;
+  height: 200px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.box-transf p{
+  padding: 15px 0;
+}
+.box-transf a, .box-transf a:hover, .box-transf a:link, .box-transf a:visited{
+  color: white;
+}
+/*interna - western union*/
+.boxWU{
+  width: 765px;
+  background-color: #252A5D;
+  height: 500px;
+  margin: 0 auto;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.boxWU p, .boxWU h3{
+  padding: 15px 0;
+}
 /*Classes a serem removidas*/
-.delivery-img{
-  background: url('../images/internas/delivery.jpg') no-repeat top center;
-  min-height: 946px;
-}
-.int-moeda{
-  background: url('../images/internas/interna moeda.jpg') no-repeat top center;
-  min-height: 1153px;
-}
-.int-transf{
-  background: url('../images/internas/interna transfer.jpg') no-repeat top center;
-  min-height: 1448px;
-}
-.int-western{
-  background: url('../images/internas/interna WU aberta.jpg') no-repeat top center;
-  min-height: 2058px;
-}
+
 .int-atendimento{
   background: url('../images/internas/atendimento_corporativo.jpg') no-repeat top center;
   min-height: 984px;

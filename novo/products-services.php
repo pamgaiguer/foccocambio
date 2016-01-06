@@ -4,10 +4,6 @@
 </div>
 
 <div class="container">
-  <ol class="breadcrumb visible-sm visible-md visible-lg hidden-xs">
-    <li><a href="#">Home</a></li>
-    <li class="active">Produtos e Serviços</li>
-  </ol>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <h1 class="text-center blue-text"><strong>Produtos e Serviços</strong></h1>
@@ -20,7 +16,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_moeda.php">
-            <img class="media-object img-responsive" src="images/icon_money_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="images/icon_money_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -33,7 +29,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_transf_internacional.php">
-            <img class="media-object img-responsive" src="images/icon_transfer_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="images/icon_transfer_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -50,7 +46,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="travel-insurance.php">
-            <img class="media-object img-responsive" src="images/icon_seguro_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="images/icon_seguro_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -68,7 +64,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_atend_corporativo.php">
-            <img class="media-object img-responsive" src="images/icon_corporativo_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="images/icon_corporativo_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -87,7 +83,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_cartao_prepago.php">
-            <img class="media-object img-responsive" src="images/icon_cartao_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="images/icon_cartao_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -102,7 +98,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="delivery.php">
-            <img class="media-object img-responsive" src="images/icon_delivery_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="images/icon_delivery_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -119,7 +115,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="int_western_union.php">
-            <img class="media-object img-responsive" src="images/icon_wu_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="images/icon_wu_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
