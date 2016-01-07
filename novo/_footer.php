@@ -25,12 +25,11 @@
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <ul class="list-unstyled">
-        <li class="text-hide">teste</li>
-          <li>O que fazemos</li>
-          <li>Delivery</li>
-          <li>Produtos e Serviços</li>
-          <li>Seguro Viagem</li>
-          <li>Contato</li>
+          <li><a href="what.php">O que fazemos</a></li>
+          <li><a href="delivery.php">Delivery</a></li>
+          <li><a href="products-services.php">Produtos e Serviços</a></li>
+          <li><a href="travel-insurance.php">Seguro Viagem</a></li>
+          <li><a href="contact.php">Contato</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
@@ -42,7 +41,7 @@
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-        <img src="images/logo_footer.png" alt="">
+        <img src="images/focco_logo_footer.png">
       </div>
 
     </div>

@@ -241,15 +241,26 @@ hr {
 .boxWU p, .boxWU h3{
   padding: 15px 0;
 }
-/*Classes a serem removidas*/
-
-.int-atendimento{
-  background: url('../images/internas/atendimento_corporativo.jpg') no-repeat top center;
-  min-height: 984px;
+/*seguro viagem*/
+.travel-insurance p strong{
+  font-size: 20px;
 }
-.int-seguro{
-  background: url('../images/internas/interna seguro.jpg') no-repeat top center;
-  min-height: 1154px;
+.travel-insurance h5 strong{
+  font-size: 14px;
+}
+.travel-insurance p{
+  line-height: 30px;
+}
+
+/*Atendimento corporativo*/
+.atend-corp p{
+  line-height: 35px;
+}
+.atend-corp h2{
+  margin-bottom: 20px;
+}
+.atend-corp p strong{
+  font-size: 20px;
 }
 
 @media (min-width: 1px) and (max-width: 767px){
