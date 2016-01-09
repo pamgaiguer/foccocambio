@@ -1,9 +1,9 @@
 <?php include '_header.php';?>
 
 <div class="container-fluid">
-  <img class="img-responsive" src="images/internas/interna_seguro.jpg" alt="Produtos e Serviços" title="Produtos e Serviços">
+  <img class="img-responsive center-block" src="images/internas/interna_seguro.jpg" alt="Produtos e Serviços" title="Produtos e Serviços">
 </div>
-<div class="container text-center blue-text ">
+<div class="container text-center blue-text">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <h1 class="text-uppercase"><strong>seguro viagem</strong></h1>
@@ -22,9 +22,7 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <div class="jumbotron">
-        imagem seguro viagem
-      </div>
+<img src="images/seguro_viagem_img.png" alt="seguro viagem ilustração" class="img-responsive center-block">
     </div>
   </div>
 

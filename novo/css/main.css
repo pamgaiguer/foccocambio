@@ -172,12 +172,31 @@ a {
   color: #525252;
   font-size: 16px;
 }
+.contact .row:nth-child(2){
+  margin: 25px 0;
+}
 .contact h2{
   font-weight: bold;
 }
 .contact-table{
-  border-right: 1px solid #15325C;
+  margin-left: -30px;
 }
+.contact-table{
+  border-right: 2px solid #15325C;
+}
+.last-table{
+  border-right: none;
+}
+
+.contact-table .thumbnail, .thumbnail{
+  border: none;
+  background-color: transparent;
+}
+.contact-table .thumbnail h3, .contact-table .thumbnail p{
+  color: #15325C;
+}
+
+
 #formulario input[type='text'], #formulario input[type='email'], #formulario input[type='tel'], #formulario textarea{
   border: 1px solid #15325c;
 }
@@ -217,7 +236,7 @@ footer{
 
 /*sessão interna - transferencias internacionais*/
 hr {
-    border-top: 1px solid #15325C;
+  border-top: 1px solid #15325C;
 }
 .box-transf{
   background-color: #252A5D;
@@ -235,19 +254,16 @@ hr {
   color: white;
 }
 /*interna - western union*/
-.boxWU{
-  width: 765px;
-  background-color: #252A5D;
-  height: 500px;
-  margin: 0 auto;
-  color: white;
-  border-radius: 8px;
-  margin-bottom: 15px;
+.boxWU a:hover, .boxWU a:active, .boxWU a:focus{
+  background-color: #14325C;
 }
-.boxWU p, .boxWU h3{
-  padding: 15px 0;
+.western-union .row:last-child{
+  margin: 25px 0;
 }
 /*seguro viagem*/
+.travel-insurance{
+  margin: 25px 0;
+}
 .travel-insurance p strong{
   font-size: 20px;
 }
@@ -267,6 +283,9 @@ hr {
 }
 .atend-corp p strong{
   font-size: 20px;
+}
+.atend-corp .row:last-child{
+  margin: 25px 0;
 }
 
 @media (min-width: 1px) and (max-width: 767px){
@@ -288,11 +307,13 @@ hr {
   .top-phone{
     text-align: center;
   }
-  .link-face{
+  .link-face a{
     text-align: center;
   }
-  .logo-topo{
-    text-align: center;
+  .logo-topo img{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
   .products-services .products-text{
     text-align: center;

@@ -33,10 +33,10 @@
           <p class="top-phone"><span>Delivery de Moedas: </span> 11 5051-5299</p>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-          <a href="index.php" title=""><h1 class="logo-topo"><img src="images/logo_topo.png" height="53" width="264" alt=""></h1></a>
+          <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="img-responsive" alt="Focco Cambio"></h1></a>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-          <p class="link-face"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs"><img src="images/logo_fb.jpg" alt="facebook"></i></p>
+          <p class="link-face"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></p>
         </div>
       </div>
     </div>
@@ -52,8 +52,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav nav-pills nav-justified">
-            <li><a href="what.php">O que fazemos <span class="sr-only">(current)</span></a></li>
-            <li><a href="delivery.php">Delivery</a></li>
+            <li><a href="delivery.php">Delivery <span class="sr-only">(current)</span></a></li>
             <li><a href="products-services.php">Produtos e serviços</a></li>
             <li><a href="travel-insurance.php">Seguro Viagem</a></li>
             <li><a href="contact.php">Contato</a></li>

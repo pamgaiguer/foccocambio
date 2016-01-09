@@ -1,7 +1,7 @@
 <?php include '_header.php';?>
 
 <div class="container-fluid">
-<img class="img-responsive" src="images/internas/interna_atendimento_corp.jpg" alt="Atendimento Corporativo">
+<img class="img-responsive center-block" src="images/internas/interna_atendimento_corp.jpg" alt="Atendimento Corporativo">
 </div>
 
 <div class="container text-center blue-text atend-corp">

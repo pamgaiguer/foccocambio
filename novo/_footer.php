@@ -25,7 +25,6 @@
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <ul class="list-unstyled">
-          <li><a href="what.php">O que fazemos</a></li>
           <li><a href="delivery.php">Delivery</a></li>
           <li><a href="products-services.php">Produtos e Serviços</a></li>
           <li><a href="travel-insurance.php">Seguro Viagem</a></li>

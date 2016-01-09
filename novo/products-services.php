@@ -1,6 +1,6 @@
 <?php include '_header.php';?>
 <div class="container-fluid">
-  <img src="images/banner_int_produtos_servicos.jpg" alt="Produtos e Serviços" title="Produtos e Serviços">
+  <img src="images/banner_int_produtos_servicos.jpg" alt="Produtos e Serviços" class="img-responsive center-block">
 </div>
 
 <div class="container">

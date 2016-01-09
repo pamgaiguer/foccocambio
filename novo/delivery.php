@@ -1,7 +1,7 @@
 <?php include '_header.php';?>
 
 <div class="container-fluid">
-  <img class="img-responsive" src="images/internas/interna_delivery.jpg" alt="Coins">
+  <img class="img-responsive center-block" src="images/internas/interna_delivery.jpg" alt="Coins">
 </div>
 <div class="container">
   <section class="delivery-int text-center">
