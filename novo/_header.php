@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <p class="top-phone"><span>Delivery: </span> 11 5051-5299</p>
+          <p class="top-phone"><span>Delivery de Moedas: </span> 11 5051-5299</p>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
           <a href="index.php" title=""><h1 class="logo-topo"><img src="images/logo_topo.png" height="53" width="264" alt=""></h1></a>
