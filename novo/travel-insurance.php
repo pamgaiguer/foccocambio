@@ -27,7 +27,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 travel-insurance">
+    <div class="col-xs-12 travel-insurance-int">
     <h3><strong>Um Seguro Viagem que tem o cliente como prioridade</strong></h3>
       <p>
       <strong>Inovações</strong>, este foco, associado ao trabalho e à perseverança de nossos colaboradores, faz com que possamos oferecer serviços com mais <br>

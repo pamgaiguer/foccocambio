@@ -12,7 +12,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table">
         <div class="thumbnail">
           <img src="images/contact_icon_phone.png" class="img-responsive" alt="phone">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table">
         <div class="thumbnail">
           <img src="images/contact_icon_mail.png" class="img-responsive" alt="email">
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table">
         <div class="thumbnail">
           <img src="images/contact_icon_map.png" class="img-responsive" alt="email">
@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table last-table">
         <div class="thumbnail">
           <img src="images/contact_icon_whatsapp.png" class="img-responsive" alt="whatsapp">
@@ -77,7 +77,7 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="thumbnail">
           <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/contact_icon_face.png" class="img-responsive" alt="facebook"></a>
           <div class="caption">
@@ -85,7 +85,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="thumbnail">
           <a href="https://www.instagram.com/focco.cambioeturismo" target="_blank"><img src="images/contact_icon_instagram.png" class="img-responsive" alt="instagram"></a>
           <div class="caption">

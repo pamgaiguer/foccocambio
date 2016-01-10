@@ -32,12 +32,11 @@
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
           <p class="top-phone"><span>Delivery de Moedas: </span> 11 5051-5299</p>
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-          <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="img-responsive" alt="Focco Cambio"></h1></a>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="" alt="Focco Cambio"></h1></a>
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-          <p class="link-face"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></p>
-        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <p class="link-face hidden-xs"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></p>
       </div>
     </div>
     <nav class="navbar">

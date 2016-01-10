@@ -180,8 +180,6 @@ a {
 }
 .contact-table{
   margin-left: -30px;
-}
-.contact-table{
   border-right: 2px solid #15325C;
 }
 .last-table{
@@ -261,16 +259,16 @@ hr {
   margin: 25px 0;
 }
 /*seguro viagem*/
-.travel-insurance{
+.travel-insurance-int{
   margin: 25px 0;
 }
-.travel-insurance p strong{
+.travel-insurance-int p strong{
   font-size: 20px;
 }
-.travel-insurance h5 strong{
+.travel-insurance-int h5 strong{
   font-size: 14px;
 }
-.travel-insurance p{
+.travel-insurance-int p{
   line-height: 30px;
 }
 
@@ -290,7 +288,7 @@ hr {
 
 @media (min-width: 1px) and (max-width: 767px){
   body{
-    padding-top: 170px;
+    padding-top: 220px;
   }
   header {
     text-transform: uppercase;
@@ -299,15 +297,18 @@ hr {
     height: 149px;
   }
   .navbar-fixed-top{
-    height: 230px;
+    height: 195px;
   }
   .nav {
     background-color: rgba(255,255,255,0.9);
   }
+.navbar-toggle {
+    margin-top: 0px;
+}
   .top-phone{
     text-align: center;
   }
-  .link-face a{
+  p.link-face a{
     text-align: center;
   }
   .logo-topo img{
@@ -315,13 +316,43 @@ hr {
     margin-right: auto;
     margin-left: auto;
   }
+  .bg-products-services{
+    background-size: cover;
+  }
+  .bg-travel-insurance{
+    background-size: cover;
+  }
   .products-services .products-text{
     text-align: center;
   }
   .contact-us .contact-text{
     text-align: center;
   }
+  .contact-table{
+    border-right: none;
+  }
+  .delivery-text p, .delivery-text span{
+    color: #525252;
+  }
+  .box-transf{
+    width: 320px;
+  }
   footer{
     text-align: center;
+  }
+}
+@media (min-width: 767px) and (max-width: 991px){
+  .bg-products-services{
+    background: url(../images/bg-products-services.jpg) no-repeat top center;
+    min-height: 988px;
+    background-size: cover;
+  }
+  .bg-travel-insurance{
+    background: url(../images/bg-travel-insurance.jpg) no-repeat top center;
+    min-height: 905px;
+    background-size: contain;
+  }
+  .contact-table{
+    border-right: none;
   }
 }
