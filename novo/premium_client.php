@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <div class="jumbotron">
-    imagem cartão pré-pago
+    imagem premium client
   </div>
 </div>
 <div class="container">

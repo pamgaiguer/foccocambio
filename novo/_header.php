@@ -55,6 +55,7 @@
             <li><a href="products-services.php">Produtos e serviços</a></li>
             <li><a href="travel-insurance.php">Seguro Viagem</a></li>
             <li><a href="contact.php">Contato</a></li>
+            <li><a href="premium_client.php">Seja cliente premium!</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

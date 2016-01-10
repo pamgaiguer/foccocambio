@@ -29,6 +29,7 @@
           <li><a href="products-services.php">Produtos e Serviços</a></li>
           <li><a href="travel-insurance.php">Seguro Viagem</a></li>
           <li><a href="contact.php">Contato</a></li>
+          <li><a href="premium_client.php">Seja cliente premium!</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">

@@ -251,6 +251,30 @@ hr {
 .box-transf a, .box-transf a:hover, .box-transf a:link, .box-transf a:visited{
   color: white;
 }
+/*interna - cartão pré-pago*/
+.panel{
+  background-color: #15325C;
+}
+.panel-default{
+  border-color: #14325C;
+}
+.panel-default>.panel-heading{
+  background-color: #15325C;
+  border-color: #14325C;
+}
+.panel-default>.panel-heading a{
+  color: #FCD900;
+}
+.panel-body p, .panel-body ul li {
+  color: white;
+}
+.panel-body small{
+  color: #F9F9F9;
+}
+.panel-body a{
+  color: #FCD900;
+}
+
 /*interna - western union*/
 .boxWU a:hover, .boxWU a:active, .boxWU a:focus{
   background-color: #14325C;
@@ -302,9 +326,9 @@ hr {
   .nav {
     background-color: rgba(255,255,255,0.9);
   }
-.navbar-toggle {
+  .navbar-toggle {
     margin-top: 0px;
-}
+  }
   .top-phone{
     text-align: center;
   }
