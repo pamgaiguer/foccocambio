@@ -253,13 +253,14 @@ hr {
 }
 /*interna - cartão pré-pago*/
 .panel{
-  background-color: #15325C;
+  background-color: rgba(021,050, 092, .8);  /* 15325C */
+
 }
 .panel-default{
   border-color: #14325C;
 }
 .panel-default>.panel-heading{
-  background-color: #15325C;
+  background-color: rgba(021,050, 092, .5);  /* 15325C */
   border-color: #14325C;
 }
 .panel-default>.panel-heading a{
@@ -268,7 +269,7 @@ hr {
 .panel-body p, .panel-body ul li {
   color: white;
 }
-.panel-body small{
+.panel-body p small{
   color: #F9F9F9;
 }
 .panel-body a{
