@@ -1,10 +1,9 @@
 <?php include '_header.php';?>
 
 <div class="container-fluid">
-  <div class="jumbotron">
-    imagem cartão pré-pago
-  </div>
+<img src="images/internas/interna_cartao.jpg" alt="cartao pre pago" class="img-responsive center-block">
 </div>
+
 <div class="container blue-text">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
