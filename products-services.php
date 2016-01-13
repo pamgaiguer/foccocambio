@@ -45,7 +45,7 @@
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="travel-insurance.php">
+          <a href="int_travel-insurance.php">
             <img class="media-object" src="images/icon_seguro_circle.png" alt="produtos e serviços">
           </a>
         </div>
@@ -57,7 +57,7 @@
             de uma central de atendimento 24h em português, além de outros benefícios e cliente FOCCO tem desconto!<br>
             Consulte-nos!
           </p>
-          <a href="travel-insurance.php">Saiba Mais</a>
+          <a href="int_travel-insurance.php">Saiba Mais</a>
         </div>
       </div>
 

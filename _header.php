@@ -36,28 +36,31 @@
           <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="" alt="Focco Cambio"></h1></a>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <p class="link-face hidden-xs"><a href="http://www.facebook.com/focco.cambioeturismo">face.com/focco.cambioeturismo</a><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></p>
-      </div>
-    </div>
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+          <p class="link-face pull-right hidden-xs">
+            <a href="http://instagram.com/foccocambio/" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_instagram.png" alt="instagram "></i></a>
+            <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></a>
+          </p>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav nav-pills nav-justified">
-            <li><a href="delivery.php">Delivery <span class="sr-only">(current)</span></a></li>
-            <li><a href="products-services.php">Produtos e serviços</a></li>
-            <li><a href="travel-insurance.php">Seguro Viagem</a></li>
-            <li><a href="contact.php">Contato</a></li>
-            <li><a href="premium_client.php">Seja cliente premium!</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-  </header>
+      </div>
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav nav-pills nav-justified">
+              <li><a href="delivery.php">Delivery <span class="sr-only">(current)</span></a></li>
+              <li><a href="products-services.php">Produtos e serviços</a></li>
+              <li><a href="international_shipping.php">Remessa Internacional</a></li>
+              <li><a href="contact.php">Contato</a></li>
+              <li><a href="premium_client.php">Seja cliente premium!</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>

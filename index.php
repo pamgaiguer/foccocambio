@@ -4,13 +4,13 @@
       <div id="slideshow" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block">
+            <a href="int_moeda.php"><img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block"></a>
           </div>
           <div class="item">
-            <img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block">
+            <a href="int_travel-insurance.php"><img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block"></a>
           </div>
           <div class="item">
-            <img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block">
+            <a href="international_shipping.php"><img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block"></a>
           </div>
         </div>
         <ol class="carousel-indicators">
@@ -112,7 +112,7 @@
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="travel-insurance.php">
+                <a href="int_travel-insurance.php">
                   <img class="media-object" src="images/icon_seguro_circle.png" />
                 </a>
               </div>
@@ -120,7 +120,7 @@
                 <h4 class="media-heading">Seguro Viagem</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
-                <a href="travel-insurance.php">Saiba Mais</a>
+                <a href="int_travel-insurance.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">

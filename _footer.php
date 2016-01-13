@@ -15,35 +15,43 @@
               <img class="media-object" src="images/logo_fb_footer.png" alt="facebook">
             </a>
           </div>
-          <div class="media-body">
-            <p class="media-heading">
-              Acompanhe nossa fanpage e fique por dentro de dicas e novidades de viagens
+          <div class="media-body border-blue-right">
+            <p class="media-heading blue-text ">
+              Acompanhe a nossa <br>
+              fanpage e fique por <br>
+              dentro de dicas e <br>
+              novidades de viagens
             </p>
           </div>
           <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook/focco.cambioeturismo</a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled border-blue-right">
           <li><a href="delivery.php">Delivery</a></li>
           <li><a href="products-services.php">Produtos e Serviços</a></li>
-          <li><a href="travel-insurance.php">Seguro Viagem</a></li>
+          <li><a href="international_shipping.php">Remessa Internacional</a></li>
           <li><a href="contact.php">Contato</a></li>
           <li><a href="premium_client.php">Seja cliente premium!</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-        <ul class="list-unstyled">
-          <li>Contato</li>
-          <li>11 5051 5299</li>
-          <li><a href="mailto:contato@foccocambio.com.br">contato@foccocambio.com.br</a></li>
-          <li>R. Carlos Vicari, 155 - Pompeia/SP</li>
+        <ul class="list-unstyled links-footer border-blue-right">
+        <li class="blue-text text-uppercase"><strong>Matriz / Delivery</strong></li>
+        <li><a href="tel:+551150515299">11 5051-5299</a></li>
+        <li class="blue-text text-uppercase"><strong>Loja Pompéia</strong></li>
+        <li><a href="tel:+551150515299">11 3862-3859</a></li>
+        <li class="text-uppercase blue-text"><small>R. Carlos Vicari, 155 - Pompéia - SP</small></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-        <img src="images/focco_logo_footer.png">
+        <img class="img-footer img-responsive center-block" src="images/focco_logo_footer.png">
       </div>
-
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <img src="images/bacen_authorization.png" alt="bacen" class="img-responsive center-block">
+      </div>
     </div>
   </div>
 </footer>

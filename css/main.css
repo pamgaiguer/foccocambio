@@ -226,6 +226,15 @@ footer{
   text-transform: uppercase;
   font-size: 12px;
 }
+.border-blue-right{
+  border-right: 1px solid #15325C;
+}
+.links-footer li a {
+  font-size: 18px;
+}
+.img-footer{
+  width: 45%;
+}
 
 /*Sessão Delivery*/
 .delivery-int {

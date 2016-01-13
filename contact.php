@@ -87,9 +87,9 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="thumbnail">
-          <a href="https://www.instagram.com/focco.cambioeturismo" target="_blank"><img src="images/contact_icon_instagram.png" class="img-responsive" alt="instagram"></a>
+          <a href="http://www.instagram.com/foccocambio/" target="_blank"><img src="images/contact_icon_instagram.png" class="img-responsive" alt="instagram"></a>
           <div class="caption">
-          <p><a href="https://www.instagram.com/focco.cambioeturismo" target="_blank">instagram.com/<strong>focco.cambioeturismo</strong></a></p>
+          <p><a href="http://www.instagram.com/foccocambio/" target="_blank">instagram.com/<strong>focco.cambioeturismo</strong></a></p>
           </div>
         </div>
       </div>
