@@ -56,7 +56,7 @@
             <ul class="nav nav-pills nav-justified">
               <li><a href="delivery.php">Delivery <span class="sr-only">(current)</span></a></li>
               <li><a href="products-services.php">Produtos e serviços</a></li>
-              <li><a href="international_shipping.php">Remessa Internacional</a></li>
+              <li><a href="int_transf_internacional.php">Remessa Internacional</a></li>
               <li><a href="contact.php">Contato</a></li>
               <li><a href="premium_client.php">Seja cliente premium!</a></li>
             </ul>

@@ -60,7 +60,10 @@
           <div class="caption">
             <h3><strong>Whatsapp</strong></h3>
             <p class="text-uppercase">Atendimento <br> Personalizado</p>
-            <h3><strong>11 5051-5299</strong></h3>
+            <p><strong><a href="+5511985260184">11 98526-0184</a></strong></p>
+            <p class="text-uppercase">Delivery de moedas</p>
+            <p><strong><a href="+5511992235516">11 99223-5516</a></strong></p>
+            <p class="text-uppercase">Balc&atilde;o Loja Pompéia</p>
           </div>
         </div>
       </div>
@@ -70,32 +73,34 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <h4>
-        <strong>Você também pode acompanhar não só a gente como novidades <br>
-          e dicas de viagens e câmbio através das redes sociais.</strong>
-        </h4>
-      </div>
+        <strong>
+          Você também pode acompanhar as novidades e dicas de viagens e câmbio <br>
+          através de nossas redes sociais
+        </strong>
+      </h4>
     </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <div class="thumbnail">
-          <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/contact_icon_face.png" class="img-responsive" alt="facebook"></a>
-          <div class="caption">
-            <p><a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook.com/<strong>focco.cambioeturismo</strong></a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <div class="thumbnail">
-          <a href="http://www.instagram.com/foccocambio/" target="_blank"><img src="images/contact_icon_instagram.png" class="img-responsive" alt="instagram"></a>
-          <div class="caption">
-          <p><a href="http://www.instagram.com/foccocambio/" target="_blank">instagram.com/<strong>focco.cambioeturismo</strong></a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
   </div>
 
-  <?php include '_footer.php';?>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="thumbnail">
+        <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/contact_icon_face.png" class="img-responsive" alt="facebook"></a>
+        <div class="caption">
+          <p><a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook.com/<strong>focco.cambioeturismo</strong></a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="thumbnail">
+        <a href="http://www.instagram.com/foccocambio/" target="_blank"><img src="images/contact_icon_instagram.png" class="img-responsive" alt="instagram"></a>
+        <div class="caption">
+          <p><a href="http://www.instagram.com/foccocambio/" target="_blank">instagram.com/<strong>focco.cambioeturismo</strong></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<?php include '_footer.php';?>

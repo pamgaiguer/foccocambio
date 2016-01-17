@@ -35,8 +35,6 @@
       de antever caminhos, liderando inovações tecnológicas, descobrindo novos processos, sustentados pelas duas forças fundamentais da <br>
       contemporaneidade: <strong>a ética e a qualidade.</strong>
       </p>
-      <br>
-      <h5 class="text-uppercase"><strong>dispomos de mais de 40 centrais de atendimento, distribuídas globalmente, atuando nos cinco continentes.</strong></h5>
     </div>
   </div>
 
