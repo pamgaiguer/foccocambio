@@ -33,7 +33,7 @@
           </a>
         </div>
         <div class="media-body">
-          <h4 class="media-heading">Transferência Internacional</h4>
+          <h4 class="media-heading">Remessas Internacionais</h4>
           <p>
             Manutenção de residentes / cursos e congressos / transferências de patrimônio e disponibilidade /
             Compra e venda de imóveis / importação e exportação com total segurança.<br>

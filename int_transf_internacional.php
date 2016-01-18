@@ -45,7 +45,11 @@
         Remessas, pagamentos e recebimentos internacionais, importação e exportação, etc... Sempre contando com um executivo de contas
         para total suporte em suas operações.
       </p>
-      <br>
+      <hr>
+      <h4><strong>Transferências de Patrimôio</strong></h4>
+      <p>
+        ​Transferência de valores ao exterior, correspondentes ao Patrimônio de pessoas que estejam mudando de país (residência).
+      </p>
     </div>
   </div>
 </div>
