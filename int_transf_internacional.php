@@ -16,9 +16,13 @@
         opção de remessa
       </p>
 
-      <h3><strong>Dentre destes tipos de produtos, podemos destacar:</strong></h3>
+      <h3><strong>Dentre outros, podemos destacar:</strong></h3>
       <br>
-
+      <h4><strong>Transferências de Patrimônio</strong></h4>
+      <p>
+        ​Transferência de valores ao exterior, correspondentes ao Patrimônio de pessoas que estejam mudando de país (residência).
+      </p>
+      <hr>
       <h4><strong>Disponibilidade no Exterior</strong></h4>
       <p>
         Transferência de recursos referente a depósito em conta no exterior de titularidade do cliente.
@@ -45,11 +49,7 @@
         Remessas, pagamentos e recebimentos internacionais, importação e exportação, etc... Sempre contando com um executivo de contas
         para total suporte em suas operações.
       </p>
-      <hr>
-      <h4><strong>Transferências de Patrimôio</strong></h4>
-      <p>
-        ​Transferência de valores ao exterior, correspondentes ao Patrimônio de pessoas que estejam mudando de país (residência).
-      </p>
+      <br>
     </div>
   </div>
 </div>

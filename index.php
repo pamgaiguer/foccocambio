@@ -76,7 +76,7 @@
                 </a>
               </div>
               <div class="media-body">
-                <h4 class="media-heading">Transferencia Internacional</h4>
+                <h4 class="media-heading">Remessa Internacional</h4>
                 <p>Quer comprar e vender moedas estrangeiras sem <br> burocracia com a melhor taxa do mercado?</p>
                 <p>Então chegou ao lugar certo.</p>
                 <a href="int_transf_internacional.php">Saiba Mais</a>
