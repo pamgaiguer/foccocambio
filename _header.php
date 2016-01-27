@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <p class="top-phone"><span>Delivery de Moedas: </span> 11 5051-5299</p>
+          <p class="top-phone"><span>Delivery de Moedas: </span> <a href="tel:+551150515299">11 5051-5299</a></p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
           <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="" alt="Focco Cambio"></h1></a>
