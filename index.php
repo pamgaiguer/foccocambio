@@ -30,7 +30,7 @@
             <div class="delivery-text">
               <span>*Frete Grátis</span>
               <h3><em><strong>Delivery Focco</strong></em></h3>
-              <h3><strong>11 5051 5299</strong></h3>
+              <h3><strong><a href="tel:+551150515299">11 5051 5299</a></strong></h3>
               <p>Seu dinheiro de forma prática e segura <br> e o melhor <strong>*sem custo para entrega.</strong></p>
               <p><small>*Consulte regiões atendidas. Entregas grátis <br>para valores equivalentes a U$500,00.</small></p>
             </div>

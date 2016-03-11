@@ -19,9 +19,9 @@
           <div class="caption">
             <h3><strong>Telefones</strong></h3>
             <p class="text-uppercase">matriz / delivery</p>
-            <p><strong><a href="+551150515299">11 5051-5299</a></strong></p>
+            <p><strong><a href="tel:+551150515299">11 5051-5299</a></strong></p>
             <p class="text-uppercase">loja pompeia</p>
-            <p><strong><a href="+551138623859">11 3862-3859</a></strong></p>
+            <p><strong><a href="tel:+551138623859">11 3862-3859</a></strong></p>
           </div>
         </div>
       </div>
@@ -59,11 +59,8 @@
           <img src="images/contact_icon_whatsapp.png" class="img-responsive" alt="whatsapp">
           <div class="caption">
             <h3><strong>Whatsapp</strong></h3>
-            <p class="text-uppercase">Atendimento <br> Personalizado</p>
-            <p><strong><a href="+5511985260184">11 98526-0184</a></strong></p>
-            <p class="text-uppercase">Delivery de moedas</p>
-            <p><strong><a href="+5511992235516">11 99223-5516</a></strong></p>
-            <p class="text-uppercase">Balc&atilde;o Loja Pompéia</p>
+            <p class="text-uppercase">Atendimento Personalizado<br>Delivery de moedas</p>
+            <p><strong><a href="tel:+5511992235516">11 99223-5516</a></strong></p>
           </div>
         </div>
       </div>
