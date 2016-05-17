@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{THE_REQUEST} \s/+(?:index)?(.*?)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f [NC]
+RewriteRule ^(.+?)/?$ /$1.php [L]
