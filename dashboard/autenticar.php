@@ -1,7 +1,27 @@
 <?php 
 	include "core/database.php";
-	
-	$sql_query = sprintf("SELECT * FROM usuarios WHERE login = '%s' AND senha = '%s'", $_POST["login"], $_POST["senha"]);
+	include "core/helpers.php";
+
+	$sql_query = sprintf("SELECT * FROM usuarios WHERE login = '%s'", $_POST["login"]);
+	$result = mysql_query($sql_query, $conn);
+
+	if (mysql_num_rows($result) > 0) 
+	{		
+		while ($row = mysql_fetch_assoc($result)) {
+			$usuarioId = $row["id"];
+			$senha = $row["senha"];
+		}
+		
+		if ($senha == "REDEFINIR"){
+			echo json_encode("/dashboard/usuarios/redefinirSenha?usuarioId=".$usuarioId);
+			exit();
+		}
+		
+	}
+
+
+
+	$sql_query = sprintf("SELECT * FROM usuarios WHERE login = '%s' AND senha = '%s'", $_POST["login"], md5($_POST["senha"]));
 	$result = mysql_query($sql_query, $conn);
 
 	if (mysql_num_rows($result) > 0) 

@@ -11,6 +11,7 @@
 	while($row = mysql_fetch_array($result)) $rows[] = $row;
 
 	foreach($rows as $r){
+		$id = $r['id'];
 		$nome = $r['nome'];
 		$login = $r['login'];
 		$email = $r['email'];
@@ -25,22 +26,25 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<form action="alterarPost.php" method="post" class="form-group" id="form-alterar-usuario">			
+		<form action="alterarPost.php" method="POST" class="form-group" id="form-alterar-usuario">			
 			
+			<input name="id" id="id" type="hidden" value="<?php echo $id ?>" />
+
+
 			<div class="col-md-4">
-				<input name="nome" value=<?php echo $nome ?> type="text" class="form-control" placeholder="Nome" />
+				<input name="nome" id="nome" value="<?php echo $nome ?>" type="text" class="form-control" placeholder="Nome" />
 			</div>
 			<div class="col-md-4">
-				<input name="login" value=<?php echo $login ?> type="text" class="form-control" placeholder="Login" /><br/>
+				<input name="login" id="login" value="<?php echo $login ?>" type="text" class="form-control" placeholder="Login" /><br/>
 			</div>
 			<div class="col-md-4">
-				<input name="email" value=<?php echo $email ?> type="text" class="form-control" placeholder="Email" /><br/>
+				<input name="email" id="email" value="<?php echo $email ?>" type="text" class="form-control" placeholder="Email" /><br/>
 			</div>
 			<div class="col-md-4">
-				<input name="telefone" value=<?php echo $telefone ?> type="text" class="form-control" placeholder="Telefone" /><br/>
+				<input name="telefone" id="telefone" value="<?php echo $telefone ?>" type="tel" class="form-control" placeholder="Telefone" /><br/>
 			</div>
 			<div class="col-md-4">
-				<select name="tipo" class="form-control">
+				<select name="tipo" id="tipo" class="form-control">
 					<option value="2" <?php if ($tipo == 2) echo "selected" ?>> Admin</option>
 					<option value="3" <?php if ($tipo == 3) echo "selected" ?>>Usuário</option>
 				</select>
@@ -54,8 +58,9 @@
 
 
 <?php
-
-
-
 	include "../includes/footer.php";
 ?>
+
+<script type="text/javascript">	
+	focco.alterarUsuarioFormPost();
+</script>

@@ -23,6 +23,9 @@
 		<th>Nome</th>
 		<th>Email</th>
 		<th>Telefone</th>
+		<th>Tipo</th>
+		<th></th>
+		<th></th>
 		<th></th>
 	</tr>
 	</thead>
@@ -30,14 +33,20 @@
 <?php
 
 
-	foreach($rows as $r){		
+	
+
+	foreach($rows as $r){
+
 		echo 
 		'<tr>
 			<td>'.$r["login"].'</td>
 			<td>'.$r["nome"].'</td>
 			<td>'.$r["email"].'</td>
 			<td>'.$r["telefone"].'</td>
+			<td>'.($r["tipo"] == 2 ? "Admin" : "Usuário").'</td>
 			<td><a href="/dashboard/usuarios/alterar?usuarioId='.$r["id"].'"><span class="fa fa-file-text-o"></span></a></td>
+			<td><a href="/dashboard/usuarios/excluir?usuarioId='.$r["id"].'"><span class="fa fa-times"></span></a></td>
+			<td><a href="/dashboard/usuarios/resetarSenha?usuarioId='.$r["id"].'"><span class="fa fa-user-times"></span></a></td>
 		</tr>';
 	}
 
