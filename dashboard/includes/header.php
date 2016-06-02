@@ -52,7 +52,7 @@
                         <li><a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a></li>
                         <li><a href="#"><i class="fa fa-fw fa-gear"></i> Configurações</a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logoff</a>
+                        <li><a href="../login.php""><i class="fa fa-fw fa-power-off"></i> Logoff</a>
                         </li>
                     </ul>
                 </li>
