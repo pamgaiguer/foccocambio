@@ -1,14 +1,10 @@
-</div>
-<!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
-</div>
-<!-- /#wrapper -->
-
-<script src="scripts/jquery.js"></script>
-<script src="scripts/bootstrap.min.js"></script>
-<script src="scripts/plugins/morris/raphael.min.js"></script>
-<script src="scripts/plugins/morris/morris.min.js"></script>
-<script src="scripts/plugins/morris/morris-data.js"></script>
-</body>
-</html>
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="scripts/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('.collapsible').collapsible();
+      });
+    </script>
+  </body>
+  </html>

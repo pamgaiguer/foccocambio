@@ -1,0 +1,17 @@
+header, main, footer {
+  padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+.nav-wrapper{
+  position: relative;
+  z-index: 9999;
+}
+.side-nav{
+  z-index: 1;
+}
