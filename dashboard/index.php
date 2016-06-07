@@ -6,7 +6,7 @@ session_start();
 include 'includes/header.php'
 ?>
 <main>
-    <p>olá mundo</p>
+  <p>olá mundo</p>
 </main>
 
 <?php

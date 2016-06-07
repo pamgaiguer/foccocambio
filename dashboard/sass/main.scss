@@ -1,3 +1,6 @@
+@import 'patterns';
+
+/*Sidebar Fixed CSS fix*/
 header, main, footer {
   padding-left: 240px;
 }
@@ -6,12 +9,4 @@ header, main, footer {
   header, main, footer {
     padding-left: 0;
   }
-}
-
-.nav-wrapper{
-  position: relative;
-  z-index: 9999;
-}
-.side-nav{
-  z-index: 1;
 }
