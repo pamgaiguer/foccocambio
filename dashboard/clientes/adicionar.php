@@ -1,7 +1,7 @@
 <?php 
 
 	include "../core/database.php";
-	include "../includes/header.php";
+	include "../includes/header.php";	
 ?>
 
 
