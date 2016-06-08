@@ -6207,6 +6207,18 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .bg-white {
   background-color: #FFF; }
 
+.bg-blue {
+  background-color: #15325c; }
+
+.bg-yellow {
+  background-color: #F4D400; }
+
+.blue {
+  color: #15325c; }
+
+.yellow {
+  color: #F4D400; }
+
 .orange {
   color: #f89a46; }
 
@@ -6259,5 +6271,8 @@ header, main, footer {
 @media only screen and (max-width: 992px) {
   header, main, footer {
     padding-left: 0; } }
+/*login page*/
+.loginForm {
+  background-color: #f5f5f5; }
 
 /*# sourceMappingURL=materialize.css.map */

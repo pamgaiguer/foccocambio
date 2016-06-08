@@ -1,3 +1,5 @@
+$blue: #15325c;
+$yellow: #F4D400;
 $green: #64cea2;
 $dark-green: #4B9B7A;
 $orange: #f89a46;
@@ -33,6 +35,18 @@ $purple-graph-shadow: #8F70CF;
 }
 .bg-white{
   background-color: $white;
+}
+.bg-blue{
+  background-color: $blue;
+}
+.bg-yellow{
+  background-color: $yellow;
+}
+.blue{
+  color: $blue;
+}
+.yellow{
+  color: $yellow;
 }
 .orange{
   color: $orange;
