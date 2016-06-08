@@ -1,8 +1,12 @@
-<?php
-include 'includes/header_index.php';
+<?php 
+	session_start();
+	include "../includes/header_index.php";
 ?>
 
+<?php
 
+
+?>
 <div class="container">
   <div class="row">
     <div class="col s6 offset-s3">
@@ -15,21 +19,15 @@ include 'includes/header_index.php';
         </div>
 
         <div class="section">
-          <form action="" id="form-login">
+          <form action="redefinirSenhaPost.php" method="post" class="form-group" id="form-redefinir-senha">			
 
 
-          <div id="form-erro"></div>
+          	<input id="id" name="id" type="hidden" value="<?php echo $_GET['usuarioId'] ?>"/><br/>
 
             <div class="input-field">
               <i class="material-icons prefix">person</i>
-              <input id="login" type="text" class="validate">
-              <label for="login" data-error="Preencha corretamente">Login</label>
-            </div>
-
-            <div class="input-field">
-              <i class="material-icons prefix">lock</i>
-              <input id="senha" type="password" class="validate">
-              <label for="senha">Senha</label>
+              <input id="senha" type="text" class="validate">
+              <label for="senha" data-error="Preencha corretamente">Senha</label>
             </div>
 
             <div class="section">
@@ -47,6 +45,12 @@ include 'includes/header_index.php';
   </div>
 </div>
 
-<?php
-include 'includes/footer.php'
+
+<?php 
+	include "../includes/footer.php";
 ?>
+
+
+<script type="text/javascript">	
+	focco.redefinirSenhaFormPost();	
+</script>
