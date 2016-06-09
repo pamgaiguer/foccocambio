@@ -56,7 +56,8 @@ focco = {
 		});
 	},
 
-	alterarUsuarioFormPost: function(){
+	alterarUsuarioFormPost: function(){		
+		$('select').material_select();
 		$("#telefone")
 		.mask("(99) 99999-9999")
 		.on("change", function() {
@@ -103,7 +104,7 @@ focco = {
 	},
 
 	adicionarUsuarioFormPost: function(){
-
+		$('select').material_select();
 		$("#telefone")
 		.mask("(99) 99999-9999")
 		.on("change", function() {
@@ -195,21 +196,30 @@ focco = {
 
 	adicionarClienteFormPost: function(){
 
-		$(".telefone")
-		.mask("(99) 99999-9999")
-		.on("change", function() {
+		$('ul.tabs').tabs();
+	    $('select').material_select();
 
-		    var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+	    $('.datepicker').pickadate({
+	      labelMonthNext: 'Próximo',
+	      labelMonthPrev: 'Anterior',
+	      labelMonthSelect: 'Selecione um mês',
+	      labelYearSelect: 'Selecione um ano',
+	      monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
+	      monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+	      weekdaysFull: [ 'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ],
+	      weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
+	      weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
+	      today: 'Hoje',
+	      clear: 'Limpar',
+	      close: 'Fechar',
+	      selectMonths: true,
+	      selectYears: 200,
+	      format: 'dd-mm-yyyy'
+	    });
 
-		    if( last.length == 3 ) {
-		        var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
-		        var lastfour = move + last;
-		        var first = $(this).val().substr( 0, 9 ); // Change 9 to 8 if you prefer mask without space: (99)9999?9-9999
 
-		        $(this).val( first + '-' + lastfour );
-		    }
-		})
-		.change();
+		$("#telFixo").mask("(99) 9999-9999");
+		$("#telCelular").mask("(99) 99999-9999");
 
 
 		$("#form-adicionar-cliente").submit(function(e){
@@ -238,7 +248,7 @@ focco = {
 			categoria = $("select#categoria", $(this)).val();
 			ofertasPorEmail = $("input#ofertasPorEmail", $(this)).is(":checked");
 			infoWhatsapp = $("input#infoWhatsapp", $(this)).is(":checked");
-			observacoes = $("input#observacoes", $(this)).val();
+			observacoes = $("textarea#observacoes", $(this)).val();
 
 
 			$.ajax({
@@ -252,7 +262,7 @@ focco = {
 					infoWhatsapp, observacoes
 				},
 				//error: function(data){},
-				success: function(data){
+				success: function(data){alert(data);
 					if (JSON.parse(data) == "nope") $("#form-erro").html("O cliente não foi cadastrado");
 					else window.location = "/dashboard/clientes/";
 				}

@@ -1,4 +1,4 @@
-  <?php include '_header.php';?>
+  <?php include('_header.php'); ?>
   <section class="slide">
     <div class="container-fluid">
       <div id="slideshow" class="carousel slide" data-ride="carousel">

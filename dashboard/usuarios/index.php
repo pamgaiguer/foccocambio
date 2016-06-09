@@ -4,11 +4,11 @@
 	include "../core/database.php";
 
 	$sql_query = sprintf("SELECT * FROM usuarios WHERE tipo > %s", $_SESSION['currentUser']['tipo']);
-	$result = mysql_query($sql_query, $conn);
+	$result = mysqli_query($conn, $sql_query);
 
 
 	$rows = array();
-	while($row = mysql_fetch_array($result)) $rows[] = $row;
+	while($row = mysqli_fetch_array($result)) $rows[] = $row;
 ?>
 <main>
 <div class="row">

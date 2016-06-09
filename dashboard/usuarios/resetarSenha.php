@@ -9,7 +9,7 @@
 
 		"REDEFINIR", $_GET["usuarioId"]);
 	
-	 mysql_query($sql_query, $conn); 
+	 mysqli_query($conn, $sql_query); 
 	 Header("Location: /dashboard/usuarios");
 ?>
 

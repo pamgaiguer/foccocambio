@@ -26,7 +26,7 @@
   </script>
 </head>
 <body>
-<?php include_once("analyticstracking.php") ?>
+
   <header class="navbar-fixed-top">
     <div class="container-fluid">
       <div class="row">

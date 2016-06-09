@@ -143,19 +143,7 @@ include "../includes/header.php";
             <label for="observacoes">Observações</label>
           </div>
 
-          <div class="section">
-
-            <div class="input-field col s4">
-              <input id="cep" type="text">
-              <label for="cep">C.E.P.</label>
-            </div>
-
-            <div class="input-field col s12">
-              <input id="endereco" type="text">
-              <label for="endereco">C.E.P.</label>
-            </div>
-
-          </div>
+          
 
 
           <div class="col s12">
@@ -178,31 +166,5 @@ include "../includes/footer.php";
 ?>
 
 <script>
-
-  $(document).ready(function() {
-    $('ul.tabs').tabs();
-    $('select').material_select();
-
-    $('.datepicker').pickadate({
-      labelMonthNext: 'Próximo',
-      labelMonthPrev: 'Anterior',
-      labelMonthSelect: 'Selecione um mês',
-      labelYearSelect: 'Selecione um ano',
-      monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-      monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
-      weekdaysFull: [ 'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ],
-      weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
-      weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
-      today: 'Hoje',
-      clear: 'Limpar',
-      close: 'Fechar',
-      selectMonths: true,
-      selectYears: 200,
-      format: 'dd-mm-yyyy'
-    });
-
-  });
-
   focco.adicionarClienteFormPost();
-
 </script>

@@ -8,7 +8,7 @@
 
 		$_POST["nome"], $_POST["login"], $_POST["email"], $_POST["telefone"], $_POST["tipo"], $_POST["id"]);
 	
-	 if (mysql_query($sql_query, $conn)) echo json_encode("ok");
+	 if (mysqli_query($conn, $sql_query)) echo json_encode("ok");
 	 else echo json_encode("nope");
 
 ?>

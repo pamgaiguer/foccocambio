@@ -55,9 +55,6 @@
   include "../includes/footer.php";
 ?>
 
-<script>
-  $(document).ready(function() {
-      $('select').material_select();
-  });
+<script>  
   focco.adicionarUsuarioFormPost();
 </script>

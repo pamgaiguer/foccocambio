@@ -3,19 +3,18 @@
 include "../core/database.php";
 include "../includes/header.php";
 
-$sql_query = sprintf("SELECT * FROM usuarios WHERE id = %s", $_GET['usuarioId']);
-$result = mysql_query($sql_query, $conn);
+$sql_query = sprintf("SELECT * FROM clientes WHERE id = %s", $_GET['clienteId']);
+$result = mysqli_query($conn, $sql_query);
 
 $rows = array();
-while($row = mysql_fetch_array($result)) $rows[] = $row;
+while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
 foreach($rows as $r){
   $id = $r['id'];
-  $nome = $r['nome'];
-  $login = $r['login'];
+  $nome = $r['razaoSocial'];  
   $email = $r['email'];
-  $telefone = $r['telefone'];
-  $tipo = $r['tipo'];
+  $telefone = $r['telFixo'];
+  $tipo = $r['tipoPessoa'];
 }
 
 ?>
@@ -73,9 +72,6 @@ foreach($rows as $r){
 include "../includes/footer.php";
 ?>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('select').material_select();
-  });
+<script type="text/javascript">  
   focco.alterarUsuarioFormPost();
 </script>

@@ -7,7 +7,7 @@
 
 		$_GET["clienteId"]);
 	
-	 if (mysql_query($sql_query, $conn)) echo json_encode("ok");
+	 if (mysqli_query($conn, $sql_query)) echo json_encode("ok");
 	 else echo json_encode("nope");
 
 	 Header("Location: /dashboard/clientes");

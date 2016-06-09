@@ -2,11 +2,12 @@
 	include "core/database.php";
 
 	$sql_query = sprintf("SELECT * FROM usuarios WHERE login = '%s'", $_POST["login"]);
-	$result = mysql_query($sql_query, $conn);
+	//$sql_query = sprintf("SELECT * FROM usuarios WHERE login = '%s'", $_GET["login"]);
+	$result = mysqli_query($conn, $sql_query);
 
-	if (mysql_num_rows($result) > 0) 
+	if (mysqli_num_rows($result) > 0) 
 	{		
-		while ($row = mysql_fetch_assoc($result)) {
+		while ($row = mysqli_fetch_assoc($result)) {
 			$usuarioId = $row["id"];
 			$senha = $row["senha"];
 		}
@@ -21,12 +22,13 @@
 
 //md5($_POST["senha"])
 	$sql_query = sprintf("SELECT * FROM usuarios WHERE login = '%s' AND senha = '%s'", $_POST["login"], $_POST["senha"]);
-	$result = mysql_query($sql_query, $conn);
+	//$sql_query = sprintf("SELECT * FROM usuarios WHERE login = '%s' AND senha = '%s'", $_GET["login"], $_GET["senha"]);
+	$result = mysqli_query($conn, $sql_query);
 
-	if (mysql_num_rows($result) > 0) 
+	if (mysqli_num_rows($result) > 0) 
 	{
 		$usuario = array();
-		while ($row = mysql_fetch_assoc($result)) {
+		while ($row = mysqli_fetch_assoc($result)) {
 			$usuario['id'] 		= $row["id"];
 			$usuario['login'] 	= $row["login"];
 			$usuario['tipo'] 	= $row["tipo"];

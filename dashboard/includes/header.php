@@ -1,6 +1,9 @@
 <?php
-session_start();
-if ($_SESSION['currentUser'] == null)  Header("Location: /dashboard");
+  
+  session_start();
+  if (!isset($_SESSION['currentUser'])) Header("Location: /dashboard");
+  if ($_SESSION['currentUser'] == null) Header("Location: /dashboard");
+
 ?>
 
 <!DOCTYPE html>
