@@ -3,11 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Jun-2016 às 22:49
+-- Generation Time: 09-Jun-2016 às 15:35
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,6 +19,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `focco`
 --
+CREATE DATABASE IF NOT EXISTS `focco` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `focco`;
 
 -- --------------------------------------------------------
 
@@ -51,13 +54,21 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `ofertasPorEmail` bit(1) DEFAULT NULL,
   `infoWhatsapp` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Truncate table before insert `clientes`
 --
 
 TRUNCATE TABLE `clientes`;
+--
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `categoria`, `razaoSocial`, `tipoPessoa`, `cpfCnpj`, `dataNascimentoAbertura`, `inscricaoMunicipal`, `rgInscricaoEstadual`, `rgOrgaoExpedidor`, `rgDataExpedicao`, `sexo`, `nacionalidade`, `estadoCivil`, `nomeConjuge`, `dataNascimentoConjuge`, `nomeMae`, `nomePai`, `email`, `telFixo`, `telCelular`, `contraSenha`, `observacoes`, `ofertasPorEmail`, `infoWhatsapp`) VALUES
+(3, 3, 'tom', 'F', '14354288702', '0000-00-00 00:00:00', NULL, '', '', '0000-00-00 00:00:00', 'M', '', 1, '', '0000-00-00 00:00:00', 'Thompson', 'Garcia', 'thompson.garcia@workmotor.com', '1931141333', '1931141333', '', '', b'1', b'1'),
+(4, 3, 'jurandir', 'F', '14354288702', '1993-10-21 00:00:00', NULL, '', '', '1970-01-01 00:00:00', 'M', '', 1, '', '1970-01-01 00:00:00', '', '', '', '', '', '212121', '', b'1', b'1');
+
 -- --------------------------------------------------------
 
 --
@@ -5743,7 +5754,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) DEFAULT NULL,
   `telefone` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Truncate table before insert `usuarios`
@@ -5755,10 +5766,10 @@ TRUNCATE TABLE `usuarios`;
 --
 
 INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefone`) VALUES
-(1, 'tom', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Thom M Garcia', 'thom.blizz@gmail.com', '19996666380'),
-(2, 'pam', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Pamella', 'pamella.gaiguer@gmail.com', '11111111111'),
-(3, 'user03', 'e10adc3949ba59abbe56e057f20f883e', 2, 'user03', 'user03@gmail.com', '(19) 99666-6380'),
-(6, 'user04', 'REDEFINIR', 3, 'user04', 'user04@gmail.com', '(19) 99966-6380');
+(1, 'tom', 'paladino1', 1, 'Thom M Garcia', 'thom.blizz@gmail.com', '19996666380'),
+(2, 'pam', 'REDEFINIR', 2, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
+(3, 'user03', 'REDEFINIR', 3, 'user03', 'user03@gmail.com', '(19) 99666-6380'),
+(10, 'user04', 'paladino1', 3, 'user04', 'user04@user04.com', '(21) 21212-1212');
 
 --
 -- Constraints for dumped tables
