@@ -10,25 +10,25 @@ focco = {
 
 	loginFormPost: function(){
 
-		$("#form-login").submit(function(e){			
-			e.preventDefault();		
+		$("#form-login").submit(function(e){
+			e.preventDefault();
 			login = $("input#login", $(this)).val();
 			senha = $("input#senha", $(this)).val();
 
 			$.ajax({
-				url: "/dashboard/autenticar.php/",				
-				type: "post",								
+				url: "/dashboard/autenticar.php/",
+				type: "post",
 				data: {login, senha},
 				//error: function(data){alert(data);},
-				success: function(data){					
-					if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi autenticado");						
+				success: function(data){
+					if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi autenticado");
 					else if (JSON.parse(data).length > 10) window.location = JSON.parse(data);
 					else window.location = "/dashboard/home";
 				}
-				
+
 			});
-			
-	
+
+
 		});
 
 	},
@@ -36,23 +36,23 @@ focco = {
 	redefinirSenhaFormPost : function(){
 		$("#form-redefinir-senha").submit(function(e){
 
-			e.preventDefault();		
+			e.preventDefault();
 			id = $("input#id", $(this)).val();
 			senha = $("input#senha", $(this)).val();
-			
+
 			$.ajax({
-				url: "/dashboard/usuarios/redefinirSenhaPost.php/",				
-				type: "post",								
+				url: "/dashboard/usuarios/redefinirSenhaPost.php/",
+				type: "post",
 				data: {id, senha},
 				error: function(data){},
-				success: function(data){					
-					if (JSON.parse(data) == "nope") $("#form-erro").html("A senha não foi redefinida");						
+				success: function(data){
+					if (JSON.parse(data) == "nope") $("#form-erro").html("A senha não foi redefinida");
 					else window.location = "/dashboard";
 				}
-				
+
 			});
-			
-	
+
+
 		});
 	},
 
@@ -76,28 +76,28 @@ focco = {
 
 		$("#form-alterar-usuario").submit(function(e){
 
-			e.preventDefault();					
+			e.preventDefault();
 			id = $("input#id", $(this)).val();
-			nome = $("input#nome", $(this)).val();			
+			nome = $("input#nome", $(this)).val();
 			login = $("input#login", $(this)).val();
 			email = $("input#email", $(this)).val();
 			telefone = $("input#telefone", $(this)).val();
 			tipo = $("select#tipo", $(this)).val();
-			
+
 
 			$.ajax({
-				url: "/dashboard/usuarios/alterarPost.php/",				
-				type: "post",								
+				url: "/dashboard/usuarios/alterarPost.php/",
+				type: "post",
 				data: {id, nome, login, email, telefone, tipo},
 				error: function(data){},
 				success: function(data){
 					if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi alterado");
 					else window.location = "/dashboard/usuarios/";
 				}
-				
+
 			});
-			
-	
+
+
 		});
 
 	},
@@ -123,26 +123,26 @@ focco = {
 
 		$("#form-adicionar-usuario").submit(function(e){
 
-			e.preventDefault();								
-			nome = $("input#nome", $(this)).val();			
+			e.preventDefault();
+			nome = $("input#nome", $(this)).val();
 			login = $("input#login", $(this)).val();
 			email = $("input#email", $(this)).val();
 			telefone = $("input#telefone", $(this)).val();
-			tipo = $("select#tipo", $(this)).val();		
+			tipo = $("select#tipo", $(this)).val();
 
 			$.ajax({
-				url: "/dashboard/usuarios/adicionarPost.php/",				
-				type: "post",								
+				url: "/dashboard/usuarios/adicionarPost.php/",
+				type: "post",
 				data: {nome, login, email, telefone, tipo},
 				error: function(data){},
-				success: function(data){			
+				success: function(data){
 					if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi adicionado");
 					else window.location = "/dashboard/usuarios/";
 				}
-				
+
 			});
-			
-	
+
+
 		});
 
 	},
@@ -167,28 +167,28 @@ focco = {
 
 		$("#form-alterar-cliente").submit(function(e){
 
-			e.preventDefault();					
+			e.preventDefault();
 			id = $("input#id", $(this)).val();
-			nome = $("input#nome", $(this)).val();			
+			nome = $("input#nome", $(this)).val();
 			login = $("input#login", $(this)).val();
 			email = $("input#email", $(this)).val();
 			telefone = $("input#telefone", $(this)).val();
 			tipo = $("select#tipo", $(this)).val();
-			
+
 
 			$.ajax({
-				url: "/dashboard/clientes/alterarPost.php/",				
-				type: "post",								
+				url: "/dashboard/clientes/alterarPost.php/",
+				type: "post",
 				data: {id, nome, login, email, telefone, tipo},
 				error: function(data){},
 				success: function(data){
 					if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi alterado");
 					else window.location = "/dashboard/clientes/";
 				}
-				
+
 			});
-			
-	
+
+
 		});
 
 	},
@@ -214,7 +214,7 @@ focco = {
 
 		$("#form-adicionar-cliente").submit(function(e){
 
-			e.preventDefault();	
+			e.preventDefault();
 
 
 			tipoPessoa = $("input#tipoPessoa", $(this)).val();
@@ -237,29 +237,29 @@ focco = {
 			contraSenha = $("input#contraSenha", $(this)).val();
 			categoria = $("select#categoria", $(this)).val();
 			ofertasPorEmail = $("input#ofertasPorEmail", $(this)).is(":checked");
-			infoWhatsapp = $("input#infoWhatsapp", $(this)).is(":checked");			
+			infoWhatsapp = $("input#infoWhatsapp", $(this)).is(":checked");
 			observacoes = $("input#observacoes", $(this)).val();
-			
+
 
 			$.ajax({
-				url: "/dashboard/clientes/adicionarPost.php/",				
-				type: "post",								
+				url: "/dashboard/clientes/adicionarPost.php/",
+				type: "post",
 				data: {
-					tipoPessoa, razaoSocial, cpfCnpj, dataNascimento, 
+					tipoPessoa, razaoSocial, cpfCnpj, dataNascimento,
 					rg, rgOrgaoExpedidor, rgDataExpedicao, sexo, nacionalidade,
 					estadoCivil, nomeConjuge, dataNascimentoConjuge, nomeMae, nomePai,
 					email, telFixo, telCelular, contraSenha, categoria, ofertasPorEmail,
 					infoWhatsapp, observacoes
 				},
 				//error: function(data){},
-				success: function(data){			
+				success: function(data){
 					if (JSON.parse(data) == "nope") $("#form-erro").html("O cliente não foi cadastrado");
 					else window.location = "/dashboard/clientes/";
 				}
-				
+
 			});
-			
-	
+
+
 		});
 
 	}

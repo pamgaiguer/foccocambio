@@ -5,11 +5,11 @@
   <script src="/dashboard/scripts/materialize.min.js"></script>
   <script src="/dashboard/scripts/main.js"></script>
   <script>
-    
+
     $(document).ready(function(){
-      focco.sideNav();  
+      focco.sideNav();
       focco.loginFormPost();
-    });    
+    });
   </script>
   </body>
   </html>

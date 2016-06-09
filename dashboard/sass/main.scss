@@ -4,14 +4,21 @@
 header, main, footer {
   padding-left: 240px;
 }
+.title-forms{
+  padding-left: 10px;
+}
+
+.loginForm{
+  background-color: $light-gray;
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: $blue;
+}
 
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
   }
-}
-
-/*login page*/
-.loginForm{
-  background-color: $light-gray;
 }

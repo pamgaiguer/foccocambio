@@ -1,21 +1,24 @@
-<?php 
+<?php
 
 	include "../includes/header.php";
 	include "../core/database.php";
-	
+
 	$sql_query = sprintf("SELECT * FROM usuarios WHERE tipo > %s", $_SESSION['currentUser']['tipo']);
 	$result = mysql_query($sql_query, $conn);
-	
+
 
 	$rows = array();
 	while($row = mysql_fetch_array($result)) $rows[] = $row;
 ?>
-
+<main>
 <div class="row">
 	<div class="col s12">
-		
-	
-		<a href="/dashboard/usuarios/adicionar">Adicionar usuário</a>
+
+		<h4>Usuários</h4>
+<div class="section">
+
+		<a class="waves-effect waves-light btn bg-blue" href="/dashboard/usuarios/adicionar">Adicionar usuário <i class="material-icons right">person_add</i></a>
+</div>
 
 		<table class="striped responsive-table">
 			<thead>
@@ -33,12 +36,8 @@
 		<tbody>
 		<?php
 
-
-			
-
 			foreach($rows as $r){
-
-				echo 
+				echo
 				'<tr>
 					<td>'.$r["login"].'</td>
 					<td>'.$r["nome"].'</td>
@@ -49,16 +48,15 @@
 					<td><a href="/dashboard/usuarios/excluir?usuarioId='.$r["id"].'"><i class="material-icons">delete_forever</i></a></td>
 					<td><a href="/dashboard/usuarios/resetarSenha?usuarioId='.$r["id"].'"><i class="material-icons">lock_open</i></a></td>
 				</tr>';
-			}			
-
+			}
 		?>
 
 		</tbody>
-
 		</table>
-	</div>	
+	</div>
 </div>
+</main>
 
-<?php 
+<?php
 	include '../includes/footer.php';
 ?>

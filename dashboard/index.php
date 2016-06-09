@@ -33,7 +33,7 @@ include 'includes/header_index.php';
             </div>
 
             <div class="section">
-              <button class="btn right indigo darken-2 waves-effect waves-light" type="submit">
+              <button class="btn right bg-blue waves-effect waves-light" type="submit">
                 Entrar
                 <i class="material-icons right">send</i>
               </button>

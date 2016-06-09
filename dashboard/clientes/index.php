@@ -1,62 +1,59 @@
-<?php 
+<?php
 
-	include "../includes/header.php";
-	include "../core/database.php";
-	
-	$sql_query = "SELECT * FROM clientes";
-	$result = mysql_query($sql_query, $conn);
-	
+include "../includes/header.php";
+include "../core/database.php";
 
-	$rows = array();
-	while($row = mysql_fetch_array($result)) $rows[] = $row;
+$sql_query = "SELECT * FROM clientes";
+$result = mysql_query($sql_query, $conn);
+
+
+$rows = array();
+while($row = mysql_fetch_array($result)) $rows[] = $row;
 ?>
-
-<div class="row">
-	<div class="col s12">
-		
-	
-		<a href="/dashboard/clientes/adicionar">Adicionar cliente</a>
-
-		<table class="striped responsive-table">
-			<thead>
-			<tr>				
-				<th>Nome</th>
-				<th>Email</th>
-				<th>Telefone</th>
-				
-				<th></th>
-				<th></th>
-				
-			</tr>
-			</thead>
-		<tbody>
-		<?php
+<main>
+  <div class="row">
+    <div class="col s12">
+    <h4>Clientes</h4>
 
 
-			
+      <div class="section">
+        <a class="waves-effect waves-light btn bg-blue" href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">person_add</i></a>
+      </div>
 
-			foreach($rows as $r){
+      <table class="striped responsive-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach($rows as $r){
+            echo
+            '<tr>
+            <td>'.$r["razaoSocial"].'</td>
+            <td>'.$r["email"].'</td>
+            <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
 
-				echo 
-				'<tr>				
-					<td>'.$r["razaoSocial"].'</td>
-					<td>'.$r["email"].'</td>
-					<td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
-					
-					<td><a href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons">assignment</i></a></td>
-					<td><a href="/dashboard/clientes/excluir?clienteId='.$r["id"].'"><i class="material-icons">delete_forever</i></a></td>
-					
-				</tr>';
-			}			
+            <td><a href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons">assignment</i></a></td>
+            <td><a href="/dashboard/clientes/excluir?clienteId='.$r["id"].'"><i class="material-icons">delete_forever</i></a></td>
 
-		?>
+          </tr>';
+        }
 
-		</tbody>
+        ?>
 
-		</table>
-	</div>	
+      </tbody>
+
+    </table>
+  </div>
 </div>
+</main>
 
-<?php 
-	include '../includes/footer.php';
+<?php
+include '../includes/footer.php';
 ?>
