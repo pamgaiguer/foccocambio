@@ -1,4 +1,4 @@
 .settings/
 *.project
 dashboard/.sass-cache
-dashboard/core/*
+dashboard/core/
