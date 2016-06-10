@@ -1,4 +1,3 @@
-</div>
 
   <script src="/dashboard/scripts/jquery-2.2.4.min.js"></script>
   <script src="/dashboard/scripts/jquery.mask.min.js"></script>
