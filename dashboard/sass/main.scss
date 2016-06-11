@@ -9,10 +9,21 @@ header, main, footer {
 }
 body{
   color: $gray;
+  font-family: 'Avenir-Regular';
 }
 
 .loginForm{
   background-color: $light-gray;
+}
+.logo-bottom{
+  margin-top: -7px;
+
+  & img{
+    width: 80%;
+  }
+}
+.spacing{
+  padding-bottom: 25px;
 }
 
 .dropdown-content li > a,
@@ -22,6 +33,18 @@ body{
 
 blockquote {
   border-left: 5px solid $blue;
+}
+
+nav ul a, .side-nav.fixed a {
+    color: $gray;
+}
+
+table td a{
+  color: $blue;
+
+  &:hover, &.active{
+    color: rgba($blue, 0.6)
+  }
 }
 
 /* label color */

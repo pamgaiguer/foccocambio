@@ -49,5 +49,29 @@
   font-style: normal;
   font-weight: 700;
   src: local("Roboto Bold"), local("Roboto-Bold"), url(roboto/Roboto-Bold.woff2) format("woff2"); }
+@font-face {
+  font-family: 'Avenir-Regular';
+  src: url("/avenir/AvenirLTStd-Roman.eot");
+  src: url("avenir/AvenirLTStd-Roman.woff") format("woff"), url("avenir/AvenirLTStd-Roman.ttf") format("truetype"), url("avenir/AvenirLTStd-Roman.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir-Medium';
+  src: url("avenir/AvenirLTStd-Medium.eot");
+  src: url("avenir/AvenirLTStd-Medium.woff") format("woff"), url("avenir/AvenirLTStd-Medium.ttf") format("truetype"), url("avenir/AvenirLTStd-Medium.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir-Heavy';
+  src: url("avenir/AvenirLTStd-Heavy.eot");
+  src: url("avenir/AvenirLTStd-Heavy.woff") format("woff"), url("avenir/AvenirLTStd-Heavy.ttf") format("truetype"), url("avenir/AvenirLTStd-Heavy.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir-Black';
+  src: url("avenir/AvenirLTStd-Black.eot");
+  src: url("avenir/AvenirLTStd-Black.woff") format("woff"), url("avenir/AvenirLTStd-Black.ttf") format("truetype"), url("avenir/AvenirLTStd-Black.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 /*# sourceMappingURL=webfonts.css.map */

@@ -4,14 +4,18 @@ include 'includes/header_index.php';
 <div class="container">
   <div class="row">
     <div class="col s6 offset-s3">
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
+      <div class="spacing"></div>
       <div class="card-panel">
 
         <div class="section center">
-        <img src="images/logo_topo.png" alt="Focco Cambio">
-        <h5><em>Dashboard</em></h5>
+          <h5 class="blue-focco">Acesso ao <span class="font-semibold">Dashboard Focco Câmbio</span></h5>
         </div>
 
         <div class="section">
+
           <form action="" id="form-login">
 
             <div class="input-field">
@@ -31,6 +35,9 @@ include 'includes/header_index.php';
             </div>
 
             <div class="section">
+              <div class="left logo-bottom">
+                <img src="images/logo_topo.png" alt="focco cambio" class="responsive-image">
+              </div>
               <button class="btn right bg-blue waves-effect waves-light" type="submit">
                 Entrar
                 <i class="material-icons right">&#xE163;</i>
@@ -38,8 +45,6 @@ include 'includes/header_index.php';
             </div>
           </form>
         </div>
-
-
       </div>
     </div>
   </div>

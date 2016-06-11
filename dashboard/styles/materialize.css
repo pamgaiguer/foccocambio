@@ -6198,6 +6198,30 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   font-style: normal;
   font-weight: 700;
   src: local("Roboto Bold"), local("Roboto-Bold"), url(roboto/Roboto-Bold.woff2) format("woff2"); }
+@font-face {
+  font-family: 'Avenir-Regular';
+  src: url("/avenir/AvenirLTStd-Roman.eot");
+  src: url("avenir/AvenirLTStd-Roman.woff") format("woff"), url("avenir/AvenirLTStd-Roman.ttf") format("truetype"), url("avenir/AvenirLTStd-Roman.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir-Medium';
+  src: url("avenir/AvenirLTStd-Medium.eot");
+  src: url("avenir/AvenirLTStd-Medium.woff") format("woff"), url("avenir/AvenirLTStd-Medium.ttf") format("truetype"), url("avenir/AvenirLTStd-Medium.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir-Heavy';
+  src: url("avenir/AvenirLTStd-Heavy.eot");
+  src: url("avenir/AvenirLTStd-Heavy.woff") format("woff"), url("avenir/AvenirLTStd-Heavy.ttf") format("truetype"), url("avenir/AvenirLTStd-Heavy.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Avenir-Black';
+  src: url("avenir/AvenirLTStd-Black.eot");
+  src: url("avenir/AvenirLTStd-Black.woff") format("woff"), url("avenir/AvenirLTStd-Black.ttf") format("truetype"), url("avenir/AvenirLTStd-Black.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 .bg-transparent {
   background: transparent !important; }
 
@@ -6213,7 +6237,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .bg-yellow {
   background-color: #F4D400 !important; }
 
-.blue {
+.blue-focco {
   color: #15325c; }
 
 .yellow {
@@ -6272,10 +6296,19 @@ header, main, footer {
   padding-left: 10px; }
 
 body {
-  color: #525252; }
+  color: #525252;
+  font-family: 'Avenir-Regular'; }
 
 .loginForm {
   background-color: #f5f5f5; }
+
+.logo-bottom {
+  margin-top: -7px; }
+  .logo-bottom img {
+    width: 80%; }
+
+.spacing {
+  padding-bottom: 25px; }
 
 .dropdown-content li > a,
 .dropdown-content li > span {
@@ -6283,6 +6316,14 @@ body {
 
 blockquote {
   border-left: 5px solid #15325c; }
+
+nav ul a, .side-nav.fixed a {
+  color: #525252; }
+
+table td a {
+  color: #15325c; }
+  table td a:hover, table td a.active {
+    color: rgba(21, 50, 92, 0.6); }
 
 /* label color */
 .input-field label {
