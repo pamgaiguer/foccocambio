@@ -28,8 +28,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <th>Nome</th>
             <th>Email</th>
             <th>Telefone</th>
-            <th></th>
-            <th></th>
+            <th colspan="3"></th>            
           </tr>
         </thead>
         <tbody>
@@ -41,6 +40,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <td>'.$r["email"].'</td>
             <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
 
+            <td><a href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">assignment</i></a></td>
             <td><a href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>
             <td><a href="/dashboard/clientes/excluir?clienteId='.$r["id"].'"><i class="material-icons" title="Excluir cliente">&#xE92B;</i></a></td>
 

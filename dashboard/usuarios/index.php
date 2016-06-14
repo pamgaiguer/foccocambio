@@ -31,7 +31,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <th>Email</th>
             <th>Telefone</th>
             <th>Tipo</th>
-            <th colspan="3"></th>
+            <th colspan="4"></th>
           </tr>
         </thead>
         <tbody>
@@ -45,9 +45,10 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <td>'.$r["email"].'</td>
             <td>'.$r["telefone"].'</td>
             <td>'.($r["tipo"] == 2 ? "Admin" : "Usuário").'</td>
+            <td><a href="/dashboard/usuarios/visualizar?usuarioId='.$r["id"].'"><i class="material-icons" title="Visualizar usuaŕio">assignment</i></a></td>
             <td><a href="/dashboard/usuarios/alterar?usuarioId='.$r["id"].'"><i class="material-icons" title="Editar Usuário">&#xE3C9;</i></a></td>
             <td><a href="/dashboard/usuarios/excluir?usuarioId='.$r["id"].'"><i class="material-icons" title="Excluir usuário">&#xE92B;</i></a></td>
-            <td><a href="/dashboard/usuarios/resetarSenha?usuarioId='.$r["id"].'"><i class="material-icons" title="Resetar Senha">&#xE898;</i></a></td>
+            <td><a href="/dashboard/usuarios/resetarSenha?usuarioId='.$r["id"].'"><i class="material-icons" title="Resetar Senha">&#xE898;</i></a></td>            
           </tr>';
         }
         ?>

@@ -2,7 +2,7 @@
 
 $dbHost = "localhost";
 $dbUser = "root";
-$dbPwd = "root";
+$dbPwd = "paladino1";
 $dbName = "focco";
 
 $conn = mysqli_connect($dbHost, $dbUser, $dbPwd, $dbName);
