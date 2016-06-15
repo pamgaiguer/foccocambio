@@ -9,7 +9,7 @@
 	function TratarData($field){
 		return date('Y-m-d', strtotime($field));
 	}
-	
+		
 
 	$sql_query = sprintf("
 
@@ -44,13 +44,41 @@
 		);
 
 
+	$fileCpf = $_FILES["input-file-cpf"];
+	if ($fileCpf["size"] < 510000) {
+		
+		$info = pathinfo($fileCpf['name']);
+		$ext = $info['extension'];
+		$newname = "doc-cpf.".$ext; 
 
+		if (!is_dir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) 
+			mkdir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0755, true);
+
+		$target = '/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file( $fileCpf['tmp_name'], $target);
+	}
+
+	$fileRg = $_FILES["input-file-rg"];
+	if ($fileRg["size"] < 510000) {
+		
+		$info = pathinfo($fileRg['name']);
+		$ext = $info['extension'];
+		$newname = "doc-rg.".$ext; 
+
+		if (!is_dir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) 
+			mkdir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0755, true);
+
+		$target = '/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file( $fileRg['tmp_name'], $target);
+	}
 		
 	
 	//echo json_encode($sql_query);
 
-	if (mysqli_query($conn, $sql_query)) echo json_encode("ok");
-	else echo json_encode("nope");
+	echo json_encode($_POST["razaoSocial"]);
+
+	//if (mysqli_query($conn, $sql_query)) echo json_encode("ok");
+	//else echo json_encode("nope");
 
 ?>
 

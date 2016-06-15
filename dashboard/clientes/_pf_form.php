@@ -1,49 +1,50 @@
     <div id="div-pf" class="col s12">
-      <form action="adicionarPost.php" method="POST" class="form-group" id="form-adicionar-cliente">
+      <form action="adicionarPost.php" method="POST" class="form-group form-adicionar-cliente" id="form-adicionar-cliente-pf" enctype="multipart/form-data">
         <div class="row">
           <div class="col s12">
             <h5>Dados pessoais</h5>
           </div>
 
-          <input id="tipoPessoa" type="hidden" value="F"/>
+          <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F"/>
 
           <div class="row">
             <div class="input-field col s6">
-              <input id="razaoSocial" type="text" />
+              <input id="razaoSocial" name="razaoSocial" type="text" required />
               <label for="razaoSocial">Nome completo</label>
             </div>
 
             <div class="input-field col s6">
-              <input id="cpfCnpj" type="text" />
+              <input id="cpfCnpj" name="cpfCnpj" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
               <label for="cpfCnpj">C.P.F.</label>
+              <div id="validacaoCpf"></div>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s3">
-              <input id="dataNascimento" type="date" class="datepicker">
+              <input id="dataNascimento" name="dataNascimento" type="date" class="datepicker" required>
               <label for="dataNascimento">Data de Nascimento</label>
             </div>
 
             <div class="input-field col s3">
-              <input id="rg" type="text">
+              <input id="rg" name="rg" type="text" required>
               <label for="rg">R.G.</label>
             </div>
 
             <div class="input-field col s3">
-              <input id="rgOrgaoExpedidor" type="text">
+              <input id="rgOrgaoExpedidor" name="rgOrgaoExpedidor" type="text" required>
               <label for="rgOrgaoExpedidor">Orgão Expedidor</label>
             </div>
 
             <div class="input-field col s3">
-              <input id="rgDataExpedicao" type="date" class="datepicker">
+              <input id="rgDataExpedicao" name="rgDataExpedicao" type="date" class="datepicker" required>
               <label for="rgDataExpedicao">Data de Expedição</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s2">
-              <select id="sexo">
+              <select id="sexo" name="sexo">
                 <option value="M" selected>Masculino</option>
                 <option value="F">Feminino</option>
               </select>
@@ -51,12 +52,12 @@
             </div>
 
             <div class="input-field col s5">
-              <input id="nacionalidade" type="text">
+              <input id="nacionalidade" name="nacionalidade" type="text" required>
               <label for="nacionalidade">Nacionalidade</label>
             </div>
 
             <div class="input-field col s5">
-              <select id="estadoCivil">
+              <select id="estadoCivil" name="estadoCivil" required>
                 <option value="1" selected>Solteiro(a)</option>
                 <option value="2">Casado(a)</option>
                 <option value="3">Divorciado(a)</option>
@@ -71,12 +72,12 @@
           <div class="row">
             <div class="dados-conjuge" style="display: none">
               <div class="input-field col s6">
-                <input id="nomeConjuge" type="text" />
+                <input id="nomeConjuge" name="nomeConjuge" type="text">
                 <label for="nomeConjuge">Nome do Cônjuge</label>
               </div>
 
               <div class="input-field col s6">
-                <input id="dataNascimentoConjuge" type="date" class="datepicker">
+                <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="date" class="datepicker">
                 <label for="nomeConjuge">Data de Nascimento Cônjuge</label>
               </div>
             </div>
@@ -84,40 +85,40 @@
 
           <div class="row">
             <div class="input-field col s6">
-              <input id="nomeMae" type="text">
+              <input id="nomeMae" name="nomeMae" type="text" required>
               <label for="nomeMae">Nome da mãe</label>
             </div>
 
             <div class="input-field col s6">
-              <input id="nomePai" type="text">
+              <input id="nomePai" name="nomePai" type="text" required>
               <label for="nomePai">Nome do Pai</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s6">
-              <input id="email" type="email">
+              <input id="email" name="email" type="email" required>
               <label for="email">E-mail</label>
             </div>
             <div class="input-field col s3">
-              <input id="telFixo" class="telefone" pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel">
+              <input id="telFixo" name="telFixo" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel">
               <label for="telFixo">Telefone fixo</label>
 
             </div>
             <div class="input-field col s3">
-              <input id="telCelular" class="telefone" pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel">
+              <input id="telCelular" name="telCelular" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel">
               <label for="telCelular">Telefone Celular</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s3">
-              <input id="contraSenha" type="text">
+              <input id="contraSenha" name="contraSenha" type="text">
               <label for="contraSenha">Contra-senha</label>
             </div>
 
             <div class="input-field col s3">
-              <select name="categoria" id="categoria">
+              <select name="categoria" required id="categoria">
                 <option value="1" selected>Focco</option>
                 <option value="2">Vision</option>
                 <option value="3">PF Premium</option>
@@ -126,19 +127,19 @@
             </div>
 
             <div class="input-field col s3">
-              <input id="ofertasPorEmail" type="checkbox" class="filled-in">
+              <input id="ofertasPorEmail" name="ofertasPorEmail" type="checkbox" class="filled-in">
               <label for="ofertasPorEmail">Ofertas por email</label>
             </div>
 
             <div class="input-field col s3">
-              <input id="infoWhatsapp" type="checkbox" class="filled-in">
+              <input id="infoWhatsapp" name="infoWhatsapp" type="checkbox" class="filled-in">
               <label for="infoWhatsapp">Informações Whatsapp</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="observacoes" class="materialize-textarea" length="120"></textarea>
+              <textarea id="observacoes" name="observacoes" class="materialize-textarea" length="120"></textarea>
               <label for="observacoes">Observações</label>
             </div>
           </div>
@@ -150,28 +151,110 @@
             <br>
             <em>Colocar cada botão para documento ou colocar um input para multiplos arquivos?</em>
             </div>
-            <div class="col s6">
+
+            <div class="col s6 div-input-file-cpf">
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C.P.F.</span>
-                  <input type="file">
+                  <input type="file" id="input-file-cpf" name="input-file-cpf">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
                 </div>
               </div>
             </div>
-            <div class="col s6">
+
+            <div class="col s6 div-input-file-rg">
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>RG</span>
-                  <input type="file">
+                  <input type="file" id="input-file-rg" name="input-file-rg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
                 </div>
               </div>
             </div>
+
+            <div class="col s6 div-input-file-cr">
+              <div class="file-field input-field">
+                <div class="btn bg-blue">
+                  <span>C. R.</span>
+                  <input type="file" id="input-file-cr" 
+                  name="input-file-cr" title="Comprovante de residência">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s6 div-input-file-ff" style="display: none;">
+              <div class="file-field input-field">
+                <div class="btn bg-blue">
+                  <span>F. F.</span>
+                  <input type="file" id="input-file-ff" 
+                  name="input-file-ff" title="Ficha cadastral focco">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s6 div-input-file-ir" style="display: none;">
+              <div class="file-field input-field">
+                <div class="btn bg-blue">
+                  <span>I. R.</span>
+                  <input type="file" id="input-file-ir" 
+                  name="input-file-ir" title="Declaração do imposto de renda">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s6 div-input-file-ca" style="display: none;">
+              <div class="file-field input-field">
+                <div class="btn bg-blue">
+                  <span>C. A.</span>
+                  <input type="file" id="input-file-ca" 
+                  name="input-file-ca" title="Cartão de assinatura">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s6 div-input-file-cps" style="display: none;">
+              <div class="file-field input-field">
+                <div class="btn bg-blue">
+                  <span>C. P. S.</span>
+                  <input type="file" id="input-file-cps" 
+                  name="input-file-cps" title="Contrato de prestação de serviços">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s6 div-input-file-pv" style="display: none;">
+              <div class="file-field input-field">
+                <div class="btn bg-blue">
+                  <span>P. V.</span>
+                  <input type="file" id="input-file-pv" 
+                  name="input-file-pv" title="Procuração para a Vision">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </div>
+
+
           </div>
 
           <div class="row">
@@ -182,43 +265,43 @@
 
          <div class="row">
           <div class="input-field col s3">
-            <input id="cep" type="text">
-            <label for="cep">CEP</label>
+            <input id="cep-residencial" type="text" required>
+            <label for="cep-residencial">CEP</label>
           </div>
           <div class="input-field col s9">
-            <input id="logradouro" type="text">
-            <label for="logradouro">Logradouro</label>
+            <input id="logradouro-residencial" type="text" required>
+            <label for="logradouro-residencial">Logradouro</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="numero" type="text">
-            <label for="numero">Número</label>
+            <input id="numero-residencial" type="text" required>
+            <label for="numero-residencial">Número</label>
           </div>
           <div class="input-field col s4">
-            <input id="complemento" type="text">
-            <label for="complemento">Complemento</label>
+            <input id="complemento-residencial" type="text" >
+            <label for="complemento-residencial">Complemento</label>
           </div>
           <div class="input-field col s4">
-            <input id="bairro" type="text">
-            <label for="bairro">Bairro</label>
+            <input id="bairro-residencial" type="text" required>
+            <label for="bairro-residencial">Bairro</label>
           </div>
         </div>
 
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="cidade" type="text">
-            <label for="cidade">Cidade</label>
+            <input id="cidade-residencial" type="text" required>
+            <label for="cidade-residencial">Cidade</label>
+          </div>
+          <div class="input-field col s4" >
+            <input id="UF-residencial" type="text" required>
+            <label for="UF-residencial">UF</label>
           </div>
           <div class="input-field col s4">
-            <input id="UF" type="text">
-            <label for="UF">UF</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="pais" type="text">
-            <label for="pais">País</label>
+            <input id="pais-residencial" type="text" required>
+            <label for="pais-residencial">País</label>
           </div>
         </div>
 
@@ -235,45 +318,48 @@
          </div>
        </div>
 
-       <div class="row">
-        <div class="input-field col s3">
-          <input id="cep" type="text">
-          <label for="cep">CEP</label>
+       <div id="div-endereco-entrega">
+       
+         <div class="row">
+          <div class="input-field col s3">
+            <input id="cep-entrega" type="text">
+            <label for="cep-entrega">CEP</label>
+          </div>
+          <div class="input-field col s9">
+            <input id="logradouro-entrega" type="text">
+            <label for="logradouro-entrega">Logradouro</label>
+          </div>
         </div>
-        <div class="input-field col s9">
-          <input id="logradouro" type="text">
-          <label for="logradouro">Logradouro</label>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="input-field col s4">
-          <input id="numero" type="text">
-          <label for="numero">Número</label>
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="numero-entrega" type="text">
+            <label for="numero-entrega">Número</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="complemento-entrega" type="text">
+            <label for="complemento-entrega">Complemento</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="bairro-entrega" type="text">
+            <label for="bairro-entrega">Bairro</label>
+          </div>
         </div>
-        <div class="input-field col s4">
-          <input id="complemento" type="text">
-          <label for="complemento">Complemento</label>
-        </div>
-        <div class="input-field col s4">
-          <input id="bairro" type="text">
-          <label for="bairro">Bairro</label>
-        </div>
-      </div>
 
 
-      <div class="row">
-        <div class="input-field col s4">
-          <input id="cidade" type="text">
-          <label for="cidade">Cidade</label>
-        </div>
-        <div class="input-field col s4">
-          <input id="UF" type="text">
-          <label for="UF">UF</label>
-        </div>
-        <div class="input-field col s4">
-          <input id="pais" type="text">
-          <label for="pais">País</label>
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="cidade-entrega" type="text">
+            <label for="cidade-entrega">Cidade</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="UF-entrega" type="text">
+            <label for="UF-entrega">UF</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="pais-entrega" type="text">
+            <label for="pais-entrega">País</label>
+          </div>
         </div>
       </div>
 
@@ -317,7 +403,7 @@
 
 
      <div class="col s12">
-      <input type="submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
+      <input type="submit" id="input-submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
     </div>
 
   </div>

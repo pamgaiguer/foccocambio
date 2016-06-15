@@ -24,6 +24,5 @@ include "../includes/footer.php";
 ?>
 
 <script>
-  focco.adicionarClienteFormPost();
-  $('textarea#observacoes').characterCounter();
+  focco.adicionarClienteFormPost();  
 </script>

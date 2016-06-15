@@ -196,6 +196,8 @@ focco = {
 
   adicionarClienteFormPost: function(){
 
+    $('textarea#observacoes').characterCounter();
+
     $('ul.tabs').tabs();
       $('select').material_select();
 
@@ -221,12 +223,116 @@ focco = {
     $("#telFixo").mask("(99) 9999-9999");
     $("#telCelular").mask("(99) 99999-9999");
 
+    $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
+      
+      var cpf = $(this).val();     
 
-    $("#form-adicionar-cliente").submit(function(e){
+      $.ajax({
+        url: "/dashboard/clientes/methods/validarCpf",
+        data: { cpf },
+        type: "post",
+        success: function(data){
+          if (!JSON.parse(data)){
+            $("#input-submit").parent().addClass("disabled");
+            $("#validacaoCpf").html("O CPF informado não é válido para cadastro.");
+          } else {
+            $("#validacaoCpf").html("");
+            $("#input-submit").parent().removeClass("disabled");
+          }
+        }
+
+      });
+    });
+
+    $("#categoria").change(function(){
+      categoriaId = $(this).val();
+
+      if (categoriaId == 1){
+        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
+        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
+        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").removeAttr("required")});
+        $(".div-input-file-ff").fadeOut(300, function(){$("#input-file-ff").removeAttr("required")});
+        $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
+        $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
+        $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
+        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});        
+      } else if (categoriaId == 2){
+        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
+        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
+        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
+        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});        
+        $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
+        $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
+        $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
+        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});        
+      } else if (categoriaId == 3){
+        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
+        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
+        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
+        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});        
+        $(".div-input-file-ir").fadeIn(300, function(){$("#input-file-ir").attr("required", "required")});
+        $(".div-input-file-ca").fadeIn(300, function(){$("#input-file-ca").attr("required", "required")});
+        $(".div-input-file-cps").fadeIn(300, function(){$("#input-file-cps").attr("required", "required")});
+        $(".div-input-file-pv").fadeIn(300, function(){$("#input-file-pv").attr("required", "required")});        
+      }
+
+    });
+
+    
+
+    $("#cep-residencial").change(function(){
+      cep = $(this).val();
+
+      $.ajax({
+        url: "http://api.postmon.com.br/v1/cep/" + cep,
+        type: "get",
+        success: function(data){
+          console.log(data);
+          $("#logradouro-residencial").val(data.logradouro);
+          $("#bairro-residencial").val(data.bairro);
+          $("#cidade-residencial").val(data.cidade);
+          $("#UF-residencial").val(data.estado);
+          $("#pais-residencial").val("Brasil");
+        }
+      });
+    });
+
+    $("#filled-in-box").click(function(){
+      if ($(this).is(":checked")) {
+        $("#cep-entrega").val($("#cep-residencial").val());        
+        $("#logradouro-entrega").val($("#logradouro-residencial").val());
+        $("#numero-entrega").val($("#numero-residencial").val());
+        $("#complemento-entrega").val($("#complemento-residencial").val());
+        $("#bairro-entrega").val($("#bairro-residencial").val());
+        $("#cidade-entrega").val($("#cidade-residencial").val());
+        $("#UF-entrega").val($("#UF-residencial").val());
+        $("#pais-entrega").val($("#pais-residencial").val());      
+      }
+    
+    });
+
+    $("#cep-entrega").change(function(){
+      cep = $(this).val();
+
+      $.ajax({
+        url: "http://api.postmon.com.br/v1/cep/" + cep,
+        type: "get",
+        success: function(data){
+          console.log(data);
+          $("#logradouro-entrega").val(data.logradouro);
+          $("#bairro-entrega").val(data.bairro);
+          $("#cidade-entrega").val(data.cidade);
+          $("#UF-entrega").val(data.estado);
+          $("#pais-entrega").val("Brasil");
+        }
+      });
+    });
+
+    $("#form-adicionar-cliente-pf").submit(function(e){
 
       e.preventDefault();
 
-
+      /*
       tipoPessoa = $("input#tipoPessoa", $(this)).val();
       razaoSocial = $("input#razaoSocial", $(this)).val();
       cpfCnpj = $("input#cpfCnpj", $(this)).val();
@@ -251,24 +357,29 @@ focco = {
       observacoes = $("textarea#observacoes", $(this)).val();
 
 
-      $.ajax({
+      tipoPessoa, razaoSocial, cpfCnpj, dataNascimento,
+      rg, rgOrgaoExpedidor, rgDataExpedicao, sexo, nacionalidade,
+      estadoCivil, nomeConjuge, dataNascimentoConjuge, nomeMae, nomePai,
+      email, telFixo, telCelular, contraSenha, categoria, ofertasPorEmail,
+      infoWhatsapp, observacoes
+      */
+      
+      var form_data = new FormData($("#form-adicionar-cliente-pf"));
+
+      console.log(form_data);
+      
+
+      /*$.ajax({
         url: "/dashboard/clientes/adicionarPost.php/",
         type: "post",
-        data: {
-          tipoPessoa, razaoSocial, cpfCnpj, dataNascimento,
-          rg, rgOrgaoExpedidor, rgDataExpedicao, sexo, nacionalidade,
-          estadoCivil, nomeConjuge, dataNascimentoConjuge, nomeMae, nomePai,
-          email, telFixo, telCelular, contraSenha, categoria, ofertasPorEmail,
-          infoWhatsapp, observacoes
-        },
+        data: { form_data },
         //error: function(data){},
         success: function(data){alert(data);
           if (JSON.parse(data) == "nope") $("#form-erro").html("O cliente não foi cadastrado");
           else window.location = "/dashboard/clientes/";
         }
 
-      });
-
+      });*/
 
     });
 
