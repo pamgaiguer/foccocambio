@@ -87,6 +87,9 @@ CREATE TABLE IF NOT EXISTS `enderecoscliente` (
   `municipioId` int(11) DEFAULT NULL,
   `estadoId` int(11) DEFAULT NULL,
   `paisId` int(11) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `estado` varchar(100) DEFAULT NULL,
+
   PRIMARY KEY (`id`),
   KEY `clienteId` (`clienteId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

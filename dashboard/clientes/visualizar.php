@@ -109,6 +109,43 @@ foreach($rows as $r){
 
           <h1><?php echo $infoWhatsapp ?></h1>
 
+          <br>
+          <h1>enderecos</h1><hr>
+          <?php          
+
+          $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s", $_GET['clienteId']);
+          $result = mysqli_query($conn, $sql_query);
+
+          $rows = array();
+          while($row = mysqli_fetch_array($result)) $rows[] = $row;  
+
+          foreach($rows as $r){           
+
+            $tipo = $r['tipo'];
+            $cep = $r['cep'];
+            $endereco = $r['endereco'];
+            $complemento = $r['complemento'];
+            $bairro = $r['bairro'];
+            $cidade = $r['cidade'];
+            $estado = $r['estado'];
+            $pais = $r['pais']; 
+
+            echo '<h2>'.($tipo == 2 ? "Entrega" : "Residencial").'</h2>';
+            echo '<h2>'.$endereco.'</h2>';
+            echo '<h2>'.$complemento.'</h2>';
+            echo '<h2>'.$bairro.'</h2>';
+            echo '<h2>'.$cidade.'</h2>';
+            echo '<h2>'.$estado.'</h2>';
+            echo '<h2>'.$pais.'</h2>';
+
+            echo '<hr>';
+
+          }
+          ?>
+
+    
+    
+
 
 
 
@@ -122,4 +159,5 @@ foreach($rows as $r){
 <?php
 include "../includes/footer.php";
 ?>
+
 
