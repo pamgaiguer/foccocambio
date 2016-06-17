@@ -54,7 +54,8 @@ foreach($rows as $r){
             <h5>Dados pessoais</h5>
           </div>
 
-          <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F"/>
+          <input id="clienteId" name="clienteId" type="hidden" value="<?php echo $id ?>" />
+          <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F" />
 
           <div class="row">
             <div class="input-field col s6">
@@ -119,7 +120,7 @@ foreach($rows as $r){
           </div>
 
           <div class="row">
-            <div class="dados-conjuge" style="display: none">
+            <div class="dados-conjuge" <?php echo ($estadoCivil != '2' ? "style='display: none;'" : "") ?>>
               <div class="input-field col s6">
                 <input id="nomeConjuge" name="nomeConjuge" type="text" value= <?php echo $nomeConjuge ?> >
                 <label for="nomeConjuge">Nome do Cônjuge</label>
@@ -134,28 +135,28 @@ foreach($rows as $r){
 
           <div class="row">
             <div class="input-field col s6">
-              <input id="nomeMae" name="nomeMae" type="text" required value= <?php echo $nomeMae ?>>
+              <input id="nomeMae" name="nomeMae" type="text" required value='<?php echo $nomeMae ?>'>
               <label for="nomeMae">Nome da mãe</label>
             </div>
 
             <div class="input-field col s6">
-              <input id="nomePai" name="nomePai" type="text" required value= <?php echo $nomePai ?>>
+              <input id="nomePai" name="nomePai" type="text" required value='<?php echo $nomePai ?>'>
               <label for="nomePai">Nome do Pai</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s6">
-              <input id="email" name="email" type="email" required value= <?php echo $email ?>>
+              <input id="email" name="email" type="email" required value='<?php echo $email ?>'>
               <label for="email">E-mail</label>
             </div>
             <div class="input-field col s3">
-              <input id="telFixo" name="telFixo" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" value= <?php echo $telFixo ?>>
+              <input id="telFixo" name="telFixo" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" value='<?php echo $telFixo ?>'>
               <label for="telFixo">Telefone fixo</label>
 
             </div>
             <div class="input-field col s3">
-              <input id="telCelular" name="telCelular" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" value= <?php echo $telCelular ?>>
+              <input id="telCelular" name="telCelular" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" value='<?php echo $telCelular ?>' >
               <label for="telCelular">Telefone Celular</label>
             </div>
           </div>
@@ -238,7 +239,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-ff" style="display: none;">
+            <div class="col s6 div-input-file-ff" <?php echo ($categoria == 1 ? "style='display: none;'" : "") ?> >
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>F. F.</span>
@@ -251,7 +252,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-ir" style="display: none;">
+            <div class="col s6 div-input-file-ir" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>I. R.</span>
@@ -264,7 +265,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-ca" style="display: none;">
+            <div class="col s6 div-input-file-ca" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. A.</span>
@@ -277,7 +278,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-cps" style="display: none;">
+            <div class="col s6 div-input-file-cps" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. P. S.</span>
@@ -290,7 +291,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-pv" style="display: none;">
+            <div class="col s6 div-input-file-pv" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>P. V.</span>
@@ -310,38 +311,22 @@ foreach($rows as $r){
 
           <?php
             
-            $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE id = %s", $_GET['clienteId']);
+            $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 1);
             $result = mysqli_query($conn, $sql_query);
-
             $rows = array();
             while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
-            foreach($rows as $r){
-              $id = $r['id'];
-              $categoria = $r['categoria'];
-              $nome = $r['razaoSocial'];
-              $tipo = $r['tipoPessoa'];
-              $cpfCnpj = $r['cpfCnpj'];
-              $dataNascimentoAbertura = $r['dataNascimentoAbertura'];
-              $rgInscricaoEstadual = $r['rgInscricaoEstadual'];
-              $rgOrgaoExpedidor = $r['rgOrgaoExpedidor'];
-              $rgDataExpedicao = $r['rgDataExpedicao'];
-              $sexo = $r['sexo'];
-              $nacionalidade = $r['nacionalidade'];
-              $estadoCivil = $r['estadoCivil'];
-              $nomeConjuge = $r['nomeConjuge'];
-              $dataNascimentoConjuge = $r['dataNascimentoConjuge'];
-              $nomeMae = $r['nomeMae'];
-              $nomePai = $r['nomePai'];
-              $email = $r['email'];
-              $telFixo = $r['telFixo'];
-              $telCelular = $r['telCelular'];
-              $contraSenha = $r['contraSenha'];
-              $observacoes = $r['observacoes'];
-              $ofertasPorEmail = $r['ofertasPorEmail'];
-              $infoWhatsapp = $r['infoWhatsapp'];  
-
-          }
+            foreach($rows as $r){              
+              $tipo = $r['tipo'];
+              $cep = $r['cep'];
+              $endereco = $r['endereco'];
+              $numero = $r['numero'];
+              $complemento = $r['complemento'];
+              $bairro = $r['bairro'];
+              $cidade = $r['cidade'];
+              $estado = $r['estado'];
+              $pais = $r['pais'];
+            }
           ?>
 
 
@@ -355,26 +340,26 @@ foreach($rows as $r){
 
          <div class="row">
           <div class="input-field col s3">
-            <input id="cep-residencial" name="cep-residencial" type="text" required>
+            <input id="cep-residencial" name="cep-residencial" type="text" required value='<?php echo $cep ?>' >
             <label for="cep-residencial">CEP</label>
           </div>
           <div class="input-field col s9">
-            <input id="logradouro-residencial" name="logradouro-residencial" type="text" required>
+            <input id="logradouro-residencial" name="logradouro-residencial" type="text" required value='<?php echo $endereco ?>' >
             <label for="logradouro-residencial">Logradouro</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="numero-residencial" name="numero-residencial" type="text" required>
+            <input id="numero-residencial" name="numero-residencial" type="text" required value='<?php echo $numero ?>'>
             <label for="numero-residencial">Número</label>
           </div>
           <div class="input-field col s4">
-            <input id="complemento-residencial" name="complemento-residencial" type="text" >
+            <input id="complemento-residencial" name="complemento-residencial" type="text" value='<?php echo $complemento ?>'>
             <label for="complemento-residencial">Complemento</label>
           </div>
           <div class="input-field col s4">
-            <input id="bairro-residencial" name="bairro-residencial" type="text" required>
+            <input id="bairro-residencial" name="bairro-residencial" type="text" required value='<?php echo $bairro ?>'>
             <label for="bairro-residencial">Bairro</label>
           </div>
         </div>
@@ -382,18 +367,43 @@ foreach($rows as $r){
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="cidade-residencial" name="cidade-residencial" type="text" required>
+            <input id="cidade-residencial" name="cidade-residencial" type="text" required value='<?php echo $cidade ?>'>
             <label for="cidade-residencial">Cidade</label>
           </div>
           <div class="input-field col s4" >
-            <input id="UF-residencial" name="UF-residencial" type="text" required>
+            <input id="UF-residencial" name="UF-residencial" type="text" required value='<?php echo $estado ?>'>
             <label for="UF-residencial">UF</label>
           </div>
           <div class="input-field col s4">
-            <input id="pais-residencial" name="pais-residencial" type="text" required>
+            <input id="pais-residencial" name="pais-residencial" type="text" required value='<?php echo $pais ?>'>
             <label for="pais-residencial">País</label>
           </div>
         </div>
+
+
+
+        <?php
+        
+          $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 2);
+          $result = mysqli_query($conn, $sql_query);
+          $rows = array();
+          while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+          foreach($rows as $r){              
+            $tipo = $r['tipo'];
+            $cep = $r['cep'];
+            $endereco = $r['endereco'];
+            $numero = $r['numero'];
+            $complemento = $r['complemento'];
+            $bairro = $r['bairro'];
+            $cidade = $r['cidade'];
+            $estado = $r['estado'];
+            $pais = $r['pais'];
+          }
+        ?>
+
+
+
 
         <div class="row">
           <div class="col s12">
@@ -412,26 +422,26 @@ foreach($rows as $r){
        
          <div class="row">
           <div class="input-field col s3">
-            <input id="cep-entrega" name="cep-entrega" type="text">
+            <input id="cep-entrega" name="cep-entrega" type="text" value='<?php echo $cep ?>'>
             <label for="cep-entrega">CEP</label>
           </div>
           <div class="input-field col s9">
-            <input id="logradouro-entrega" name="logradouro-entrega" type="text">
+            <input id="logradouro-entrega" name="logradouro-entrega" type="text" value='<?php echo $endereco ?>'>
             <label for="logradouro-entrega">Logradouro</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="numero-entrega" name="numero-entrega" type="text">
+            <input id="numero-entrega" name="numero-entrega" type="text" value='<?php echo $numero ?>'>
             <label for="numero-entrega">Número</label>
           </div>
           <div class="input-field col s4">
-            <input id="complemento-entrega" name="complemento-entrega" type="text">
+            <input id="complemento-entrega" name="complemento-entrega" type="text" value='<?php echo $complemento ?>'>
             <label for="complemento-entrega">Complemento</label>
           </div>
           <div class="input-field col s4">
-            <input id="bairro-entrega" name="bairro-entrega" type="text">
+            <input id="bairro-entrega" name="bairro-entrega" type="text" value='<?php echo $bairro ?>'>
             <label for="bairro-entrega">Bairro</label>
           </div>
         </div>
@@ -439,15 +449,15 @@ foreach($rows as $r){
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="cidade-entrega" name="cidade-entrega" type="text">
+            <input id="cidade-entrega" name="cidade-entrega" type="text" value='<?php echo $cidade ?>'>
             <label for="cidade-entrega">Cidade</label>
           </div>
           <div class="input-field col s4">
-            <input id="UF-entrega" name="UF-entrega" type="text">
+            <input id="UF-entrega" name="UF-entrega" type="text" value='<?php echo $estado ?>'>
             <label for="UF-entrega">UF</label>
           </div>
           <div class="input-field col s4">
-            <input id="pais-entrega" name="pais-entrega" type="text">
+            <input id="pais-entrega" name="pais-entrega" type="text" value='<?php echo $pais ?>'>
             <label for="pais-entrega">País</label>
           </div>
         </div>
@@ -493,7 +503,7 @@ foreach($rows as $r){
 
 
      <div class="col s12">
-      <input type="submit" id="input-submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
+      <input type="submit" id="input-submit" value="Alterar" class="waves-effect waves-light btn bg-blue right" />
     </div>
 
   </div>

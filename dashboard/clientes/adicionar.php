@@ -93,7 +93,7 @@ include "../includes/header.php";
 
               <div class="input-field col s6">
                 <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="date" class="datepicker">
-                <label for="nomeConjuge">Data de Nascimento Cônjuge</label>
+                <label for="dataNascimentoConjuge">Data de Nascimento Cônjuge</label>
               </div>
             </div>
           </div>

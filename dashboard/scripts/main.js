@@ -148,76 +148,44 @@ focco = {
 
   },
 
-  alterarClienteFormPost: function(){
-    $("#telefone")
-    .mask("(99) 99999-9999")
-    .on("change", function() {
-
-        var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
-
-        if( last.length == 3 ) {
-            var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
-            var lastfour = move + last;
-            var first = $(this).val().substr( 0, 9 ); // Change 9 to 8 if you prefer mask without space: (99)9999?9-9999
-
-            $(this).val( first + '-' + lastfour );
-        }
-    })
-    .change();
-
-
-    $("#form-alterar-cliente").submit(function(e){
-
-      e.preventDefault();
-      id = $("input#id", $(this)).val();
-      nome = $("input#nome", $(this)).val();
-      login = $("input#login", $(this)).val();
-      email = $("input#email", $(this)).val();
-      telefone = $("input#telefone", $(this)).val();
-      tipo = $("select#tipo", $(this)).val();
-
-
-      $.ajax({
-        url: "/dashboard/clientes/alterarPost.php/",
-        type: "post",
-        data: {id, nome, login, email, telefone, tipo},
-        error: function(data){},
-        success: function(data){
-          if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi alterado");
-          else window.location = "/dashboard/clientes/";
-        }
-
-      });
-
-
-    });
-
-  },
 
   adicionarClienteFormPost: function(){
 
     $('textarea#observacoes').characterCounter();
 
     $('ul.tabs').tabs();
-      $('select').material_select();
+    $('select').material_select();
 
-      $('.datepicker').pickadate({
-        labelMonthNext: 'Próximo',
-        labelMonthPrev: 'Anterior',
-        labelMonthSelect: 'Selecione um mês',
-        labelYearSelect: 'Selecione um ano',
-        monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-        monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
-        weekdaysFull: [ 'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ],
-        weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
-        weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
-        today: 'Hoje',
-        clear: 'Limpar',
-        close: 'Fechar',
-        selectMonths: true,
-        selectYears: 200,
-        format: 'dd-mm-yyyy'
-      });
+    $('.datepicker').pickadate({
+      labelMonthNext: 'Próximo',
+      labelMonthPrev: 'Anterior',
+      labelMonthSelect: 'Selecione um mês',
+      labelYearSelect: 'Selecione um ano',
+      monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
+      monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+      weekdaysFull: [ 'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ],
+      weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
+      weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
+      today: 'Hoje',
+      clear: 'Limpar',
+      close: 'Fechar',
+      selectMonths: true,
+      selectYears: 200,
+      format: 'dd-mm-yyyy'
+    });
+
+
+    $("#estadoCivil").change(function(){
+      if ($(this).val() == 2){
+        $(".dados-conjuge").fadeIn(300);
+        $("#nomeConjuge").attr("required", "required");
+        $("#dataNascimentoConjuge").attr("required", "required");
+      } else {
+        $(".dados-conjuge").fadeOut(300);
+        $("#nomeConjuge").removeAttr("required");
+        $("#dataNascimentoConjuge").removeAttr("required");
+      }
+    });
 
 
     $("#telFixo").mask("(99) 9999-9999");
@@ -377,7 +345,19 @@ focco = {
         selectMonths: true,
         selectYears: 200,
         format: 'dd-mm-yyyy'
-      });
+    });
+
+    $("#estadoCivil").change(function(){
+      if ($(this).val() == 2){
+        $(".dados-conjuge").fadeIn(300);
+        $("#nomeConjuge").attr("required", "required");
+        $("#dataNascimentoConjuge").attr("required", "required");
+      } else {
+        $(".dados-conjuge").fadeOut(300);
+        $("#nomeConjuge").removeAttr("required");
+        $("#dataNascimentoConjuge").removeAttr("required");
+      }
+    });
 
 
     $("#telFixo").mask("(99) 9999-9999");
@@ -408,32 +388,32 @@ focco = {
       categoriaId = $(this).val();
 
       if (categoriaId == 1){
-        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
-        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
-        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").removeAttr("required")});
-        $(".div-input-file-ff").fadeOut(300, function(){$("#input-file-ff").removeAttr("required")});
-        $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
-        $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
-        $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
-        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});        
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeOut(300);
+        $(".div-input-file-ir").fadeOut(300);
+        $(".div-input-file-ca").fadeOut(300);
+        $(".div-input-file-cps").fadeOut(300);
+        $(".div-input-file-pv").fadeOut(300);
       } else if (categoriaId == 2){
-        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
-        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
-        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
-        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});        
-        $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
-        $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
-        $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
-        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});        
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeIn(300);
+        $(".div-input-file-ir").fadeOut(300);
+        $(".div-input-file-ca").fadeOut(300);
+        $(".div-input-file-cps").fadeOut(300);
+        $(".div-input-file-pv").fadeOut(300);
       } else if (categoriaId == 3){
-        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
-        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
-        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
-        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});        
-        $(".div-input-file-ir").fadeIn(300, function(){$("#input-file-ir").attr("required", "required")});
-        $(".div-input-file-ca").fadeIn(300, function(){$("#input-file-ca").attr("required", "required")});
-        $(".div-input-file-cps").fadeIn(300, function(){$("#input-file-cps").attr("required", "required")});
-        $(".div-input-file-pv").fadeIn(300, function(){$("#input-file-pv").attr("required", "required")});        
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeIn(300);
+        $(".div-input-file-ir").fadeIn(300);
+        $(".div-input-file-ca").fadeIn(300);
+        $(".div-input-file-cps").fadeIn(300);
+        $(".div-input-file-pv").fadeIn(300);
       }
 
     });
@@ -488,7 +468,7 @@ focco = {
       });
     });
 
-    $("#form-adicionar-cliente-pf").submit(function(e){
+    $("#form-alterar-cliente-pf").submit(function(e){
 
       e.preventDefault();      
       var formData = new FormData($(this)[0]);
@@ -497,7 +477,7 @@ focco = {
       formData.append( 'infoWhatsapp', document.getElementsByName('infoWhatsapp')[0].checked);
 
       $.ajax({
-          url: "/dashboard/clientes/adicionarPost.php/",
+          url: "/dashboard/clientes/alterarPost.php/",
           type: 'POST',
           data: formData,
           async: false,

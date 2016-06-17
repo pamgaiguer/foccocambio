@@ -7,7 +7,8 @@
 	}
 
 	function TratarData($field){
-		return date('Y-m-d', strtotime($field));
+		if ($field == '') return '1700-01-01 00:00:00';
+		return date('Y-m-d', strtotime($field)); 
 	}
 		
 
@@ -48,33 +49,103 @@
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	
 	
-	$fileCpf = $_FILES["input-file-cpf"];	
-	if ($fileCpf["size"] < 5000000) 
-	{		
-		$info = pathinfo($fileCpf['name']);
-		$ext = $info['extension'];
+	$fileCpf = $_FILES["input-file-cpf"];		
+	if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
+		$ext = pathinfo($fileCpf['name'], PATHINFO_EXTENSION);		
 		$newname = "doc-cpf.".$ext; 
-
-		if (!is_dir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) 
-			mkdir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
-
-		$target = '/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;		
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file( $fileCpf['tmp_name'], $target);
 	}
 	
 	$fileRg = $_FILES["input-file-rg"];
-	if ($fileRg["size"] < 5000000) {
-		
-		$info = pathinfo($fileRg['name']);
-		$ext = $info['extension'];
-		$newname = "doc-rg.".$ext; 
+	if (isset($fileRg) && $fileRg["name"] != "" && $fileRg["size"] < 5000000) {		
+		$ext = pathinfo($fileRg['name'], PATHINFO_EXTENSION);
+		$newname = "doc-rg.".$ext;
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file($fileRg['tmp_name'], $target);		
+	}
 
-		if (!is_dir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) 
-			mkdir('/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+	$fileCr = $_FILES["input-file-cr"];
+	if (isset($fileCr) && $fileCr["name"] != "" && $fileCr["size"] < 5000000) {		
+		$ext = pathinfo($fileCr['name'], PATHINFO_EXTENSION);
+		$newname = "doc-cr.".$ext;
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file($fileCr['tmp_name'], $target);		
+	}
 
-		$target = '/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
-		move_uploaded_file( $fileRg['tmp_name'], $target);
-	}	
+	$fileFf = $_FILES["input-file-ff"];
+	if (isset($fileFf) && $fileFf["name"] != "" && $fileFf["size"] < 5000000) {		
+		$ext = pathinfo($fileFf['name'], PATHINFO_EXTENSION);
+		$newname = "doc-ff.".$ext;
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file($fileFf['tmp_name'], $target);		
+	}
+
+	$fileIr = $_FILES["input-file-ir"];
+	if (isset($fileIr) && $fileIr["name"] != "" && $fileIr["size"] < 5000000) {		
+		$ext = pathinfo($fileIr['name'], PATHINFO_EXTENSION);
+		$newname = "doc-ir.".$ext;
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file($fileIr['tmp_name'], $target);		
+	}
+
+	$fileCa = $_FILES["input-file-ca"];
+	if (isset($fileCa) && $fileCa["name"] != "" && $fileCa["size"] < 5000000) {		
+		$ext = pathinfo($fileCa['name'], PATHINFO_EXTENSION);
+		$newname = "doc-ca.".$ext;
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file($fileCa['tmp_name'], $target);		
+	}
+
+	$fileCps = $_FILES["input-file-cps"];
+	if (isset($fileCps) && $fileCps["name"] != "" && $fileCps["size"] < 5000000) {		
+		$ext = pathinfo($fileCps['name'], PATHINFO_EXTENSION);
+		$newname = "doc-cps.".$ext;
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file($fileCps['tmp_name'], $target);		
+	}
+
+	$filePv = $_FILES["input-file-pv"];
+	if (isset($filePv) && $filePv["name"] != "" && $filePv["size"] < 5000000) {		
+		$ext = pathinfo($filePv['name'], PATHINFO_EXTENSION);
+		$newname = "doc-pv.".$ext;
+		if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+		}
+		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+		move_uploaded_file($filePv['tmp_name'], $target);		
+	}
+
+
+
+
+
+
+
+
+
+
 		
 	$clienteId = mysqli_insert_id($conn);
 
@@ -97,7 +168,7 @@
 
 		);
 
-	mysqli_query($conn, $sql_query);
+	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 
 	$sql_query = sprintf("
 		INSERT into enderecoscliente(
@@ -118,7 +189,7 @@
 
 		);
 
-	mysqli_query($conn, $sql_query);
+	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 
 
 	echo json_encode("ok");

@@ -73,7 +73,7 @@ foreach($rows as $r){
 
           <h1><?php echo $cpfCnpj ?></h1>
 
-          <h1><?php echo date_format($dataNascimentoAbertura, 'd/m/y'); ?></h1>
+          <h1><?php echo date_format(new DateTime($dataNascimentoAbertura), 'd/m/y'); ?></h1>
 
           <h1><?php echo $rgInscricaoEstadual  ?></h1>
 
@@ -108,6 +108,20 @@ foreach($rows as $r){
           <h1><?php echo $ofertasPorEmail ?></h1>
 
           <h1><?php echo $infoWhatsapp ?></h1>
+
+
+          <br>
+          <h1>docs upload</h1><hr>
+          <div class="docs">
+            <img alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png" width="200px" height="200px" />
+            <img alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="200px" height="200px" />
+            <img alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="200px" height="200px" />
+            <img alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="200px" height="200px" />
+            <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="200px" height="200px" />
+            <img alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="200px" height="200px" />
+            <img alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="200px" height="200px" />
+            <img alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="200px" height="200px" />
+          </div>
 
           <br>
           <h1>enderecos</h1><hr>

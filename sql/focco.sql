@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Jun-2016 às 15:35
--- Versão do servidor: 5.6.17
--- PHP Version: 5.5.12
+-- Generation Time: 17-Jun-2016 às 01:08
+-- Versão do servidor: 5.7.9
+-- PHP Version: 5.6.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `focco`
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `ofertasPorEmail` bit(1) DEFAULT NULL,
   `infoWhatsapp` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Truncate table before insert `clientes`
@@ -67,7 +67,11 @@ TRUNCATE TABLE `clientes`;
 
 INSERT INTO `clientes` (`id`, `categoria`, `razaoSocial`, `tipoPessoa`, `cpfCnpj`, `dataNascimentoAbertura`, `inscricaoMunicipal`, `rgInscricaoEstadual`, `rgOrgaoExpedidor`, `rgDataExpedicao`, `sexo`, `nacionalidade`, `estadoCivil`, `nomeConjuge`, `dataNascimentoConjuge`, `nomeMae`, `nomePai`, `email`, `telFixo`, `telCelular`, `contraSenha`, `observacoes`, `ofertasPorEmail`, `infoWhatsapp`) VALUES
 (3, 3, 'tom', 'F', '14354288702', '0000-00-00 00:00:00', NULL, '', '', '0000-00-00 00:00:00', 'M', '', 1, '', '0000-00-00 00:00:00', 'Thompson', 'Garcia', 'thompson.garcia@workmotor.com', '1931141333', '1931141333', '', '', b'1', b'1'),
-(4, 3, 'jurandir', 'F', '14354288702', '1993-10-21 00:00:00', NULL, '', '', '1970-01-01 00:00:00', 'M', '', 1, '', '1970-01-01 00:00:00', '', '', '', '', '', '212121', '', b'1', b'1');
+(5, 3, 'josuÃ©', 'F', '14354288702', '1997-10-21 00:00:00', NULL, '11111111111111', 'orgaoexpedidor', '2016-06-16 00:00:00', 'M', 'brasleiro', 1, '', '1970-01-01 00:00:00', 'maria', 'jose', 'josue@josue.com.br', '9999999999', '99999999999', '121', '21212121', b'0', b'1'),
+(8, 2, 'dddddddddddd', 'F', '14354288702', '2016-06-16 00:00:00', NULL, '212121', '1212121', '2016-06-16 00:00:00', 'M', '2121212', 1, '', '1970-01-01 00:00:00', '1212121', '212121', '21212@212121.com', '(99) 9999-9999', '(99) 99999-9999', '2121', '1212121', b'1', b'1'),
+(9, 2, 'Thompson', 'F', '14354288702', '1993-10-21 00:00:00', NULL, '269379848', 'detran', '2016-06-17 00:00:00', 'M', 'Brasileiro', 1, '', '1972-03-16 00:00:00', 'Marcia de Sousa Mota', 'Claudio Duarte Garcia', 'thom.blizz@gmail.com', '(99) 9999-9999', '(19) 99666-6380', '2110', '21212121', b'1', b'1'),
+(10, 3, 'teste05', 'F', '08641614842', '2016-06-29 00:00:00', NULL, '21212121', 'ssp', '2016-06-16 00:00:00', 'M', 'hahahhaha', 1, '', '1972-03-16 00:00:00', 'mae da silva', 'pai de sousa', 'teste05@teste05.com', '(99) 9999-9999', '(99) 99999-9999', '21', '212121', b'1', b'1'),
+(11, 1, 'Benedito', 'F', '26575582320', '1966-06-15 00:00:00', NULL, '2121212121', 'ssp', '2016-06-16 00:00:00', 'M', 'br', 2, 'huahueahueauh', '1971-04-24 00:00:00', 'aaaaaaaaaaaaaa', 'bbbbbbbbbbbbb', 'ab@cd.com', '(99) 9999-9999', '(99) 99999-9999', '111', '212121', b'1', b'1');
 
 -- --------------------------------------------------------
 
@@ -89,16 +93,30 @@ CREATE TABLE IF NOT EXISTS `enderecoscliente` (
   `paisId` int(11) DEFAULT NULL,
   `cidade` varchar(100) DEFAULT NULL,
   `estado` varchar(100) DEFAULT NULL,
-
+  `pais` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `clienteId` (`clienteId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Truncate table before insert `enderecoscliente`
 --
 
 TRUNCATE TABLE `enderecoscliente`;
+--
+-- Extraindo dados da tabela `enderecoscliente`
+--
+
+INSERT INTO `enderecoscliente` (`id`, `clienteId`, `tipo`, `cep`, `endereco`, `numero`, `complemento`, `bairro`, `municipioId`, `estadoId`, `paisId`, `cidade`, `estado`, `pais`) VALUES
+(1, 8, 1, '13100117', 'Rua Salim Feres', '121', '', 'Jardim Santa Marcelina', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(2, 8, 2, '13100117', 'Rua Salim Feres', '121', '', 'Jardim Santa Marcelina', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(5, 9, 1, '13105-808', 'Rua do Flautimaaaaaaaaaaa', '30611111', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(6, 9, 2, '13105-808', 'Rua do Flautimaaaaaaaaaaa', '30611111', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(7, 10, 1, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(8, 10, 2, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(9, 11, 1, '13105808', 'Rua do Flautim', '33', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(10, 11, 2, '13105808', 'Rua do Flautim', '33', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil');
+
 -- --------------------------------------------------------
 
 --
@@ -5757,7 +5775,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) DEFAULT NULL,
   `telefone` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Truncate table before insert `usuarios`
