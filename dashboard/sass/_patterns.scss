@@ -7,7 +7,7 @@ $blue-dark-shadow: #183969;
 $blue-darker-shadow: #0F2442;
 
 $yellow: #F4D400;
-$gray: #525252;
+$gray: #707070;
 
 
 $green: #64cea2;
@@ -39,8 +39,11 @@ $purple-graph-shadow: #8F70CF;
 .bg-transparent{
   background: transparent !important;
 }
-.bg-gray{
+.bg-light-gray{
   background-color: $light-gray !important;
+}
+.bg-gray{
+  background-color: #fbfbfb !important;
 }
 .bg-white{
   background-color: $white !important;

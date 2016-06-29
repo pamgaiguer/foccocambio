@@ -17,7 +17,7 @@
 <body>
 
   <header>
-    <nav class="black">
+    <nav class="bg-gray">
       <!-- Barra do topo! -->
       <ul class="right hide-on-med-and-down">
         <li><a href="#!">First Sidebar Link</a></li>
@@ -34,8 +34,8 @@
       <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
 
       <!-- Barra do Lateral -->
-      <ul id="slide-out" class="side-nav fixed black white-text">
-        <li class="brand-logo center"><img class="responsive-img" src="/dashboard/images/logo_topo.png" alt="logotipo"></li>
+      <ul id="slide-out" class="side-nav fixed bg-gray white-text">
+        <li class="brand-logo center"><img class="" src="/dashboard/images/logo_topo_minor.png" alt="logotipo"></li>
         <li><a href="#!"></a></li>
         <li><a href="/dashboard/home"><i class="material-icons left">&#xE871;</i> Dashboard</a></li>
         <li class="">

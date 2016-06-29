@@ -194,8 +194,8 @@ include "../includes/header.php";
             <div class="col s6 div-input-file-cr">
               <div class="file-field input-field">
                 <div class="btn bg-blue">
-                  <span>C. R.</span>
-                  <input type="file" id="input-file-cr" 
+                  <span>Comprovante Residência</span>
+                  <input type="file" id="input-file-cr"
                   name="input-file-cr" title="Comprovante de residência">
                 </div>
                 <div class="file-path-wrapper">
@@ -208,7 +208,7 @@ include "../includes/header.php";
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>F. F.</span>
-                  <input type="file" id="input-file-ff" 
+                  <input type="file" id="input-file-ff"
                   name="input-file-ff" title="Ficha cadastral focco">
                 </div>
                 <div class="file-path-wrapper">
@@ -221,7 +221,7 @@ include "../includes/header.php";
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>I. R.</span>
-                  <input type="file" id="input-file-ir" 
+                  <input type="file" id="input-file-ir"
                   name="input-file-ir" title="Declaração do imposto de renda">
                 </div>
                 <div class="file-path-wrapper">
@@ -234,7 +234,7 @@ include "../includes/header.php";
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. A.</span>
-                  <input type="file" id="input-file-ca" 
+                  <input type="file" id="input-file-ca"
                   name="input-file-ca" title="Cartão de assinatura">
                 </div>
                 <div class="file-path-wrapper">
@@ -247,7 +247,7 @@ include "../includes/header.php";
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. P. S.</span>
-                  <input type="file" id="input-file-cps" 
+                  <input type="file" id="input-file-cps"
                   name="input-file-cps" title="Contrato de prestação de serviços">
                 </div>
                 <div class="file-path-wrapper">
@@ -260,7 +260,7 @@ include "../includes/header.php";
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>P. V.</span>
-                  <input type="file" id="input-file-pv" 
+                  <input type="file" id="input-file-pv"
                   name="input-file-pv" title="Procuração para a Vision">
                 </div>
                 <div class="file-path-wrapper">
@@ -334,7 +334,7 @@ include "../includes/header.php";
        </div>
 
        <div id="div-endereco-entrega">
-       
+
          <div class="row">
           <div class="input-field col s3">
             <input id="cep-entrega" name="cep-entrega" type="text">
@@ -437,5 +437,5 @@ include "../includes/footer.php";
 ?>
 
 <script>
-  focco.adicionarClienteFormPost();  
+  focco.adicionarClienteFormPost();
 </script>

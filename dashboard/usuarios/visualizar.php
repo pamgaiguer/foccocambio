@@ -23,21 +23,39 @@ foreach($rows as $r){
   <div class="row">
     <div class="col s12">
 
-    <h4 class="title-forms">Visualizar usuário <strong>[NOME_USUARIO]</strong></h4>
+      <h4 class="title-forms">Visualizar usuário <strong><?php echo $nome ?></strong></h4>
+      <div class="row">
 
-      
-        <div class="row">          
-            
-            <h1> <?php echo $nome ?> </h1>
-            <h1> <?php echo $login ?> </h1>
-            <h1> <?php echo $email ?> </h1>
-            <h1> <?php echo $telefone ?> </h1>
-            <h1> <?php echo $tipo == 1 ? "Admin" : "Usuário" ?> </h1>          
-          
-        </div>
-
-
-      
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th data-field="campos" colspan="2">Dados do cliente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nome</td>
+              <td><?php echo $nome ?></td>
+            </tr>
+            <tr>
+              <td>Login</td>
+              <td><?php echo $login ?></td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td><?php echo $email ?></td>
+            </tr>
+            <tr>
+              <td>Telefone</td>
+              <td><?php echo $telefone ?></td>
+            </tr>
+            <tr>
+              <td>Tipo de usuário</td>
+              <td><?php echo $tipo == 1 ? "Administrador" : "Usuário Simples" ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </main>
@@ -47,6 +65,6 @@ foreach($rows as $r){
 include "../includes/footer.php";
 ?>
 
-<script type="text/javascript">  
+<script type="text/javascript">
   focco.alterarUsuarioFormPost();
 </script>

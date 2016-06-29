@@ -23,7 +23,7 @@ foreach($rows as $r){
   <div class="row">
     <div class="col s12">
 
-    <h4 class="title-forms">Alterar usuário <strong>[NOME_USUARIO]</strong></h4>
+    <h4 class="title-forms">Alterar usuário <strong><?php echo $nome ?></strong></h4>
 
       <form action="alterarPost.php" method="POST" class="form-group" id="form-alterar-usuario">
         <div class="row">
@@ -65,6 +65,6 @@ foreach($rows as $r){
 include "../includes/footer.php";
 ?>
 
-<script type="text/javascript">  
+<script type="text/javascript">
   focco.alterarUsuarioFormPost();
 </script>

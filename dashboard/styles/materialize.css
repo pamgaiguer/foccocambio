@@ -6225,8 +6225,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .bg-transparent {
   background: transparent !important; }
 
-.bg-gray {
+.bg-light-gray {
   background-color: #f5f5f5 !important; }
+
+.bg-gray {
+  background-color: #fbfbfb !important; }
 
 .bg-white {
   background-color: #FFF !important; }
@@ -6247,7 +6250,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   color: #f89a46; }
 
 .gray {
-  color: #525252; }
+  color: #707070; }
 
 .red {
   color: #F07464; }
@@ -6296,7 +6299,7 @@ header, main, footer {
   padding-left: 10px; }
 
 body {
-  color: #525252;
+  color: #707070;
   font-family: 'Avenir-Regular'; }
 
 .loginForm {
@@ -6318,7 +6321,7 @@ blockquote {
   border-left: 5px solid #15325c; }
 
 nav ul a, .side-nav.fixed a {
-  color: #525252; }
+  color: #707070; }
 
 table td a {
   color: #15325c; }
@@ -6327,13 +6330,13 @@ table td a {
 
 /* label color */
 .input-field label {
-  color: #525252; }
+  color: #707070; }
 
 /* label focus color */
 .input-field input[type=text]:focus + label,
 .input-field input[type=email]:focus,
 .input-field textarea:focus + label {
-  color: #525252; }
+  color: #707070; }
 
 /* label underline focus color */
 .input-field input[type=text]:focus,
@@ -6346,7 +6349,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type=email]:focus:not([readonly]) + label,
 input[type=password]:focus:not([readonly]) + label {
-  color: #525252; }
+  color: #707070; }
 
 /* valid color
 .input-field input[type=text].valid {
@@ -6360,7 +6363,7 @@ input[type=password]:focus:not([readonly]) + label {
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-  color: #525252; }
+  color: #707070; }
 
 .picker__weekday-display {
   background-color: #183969; }
