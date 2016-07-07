@@ -4,7 +4,7 @@ include "../core/database.php";
 include "../includes/header.php";
 ?>
 <main>
-<div class="section"></div>
+  <div class="section"></div>
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
@@ -15,10 +15,13 @@ include "../includes/header.php";
 
     <div id="div-pf" class="col s12">
       <form action="adicionarPost.php" method="POST" class="form-group form-adicionar-cliente" id="form-adicionar-cliente-pf" enctype="multipart/form-data">
+
         <div class="row">
           <div class="col s12">
+            <div class="spacing"></div>
             <h5>Dados pessoais</h5>
           </div>
+
 
           <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F"/>
 
@@ -161,10 +164,10 @@ include "../includes/header.php";
 
           <div class="row">
             <div class="col s12">
-            <h5>Documentos Obrigatórios</h5>
-            <em>Cada tipo de pessoa tem uma documentação específica - ver documentação</em>
-            <br>
-            <em>Colocar cada botão para documento ou colocar um input para multiplos arquivos?</em>
+              <h5>Documentos Obrigatórios</h5>
+              <em>Cada tipo de pessoa tem uma documentação específica - ver documentação</em>
+              <br>
+              <em>Colocar cada botão para documento ou colocar um input para multiplos arquivos?</em>
             </div>
 
             <div class="col s6 div-input-file-cpf">
@@ -280,26 +283,26 @@ include "../includes/header.php";
 
          <div class="row">
           <div class="input-field col s3">
-            <input id="cep-residencial" name="cep-residencial" type="text" required>
+            <input id="cep-residencial" name="cep-residencial" type="text" placeholder=" " required>
             <label for="cep-residencial">CEP</label>
           </div>
           <div class="input-field col s9">
-            <input id="logradouro-residencial" name="logradouro-residencial" type="text" required>
+            <input id="logradouro-residencial" name="logradouro-residencial" type="text" placeholder=" " required>
             <label for="logradouro-residencial">Logradouro</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="numero-residencial" name="numero-residencial" type="text" required>
+            <input id="numero-residencial" name="numero-residencial" type="text" placeholder=" " required>
             <label for="numero-residencial">Número</label>
           </div>
           <div class="input-field col s4">
-            <input id="complemento-residencial" name="complemento-residencial" type="text" >
+            <input id="complemento-residencial" name="complemento-residencial" placeholder=" " type="text" >
             <label for="complemento-residencial">Complemento</label>
           </div>
           <div class="input-field col s4">
-            <input id="bairro-residencial" name="bairro-residencial" type="text" required>
+            <input id="bairro-residencial" name="bairro-residencial" type="text" placeholder=" " required>
             <label for="bairro-residencial">Bairro</label>
           </div>
         </div>
@@ -307,15 +310,15 @@ include "../includes/header.php";
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="cidade-residencial" name="cidade-residencial" type="text" required>
+            <input id="cidade-residencial" name="cidade-residencial" type="text" placeholder=" " required>
             <label for="cidade-residencial">Cidade</label>
           </div>
           <div class="input-field col s4" >
-            <input id="UF-residencial" name="UF-residencial" type="text" required>
+            <input id="UF-residencial" name="UF-residencial" type="text" placeholder=" " required>
             <label for="UF-residencial">UF</label>
           </div>
           <div class="input-field col s4">
-            <input id="pais-residencial" name="pais-residencial" type="text" required>
+            <input id="pais-residencial" name="pais-residencial" type="text" placeholder=" " required>
             <label for="pais-residencial">País</label>
           </div>
         </div>
@@ -332,31 +335,32 @@ include "../includes/header.php";
            <label for="filled-in-box">Marque se o endereço de entrega é o mesmo que o residencial</label>
          </div>
        </div>
-
+       <div class="spacing"></div>
+       <div class="spacing"></div>
        <div id="div-endereco-entrega">
 
          <div class="row">
           <div class="input-field col s3">
-            <input id="cep-entrega" name="cep-entrega" type="text">
+            <input id="cep-entrega" name="cep-entrega" placeholder=" " type="text">
             <label for="cep-entrega">CEP</label>
           </div>
           <div class="input-field col s9">
-            <input id="logradouro-entrega" name="logradouro-entrega" type="text">
+            <input id="logradouro-entrega" name="logradouro-entrega" placeholder=" " type="text">
             <label for="logradouro-entrega">Logradouro</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="numero-entrega" name="numero-entrega" type="text">
+            <input id="numero-entrega" name="numero-entrega" placeholder=" " type="text">
             <label for="numero-entrega">Número</label>
           </div>
           <div class="input-field col s4">
-            <input id="complemento-entrega" name="complemento-entrega" type="text">
+            <input id="complemento-entrega" name="complemento-entrega" placeholder=" " type="text">
             <label for="complemento-entrega">Complemento</label>
           </div>
           <div class="input-field col s4">
-            <input id="bairro-entrega" name="bairro-entrega" type="text">
+            <input id="bairro-entrega" name="bairro-entrega" placeholder=" " type="text">
             <label for="bairro-entrega">Bairro</label>
           </div>
         </div>
@@ -364,15 +368,15 @@ include "../includes/header.php";
 
         <div class="row">
           <div class="input-field col s4">
-            <input id="cidade-entrega" name="cidade-entrega" type="text">
+            <input id="cidade-entrega" name="cidade-entrega" placeholder=" " type="text">
             <label for="cidade-entrega">Cidade</label>
           </div>
           <div class="input-field col s4">
-            <input id="UF-entrega" name="UF-entrega" type="text">
+            <input id="UF-entrega" name="UF-entrega" placeholder=" " type="text">
             <label for="UF-entrega">UF</label>
           </div>
           <div class="input-field col s4">
-            <input id="pais-entrega" name="pais-entrega" type="text">
+            <input id="pais-entrega" name="pais-entrega" placeholder=" " type="text">
             <label for="pais-entrega">País</label>
           </div>
         </div>
@@ -429,7 +433,7 @@ include "../includes/header.php";
 <div id="div-pj" class="col s12">
 </div>
 
-  </div>
+</div>
 </main>
 
 <?php
