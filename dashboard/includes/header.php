@@ -4,6 +4,8 @@
   if (!isset($_SESSION['currentUser'])) Header("Location: /dashboard");
   if ($_SESSION['currentUser'] == null) Header("Location: /dashboard");
 
+  date_default_timezone_set('America/Sao_Paulo');
+
 ?>
 
 <!DOCTYPE html>

@@ -148,7 +148,6 @@ focco = {
 
   },
 
-
   adicionarClienteFormPost: function(){
 
     $('textarea#observacoes').characterCounter();
@@ -489,6 +488,27 @@ focco = {
           contentType: false,
           processData: false
       });      
+
+    });
+
+  },
+
+  buscarClienteFormPost: function(){
+    
+    $("#form-busca-clientes").submit(function(e){
+      e.preventDefault();
+      
+      search = $("#input-cpfcnpj", $(this)).val();     
+      
+      $.ajax({
+        url: "/dashboard/clientes/methods/buscaCliente.php/",
+        type: "POST",        
+        data: { search }, 
+        success: function(r){          
+          $("#table-body-clientes").html(r);
+        }
+
+      });
 
     });
 

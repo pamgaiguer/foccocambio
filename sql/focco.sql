@@ -53,6 +53,8 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `observacoes` varchar(1000) DEFAULT NULL,
   `ofertasPorEmail` bit(1) DEFAULT NULL,
   `infoWhatsapp` bit(1) DEFAULT NULL,
+  `dataCadastro` datetime DEFAULT NULL,
+  `dataModificacao` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 

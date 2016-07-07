@@ -2,14 +2,7 @@
 	include "../core/database.php";		
 
 
-	function SomenteNumeros($field){
-		return preg_replace("/\D+/", "", $field);
-	}
-
-	function TratarData($field){
-		if ($field == '') return '1700-01-01 00:00:00';
-		return date('Y-m-d', strtotime($field)); 
-	}
+	include "../core/functions.php";
 		
 
 	$sql_query = sprintf("
@@ -36,12 +29,14 @@
 		contraSenha, 
 		observacoes, 
 		ofertasPorEmail, 
-		infoWhatsapp) 
+		infoWhatsapp,
+		dataCadastro,
+		dataModificacao) 
 
-		VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s )", 
+		VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s' )", 
 
-		$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), $_POST["rg"], $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], 
-			$_POST["ofertasPorEmail"], $_POST["infoWhatsapp"]
+		$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), $_POST["rg"], $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], 
+			$_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s')
 
 		);
 	

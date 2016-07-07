@@ -314,7 +314,17 @@ foreach($rows as $r){
             $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 1);
             $result = mysqli_query($conn, $sql_query);
             $rows = array();
-            while($row = mysqli_fetch_array($result)) $rows[] = $row;
+            while($row = mysqli_fetch_array($result)) $rows[] = $row;            
+
+            $tipo = "";
+            $cep = "";
+            $endereco = "";
+            $numero = "";
+            $complemento = "";
+            $bairro = "";
+            $cidade = "";
+            $estado = "";
+            $pais = "";
 
             foreach($rows as $r){              
               $tipo = $r['tipo'];

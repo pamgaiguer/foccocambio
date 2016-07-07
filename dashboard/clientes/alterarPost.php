@@ -1,21 +1,12 @@
 <?php
 	include "../core/database.php";		
-
-
-	function SomenteNumeros($field){
-		return preg_replace("/\D+/", "", $field);
-	}
-
-	function TratarData($field){
-		if ($field == '') return '1700-01-01 00:00:00';
-		return date('Y-m-d', strtotime($field)); 		
-	}
+	include "../core/functions.php";			
 
 	$sql_query = sprintf("
 		update clientes 
-		set categoria = %s, razaoSocial = '%s', tipoPessoa = '%s', cpfCnpj = '%s', dataNascimentoAbertura = '%s', rgInscricaoEstadual = '%s', rgOrgaoExpedidor = '%s', rgDataExpedicao = '%s', sexo = '%s', nacionalidade = '%s', estadoCivil = '%s', nomeConjuge = '%s', dataNascimentoConjuge = '%s', nomeMae = '%s', nomePai = '%s', email = '%s', telFixo = '%s', telCelular = '%s', contraSenha = '%s', observacoes = '%s', ofertasPorEmail = %s, infoWhatsapp = %s where id = %s", 
+		set categoria = %s, razaoSocial = '%s', tipoPessoa = '%s', cpfCnpj = '%s', dataNascimentoAbertura = '%s', rgInscricaoEstadual = '%s', rgOrgaoExpedidor = '%s', rgDataExpedicao = '%s', sexo = '%s', nacionalidade = '%s', estadoCivil = '%s', nomeConjuge = '%s', dataNascimentoConjuge = '%s', nomeMae = '%s', nomePai = '%s', email = '%s', telFixo = '%s', telCelular = '%s', contraSenha = '%s', observacoes = '%s', ofertasPorEmail = %s, infoWhatsapp = %s, dataModificacao = '%s' where id = %s", 
 
-		$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), $_POST["rg"], $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], $_POST["telFixo"], $_POST["telCelular"], $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], $_POST['clienteId'] );
+		$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), $_POST["rg"], $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], $_POST["telFixo"], $_POST["telCelular"], $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'),   $_POST['clienteId'] );
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 
 	
