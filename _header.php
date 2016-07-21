@@ -50,6 +50,7 @@
           <p class="link-face pull-right hidden-xs">
             <a href="http://instagram.com/foccocambio/" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_instagram.png" alt="instagram "></i></a>
             <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></a>
+            <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno"><i class="hidden-xs hidden-sm"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></i></a>
           </p>
         </div>
       </div>
@@ -69,7 +70,7 @@
               <li><a href="products-services.php">Produtos e serviços</a></li>
               <li><a href="int_transf_internacional.php">Remessa Internacional</a></li>
               <li><a href="contact.php">Lojas / Contato</a></li>
-              <li><a href="premium_client.php">Seja cliente premium!</a></li>
+              <li><a href="int_travel-insurance.php">Seguro viagem</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

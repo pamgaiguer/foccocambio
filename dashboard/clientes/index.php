@@ -36,6 +36,17 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           </div>
         </div>
 
+        <ul class="black-text">
+          <li>
+            Nesta tela, os cadastros devem ter cor de identificação (em relação aos documentos):<br>
+            <span class="green-text">Verde</span> para cadastro OK <br>
+            <span class="amber-text">Amarelo</span> para cadastro com atenção <br>
+            <span class="red-text">Vermelho</span> para cadastro inválido <br>
+            <span class="light-blue-text text-darken-4">Azul</span> se aceita receber oferta por facebook
+          </li>
+        </ul>
+
+
         <a class="waves-effect waves-light btn bg-blue right" href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
         </a>
       </div>
@@ -51,7 +62,8 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               <th>Email</th>
               <th>Telefone</th>
               <th>Tipo de Cliente</th>
-              <th>Limite Operacional Disponível</th>
+              <th>Limite Disponível</th>
+              <th>Válido?</th>
               <th class="center">Visualizar</th>
               <th class="center">Editar</th>
               <th class="center">Excluir</th>
@@ -66,7 +78,8 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               <td>'.$r["email"].'</td>
               <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
               <td>'.$r["categoria"].'</td>
-              <th></th>
+              <th>USD 3.000,00</th>
+              <th><i class="material-icons">&#xE5CA;</i> / <i class="material-icons">&#xE5CD;</i> </th>
 
               <td class="center"><a href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
               <td class="center"><a href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>

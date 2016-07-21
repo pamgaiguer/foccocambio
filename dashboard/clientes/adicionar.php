@@ -20,8 +20,18 @@ include "../includes/header.php";
           <div class="col s12">
             <div class="spacing"></div>
             <h5>Dados pessoais</h5>
-          </div>
+            <div class="spacing"></div>
 
+              <ul class="black-text">
+                <li>
+                Nesta tela: Validação dos documentos por tempo:<br>
+                <strong>RG e Passaporte</strong> são válidos por 10 anos
+                <strong>CNH</strong> é válida por 5 ano
+                </li>
+                <li></li>
+                <li></li>
+              </ul>
+          </div>
 
           <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F"/>
 
@@ -57,6 +67,22 @@ include "../includes/header.php";
             <div class="input-field col s3">
               <input id="rgDataExpedicao" name="rgDataExpedicao" type="date" class="datepicker" required>
               <label for="rgDataExpedicao">Data de Expedição</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <p><em>Se estrangeiro não naturalizado, favor preencher informações abaixo:</em></p>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="numPassaporte" name="numPassaporte" type="text" required>
+              <label for="numPassaporte">Passaporte</label>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="rgDni" name="rgDni" type="text" required>
+              <label for="rgDni">R.G. / DNI</label>
             </div>
           </div>
 
@@ -138,18 +164,27 @@ include "../includes/header.php";
             <div class="input-field col s3">
               <select name="categoria" required id="categoria">
                 <option value="1" selected>Focco</option>
-                <option value="2">Vision</option>
-                <option value="3">PF Premium</option>
+                <option value="2">FX53 Simplificado</option>
+                <option value="3">FX53 Premier</option>
+                <option value="4">FX53 Plus</option>
               </select>
               <label for="categoria">Categoria Pessoa Física</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
+              <select name="origem" required id="origem">
+                <option value="1" selected>Matriz</option>
+                <option value="2">Loja 1</option>
+              </select>
+              <label for="origem">Origem do Cliente</label>
+            </div>
+
+            <div class="input-field col s2">
               <input id="ofertasPorEmail" name="ofertasPorEmail" type="checkbox" class="filled-in">
               <label for="ofertasPorEmail">Ofertas por email</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="infoWhatsapp" name="infoWhatsapp" type="checkbox" class="filled-in">
               <label for="infoWhatsapp">Informações Whatsapp</label>
             </div>
@@ -166,8 +201,6 @@ include "../includes/header.php";
             <div class="col s12">
               <h5>Documentos Obrigatórios</h5>
               <em>Cada tipo de pessoa tem uma documentação específica - ver documentação</em>
-              <br>
-              <em>Colocar cada botão para documento ou colocar um input para multiplos arquivos?</em>
             </div>
 
             <div class="col s6 div-input-file-cpf">
@@ -396,9 +429,9 @@ include "../includes/header.php";
            <thead>
              <tr>
                <th>Período</th>
-               <th>Limíte aprovado (USD)</th>
-               <th>Limíte Utilizado (USD)</th>
-               <th>Limíte disponível (USD)</th>
+               <th>Limite aprovado (USD)</th>
+               <th>Limite Utilizado (USD)</th>
+               <th>Limite disponível (USD)</th>
              </tr>
            </thead>
            <tbody>
