@@ -174,17 +174,121 @@
                 <input class="filled-in" type="checkbox" id="liqOpCambio" />
                 <label for="liqOpCambio">Liquidar operações de câmbio</label>
               </div>
-
               <div>
                 <input class="filled-in" type="checkbox" id="assinarContratoCambio" />
                 <label for="assinarContratoCambio">Assinar contratos de câmbio</label>
               </div>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col s12">
+              <p>Indique as principais finalidades para início e manutenção de relacionamento com a Vision Câmbio</p>
+              <div>
+                <input class="filled-in" type="checkbox" id="finalCambioTurismo" />
+                <label for="finalCambioTurismo"><strong>Câmbio Turismo</strong>: compra e venda de moeda estrangeira em espécie e/ou cartões pré-pagos para uso proóprio e/ou terceiros (ex.: funcionários).</label>
+              </div>
+              <div>
+                <input class="filled-in" type="checkbox" id="remessaRecebimento" />
+                <label for="remessaRecebimento"><strong>Remessas Financeiras ou Recebimento de Recursos do Exterior</strong>: realização de compra e venda de moeda estrangeira para remessas para/do exterior.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contasBancariasPJ">
+          <div class="row">
+            <div class="col s12">
+              <h5>Contas Bancárias</h5>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s3">
+              <input id="banco1" name="banco1" type="text" required>
+              <label for="banco1">Banco</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="agencia1" name="agencia1" type="text" required>
+              <label for="agencia1">Agência</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="cc1" name="cc1" type="text" required>
+              <label for="cc1">Conta Corrente</label>
+            </div>
+
+            <div class="input-field col s3">
+              <input id="gerente1" name="gerente1" type="text" required>
+              <label for="gerente1">Gerente</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="telefone1" name="telefone1" type="text" required>
+              <label for="telefone1">Telefone</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s3">
+              <input id="banco1" name="banco1" type="text" required>
+              <label for="banco1">Banco</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="agencia1" name="agencia1" type="text" required>
+              <label for="agencia1">Agência</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="cc1" name="cc1" type="text" required>
+              <label for="cc1">Conta Corrente</label>
+            </div>
+
+            <div class="input-field col s3">
+              <input id="gerente1" name="gerente1" type="text" required>
+              <label for="gerente1">Gerente</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="telefone1" name="telefone1" type="text" required>
+              <label for="telefone1">Telefone</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s3">
+              <input id="banco1" name="banco1" type="text" required>
+              <label for="banco1">Banco</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="agencia1" name="agencia1" type="text" required>
+              <label for="agencia1">Agência</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="cc1" name="cc1" type="text" required>
+              <label for="cc1">Conta Corrente</label>
+            </div>
+
+            <div class="input-field col s3">
+              <input id="gerente1" name="gerente1" type="text" required>
+              <label for="gerente1">Gerente</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input id="telefone1" name="telefone1" type="text" required>
+              <label for="telefone1">Telefone</label>
             </div>
           </div>
 
         </div>
 
+        <div class="col s12">
+          <input type="submit" id="input-submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
+        </div>
 
       </form>
     </div>
