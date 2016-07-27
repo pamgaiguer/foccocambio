@@ -55,6 +55,12 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
       <div class="spacing"></div>
       <div class="spacing"></div>
       <div>
+
+      <style type="text/css">
+        .cor-vermelha{ color: #FF0000; }
+        .cor-verde{ color: #00D300; }
+      </style>
+
         <table class="striped responsive-table">
           <thead>
             <tr>
@@ -72,6 +78,20 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           <tbody id="table-body-clientes">
             <?php
             foreach($rows as $r){
+
+
+              $sql_query = "SELECT tipo FROM documentos WHERE tipo in ('RG', 'CPF') and clienteId = ". $r['id'];
+              $result = mysqli_query($conn, $sql_query);
+              $docs = array();
+              while($row = mysqli_fetch_array($result)) $docs[] = $row;
+
+              $cor = "";
+              if (!$docs){
+                $cor = "cor-vermelha";
+              } else {
+                $cor = "cor-verde";
+              }              
+
               echo
               '<tr>
               <td>'.$r["razaoSocial"].'</td>
@@ -79,7 +99,8 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
               <td>'.$r["categoria"].'</td>
               <th>USD 3.000,00</th>
-              <th><i class="material-icons">&#xE5CA;</i> / <i class="material-icons">&#xE5CD;</i> </th>
+              
+              <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
 
               <td class="center"><a href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
               <td class="center"><a href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>

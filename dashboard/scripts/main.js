@@ -232,7 +232,7 @@ focco = {
         $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
         $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
         $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});        
-      } else if (categoriaId == 3){
+      } else if (categoriaId == 3 || categoriaId == 4){
         $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
         $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
         $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
@@ -404,7 +404,7 @@ focco = {
         $(".div-input-file-ca").fadeOut(300);
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
-      } else if (categoriaId == 3){
+      } else if (categoriaId == 3 || categoriaId == 4){
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);

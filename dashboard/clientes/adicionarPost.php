@@ -41,9 +41,9 @@
 		);
 	
 
-	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
-	
-	
+	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));	
+	$clienteId = mysqli_insert_id($conn);
+
 	$fileCpf = $_FILES["input-file-cpf"];		
 	if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
 		$ext = pathinfo($fileCpf['name'], PATHINFO_EXTENSION);		
@@ -53,6 +53,10 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file( $fileCpf['tmp_name'], $target);
+
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CPF', $target, date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
 	
 	$fileRg = $_FILES["input-file-rg"];
@@ -64,6 +68,10 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileRg['tmp_name'], $target);		
+
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataEmissao, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s','%s')", $clienteId, 'RG', $target, TratarData($_POST["rgDataExpedicao"]), date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
 
 	$fileCr = $_FILES["input-file-cr"];
@@ -74,7 +82,10 @@
 			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
-		move_uploaded_file($fileCr['tmp_name'], $target);		
+		move_uploaded_file($fileCr['tmp_name'], $target);	
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CR', $target, date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
 
 	$fileFf = $_FILES["input-file-ff"];
@@ -85,7 +96,10 @@
 			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
-		move_uploaded_file($fileFf['tmp_name'], $target);		
+		move_uploaded_file($fileFf['tmp_name'], $target);	
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'FF', $target, date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
 
 	$fileIr = $_FILES["input-file-ir"];
@@ -97,6 +111,9 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileIr['tmp_name'], $target);		
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'IR', $target, date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
 
 	$fileCa = $_FILES["input-file-ca"];
@@ -108,6 +125,9 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileCa['tmp_name'], $target);		
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CA', $target, date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
 
 	$fileCps = $_FILES["input-file-cps"];
@@ -119,6 +139,9 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileCps['tmp_name'], $target);		
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CPS', $target, date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
 
 	$filePv = $_FILES["input-file-pv"];
@@ -130,19 +153,12 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($filePv['tmp_name'], $target);		
+
+
+		$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'PV', $target, date('Y-m-d H:i:s'));
+		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 	}
-
-
-
-
-
-
-
-
-
-
-		
-	$clienteId = mysqli_insert_id($conn);
+	
 
 	$sql_query = sprintf("
 		INSERT into enderecoscliente(
