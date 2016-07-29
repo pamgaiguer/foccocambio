@@ -59,20 +59,15 @@ foreach($rows as $r){
               <td>Categoria</td>
               <td>
                 <?php
+                
                 switch ($categoria) {
-                  case 1:
-                  echo "Focco";
-                  break;
-                  case 2:
-                  echo "Vision";
-                  break;
-                  case 3:
-                  echo "PF Premium";
-                  break;
-                  default:
-                  echo "";
-                  break;
+                  case 1: echo "Focco"; break;
+                  case 2: echo "FX53 Simplificado"; break;
+                  case 3: echo "FX53 Premier"; break;
+                  case 4: echo "FX53 Plus"; break;
+                  default: echo ""; break;
                 }
+
                 ?>
               </td>
             </tr>

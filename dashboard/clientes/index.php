@@ -90,6 +90,14 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 $cor = "cor-vermelha";
               } else {
                 $cor = "cor-verde";
+              }
+
+              switch ($r["categoria"]) {
+                case 1: $categoria = "Focco"; break;
+                case 2: $categoria = "FX53 Simplificado"; break;
+                case 3: $categoria = "FX53 Premier"; break;
+                case 4: $categoria = "FX53 Plus"; break;                
+                default: $categoria = "Focco"; break;
               }              
 
               echo
@@ -97,7 +105,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               <td>'.$r["razaoSocial"].'</td>
               <td>'.$r["email"].'</td>
               <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
-              <td>'.$r["categoria"].'</td>
+              <td>'.$categoria.'</td>
               <th>USD 3.000,00</th>
               
               <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
