@@ -24,6 +24,7 @@ foreach($rows as $r){
     <div class="col s12">
       <br>
       <a class="btn waves-effect waves-light bg-blue" href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
+      <div class="spacing"></div>
       <h4 class="title-forms">Visualizar usuário <strong><?php echo $nome ?></strong></h4>
       <div class="row">
 

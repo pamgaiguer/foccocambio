@@ -22,6 +22,9 @@ foreach($rows as $r){
 <main>
   <div class="row">
     <div class="col s12">
+    <br>
+      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
+      <div class="spacing"></div>
 
     <h4 class="title-forms">Alterar usuário <strong><?php echo $nome ?></strong></h4>
 
@@ -41,10 +44,6 @@ foreach($rows as $r){
             <label for="login">E-mail</label>
           </div>
           <div class="input-field col s6">
-            <input name="telefone" id="telefone" value="<?php echo $telefone ?>" type="tel" />
-            <label for="telefone">Telefone</label>
-          </div>
-          <div class="input-field col s12">
             <select name="tipo" id="tipo" class="form-control">
               <option value="2" <?php if ($tipo == 2) echo "selected" ?>> Admin</option>
               <option value="3" <?php if ($tipo == 3) echo "selected" ?>>Usuário</option>
