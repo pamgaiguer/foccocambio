@@ -71,8 +71,8 @@
 header, main, footer {
   padding-left: 240px; }
 
-.title-forms {
-  padding-left: 10px; }
+.title-forms strong {
+  font-weight: 800; }
 
 body {
   color: #707070;

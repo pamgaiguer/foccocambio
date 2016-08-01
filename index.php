@@ -63,9 +63,9 @@
                 </a>
               </div>
               <div class="media-body">
-          <h4 class="media-heading">Compra e venda de moeda estrangeira</h4>
-          <p>Melhores taxas do mercado, cédulas novas, <br>atendimento diferenciado por uma equipe treinada.</p>
-          <a href="int_moeda.php">Saiba Mais</a>
+                <h4 class="media-heading">Compra e venda de moeda estrangeira</h4>
+                <p>Melhores taxas do mercado, cédulas novas, <br>atendimento diferenciado por uma equipe treinada.</p>
+                <a href="int_moeda.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
@@ -75,13 +75,13 @@
                 </a>
               </div>
               <div class="media-body">
-          <h4 class="media-heading">Remessas Internacionais</h4>
-          <p>
-            Manutenção de residentes / cursos e congressos / transferências de patrimônio e disponibilidade /
-            Compra e venda de imóveis / importação e exportação com total segurança.<br>
-            Equipe capacitada com profissionais com ampla experiências no mercado financeiro para indicar a melhor opção.
-          </p>
-          <a href="int_transf_internacional.php">Saiba Mais</a>
+                <h4 class="media-heading">Remessas Internacionais</h4>
+                <p>
+                  Manutenção de residentes / cursos e congressos / transferências de patrimônio e disponibilidade /
+                  Compra e venda de imóveis / importação e exportação com total segurança.<br>
+                  Equipe capacitada com profissionais com ampla experiências no mercado financeiro para indicar a melhor opção.
+                </p>
+                <a href="int_transf_internacional.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
@@ -91,12 +91,12 @@
                 </a>
               </div>
               <div class="media-body">
-          <h4 class="media-heading">Western Union</h4>
-          <p>
-            Somos um agente autorizado - Nunca foi tão fácil enviar e receber dinheiro, sem burocracia e de forma rápida e segura.
-            (Manutenção de residente)
-          </p>
-          <a href="int_western_union.php">Saiba Mais</a>
+                <h4 class="media-heading">Western Union</h4>
+                <p>
+                  Somos um agente autorizado - Nunca foi tão fácil enviar e receber dinheiro, sem burocracia e de forma rápida e segura.
+                  (Manutenção de residente)
+                </p>
+                <a href="int_western_union.php">Saiba Mais</a>
               </div>
             </div>
           </div>
@@ -108,12 +108,12 @@
                 </a>
               </div>
               <div class="media-body">
-          <h4 class="media-heading">Atendimento corporativo</h4>
-          <p>
-            Melhores condições e taxas para atender as necessidades de funcionários viajantes, pagamentos internacionais,
-            importação/exportação etc. Sempre com a ajuda de um executivo de contas exclusivo.
-          </p>
-          <a href="int_atend_corporativo.php">Saiba Mais</a>
+                <h4 class="media-heading">Atendimento corporativo</h4>
+                <p>
+                  Melhores condições e taxas para atender as necessidades de funcionários viajantes, pagamentos internacionais,
+                  importação/exportação etc. Sempre com a ajuda de um executivo de contas exclusivo.
+                </p>
+                <a href="int_atend_corporativo.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
@@ -123,14 +123,14 @@
                 </a>
               </div>
               <div class="media-body">
-          <h4 class="media-heading">Seguro Viagem</h4>
-          <p>
-            Somos parceiros FLYCARD, o único grupo que oferece cobertura emergencial para doenças pré-existentes,
-            seguro bagagem inclusive em trechos internos de sua viagem internacional, não é por reembolso e dispõe
-            de uma central de atendimento 24h em português, além de outros benefícios e cliente FOCCO tem desconto!<br>
-            Consulte-nos!
-          </p>
-          <a href="int_travel-insurance.php">Saiba Mais</a>
+                <h4 class="media-heading">Seguro Viagem</h4>
+                <p>
+                  Somos parceiros FLYCARD, o único grupo que oferece cobertura emergencial para doenças pré-existentes,
+                  seguro bagagem inclusive em trechos internos de sua viagem internacional, não é por reembolso e dispõe
+                  de uma central de atendimento 24h em português, além de outros benefícios e cliente FOCCO tem desconto!<br>
+                  Consulte-nos!
+                </p>
+                <a href="int_travel-insurance.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
@@ -140,11 +140,11 @@
                 </a>
               </div>
               <div class="media-body">
-          <h4 class="media-heading">Cartão Visa Travel Money</h4>
-          <p>
-            Seguro, prático, nominal e recarregável, emitido sem custo nenhum e com a abrangência <em>VISA</em> presente em mais de 200 países.
-          </p>
-          <a href="int_cartao_prepago.php">Saiba Mais</a>
+                <h4 class="media-heading">Cartão Visa Travel Money</h4>
+                <p>
+                  Seguro, prático, nominal e recarregável, emitido sem custo nenhum e com a abrangência <em>VISA</em> presente em mais de 200 países.
+                </p>
+                <a href="int_cartao_prepago.php">Saiba Mais</a>
               </div>
             </div>
           </div>
@@ -223,5 +223,24 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalRemessa" tabindex="-1" role="dialog" aria-labelledby="modalRemessaLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <img src="images/remessa_focco_modal.jpg" alt="" class="img-responsive">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
-  <?php include '_footer.php';?>
+
+
+
+<?php include '_footer.php';?>

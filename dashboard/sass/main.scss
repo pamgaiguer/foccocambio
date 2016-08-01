@@ -5,7 +5,9 @@ header, main, footer {
   padding-left: 240px;
 }
 .title-forms{
-  padding-left: 10px;
+  strong{
+    font-weight: 800;
+  }
 }
 body{
   color: $gray;

@@ -40,9 +40,9 @@ foreach($rows as $r){
   <div class="row">
     <div class="col s12">
       <div class="row">
-      <br>
-      <a href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
-      <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
+        <br>
+        <a href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
+        <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
 
         <table class="responsive-table">
           <thead>
@@ -52,14 +52,13 @@ foreach($rows as $r){
           </thead>
           <tbody>
             <tr>
-              <td>Número do cliente</td>
+              <td>ID do cliente</td>
               <td><?php echo $id ?></td>
             </tr>
             <tr>
               <td>Categoria</td>
               <td>
                 <?php
-                
                 switch ($categoria) {
                   case 1: echo "Focco"; break;
                   case 2: echo "FX53 Simplificado"; break;
@@ -67,7 +66,6 @@ foreach($rows as $r){
                   case 4: echo "FX53 Plus"; break;
                   default: echo ""; break;
                 }
-
                 ?>
               </td>
             </tr>
@@ -96,7 +94,7 @@ foreach($rows as $r){
               <td><?php echo $rgOrgaoExpedidor ?></td>
             </tr>
             <tr>
-              <td>RG Data da Expedição</td>
+              <td>Data da Expedição</td>
               <td><?php echo $rgDataExpedicao ?></td>
             </tr>
             <tr>
@@ -109,7 +107,17 @@ foreach($rows as $r){
             </tr>
             <tr>
               <td>Estado civil</td>
-              <td><?php echo $estadoCivil ?> </td>
+              <td><?php
+                switch ($estadoCivil) {
+                  case 1: echo "Solteiro(a)"; break;
+                  case 2: echo "Casado(a) "; break;
+                  case 3: echo "Divorciado(a)"; break;
+                  case 4: echo "Viúvo(a)"; break;
+                  case 6: echo "Companheiro(a)"; break;
+                  default: echo ""; break;
+                }
+                ?>
+              </td>
             </tr>
             <tr>
               <td>Nome do Cônjuge</td>
@@ -149,32 +157,30 @@ foreach($rows as $r){
             </tr>
             <tr>
               <td>Ofertas por e-mail</td>
-              <td><?php echo $ofertasPorEmail ?></td>
+              <td><?php echo $ofertasPorEmail == '1' ? "Sim" : "Não" ?></td>
             </tr>
             <tr>
-              <td>Infos pelo Whatsapp</td>
-              <td><?php echo $infoWhatsapp ?></td>
+              <td>Infos pelo WhatsApp</td>
+              <td><?php echo $infoWhatsapp == '1' ? "Sim" : "Não" ?></td>
             </tr>
-
-
           </tbody>
         </table>
 
         <br>
-        <p>Documentos do cliente <strong><?php echo $nome ?></strong></p><hr>
+        <p class="title-forms">Documentos do cliente <strong><?php echo $nome ?></strong></p><hr>
         <div class="docs">
-          <img alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png" width="200px" height="200px" />
-          <img alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="200px" height="200px" />
-          <img alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="200px" height="200px" />
-          <img alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="200px" height="200px" />
-          <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="200px" height="200px" />
-          <img alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="200px" height="200px" />
-          <img alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="200px" height="200px" />
-          <img alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="200px" height="200px" />
+          <img alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png" width="150px" height="150px" />
+          <img alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="150px" height="150px" />
+          <img alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="150px" height="150px" />
+          <img alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="150px" height="150px" />
+          <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="150px" height="150px" />
+          <img alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="150px" height="150px" />
+          <img alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="150px" height="150px" />
+          <img alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="150px" height="150px" />
         </div>
+        <hr>
+        <div class="spacing"></div>
 
-        <br>
-        <p>enderecos</p><hr>
         <?php
 
         $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s", $_GET['clienteId']);
@@ -194,34 +200,43 @@ foreach($rows as $r){
           $estado = $r['estado'];
           $pais = $r['pais'];
 
-          echo '<h2>'.($tipo == 2 ? "Entrega" : "Residencial").'</h2>';
-          echo '<h2>'.$endereco.'</h2>';
-          echo '<h2>'.$complemento.'</h2>';
-          echo '<h2>'.$bairro.'</h2>';
-          echo '<h2>'.$cidade.'</h2>';
-          echo '<h2>'.$estado.'</h2>';
-          echo '<h2>'.$pais.'</h2>';
+          echo
+          '
 
-          echo '<hr>';
-
-        }
-        ?>
+          ';
 
 
+        echo '<h2>'.($tipo == 2 ? "Entrega" : "Residencial").'</h2>';
+        echo '<h2>'.$endereco.'</h2>';
+        echo '<h2>'.$cep.'</h2>';
+        echo '<h2>'.$complemento.'</h2>';
+        echo '<h2>'.$bairro.'</h2>';
+        echo '<h2>'.$cidade.'</h2>';
+        echo '<h2>'.$estado.'</h2>';
+        echo '<h2>'.$pais.'</h2>';
+        echo '<hr>';
+      }
+      ?>
 
-
-
-
-
-      </div>
+      <table>
+          <thead>
+            <tr>
+              <th colspan="2">Endereço tipo <strong>'.($tipo == 2 ? "Entrega" : "Residencial").'</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CEP</td>
+              <td>..</td>
+            </tr>
+          </tbody>
+      </table>
 
     </div>
   </div>
+</div>
 </main>
-
 
 <?php
 include "../includes/footer.php";
 ?>
-
-

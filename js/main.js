@@ -1,5 +1,6 @@
 $(document).ready(function(){
-//função para manter o menu clicado
+  $('#modalRemessa').modal();
+
   var target = {
     'index': 'index.php',
     'contact': 'contact.php',
@@ -35,13 +36,11 @@ $(document).ready(function(){
 
  $('#btn').click(function() {
     var $requestResult = $("#retornoHTML");
-
     var campo_nome =  $("#nome").val();
     var campo_email =  $("#email").val();
     var campo_telefone = $("#telefone").val();
     var campo_cidade = $("#cidade").val();
     var campo_msg = $("#mensagem").val();
-
 
      /* Validando */
       if(campo_nome.length <= 3){

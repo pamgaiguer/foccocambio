@@ -22,14 +22,15 @@ foreach($rows as $r){
 <main>
   <div class="row">
     <div class="col s12">
-
+<br>
+      <a href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
       <h4 class="title-forms">Visualizar usuário <strong><?php echo $nome ?></strong></h4>
       <div class="row">
 
         <table class="responsive-table">
           <thead>
             <tr>
-              <th data-field="campos" colspan="2">Dados do cliente</th>
+              <th data-field="campos" colspan="2">Dados do usuário</th>
             </tr>
           </thead>
           <tbody>

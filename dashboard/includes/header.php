@@ -22,13 +22,13 @@
     <nav class="bg-gray">
       <!-- Barra do topo! -->
       <ul class="right hide-on-med-and-down">
-        <li><a href="#!">First Sidebar Link</a></li>
-        <li><a href="#!">Second Sidebar Link</a></li>
+<!--         <li><a href="#!"></a></li>
+        <li><a href="#!"></a></li> -->
         <li><a class="dropdown-button" href="#!" data-activates="dropOptions"><?php echo $_SESSION['currentUser']['nome']  ?><i class="material-icons right">&#xE5C5;</i></a></li>
         <ul id='dropOptions' class='dropdown-content'>
-          <li><a href="#!">First</a></li>
+<!--           <li><a href="#!">First</a></li>
           <li><a href="#!">Second</a></li>
-          <li><a href="#!">Third</a></li>
+          <li><a href="#!">Third</a></li> -->
           <li class="divider"></li>
           <li><a href="/dashboard/logout.php"><i class="material-icons left">&#xE879;</i> Logoff</a></li>
         </ul>
@@ -56,6 +56,7 @@
             </li>
           </ul>
         </li>
+        <li><a href="/dashboard/quotation-table"><i class="material-icons left">&#xE227;</i> Cotações</a></li>
       </ul>
     </nav>
 

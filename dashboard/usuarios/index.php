@@ -21,6 +21,8 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
       <div class="section">
         <a class="waves-effect waves-light btn bg-blue right" href="/dashboard/usuarios/adicionar">Adicionar usuário <i class="material-icons right">&#xE7FE;</i></a>
+        <div class="spacing"></div>
+        <div class="spacing"></div>
       </div>
 
       <table class="striped responsive-table">

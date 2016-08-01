@@ -105,7 +105,6 @@ include "../includes/header.php";
                 <option value="2">Casado(a)</option>
                 <option value="3">Divorciado(a)</option>
                 <option value="4">Viúvo(a)</option>
-                <option value="5">Separado(a)</option>
                 <option value="6">Companheiro(a)</option>
               </select>
               <label for="estadoCivil">Estado Civil</label>
@@ -456,7 +455,7 @@ include "../includes/header.php";
         </div>
       </form>
     </div>
-  
+
         <div id="div-pj" class="col s12">
       <form action="#">
         <div class="row">
