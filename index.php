@@ -224,23 +224,21 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="modalRemessa" tabindex="-1" role="dialog" aria-labelledby="modalRemessaLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <img src="images/remessa_focco_modal.jpg" alt="" class="img-responsive">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+  <a href="int_transf_internacional.php">
+    <div class="modal fade" id="modalRemessa" tabindex="-1" role="dialog" aria-labelledby="modalRemessaLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <img src="images/remessa_focco_modal.jpg" alt="" class="img-responsive">
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-primary" href="int_transf_internacional.php">Saiba mais</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
+  </a>
 </section>
-
-
 
 <?php include '_footer.php';?>

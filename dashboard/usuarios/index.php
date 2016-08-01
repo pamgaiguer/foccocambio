@@ -31,7 +31,6 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <th>Login</th>
             <th>Nome</th>
             <th>Email</th>
-            <th>Telefone</th>
             <th>Tipo</th>
             <th class="center">Visualizar</th>
             <th class="center">Editar</th>
@@ -48,7 +47,6 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <td>'.$r["login"].'</td>
             <td>'.$r["nome"].'</td>
             <td>'.$r["email"].'</td>
-            <td>'.$r["telefone"].'</td>
             <td>'.($r["tipo"] == 2 ? "Admin" : "Usuário").'</td>
             <td class="center"><a href="/dashboard/usuarios/visualizar?usuarioId='.$r["id"].'"><i class="material-icons" title="Visualizar usuaŕio">assignment</i></a></td>
             <td class="center"><a href="/dashboard/usuarios/alterar?usuarioId='.$r["id"].'"><i class="material-icons" title="Editar Usuário">&#xE3C9;</i></a></td>

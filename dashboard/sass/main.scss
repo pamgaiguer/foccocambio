@@ -38,7 +38,7 @@ blockquote {
 }
 
 nav ul a, .side-nav.fixed a {
-    color: $gray;
+  color: $gray;
 }
 
 table td a{
@@ -63,12 +63,14 @@ table td a{
 .input-field input[type=text]:focus,
 input[type=email]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly])  {
   border-bottom: 1px solid $blue;
   box-shadow: 0 1px 0 0 $blue;
 }
 textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type=email]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
 input[type=password]:focus:not([readonly]) + label{
   color: $gray;
 }
@@ -128,6 +130,16 @@ button.picker__close:focus {
   }
   .indicator {
     background-color: $blue-lighter-shadow;
+  }
+}
+
+.table-visualization{
+  tbody{
+    tr{
+      td:first-child{
+        font-weight: 600;
+      }
+    }
   }
 }
 

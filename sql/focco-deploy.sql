@@ -56,6 +56,29 @@ CREATE TABLE `clientes` (
   `dataModificacao` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `categoria`, `razaoSocial`, `tipoPessoa`, `cpfCnpj`, `dataNascimentoAbertura`, `inscricaoMunicipal`, `rgInscricaoEstadual`, `rgOrgaoExpedidor`, `rgDataExpedicao`, `sexo`, `nacionalidade`, `estadoCivil`, `nomeConjuge`, `dataNascimentoConjuge`, `nomeMae`, `nomePai`, `email`, `telFixo`, `telCelular`, `contraSenha`, `observacoes`, `ofertasPorEmail`, `infoWhatsapp`, `dataCadastro`, `dataModificacao`) VALUES
+(3, 3, 'tom', 'F', '14354288702', '0000-00-00 00:00:00', NULL, '', '', '0000-00-00 00:00:00', 'M', '', 1, '', '0000-00-00 00:00:00', 'Thompson', 'Garcia', 'thompson.garcia@workmotor.com', '1931141333', '1931141333', '', '', b'1', b'1', NULL, NULL);
+-- (4, 3, 'josuÃ©', 'F', '14354288702', '1997-10-21 00:00:00', NULL, '11111111111111', 'orgaoexpedidor', '2016-06-16 00:00:00', 'M', 'brasleiro', 1, '', '1970-01-01 00:00:00', 'maria', 'jose', 'josue@josue.com.br', '9999999999', '99999999999', '121', '21212121', b'0', b'1', NULL, NULL),
+-- (5, 2, 'dddddddddddd', 'F', '14354288702', '2016-06-16 00:00:00', NULL, '212121', '1212121', '2016-06-16 00:00:00', 'M', '2121212', 1, '', '1970-01-01 00:00:00', '1212121', '212121', '21212@212121.com', '(99) 9999-9999', '(99) 99999-9999', '2121', '1212121', b'1', b'1', NULL, NULL),
+-- (6, 2, 'Thompson', 'F', '14354288702', '1993-10-21 00:00:00', NULL, '269379848', 'detran', '2016-06-17 00:00:00', 'M', 'Brasileiro', 1, '', '1972-03-16 00:00:00', 'Marcia de Sousa Mota', 'Claudio Duarte Garcia', 'thom.blizz@gmail.com', '(99) 9999-9999', '(19) 99666-6380', '2110', '21212121', b'1', b'1', NULL, '2016-07-06 20:55:54'),
+-- (7, 3, 'teste05', 'F', '08641614842', '2016-06-29 00:00:00', NULL, '21212121', 'ssp', '2016-06-16 00:00:00', 'M', 'hahahhaha', 1, '', '1972-03-16 00:00:00', 'mae da silva', 'pai de sousa', 'teste05@teste05.com', '(99) 9999-9999', '(99) 99999-9999', '21', '212121', b'1', b'1', NULL, NULL),
+-- (8, 1, 'Benedito', 'F', '26575582320', '1966-06-15 00:00:00', NULL, '2121212121', 'ssp', '2016-06-16 00:00:00', 'M', 'br', 2, 'huahueahueauh', '1971-04-24 00:00:00', 'aaaaaaaaaaaaaa', 'bbbbbbbbbbbbb', 'ab@cd.com', '(99) 9999-9999', '(99) 99999-9999', '111', '212121', b'1', b'1', NULL, NULL),
+-- (9, 1, 'fernando', 'F', '14354288702', '2016-07-06 00:00:00', NULL, '2121212', 'de', '2016-07-06 00:00:00', 'M', 'br', 2, 'asasasaa', '2016-07-06 00:00:00', 'asasasa', 'sasasasa', 'aaaaa@aaa.com.br', '9999999999', '99999999999', '212121', 'asasa', b'1', b'1', '2016-07-06 20:57:49', '2016-07-06 20:57:49'),
+-- (10, 1, 'thom', 'F', '14354288702', '2016-07-25 00:00:00', NULL, '269379848', 'detran', '2016-07-25 00:00:00', 'M', 'brasileiro', 1, '', '1700-01-01 00:00:00', 'marcia', 'claudio', 'thom.blizz@gmail.com', '9999999999', '99999999999', 'haha', '', b'1', b'1', '2016-07-26 01:05:10', '2016-07-26 01:05:10'),
+-- (11, 1, 'Thompson Mota Garcia', 'F', '14354288702', '2016-07-25 00:00:00', NULL, '269379848', 'detran', '2016-07-25 00:00:00', 'M', 'b', 1, '', '1700-01-01 00:00:00', 'Thompson', 'Garcia', 'thompson.garcia@workmotor.com', '1931141333', '99999999999', '2121', '', b'1', b'0', '2016-07-26 01:18:55', '2016-07-26 01:18:55'),
+-- (12, 4, 'hahaa', 'F', '14354288702', '2016-07-26 00:00:00', NULL, 'uheauhuha', 'detr', '2016-07-26 00:00:00', 'M', 'brasileiro', 1, '', '1700-01-01 00:00:00', 'huaehueauh', 'uheahueauhea', 'thompson.garcia@workmotor.com', '9999999999', '99999999999', '121', '', b'0', b'0', '2016-07-27 00:04:45', '2016-07-27 00:04:45'),
+-- (13, 4, 'huaheuha', 'F', '14354288702', '2016-07-26 00:00:00', NULL, 'ueauhua', 'detran', '2016-07-26 00:00:00', 'M', 'brasileiro', 1, '', '1700-01-01 00:00:00', 'huaeuhae', 'uhaeuhehua', 'thompson.garcia@workmotor.com', '9999999999', '99999999999', '', '', b'1', b'0', '2016-07-27 00:08:14', '2016-07-27 00:08:14');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `documentos`
+--
+
 DROP TABLE IF EXISTS `documentos`;
 CREATE TABLE `documentos` (
   `id` int(11) NOT NULL,
@@ -65,6 +88,28 @@ CREATE TABLE `documentos` (
   `dataEmissao` datetime DEFAULT NULL,
   `dataUltimaModificacao` datetime DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `documentos`
+--
+
+INSERT INTO `documentos` (`id`, `clienteId`, `tipo`, `arquivo`, `dataEmissao`, `dataUltimaModificacao`) VALUES
+(1, 13, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-rg.png', '2016-07-25 00:00:00', '2016-07-26 01:05:10'),
+(2, 14, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-rg.png', '2016-07-25 00:00:00', '2016-07-26 01:18:55'),
+(3, 15, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-rg.png', '2016-07-26 00:00:00', '2016-07-27 00:04:45'),
+(4, 16, 'CPF', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-cpf.png', NULL, '2016-07-27 00:08:15'),
+(5, 16, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-rg.png', '2016-07-26 00:00:00', '2016-07-27 00:08:15'),
+(6, 16, 'FF', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-ff.png', NULL, '2016-07-27 00:08:15'),
+(7, 16, 'IR', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-ir.png', NULL, '2016-07-27 00:08:15'),
+(8, 16, 'CA', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-ca.png', NULL, '2016-07-27 00:08:15'),
+(9, 16, 'CPS', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-cps.png', NULL, '2016-07-27 00:08:15'),
+(10, 16, 'PV', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-pv.png', NULL, '2016-07-27 00:08:15');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `enderecoscliente`
+--
 
 DROP TABLE IF EXISTS `enderecoscliente`;
 CREATE TABLE `enderecoscliente` (
@@ -85,6 +130,34 @@ CREATE TABLE `enderecoscliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Extraindo dados da tabela `enderecoscliente`
+--
+
+INSERT INTO `enderecoscliente` (`id`, `clienteId`, `tipo`, `cep`, `endereco`, `numero`, `complemento`, `bairro`, `municipioId`, `estadoId`, `paisId`, `cidade`, `estado`, `pais`) VALUES
+(1, 8, 1, '13100117', 'Rua Salim Feres', '121', '', 'Jardim Santa Marcelina', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil');
+-- (2, 8, 2, '13100117', 'Rua Salim Feres', '121', '', 'Jardim Santa Marcelina', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (5, 9, 1, '13105-808', 'Rua do Flautim', '30611111', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (6, 9, 2, '13105-808', 'Rua do Flautim', '30611111', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (7, 10, 1, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (8, 10, 2, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (9, 11, 1, '13105808', 'Rua do Flautim', '33', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (10, 11, 2, '13105808', 'Rua do Flautim', '33', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (11, 12, 1, '21720260', 'Rua Mucurana', '2121', '', 'Padre Miguel', NULL, NULL, NULL, 'Rio de Janeiro', 'RJ', 'Brasil'),
+-- (12, 12, 2, '21720260', 'Rua Mucurana', '2121', '', 'Padre Miguel', NULL, NULL, NULL, 'Rio de Janeiro', 'RJ', 'Brasil'),
+-- (13, 13, 1, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (14, 13, 2, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (15, 14, 1, '13100117', 'Rua Salim Feres', '251', '', 'Jardim Santa Marcelina', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (16, 14, 2, '13100117', 'Rua Salim Feres', '251', '', 'Jardim Santa Marcelina', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (17, 15, 1, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (18, 15, 2, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (19, 16, 1, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+-- (20, 16, 2, '13105808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estados`
+--
 
 DROP TABLE IF EXISTS `estados`;
 CREATE TABLE `estados` (
@@ -93,6 +166,10 @@ CREATE TABLE `estados` (
   `uf` varchar(2) DEFAULT NULL,
   `regiao` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `estados`
+--
 
 INSERT INTO `estados` (`id`, `nome`, `uf`, `regiao`) VALUES
 (11, 'RONDONIA', 'RO', 'NORTE'),
@@ -124,12 +201,22 @@ INSERT INTO `estados` (`id`, `nome`, `uf`, `regiao`) VALUES
 (53, 'DISTRITO FEDERAL', 'DF', 'CENTROESTE'),
 (99, 'EXTERIOR', 'EX', 'NULL');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `municipios`
+--
+
 DROP TABLE IF EXISTS `municipios`;
 CREATE TABLE `municipios` (
   `id` int(11) NOT NULL DEFAULT '0',
   `estadoId` int(11) DEFAULT NULL,
   `nome` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `municipios`
+--
 
 INSERT INTO `municipios` (`id`, `estadoId`, `nome`) VALUES
 (1100015, 11, 'ALTA FLORESTA D OESTE'),
@@ -5701,6 +5788,10 @@ INSERT INTO `municipios` (`id`, `estadoId`, `nome`) VALUES
 
 -- --------------------------------------------------------
 
+--
+-- Estrutura da tabela `usuarios`
+--
+
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
@@ -5712,10 +5803,16 @@ CREATE TABLE `usuarios` (
   `telefone` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
 INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefone`) VALUES
 (1, 'tom', 'paladino1', 1, 'Thom M Garcia', 'thom.blizz@gmail.com', '19996666380'),
 (2, 'pam', 'REDEFINIR', 1, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
-(3, 'leo', 'REDEFINIR', 1, 'Leo', 'leozac@gmail.com', '(11) 11111-1111');
+(3, 'leo', 'REDEFINIR', 1, 'Leo', 'leozac@gmail.com', '(11) 11111-1111'),
+(4, 'user03', 'REDEFINIR', 3, 'user03', 'user03@gmail.com', '(19) 99666-6380'),
+(10, 'user04', 'paladino1', 3, 'user04', 'user04@user04.com', '(21) 21212-1212');
 
 --
 -- Indexes for dumped tables
@@ -5776,7 +5873,6 @@ ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
---
 --
 -- Limitadores para a tabela `enderecoscliente`
 --

@@ -6342,12 +6342,14 @@ table td a {
 .input-field input[type=text]:focus,
 input[type=email]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #15325c;
   box-shadow: 0 1px 0 0 #15325c; }
 
 textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type=email]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
 input[type=password]:focus:not([readonly]) + label {
   color: #707070; }
 
@@ -6392,6 +6394,9 @@ button.picker__close:focus {
     color: #15325c; }
 .tabs .indicator {
   background-color: #357EE8; }
+
+.table-visualization tbody tr td:first-child {
+  font-weight: 600; }
 
 @media only screen and (max-width: 992px) {
   header, main, footer {

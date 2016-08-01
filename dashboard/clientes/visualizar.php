@@ -41,10 +41,11 @@ foreach($rows as $r){
     <div class="col s12">
       <div class="row">
         <br>
-        <a href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
+
+        <a class="btn waves-effect waves-light bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
         <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
 
-        <table class="responsive-table">
+        <table class="responsive-table table-visualization">
           <thead>
             <tr>
               <th data-field="campos" colspan="2">Dados do cliente</th>
@@ -70,6 +71,10 @@ foreach($rows as $r){
               </td>
             </tr>
             <tr>
+              <td>Origem do cliente</td>
+              <td>..</td>
+            </tr>
+            <tr>
               <td>Nome</td>
               <td><?php echo $nome ?></td>
             </tr>
@@ -86,7 +91,7 @@ foreach($rows as $r){
               <td><?php echo date_format(new DateTime($dataNascimentoAbertura), 'd/m/yyyy'); ?></td>
             </tr>
             <tr>
-              <td>RG</td>
+              <td>R.G.</td>
               <td><?php echo $rgInscricaoEstadual  ?></td>
             </tr>
             <tr>
@@ -96,6 +101,14 @@ foreach($rows as $r){
             <tr>
               <td>Data da Expedição</td>
               <td><?php echo $rgDataExpedicao ?></td>
+            </tr>
+            <tr>
+              <td>Passaporte</td>
+              <td>..</td>
+            </tr>
+            <tr>
+              <td>RG / D.N.I.</td>
+              <td>..</td>
             </tr>
             <tr>
               <td>Gênero</td>
@@ -169,14 +182,60 @@ foreach($rows as $r){
         <br>
         <p class="title-forms">Documentos do cliente <strong><?php echo $nome ?></strong></p><hr>
         <div class="docs">
-          <img alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png" width="150px" height="150px" />
-          <img alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="150px" height="150px" />
-          <img alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="150px" height="150px" />
-          <img alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="150px" height="150px" />
-          <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="150px" height="150px" />
-          <img alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="150px" height="150px" />
-          <img alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="150px" height="150px" />
-          <img alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="150px" height="150px" />
+
+          <div class="row">
+            <div class="col s3">
+              <figure>
+                <img alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png" width="150px" height="150px" />
+                <figcaption>CPF</figcaption>
+              </figure>
+            </div>
+            <div class="col s3">
+              <figure>
+                <img alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="150px" height="150px" />
+                <figcaption>RG</figcaption>
+              </figure>
+            </div>
+            <div class="col s3">
+              <figure>
+                <img alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="150px" height="150px" />
+                <figcaption>Comprovante de residência</figcaption>
+              </figure>
+            </div>
+            <div class="col s3">
+              <figure>
+                <img alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="150px" height="150px" />
+                <figcaption>Ficha Cadastral Focco</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s3">
+              <figure>
+                <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="150px" height="150px" />
+                <figcaption>Imposto de Renda</figcaption>
+              </figure>
+            </div>
+            <div class="col s3">
+              <figure>
+                <img alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="150px" height="150px" />
+                <figcaption>Cartão de Assinatura</figcaption>
+              </figure>
+            </div>
+            <div class="col s3">
+              <figure>
+                <img alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="150px" height="150px" />
+                <figcaption>Contrato de Prestação de Serviços</figcaption>
+              </figure>
+            </div>
+            <div class="col s3">
+              <figure>
+                <img alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="150px" height="150px" />
+                <figcaption>Procuração para a Vision</figcaption>
+              </figure>
+            </div>
+          </div>
+
         </div>
         <hr>
         <div class="spacing"></div>
@@ -201,36 +260,63 @@ foreach($rows as $r){
           $pais = $r['pais'];
 
           echo
-          '
-
-          ';
-
-
-        echo '<h2>'.($tipo == 2 ? "Entrega" : "Residencial").'</h2>';
-        echo '<h2>'.$endereco.'</h2>';
-        echo '<h2>'.$cep.'</h2>';
-        echo '<h2>'.$complemento.'</h2>';
-        echo '<h2>'.$bairro.'</h2>';
-        echo '<h2>'.$cidade.'</h2>';
-        echo '<h2>'.$estado.'</h2>';
-        echo '<h2>'.$pais.'</h2>';
-        echo '<hr>';
-      }
-      ?>
-
-      <table>
+          '<table class="responsive-table">
           <thead>
             <tr>
-              <th colspan="2">Endereço tipo <strong>'.($tipo == 2 ? "Entrega" : "Residencial").'</th>
+            <th colspan="2">Endereço <strong>'.($tipo == 2 ? "Entrega" : "Residencial").'</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>CEP</td>
-              <td>..</td>
+              <td>'.$cep.'</td>
+            </tr>
+            <tr>
+              <td>Logradouro</td>
+              <td>'.$endereco.'</td>
+            </tr>
+            <tr>
+              <td>Número</td>
+              <td>'.$numero.'</td>
+            </tr>
+            <tr>
+              <td>Complemento</td>
+              <td>'.$complemento.'</td>
+            </tr>
+            <tr>
+              <td>Bairro</td>
+              <td>'.$bairro.'</td>
+            </tr>
+            <tr>
+              <td>Cidade</td>
+              <td>'.$cidade.'</td>
+            </tr>
+            <tr>
+              <td>Estado</td>
+              <td>'.$estado.'</td>
+            </tr>
+            <tr>
+              <td>País</td>
+              <td>'.$pais.'</td>
             </tr>
           </tbody>
-      </table>
+        </table>';
+
+
+        // echo '<h2>'.($tipo == 2 ? "Entrega" : "Residencial").'</h2>';
+        // echo '<h2>'.$endereco.'</h2>';
+        // echo '<h2>'.$cep.'</h2>';
+        // echo '<h2>'.$complemento.'</h2>';
+        // echo '<h2> numero da casa'.$numero.'</h2>';
+        // echo '<h2>'.$bairro.'</h2>';
+        // echo '<h2>'.$cidade.'</h2>';
+        // echo '<h2>'.$estado.'</h2>';
+        // echo '<h2>'.$pais.'</h2>';
+        // echo '<hr>';
+      }
+      ?>
+
+
 
     </div>
   </div>

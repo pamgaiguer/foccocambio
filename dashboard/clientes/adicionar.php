@@ -13,7 +13,7 @@ include "../includes/header.php";
       </ul>
     </div>
 
-      <div id="div-pf" class="col s12">
+    <div id="div-pf" class="col s12">
       <form action="adicionarPost.php" method="POST" class="form-group form-adicionar-cliente" id="form-adicionar-cliente-pf" enctype="multipart/form-data">
         <div class="row">
           <div class="col s12">
@@ -122,6 +122,12 @@ include "../includes/header.php";
                 <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="date" class="datepicker">
                 <label for="dataNascimentoConjuge">Data de Nascimento Cônjuge</label>
               </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <h5>Filiação</h5>
             </div>
           </div>
 
@@ -456,7 +462,7 @@ include "../includes/header.php";
       </form>
     </div>
 
-        <div id="div-pj" class="col s12">
+    <div id="div-pj" class="col s12">
       <form action="#">
         <div class="row">
           <div class="col s12">

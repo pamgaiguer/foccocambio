@@ -50,7 +50,7 @@
           <p class="link-face pull-right hidden-xs">
             <a href="http://instagram.com/foccocambio/" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_instagram.png" alt="instagram "></i></a>
             <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></a>
-            <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno"><i class="hidden-xs hidden-sm"><img src="images/logo_cadeado.png" alt="dashboard"></i></a>
+<!--             <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno"><i class="hidden-xs hidden-sm"><img src="images/logo_cadeado.png" alt="dashboard"></i></a> -->
           </p>
         </div>
       </div>

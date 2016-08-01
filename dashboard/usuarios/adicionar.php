@@ -8,7 +8,7 @@ include "../includes/header.php";
   <div class="row">
     <div class="col s12">
 
-      <h4 class="title-forms">Adicionar usuários</h4>
+      <h4 class="title-forms">Adicionar usuário do sistema</h4>
 
       <form action="adicionarPost.php" method="POST" class="form-group" id="form-adicionar-usuario">
 
@@ -19,21 +19,21 @@ include "../includes/header.php";
             <label for="nome">Nome</label>
           </div>
           <div class="input-field col s6">
-            <input name="login" id="login" type="text"/><br/>
+            <input name="login" id="login" type="text"/>
             <label for="login">Login</label>
           </div>
 
           <div class="input-field col s6">
-            <input name="email" id="email" type="text"/><br/>
+            <input name="email" id="email" type="text"/>
             <label for="login">E-mail</label>
           </div>
 
-          <div class="input-field col s6">
+<!--           <div class="input-field col s6">
             <input name="telefone" id="telefone" pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" />
             <label for="telefone">Telefone</label>
-          </div>
+          </div> -->
 
-          <div class="input-field col s12">
+          <div class="input-field col s6">
             <select name="tipo" id="tipo">
               <option value="2" class="bg-blue"> Admin</option>
               <option value="3" selected>Usuário</option>
@@ -42,6 +42,7 @@ include "../includes/header.php";
           </div>
 
           <div class="col s12">
+            <div class="spacing"></div>
             <input type="submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
           </div>
 
