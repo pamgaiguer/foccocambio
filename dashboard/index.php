@@ -11,7 +11,7 @@ include 'includes/header_index.php';
       <div class="card-panel">
 
         <div class="section center">
-          <h5 class="blue-focco">Acesso ao <span class="font-semibold">Dashboard Focco Câmbio</span></h5>
+          <h5 class="blue-focco">Acesso ao <span class="font-semibold">Dashboard Focco CÃ¢mbio</span></h5>
         </div>
 
         <div class="section">

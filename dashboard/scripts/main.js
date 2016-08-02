@@ -167,10 +167,10 @@ focco = {
       weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
       today: 'Hoje',
       clear: 'Limpar',
-      close: 'Fechar',
+      close: 'Ok',
       selectMonths: true,
       selectYears: 200,
-      format: 'dd-mm-yyyy'
+      format: 'dd/mm/yyyy'
     });
 
 
@@ -191,8 +191,8 @@ focco = {
     $("#telCelular").mask("(99) 99999-9999");
 
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
-      
-      var cpf = $(this).val();     
+
+      var cpf = $(this).val();
 
       $.ajax({
         url: "/dashboard/clientes/methods/validarCpf",
@@ -222,30 +222,30 @@ focco = {
         $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
         $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
         $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
-        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});        
+        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});
       } else if (categoriaId == 2){
         $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
         $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
         $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
-        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});        
+        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});
         $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
         $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
         $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
-        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});        
+        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});
       } else if (categoriaId == 3 || categoriaId == 4){
         $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
         $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
         $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
-        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});        
+        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});
         $(".div-input-file-ir").fadeIn(300, function(){$("#input-file-ir").attr("required", "required")});
         $(".div-input-file-ca").fadeIn(300, function(){$("#input-file-ca").attr("required", "required")});
         $(".div-input-file-cps").fadeIn(300, function(){$("#input-file-cps").attr("required", "required")});
-        $(".div-input-file-pv").fadeIn(300, function(){$("#input-file-pv").attr("required", "required")});        
+        $(".div-input-file-pv").fadeIn(300, function(){$("#input-file-pv").attr("required", "required")});
       }
 
     });
 
-    
+
 
     $("#cep-residencial").change(function(){
       cep = $(this).val();
@@ -266,16 +266,16 @@ focco = {
 
     $("#filled-in-box").click(function(){
       if ($(this).is(":checked")) {
-        $("#cep-entrega").val($("#cep-residencial").val());        
+        $("#cep-entrega").val($("#cep-residencial").val());
         $("#logradouro-entrega").val($("#logradouro-residencial").val());
         $("#numero-entrega").val($("#numero-residencial").val());
         $("#complemento-entrega").val($("#complemento-residencial").val());
         $("#bairro-entrega").val($("#bairro-residencial").val());
         $("#cidade-entrega").val($("#cidade-residencial").val());
         $("#UF-entrega").val($("#UF-residencial").val());
-        $("#pais-entrega").val($("#pais-residencial").val());      
+        $("#pais-entrega").val($("#pais-residencial").val());
       }
-    
+
     });
 
     $("#cep-entrega").change(function(){
@@ -297,7 +297,7 @@ focco = {
 
     $("#form-adicionar-cliente-pf").submit(function(e){
 
-      e.preventDefault();      
+      e.preventDefault();
       var formData = new FormData($(this)[0]);
 
       formData.append( 'ofertasPorEmail', document.getElementsByName('ofertasPorEmail')[0].checked);
@@ -315,7 +315,7 @@ focco = {
           cache: false,
           contentType: false,
           processData: false
-      });      
+      });
 
     });
 
@@ -340,10 +340,10 @@ focco = {
         weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
         today: 'Hoje',
         clear: 'Limpar',
-        close: 'Fechar',
+        close: 'Ok',
         selectMonths: true,
         selectYears: 200,
-        format: 'dd-mm-yyyy'
+        format: 'dd/mm/yyyy'
     });
 
     $("#estadoCivil").change(function(){
@@ -363,8 +363,8 @@ focco = {
     $("#telCelular").mask("(99) 99999-9999");
 
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
-      
-      var cpf = $(this).val();     
+
+      var cpf = $(this).val();
 
       $.ajax({
         url: "/dashboard/clientes/methods/validarCpf",
@@ -417,7 +417,7 @@ focco = {
 
     });
 
-    
+
 
     $("#cep-residencial").change(function(){
       cep = $(this).val();
@@ -438,16 +438,16 @@ focco = {
 
     $("#filled-in-box").click(function(){
       if ($(this).is(":checked")) {
-        $("#cep-entrega").val($("#cep-residencial").val());        
+        $("#cep-entrega").val($("#cep-residencial").val());
         $("#logradouro-entrega").val($("#logradouro-residencial").val());
         $("#numero-entrega").val($("#numero-residencial").val());
         $("#complemento-entrega").val($("#complemento-residencial").val());
         $("#bairro-entrega").val($("#bairro-residencial").val());
         $("#cidade-entrega").val($("#cidade-residencial").val());
         $("#UF-entrega").val($("#UF-residencial").val());
-        $("#pais-entrega").val($("#pais-residencial").val());      
+        $("#pais-entrega").val($("#pais-residencial").val());
       }
-    
+
     });
 
     $("#cep-entrega").change(function(){
@@ -469,7 +469,7 @@ focco = {
 
     $("#form-alterar-cliente-pf").submit(function(e){
 
-      e.preventDefault();      
+      e.preventDefault();
       var formData = new FormData($(this)[0]);
 
       formData.append( 'ofertasPorEmail', document.getElementsByName('ofertasPorEmail')[0].checked);
@@ -487,24 +487,24 @@ focco = {
           cache: false,
           contentType: false,
           processData: false
-      });      
+      });
 
     });
 
   },
 
   buscarClienteFormPost: function(){
-    
+
     $("#form-busca-clientes").submit(function(e){
       e.preventDefault();
-      
-      search = $("#input-cpfcnpj", $(this)).val();     
-      
+
+      search = $("#input-cpfcnpj", $(this)).val();
+
       $.ajax({
         url: "/dashboard/clientes/methods/buscaCliente.php/",
-        type: "POST",        
-        data: { search }, 
-        success: function(r){          
+        type: "POST",
+        data: { search },
+        success: function(r){
           $("#table-body-clientes").html(r);
         }
 
