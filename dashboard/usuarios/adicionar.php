@@ -9,11 +9,8 @@ include "../includes/header.php";
     <div class="col s12">
 
       <h4 class="title-forms">Adicionar usuário do sistema</h4>
-
       <form action="adicionarPost.php" method="POST" class="form-group" id="form-adicionar-usuario">
-
         <div class="row">
-
           <div class="input-field col s6">
             <input name="nome" id="nome" type="text" />
             <label for="nome">Nome</label>
@@ -22,17 +19,10 @@ include "../includes/header.php";
             <input name="login" id="login" type="text"/>
             <label for="login">Login</label>
           </div>
-
           <div class="input-field col s6">
             <input name="email" id="email" type="text"/>
             <label for="login">E-mail</label>
           </div>
-
-<!--           <div class="input-field col s6">
-            <input name="telefone" id="telefone" pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" />
-            <label for="telefone">Telefone</label>
-          </div> -->
-
           <div class="input-field col s6">
             <select name="tipo" id="tipo">
               <option value="2" class="bg-blue"> Admin</option>
@@ -40,18 +30,15 @@ include "../includes/header.php";
             </select>
             <label for="tipo">Tipo de Usuário</label>
           </div>
-
           <div class="col s12">
             <div class="spacing"></div>
             <input type="submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
           </div>
-
         </div>
       </form>
     </div>
   </div>
 </main>
-
 
 <?php
 include "../includes/footer.php";

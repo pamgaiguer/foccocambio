@@ -19,8 +19,7 @@ include "../includes/header.php";
           <div class="col s12">
             <div class="spacing"></div>
             <h5>Dados pessoais</h5>
-            <div class="spacing"></div>
-
+<!--
             <ul class="black-text">
               <li>
                 Nesta tela: Validação dos documentos por tempo:<br>
@@ -29,7 +28,7 @@ include "../includes/header.php";
               </li>
               <li></li>
               <li></li>
-            </ul>
+            </ul> -->
           </div>
 
           <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F"/>
@@ -162,7 +161,7 @@ include "../includes/header.php";
           <div class="row">
             <div class="input-field col s3">
               <input id="contraSenha" name="contraSenha" type="text">
-              <label for="contraSenha">Contra-senha</label>
+              <label for="contraSenha">Contra-senha (Cartão pré-pago)</label>
             </div>
 
             <div class="input-field col s3">
@@ -204,7 +203,6 @@ include "../includes/header.php";
           <div class="row">
             <div class="col s12">
               <h5>Documentos Obrigatórios</h5>
-              <em>Cada tipo de pessoa tem uma documentação específica - ver documentação</em>
             </div>
 
             <div class="col s6 div-input-file-cpf">
@@ -362,16 +360,14 @@ include "../includes/header.php";
           <div class="row">
             <div class="col s12">
               <h5>Endereço para entrega</h5>
+              <div class="spacing"></div>
+              <div>
+                <input type="checkbox" class="filled-in" id="filled-in-box">
+                <label for="filled-in-box">Marque se o endereço de entrega é o mesmo que o residencial</label>
+              </div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="input-field col s12">
-              <input type="checkbox" class="filled-in" id="filled-in-box">
-              <label for="filled-in-box">Marque se o endereço de entrega é o mesmo que o residencial</label>
-            </div>
-          </div>
-          <div class="spacing"></div>
           <div class="spacing"></div>
           <div id="div-endereco-entrega">
 

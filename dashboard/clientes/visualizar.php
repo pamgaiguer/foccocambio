@@ -253,6 +253,7 @@ foreach($rows as $r){
           $tipo = $r['tipo'];
           $cep = $r['cep'];
           $endereco = $r['endereco'];
+          $numero = $r['numero'];
           $complemento = $r['complemento'];
           $bairro = $r['bairro'];
           $cidade = $r['cidade'];
@@ -301,18 +302,6 @@ foreach($rows as $r){
             </tr>
           </tbody>
         </table>';
-
-
-        // echo '<h2>'.($tipo == 2 ? "Entrega" : "Residencial").'</h2>';
-        // echo '<h2>'.$endereco.'</h2>';
-        // echo '<h2>'.$cep.'</h2>';
-        // echo '<h2>'.$complemento.'</h2>';
-        // echo '<h2> numero da casa'.$numero.'</h2>';
-        // echo '<h2>'.$bairro.'</h2>';
-        // echo '<h2>'.$cidade.'</h2>';
-        // echo '<h2>'.$estado.'</h2>';
-        // echo '<h2>'.$pais.'</h2>';
-        // echo '<hr>';
       }
       ?>
 

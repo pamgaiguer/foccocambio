@@ -143,6 +143,10 @@ button.picker__close:focus {
   }
 }
 
+[type="checkbox"].filled-in:checked + label:after {
+    border: 2px solid $blue;
+    background-color: $blue;
+}
 
 
 @media only screen and (max-width : 992px) {
