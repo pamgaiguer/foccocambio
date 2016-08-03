@@ -15,20 +15,20 @@
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="int_moeda.php">
+          <a href="compra-venda-moeda.php">
             <img class="media-object" src="images/icon_money_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
           <h4 class="media-heading">Compra e venda de moeda estrangeira</h4>
           <p>Melhores taxas do mercado, cédulas novas, <br>atendimento diferenciado por uma equipe treinada.</p>
-          <a href="int_moeda.php">Saiba Mais</a>
+          <a href="compra-venda-moeda.php">Saiba Mais</a>
         </div>
       </div>
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="int_transf_internacional.php">
+          <a href="remessa-internacional.php">
             <img class="media-object" src="images/icon_transfer_circle.png" alt="produtos e serviços">
           </a>
         </div>
@@ -39,13 +39,14 @@
             Compra e venda de imóveis / importação e exportação com total segurança.<br>
             Equipe capacitada com profissionais com ampla experiências no mercado financeiro para indicar a melhor opção.
           </p>
-          <a href="int_transf_internacional.php">Saiba Mais</a>
+          <a href="remessa-internacional.php">Saiba Mais</a>
         </div>
+
       </div>
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="int_travel-insurance.php">
+          <a href="seguro-viagem.php">
             <img class="media-object" src="images/icon_seguro_circle.png" alt="produtos e serviços">
           </a>
         </div>
@@ -57,13 +58,13 @@
             de uma central de atendimento 24h em português, além de outros benefícios e cliente FOCCO tem desconto!<br>
             Consulte-nos!
           </p>
-          <a href="int_travel-insurance.php">Saiba Mais</a>
+          <a href="seguro-viagem.php">Saiba Mais</a>
         </div>
       </div>
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="int_atend_corporativo.php">
+          <a href="atendimento-corporativo.php">
             <img class="media-object" src="images/icon_corporativo_circle.png" alt="produtos e serviços">
           </a>
         </div>
@@ -73,7 +74,7 @@
             Melhores condições e taxas para atender as necessidades de funcionários viajantes, pagamentos internacionais,
             importação/exportação etc. Sempre com a ajuda de um executivo de contas exclusivo.
           </p>
-          <a href="int_atend_corporativo.php">Saiba Mais</a>
+          <a href="atendimento-corporativo.php">Saiba Mais</a>
         </div>
       </div>
 
@@ -82,7 +83,7 @@
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="int_cartao_prepago.php">
+          <a href="cartao-travel-money.php">
             <img class="media-object" src="images/icon_cartao_circle.png" alt="produtos e serviços">
           </a>
         </div>
@@ -91,7 +92,7 @@
           <p>
             Seguro, prático, nominal e recarregável, emitido sem custo nenhum e com a abrangência <em>VISA</em> presente em mais de 200 países.
           </p>
-          <a href="int_cartao_prepago.php">Saiba Mais</a>
+          <a href="cartao-travel-money.php">Saiba Mais</a>
         </div>
       </div>
 
@@ -114,7 +115,7 @@
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="int_western_union.php">
+          <a href="western-union.php">
             <img class="media-object" src="images/icon_wu_circle.png" alt="produtos e serviços">
           </a>
         </div>
@@ -124,7 +125,7 @@
             Somos um agente autorizado - Nunca foi tão fácil enviar e receber dinheiro, sem burocracia e de forma rápida e segura.
             (Manutenção de residente)
           </p>
-          <a href="int_western_union.php">Saiba Mais</a>
+          <a href="western-union.php">Saiba Mais</a>
         </div>
       </div>
 

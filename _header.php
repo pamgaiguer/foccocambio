@@ -16,8 +16,8 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-42904042-1', 'auto');
@@ -26,7 +26,6 @@
   </script>
 </head>
 <body>
-
   <header class="navbar-fixed-top">
     <div class="container-fluid">
       <div class="row">
@@ -50,7 +49,7 @@
           <p class="link-face pull-right hidden-xs">
             <a href="http://instagram.com/foccocambio/" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_instagram.png" alt="instagram "></i></a>
             <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></a>
-<!--             <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno"><i class="hidden-xs hidden-sm"><img src="images/logo_cadeado.png" alt="dashboard"></i></a> -->
+            <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno"><i class="hidden-xs hidden-sm"><img src="images/logo_cadeado.png" alt="dashboard"></i></a>
           </p>
         </div>
       </div>
@@ -66,11 +65,11 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav nav-pills nav-justified">
-              <li><a href="delivery.php">Delivery <span class="sr-only">(current)</span></a></li>
-              <li><a href="products-services.php">Produtos e serviços</a></li>
-              <li><a href="int_transf_internacional.php">Remessa Internacional</a></li>
+            <li><a href="delivery">Delivery <span class="sr-only">(current)</span></a></li>
+              <li><a href="produtos-servicos.php">Produtos e serviços</a></li>
+              <li><a href="remessa-internacional.php">Remessa Internacional</a></li>
               <li><a href="contact.php">Lojas / Contato</a></li>
-              <li><a href="int_travel-insurance.php">Seguro viagem</a></li>
+              <li><a href="seguro-viagem.php">Seguro viagem</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

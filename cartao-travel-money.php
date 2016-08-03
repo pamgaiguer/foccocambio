@@ -1,7 +1,7 @@
 <?php include '_header.php';?>
 
 <div class="container-fluid">
-<img src="images/internas/interna_cartao.jpg" alt="cartao pre pago" class="img-responsive center-block">
+  <img src="images/internas/interna_cartao.jpg" alt="cartao pre pago" class="img-responsive center-block">
 </div>
 
 <div class="container blue-text">
@@ -35,7 +35,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-<?php include 'comp_prepaid_card.php';?>
+      <?php include 'howto-use-visatravel-money.php';?>
     </div>
   </div>
 
