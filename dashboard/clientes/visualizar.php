@@ -35,6 +35,14 @@ foreach($rows as $r){
   $infoWhatsapp = $r['infoWhatsapp'];
 }
 
+
+$sql_query = sprintf("SELECT tipo FROM documentos WHERE clienteId = %s", $_GET['clienteId']);
+$result = mysqli_query($conn, $sql_query);
+$docs = array();
+while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
+
+
+
 ?>
 <main>
   <div class="row">
@@ -183,61 +191,112 @@ foreach($rows as $r){
         <p class="title-forms">Documentos do cliente <strong><?php echo $nome ?></strong></p><hr>
         <div class="docs">
 
-          <div class="row">
+          <?php if (count($docs) < 1) { ?>
+
+            <div class="col s12">
+              <h4>
+                Sem documentos
+              </h4>
+            </div>
+
+          <?php } ?>
+            
+          <?php if (in_array("CPF", $docs)) { ?>
+
             <div class="col s3">
               <figure>
                 <img alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png" width="150px" height="150px" />
                 <figcaption>CPF</figcaption>
               </figure>
             </div>
+
+          <?php } ?>
+
+          
+          <?php if (in_array("RG", $docs)) { ?>
+
             <div class="col s3">
               <figure>
                 <img alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="150px" height="150px" />
                 <figcaption>RG</figcaption>
               </figure>
             </div>
+
+          <?php } ?>
+
+
+          <?php if (in_array("CR", $docs)) { ?>
+
             <div class="col s3">
               <figure>
                 <img alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="150px" height="150px" />
                 <figcaption>Comprovante de residência</figcaption>
               </figure>
             </div>
+
+          <?php } ?>
+
+
+          <?php if (in_array("FF", $docs)) { ?>
+
             <div class="col s3">
               <figure>
                 <img alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="150px" height="150px" />
                 <figcaption>Ficha Cadastral Focco</figcaption>
               </figure>
             </div>
-          </div>
-          <div class="row">
+
+          <?php } ?>
+
+          
+          <?php if (in_array("IR", $docs)) { ?>
+          
             <div class="col s3">
               <figure>
                 <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="150px" height="150px" />
                 <figcaption>Imposto de Renda</figcaption>
               </figure>
             </div>
+
+          <?php } ?>
+
+
+          <?php if (in_array("CA", $docs)) { ?>
+
             <div class="col s3">
               <figure>
                 <img alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="150px" height="150px" />
                 <figcaption>Cartão de Assinatura</figcaption>
               </figure>
             </div>
+
+          <?php } ?>
+
+          <?php if (in_array("CPS", $docs)) { ?>
+
             <div class="col s3">
               <figure>
                 <img alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="150px" height="150px" />
                 <figcaption>Contrato de Prestação de Serviços</figcaption>
               </figure>
             </div>
+
+          <?php } ?>
+
+          <?php if (in_array("PV", $docs)) { ?>
+
             <div class="col s3">
               <figure>
                 <img alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="150px" height="150px" />
                 <figcaption>Procuração para a Vision</figcaption>
               </figure>
             </div>
-          </div>
+
+          <?php } ?>
+          
 
         </div>
-        <hr>
+        
         <div class="spacing"></div>
 
         <?php

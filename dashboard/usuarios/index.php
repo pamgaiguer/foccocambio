@@ -65,3 +65,4 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 <?php
 include '../includes/footer.php';
 ?>
+

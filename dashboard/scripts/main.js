@@ -136,7 +136,7 @@ focco = {
         type: "post",
         data: {nome, login, email, telefone, tipo},
         error: function(data){},
-        success: function(data){
+        success: function(data){          
           if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi adicionado");
           else window.location = "/dashboard/usuarios/";
         }

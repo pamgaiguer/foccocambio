@@ -56,7 +56,7 @@
             </li>
           </ul>
         </li>
-        <li><a href="/dashboard/quotation-table"><i class="material-icons left">&#xE227;</i> Cotações</a></li>
+        <li><a href="/dashboard/cotacoes"><i class="material-icons left">&#xE227;</i> Cotações</a></li>
       </ul>
     </nav>
 

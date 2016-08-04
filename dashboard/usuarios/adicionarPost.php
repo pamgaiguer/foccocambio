@@ -2,8 +2,8 @@
 	include "../core/database.php";
 
 	$sql_query = sprintf("
-		insert into usuarios (nome, login, email, telefone, tipo, senha)
-		values ('%s', '%s', '%s', '%s', %s, '%s')",
+		insert into usuarios (nome, login, email, tipo, senha)
+		values ('%s', '%s', '%s', %s, '%s')",
 
 		$_POST["nome"], $_POST["login"], $_POST["email"], $_POST["tipo"], "REDEFINIR");
 
