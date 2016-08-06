@@ -190,8 +190,9 @@ foreach($rows as $r){
             <div class="input-field col s3">
               <select name="categoria" required id="categoria">
                 <option value="1" <?php echo ($categoria == '1' ? "selected" : "") ?> >Focco</option>
-                <option value="2" <?php echo ($categoria == '2' ? "selected" : "") ?> >Vision</option>
-                <option value="3" <?php echo ($categoria == '3' ? "selected" : "") ?> >PF Premium</option>
+                <option value="2" <?php echo ($categoria == '2' ? "selected" : "") ?> >FX53 Simplificado</option>
+                <option value="3" <?php echo ($categoria == '3' ? "selected" : "") ?> >FX53 Premier</option>
+                <option value="4" <?php echo ($categoria == '4' ? "selected" : "") ?> >FX53 Plus</option>
               </select>
               <label for="categoria">Categoria Pessoa Física</label>
             </div>

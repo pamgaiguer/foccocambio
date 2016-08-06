@@ -59,6 +59,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
       <style type="text/css">
         .cor-vermelha{ color: #FF0000; }
         .cor-verde{ color: #00D300; }
+        .cor-amarela { color: #FFFF00; }
       </style>
 
         <table class="striped responsive-table">
@@ -77,28 +78,60 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           </thead>
           <tbody id="table-body-clientes">
             <?php
-            foreach($rows as $r){
 
-
-              $sql_query = "SELECT tipo FROM documentos WHERE tipo in ('RG', 'CPF') and clienteId = ". $r['id'];
-              $result = mysqli_query($conn, $sql_query);
-              $docs = array();
-              while($row = mysqli_fetch_array($result)) $docs[] = $row;
-
-              $cor = "";
-              if (!$docs){
-                $cor = "cor-vermelha";
-              } else {
-                $cor = "cor-verde";
-              }
+            foreach($rows as $r){              
 
               switch ($r["categoria"]) {
-                case 1: $categoria = "Focco"; break;
-                case 2: $categoria = "FX53 Simplificado"; break;
-                case 3: $categoria = "FX53 Premier"; break;
-                case 4: $categoria = "FX53 Plus"; break;                
-                default: $categoria = "Focco"; break;
-              }              
+                case 1: 
+                  $categoria = "Focco"; 
+                  $docsObrigatorios = array('CPF', 'RG');
+                  break;
+                
+                case 2: 
+                  $categoria = "FX53 Simplificado"; 
+                  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF');
+                  break;
+
+                case 3: 
+                  $categoria = "FX53 Premier"; 
+                  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+                  break;
+
+                case 4: 
+                  $categoria = "FX53 Plus";
+                  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+                  break;                
+                
+                default: $categoria = "Focco"; 
+                $docsObrigatorios = array('CPF', 'RG');
+                break;
+              }    
+
+              $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
+              $result = mysqli_query($conn, $sql_query);
+              $docs = array();
+              while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];              
+
+              $dif = array_diff($docsObrigatorios, $docs);
+              $cor = "";             
+
+              if (!$dif){
+
+                $cor = "cor-verde";
+
+              } else if (in_array("CPF", $dif) || in_array("RG", $dif)){
+
+                $cor = "cor-vermelha";
+
+              } else {
+
+                $cor = "cor-amarela";
+
+              }
+              
+
+              
+                    
 
               echo
               '<tr>
