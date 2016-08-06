@@ -32,6 +32,10 @@ foreach($rows as $r){
   $observacoes = $r['observacoes'];
   $ofertasPorEmail = $r['ofertasPorEmail'];
   $infoWhatsapp = $r['infoWhatsapp'];  
+  $passaporte = $r['passaporte'];
+  $rgDni = $r['rgDni'];
+  $origem = $r['origem'];
+  $vip = $r['vip'];
 
 }
 ?>
@@ -89,6 +93,22 @@ foreach($rows as $r){
             <div class="input-field col s3">
               <input id="rgDataExpedicao" name="rgDataExpedicao" type="date" class="datepicker" required value= <?php echo $rgDataExpedicao ?> />
               <label for="rgDataExpedicao">Data de Expedição</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <p><em>Se estrangeiro não naturalizado, favor preencher informações abaixo:</em></p>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="numPassaporte" name="numPassaporte" type="text" value= <?php echo $passaporte ?> >
+              <label for="numPassaporte">Passaporte</label>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="rgDni" name="rgDni" type="text" value= <?php echo $rgDni ?> >
+              <label for="rgDni">R.G. / DNI</label>
             </div>
           </div>
 
@@ -177,6 +197,14 @@ foreach($rows as $r){
             </div>
 
             <div class="input-field col s3">
+              <select name="origem" required id="origem">
+                <option value="1" <?php echo ($origem == '1' ? "selected" : "") ?> >Matriz</option>
+                <option value="2" <?php echo ($origem == '2' ? "selected" : "") ?> >Loja 1</option>                
+              </select>
+              <label for="origem">Origem do Cliente</label>
+            </div>
+
+            <div class="input-field col s3">
               <input id="ofertasPorEmail" name="ofertasPorEmail" type="checkbox" class="filled-in" <?php echo ($ofertasPorEmail ? "checked" : "") ?>>
               <label for="ofertasPorEmail">Ofertas por email</label>
             </div>
@@ -189,10 +217,17 @@ foreach($rows as $r){
 
           <div class="row">
             <div class="input-field col s12">
+              <input id="vip" name="vip" type="checkbox" class="filled-in" <?php echo ($vip ? "checked" : "") ?>>
+              <label for="vip">Vip Focco</label>              
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
               <textarea id="observacoes" name="observacoes" class="materialize-textarea" length="120"><?php echo $observacoes; ?></textarea>
               <label for="observacoes">Observações</label>
             </div>
-          </div>
+          </div>          
 
           <div class="row">
             <div class="col s12">

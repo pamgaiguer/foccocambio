@@ -33,6 +33,9 @@ foreach($rows as $r){
   $observacoes = $r['observacoes'];
   $ofertasPorEmail = $r['ofertasPorEmail'];
   $infoWhatsapp = $r['infoWhatsapp'];
+  $passaporte = $r['passaporte'];
+  $rgDni = $r['rgDni'];
+
 }
 
 
@@ -112,11 +115,11 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
             </tr>
             <tr>
               <td>Passaporte</td>
-              <td>..</td>
+              <td><?php echo $passaporte ?></td>
             </tr>
             <tr>
               <td>RG / D.N.I.</td>
-              <td>..</td>
+              <td><?php echo $rgDni ?></td>
             </tr>
             <tr>
               <td>Gênero</td>

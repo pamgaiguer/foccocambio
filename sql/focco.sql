@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Jul-2016 às 00:37
--- Versão do servidor: 5.7.9
--- PHP Version: 5.6.16
+-- Generation Time: 06-Ago-2016 às 00:04
+-- Versão do servidor: 5.7.11
+-- PHP Version: 5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `focco`
 --
+CREATE DATABASE IF NOT EXISTS `focco` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `focco`;
 
 -- --------------------------------------------------------
 
@@ -26,7 +28,6 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `clientes`
 --
 
-DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
   `categoria` int(11) DEFAULT NULL,
@@ -53,10 +54,27 @@ CREATE TABLE `clientes` (
   `ofertasPorEmail` bit(1) DEFAULT NULL,
   `infoWhatsapp` bit(1) DEFAULT NULL,
   `dataCadastro` datetime DEFAULT NULL,
-  `dataModificacao` datetime DEFAULT NULL
+  `dataModificacao` datetime DEFAULT NULL,
+  `passaporte` varchar(25) DEFAULT NULL,
+  `rgDni` varchar(50) DEFAULT NULL,
+  `origem` int(11) DEFAULT NULL,
+  `vip` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `documentos`;
+--
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `categoria`, `razaoSocial`, `tipoPessoa`, `cpfCnpj`, `dataNascimentoAbertura`, `inscricaoMunicipal`, `rgInscricaoEstadual`, `rgOrgaoExpedidor`, `rgDataExpedicao`, `sexo`, `nacionalidade`, `estadoCivil`, `nomeConjuge`, `dataNascimentoConjuge`, `nomeMae`, `nomePai`, `email`, `telFixo`, `telCelular`, `contraSenha`, `observacoes`, `ofertasPorEmail`, `infoWhatsapp`, `dataCadastro`, `dataModificacao`, `passaporte`, `rgDni`, `origem`, `vip`) VALUES
+(18, 1, 'Thais', 'F', '37479967870', '2016-12-09 00:00:00', NULL, '387006175', 'SSP', '1970-01-01 00:00:00', 'F', 'br', 1, '', '1970-01-01 00:00:00', 'huhuh', 'hehe', 'thaisalvesdasilva@uol.com.br', '1120937563', '11967372206', '1553', '', b'1', b'0', '2016-08-05 21:14:25', '2016-08-05 23:43:01', 'xxxxxx', 'yyyyyyyyyy', NULL, NULL),
+(19, 1, 'Thompson', 'F', '14354288702', '1970-01-01 00:00:00', NULL, '269379848', 'detran', '1970-01-01 00:00:00', 'M', 'br', 1, '', '1970-01-01 00:00:00', 'marcia', 'claudio', 'thom.blizz@gmail.com', '1999666638', '19999666380', '21', '', b'0', b'0', '2016-08-05 23:32:52', '2016-08-05 23:51:35', '2121', '2121', 1, b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `documentos`
+--
+
 CREATE TABLE `documentos` (
   `id` int(11) NOT NULL,
   `clienteId` int(11) DEFAULT NULL,
@@ -66,7 +84,24 @@ CREATE TABLE `documentos` (
   `dataUltimaModificacao` datetime DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `enderecoscliente`;
+--
+-- Extraindo dados da tabela `documentos`
+--
+
+INSERT INTO `documentos` (`id`, `clienteId`, `tipo`, `arquivo`, `dataEmissao`, `dataUltimaModificacao`) VALUES
+(17, 19, 'CPF', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-cpf.png', NULL, '2016-08-05 23:32:52'),
+(18, 19, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-rg.png', '1970-01-01 00:00:00', '2016-08-05 23:32:52'),
+(19, 19, 'CR', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-cr.png', NULL, '2016-08-05 23:32:52'),
+(14, 18, 'CPF', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/37479967870/doc-cpf.png', NULL, '2016-08-05 21:14:25'),
+(15, 18, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/37479967870/doc-rg.png', '1970-01-01 00:00:00', '2016-08-05 21:14:25'),
+(16, 18, 'CR', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/37479967870/doc-cr.png', NULL, '2016-08-05 21:14:25');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `enderecoscliente`
+--
+
 CREATE TABLE `enderecoscliente` (
   `id` int(11) NOT NULL,
   `clienteId` int(11) DEFAULT NULL,
@@ -85,14 +120,31 @@ CREATE TABLE `enderecoscliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Extraindo dados da tabela `enderecoscliente`
+--
 
-DROP TABLE IF EXISTS `estados`;
+INSERT INTO `enderecoscliente` (`id`, `clienteId`, `tipo`, `cep`, `endereco`, `numero`, `complemento`, `bairro`, `municipioId`, `estadoId`, `paisId`, `cidade`, `estado`, `pais`) VALUES
+(23, 18, 1, '03407050', 'Rua AntÃ´nio de Lucena', '22', '111', 'ChÃ¡cara CalifÃ³rnia', NULL, NULL, NULL, 'SÃ£o Paulo', 'SP', 'Brasil'),
+(24, 18, 2, '03407050', 'Rua AntÃ´nio de Lucena', '22', '111', 'ChÃ¡cara CalifÃ³rnia', NULL, NULL, NULL, 'SÃ£o Paulo', 'SP', 'Brasil'),
+(25, 19, 1, '13105-808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
+(26, 19, 2, '13105-808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estados`
+--
+
 CREATE TABLE `estados` (
   `id` int(11) NOT NULL DEFAULT '0',
   `nome` varchar(60) DEFAULT NULL,
   `uf` varchar(2) DEFAULT NULL,
   `regiao` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `estados`
+--
 
 INSERT INTO `estados` (`id`, `nome`, `uf`, `regiao`) VALUES
 (11, 'RONDONIA', 'RO', 'NORTE'),
@@ -124,12 +176,21 @@ INSERT INTO `estados` (`id`, `nome`, `uf`, `regiao`) VALUES
 (53, 'DISTRITO FEDERAL', 'DF', 'CENTROESTE'),
 (99, 'EXTERIOR', 'EX', 'NULL');
 
-DROP TABLE IF EXISTS `municipios`;
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `municipios`
+--
+
 CREATE TABLE `municipios` (
   `id` int(11) NOT NULL DEFAULT '0',
   `estadoId` int(11) DEFAULT NULL,
   `nome` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `municipios`
+--
 
 INSERT INTO `municipios` (`id`, `estadoId`, `nome`) VALUES
 (1100015, 11, 'ALTA FLORESTA D OESTE'),
@@ -5701,7 +5762,10 @@ INSERT INTO `municipios` (`id`, `estadoId`, `nome`) VALUES
 
 -- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `usuarios`;
+--
+-- Estrutura da tabela `usuarios`
+--
+
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `login` varchar(20) DEFAULT NULL,
@@ -5712,24 +5776,32 @@ CREATE TABLE `usuarios` (
   `telefone` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
 INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefone`) VALUES
 (1, 'tom', 'paladino1', 1, 'Thom M Garcia', 'thom.blizz@gmail.com', '19996666380'),
-(2, 'pam', 'REDEFINIR', 1, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
-(3, 'leo', 'REDEFINIR', 1, 'Leo', 'leozac@gmail.com', '(11) 11111-1111');
+(2, 'pam', 'REDEFINIR', 2, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
+(3, 'user03', 'REDEFINIR', 3, 'user03', 'user03@gmail.com', '(19) 99666-6380'),
+(10, 'user04', 'paladino1', 3, 'user04', 'user04@user04.com', '(21) 21212-1212');
 
 --
 -- Indexes for dumped tables
 --
+
 --
 -- Indexes for table `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
+
 --
 -- Indexes for table `documentos`
 --
 ALTER TABLE `documentos`
   ADD PRIMARY KEY (`id`);
+
 --
 -- Indexes for table `enderecoscliente`
 --
@@ -5737,38 +5809,43 @@ ALTER TABLE `enderecoscliente`
   ADD PRIMARY KEY (`id`),
   ADD KEY `clienteId` (`clienteId`);
 
+--
 -- Indexes for table `estados`
 --
 ALTER TABLE `estados`
   ADD PRIMARY KEY (`id`);
+
 --
 -- Indexes for table `municipios`
 --
 ALTER TABLE `municipios`
   ADD PRIMARY KEY (`id`);
+
 --
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
+
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
 --
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `enderecoscliente`
 --
 ALTER TABLE `enderecoscliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
@@ -5777,6 +5854,7 @@ ALTER TABLE `usuarios`
 --
 -- Constraints for dumped tables
 --
+
 --
 -- Limitadores para a tabela `enderecoscliente`
 --

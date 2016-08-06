@@ -195,10 +195,19 @@ include "../includes/header.php";
 
           <div class="row">
             <div class="input-field col s12">
+              <input id="vip" name="vip" type="checkbox" class="filled-in">
+              <label for="vip">Vip Focco</label>              
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
               <textarea id="observacoes" name="observacoes" class="materialize-textarea" length="120"></textarea>
               <label for="observacoes">Observações</label>
             </div>
           </div>
+
+          
 
           <div class="row">
             <div class="col s12">

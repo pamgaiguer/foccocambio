@@ -302,6 +302,7 @@ focco = {
 
       formData.append( 'ofertasPorEmail', document.getElementsByName('ofertasPorEmail')[0].checked);
       formData.append( 'infoWhatsapp', document.getElementsByName('infoWhatsapp')[0].checked);
+      formData.append( 'vip', document.getElementsByName('vip')[0].checked);
 
       $.ajax({
           url: "/dashboard/clientes/adicionarPost.php/",
@@ -474,6 +475,7 @@ focco = {
 
       formData.append( 'ofertasPorEmail', document.getElementsByName('ofertasPorEmail')[0].checked);
       formData.append( 'infoWhatsapp', document.getElementsByName('infoWhatsapp')[0].checked);
+      formData.append( 'vip', document.getElementsByName('vip')[0].checked);
 
       $.ajax({
           url: "/dashboard/clientes/alterarPost.php/",
