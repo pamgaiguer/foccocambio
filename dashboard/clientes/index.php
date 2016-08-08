@@ -36,7 +36,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           </div>
         </div>
 
-        <ul class="black-text">
+<!--         <ul class="black-text">
           <li>
             Nesta tela, os cadastros devem ter cor de identificação (em relação aos documentos):<br>
             <span class="green-text">Verde</span> para cadastro OK <br>
@@ -44,7 +44,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <span class="red-text">Vermelho</span> para cadastro inválido <br>
             <span class="light-blue-text text-darken-4">Azul</span> se aceita receber oferta por facebook
           </li>
-        </ul>
+        </ul> -->
 
 
         <a class="waves-effect waves-light btn bg-blue right" href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
@@ -79,41 +79,41 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           <tbody id="table-body-clientes">
             <?php
 
-            foreach($rows as $r){              
+            foreach($rows as $r){
 
               switch ($r["categoria"]) {
-                case 1: 
-                  $categoria = "Focco"; 
+                case 1:
+                  $categoria = "Focco";
                   $docsObrigatorios = array('CPF', 'RG');
                   break;
-                
-                case 2: 
-                  $categoria = "FX53 Simplificado"; 
+
+                case 2:
+                  $categoria = "FX53 Simplificado";
                   $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF');
                   break;
 
-                case 3: 
-                  $categoria = "FX53 Premier"; 
+                case 3:
+                  $categoria = "FX53 Premier";
                   $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
                   break;
 
-                case 4: 
+                case 4:
                   $categoria = "FX53 Plus";
                   $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
-                  break;                
-                
-                default: $categoria = "Focco"; 
+                  break;
+
+                default: $categoria = "Focco";
                 $docsObrigatorios = array('CPF', 'RG');
                 break;
-              }    
+              }
 
               $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
               $result = mysqli_query($conn, $sql_query);
               $docs = array();
-              while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];              
+              while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 
               $dif = array_diff($docsObrigatorios, $docs);
-              $cor = "";             
+              $cor = "";
 
               if (!$dif){
 
@@ -128,10 +128,10 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 $cor = "cor-amarela";
 
               }
-              
 
-              
-                    
+
+
+
 
               echo
               '<tr>
@@ -140,7 +140,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
               <td>'.$categoria.'</td>
               <th>USD 3.000,00</th>
-              
+
               <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
 
               <td class="center"><a href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>

@@ -35,7 +35,8 @@ foreach($rows as $r){
   $infoWhatsapp = $r['infoWhatsapp'];
   $passaporte = $r['passaporte'];
   $rgDni = $r['rgDni'];
-
+  $vip = $r['vip'];
+  $origem = $r['origem'];
 }
 
 
@@ -83,7 +84,16 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
             </tr>
             <tr>
               <td>Origem do cliente</td>
-              <td>..</td>
+              <td>
+              <?php
+                switch ($origem) {
+                  case 1: echo "Matriz"; break;
+                  case 2: echo "Loja 1 "; break;
+                  default: echo ""; break;
+                }
+                ?>
+              </td>
+
             </tr>
             <tr>
               <td>Nome</td>
@@ -131,7 +141,8 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
             </tr>
             <tr>
               <td>Estado civil</td>
-              <td><?php
+              <td>
+              <?php
                 switch ($estadoCivil) {
                   case 1: echo "Solteiro(a)"; break;
                   case 2: echo "Casado(a) "; break;
@@ -203,7 +214,7 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
             </div>
 
           <?php } ?>
-            
+
           <?php if (in_array("CPF", $docs)) { ?>
 
             <div class="col s3">
@@ -215,7 +226,7 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 
           <?php } ?>
 
-          
+
           <?php if (in_array("RG", $docs)) { ?>
 
             <div class="col s3">
@@ -251,9 +262,9 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 
           <?php } ?>
 
-          
+
           <?php if (in_array("IR", $docs)) { ?>
-          
+
             <div class="col s3">
               <figure>
                 <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="150px" height="150px" />
@@ -296,10 +307,10 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
             </div>
 
           <?php } ?>
-          
+
 
         </div>
-        
+
         <div class="spacing"></div>
 
         <?php
