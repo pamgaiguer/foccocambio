@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
 	include "../../core/database.php";
 	include "../../core/functions.php";
 
@@ -13,38 +13,38 @@
 	foreach($rows as $r){
 
 		switch ($r["categoria"]) {
-	    case 1: 
-	      $categoria = "Focco"; 
+	    case 1:
+	      $categoria = "Focco";
 	      $docsObrigatorios = array('CPF', 'RG');
 	      break;
-	    
-	    case 2: 
-	      $categoria = "FX53 Simplificado"; 
+
+	    case 2:
+	      $categoria = "FX53 Simplificado";
 	      $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF');
 	      break;
 
-	    case 3: 
-	      $categoria = "FX53 Premier"; 
+	    case 3:
+	      $categoria = "FX53 Premier";
 	      $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
 	      break;
 
-	    case 4: 
+	    case 4:
 	      $categoria = "FX53 Plus";
 	      $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
-	      break;                
-	    
-	    default: $categoria = "Focco"; 
+	      break;
+
+	    default: $categoria = "Focco";
 	    $docsObrigatorios = array('CPF', 'RG');
 	    break;
-	  }    
+	  }
 
 	  $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
 	  $result = mysqli_query($conn, $sql_query);
 	  $docs = array();
-	  while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];              
+	  while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 
 	  $dif = array_diff($docsObrigatorios, $docs);
-	  $cor = "";             
+	  $cor = "";
 
 	  if (!$dif){
 

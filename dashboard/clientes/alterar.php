@@ -31,7 +31,7 @@ foreach($rows as $r){
   $contraSenha = $r['contraSenha'];
   $observacoes = $r['observacoes'];
   $ofertasPorEmail = $r['ofertasPorEmail'];
-  $infoWhatsapp = $r['infoWhatsapp'];  
+  $infoWhatsapp = $r['infoWhatsapp'];
   $passaporte = $r['passaporte'];
   $rgDni = $r['rgDni'];
   $origem = $r['origem'];
@@ -42,7 +42,7 @@ foreach($rows as $r){
 
 
 <main>
-<div class="section"></div>
+  <div class="section"></div>
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
@@ -182,12 +182,12 @@ foreach($rows as $r){
           </div>
 
           <div class="row">
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="contraSenha" name="contraSenha" type="text" value= <?php echo $contraSenha ?>>
               <label for="contraSenha">Contra-senha</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <select name="categoria" required id="categoria">
                 <option value="1" <?php echo ($categoria == '1' ? "selected" : "") ?> >Focco</option>
                 <option value="2" <?php echo ($categoria == '2' ? "selected" : "") ?> >FX53 Simplificado</option>
@@ -197,29 +197,27 @@ foreach($rows as $r){
               <label for="categoria">Categoria Pessoa Física</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <select name="origem" required id="origem">
                 <option value="1" <?php echo ($origem == '1' ? "selected" : "") ?> >Matriz</option>
-                <option value="2" <?php echo ($origem == '2' ? "selected" : "") ?> >Loja 1</option>                
+                <option value="2" <?php echo ($origem == '2' ? "selected" : "") ?> >Loja 1</option>
               </select>
               <label for="origem">Origem do Cliente</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="ofertasPorEmail" name="ofertasPorEmail" type="checkbox" class="filled-in" <?php echo ($ofertasPorEmail ? "checked" : "") ?>>
               <label for="ofertasPorEmail">Ofertas por email</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="infoWhatsapp" name="infoWhatsapp" type="checkbox" class="filled-in" <?php echo ($infoWhatsapp ? "checked" : "") ?>>
               <label for="infoWhatsapp">Informações Whatsapp</label>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s2">
               <input id="vip" name="vip" type="checkbox" class="filled-in" <?php echo ($vip ? "checked" : "") ?>>
-              <label for="vip">Vip Focco</label>              
+              <label for="vip">Vip Focco</label>
             </div>
           </div>
 
@@ -228,14 +226,11 @@ foreach($rows as $r){
               <textarea id="observacoes" name="observacoes" class="materialize-textarea" length="120"><?php echo $observacoes; ?></textarea>
               <label for="observacoes">Observações</label>
             </div>
-          </div>          
+          </div>
 
           <div class="row">
             <div class="col s12">
-            <h5>Documentos Obrigatórios</h5>
-            <em>Cada tipo de pessoa tem uma documentação específica - ver documentação</em>
-            <br>
-            <em>Colocar cada botão para documento ou colocar um input para multiplos arquivos?</em>
+              <h5>Documentos Obrigatórios</h5>
             </div>
 
             <div class="col s6 div-input-file-cpf">
@@ -266,7 +261,7 @@ foreach($rows as $r){
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. R.</span>
-                  <input type="file" id="input-file-cr" 
+                  <input type="file" id="input-file-cr"
                   name="input-file-cr" title="Comprovante de residência">
                 </div>
                 <div class="file-path-wrapper">
@@ -279,7 +274,7 @@ foreach($rows as $r){
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>F. F.</span>
-                  <input type="file" id="input-file-ff" 
+                  <input type="file" id="input-file-ff"
                   name="input-file-ff" title="Ficha cadastral focco">
                 </div>
                 <div class="file-path-wrapper">
@@ -292,7 +287,7 @@ foreach($rows as $r){
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>I. R.</span>
-                  <input type="file" id="input-file-ir" 
+                  <input type="file" id="input-file-ir"
                   name="input-file-ir" title="Declaração do imposto de renda">
                 </div>
                 <div class="file-path-wrapper">
@@ -305,7 +300,7 @@ foreach($rows as $r){
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. A.</span>
-                  <input type="file" id="input-file-ca" 
+                  <input type="file" id="input-file-ca"
                   name="input-file-ca" title="Cartão de assinatura">
                 </div>
                 <div class="file-path-wrapper">
@@ -318,7 +313,7 @@ foreach($rows as $r){
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. P. S.</span>
-                  <input type="file" id="input-file-cps" 
+                  <input type="file" id="input-file-cps"
                   name="input-file-cps" title="Contrato de prestação de serviços">
                 </div>
                 <div class="file-path-wrapper">
@@ -331,7 +326,7 @@ foreach($rows as $r){
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>P. V.</span>
-                  <input type="file" id="input-file-pv" 
+                  <input type="file" id="input-file-pv"
                   name="input-file-pv" title="Procuração para a Vision">
                 </div>
                 <div class="file-path-wrapper">
@@ -346,33 +341,33 @@ foreach($rows as $r){
 
 
           <?php
-            
-            $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 1);
-            $result = mysqli_query($conn, $sql_query);
-            $rows = array();
-            while($row = mysqli_fetch_array($result)) $rows[] = $row;            
 
-            $tipo = "";
-            $cep = "";
-            $endereco = "";
-            $numero = "";
-            $complemento = "";
-            $bairro = "";
-            $cidade = "";
-            $estado = "";
-            $pais = "";
+          $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 1);
+          $result = mysqli_query($conn, $sql_query);
+          $rows = array();
+          while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
-            foreach($rows as $r){              
-              $tipo = $r['tipo'];
-              $cep = $r['cep'];
-              $endereco = $r['endereco'];
-              $numero = $r['numero'];
-              $complemento = $r['complemento'];
-              $bairro = $r['bairro'];
-              $cidade = $r['cidade'];
-              $estado = $r['estado'];
-              $pais = $r['pais'];
-            }
+          $tipo = "";
+          $cep = "";
+          $endereco = "";
+          $numero = "";
+          $complemento = "";
+          $bairro = "";
+          $cidade = "";
+          $estado = "";
+          $pais = "";
+
+          foreach($rows as $r){
+            $tipo = $r['tipo'];
+            $cep = $r['cep'];
+            $endereco = $r['endereco'];
+            $numero = $r['numero'];
+            $complemento = $r['complemento'];
+            $bairro = $r['bairro'];
+            $cidade = $r['cidade'];
+            $estado = $r['estado'];
+            $pais = $r['pais'];
+          }
           ?>
 
 
@@ -429,23 +424,23 @@ foreach($rows as $r){
 
 
         <?php
-        
-          $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 2);
-          $result = mysqli_query($conn, $sql_query);
-          $rows = array();
-          while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
-          foreach($rows as $r){              
-            $tipo = $r['tipo'];
-            $cep = $r['cep'];
-            $endereco = $r['endereco'];
-            $numero = $r['numero'];
-            $complemento = $r['complemento'];
-            $bairro = $r['bairro'];
-            $cidade = $r['cidade'];
-            $estado = $r['estado'];
-            $pais = $r['pais'];
-          }
+        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 2);
+        $result = mysqli_query($conn, $sql_query);
+        $rows = array();
+        while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+        foreach($rows as $r){
+          $tipo = $r['tipo'];
+          $cep = $r['cep'];
+          $endereco = $r['endereco'];
+          $numero = $r['numero'];
+          $complemento = $r['complemento'];
+          $bairro = $r['bairro'];
+          $cidade = $r['cidade'];
+          $estado = $r['estado'];
+          $pais = $r['pais'];
+        }
         ?>
 
 
@@ -454,105 +449,104 @@ foreach($rows as $r){
         <div class="row">
           <div class="col s12">
            <h5>Endereço para entrega</h5>
-         </div>
-       </div>
+           <div class="spacing"></div>
+           <div>
+            <input type="checkbox" class="filled-in" id="filled-in-box">
+            <label for="filled-in-box">Marque se o endereço de entrega é o mesmo que o residencial</label>
+          </div>
+        </div>
+      </div>
+      <div class="spacing"></div>
+
+      <div id="div-endereco-entrega">
 
        <div class="row">
-         <div class="input-field col s12">
-           <input type="checkbox" class="filled-in" id="filled-in-box">
-           <label for="filled-in-box">Marque se o endereço de entrega é o mesmo que o residencial</label>
-         </div>
-       </div>
-
-       <div id="div-endereco-entrega">
-       
-         <div class="row">
-          <div class="input-field col s3">
-            <input id="cep-entrega" name="cep-entrega" type="text" value='<?php echo $cep ?>'>
-            <label for="cep-entrega">CEP</label>
-          </div>
-          <div class="input-field col s9">
-            <input id="logradouro-entrega" name="logradouro-entrega" type="text" value='<?php echo $endereco ?>'>
-            <label for="logradouro-entrega">Logradouro</label>
-          </div>
+        <div class="input-field col s3">
+          <input id="cep-entrega" name="cep-entrega" type="text" value='<?php echo $cep ?>'>
+          <label for="cep-entrega">CEP</label>
         </div>
-
-        <div class="row">
-          <div class="input-field col s4">
-            <input id="numero-entrega" name="numero-entrega" type="text" value='<?php echo $numero ?>'>
-            <label for="numero-entrega">Número</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="complemento-entrega" name="complemento-entrega" type="text" value='<?php echo $complemento ?>'>
-            <label for="complemento-entrega">Complemento</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="bairro-entrega" name="bairro-entrega" type="text" value='<?php echo $bairro ?>'>
-            <label for="bairro-entrega">Bairro</label>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="input-field col s4">
-            <input id="cidade-entrega" name="cidade-entrega" type="text" value='<?php echo $cidade ?>'>
-            <label for="cidade-entrega">Cidade</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="UF-entrega" name="UF-entrega" type="text" value='<?php echo $estado ?>'>
-            <label for="UF-entrega">UF</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="pais-entrega" name="pais-entrega" type="text" value='<?php echo $pais ?>'>
-            <label for="pais-entrega">País</label>
-          </div>
+        <div class="input-field col s9">
+          <input id="logradouro-entrega" name="logradouro-entrega" type="text" value='<?php echo $endereco ?>'>
+          <label for="logradouro-entrega">Logradouro</label>
         </div>
       </div>
 
       <div class="row">
-        <div class="col s12">
-         <h5>Limites Operacionais (USD)</h5>
-         <em>Limites pré-definidos via banco de dados</em>
-       </div>
-     </div>
-
-     <div class="row">
-       <div class="col s12">
-         <table class="highlight responsive-table">
-           <!-- Trazer esses valores do banco, cada tipo de cliente tem um limite específico -->
-           <thead>
-             <tr>
-               <th>Período</th>
-               <th>Limíte aprovado (USD)</th>
-               <th>Limíte Utilizado (USD)</th>
-               <th>Limíte disponível (USD)</th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <td>1 dia</td>
-               <td>3.000</td>
-               <td></td>
-               <td>3.000</td>
-             </tr>
-             <tr>
-               <td>1 ano</td>
-               <td>13.000</td>
-               <td></td>
-               <td>13.000</td>
-             </tr>
-           </tbody>
-         </table>
-       </div>
-     </div>
+        <div class="input-field col s4">
+          <input id="numero-entrega" name="numero-entrega" type="text" value='<?php echo $numero ?>'>
+          <label for="numero-entrega">Número</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="complemento-entrega" name="complemento-entrega" type="text" value='<?php echo $complemento ?>'>
+          <label for="complemento-entrega">Complemento</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="bairro-entrega" name="bairro-entrega" type="text" value='<?php echo $bairro ?>'>
+          <label for="bairro-entrega">Bairro</label>
+        </div>
+      </div>
 
 
-
-     <div class="col s12">
-      <input type="submit" id="input-submit" value="Alterar" class="waves-effect waves-light btn bg-blue right" />
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="cidade-entrega" name="cidade-entrega" type="text" value='<?php echo $cidade ?>'>
+          <label for="cidade-entrega">Cidade</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="UF-entrega" name="UF-entrega" type="text" value='<?php echo $estado ?>'>
+          <label for="UF-entrega">UF</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="pais-entrega" name="pais-entrega" type="text" value='<?php echo $pais ?>'>
+          <label for="pais-entrega">País</label>
+        </div>
+      </div>
     </div>
 
+    <div class="row">
+      <div class="col s12">
+       <h5>Limites Operacionais (USD)</h5>
+       <em>Limites pré-definidos via banco de dados</em>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="col s12">
+       <table class="highlight responsive-table">
+         <!-- Trazer esses valores do banco, cada tipo de cliente tem um limite específico -->
+         <thead>
+           <tr>
+             <th>Período</th>
+             <th>Limíte aprovado (USD)</th>
+             <th>Limíte Utilizado (USD)</th>
+             <th>Limíte disponível (USD)</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>1 dia</td>
+             <td>3.000</td>
+             <td></td>
+             <td>3.000</td>
+           </tr>
+           <tr>
+             <td>1 ano</td>
+             <td>13.000</td>
+             <td></td>
+             <td>13.000</td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+   </div>
+
+
+
+   <div class="col s12">
+    <input type="submit" id="input-submit" value="Alterar" class="waves-effect waves-light btn bg-blue right" />
   </div>
+
+</div>
 </form>
 
 
@@ -568,5 +562,5 @@ include "../includes/footer.php";
 ?>
 
 <script>
-  focco.alterarClienteFormPost();  
+  focco.alterarClienteFormPost();
 </script>

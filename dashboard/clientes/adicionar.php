@@ -159,12 +159,12 @@ include "../includes/header.php";
           </div>
 
           <div class="row">
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="contraSenha" name="contraSenha" type="text">
-              <label for="contraSenha">Contra-senha (Cartão pré-pago)</label>
+              <label for="contraSenha">Contra-senha</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <select name="categoria" required id="categoria">
                 <option value="1" selected>Focco</option>
                 <option value="2">FX53 Simplificado</option>
@@ -191,12 +191,10 @@ include "../includes/header.php";
               <input id="infoWhatsapp" name="infoWhatsapp" type="checkbox" class="filled-in">
               <label for="infoWhatsapp">Informações Whatsapp</label>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s2">
               <input id="vip" name="vip" type="checkbox" class="filled-in">
-              <label for="vip">Vip Focco</label>              
+              <label for="vip">Vip Focco</label>
             </div>
           </div>
 
@@ -206,8 +204,6 @@ include "../includes/header.php";
               <label for="observacoes">Observações</label>
             </div>
           </div>
-
-          
 
           <div class="row">
             <div class="col s12">
