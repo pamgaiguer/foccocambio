@@ -557,6 +557,18 @@ foreach($rows as $r){
 </div>
 </main>
 
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Alterar cliente</h4>
+    <p>Deseja alterar o cliente?</p>
+  </div>
+  <div class="modal-footer">
+    <a id="modal-cancel" class=" modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
+    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-green btn-flat">Confirmar</a>
+  </div>
+</div>
+
 <?php
 include "../includes/footer.php";
 ?>

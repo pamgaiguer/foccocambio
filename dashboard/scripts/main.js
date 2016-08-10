@@ -299,24 +299,30 @@ focco = {
 
       e.preventDefault();
       var formData = new FormData($(this)[0]);
-
       formData.append( 'ofertasPorEmail', document.getElementsByName('ofertasPorEmail')[0].checked);
       formData.append( 'infoWhatsapp', document.getElementsByName('infoWhatsapp')[0].checked);
       formData.append( 'vip', document.getElementsByName('vip')[0].checked);
 
-      $.ajax({
-          url: "/dashboard/clientes/adicionarPost.php/",
-          type: 'POST',
-          data: formData,
-          async: false,
-          success: function (data) {
-              alert(data);
-              console.log(data);
-          },
-          cache: false,
-          contentType: false,
-          processData: false
+      $("#modal-confirm").click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+            url: "/dashboard/clientes/adicionarPost.php/",
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data) {                
+                window.location = "/dashboard/clientes/";
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+
+        });
+
       });
+
+      $('#modal1').openModal();
 
     });
 
@@ -477,25 +483,33 @@ focco = {
       formData.append( 'infoWhatsapp', document.getElementsByName('infoWhatsapp')[0].checked);
       formData.append( 'vip', document.getElementsByName('vip')[0].checked);
 
-      $.ajax({
-          url: "/dashboard/clientes/alterarPost.php/",
-          type: 'POST',
-          data: formData,
-          async: false,
-          success: function (data) {
-              alert(data);
-              console.log(data);
-          },
-          cache: false,
-          contentType: false,
-          processData: false
+      $("#modal-confirm").click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+            url: "/dashboard/clientes/alterarPost.php/",
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data) {                                
+                console.log(data);
+                window.location = "/dashboard/clientes/";
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
       });
+
+
+      $('#modal1').openModal();
 
     });
 
   },
 
-  buscarClienteFormPost: function(){
+  indexCliente: function(){
 
     $("#form-busca-clientes").submit(function(e){
       e.preventDefault();
@@ -511,6 +525,32 @@ focco = {
         }
 
       });
+
+    });
+
+    $(".link-acao").click(function(e){
+      e.preventDefault();           
+
+      acao = $(this).data("acao");
+      clienteId = $(this).data("cliente-id");
+      link = $(this).data("href");
+
+      switch(acao) {          
+          case "excluir":
+
+            $("#modal-confirm").click(function(e){
+              e.preventDefault();
+              window.location = link;
+            });
+
+            $('#modal1').openModal();
+            break;
+          
+          default:
+            window.location = link;
+            break;
+      }
+
 
     });
 

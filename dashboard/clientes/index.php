@@ -143,9 +143,9 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
               <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
 
-              <td class="center"><a href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
-              <td class="center"><a href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>
-              <td class="center"><a href="/dashboard/clientes/excluir?clienteId='.$r["id"].'"><i class="material-icons" title="Excluir cliente">&#xE92B;</i></a></td>
+              <td class="center"><a class="link-acao modal-trigger" href="modal1" data-acao="visualizar" data-cliente-id="'.$r["id"].'" data-href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
+              <td class="center"><a class="link-acao modal-trigger" href="modal1" data-acao="alterar" data-cliente-id="'.$r["id"].'" data-href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>
+              <td class="center"><a class="link-acao modal-trigger" href="modal1" data-acao="excluir" data-cliente-id="'.$r["id"].'" data-href="/dashboard/clientes/excluir?clienteId='.$r["id"].'"><i class="material-icons" title="Excluir cliente">&#xE92B;</i></a></td>
             </tr>';
           }
           ?>
@@ -156,10 +156,23 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 </div>
 </main>
 
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Excluir cliente</h4>
+    <p>Deseja excluir o cliente?</p>
+  </div>
+  <div class="modal-footer">
+    <a id="modal-cancel" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-red btn-flat">Confirmar</a>
+  </div>
+</div>
+
+
 <?php
 include '../includes/footer.php';
 ?>
 
 <script>
-  focco.buscarClienteFormPost();
+  focco.indexCliente();
 </script>

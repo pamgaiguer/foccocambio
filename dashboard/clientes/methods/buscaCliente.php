@@ -69,13 +69,20 @@
 		  <th>USD 3.000,00</th>
 		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
 
-		  <td class="center"><a href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
-		  <td class="center"><a href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>
-		  <td class="center"><a href="/dashboard/clientes/excluir?clienteId='.$r["id"].'"><i class="material-icons" title="Excluir cliente">&#xE92B;</i></a></td>
-		  </tr>';
+		  <td class="center"><a class="link-acao" data-acao="visualizar" data-cliente-id="'.$r["id"].'" href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
+      <td class="center"><a class="link-acao" data-acao="alterar" data-cliente-id="'.$r["id"].'" href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>
+      <td class="center"><a class="link-acao" data-acao="excluir" data-cliente-id="'.$r["id"].'" href="/dashboard/clientes/excluir?clienteId='.$r["id"].'"><i class="material-icons" title="Excluir cliente">&#xE92B;</i></a></td>
+		  </tr>
+
+		  <script>
+			  focco.indexCliente();
+			</script>
+
+		  ';
 	}
 
 	echo $ret;
 ?>
+
 
 
