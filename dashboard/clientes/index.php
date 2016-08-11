@@ -160,11 +160,18 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 <div id="modal1" class="modal">
   <div class="modal-content">
     <h4>Excluir cliente</h4>
-    <p>Deseja excluir o cliente?</p>
+    <p>Deseja excluir o cliente selecionado?</p>
   </div>
   <div class="modal-footer">
-    <a id="modal-cancel" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-red btn-flat">Confirmar</a>
+    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn bg-blue white ">
+      <i class="material-icons right">&#xE86C;</i>
+        Confirmar
+    </a>
+
+    <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn bg-blue white">
+      <i class="material-icons right">&#xE5C9;</i>
+      Cancelar
+    </a>
   </div>
 </div>
 
