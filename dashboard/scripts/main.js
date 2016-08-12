@@ -136,7 +136,7 @@ focco = {
         type: "post",
         data: {nome, login, email, telefone, tipo},
         error: function(data){},
-        success: function(data){          
+        success: function(data){
           if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi adicionado");
           else window.location = "/dashboard/usuarios/";
         }
@@ -169,8 +169,8 @@ focco = {
       clear: 'Limpar',
       close: 'Ok',
       selectMonths: true,
-      selectYears: 200,
-      format: 'dd/mm/yyyy'
+      selectYears: 150,
+      format: 'yyyy-mm-dd'
     });
 
 
@@ -229,7 +229,7 @@ focco = {
         $(".div-input-file-ca").fadeOut(300);
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
-      } else 
+      } else
       if (categoriaId == 2){
         $("#limiteOperacionalDia").val("10000.00");
         $("#limiteOperacionalAno").val("13000.00");
@@ -328,7 +328,7 @@ focco = {
             type: 'POST',
             data: formData,
             async: false,
-            success: function (data) {                
+            success: function (data) {
                 //alert(data);
                 window.location = "/dashboard/clientes/";
             },
@@ -367,8 +367,8 @@ focco = {
         clear: 'Limpar',
         close: 'Ok',
         selectMonths: true,
-        selectYears: 200,
-        format: 'dd/mm/yyyy'
+        selectYears: 150,
+      format: 'yyyy-mm-dd'
     });
 
     $("#estadoCivil").change(function(){
@@ -521,7 +521,7 @@ focco = {
             type: 'POST',
             data: formData,
             async: false,
-            success: function (data) {                                
+            success: function (data) {
                 console.log(data);
                 window.location = "/dashboard/clientes/";
             },
@@ -559,13 +559,13 @@ focco = {
     });
 
     $(".link-acao").click(function(e){
-      e.preventDefault();           
+      e.preventDefault();
 
       acao = $(this).data("acao");
       clienteId = $(this).data("cliente-id");
       link = $(this).data("href");
 
-      switch(acao) {          
+      switch(acao) {
           case "excluir":
 
             $("#modal-confirm").click(function(e){
@@ -575,7 +575,7 @@ focco = {
 
             $('#modal1').openModal();
             break;
-          
+
           default:
             window.location = link;
             break;
