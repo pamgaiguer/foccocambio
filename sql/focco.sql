@@ -58,7 +58,10 @@ CREATE TABLE `clientes` (
   `passaporte` varchar(25) DEFAULT NULL,
   `rgDni` varchar(50) DEFAULT NULL,
   `origem` int(11) DEFAULT NULL,
-  `vip` bit(1) DEFAULT NULL
+  `vip` bit(1) DEFAULT NULL,
+  `limiteOperacionalDia` decimal(10,2) DEFAULT NULL,
+  `limiteOperacionalAno` decimal(10,2) DEFAULT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

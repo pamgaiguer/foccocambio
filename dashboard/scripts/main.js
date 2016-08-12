@@ -214,33 +214,50 @@ focco = {
     $("#categoria").change(function(){
       categoriaId = $(this).val();
 
+      $("#limiteOperacionalDia").attr("readonly", "true");
+      $("#limiteOperacionalAno").attr("readonly", "true");
+
       if (categoriaId == 1){
-        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
-        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
-        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").removeAttr("required")});
-        $(".div-input-file-ff").fadeOut(300, function(){$("#input-file-ff").removeAttr("required")});
-        $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
-        $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
-        $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
-        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});
-      } else if (categoriaId == 2){
-        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
-        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
-        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
-        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});
-        $(".div-input-file-ir").fadeOut(300, function(){$("#input-file-ir").removeAttr("required")});
-        $(".div-input-file-ca").fadeOut(300, function(){$("#input-file-ca").removeAttr("required")});
-        $(".div-input-file-cps").fadeOut(300, function(){$("#input-file-cps").removeAttr("required")});
-        $(".div-input-file-pv").fadeOut(300, function(){$("#input-file-pv").removeAttr("required")});
+        $("#limiteOperacionalDia").val("3000.00");
+        $("#limiteOperacionalAno").val("13000.00");
+
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeOut(300);
+        $(".div-input-file-ir").fadeOut(300);
+        $(".div-input-file-ca").fadeOut(300);
+        $(".div-input-file-cps").fadeOut(300);
+        $(".div-input-file-pv").fadeOut(300);
+      } else 
+      if (categoriaId == 2){
+        $("#limiteOperacionalDia").val("10000.00");
+        $("#limiteOperacionalAno").val("13000.00");
+
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeIn(300);
+        $(".div-input-file-ir").fadeOut(300);
+        $(".div-input-file-ca").fadeOut(300);
+        $(".div-input-file-cps").fadeOut(300);
+        $(".div-input-file-pv").fadeOut(300);
+
       } else if (categoriaId == 3 || categoriaId == 4){
-        $(".div-input-file-cpf").fadeIn(300, function(){$("#input-file-cpf").attr("required", "required")});
-        $(".div-input-file-rg").fadeIn(300, function(){$("#input-file-rg").attr("required", "required")});
-        $(".div-input-file-cr").fadeIn(300, function(){$("#input-file-cr").attr("required", "required")});
-        $(".div-input-file-ff").fadeIn(300, function(){$("#input-file-ff").attr("required", "required")});
-        $(".div-input-file-ir").fadeIn(300, function(){$("#input-file-ir").attr("required", "required")});
-        $(".div-input-file-ca").fadeIn(300, function(){$("#input-file-ca").attr("required", "required")});
-        $(".div-input-file-cps").fadeIn(300, function(){$("#input-file-cps").attr("required", "required")});
-        $(".div-input-file-pv").fadeIn(300, function(){$("#input-file-pv").attr("required", "required")});
+
+        $("#limiteOperacionalDia").removeAttr("readonly");
+        $("#limiteOperacionalAno").removeAttr("readonly");
+        $("#limiteOperacionalDia").val("10000.00");
+        $("#limiteOperacionalAno").val("13000.00");
+
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeIn(300);
+        $(".div-input-file-ir").fadeIn(300);
+        $(".div-input-file-ca").fadeIn(300);
+        $(".div-input-file-cps").fadeIn(300);
+        $(".div-input-file-pv").fadeIn(300);
       }
 
     });
@@ -312,6 +329,7 @@ focco = {
             data: formData,
             async: false,
             success: function (data) {                
+                //alert(data);
                 window.location = "/dashboard/clientes/";
             },
             cache: false,
@@ -393,7 +411,13 @@ focco = {
     $("#categoria").change(function(){
       categoriaId = $(this).val();
 
+      $("#limiteOperacionalDia").attr("readonly", "true");
+      $("#limiteOperacionalAno").attr("readonly", "true");
+
       if (categoriaId == 1){
+        $("#limiteOperacionalDia").val("3000.00");
+        $("#limiteOperacionalAno").val("13000.00");
+
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);
@@ -403,6 +427,8 @@ focco = {
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
       } else if (categoriaId == 2){
+        $("#limiteOperacionalDia").val("10000.00");
+        $("#limiteOperacionalAno").val("13000.00");
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);
@@ -412,6 +438,10 @@ focco = {
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
       } else if (categoriaId == 3 || categoriaId == 4){
+        $("#limiteOperacionalDia").removeAttr("readonly");
+        $("#limiteOperacionalAno").removeAttr("readonly");
+        $("#limiteOperacionalDia").val("10000.00");
+        $("#limiteOperacionalAno").val("13000.00");
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);

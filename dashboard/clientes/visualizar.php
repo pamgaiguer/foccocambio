@@ -37,6 +37,8 @@ foreach($rows as $r){
   $rgDni = $r['rgDni'];
   $vip = $r['vip'];
   $origem = $r['origem'];
+  $limiteOperacionalDia = $r["limiteOperacionalDia"];
+  $limiteOperacionalAno = $r["limiteOperacionalAno"];
 }
 
 
@@ -197,9 +199,15 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
               <td><?php echo $infoWhatsapp == '1' ? "Sim" : "Não" ?></td>
             </tr>
             <tr>
-              <td>Vip Focco</td>
-              <td><?php echo $vip == '1' ? "Sim" : "Não" ?></td>
+              <td>Limite autorizado (diário)</td>
+              <td><?php echo $limiteOperacionalDia ?></td>
             </tr>
+            <tr>
+              <td>Limite autorizado (anual)</td>
+              <td><?php echo $limiteOperacionalAno ?></td>
+            </tr>
+
+
           </tbody>
         </table>
 

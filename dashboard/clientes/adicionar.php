@@ -428,26 +428,18 @@ include "../includes/header.php";
               </ul>
               <table class="responsive-table">
                 <thead>
-                  <tr>
-                    <th>Período</th>
-                    <th>Limite aprovado</th>
-                    <th>Limite Utilizado</th>
-                    <th>Limite disponível</th>
+                  <tr>                    
+                    <th class="col s3">Limite aprovado diário (USD)</th>                    
+                    <th class="col s3">Limite aprovado anual (USD)</th>                    
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input disabled value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
+                  <tr>                    
+                    <td class="col s3"><input id="limiteOperacionalDia" name="limiteOperacionalDia" readonly="true" value="3000.00" type="text" pattern="^\d*(\.\d{2}$)?" class="validate"></td>
+
+                    <td class="col s3"><input id="limiteOperacionalAno" name="limiteOperacionalAno" readonly="true" value="13000.00" type="text" pattern="^\d*(\.\d{2}$)?" class="validate"></td>
                   </tr>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input disabled value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>
@@ -458,30 +450,7 @@ include "../includes/header.php";
               <ul>
                 <li>para clientes <span class="red-text">FX 53</span>: valor de USD 10.000,00</li>
               </ul>
-              <table class="responsive-table">
-                <thead>
-                  <tr>
-                    <th>Período</th>
-                    <th>Limite aprovado</th>
-                    <th>Limite Utilizado</th>
-                    <th>Limite disponível</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input disabled value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
-                  </tr>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input disabled value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
-                  </tr>
-                </tbody>
-              </table>
+             
             </div>
           </div>
 
@@ -490,30 +459,7 @@ include "../includes/header.php";
               <ul>
                 <li>para clientes <span class="red-text">FX 53 Premier</span>: Abre campo para digitar SOMENTE OBRIGATÓRIO APÓS ENVIO DOS DOCUMENTOS e trava os outros</li>
               </ul>
-              <table class="responsive-table">
-                <thead>
-                  <tr>
-                    <th>Período</th>
-                    <th>Limite aprovado</th>
-                    <th>Limite Utilizado</th>
-                    <th>Limite disponível</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input  value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
-                  </tr>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input  value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
-                  </tr>
-                </tbody>
-              </table>
+              
             </div>
           </div>
 
@@ -522,30 +468,7 @@ include "../includes/header.php";
               <ul>
                 <li>para clientes <span class="red-text">FX 53 Premier Plus</span>: Abre campo para digitar SOMENTE OBRIGATÓRIO APÓS ENVIO DOS DOCUMENTOS e trava os outros</li>
               </ul>
-              <table class="responsive-table">
-                <thead>
-                  <tr>
-                    <th>Período</th>
-                    <th>Limite aprovado</th>
-                    <th>Limite Utilizado</th>
-                    <th>Limite disponível</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input  value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
-                  </tr>
-                  <tr>
-                    <td>1 dia</td>
-                    <td><input  value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
-                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
-                  </tr>
-                </tbody>
-              </table>
+             
             </div>
           </div>
 
