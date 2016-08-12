@@ -506,39 +506,142 @@ foreach($rows as $r){
     <div class="row">
       <div class="col s12">
        <h5>Limites Operacionais (USD)</h5>
-       <em>Limites pré-definidos via banco de dados</em>
      </div>
    </div>
 
-   <div class="row">
-     <div class="col s12">
-       <table class="highlight responsive-table">
-         <!-- Trazer esses valores do banco, cada tipo de cliente tem um limite específico -->
-         <thead>
-           <tr>
-             <th>Período</th>
-             <th>Limíte aprovado (USD)</th>
-             <th>Limíte Utilizado (USD)</th>
-             <th>Limíte disponível (USD)</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-             <td>1 dia</td>
-             <td>3.000</td>
-             <td></td>
-             <td>3.000</td>
-           </tr>
-           <tr>
-             <td>1 ano</td>
-             <td>13.000</td>
-             <td></td>
-             <td>13.000</td>
-           </tr>
-         </tbody>
-       </table>
-     </div>
-   </div>
+          <div class="row">
+            <div class="col s12">
+              <ul>
+                <li>para clientes <span class="red-text">Focco</span>: valor de USD 3.000,00</li>
+                <li>
+                  as colunas limite atualizado e limite disponível vem travadas por causa das operações <br>
+                </li>
+                <li>
+                  o unico valor cadastrado no banco eh o USD 3.000,00
+                </li>
+              </ul>
+              <table class="responsive-table">
+                <thead>
+                  <tr>
+                    <th>Período</th>
+                    <th>Limite aprovado</th>
+                    <th>Limite Utilizado</th>
+                    <th>Limite disponível</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input disabled value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input disabled value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <ul>
+                <li>para clientes <span class="red-text">FX 53</span>: valor de USD 10.000,00</li>
+              </ul>
+              <table class="responsive-table">
+                <thead>
+                  <tr>
+                    <th>Período</th>
+                    <th>Limite aprovado</th>
+                    <th>Limite Utilizado</th>
+                    <th>Limite disponível</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input disabled value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input disabled value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <ul>
+                <li>para clientes <span class="red-text">FX 53 Premier</span>: Abre campo para digitar SOMENTE OBRIGATÓRIO APÓS ENVIO DOS DOCUMENTOS e trava os outros</li>
+              </ul>
+              <table class="responsive-table">
+                <thead>
+                  <tr>
+                    <th>Período</th>
+                    <th>Limite aprovado</th>
+                    <th>Limite Utilizado</th>
+                    <th>Limite disponível</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input  value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input  value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <ul>
+                <li>para clientes <span class="red-text">FX 53 Premier Plus</span>: Abre campo para digitar SOMENTE OBRIGATÓRIO APÓS ENVIO DOS DOCUMENTOS e trava os outros</li>
+              </ul>
+              <table class="responsive-table">
+                <thead>
+                  <tr>
+                    <th>Período</th>
+                    <th>Limite aprovado</th>
+                    <th>Limite Utilizado</th>
+                    <th>Limite disponível</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input  value="US$ 3.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 2.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                  <tr>
+                    <td>1 dia</td>
+                    <td><input  value="US$ 13.000,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 12.580,00" id="disabled" type="text" class="validate"></td>
+                    <td><input disabled value="US$ 1420,00" id="disabled" type="text" class="validate"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
 
 
