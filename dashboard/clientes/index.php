@@ -56,12 +56,6 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
       <div class="spacing"></div>
       <div>
 
-      <style type="text/css">
-        .cor-vermelha{ color: #FF0000; }
-        .cor-verde{ color: #00D300; }
-        .cor-amarela { color: #FFFF00; }
-      </style>
-
         <table class="striped responsive-table">
           <thead>
             <tr>
@@ -117,21 +111,17 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
               if (!$dif){
 
-                $cor = "cor-verde";
+                $cor = "green-text";
 
               } else if (in_array("CPF", $dif) || in_array("RG", $dif)){
 
-                $cor = "cor-vermelha";
+                $cor = "red-text";
 
               } else {
 
-                $cor = "cor-amarela";
+                $cor = "amber-text";
 
               }
-
-
-
-
 
               echo
               '<tr>
@@ -139,7 +129,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               <td>'.$r["email"].'</td>
               <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
               <td>'.$categoria.'</td>
-              <th>USD 3.000,00</th>
+              <th>Em desenvolvimento...</th>
 
               <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
 

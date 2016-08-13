@@ -102,7 +102,7 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
           </tr>
           <tr>
             <td>CPF/CNPJ</td>
-            <td><?php echo $cpfCnpj ?></td>
+            <td><?php echo substr($cpfCnpj, 0, 3).'.'.substr($cpfCnpj, 3, 3).'.'.substr($cpfCnpj, 6, 3).'-'.substr($cpfCnpj, 9, 2) ?></td>
           </tr>
           <tr>
             <td>Data de Nascimento</td>
@@ -110,7 +110,7 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
           </tr>
           <tr>
             <td>R.G.</td>
-            <td><?php echo $rgInscricaoEstadual  ?></td>
+            <td><?php echo substr($rgInscricaoEstadual, 0, 2).'.'.substr($rgInscricaoEstadual, 2, 3).'.'.substr($rgInscricaoEstadual, 5, 3)  ?></td>
           </tr>
           <tr>
             <td>Orgão Expedidor</td>
@@ -178,11 +178,11 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
           </tr>
           <tr>
             <td>Telefone Fixo</td>
-            <td><?php echo $telFixo ?></td>
+            <td><?php echo '('.substr($telFixo, 0, 2).') '.substr($telFixo, 2, 4).'-'.substr($telFixo, 6) ?></td>
           </tr>
           <tr>
             <td>Telefone Celular</td>
-            <td><?php echo $telCelular ?></td>
+            <td><?php echo '('.substr($telCelular, 0, 2).') '.substr($telCelular, 2, 5).'-'.substr($telCelular, 7) ?></td>
           </tr>
           <tr>
             <td>Contra Senha do Cartão Pré-Pago</td>
@@ -202,11 +202,11 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
           </tr>
           <tr>
             <td>Limite autorizado (diário)</td>
-            <td><?php echo $limiteOperacionalDia ?></td>
+            <td><?php echo number_format($limiteOperacionalDia,2,",",".") ?></td>
           </tr>
           <tr>
             <td>Limite autorizado (anual)</td>
-            <td><?php echo $limiteOperacionalAno ?></td>
+            <td><?php echo number_format($limiteOperacionalAno,2,",",".") ?></td>
           </tr>
         </tbody>
       </table>
@@ -326,7 +326,7 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
                           <tbody>
                             <tr>
                               <td>CEP</td>
-                              <td>'.$cep.'</td>
+                              <td>'.substr($cep, 0, 5).' - '.substr($cep, 5, 3).'</td>
                             </tr>
                             <tr>
                               <td>Logradouro</td>
