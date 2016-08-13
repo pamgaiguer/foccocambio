@@ -51,325 +51,320 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 <main>
   <div class="row">
     <div class="col s12">
-      <div class="row">
-        <br>
-
-        <a class="btn waves-effect waves-light bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
-        <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
-
-        <table class="responsive-table table-visualization">
-          <thead>
-            <tr>
-              <th data-field="campos" colspan="2">Dados do cliente</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ID do cliente</td>
-              <td><?php echo $id ?></td>
-            </tr>
-            <tr>
-              <td>Categoria</td>
-              <td>
-                <?php
-                switch ($categoria) {
-                  case 1: echo "Focco"; break;
-                  case 2: echo "FX53 Simplificado"; break;
-                  case 3: echo "FX53 Premier"; break;
-                  case 4: echo "FX53 Plus"; break;
-                  default: echo ""; break;
-                }
-                ?>
-              </td>
-            </tr>
-            <tr>
-              <td>Origem do cliente</td>
-              <td>
-                <?php
-                switch ($origem) {
-                  case 1: echo "Matriz"; break;
-                  case 2: echo "Loja 1 "; break;
-                  default: echo ""; break;
-                }
-                ?>
-              </td>
-
-            </tr>
-            <tr>
-              <td>Nome</td>
-              <td><?php echo $nome ?></td>
-            </tr>
-            <tr>
-              <td>Tipo de pessoa </td>
-              <td><?php echo $tipo == 'F' ? "Física" : "Jurídica" ?> </td>
-            </tr>
-            <tr>
-              <td>CPF/CNPJ</td>
-              <td><?php echo $cpfCnpj ?></td>
-            </tr>
-            <tr>
-              <td>Data de Nascimento</td>
-              <td><?php echo date_format(new DateTime($dataNascimentoAbertura), 'd/m/Y'); ?></td>
-            </tr>
-            <tr>
-              <td>R.G.</td>
-              <td><?php echo $rgInscricaoEstadual  ?></td>
-            </tr>
-            <tr>
-              <td>Orgão Expedidor</td>
-              <td><?php echo $rgOrgaoExpedidor ?></td>
-            </tr>
-            <tr>
-              <td>Data da Expedição</td>
-              <td><?php echo date_format(new DateTime ($rgDataExpedicao), 'd/m/Y')  ?></td>
-            </tr>
-            <tr>
-              <td>Passaporte</td>
-              <td><?php echo $passaporte ?></td>
-            </tr>
-            <tr>
-              <td>RG / D.N.I.</td>
-              <td><?php echo $rgDni ?></td>
-            </tr>
-            <tr>
-              <td>Gênero</td>
-              <td><?php echo $sexo == 'M' ? "Masculino" : "Feminino" ?></td>
-            </tr>
-            <tr>
-              <td>Nacionalidade</td>
-              <td><?php echo $nacionalidade ?></td>
-            </tr>
-            <tr>
-              <td>Estado civil</td>
-              <td>
-                <?php
-                switch ($estadoCivil) {
-                  case 1: echo "Solteiro(a)"; break;
-                  case 2: echo "Casado(a) "; break;
-                  case 3: echo "Divorciado(a)"; break;
-                  case 4: echo "Viúvo(a)"; break;
-                  case 6: echo "Companheiro(a)"; break;
-                  default: echo ""; break;
-                }
-                ?>
-              </td>
-            </tr>
+      <div class="spacing"></div>
+      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
+      <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
+      <table class="responsive-table table-visualization">
+        <thead>
+          <tr>
+            <th data-field="campos" colspan="2">Dados do cliente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID do cliente</td>
+            <td><?php echo $id ?></td>
+          </tr>
+          <tr>
+            <td>Categoria</td>
+            <td>
+              <?php
+              switch ($categoria) {
+                case 1: echo "Focco"; break;
+                case 2: echo "FX53 Simplificado"; break;
+                case 3: echo "FX53 Premier"; break;
+                case 4: echo "FX53 Plus"; break;
+                default: echo ""; break;
+              }
+              ?>
+            </td>
+          </tr>
+          <tr>
+            <td>Origem do cliente</td>
+            <td>
+              <?php
+              switch ($origem) {
+                case 1: echo "Matriz"; break;
+                case 2: echo "Loja 1 "; break;
+                default: echo ""; break;
+              }
+              ?>
+            </td>
+          </tr>
+          <tr>
+            <td>Nome</td>
+            <td><?php echo $nome ?></td>
+          </tr>
+          <tr>
+            <td>Tipo de pessoa </td>
+            <td><?php echo $tipo == 'F' ? "Física" : "Jurídica" ?> </td>
+          </tr>
+          <tr>
+            <td>CPF/CNPJ</td>
+            <td><?php echo $cpfCnpj ?></td>
+          </tr>
+          <tr>
+            <td>Data de Nascimento</td>
+            <td><?php echo date_format(new DateTime($dataNascimentoAbertura), 'd/m/Y'); ?></td>
+          </tr>
+          <tr>
+            <td>R.G.</td>
+            <td><?php echo $rgInscricaoEstadual  ?></td>
+          </tr>
+          <tr>
+            <td>Orgão Expedidor</td>
+            <td><?php echo $rgOrgaoExpedidor ?></td>
+          </tr>
+          <tr>
+            <td>Data da Expedição</td>
+            <td><?php echo date_format(new DateTime ($rgDataExpedicao), 'd/m/Y')  ?></td>
+          </tr>
+          <tr>
+            <td>Passaporte</td>
+            <td><?php echo $passaporte ?></td>
+          </tr>
+          <tr>
+            <td>RG / D.N.I.</td>
+            <td><?php echo $rgDni ?></td>
+          </tr>
+          <tr>
+            <td>Gênero</td>
+            <td><?php echo $sexo == 'M' ? "Masculino" : "Feminino" ?></td>
+          </tr>
+          <tr>
+            <td>Nacionalidade</td>
+            <td><?php echo $nacionalidade ?></td>
+          </tr>
+          <tr>
+            <td>Estado civil</td>
+            <td>
+              <?php
+              switch ($estadoCivil) {
+                case 1: echo "Solteiro(a)"; break;
+                case 2: echo "Casado(a) "; break;
+                case 3: echo "Divorciado(a)"; break;
+                case 4: echo "Viúvo(a)"; break;
+                case 6: echo "Companheiro(a)"; break;
+                default: echo ""; break;
+              }
+              ?>
+            </td>
+          </tr>
+          <?php
+          if ($estadoCivil != 1){
+            echo '
             <tr>
               <td>Nome do Cônjuge</td>
-              <td><?php echo $nomeConjuge ?></td>
+              <td>'.$nomeConjuge.'</td>
             </tr>
             <tr>
               <td>Data Nascimento Cônjuge</td>
-              <td><?php echo date_format(new DateTime ($dataNascimentoConjuge), 'd/m/Y')  ?></td>
-            </tr>
-            <tr>
-              <td>Nome da Mãe</td>
-              <td><?php echo $nomeMae ?></td>
-            </tr>
-            <tr>
-              <td>Nome do Pai</td>
-              <td><?php echo $nomePai ?></td>
-            </tr>
-            <tr>
-              <td>E-mail</td>
-              <td><?php echo $email ?></td>
-            </tr>
-            <tr>
-              <td>Telefone Fixo</td>
-              <td><?php echo $telFixo ?></td>
-            </tr>
-            <tr>
-              <td>Telefone Celular</td>
-              <td><?php echo $telCelular ?></td>
-            </tr>
-            <tr>
-              <td>Contra Senha do Cartão Pré-Pago</td>
-              <td><?php echo $contraSenha ?></td>
-            </tr>
-            <tr>
-              <td>Observações</td>
-              <td><?php echo $observacoes ?></td>
-            </tr>
-            <tr>
-              <td>Ofertas por e-mail</td>
-              <td><?php echo $ofertasPorEmail == '1' ? "Sim" : "Não" ?></td>
-            </tr>
-            <tr>
-              <td>Infos pelo WhatsApp</td>
-              <td><?php echo $infoWhatsapp == '1' ? "Sim" : "Não" ?></td>
-            </tr>
-            <tr>
-              <td>Limite autorizado (diário)</td>
-              <td><?php echo $limiteOperacionalDia ?></td>
-            </tr>
-            <tr>
-              <td>Limite autorizado (anual)</td>
-              <td><?php echo $limiteOperacionalAno ?></td>
-            </tr>
-
-
-          </tbody>
-        </table>
-
-        <br>
-        <p class="title-forms">Documentos do cliente <strong><?php echo $nome ?></strong></p><hr>
-        <div class="docs">
+              <td>'.date_format(new DateTime ($dataNascimentoConjuge), 'd/m/Y').'</td>
+            </tr>';
+          }
+          ?>
+          <tr>
+            <td>Nome da Mãe</td>
+            <td><?php echo $nomeMae ?></td>
+          </tr>
+          <tr>
+            <td>Nome do Pai</td>
+            <td><?php echo $nomePai ?></td>
+          </tr>
+          <tr>
+            <td>E-mail</td>
+            <td><?php echo $email ?></td>
+          </tr>
+          <tr>
+            <td>Telefone Fixo</td>
+            <td><?php echo $telFixo ?></td>
+          </tr>
+          <tr>
+            <td>Telefone Celular</td>
+            <td><?php echo $telCelular ?></td>
+          </tr>
+          <tr>
+            <td>Contra Senha do Cartão Pré-Pago</td>
+            <td><?php echo $contraSenha ?></td>
+          </tr>
+          <tr>
+            <td>Observações</td>
+            <td><?php echo $observacoes ?></td>
+          </tr>
+          <tr>
+            <td>Ofertas por e-mail</td>
+            <td><?php echo $ofertasPorEmail == '1' ? "Sim" : "Não" ?></td>
+          </tr>
+          <tr>
+            <td>Infos pelo WhatsApp</td>
+            <td><?php echo $infoWhatsapp == '1' ? "Sim" : "Não" ?></td>
+          </tr>
+          <tr>
+            <td>Limite autorizado (diário)</td>
+            <td><?php echo $limiteOperacionalDia ?></td>
+          </tr>
+          <tr>
+            <td>Limite autorizado (anual)</td>
+            <td><?php echo $limiteOperacionalAno ?></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="spacing"></div>
+      <p class="title-forms">Documentos do cliente <strong><?php echo $nome ?></strong></p><hr>
+      <div class="docs docs-img">
+        <?php if (count($docs) < 1) { ?>
           <div class="row">
-            <?php if (count($docs) < 1) { ?>
-              <div class="row">
-                <div class="col s12">
-                  <p>
-                    Cliente ainda não possui documentos cadastrados
-                  </p>
-                </div>
-              </div>
-            <?php }; ?>
+            <div class="col s12">
+              <p>
+                Cliente ainda não possui documentos cadastrados
+              </p>
+            </div>
+          </div>
+          <?php }; ?>
 
-            <?php if (in_array("CPF", $docs)) { ?>
-              <div class="col s3">
-                <figure>
-                  <img alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png" width="150px" height="150px" />
-                  <figcaption>CPF</figcaption>
-                </figure>
-              </div>
+          <?php if (in_array("CPF", $docs)) { ?>
+            <div class="col s4">
+              <figure>
+                <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png"/>
+                <figcaption>CPF</figcaption>
+              </figure>
+            </div>
             <?php }; ?>
 
             <?php if (in_array("RG", $docs)) { ?>
-              <div class="col s3">
+              <div class="col s4">
                 <figure>
-                  <img alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="150px" height="150px" />
-                  <figcaption class="center-align">RG</figcaption>
+                  <img class="responsive-img"  alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="350px" height="500px" />
+                  <figcaption>RG</figcaption>
                 </figure>
               </div>
-            <?php }; ?>
+              <?php }; ?>
 
-            <?php if (in_array("CR", $docs)) { ?>
-              <div class="col s3">
-                <figure>
-                  <img alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="150px" height="150px" />
-                  <figcaption class="center-align">Comprovante de residência</figcaption>
-                </figure>
-              </div>
-            <?php }; ?>
+              <?php if (in_array("CR", $docs)) { ?>
+                <div class="col s4">
+                  <figure>
+                    <img class="responsive-img"  alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="350px" height="500px" />
+                    <figcaption>Comprovante de residência</figcaption>
+                  </figure>
+                </div>
+                <?php }; ?>
 
-            <?php if (in_array("FF", $docs)) { ?>
-              <div class="col s3">
-                <figure>
-                  <img alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="150px" height="150px" />
-                  <figcaption class="center-align">Ficha Cadastral Focco</figcaption>
-                </figure>
-              </div>
-            <?php }; ?>
-          </div>
-          <div class="row">
-            <?php if (in_array("IR", $docs)) { ?>
-              <div class="col s3">
-                <figure>
-                  <img alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="150px" height="150px" />
-                  <figcaption class="center-align">Imposto de Renda</figcaption>
-                </figure>
-              </div>
-            <?php }; ?>
+                <?php if (in_array("FF", $docs)) { ?>
+                  <div class="col s4">
+                    <figure>
+                      <img class="responsive-img"  alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="350px" height="500px" />
+                      <figcaption>Ficha Cadastral Focco</figcaption>
+                    </figure>
+                  </div>
+                  <?php }; ?>
 
-            <?php if (in_array("CA", $docs)) { ?>
-              <div class="col s3">
-                <figure>
-                  <img alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="150px" height="150px" />
-                  <figcaption class="center-align">Cartão de Assinatura</figcaption>
-                </figure>
-              </div>
-            <?php }; ?>
+                  <?php if (in_array("IR", $docs)) { ?>
+                    <div class="col s4">
+                      <figure>
+                        <img class="responsive-img"  alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="350px" height="500px" />
+                        <figcaption>Imposto de Renda</figcaption>
+                      </figure>
+                    </div>
+                    <?php }; ?>
 
-            <?php if (in_array("CPS", $docs)) { ?>
-              <div class="col s3">
-                <figure>
-                  <img alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="150px" height="150px" />
-                  <figcaption class="center-align">Contrato de Prestação de Serviços</figcaption>
-                </figure>
-              </div>
-            <?php }; ?>
+                    <?php if (in_array("CA", $docs)) { ?>
+                      <div class="col s4">
+                        <figure>
+                          <img class="responsive-img"  alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="350px" height="500px" />
+                          <figcaption>Cartão de Assinatura</figcaption>
+                        </figure>
+                      </div>
+                      <?php }; ?>
 
-            <?php if (in_array("PV", $docs)) { ?>
-              <div class="col s3">
-                <figure>
-                  <img alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="150px" height="150px" />
-                  <figcaption class="center-align">Procuração para a Vision</figcaption>
-                </figure>
-              </div>
-            <?php }; ?>
-          </div>
-        </div>
+                      <?php if (in_array("CPS", $docs)) { ?>
+                        <div class="col s4">
+                          <figure>
+                            <img class="responsive-img"  alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="350px" height="500px" />
+                            <figcaption>Contrato de Prestação de Serviços</figcaption>
+                          </figure>
+                        </div>
+                        <?php }; ?>
 
-        <?php
+                        <?php if (in_array("PV", $docs)) { ?>
+                          <div class="col s4">
+                            <figure>
+                              <img class="responsive-img"  alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="350px" height="500px" />
+                              <figcaption>Procuração para a Vision</figcaption>
+                            </figure>
+                          </div>
+                          <?php }; ?>
+                        </div>
 
-        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s", $_GET['clienteId']);
-        $result = mysqli_query($conn, $sql_query);
+                        <?php
 
-        $rows = array();
-        while($row = mysqli_fetch_array($result)) $rows[] = $row;
+                        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s", $_GET['clienteId']);
+                        $result = mysqli_query($conn, $sql_query);
 
-        foreach($rows as $r){
+                        $rows = array();
+                        while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
-          $tipo = $r['tipo'];
-          $cep = $r['cep'];
-          $endereco = $r['endereco'];
-          $numero = $r['numero'];
-          $complemento = $r['complemento'];
-          $bairro = $r['bairro'];
-          $cidade = $r['cidade'];
-          $estado = $r['estado'];
-          $pais = $r['pais'];
+                        foreach($rows as $r){
 
-          echo
-          '<table class="responsive-table">
-          <thead>
-            <tr>
-              <th colspan="2">Endereço '.($tipo == 2 ? "Entrega" : "Residencial").'</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>CEP</td>
-              <td>'.$cep.'</td>
-            </tr>
-            <tr>
-              <td>Logradouro</td>
-              <td>'.$endereco.'</td>
-            </tr>
-            <tr>
-              <td>Número</td>
-              <td>'.$numero.'</td>
-            </tr>
-            <tr>
-              <td>Complemento</td>
-              <td>'.$complemento.'</td>
-            </tr>
-            <tr>
-              <td>Bairro</td>
-              <td>'.$bairro.'</td>
-            </tr>
-            <tr>
-              <td>Cidade</td>
-              <td>'.$cidade.'</td>
-            </tr>
-            <tr>
-              <td>Estado</td>
-              <td>'.$estado.'</td>
-            </tr>
-            <tr>
-              <td>País</td>
-              <td>'.$pais.'</td>
-            </tr>
-          </tbody>
-        </table>';
-      };
-      ?>
+                          $tipo = $r['tipo'];
+                          $cep = $r['cep'];
+                          $endereco = $r['endereco'];
+                          $numero = $r['numero'];
+                          $complemento = $r['complemento'];
+                          $bairro = $r['bairro'];
+                          $cidade = $r['cidade'];
+                          $estado = $r['estado'];
+                          $pais = $r['pais'];
 
-    </div>
-  </div>
-</div>
-</main>
+                          echo
+                          '<table class="responsive-table">
+                          <thead>
+                            <tr>
+                              <th colspan="2">Endereço '.($tipo == 2 ? "Entrega" : "Residencial").'</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>CEP</td>
+                              <td>'.$cep.'</td>
+                            </tr>
+                            <tr>
+                              <td>Logradouro</td>
+                              <td>'.$endereco.'</td>
+                            </tr>
+                            <tr>
+                              <td>Número</td>
+                              <td>'.$numero.'</td>
+                            </tr>
+                            <tr>
+                              <td>Complemento</td>
+                              <td>'.$complemento.'</td>
+                            </tr>
+                            <tr>
+                              <td>Bairro</td>
+                              <td>'.$bairro.'</td>
+                            </tr>
+                            <tr>
+                              <td>Cidade</td>
+                              <td>'.$cidade.'</td>
+                            </tr>
+                            <tr>
+                              <td>Estado</td>
+                              <td>'.$estado.'</td>
+                            </tr>
+                            <tr>
+                              <td>País</td>
+                              <td>'.$pais.'</td>
+                            </tr>
+                          </tbody>
+                        </table>';
+                      };
+                      ?>
 
-<?php
-include "../includes/footer.php";
-?>
+                    </div>
+                  </div>
+                </div>
+              </main>
+
+              <?php
+              include "../includes/footer.php";
+              ?>

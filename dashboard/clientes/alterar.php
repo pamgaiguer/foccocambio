@@ -524,22 +524,22 @@ foreach($rows as $r){
               </ul>
               <table class="responsive-table">
                 <thead>
-                  <tr>                    
-                    <th class="col s3">Limite aprovado diário (USD)</th>                    
-                    <th class="col s3">Limite aprovado anual (USD)</th>                    
+                  <tr>
+                    <th class="col s3">Limite aprovado diário (USD)</th>
+                    <th class="col s3">Limite aprovado anual (USD)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>                    
-                    <td class="col s3"><input id="limiteOperacionalDia" name="limiteOperacionalDia" 
+                  <tr>
+                    <td class="col s3"><input id="limiteOperacionalDia" name="limiteOperacionalDia"
                     <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
                     value="<?php echo $limiteOperacionalDia ?>" type="text" pattern="^\d*(\.\d{2}$)?" class="validate"></td>
 
-                    <td class="col s3"><input id="limiteOperacionalAno" name="limiteOperacionalAno" 
+                    <td class="col s3"><input id="limiteOperacionalAno" name="limiteOperacionalAno"
                     <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
                     value="<?php echo $limiteOperacionalAno ?>" type="text" pattern="^\d*(\.\d{2}$)?" class="validate"></td>
                   </tr>
-                  
+
                 </tbody>
               </table>
             </div>
@@ -550,7 +550,7 @@ foreach($rows as $r){
               <ul>
                 <li>para clientes <span class="red-text">FX 53</span>: valor de USD 10.000,00</li>
               </ul>
-              
+
             </div>
           </div>
 
@@ -559,7 +559,7 @@ foreach($rows as $r){
               <ul>
                 <li>para clientes <span class="red-text">FX 53 Premier</span>: Abre campo para digitar SOMENTE OBRIGATÓRIO APÓS ENVIO DOS DOCUMENTOS e trava os outros</li>
               </ul>
-             
+
             </div>
           </div>
 
@@ -568,7 +568,7 @@ foreach($rows as $r){
               <ul>
                 <li>para clientes <span class="red-text">FX 53 Premier Plus</span>: Abre campo para digitar SOMENTE OBRIGATÓRIO APÓS ENVIO DOS DOCUMENTOS e trava os outros</li>
               </ul>
-              
+
             </div>
           </div>
 

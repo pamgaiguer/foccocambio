@@ -224,7 +224,7 @@
     </div>
   </div>
 
-  <a href="int_transf_internacional.php">
+  <a href="remessa-internacional">
     <div class="modal fade" id="modalRemessa" tabindex="-1" role="dialog" aria-labelledby="modalRemessaLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -233,7 +233,7 @@
             <img src="images/remessa_focco_modal.jpg" alt="" class="img-responsive">
           </div>
           <div class="modal-footer">
-            <a class="btn btn-primary" href="int_transf_internacional.php">Saiba mais</a>
+            <a class="btn btn-primary" href="remessa-internacional">Saiba mais</a>
           </div>
         </div>
       </div>

@@ -64,6 +64,7 @@ table td a{
 input[type=email]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
 input[type=tel]:focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly])  {
   border-bottom: 1px solid $blue;
   box-shadow: 0 1px 0 0 $blue;
@@ -146,6 +147,12 @@ button.picker__close:focus {
 [type="checkbox"].filled-in:checked + label:after {
     border: 2px solid $blue;
     background-color: $blue;
+}
+
+.docs-img{
+  figure{
+    margin: 5px;
+  }
 }
 
 

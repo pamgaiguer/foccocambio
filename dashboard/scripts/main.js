@@ -247,6 +247,8 @@ focco = {
 
         $("#limiteOperacionalDia").removeAttr("readonly");
         $("#limiteOperacionalAno").removeAttr("readonly");
+        $("#limiteOperacionalDia").removeAttr("disabled");
+        $("#limiteOperacionalAno").removeAttr("disabled");
         $("#limiteOperacionalDia").val("10000.00");
         $("#limiteOperacionalAno").val("13000.00");
 
