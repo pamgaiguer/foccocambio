@@ -53,6 +53,7 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
     <div class="col s12">
       <div class="spacing"></div>
       <a class="btn waves-effect waves-light bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
+      <div class="spacing"></div>
       <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
       <table class="responsive-table table-visualization">
         <thead>

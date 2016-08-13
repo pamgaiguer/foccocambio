@@ -163,12 +163,12 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
     <p>Deseja excluir o cliente selecionado?</p>
   </div>
   <div class="modal-footer">
-    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn bg-blue white ">
+    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn">
       <i class="material-icons right">&#xE86C;</i>
         Confirmar
     </a>
 
-    <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn bg-blue white">
+    <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
       <i class="material-icons right">&#xE5C9;</i>
       Cancelar
     </a>

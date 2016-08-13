@@ -5,6 +5,14 @@ include "../includes/header.php";
 ?>
 <main>
   <div class="section"></div>
+
+  <div class="row">
+    <div class="col s12">
+      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
+    </div>
+  </div>
+
+
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
@@ -752,8 +760,15 @@ include "../includes/header.php";
     <p>Deseja adicionar o cliente?</p>
   </div>
   <div class="modal-footer">
-    <a id="modal-cancel" class=" modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
-    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-green btn-flat">Confirmar</a>
+    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn">
+      <i class="material-icons right">&#xE86C;</i>
+        Confirmar
+    </a>
+
+    <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
+      <i class="material-icons right">&#xE5C9;</i>
+      Cancelar
+    </a>
   </div>
 </div>
 
