@@ -152,7 +152,7 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
             </td>
           </tr>
           <?php
-          if ($estadoCivil != 1){
+          if ($estadoCivil == 2){
             echo '
             <tr>
               <td>Nome do Cônjuge</td>

@@ -37,65 +37,63 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s6">
-              <input id="cpfCnpj" name="cpfCnpj" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
-              <label for="cpfCnpj">C.P.F.</label>
-              <div id="validacaoCpf"></div>
+              <input id="dataNascimento" name="dataNascimento" type="date" class="datepicker" required>
+              <label for="dataNascimento">Data de Nascimento</label>
             </div>
           </div>
 
           <div class="row">
-            <div class="input-field col s3">
-              <input id="dataNascimento" name="dataNascimento" type="date" class="datepicker" required>
-              <label for="dataNascimento">Data de Nascimento</label>
+            <div class="input-field col s4">
+              <input id="cpfCnpj" name="cpfCnpj" class="validate" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
+              <label id="validacaoCpf" for="cpfCnpj" data-error="O CPF informado não é válido para cadastro.">C.P.F.</label>
+              <!-- <div id="validacaoCpf"></div> -->
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s4">
               <input id="rg" name="rg" type="text" required>
               <label for="rg">R.G.</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="rgOrgaoExpedidor" name="rgOrgaoExpedidor" type="text" required>
               <label for="rgOrgaoExpedidor">Orgão Expedidor</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="rgDataExpedicao" name="rgDataExpedicao" type="date" class="datepicker" required>
               <label for="rgDataExpedicao">Data de Expedição</label>
             </div>
           </div>
 
           <div class="row">
-            <div class="col s12">
-              <p><em>Se estrangeiro não naturalizado, favor preencher informações abaixo:</em></p>
+            <div class="input-field col s3">
+              <input id="cnh" name="cnh" type="text">
+              <label for="cnh">C.N.H.</label>
             </div>
-
-            <div class="input-field col s6">
+            <div class="input-field col s3">
+              <input id="cnhDataValidade" name="cnhDataValidade" type="date" class="datepicker" required>
+              <label for="cnhDataValidade">C.N.H. - Data de vencimento</label>
+            </div>
+            <div class="input-field col s3">
               <input id="numPassaporte" name="numPassaporte" type="text" >
               <label for="numPassaporte">Passaporte</label>
             </div>
-
-            <div class="input-field col s6">
+            <div class="input-field col s3">
               <input id="rgDni" name="rgDni" type="text" >
               <label for="rgDni">R.G. / DNI</label>
             </div>
           </div>
 
           <div class="row">
-            <div class="input-field col s2">
-              <select id="sexo" name="sexo">
+            <div class="input-field col s4">
+              <select id="sexo" name="sexo" required>
                 <option value="M" selected>Masculino</option>
                 <option value="F">Feminino</option>
               </select>
               <label for="sexo">Sexo</label>
             </div>
 
-            <div class="input-field col s5">
-              <input id="nacionalidade" name="nacionalidade" type="text" required>
-              <label for="nacionalidade">Nacionalidade</label>
-            </div>
-
-            <div class="input-field col s5">
+            <div class="input-field col s4">
               <select id="estadoCivil" name="estadoCivil" required>
                 <option value="1" selected>Solteiro(a)</option>
                 <option value="2">Casado(a)</option>
@@ -105,6 +103,12 @@ include "../includes/header.php";
               </select>
               <label for="estadoCivil">Estado Civil</label>
             </div>
+
+            <div class="input-field col s4">
+              <input id="nacionalidade" name="nacionalidade" type="text" required>
+              <label for="nacionalidade">Nacionalidade</label>
+            </div>
+
           </div>
 
           <div class="row">
@@ -122,12 +126,6 @@ include "../includes/header.php";
           </div>
 
           <div class="row">
-            <div class="col s12">
-              <h5>Filiação</h5>
-            </div>
-          </div>
-
-          <div class="row">
             <div class="input-field col s6">
               <input id="nomeMae" name="nomeMae" type="text" required>
               <label for="nomeMae">Nome da mãe</label>
@@ -141,8 +139,8 @@ include "../includes/header.php";
 
           <div class="row">
             <div class="input-field col s6">
-              <input id="email" name="email" type="email" required>
-              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" class="validate" required>
+              <label for="email" data-error="E-mail com formato inválido">E-mail</label>
             </div>
             <div class="input-field col s3">
               <input id="telFixo" name="telFixo" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel">
@@ -186,7 +184,7 @@ include "../includes/header.php";
 
             <div class="input-field col s2">
               <input id="infoWhatsapp" name="infoWhatsapp" type="checkbox" class="filled-in">
-              <label for="infoWhatsapp">Informações Whatsapp</label>
+              <label for="infoWhatsapp">Infos Whatsapp</label>
             </div>
 
             <div class="input-field col s2">
@@ -196,9 +194,50 @@ include "../includes/header.php";
           </div>
 
           <div class="row">
-            <div class="input-field col s12">
-              <textarea id="observacoes" name="observacoes" class="materialize-textarea" length="120"></textarea>
-              <label for="observacoes">Observações</label>
+            <div class="input-field col s2">
+              <select id="ondeConheceuFocco" name="ondeConheceuFocco">
+                <option value="1" selected>Indicação de Amigos</option>
+                <option value="2">Google</option>
+                <option value="3">Site comparador de taxas de câmbio</option>
+                <option value="4">Outros</option>
+              </select>
+              <label for="ondeConheceuFocco">Onde Conheceu a Focco?</label>
+            </div>
+
+            <div class="ondeSoubeFocco" style="display: none">
+              <div class="input-field col s2">
+                <input id="ondeConheceuFoccoDesc" name="ondeConheceuFoccoDesc" type="text">
+                <label for="ondeConheceuFoccoDesc">Onde ? </label>
+              </div>
+            </div>
+
+            <div class="input-field col s4">
+              <select id="statusCliente" name="statusCliente" required>
+                <option value="1" selected>Ativo</option>
+                <option value="2">Bloqueado</option>
+              </select>
+              <label for="statusCliente">Status</label>
+            </div>
+
+            <div class="motivoBlock" style="display: none">
+              <div class="input-field col s4" >
+                <select id="motivoStatusBlocked" name="motivoStatusBlocked">
+                  <option value="1" selected>Falta de documento</option>
+                  <option value="2">Documento vencido</option>
+                  <option value="3">Fraude</option>
+                  <option value="4">Outros</option>
+                </select>
+                <label for="motivoStatusBlocked">Motivo Status Bloqueado</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="motivoBlockDescricao" style="display: none">
+            <div class="row">
+              <div class="input-field col s12" >
+                <textarea id="observacoes" name="observacoes" class="materialize-textarea" row="" length="120"></textarea>
+                <label for="observacoes">Observações</label>
+              </div>
             </div>
           </div>
 
@@ -458,13 +497,6 @@ include "../includes/header.php";
           <div class="col s12">
             <div class="spacing"></div>
             <h5>Dados da empresa</h5>
-            <div class="spacing"></div>
-            <ul class="black-text">
-              <li>No campo Principal Atividade remunerada, colocar essa lista de atividades: <a target="_blank" href="http://www.portaldoempreendedor.gov.br/legislacao/resolucoes/arquivos/ANEXO_XIII.pdf">Tabela</a> </li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
           </div>
         </div>
 
@@ -504,11 +536,8 @@ include "../includes/header.php";
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <select id="sexo" name="sexo">
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
-              </select>
-              <label for="sexo">Principal atividade desenvolvida</label>
+              <input id="princAtvRemun" name="princAtvRemun" type="text" required>
+              <label for="princAtvRemun">Principal Atividade Remunerada </label>
             </div>
 
             <div class="input-field col s3">
@@ -761,7 +790,7 @@ include "../includes/header.php";
   <div class="modal-footer">
     <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn">
       <i class="material-icons right">&#xE86C;</i>
-        Confirmar
+      Confirmar
     </a>
 
     <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">

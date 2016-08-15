@@ -151,6 +151,7 @@ focco = {
   adicionarClienteFormPost: function(){
 
     $('textarea#observacoes').characterCounter();
+    $('textarea#observacoes').trigger('autoresize');
 
     $('ul.tabs').tabs();
     $('select').material_select();
@@ -187,6 +188,38 @@ focco = {
     });
 
 
+    $("#statusCliente").change(function(){
+      if ($(this).val() == 2){
+        $(".motivoBlock").fadeIn(300);
+        $("#motivoStatusBlocked").attr("required", "required");
+      } else {
+        $(".motivoBlock").fadeOut(300);
+        $(".motivoBlockDescricao").fadeOut(300);
+        $("#motivoStatusBlocked").removeAttr("required");
+      }
+    });
+
+    $("#motivoStatusBlocked").change(function(){
+      if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3 || $(this).val() == 4 ){
+        $(".motivoBlockDescricao").fadeIn(300);
+        $("#observacoes").attr("required", "required");
+      } else {
+        $(".motivoBlockDescricao").fadeOut(300);
+        $("#observacoes").removeAttr("required");
+      }
+    });
+
+    $("#ondeConheceuFocco").change(function(){
+        if($(this).val()== 4){
+          $(".ondeSoubeFocco").fadeIn(300);
+          $("#ondeConheceuFoccoDesc").attr("required", "required");
+        }
+        else {
+          $(".ondeSoubeFocco").fadeOut(300);
+          $("#ondeConheceuFoccoDesc").removeAttr();
+        }
+    });
+
     $("#telFixo").mask("(99) 9999-9999");
     $("#telCelular").mask("(99) 99999-9999");
 
@@ -201,9 +234,9 @@ focco = {
         success: function(data){
           if (!JSON.parse(data)){
             $("#input-submit").parent().addClass("disabled");
-            $("#validacaoCpf").html("O CPF informado não é válido para cadastro.");
+            //$("#validacaoCpf").html("O CPF informado não é válido para cadastro.");
           } else {
-            $("#validacaoCpf").html("");
+            //$("#validacaoCpf").html("");
             $("#input-submit").parent().removeClass("disabled");
           }
         }
@@ -313,6 +346,8 @@ focco = {
         }
       });
     });
+
+
 
     $("#form-adicionar-cliente-pf").submit(function(e){
 
