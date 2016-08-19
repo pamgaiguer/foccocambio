@@ -33,12 +33,16 @@ $sql_query = sprintf("
 	origem,
 	vip,
 	limiteOperacionalDia,
-	limiteOperacionalAno
+	limiteOperacionalAno,
+	ondeConheceu,
+	ondeSoube,
+	bloqueado,
+	motivoBloqueio
 	)
 
-	VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s )",
+	VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s, %s, %s, %s )",
 
-	$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], floatval($_POST["limiteOperacionalDia"]), floatval($_POST["limiteOperacionalAno"])
+	$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], floatval($_POST["limiteOperacionalDia"]), floatval($_POST["limiteOperacionalAno"]), $_POST["ondeConheceuFocco"], $_POST["ondeConheceuFoccoDesc"], $_POST["bloqueado"], $_POST["motivoStatusBlocked"]
 	);
 
 if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));

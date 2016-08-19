@@ -60,7 +60,13 @@ CREATE TABLE `clientes` (
   `origem` int(11) DEFAULT NULL,
   `vip` bit(1) DEFAULT NULL,
   `limiteOperacionalDia` decimal(10,2) DEFAULT NULL,
-  `limiteOperacionalAno` decimal(10,2) DEFAULT NULL
+  `limiteOperacionalAno` decimal(10,2) DEFAULT NULL,
+  `ativo` bit(1) DEFAULT 1,
+  `bloqueado` bit(1) DEFAULT 0,
+  `motivoBloqueio` int(11) DEFAULT NULL,
+  `ondeConheceu` int(11) DEFAULT NULL,
+  `ondeSoube` varchar(255) DEFAULT NULL
+
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

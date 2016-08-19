@@ -3,7 +3,7 @@
 include "../includes/header.php";
 include "../core/database.php";
 
-$sql_query = "SELECT * FROM clientes ORDER BY dataCadastro DESC LIMIT 15;";
+$sql_query = "SELECT * FROM clientes WHERE ativo = 1 ORDER BY dataCadastro DESC LIMIT 15;";
 $result = mysqli_query($conn, $sql_query);
 
 

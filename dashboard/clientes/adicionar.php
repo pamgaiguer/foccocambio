@@ -212,11 +212,11 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s4">
-              <select id="statusCliente" name="statusCliente" required>
-                <option value="1" selected>Ativo</option>
-                <option value="2">Bloqueado</option>
+              <select id="bloqueado" name="bloqueado" required>
+                <option value="0" selected>Ativo</option>
+                <option value="1">Bloqueado</option>
               </select>
-              <label for="statusCliente">Status</label>
+              <label for="bloqueado">Status</label>
             </div>
 
             <div class="motivoBlock" style="display: none">
