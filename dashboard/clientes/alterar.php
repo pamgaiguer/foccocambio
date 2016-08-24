@@ -77,52 +77,55 @@ foreach($rows as $r){
             </div>
 
             <div class="input-field col s6">
-              <input id="cpfCnpj" name="cpfCnpj" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required value= <?php echo $cpfCnpj ?> />
-              <label for="cpfCnpj">C.P.F.</label>
-              <div id="validacaoCpf"></div>
+              <input id="dataNascimento" name="dataNascimento" type="date" class="datepicker" required value= <?php echo date_format(new DateTime($dataNascimentoAbertura), 'd/m/Y'); ?> />
+              <label for="dataNascimento">Data de Nascimento</label>
             </div>
           </div>
 
           <div class="row">
-            <div class="input-field col s3">
-              <input id="dataNascimento" name="dataNascimento" type="date" class="datepicker" required value= <?php echo $dataNascimentoAbertura ?> />
-              <label for="dataNascimento">Data de Nascimento</label>
+            <div class="input-field col s4">
+              <input id="cpfCnpj" name="cpfCnpj" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required value= <?php echo $cpfCnpj ?> />
+              <label for="cpfCnpj">C.P.F.</label>
+              <div id="validacaoCpf"></div>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s4">
               <input id="rg" name="rg" type="text" required value= <?php echo $rgInscricaoEstadual ?> />
               <label for="rg">R.G.</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="rgOrgaoExpedidor" name="rgOrgaoExpedidor" type="text" required value= <?php echo $rgOrgaoExpedidor ?> />
               <label for="rgOrgaoExpedidor">Orgão Expedidor</label>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s2">
               <input id="rgDataExpedicao" name="rgDataExpedicao" type="date" class="datepicker" required value= <?php echo $rgDataExpedicao ?> />
               <label for="rgDataExpedicao">Data de Expedição</label>
             </div>
           </div>
 
           <div class="row">
-            <div class="col s12">
-              <p><em>Se estrangeiro não naturalizado, favor preencher informações abaixo:</em></p>
+            <div class="input-field col s3">
+              <input id="cnh" name="cnh" type="text">
+              <label for="cnh">C.N.H.</label>
             </div>
-
-            <div class="input-field col s6">
+            <div class="input-field col s3">
+              <input id="cnhDataValidade" name="cnhDataValidade" type="date" class="datepicker" required>
+              <label for="cnhDataValidade">C.N.H. - Data de vencimento</label>
+            </div>
+            <div class="input-field col s3">
               <input id="numPassaporte" name="numPassaporte" type="text" value= <?php echo $passaporte ?> >
               <label for="numPassaporte">Passaporte</label>
             </div>
-
-            <div class="input-field col s6">
+            <div class="input-field col s3">
               <input id="rgDni" name="rgDni" type="text" value= <?php echo $rgDni ?> >
               <label for="rgDni">R.G. / DNI</label>
             </div>
           </div>
 
           <div class="row">
-            <div class="input-field col s2">
+            <div class="input-field col s4">
               <select id="sexo" name="sexo">
                 <option value="M" <?php echo ($sexo == 'M' ? "selected" : "") ?> >Masculino</option>
                 <option value="F" <?php echo ($sexo == 'F' ? "selected" : "") ?> >Feminino</option>
@@ -130,12 +133,7 @@ foreach($rows as $r){
               <label for="sexo">Sexo</label>
             </div>
 
-            <div class="input-field col s5">
-              <input id="nacionalidade" name="nacionalidade" type="text" required value= <?php echo $nacionalidade ?> >
-              <label for="nacionalidade">Nacionalidade</label>
-            </div>
-
-            <div class="input-field col s5">
+            <div class="input-field col s4">
               <select id="estadoCivil" name="estadoCivil" required>
                 <option value="1" <?php echo ($estadoCivil == '1' ? "selected" : "") ?> >Solteiro(a)</option>
                 <option value="2" <?php echo ($estadoCivil == '2' ? "selected" : "") ?> >Casado(a)</option>
@@ -145,6 +143,11 @@ foreach($rows as $r){
                 <option value="6" <?php echo ($estadoCivil == '6' ? "selected" : "") ?> >Companheiro(a)</option>
               </select>
               <label for="estadoCivil">Estado Civil</label>
+            </div>
+
+            <div class="input-field col s4">
+              <input id="nacionalidade" name="nacionalidade" type="text" required value= <?php echo $nacionalidade ?> >
+              <label for="nacionalidade">Nacionalidade</label>
             </div>
           </div>
 
@@ -231,9 +234,50 @@ foreach($rows as $r){
           </div>
 
           <div class="row">
-            <div class="input-field col s12">
-              <textarea id="observacoes" name="observacoes" class="materialize-textarea" length="120"><?php echo $observacoes; ?></textarea>
-              <label for="observacoes">Observações</label>
+            <div class="input-field col s2">
+              <select id="ondeConheceuFocco" name="ondeConheceuFocco">
+                <option value="1" selected>Indicação de Amigos</option>
+                <option value="2">Google</option>
+                <option value="3">Site comparador de taxas de câmbio</option>
+                <option value="4">Outros</option>
+              </select>
+              <label for="ondeConheceuFocco">Onde Conheceu a Focco?</label>
+            </div>
+
+            <div class="ondeSoubeFocco" style="display: none">
+              <div class="input-field col s2">
+                <input id="ondeConheceuFoccoDesc" name="ondeConheceuFoccoDesc" type="text">
+                <label for="ondeConheceuFoccoDesc">Onde ? </label>
+              </div>
+            </div>
+
+            <div class="input-field col s4">
+              <select id="bloqueado" name="bloqueado" required>
+                <option value="0" selected>Ativo</option>
+                <option value="1">Bloqueado</option>
+              </select>
+              <label for="bloqueado">Status</label>
+            </div>
+
+            <div class="motivoBlock" style="display: none">
+              <div class="input-field col s4" >
+                <select id="motivoStatusBlocked" name="motivoStatusBlocked">
+                  <option value="1" selected>Falta de documento</option>
+                  <option value="2">Documento vencido</option>
+                  <option value="3">Fraude</option>
+                  <option value="4">Outros</option>
+                </select>
+                <label for="motivoStatusBlocked">Motivo Status Bloqueado</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="motivoBlockDescricao" style="display: none">
+            <div class="row">
+              <div class="input-field col s12" >
+                <textarea id="observacoes" name="observacoes" class="materialize-textarea" row="" length="120"></textarea>
+                <label for="observacoes">Observações</label>
+              </div>
             </div>
           </div>
 
