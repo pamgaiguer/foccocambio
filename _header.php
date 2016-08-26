@@ -22,56 +22,65 @@
 
     ga('create', 'UA-42904042-1', 'auto');
     ga('send', 'pageview');
-
   </script>
-</head>
-<body>
-  <header class="navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
-          texto header azul
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gold-line">
-          texto header gold
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <p class="top-phone"><span>Delivery de Moedas: </span> <a href="tel:+551150515299">11 5051-5299</a></p>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="" alt="Focco Cambio"></h1></a>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <p class="link-face pull-right hidden-xs">
-            <a href="http://instagram.com/foccocambio/" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_instagram.png" alt="instagram "></i></a>
-            <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><i class="hidden-xs hidden-sm"><img src="images/logo_fb.jpg" alt="facebook"></i></a>
-            <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno"><i class="hidden-xs hidden-sm"><img src="images/logo_cadeado.png" alt="dashboard"></i></a>
-          </p>
-        </div>
-      </div>
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+  <body>
+    <header class="navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
+            texto header azul
           </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav nav-pills nav-justified">
-            <li><a href="delivery">Delivery <span class="sr-only">(current)</span></a></li>
-              <li><a href="produtos-servicos.php">Produtos e serviços</a></li>
-              <li><a href="remessa-internacional.php">Remessa Internacional</a></li>
-              <li><a href="contact.php">Lojas / Contato</a></li>
-              <li><a href="seguro-viagem.php">Seguro viagem</a></li>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gold-line">
+            texto header gold
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="border:1px solid #f0f">
+            <p class="top-phone"><span>Delivery de Moedas: </span> <a href="tel:+551150515299">11 5051-5299</a></p>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="border:1px solid #f0f">
+            <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="" alt="Focco Cambio"></h1></a>
+          </div>
+          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" style="border:1px solid #f0f">
+          </div>
+          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" style="border:1px solid #f0f">
+            <ul class="list-unstyled list-inline pull-right hidden-xs link-img-top">
+              <li>
+                <a href="http://instagram.com/foccocambio/" target="_blank"><img src="images/logo_instagram.png" alt="instagram "></a>
+              </li>
+              <li>
+                <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/logo_fb.jpg" alt="facebook"></a>
+              </li>
+              <li>
+                <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno" class="dash-icon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></a>
+              </li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-    </header>
+          </div>
+        </div>
+        <div class="spacing"></div>
+        <div class="spacing"></div>
+
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarFocco" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarFocco">
+              <ul class="nav nav-pills nav-justified">
+                <li><a href="delivery">Delivery <span class="sr-only">(current)</span></a></li>
+                <li><a href="produtos-servicos.php">Produtos e serviços</a></li>
+                <li><a href="remessa-internacional.php">Remessa Internacional</a></li>
+                <li><a href="contact.php">Lojas / Contato</a></li>
+                <li><a href="seguro-viagem.php">Seguro viagem</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </header>
