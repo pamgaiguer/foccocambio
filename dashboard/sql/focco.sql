@@ -5791,10 +5791,10 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefone`) VALUES
 (1, 'tom', 'paladino1', 1, 'Thom M Garcia', 'thom.blizz@gmail.com', '19996666380'),
-(2, 'pam', '123qwe', 2, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
-(3, 'leo', 'meutimaoeo', 3, 'leo', 'leozac@gmail.com', '(11) 11111-1111'),
-(4, 'tatiane.marchi', 'focco55', 2, 'Tatiane Marchi', 'tatiane.marchi@foccocambio.com.br', '(11) 11111-1111'),
-(5, 'allison', 'focco55', 2, 'Allison Marchi', 'allison@foccocambio.com.br', '(11) 11111-1111');
+(2, 'pam', '123qwe', 1, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
+(3, 'leo', 'meutimaoeo', 2, 'Leonardo', 'leozac@gmail.com', '(11) 11111-1111'),
+(4, 'tatiane', '240601', 2, 'Tatiane Marchi', 'tatiane.marchi@foccocambio.com.br', '(11) 11111-1111'),
+(5, 'allison', 'REDEFINIR', 2, 'Allison Marchi', 'allison@foccocambio.com.br', '(11) 11111-1111'),
 
 --
 -- Indexes for dumped tables

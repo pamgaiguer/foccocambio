@@ -145,13 +145,46 @@ button.picker__close:focus {
 }
 
 [type="checkbox"].filled-in:checked + label:after {
-    border: 2px solid $blue;
-    background-color: $blue;
+  border: 2px solid $blue;
+  background-color: $blue;
 }
 
 .docs-img{
   figure{
     margin: 5px;
+  }
+}
+
+.alert{
+  padding: 0px 15px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  &.success{
+    color: #1b5e20;
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+  }
+  &.error{
+    color: #b71c1c;
+    background-color: #ffebee;
+    border-color: #f44336;
+  }
+  &.warning{
+    color: #f57f17; //darken-4
+    background-color: #fffde7; // lighten-5
+    border-color: #ffee58; //normal color
+  }
+}
+
+.cotation-table{
+  tbody{
+    tr{
+      td:first-child{
+        font-weight: 700;
+      }
+    }
   }
 }
 

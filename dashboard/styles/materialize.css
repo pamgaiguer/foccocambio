@@ -6406,6 +6406,27 @@ button.picker__close:focus {
 .docs-img figure {
   margin: 5px; }
 
+.alert {
+  padding: 0px 15px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+  .alert.success {
+    color: #1b5e20;
+    background-color: #e8f5e9;
+    border-color: #4caf50; }
+  .alert.error {
+    color: #b71c1c;
+    background-color: #ffebee;
+    border-color: #f44336; }
+  .alert.warning {
+    color: #f57f17;
+    background-color: #fffde7;
+    border-color: #ffee58; }
+
+.cotation-table tbody tr td:first-child {
+  font-weight: 700; }
+
 @media only screen and (max-width: 992px) {
   header, main, footer {
     padding-left: 0; } }

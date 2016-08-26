@@ -55,6 +55,18 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
       <a class="btn waves-effect waves-light bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
       <div class="spacing"></div>
       <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
+
+      <div class="alert success">
+        <p>Status: Válido para operações</p>
+      </div>
+      <div class="alert warning">
+        <p>Status: Verificar os documentos do cliente</p>
+      </div>
+      <div class="alert error">
+        <p>Status: Cliente bloqueado. Ver motivo abaixo.</p>
+      </div>
+
+      <div class="spacing"></div>
       <table class="responsive-table table-visualization">
         <thead>
           <tr>
