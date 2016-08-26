@@ -224,7 +224,7 @@
     </div>
   </div>
 
-<!--   <a href="remessa-internacional">
+  <a href="remessa-internacional">
     <div class="modal fade" id="modalRemessa" tabindex="-1" role="dialog" aria-labelledby="modalRemessaLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -238,7 +238,7 @@
         </div>
       </div>
     </div>
-  </a> -->
+  </a>
 </section>
 
 <?php include '_footer.php';?>
