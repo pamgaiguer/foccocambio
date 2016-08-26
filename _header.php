@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="BR">
+<html lang="pt">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,15 +37,31 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="border:1px solid #f0f">
+          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <p class="top-phone"><span>Delivery de Moedas: </span> <a href="tel:+551150515299">11 5051-5299</a></p>
           </div>
-          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="border:1px solid #f0f">
+          <div class="col-xs-12 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3">
             <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="" alt="Focco Cambio"></h1></a>
           </div>
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" style="border:1px solid #f0f">
+          <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div class="cotation-table">
+              <blockquote>
+                <p class="cotation-title text-uppercase"><strong>Cotação de venda agora</strong></p>
+                <ul class="list-unstyled">
+                  <li class="cotation-value"><span class="coinName">Dólar</span> | <span class="coinValue">R$ 3,45</span> </li>
+                  <li class="cotation-value"><span class="coinName">Euro</span> | <span class="coinValue">R$ 4,20</span> </li>
+                  <li class="cotation-value"><span class="coinName">Libra</span> | <span class="coinValue">R$ 4,15</span> </li>
+                </ul>
+                <p class="cotation-info">
+                  <small>
+                    Valores já com IOF incluso.
+                    Para saber outras moedas, consulte-nos.
+                  </small>
+                </p>
+              </blockquote>
+            </div>
           </div>
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" style="border:1px solid #f0f">
+          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <ul class="list-unstyled list-inline pull-right hidden-xs link-img-top">
               <li>
                 <a href="http://instagram.com/foccocambio/" target="_blank"><img src="images/logo_instagram.png" alt="instagram "></a>
@@ -54,13 +70,11 @@
                 <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/logo_fb.jpg" alt="facebook"></a>
               </li>
               <li>
-                <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno" class="dash-icon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></a>
+                <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno" class="dash-icon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="spacing"></div>
-        <div class="spacing"></div>
 
         <nav class="navbar">
           <div class="container">

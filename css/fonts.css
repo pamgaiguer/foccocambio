@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 400;
+  src: local('../fonts/Avenir-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 600;
+  src: local('../fonts/Avenir-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 700;
+  src: local('../fonts/Avenir-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 900;
+  src: local('../fonts/Avenir-Black.woff') format('woff');
+}
