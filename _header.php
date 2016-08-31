@@ -1,3 +1,23 @@
+<?php
+
+include "/dashboard/core/database.php";
+
+$sql_query = "SELECT * FROM cotacoes;";
+$result = mysqli_query($conn, $sql_query);
+
+
+$rows = array();
+while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+
+
+$dolar = number_format($rows[0]['dolar'],2,",","");
+$euro = number_format($rows[0]['euro'],2,",","");
+$libra = number_format($rows[0]['libra'],2,",","");
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -48,9 +68,9 @@
               <blockquote>
                 <p class="cotation-title text-uppercase"><strong>Cotação de venda agora</strong></p>
                 <ul class="list-unstyled">
-                  <li class="cotation-value"><span class="coinName">Dólar</span> | <span class="coinValue">R$ 3,45</span> </li>
-                  <li class="cotation-value"><span class="coinName">Euro</span> | <span class="coinValue">R$ 4,20</span> </li>
-                  <li class="cotation-value"><span class="coinName">Libra</span> | <span class="coinValue">R$ 4,15</span> </li>
+                  <li class="cotation-value"><span class="coinName">Dólar</span> | <span class="coinValue">R$ <?php echo $dolar ?></span> </li>
+                  <li class="cotation-value"><span class="coinName">Euro</span> | <span class="coinValue">R$ <?php echo $euro ?></span> </li>
+                  <li class="cotation-value"><span class="coinName">Libra</span> | <span class="coinValue">R$ <?php echo $libra ?></span> </li>
                 </ul>
                 <p class="cotation-info">
                   <small>

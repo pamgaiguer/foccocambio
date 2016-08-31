@@ -9,4 +9,9 @@ function TratarData($field){
 	return date('Y-m-d H:i:s', strtotime($field));
 }
 
+function TratarFloat($field){
+	if ($field == '') return 0.00;
+	return floatval(str_replace(",", ".", $field));
+}
+
 ?>

@@ -621,6 +621,38 @@ focco = {
 
     });
 
+  },
+
+  cotacoesFormPost: function(){
+
+    $("#form-cotacoes").submit(function(e){
+      e.preventDefault();      
+      dolar = $("#input-dolar").val();
+      euro = $("#input-euro").val();
+      libra = $("#input-libra").val();
+
+      $.ajax({
+        url: "/dashboard/cotacoes/alterarPost.php/",
+        type: "post",
+        data: {dolar, euro, libra},
+        success: function(r){
+          if (JSON.parse(r) == "ok"){
+            $("div.success").fadeIn(100);
+          } else {
+            $("div.error").fadeIn(100);
+          }
+
+        },
+        error: function(r){
+          $("div.error").fadeIn(100);
+        }
+
+      });
+
+
+    });
+
+
   }
 
 };

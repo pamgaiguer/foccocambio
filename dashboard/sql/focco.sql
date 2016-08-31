@@ -78,6 +78,26 @@ INSERT INTO `clientes` (`id`, `categoria`, `razaoSocial`, `tipoPessoa`, `cpfCnpj
 (18, 1, 'Thais', 'F', '37479967870', '2016-12-09 00:00:00', NULL, '387006175', 'SSP', '1970-01-01 00:00:00', 'F', 'br', 1, '', '1970-01-01 00:00:00', 'huhuh', 'hehe', 'thaisalvesdasilva@uol.com.br', '1120937563', '11967372206', '1553', '', b'1', b'0', '2016-08-05 21:14:25', '2016-08-05 23:43:01', 'xxxxxx', 'yyyyyyyyyy', NULL, NULL),
 (19, 1, 'Thompson', 'F', '14354288702', '1970-01-01 00:00:00', NULL, '269379848', 'detran', '1970-01-01 00:00:00', 'M', 'br', 1, '', '1970-01-01 00:00:00', 'marcia', 'claudio', 'thom.blizz@gmail.com', '1999666638', '19999666380', '21', '', b'0', b'0', '2016-08-05 23:32:52', '2016-08-05 23:51:35', '2121', '2121', 1, b'1');
 
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cotacoes`
+--
+
+CREATE TABLE IF NOT EXISTS `cotacoes` (
+  `dolar` decimal(10,2) DEFAULT NULL,
+  `euro` decimal(10,2) DEFAULT NULL,
+  `libra` decimal(10,2) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cotacoes`
+--
+
+INSERT INTO `cotacoes` (`dolar`, `euro`, `libra`) VALUES
+(0,0,0);
+
 -- --------------------------------------------------------
 
 --

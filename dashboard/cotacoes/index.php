@@ -3,6 +3,18 @@
 include "../includes/header.php";
 include "../core/database.php";
 
+$sql_query = "SELECT * FROM cotacoes;";
+$result = mysqli_query($conn, $sql_query);
+
+
+$rows = array();
+while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+$dolar = $rows[0]['dolar'];
+$euro = $rows[0]['euro'];
+$libra = $rows[0]['libra'];
+
+
 ?>
 <main>
   <div class="row">
@@ -16,52 +28,60 @@ include "../core/database.php";
 
   <div class="row">
     <div class="col s12">
-    <div class="alert warning">
+    <div class="alert warning" style="display: none;">
+        <p>pra q isso pam?</p>
+      </div>
+      <div class="alert success" style="display: none;">
         <p>Tabela atualizada com sucesso</p>
       </div>
-      <div class="alert success">
-        <p>Tabela atualizada com sucesso</p>
-      </div>
-      <div class="alert error">
-        <p>Tabela atualizada com sucesso</p>
+      <div class="alert error" style="display: none;">
+        <p>Erro ao tentar atualizar a tabela</p>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col s4">
-      <table class="cotation-table">
-        <thead>
-          <tr>
-            <th>Moedas exibidas</th>
-            <th>Valor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Dólar</td>
-            <td><input type="text" value=3.45></td>
-          </tr>
-          <tr>
-            <td>Euro</td>
-            <td><input type="text" value=3.45></td>
-          </tr>
-          <tr>
-            <td>Libra</td>
-            <td><input type="text" value=3.45></td>
-          </tr>
-        </tbody>
-      </table>
+  <form id="form-cotacoes">
+    <div class="row">
+      <div class="col s4">
+        
+        <table class="cotation-table">
+          <thead>
+            <tr>
+              <th>Moedas exibidas</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dólar</td>
+              <td><input type="number" step="any" id="input-dolar" value="<?php echo $dolar ?>" ></td>
+            </tr>
+            <tr>
+              <td>Euro</td>
+              <td><input type="number" step="any" id="input-euro" value="<?php echo $euro ?>"></td>
+            </tr>
+            <tr>
+              <td>Libra</td>
+              <td><input type="number" step="any" id="input-libra" value="<?php echo $libra ?>"></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col s12">
-      <input type="submit" id="input-submit" value="Atualizar valores" class="waves-effect waves-light btn bg-blue" />
+    <div class="row">
+      <div class="col s12">
+        <input type="submit" id="input-submit" value="Atualizar valores" class="waves-effect waves-light btn bg-blue" />
+      </div>
     </div>
-  </div>
+  </form>
 </main>
 
 <?php
 include '../includes/footer.php';
 ?>
+
+<script type="text/javascript">
+  focco.cotacoesFormPost();
+</script>
