@@ -39,6 +39,7 @@ foreach($rows as $r){
   $origem = $r['origem'];
   $limiteOperacionalDia = $r["limiteOperacionalDia"];
   $limiteOperacionalAno = $r["limiteOperacionalAno"];
+  $bloqueado = $r["bloqueado"];
 }
 
 
@@ -46,6 +47,48 @@ $sql_query = sprintf("SELECT tipo FROM documentos WHERE clienteId = %s", $_GET['
 $result = mysqli_query($conn, $sql_query);
 $docs = array();
 while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
+
+
+switch ($categoria) {
+case 1:
+  $categoria = "Focco";
+  $docsObrigatorios = array('CPF', 'RG');
+  break;
+
+case 2:
+  $categoria = "FX53 Simplificado";
+  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF');
+  break;
+
+case 3:
+  $categoria = "FX53 Premier";
+  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+  break;
+
+case 4:
+  $categoria = "FX53 Plus";
+  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+  break;
+
+default: 
+  $categoria = "Focco";
+  $docsObrigatorios = array('CPF', 'RG');
+  break;
+}
+
+$sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
+$result = mysqli_query($conn, $sql_query);
+$docs = array();
+while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
+$dif = array_diff($docsObrigatorios, $docs);
+
+$statOk = false;
+$statWarn = false;
+
+if (!$dif && !$bloqueado) $statOk = true;
+if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
+
+
 
 ?>
 <main>
@@ -56,13 +99,13 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
       <div class="spacing"></div>
       <p class="title-forms">Visualizar cliente <strong><?php echo $nome ?></strong></p>
 
-      <div class="alert success">
+      <div class="alert success <?php echo $statOk ? "" : "hide" ?>">
         <p>Status: Válido para operações</p>
       </div>
-      <div class="alert warning">
+      <div class="alert warning <?php echo $statWarn ? "" : "hide" ?>">
         <p>Status: Verificar os documentos do cliente</p>
       </div>
-      <div class="alert error">
+      <div class="alert error <?php echo $bloqueado ? "" : "hide" ?>">
         <p>Status: Cliente bloqueado. Ver motivo abaixo.</p>
       </div>
 
