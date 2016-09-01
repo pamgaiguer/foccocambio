@@ -5814,7 +5814,7 @@ INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefo
 (2, 'pam', '123qwe', 1, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
 (3, 'leo', 'meutimaoeo', 2, 'Leonardo', 'leozac@gmail.com', '(11) 11111-1111'),
 (4, 'tatiane', '240601', 2, 'Tatiane Marchi', 'tatiane.marchi@foccocambio.com.br', '(11) 11111-1111'),
-(5, 'allison', 'REDEFINIR', 2, 'Allison Marchi', 'allison@foccocambio.com.br', '(11) 11111-1111'),
+(5, 'allison', 'REDEFINIR', 2, 'Allison Marchi', 'allison@foccocambio.com.br', '(11) 11111-1111');
 
 --
 -- Indexes for dumped tables

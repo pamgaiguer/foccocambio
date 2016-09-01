@@ -1,20 +1,16 @@
 <?php
 
-include "/dashboard/core/database.php";
+include "dashboard/core/database.php";
 
 $sql_query = "SELECT * FROM cotacoes;";
 $result = mysqli_query($conn, $sql_query);
 
-
 $rows = array();
 while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
-
 
 $dolar = number_format($rows[0]['dolar'],2,",","");
 $euro = number_format($rows[0]['euro'],2,",","");
 $libra = number_format($rows[0]['libra'],2,",","");
-
 
 ?>
 
@@ -31,7 +27,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
   Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra">
   <title>Focco Câmbio - Câmbio e Turismo</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/font-avenir.css">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="shortcut icon" href="favicon.ico" />
   <script>
