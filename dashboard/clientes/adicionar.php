@@ -473,10 +473,10 @@ include "../includes/header.php";
                 <tbody>
                   <tr>
                     <td>
-                      <input id="limiteOperacionalDia" name="limiteOperacionalDia" readonly="true" disabled value="3000.00" type="text" pattern="^\d*(\.\d{2}$)?">
+                      <input id="limiteOperacionalDia" name="limiteOperacionalDia" readonly="true"  value="3000,00" type="text" pattern="^\d*(\,\d{2}$)?">
                     </td>
                     <td>
-                      <input id="limiteOperacionalAno" name="limiteOperacionalAno" readonly="true" disabled value="13000.00" type="text" pattern="^\d*(\.\d{2}$)?">
+                      <input id="limiteOperacionalAno" name="limiteOperacionalAno" readonly="true"  value="13000,00" type="text" pattern="^\d*(\,\d{2}$)?">
                     </td>
                   </tr>
                 </tbody>

@@ -356,6 +356,7 @@ focco = {
       formData.append( 'ofertasPorEmail', document.getElementsByName('ofertasPorEmail')[0].checked);
       formData.append( 'infoWhatsapp', document.getElementsByName('infoWhatsapp')[0].checked);
       formData.append( 'vip', document.getElementsByName('vip')[0].checked);
+      
 
       $("#modal-confirm").click(function(e){
         e.preventDefault();
@@ -366,8 +367,8 @@ focco = {
             data: formData,
             async: false,
             success: function (data) {
-                //alert(data);
-                window.location = "/dashboard/clientes/";
+                alert(data);
+                //window.location = "/dashboard/clientes/";
             },
             cache: false,
             contentType: false,
