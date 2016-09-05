@@ -367,8 +367,8 @@ focco = {
             data: formData,
             async: false,
             success: function (data) {
-                alert(data);
-                //window.location = "/dashboard/clientes/";
+                //alert(data);
+                window.location = "/dashboard/clientes/";
             },
             cache: false,
             contentType: false,
