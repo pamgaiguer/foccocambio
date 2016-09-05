@@ -70,8 +70,8 @@ $libra = number_format($rows[0]['libra'],2,",","");
                 </ul>
                 <p class="cotation-info">
                   <small>
-                    Valores já com IOF incluso.
-                    Para saber outras moedas, consulte-nos.
+                    Valores já com IOF incluso. <br>
+                    Outras moedas, consulte-nos.
                   </small>
                 </p>
               </blockquote>
