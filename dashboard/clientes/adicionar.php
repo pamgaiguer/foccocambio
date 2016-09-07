@@ -45,8 +45,8 @@ include "../includes/header.php";
           <div class="row">
             <div class="input-field col s4">
               <input id="cpfCnpj" name="cpfCnpj" class="validate" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
-              <label id="validacaoCpf" for="cpfCnpj" data-error="O CPF informado não é válido para cadastro.">C.P.F.</label>
-              <!-- <div id="validacaoCpf"></div> -->
+              <label for="cpfCnpj" data-error="O CPF informado não é válido para cadastro.">C.P.F.</label>
+              <div id="validacaoCpf"></div>
             </div>
 
             <div class="input-field col s4">

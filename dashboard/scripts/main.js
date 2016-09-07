@@ -234,9 +234,9 @@ focco = {
         success: function(data){
           if (!JSON.parse(data)){
             $("#input-submit").parent().addClass("disabled");
-            //$("#validacaoCpf").html("O CPF informado não é válido para cadastro.");
+            $("#validacaoCpf").html("O CPF informado não é válido para cadastro.");
           } else {
-            //$("#validacaoCpf").html("");
+            $("#validacaoCpf").html("");
             $("#input-submit").parent().removeClass("disabled");
           }
         }
