@@ -240,6 +240,7 @@ blockquote{
 #formulario input[type='text'],
 #formulario input[type='email'],
 #formulario input[type='tel'],
+#formulario input[type='checkbox'],
 #formulario textarea,
 #formulario select{
   border: 1px solid #15325c;
@@ -418,6 +419,11 @@ hr {
     text-align: center;
   }
 }
+
+/*ficha cadastro online*/
+.dados-conjunge{
+}
+
 @media (min-width: 1px) and (max-width: 766px){
   .logo-topo img{
     width: 180px;
@@ -439,6 +445,8 @@ hr {
     font-size: 11px;
   }
 }
+
+
 @media (min-width: 767px) and (max-width: 991px){
   .bg-products-services{
     background: url(../images/bg-products-services.jpg) no-repeat top center;

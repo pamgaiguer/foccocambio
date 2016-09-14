@@ -82,4 +82,63 @@ $(document).ready(function(){
       }
     });
   });
+
+/* Formulário de Cadastro*/
+
+    $("#estadoCivil").change(function(){
+      if ($(this).val() == 2){
+        $(".dados-conjuge").fadeIn("fast");
+        $("#nomeConjuge").attr("required", "required");
+        $("#dataNascimentoConjuge").attr("required", "required");
+      } else {
+        $(".dados-conjuge").fadeOut("fast");
+        $("#nomeConjuge").removeAttr("required");
+        $("#dataNascimentoConjuge").removeAttr("required");
+      }
+    });
+
+
+    $("#cep-residencial").change(function(){
+      cep = $(this).val();
+
+      $.ajax({
+        url: "http://api.postmon.com.br/v1/cep/" + cep,
+        type: "get",
+        success: function(data){
+          console.log(data);
+          $("#logradouro-residencial").val(data.logradouro);
+          $("#bairro-residencial").val(data.bairro);
+          $("#cidade-residencial").val(data.cidade);
+          $("#estado-residencial").val(data.estado);
+        }
+      });
+    });
+
+    $("#checkEndereco").click(function(){
+      if ($(this).is(":checked")) {
+        $("#cep-entrega").val($("#cep-residencial").val());
+        $("#logradouro-entrega").val($("#logradouro-residencial").val());
+        $("#numero-entrega").val($("#numero-residencial").val());
+        $("#complemento-entrega").val($("#complemento-residencial").val());
+        $("#bairro-entrega").val($("#bairro-residencial").val());
+        $("#cidade-entrega").val($("#cidade-residencial").val());
+        $("#estado-entrega").val($("#estado-residencial").val());
+      }
+    });
+
+    $("#cep-entrega").change(function(){
+      cep = $(this).val();
+
+      $.ajax({
+        url: "http://api.postmon.com.br/v1/cep/" + cep,
+        type: "get",
+        success: function(data){
+          console.log(data);
+          $("#logradouro-entrega").val(data.logradouro);
+          $("#bairro-entrega").val(data.bairro);
+          $("#cidade-entrega").val(data.cidade);
+          $("#estado-entrega").val(data.estado);
+        }
+      });
+    });
 });

@@ -86,7 +86,7 @@
             </div>
           </div>
 
-          <div class="row dados-conjunge">
+          <div class="row dados-conjuge" style="display: none">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <div class="form-group">
                 <label for="nomeConjuge">Nome do Cônjunge</label>
@@ -126,13 +126,13 @@
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="telefoneFixo">Telefone Fixo</label>
-                <input type="text" class="form-control" id="telefoneFixo">
+                <input type="text" class="form-control phone" id="telefoneFixo">
               </div>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="telefoneCelular">Telefone Celular</label>
-                <input type="text" class="form-control" id="telefoneCelular">
+                <input type="text" class="form-control phone" id="telefoneCelular">
               </div>
             </div>
           </div>
@@ -178,14 +178,14 @@
           <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
-                <label for="CEP">CEP</label>
-                <input type="text" class="form-control" id="CEP">
+                <label for="cep-residencial">CEP</label>
+                <input type="text" class="form-control" id="cep-residencial">
               </div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
               <div class="form-group">
                 <label for="logradouro">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro">
+                <input type="text" class="form-control" id="logradouro-residencial">
               </div>
             </div>
           </div>
@@ -194,19 +194,19 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
               <label for="numero">Número</label>
-                <input type="text" class="form-control" id="numero">
+                <input type="text" class="form-control" id="numero-residencial">
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
                 <label for="complemento">Complemento</label>
-                <input type="text" class="form-control" id="complemento">
+                <input type="text" class="form-control" id="complemento-residencial">
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
                 <label for="bairro">Bairro</label>
-                <input type="text" class="form-control" id="bairro">
+                <input type="text" class="form-control" id="bairro-residencial">
               </div>
             </div>
           </div>
@@ -215,13 +215,13 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
               <label for="cidade">Cidade</label>
-                <input type="text" class="form-control" id="cidade">
+                <input type="text" class="form-control" id="cidade-residencial">
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
                 <label for="estado">Estado</label>
-                <input type="text" class="form-control" id="estado">
+                <input type="text" class="form-control" id="estado-residencial">
               </div>
             </div>
           </div>
@@ -237,24 +237,28 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="checkbox">
                 <label for="checkEndereco">
-                  <input type="checkbox">
+                  <input type="checkbox" id="checkEndereco">
                   Marque se o endereço de entrega é o mesmo que o residencial
                 </label>
               </div>
             </div>
           </div>
 
+          <div class="spacing"></div>
+          <div class="spacing"></div>
+          <div class="spacing"></div>
+
           <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
-                <label for="CEP">CEP</label>
-                <input type="text" class="form-control" id="CEP">
+                <label for="cep-entrega">CEP</label>
+                <input type="text" class="form-control" id="cep-entrega">
               </div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
               <div class="form-group">
                 <label for="logradouro">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro">
+                <input type="text" class="form-control" id="logradouro-entrega">
               </div>
             </div>
           </div>
@@ -263,19 +267,19 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
               <label for="numero">Número</label>
-                <input type="text" class="form-control" id="numero">
+                <input type="text" class="form-control" id="numero-entrega">
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
                 <label for="complemento">Complemento</label>
-                <input type="text" class="form-control" id="complemento">
+                <input type="text" class="form-control" id="complemento-entrega">
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
                 <label for="bairro">Bairro</label>
-                <input type="text" class="form-control" id="bairro">
+                <input type="text" class="form-control" id="bairro-entrega">
               </div>
             </div>
           </div>
@@ -284,13 +288,13 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
               <label for="cidade">Cidade</label>
-                <input type="text" class="form-control" id="cidade">
+                <input type="text" class="form-control" id="cidade-entrega">
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
                 <label for="estado">Estado</label>
-                <input type="text" class="form-control" id="estado">
+                <input type="text" class="form-control" id="estado-entrega">
               </div>
             </div>
           </div>
@@ -309,3 +313,10 @@
     </div>
   </div>
 </div>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
