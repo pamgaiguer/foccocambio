@@ -57,7 +57,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
             <p class="top-phone"><span>Delivery de Moedas: </span> <a href="tel:+551150515299">11 5051-5299</a></p>
           </div>
           <div class="col-xs-12 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3">
-            <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="" alt="Focco Cambio"></h1></a>
+            <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="img-responsive center-block" alt="Focco Cambio"></h1></a>
           </div>
           <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div class="cotation-table">

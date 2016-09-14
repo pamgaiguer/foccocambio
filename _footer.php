@@ -29,19 +29,19 @@
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <ul class="list-unstyled border-blue-right">
           <li><a href="delivery.php">Delivery</a></li>
-          <li><a href="products-services.php">Produtos e Serviços</a></li>
-          <li><a href="int_transf_internacional.php">Remessa Internacional</a></li>
+          <li><a href="produtos-servicos.php">Produtos e Serviços</a></li>
+          <li><a href="remessa-internacional.php">Remessa Internacional</a></li>
           <li><a href="contact.php">Lojas / Contato</a></li>
-          <li><a href="premium_client.php">Seja cliente premium!</a></li>
+          <li><a href="seguro-viagem.php">Seguro Viagem</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <ul class="list-unstyled links-footer border-blue-right">
-        <li class="blue-text text-uppercase"><strong>Matriz / Delivery</strong></li>
-        <li><a href="tel:+551150515299">11 5051-5299</a></li>
-        <li class="blue-text text-uppercase"><strong>Loja Pompéia</strong></li>
-        <li><a href="tel:+551150515299">11 3862-3859</a></li>
-        <li class="text-uppercase blue-text"><small>R. Carlos Vicari, 155 - Pompéia - SP</small></li>
+          <li class="blue-text text-uppercase"><strong>Matriz / Delivery</strong></li>
+          <li><a href="tel:+551150515299">11 5051-5299</a></li>
+          <li class="blue-text text-uppercase"><strong>Loja Pompéia</strong></li>
+          <li><a href="tel:+551150515299">11 3862-3859</a></li>
+          <li class="text-uppercase blue-text"><small>R. Carlos Vicari, 155 - Pompéia - SP</small></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">

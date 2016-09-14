@@ -158,7 +158,6 @@ blockquote{
 }
 .delivery-text h3{
   color: #15325C;
-  font-family: 'Avenir-Black';
   font-size: 28px;
 }
 .bg-products-services{
@@ -238,7 +237,11 @@ blockquote{
 }
 
 
-#formulario input[type='text'], #formulario input[type='email'], #formulario input[type='tel'], #formulario textarea{
+#formulario input[type='text'],
+#formulario input[type='email'],
+#formulario input[type='tel'],
+#formulario textarea,
+#formulario select{
   border: 1px solid #15325c;
 }
 /*input[type^='text']::-webkit-input-placeholder, input[type^='email']::-webkit-input-placeholder{ color: #15325C; }
@@ -389,9 +392,6 @@ hr {
     text-align: center;
   }
   .logo-topo img{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
   }
   .bg-products-services{
     background-size: cover;
@@ -416,6 +416,27 @@ hr {
   }
   footer{
     text-align: center;
+  }
+}
+@media (min-width: 1px) and (max-width: 766px){
+  .logo-topo img{
+    width: 180px;
+    margin-top: -20px;
+  }
+  .navbar-toggle {
+    margin-top: -135px;
+  }
+  .navbar-collapse {
+    margin-top:  -12px;
+  }
+  .cotation-table ul li{
+    display: inline;
+  }
+  .cotation-table .cotation-title, .cotation-table .cotation-info{
+    font-size: 9px;
+  }
+  .cotation-table .cotation-value{
+    font-size: 11px;
   }
 }
 @media (min-width: 767px) and (max-width: 991px){

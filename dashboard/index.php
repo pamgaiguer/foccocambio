@@ -19,13 +19,13 @@ include 'includes/header_index.php';
           <form action="" id="form-login">
 
             <div class="input-field">
-              <i class="material-icons prefix">person</i>
+              <i class="material-icons prefix">&#xE7FD;</i>
               <input id="login" type="text" class="validate">
               <label for="login" data-error="Preencha corretamente">Login</label>
             </div>
 
             <div class="input-field">
-              <i class="material-icons prefix">lock</i>
+            <i class="material-icons prefix">&#xE897;</i>
               <input id="senha" type="password" class="validate">
               <label for="senha">Senha</label>
             </div>
