@@ -3,6 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
       <div class="spacing"></div>
       <div class="spacing"></div>
       <h3>Dados Pessoais</h3>
@@ -12,6 +13,7 @@
 
       <div  id="formulario">
         <div id="retornoHTML">
+
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <div class="form-group">
@@ -23,7 +25,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <div class="form-group">
                 <label for="dataNascimento">Data Nascimento</label>
-                <input type="text" class="form-control" id="dataNascimento">
+                <input type="text" class="form-control date" id="dataNascimento">
               </div>
             </div>
           </div>
@@ -32,7 +34,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
                 <label for="cpf">C.P.F.</label>
-                <input type="text" class="form-control" id="cpf">
+                <input type="text" class="form-control cpf" id="cpf">
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -50,7 +52,7 @@
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
               <div class="form-group">
                 <label for="rgDataExpedicao">Data da Expedição</label>
-                <input type="text" class="form-control" id="rgDataExpedicao">
+                <input type="text" class="form-control date" id="rgDataExpedicao">
               </div>
             </div>
           </div>
@@ -95,8 +97,8 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <div class="form-group">
-                <label for="dataNascimentoConjuge">Nome do Cônjunge</label>
-                <input type="text" class="form-control" id="dataNascimentoConjuge">
+                <label for="dataNascimentoConjuge">Data Nascimento do Cônjunge</label>
+                <input type="text" class="form-control date" id="dataNascimentoConjuge">
               </div>
             </div>
           </div>
@@ -179,7 +181,7 @@
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="cep-residencial">CEP</label>
-                <input type="text" class="form-control" id="cep-residencial">
+                <input type="text" class="form-control cep" id="cep-residencial">
               </div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
@@ -193,7 +195,7 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
-              <label for="numero">Número</label>
+                <label for="numero">Número</label>
                 <input type="text" class="form-control" id="numero-residencial">
               </div>
             </div>
@@ -214,7 +216,7 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
-              <label for="cidade">Cidade</label>
+                <label for="cidade">Cidade</label>
                 <input type="text" class="form-control" id="cidade-residencial">
               </div>
             </div>
@@ -252,7 +254,7 @@
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="cep-entrega">CEP</label>
-                <input type="text" class="form-control" id="cep-entrega">
+                <input type="text" class="form-control cep" id="cep-entrega">
               </div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
@@ -266,7 +268,7 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
-              <label for="numero">Número</label>
+                <label for="numero">Número</label>
                 <input type="text" class="form-control" id="numero-entrega">
               </div>
             </div>
@@ -287,7 +289,7 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="form-group">
-              <label for="cidade">Cidade</label>
+                <label for="cidade">Cidade</label>
                 <input type="text" class="form-control" id="cidade-entrega">
               </div>
             </div>
@@ -299,21 +301,31 @@
             </div>
           </div>
 
-          <div class="form-group">
-          <label for="observacoes">Observações</label>
-            <textarea cols="20" rows="10" id="observacoes" class="form-control"></textarea>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="pessoa-autorizada">Pessoa autorizada a receber na sua ausência</label>
+                <input type="text" class="form-control" id="pessoa-autorizada">
+              </div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <button class="btn btn-default btn-primary btn-block" id="btn">ENVIAR</button>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="observacoes">Observações</label>
+                <textarea cols="20" rows="10" id="observacoes" class="form-control"></textarea>
+                <br>
+                <button class="btn btn-default btn-primary btn-block" id="btn-cadastro">ENVIAR</button>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mask.min.js"></script>

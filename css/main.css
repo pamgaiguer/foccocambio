@@ -421,9 +421,12 @@ hr {
 }
 
 /*ficha cadastro online*/
-.dados-conjunge{
+.form-control:focus {
+  border-color: #15325C;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(21,50,92,.75);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(21,50,92,.75);
 }
-
 @media (min-width: 1px) and (max-width: 766px){
   .logo-topo img{
     width: 180px;

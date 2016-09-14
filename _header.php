@@ -104,11 +104,11 @@ $libra = number_format($rows[0]['libra'],2,",","");
             </div>
             <div class="collapse navbar-collapse" id="navbarFocco">
               <ul class="nav nav-pills nav-justified">
-                <li><a href="delivery">Delivery <span class="sr-only">(current)</span></a></li>
-                <li><a href="produtos-servicos.php">Produtos e serviços</a></li>
-                <li><a href="remessa-internacional.php">Remessa Internacional</a></li>
-                <li><a href="contact.php">Lojas / Contato</a></li>
-                <li><a href="seguro-viagem.php">Seguro viagem</a></li>
+                <li><a href="/delivery">Delivery <span class="sr-only">(current)</span></a></li>
+                <li><a href="/produtos-servicos">Produtos e serviços</a></li>
+                <li><a href="/remessa-internacional">Remessa Internacional</a></li>
+                <li><a href="/contact">Lojas / Contato</a></li>
+                <li><a href="/seguro-viagem">Seguro viagem</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
