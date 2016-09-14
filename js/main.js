@@ -125,20 +125,6 @@ $('#btn').click(function() {
   $('#btn-cadastro').click(function() {
     var $requestResult = $("#retornoHTML");
 
-    /* Validando */
-    if(campo_nome.length <= 3){
-      alert('Informe seu nome');
-      return false;
-    }
-    if(campo_email.length <= 5){
-      alert('Informe seu email');
-      return false;
-    }
-    if(campo_observacoes.length <= 5){
-      alert('Escreva uma mensagem');
-      return false;
-    }
-
     $.ajax({
       url: 'mail_cadastro.php',
       type: 'POST',
