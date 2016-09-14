@@ -77,7 +77,7 @@ foreach($rows as $r){
             </div>
 
             <div class="input-field col s6">
-              <input id="dataNascimento" name="dataNascimento" type="date" class="datepicker" required value= <?php echo date_format(new DateTime($dataNascimentoAbertura), 'd/m/Y'); ?> />
+              <input id="dataNascimento" name="dataNascimento" type="text" class="datepicker" required value= <?php echo date_format(new DateTime($dataNascimentoAbertura), 'd/m/Y'); ?> />
               <label for="dataNascimento">Data de Nascimento</label>
             </div>
           </div>
@@ -100,7 +100,7 @@ foreach($rows as $r){
             </div>
 
             <div class="input-field col s2">
-              <input id="rgDataExpedicao" name="rgDataExpedicao" type="date" class="datepicker" required value= <?php echo $rgDataExpedicao ?> />
+              <input id="rgDataExpedicao" name="rgDataExpedicao" type="text" class="datepicker" required value= <?php echo $rgDataExpedicao ?> />
               <label for="rgDataExpedicao">Data de Expedição</label>
             </div>
           </div>
@@ -111,7 +111,7 @@ foreach($rows as $r){
               <label for="cnh">C.N.H.</label>
             </div>
             <div class="input-field col s3">
-              <input id="cnhDataValidade" name="cnhDataValidade" type="date" class="datepicker" required>
+              <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker">
               <label for="cnhDataValidade">C.N.H. - Data de vencimento</label>
             </div>
             <div class="input-field col s3">
@@ -135,6 +135,7 @@ foreach($rows as $r){
 
             <div class="input-field col s4">
               <select id="estadoCivil" name="estadoCivil" required>
+                <option value="0" <?php echo ($estadoCivil == '0' ? "selected" : "") ?> >Não informado</option>
                 <option value="1" <?php echo ($estadoCivil == '1' ? "selected" : "") ?> >Solteiro(a)</option>
                 <option value="2" <?php echo ($estadoCivil == '2' ? "selected" : "") ?> >Casado(a)</option>
                 <option value="3" <?php echo ($estadoCivil == '3' ? "selected" : "") ?> >Divorciado(a)</option>
@@ -159,7 +160,7 @@ foreach($rows as $r){
               </div>
 
               <div class="input-field col s6">
-                <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="date" class="datepicker" value= <?php echo $dataNascimentoConjuge ?> >
+                <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="text" class="datepicker" value= <?php echo $dataNascimentoConjuge ?> >
                 <label for="nomeConjuge">Data de Nascimento Cônjuge</label>
               </div>
             </div>
@@ -349,7 +350,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-ca" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
+            <div class="col s6 div-input-file-ca" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. A.</span>
@@ -362,7 +363,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-cps" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
+            <div class="col s6 div-input-file-cps" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C. P. S.</span>
@@ -375,7 +376,7 @@ foreach($rows as $r){
               </div>
             </div>
 
-            <div class="col s6 div-input-file-pv" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
+            <div class="col s6 div-input-file-pv" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>P. V.</span>
@@ -575,11 +576,11 @@ foreach($rows as $r){
           <tr>
             <td><input id="limiteOperacionalDia" name="limiteOperacionalDia"
               <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
-              value="<?php echo $limiteOperacionalDia ?>" type="text" pattern="^\d*(\.\d{2}$)?" class="validate"></td>
+              value="<?php echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="^\d*(\,\d{2}$)?" class="validate"></td>
 
               <td><input id="limiteOperacionalAno" name="limiteOperacionalAno"
                 <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
-                value="<?php echo $limiteOperacionalAno ?>" type="text" pattern="^\d*(\.\d{2}$)?" class="validate"></td>
+                value="<?php echo number_format($limiteOperacionalAno,2,",","") ?>" type="text" pattern="^\d*(\,\d{2}$)?" class="validate"></td>
               </tr>
 
             </tbody>

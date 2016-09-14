@@ -25,6 +25,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
             <form id="form-busca-clientes">
               <div class="file-path-wrapper">
+                <div id="validacaoCpf"></div>
                 <input id="input-cpfcnpj" name="cpfCnpj" type="search" required/>
                 <button class="btn waves-effect waves-light bg-blue" type="submit" name="action">
                   Buscar CPF / CNPJ
@@ -47,7 +48,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
         </ul> -->
 
 
-        <a class="waves-effect waves-light btn bg-blue right" href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
+        <a id="link-adicionar-cliente" class="waves-effect waves-light btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
         </a>
       </div>
 
@@ -88,7 +89,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
                 case 3:
                   $categoria = "FX53 Premier";
-                  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+                  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR');
                   break;
 
                 case 4:
@@ -113,15 +114,16 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
                 $cor = "green-text";
 
-              } else if (in_array("CPF", $dif) || in_array("RG", $dif)){
+              } else if (in_array("CPF", $dif)){
 
                 $cor = "red-text";
 
-              } else {
+              } 
 
-                $cor = "amber-text";
 
-              }
+              if ($r["vip"]) $cor .= " amber-text";
+
+              
 
               echo
               '<tr>

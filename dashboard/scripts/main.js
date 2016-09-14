@@ -154,24 +154,16 @@ focco = {
     $('textarea#observacoes').trigger('autoresize');
 
     $('ul.tabs').tabs();
-    $('select').material_select();
+    $('select').material_select();   
 
-    $('.datepicker').pickadate({
-      labelMonthNext: 'Próximo',
-      labelMonthPrev: 'Anterior',
-      labelMonthSelect: 'Selecione um mês',
-      labelYearSelect: 'Selecione um ano',
-      monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-      monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
-      weekdaysFull: [ 'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ],
-      weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
-      weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
-      today: 'Hoje',
-      clear: 'Limpar',
-      close: 'Ok',
-      selectMonths: true,
-      selectYears: 150,
-      format: 'yyyy-mm-dd'
+    $('.datepicker').mask("99/99/9999");
+
+    $("#cnh").keyup(function(){
+      if ($(this).val().length > 0) {
+        $("#cnhDataValidade").attr("required", "true");
+      } else {
+        $("#cnhDataValidade").removeAttr("required");
+      }
     });
 
 
@@ -251,8 +243,8 @@ focco = {
       $("#limiteOperacionalAno").attr("readonly", "true");
 
       if (categoriaId == 1){
-        $("#limiteOperacionalDia").val("3000.00");
-        $("#limiteOperacionalAno").val("13000.00");
+        $("#limiteOperacionalDia").val("3000,00");
+        $("#limiteOperacionalAno").val("13000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -264,8 +256,8 @@ focco = {
         $(".div-input-file-pv").fadeOut(300);
       } else
       if (categoriaId == 2){
-        $("#limiteOperacionalDia").val("10000.00");
-        $("#limiteOperacionalAno").val("13000.00");
+        $("#limiteOperacionalDia").val("10000,00");
+        $("#limiteOperacionalAno").val("13000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -276,14 +268,34 @@ focco = {
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
 
-      } else if (categoriaId == 3 || categoriaId == 4){
+      } else
+      if (categoriaId == 3){
 
         $("#limiteOperacionalDia").removeAttr("readonly");
         $("#limiteOperacionalAno").removeAttr("readonly");
         $("#limiteOperacionalDia").removeAttr("disabled");
         $("#limiteOperacionalAno").removeAttr("disabled");
-        $("#limiteOperacionalDia").val("10000.00");
-        $("#limiteOperacionalAno").val("13000.00");
+        $("#limiteOperacionalDia").val("10000,00");
+        $("#limiteOperacionalAno").val("13000,00");
+
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeIn(300);
+        $(".div-input-file-ir").fadeIn(300);
+        $(".div-input-file-ca").fadeOut(300);
+        $(".div-input-file-cps").fadeOut(300);
+        $(".div-input-file-pv").fadeOut(300);
+
+      } else
+      if (categoriaId == 4){
+
+        $("#limiteOperacionalDia").removeAttr("readonly");
+        $("#limiteOperacionalAno").removeAttr("readonly");
+        $("#limiteOperacionalDia").removeAttr("disabled");
+        $("#limiteOperacionalAno").removeAttr("disabled");
+        $("#limiteOperacionalDia").val("10000,00");
+        $("#limiteOperacionalAno").val("13000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -389,25 +401,8 @@ focco = {
     $('textarea#observacoes').characterCounter();
 
     $('ul.tabs').tabs();
-      $('select').material_select();
-
-      $('.datepicker').pickadate({
-        labelMonthNext: 'Próximo',
-        labelMonthPrev: 'Anterior',
-        labelMonthSelect: 'Selecione um mês',
-        labelYearSelect: 'Selecione um ano',
-        monthsFull: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
-        monthsShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
-        weekdaysFull: [ 'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado' ],
-        weekdaysShort: [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab' ],
-        weekdaysLetter: [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
-        today: 'Hoje',
-        clear: 'Limpar',
-        close: 'Ok',
-        selectMonths: true,
-        selectYears: 150,
-      format: 'yyyy-mm-dd'
-    });
+    $('select').material_select();
+    $('.datepicker').mask("99/99/9999");
 
     $("#estadoCivil").change(function(){
       if ($(this).val() == 2){
@@ -418,6 +413,14 @@ focco = {
         $(".dados-conjuge").fadeOut(300);
         $("#nomeConjuge").removeAttr("required");
         $("#dataNascimentoConjuge").removeAttr("required");
+      }
+    });
+
+    $("#cnh").keyup(function(){
+      if ($(this).val().length > 0) {
+        $("#cnhDataValidade").attr("required", "true");
+      } else {
+        $("#cnhDataValidade").removeAttr("required");
       }
     });
 
@@ -453,8 +456,8 @@ focco = {
       $("#limiteOperacionalAno").attr("readonly", "true");
 
       if (categoriaId == 1){
-        $("#limiteOperacionalDia").val("3000.00");
-        $("#limiteOperacionalAno").val("13000.00");
+        $("#limiteOperacionalDia").val("3000,00");
+        $("#limiteOperacionalAno").val("13000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -465,8 +468,8 @@ focco = {
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
       } else if (categoriaId == 2){
-        $("#limiteOperacionalDia").val("10000.00");
-        $("#limiteOperacionalAno").val("13000.00");
+        $("#limiteOperacionalDia").val("10000,00");
+        $("#limiteOperacionalAno").val("13000,00");
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);
@@ -475,11 +478,26 @@ focco = {
         $(".div-input-file-ca").fadeOut(300);
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
-      } else if (categoriaId == 3 || categoriaId == 4){
+      } 
+      else if (categoriaId == 3){
         $("#limiteOperacionalDia").removeAttr("readonly");
         $("#limiteOperacionalAno").removeAttr("readonly");
-        $("#limiteOperacionalDia").val("10000.00");
-        $("#limiteOperacionalAno").val("13000.00");
+        $("#limiteOperacionalDia").val("10000,00");
+        $("#limiteOperacionalAno").val("13000,00");
+        $(".div-input-file-cpf").fadeIn(300);
+        $(".div-input-file-rg").fadeIn(300);
+        $(".div-input-file-cr").fadeIn(300);
+        $(".div-input-file-ff").fadeIn(300);
+        $(".div-input-file-ir").fadeIn(300);
+        $(".div-input-file-ca").fadeOut(300);
+        $(".div-input-file-cps").fadeOut(300);
+        $(".div-input-file-pv").fadeOut(300);
+      }
+      else if (categoriaId == 4) {
+        $("#limiteOperacionalDia").removeAttr("readonly");
+        $("#limiteOperacionalAno").removeAttr("readonly");
+        $("#limiteOperacionalDia").val("10000,00");
+        $("#limiteOperacionalAno").val("13000,00");
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);
@@ -585,15 +603,40 @@ focco = {
       search = $("#input-cpfcnpj", $(this)).val();
 
       $.ajax({
-        url: "/dashboard/clientes/methods/buscaCliente.php/",
-        type: "POST",
-        data: { search },
-        success: function(r){
-          $("#table-body-clientes").html(r);
+        url: "/dashboard/clientes/methods/validarCpf",
+        data: { "cpf" : search },
+        type: "post",
+        success: function(data){
+          if (!JSON.parse(data)){            
+            $("#validacaoCpf").html("O CPF informado não é válido.");            
+          } else {
+            $("#validacaoCpf").html("");
+            $.ajax({
+              url: "/dashboard/clientes/methods/buscaCliente.php/",
+              type: "POST",
+              data: { search },
+              success: function(r){
+                $("#table-body-clientes").html(r);
+              }
+            });
+
+          }
         }
 
       });
 
+      
+
+    });
+
+    $("#link-adicionar-cliente").click(function(e){
+      e.preventDefault();
+      cpf = $("#input-cpfcnpj").val();
+      href = $(this).data("href");
+
+      if (cpf != '') { window.location = href + "?cpf=" + cpf; } 
+      else { window.location = href; }
+      
     });
 
     $(".link-acao").click(function(e){
@@ -614,7 +657,7 @@ focco = {
             $('#modal1').openModal();
             break;
 
-          default:
+          default:            
             window.location = link;
             break;
       }

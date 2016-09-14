@@ -62,7 +62,7 @@ case 2:
 
 case 3:
   $categoria = "FX53 Premier";
-  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR');
   break;
 
 case 4:
@@ -86,7 +86,7 @@ $statOk = false;
 $statWarn = false;
 
 if (!$dif && !$bloqueado) $statOk = true;
-if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
+if ($vip) $statWarn = true;
 
 
 
@@ -103,7 +103,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
         <p>Status: Válido para operações</p>
       </div>
       <div class="alert warning <?php echo $statWarn ? "" : "hide" ?>">
-        <p>Status: Verificar os documentos do cliente</p>
+        <p>Cliente com status Vip Focco</p>
       </div>
       <div class="alert error <?php echo $bloqueado ? "" : "hide" ?>">
         <p>Status: Cliente bloqueado. Ver motivo abaixo.</p>
@@ -124,15 +124,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
           <tr>
             <td>Categoria</td>
             <td>
-              <?php
-              switch ($categoria) {
-                case 1: echo "Focco"; break;
-                case 2: echo "FX53 Simplificado"; break;
-                case 3: echo "FX53 Premier"; break;
-                case 4: echo "FX53 Plus"; break;
-                default: echo ""; break;
-              }
-              ?>
+              <?php echo $categoria ?>
             </td>
           </tr>
           <tr>
@@ -196,6 +188,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
             <td>
               <?php
               switch ($estadoCivil) {
+                case 0: echo "Não informado"; break;
                 case 1: echo "Solteiro(a)"; break;
                 case 2: echo "Casado(a) "; break;
                 case 3: echo "Divorciado(a)"; break;
@@ -267,6 +260,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
       </table>
       <div class="spacing"></div>
       <p class="title-forms">Documentos do cliente <strong><?php echo $nome ?></strong></p><hr>
+
       <div class="docs docs-img">
         <?php if (count($docs) < 1) { ?>
           <div class="row">
@@ -281,7 +275,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
           <?php if (in_array("CPF", $docs)) { ?>
             <div class="col s4">
               <figure>
-                <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.png"/>
+                <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg"/>
                 <figcaption>CPF</figcaption>
               </figure>
             </div>
@@ -290,7 +284,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
             <?php if (in_array("RG", $docs)) { ?>
               <div class="col s4">
                 <figure>
-                  <img class="responsive-img"  alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.png" width="350px" height="500px" />
+                  <img class="responsive-img"  alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.jpg" width="350px" height="500px" />
                   <figcaption>RG</figcaption>
                 </figure>
               </div>
@@ -299,7 +293,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
               <?php if (in_array("CR", $docs)) { ?>
                 <div class="col s4">
                   <figure>
-                    <img class="responsive-img"  alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.png" width="350px" height="500px" />
+                    <img class="responsive-img"  alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.jpg" width="350px" height="500px" />
                     <figcaption>Comprovante de residência</figcaption>
                   </figure>
                 </div>
@@ -308,7 +302,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
                 <?php if (in_array("FF", $docs)) { ?>
                   <div class="col s4">
                     <figure>
-                      <img class="responsive-img"  alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.png" width="350px" height="500px" />
+                      <img class="responsive-img"  alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.jpg" width="350px" height="500px" />
                       <figcaption>Ficha Cadastral Focco</figcaption>
                     </figure>
                   </div>
@@ -317,7 +311,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
                   <?php if (in_array("IR", $docs)) { ?>
                     <div class="col s4">
                       <figure>
-                        <img class="responsive-img"  alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.png" width="350px" height="500px" />
+                        <img class="responsive-img"  alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.jpg" width="350px" height="500px" />
                         <figcaption>Imposto de Renda</figcaption>
                       </figure>
                     </div>
@@ -326,7 +320,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
                     <?php if (in_array("CA", $docs)) { ?>
                       <div class="col s4">
                         <figure>
-                          <img class="responsive-img"  alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.png" width="350px" height="500px" />
+                          <img class="responsive-img"  alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.jpg" width="350px" height="500px" />
                           <figcaption>Cartão de Assinatura</figcaption>
                         </figure>
                       </div>
@@ -335,7 +329,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
                       <?php if (in_array("CPS", $docs)) { ?>
                         <div class="col s4">
                           <figure>
-                            <img class="responsive-img"  alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.png" width="350px" height="500px" />
+                            <img class="responsive-img"  alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.jpg" width="350px" height="500px" />
                             <figcaption>Contrato de Prestação de Serviços</figcaption>
                           </figure>
                         </div>
@@ -344,7 +338,7 @@ if (in_array("CPF", $dif) || in_array("RG", $dif)) $statWarn = true;
                         <?php if (in_array("PV", $docs)) { ?>
                           <div class="col s4">
                             <figure>
-                              <img class="responsive-img"  alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.png" width="350px" height="500px" />
+                              <img class="responsive-img"  alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.jpg" width="350px" height="500px" />
                               <figcaption>Procuração para a Vision</figcaption>
                             </figure>
                           </div>

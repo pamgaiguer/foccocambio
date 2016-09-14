@@ -53,7 +53,8 @@ $clienteId = mysqli_insert_id($conn);
 
 $fileCpf = $_FILES["input-file-cpf"];
 if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
-	$ext = pathinfo($fileCpf['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($fileCpf['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-cpf.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
@@ -68,7 +69,8 @@ if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
 
 $fileRg = $_FILES["input-file-rg"];
 if (isset($fileRg) && $fileRg["name"] != "" && $fileRg["size"] < 5000000) {
-	$ext = pathinfo($fileRg['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($fileRg['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-rg.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
@@ -82,7 +84,8 @@ if (isset($fileRg) && $fileRg["name"] != "" && $fileRg["size"] < 5000000) {
 
 $fileCr = $_FILES["input-file-cr"];
 if (isset($fileCr) && $fileCr["name"] != "" && $fileCr["size"] < 5000000) {
-	$ext = pathinfo($fileCr['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($fileCr['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-cr.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
@@ -96,7 +99,8 @@ if (isset($fileCr) && $fileCr["name"] != "" && $fileCr["size"] < 5000000) {
 
 $fileFf = $_FILES["input-file-ff"];
 if (isset($fileFf) && $fileFf["name"] != "" && $fileFf["size"] < 5000000) {
-	$ext = pathinfo($fileFf['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($fileFf['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-ff.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
@@ -110,7 +114,8 @@ if (isset($fileFf) && $fileFf["name"] != "" && $fileFf["size"] < 5000000) {
 
 $fileIr = $_FILES["input-file-ir"];
 if (isset($fileIr) && $fileIr["name"] != "" && $fileIr["size"] < 5000000) {
-	$ext = pathinfo($fileIr['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($fileIr['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-ir.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
@@ -124,7 +129,8 @@ if (isset($fileIr) && $fileIr["name"] != "" && $fileIr["size"] < 5000000) {
 
 $fileCa = $_FILES["input-file-ca"];
 if (isset($fileCa) && $fileCa["name"] != "" && $fileCa["size"] < 5000000) {
-	$ext = pathinfo($fileCa['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($fileCa['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-ca.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
@@ -138,7 +144,8 @@ if (isset($fileCa) && $fileCa["name"] != "" && $fileCa["size"] < 5000000) {
 
 $fileCps = $_FILES["input-file-cps"];
 if (isset($fileCps) && $fileCps["name"] != "" && $fileCps["size"] < 5000000) {
-	$ext = pathinfo($fileCps['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($fileCps['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-cps.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
@@ -152,7 +159,8 @@ if (isset($fileCps) && $fileCps["name"] != "" && $fileCps["size"] < 5000000) {
 
 $filePv = $_FILES["input-file-pv"];
 if (isset($filePv) && $filePv["name"] != "" && $filePv["size"] < 5000000) {
-	$ext = pathinfo($filePv['name'], PATHINFO_EXTENSION);
+	//$ext = pathinfo($filePv['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
 	$newname = "doc-pv.".$ext;
 	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
 		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);

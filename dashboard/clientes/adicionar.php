@@ -1,6 +1,7 @@
 <?php
 
 include "../core/database.php";
+include "../core/functions.php";
 include "../includes/header.php";
 ?>
 <main>
@@ -25,7 +26,7 @@ include "../includes/header.php";
         <div class="row">
           <div class="col s12">
             <div class="spacing"></div>
-            <h5>Dados pessoais</h5>
+            <h5>Dados pessoais</h5>            
           </div>
 
           <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F"/>
@@ -37,14 +38,14 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s6">
-              <input id="dataNascimento" name="dataNascimento" type="date" class="datepicker" required>
+              <input id="dataNascimento" name="dataNascimento" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" class="datepicker" required>
               <label for="dataNascimento">Data de Nascimento</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s4">
-              <input id="cpfCnpj" name="cpfCnpj" class="validate" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
+              <input id="cpfCnpj" name="cpfCnpj" class="validate" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required  value="<?php if (isset($_GET['cpf'])) echo $_GET['cpf']; ?>"/>
               <label for="cpfCnpj" data-error="O CPF informado não é válido para cadastro.">C.P.F.</label>
               <div id="validacaoCpf"></div>
             </div>
@@ -60,7 +61,7 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s2">
-              <input id="rgDataExpedicao" name="rgDataExpedicao" type="date" class="datepicker" required>
+              <input id="rgDataExpedicao" name="rgDataExpedicao" type="text" class="datepicker" pattern="\d{1,2}/\d{1,2}/\d{4}" required>
               <label for="rgDataExpedicao">Data de Expedição</label>
             </div>
           </div>
@@ -71,7 +72,7 @@ include "../includes/header.php";
               <label for="cnh">C.N.H.</label>
             </div>
             <div class="input-field col s3">
-              <input id="cnhDataValidade" name="cnhDataValidade" type="date" class="datepicker" required>
+              <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker" pattern="\d{1,2}/\d{1,2}/\d{4}">
               <label for="cnhDataValidade">C.N.H. - Data de vencimento</label>
             </div>
             <div class="input-field col s3">
@@ -95,7 +96,8 @@ include "../includes/header.php";
 
             <div class="input-field col s4">
               <select id="estadoCivil" name="estadoCivil" required>
-                <option value="1" selected>Solteiro(a)</option>
+                <option value="0" selected>Não informado</option>
+                <option value="1">Solteiro(a)</option>
                 <option value="2">Casado(a)</option>
                 <option value="3">Divorciado(a)</option>
                 <option value="4">Viúvo(a)</option>
@@ -119,7 +121,7 @@ include "../includes/header.php";
               </div>
 
               <div class="input-field col s6">
-                <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="date" class="datepicker">
+                <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="text" class="datepicker">
                 <label for="dataNascimentoConjuge">Data de Nascimento Cônjuge</label>
               </div>
             </div>
@@ -250,7 +252,7 @@ include "../includes/header.php";
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>C.P.F.</span>
-                  <input type="file" id="input-file-cpf" name="input-file-cpf">
+                  <input type="file" id="input-file-cpf" name="input-file-cpf" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -262,7 +264,7 @@ include "../includes/header.php";
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>RG</span>
-                  <input type="file" id="input-file-rg" name="input-file-rg">
+                  <input type="file" id="input-file-rg" name="input-file-rg" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -275,7 +277,7 @@ include "../includes/header.php";
                 <div class="btn bg-blue">
                   <span>Comprovante Residência</span>
                   <input type="file" id="input-file-cr"
-                  name="input-file-cr" title="Comprovante de residência">
+                  name="input-file-cr" title="Comprovante de residência" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -288,7 +290,7 @@ include "../includes/header.php";
                 <div class="btn bg-blue">
                   <span>F. F.</span>
                   <input type="file" id="input-file-ff"
-                  name="input-file-ff" title="Ficha cadastral focco">
+                  name="input-file-ff" title="Ficha cadastral focco" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -301,7 +303,7 @@ include "../includes/header.php";
                 <div class="btn bg-blue">
                   <span>I. R.</span>
                   <input type="file" id="input-file-ir"
-                  name="input-file-ir" title="Declaração do imposto de renda">
+                  name="input-file-ir" title="Declaração do imposto de renda" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -314,7 +316,7 @@ include "../includes/header.php";
                 <div class="btn bg-blue">
                   <span>C. A.</span>
                   <input type="file" id="input-file-ca"
-                  name="input-file-ca" title="Cartão de assinatura">
+                  name="input-file-ca" title="Cartão de assinatura" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -327,7 +329,7 @@ include "../includes/header.php";
                 <div class="btn bg-blue">
                   <span>C. P. S.</span>
                   <input type="file" id="input-file-cps"
-                  name="input-file-cps" title="Contrato de prestação de serviços">
+                  name="input-file-cps" title="Contrato de prestação de serviços" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -340,7 +342,7 @@ include "../includes/header.php";
                 <div class="btn bg-blue">
                   <span>P. V.</span>
                   <input type="file" id="input-file-pv"
-                  name="input-file-pv" title="Procuração para a Vision">
+                  name="input-file-pv" title="Procuração para a Vision" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text">
@@ -530,7 +532,7 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s2">
-              <input id="dataConstituicao" name="dataConstituicao" type="date" class="datepicker" required>
+              <input id="dataConstituicao" name="dataConstituicao" type="text" class="datepicker" required>
               <label for="dataConstituicao">Data de Constituição</label>
             </div>
           </div>
@@ -546,7 +548,7 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s3">
-              <input id="capSocial" name="capSocial" type="date" class="datepicker" required>
+              <input id="capSocial" name="capSocial" type="text" class="datepicker" required>
               <label for="capSocial">Capital Social</label>
             </div>
           </div>
