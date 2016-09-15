@@ -188,6 +188,11 @@ button.picker__close:focus {
   }
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: $gray;
+  font-weight: 700;
+}
+
 
 @media only screen and (max-width : 992px) {
   header, main, footer {

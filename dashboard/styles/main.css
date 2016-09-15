@@ -203,6 +203,10 @@ button.picker__close:focus {
 .cotation-table tbody tr td:first-child {
   font-weight: 700; }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: #707070;
+  font-weight: 700; }
+
 @media only screen and (max-width: 992px) {
   header, main, footer {
     padding-left: 0; } }

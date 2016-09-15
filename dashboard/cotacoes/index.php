@@ -43,30 +43,28 @@ $libra = $rows[0]['libra'];
   <form id="form-cotacoes">
     <div class="row">
       <div class="col s4">
-        
+
         <table class="cotation-table">
           <thead>
             <tr>
-              <th>Moedas exibidas</th>
-              <th>Valor</th>
+              <th>Dólar</th>
+              <th></th>
+              <th>Euro</th>
+              <th></th>
+              <th>Libra</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Dólar</td>
-              <td><input type="number" step="any" id="input-dolar" value="<?php echo $dolar ?>" ></td>
-            </tr>
-            <tr>
-              <td>Euro</td>
+              <td><input type="number" step="any" id="input-dolar" value="<?php echo $dolar ?>"></td>
+              <td></td>
               <td><input type="number" step="any" id="input-euro" value="<?php echo $euro ?>"></td>
-            </tr>
-            <tr>
-              <td>Libra</td>
+              <td></td>
               <td><input type="number" step="any" id="input-libra" value="<?php echo $libra ?>"></td>
             </tr>
           </tbody>
         </table>
-        
+
       </div>
     </div>
 
