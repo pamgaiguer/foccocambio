@@ -141,3 +141,19 @@ cidadeEntrega
 estadoEntrega
 pessoaAutorizada
 observacoes
+
+var cmp_nome = $("#nome").val();
+var cmp_dataNascimento = $("#dataNascimento").val();
+var cmp_cpf = $("#cpf").val();
+var cmp_rg = $("#rg").val();
+var cmp_genero = $("#genero option:selected").text();
+var cmp_estadoCivil = $("#estadoCivil option:selected").text();
+var cmp_nacionalidade = $("#nacionalidade").val();
+var cmp_nomeMae = $("#nomeMae").val();
+var cmp_nomePai = $("#nomePai").val();
+var cmp_email = $("#email").val();
+var cmp_telefoneCelular = $("#telefoneCelular").val();
+var cmp_ondeConheceuFocco = $("#ondeConheceuFocco option:selected").text();
+var cmp_cepResidencial = $("#cep-residencial").val();
+var cmp_cepEntrega = $("#cep-entrega").val();
+var cmp_pessoaAutorizada = $("#pessoa-autorizada").val();

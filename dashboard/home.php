@@ -28,7 +28,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
   <div class="row">
     <div class="col s4">
 
-      <div class="card grey lighten-3">
+      <div class="card bg-gray">
         <div class="card-content">
           <span class="card-title">Cotação de venda agora</span>
 

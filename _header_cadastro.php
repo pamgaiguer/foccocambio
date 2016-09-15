@@ -28,7 +28,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
   <title>Focco Câmbio - Câmbio e Turismo</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cadastro.css">
   <link rel="shortcut icon" href="favicon.ico" />
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -40,7 +40,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
     ga('send', 'pageview');
   </script>
   <body>
-  <header class="navbar-fixed-top" style="height: 150px">
+    <header class="navbar-fixed-top" style="height: 150px">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
@@ -55,8 +55,8 @@ $libra = number_format($rows[0]['libra'],2,",","");
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="img-responsive center-block" alt="Focco Cambio"></h1></a>
-            <h4 class="text-center blue-text"><strong>Formulário de Cadastro</strong></h4>
+            <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="center-block" alt="Focco Cambio"></h1></a>
+            <h4 class="text-center blue-text" style="margin-left: 12px;"><strong>Formulário de Cadastro</strong></h4>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
         </div>
