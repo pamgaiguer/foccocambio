@@ -4,11 +4,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-      <div class="spacing"></div>
-      <div class="spacing"></div>
       <h3>Dados Pessoais</h3>
-      <div class="spacing"></div>
-      <div class="spacing"></div>
       <div class="spacing"></div>
 
       <div  id="formulario">
@@ -316,7 +312,7 @@
                 <label for="observacoes">Observações</label>
                 <textarea cols="20" rows="10" id="observacoes" class="form-control"></textarea>
                 <br>
-                <button class="btn btn-default btn-primary btn-block" id="btn-cadastro">ENVIAR</button>
+                <button class="btn btn-default btn-primary btn-block" id="btnCadastro">ENVIAR</button>
               </div>
             </div>
           </div>

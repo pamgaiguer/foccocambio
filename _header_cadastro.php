@@ -40,7 +40,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
     ga('send', 'pageview');
   </script>
   <body>
-  <header class="navbar-fixed-top" style="height: 160px">
+  <header class="navbar-fixed-top" style="height: 150px">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
@@ -56,8 +56,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="img-responsive center-block" alt="Focco Cambio"></h1></a>
-            <br>
-            <p class="text-center blue-text"><strong>Formulário de Cadastro</strong></p>
+            <h4 class="text-center blue-text"><strong>Formulário de Cadastro</strong></h4>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
         </div>
