@@ -3,7 +3,7 @@
 
 <?php
 
-include "dashboard/core/database.php";
+include "core/database.php";
 
 $sql_query = "SELECT * FROM cotacoes;";
 $result = mysqli_query($conn, $sql_query);

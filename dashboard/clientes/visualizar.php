@@ -272,6 +272,15 @@ if ($vip) $statWarn = true;
           </div>
           <?php }; ?>
 
+          <?php if (in_array("PROV", $docs)) { ?>
+            <div class="col s4">
+              <figure>
+                <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-prov.jpg"/>
+                <figcaption>Documento provisório</figcaption>
+              </figure>
+            </div>
+            <?php }; ?>
+
           <?php if (in_array("CPF", $docs)) { ?>
             <div class="col s4">
               <figure>

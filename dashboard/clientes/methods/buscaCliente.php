@@ -46,18 +46,27 @@
 	  $dif = array_diff($docsObrigatorios, $docs);
 	  $cor = "";
 
-	  if (!$dif){
+	  
 
-	    $cor = "green-text";
+	  if (!$dif && !$r["bloqueado"]) {
+	  	$cor = "green-text";
+	  }
+	  else if (!$dif && $r["bloqueado"]){
+	  	// desbloqueia
+	  	$sql_query = "UPDATE clientes SET bloqueado = 0 WHERE id = ". $r['id'];
+	  	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+	  	$cor = "red-text";
+	  }
+	  else if ($dif && !$r["bloqueado"]){
+	  	// bloqueia
+	  	$sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+	  	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+	  	$cor = "red-text";
+	  } else if ($dif || $r["bloqueado"]) 
+      $cor = "red-text";
 
-	  } else if (in_array("CPF", $dif)){
 
-	    $cor = "red-text";
-
-	  } 
-
-
-	  if ($r["vip"]) $cor .= " amber-text";
+	  if ($r["vip"]) $cor = "amber-text";
 
 		$ret .=
 		  '<tr>
@@ -65,7 +74,7 @@
 		  <td>'.$r["email"].'</td>
 		  <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
 		  <td>'.$categoria.'</td>
-		  <th>USD 3.000,00</th>
+		  <th>Em desenvolvimento...</th>
 		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
 
 		  <td class="center"><a class="link-acao" data-acao="visualizar" data-cliente-id="'.$r["id"].'" href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'" data-href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>

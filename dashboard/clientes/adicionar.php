@@ -245,6 +245,29 @@ include "../includes/header.php";
 
           <div class="row">
             <div class="col s12">
+              <h5>Documento Provisório</h5>
+            </div>
+
+            <div class="col s6 div-input-file-prov">
+              <div class="file-field input-field">
+                <div class="btn bg-blue">
+                  <span>DOC</span>
+                  <input type="file" id="input-file-prov" name="input-file-prov" accept=".png, .jpg, .jpeg">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+
+          <div class="row">
+            <div class="col s12">
               <h5>Documentos Obrigatórios</h5>
             </div>
 

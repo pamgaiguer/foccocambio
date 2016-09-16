@@ -51,6 +51,25 @@ $sql_query = sprintf("
 if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 $clienteId = mysqli_insert_id($conn);
 
+
+$fileProv = $_FILES["input-file-prov"];
+if (isset($fileProv) && $fileProv["name"] != "" && $fileProv["size"] < 5000000) {
+	//$ext = pathinfo($fileProv['name'], PATHINFO_EXTENSION);
+	$ext = "jpg";
+	$newname = "doc-prov.".$ext;
+	if (!is_dir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]))) {
+		mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
+	}
+	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
+	move_uploaded_file( $fileProv['tmp_name'], $target);
+
+
+	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'PROV', $target, date('Y-m-d H:i:s'));
+	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+}
+
+
+
 $fileCpf = $_FILES["input-file-cpf"];
 if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
 	//$ext = pathinfo($fileCpf['name'], PATHINFO_EXTENSION);

@@ -102,6 +102,14 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 break;
               }
 
+              $sql_query = "SELECT * FROM documentos WHERE tipo = 'PROV' AND clienteId = ". $r['id'];
+              $result = mysqli_query($conn, $sql_query);
+              $docs = array();
+              while($row = mysqli_fetch_array($result)) $docs[] = $row["dataUltimaModificacao"];
+
+              var_dump($docs);
+
+
               $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
               $result = mysqli_query($conn, $sql_query);
               $docs = array();
@@ -110,18 +118,25 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               $dif = array_diff($docsObrigatorios, $docs);
               $cor = "";
 
-              if (!$dif){
-
+              if (!$dif && !$r["bloqueado"]) {
                 $cor = "green-text";
-
-              } else if (in_array("CPF", $dif)){
-
+              }
+              else if (!$dif && $r["bloqueado"]){
+                // desbloqueia
+                $sql_query = "UPDATE clientes SET bloqueado = 0 WHERE id = ". $r['id'];
+                if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+                $cor = "red-text";
+              }
+              else if ($dif && !$r["bloqueado"]){
+                // bloqueia
+                $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+                if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+                $cor = "red-text";
+              } else if ($dif || $r["bloqueado"]) 
                 $cor = "red-text";
 
-              } 
 
-
-              if ($r["vip"]) $cor .= " amber-text";
+              if ($r["vip"]) $cor = "amber-text";
 
               
 
