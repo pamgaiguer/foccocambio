@@ -66,6 +66,26 @@
       $cor = "red-text";
 
 
+	  $sql_query = "SELECT * FROM documentos WHERE tipo = 'PROV' AND clienteId = ". $r['id'];
+    $result = mysqli_query($conn, $sql_query);
+    $docprov = array();
+    while($row = mysqli_fetch_array($result)) $docprov[] = $row["dataUltimaModificacao"];              
+    
+
+    if ((sizeof($docprov) > 0) && $dif){
+
+      $hoje = new DateTime(date('Y-m-d H:i:s'));
+      $validade = new DateTime($docprov[0]);
+      $validade->modify('+1 day');                
+
+      if ($validade < $hoje){
+        $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+        if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+        $cor = "red-text";
+      }
+
+    }
+
 	  if ($r["vip"]) $cor = "amber-text";
 
 		$ret .=
