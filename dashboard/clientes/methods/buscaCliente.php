@@ -86,6 +86,20 @@
 
     }
 
+    $sql_query = "SELECT * FROM documentos WHERE tipo = 'IR' AND clienteId = ". $r['id'];
+    $result = mysqli_query($conn, $sql_query);
+    $docir = array();
+    while($row = mysqli_fetch_array($result)) $docir[] = $row["dataUltimaModificacao"];
+    if (sizeof($docir) > 0){
+      $vigencia = new DateTime(date('Y')."-05-01 00:00:00");
+      $dataIr = new DateTime($docir[0]);
+      if ($dataIr < $vigencia){                  
+        $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+        if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+        $cor = "red-text";
+      }
+    }
+
 	  if ($r["vip"]) $cor = "amber-text";
 
 		$ret .=
