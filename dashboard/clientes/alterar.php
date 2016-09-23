@@ -39,6 +39,9 @@ foreach($rows as $r){
   $limiteOperacionalDia = $r["limiteOperacionalDia"];
   $limiteOperacionalAno = $r["limiteOperacionalAno"];
 
+  $cnh = $r["cnh"];
+  $cnhDataValidade = $r["cnhDataValidade"];
+
 }
 ?>
 
@@ -107,11 +110,11 @@ foreach($rows as $r){
 
           <div class="row">
             <div class="input-field col s3">
-              <input id="cnh" name="cnh" type="text">
+              <input id="cnh" name="cnh" type="text" value="<?php echo $cnh ?>">
               <label for="cnh">C.N.H.</label>
             </div>
             <div class="input-field col s3">
-              <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker">
+              <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker" value= <?php echo date_format(new DateTime($cnhDataValidade), 'd/m/Y'); ?>>
               <label for="cnhDataValidade">C.N.H. - Data de vencimento</label>
             </div>
             <div class="input-field col s3">
@@ -184,12 +187,12 @@ foreach($rows as $r){
               <label for="email">E-mail</label>
             </div>
             <div class="input-field col s3">
-              <input id="telFixo" name="telFixo" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" value='<?php echo $telFixo ?>'>
+              <input id="telFixo" name="telFixo" class="telefone" required  type="tel" value='<?php echo $telFixo ?>'>
               <label for="telFixo">Telefone fixo</label>
 
             </div>
             <div class="input-field col s3">
-              <input id="telCelular" name="telCelular" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel" value='<?php echo $telCelular ?>' >
+              <input id="telCelular" name="telCelular" class="telefone" required type="tel" value='<?php echo $telCelular ?>' >
               <label for="telCelular">Telefone Celular</label>
             </div>
           </div>
@@ -576,11 +579,11 @@ foreach($rows as $r){
           <tr>
             <td><input id="limiteOperacionalDia" name="limiteOperacionalDia"
               <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
-              value="<?php echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="^\d*(\,\d{2}$)?" class="validate"></td>
+              value="<?php echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>
 
               <td><input id="limiteOperacionalAno" name="limiteOperacionalAno"
                 <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
-                value="<?php echo number_format($limiteOperacionalAno,2,",","") ?>" type="text" pattern="^\d*(\,\d{2}$)?" class="validate"></td>
+                value="<?php echo number_format($limiteOperacionalAno,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>
               </tr>
 
             </tbody>

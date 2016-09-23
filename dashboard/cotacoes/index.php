@@ -56,11 +56,11 @@ $libra = $rows[0]['libra'];
           </thead>
           <tbody>
             <tr>
-              <td><input type="number" step="any" id="input-dolar" value="<?php echo $dolar ?>"></td>
+              <td><input type="number" step="0.01" id="input-dolar" value="<?php echo $dolar ?>"></td>
               <td></td>
-              <td><input type="number" step="any" id="input-euro" value="<?php echo $euro ?>"></td>
+              <td><input type="number" step="0.01" id="input-euro" value="<?php echo $euro ?>"></td>
               <td></td>
-              <td><input type="number" step="any" id="input-libra" value="<?php echo $libra ?>"></td>
+              <td><input type="number" step="0.01" id="input-libra" value="<?php echo $libra ?>"></td>
             </tr>
           </tbody>
         </table>

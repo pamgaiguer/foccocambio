@@ -64,9 +64,15 @@ $libra = number_format($rows[0]['libra'],2,",","");
               <blockquote>
                 <p class="cotation-title text-uppercase"><strong>Cotação de venda agora</strong></p>
                 <ul class="list-unstyled">
-                  <li class="cotation-value"><span class="coinName">Dólar</span> | <span class="coinValue">R$ <?php echo $dolar ?></span> </li>
-                  <li class="cotation-value"><span class="coinName">Euro</span> | <span class="coinValue">R$ <?php echo $euro ?></span> </li>
-                  <li class="cotation-value"><span class="coinName">Libra</span> | <span class="coinValue">R$ <?php echo $libra ?></span> </li>
+                  <li class="cotation-value"><span class="coinName">Dólar</span> | <span class="coinValue">
+                     <?php echo $dolar == "0,00" ? "SOLICITAR COTAÇÃO" : "R$ ".$dolar ?></span> 
+                  </li>
+                  <li class="cotation-value"><span class="coinName">Euro</span> | <span class="coinValue">
+                    <?php echo $euro == "0,00" ? "SOLICITAR COTAÇÃO" : "R$ ".$euro ?></span>
+                  </li>
+                  <li class="cotation-value"><span class="coinName">Libra</span> | <span class="coinValue">
+                    <?php echo $libra == "0,00" ? "SOLICITAR COTAÇÃO" : "R$ ".$libra ?></span> 
+                  </li>
                 </ul>
                 <p class="cotation-info">
                   <small>

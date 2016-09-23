@@ -65,7 +65,9 @@ CREATE TABLE `clientes` (
   `bloqueado` bit(1) DEFAULT 0,
   `motivoBloqueio` int(11) DEFAULT NULL,
   `ondeConheceu` int(11) DEFAULT NULL,
-  `ondeSoube` varchar(255) DEFAULT NULL
+  `ondeSoube` varchar(255) DEFAULT NULL,
+  `cnh` varchar(20) DEFAULT NULL,
+  `cnhDataValidade` datetime DEFAULT NULL
 
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

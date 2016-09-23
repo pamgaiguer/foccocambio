@@ -37,12 +37,14 @@ $sql_query = sprintf("
 	ondeConheceu,
 	ondeSoube,
 	bloqueado,
-	motivoBloqueio
+	motivoBloqueio,
+	cnh,
+	cnhDataValidade
 	)
 
-	VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s, %s, '%s', %s, %s )",
+	VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s, %s, '%s', %s, %s, '%s', '%s' )",
 
-	$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], TratarFloat($_POST["limiteOperacionalDia"]), TratarFloat($_POST["limiteOperacionalAno"]), $_POST["ondeConheceuFocco"], $_POST["ondeConheceuFoccoDesc"], $_POST["bloqueado"], $_POST["motivoStatusBlocked"]
+	$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], TratarFloat($_POST["limiteOperacionalDia"]), TratarFloat($_POST["limiteOperacionalAno"]), $_POST["ondeConheceuFocco"], $_POST["ondeConheceuFoccoDesc"], $_POST["bloqueado"], $_POST["motivoStatusBlocked"], $_POST["cnh"], TratarData($_POST["cnhDataValidade"])
 	);
 
 	
@@ -62,6 +64,7 @@ if (isset($fileProv) && $fileProv["name"] != "" && $fileProv["size"] < 5000000) 
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file( $fileProv['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'PROV', $target, date('Y-m-d H:i:s'));
@@ -80,6 +83,7 @@ if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file( $fileCpf['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CPF', $target, date('Y-m-d H:i:s'));
@@ -96,6 +100,7 @@ if (isset($fileRg) && $fileRg["name"] != "" && $fileRg["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileRg['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataEmissao, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s','%s')", $clienteId, 'RG', $target, TratarData($_POST["rgDataExpedicao"]), date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -111,6 +116,7 @@ if (isset($fileCr) && $fileCr["name"] != "" && $fileCr["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileCr['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CR', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -126,6 +132,7 @@ if (isset($fileFf) && $fileFf["name"] != "" && $fileFf["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileFf['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'FF', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -141,6 +148,7 @@ if (isset($fileIr) && $fileIr["name"] != "" && $fileIr["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileIr['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'IR', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -156,6 +164,7 @@ if (isset($fileCa) && $fileCa["name"] != "" && $fileCa["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileCa['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CA', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -171,6 +180,7 @@ if (isset($fileCps) && $fileCps["name"] != "" && $fileCps["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileCps['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CPS', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -186,6 +196,7 @@ if (isset($filePv) && $filePv["name"] != "" && $filePv["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($filePv['tmp_name'], $target);
+	imagejpeg($target,$target, 75);
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'PV', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));

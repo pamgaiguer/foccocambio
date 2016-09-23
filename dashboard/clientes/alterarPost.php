@@ -23,6 +23,7 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file( $fileCpf['tmp_name'], $target);
+		imagejpeg($target,$target, 75);
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'CPF'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -42,6 +43,7 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileRg['tmp_name'], $target);		
+		imagejpeg($target,$target, 75);
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'RG'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -60,6 +62,7 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileCr['tmp_name'], $target);	
+		imagejpeg($target,$target, 75);
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'CR'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -78,6 +81,7 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileFf['tmp_name'], $target);	
+		imagejpeg($target,$target, 75);
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'FF'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -95,7 +99,8 @@
 			mkdir($_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]), 0777, true);
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
-		move_uploaded_file($fileIr['tmp_name'], $target);		
+		move_uploaded_file($fileIr['tmp_name'], $target);
+		imagejpeg($target,$target, 75);		
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'IR'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -114,6 +119,7 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileCa['tmp_name'], $target);		
+		imagejpeg($target,$target, 75);
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'CA'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -132,6 +138,7 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($fileCps['tmp_name'], $target);		
+		imagejpeg($target,$target, 75);
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'CPS'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -150,6 +157,7 @@
 		}
 		$target = $_SERVER['DOCUMENT_ROOT'].'dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 		move_uploaded_file($filePv['tmp_name'], $target);		
+		imagejpeg($target,$target, 75);
 
 		$sql_query = sprintf("DELETE FROM documentos WHERE clienteId = %s AND tipo = 'PV'", $clienteId);
 		if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
