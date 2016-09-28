@@ -63,60 +63,71 @@ $libra = number_format($rows[0]['libra'],2,",","");
             <div class="cotation-table">
               <blockquote>
                 <p class="cotation-title text-uppercase"><strong>Cotação de venda agora</strong></p>
-                <ul class="list-unstyled">
-                  <li class="cotation-value"><span class="coinName">Dólar</span> | <span class="coinValue">
-                     <?php echo $dolar == "0,00" ? "SOLICITAR COTAÇÃO" : "R$ ".$dolar ?></span> 
-                  </li>
-                  <li class="cotation-value"><span class="coinName">Euro</span> | <span class="coinValue">
-                    <?php echo $euro == "0,00" ? "SOLICITAR COTAÇÃO" : "R$ ".$euro ?></span>
-                  </li>
-                  <li class="cotation-value"><span class="coinName">Libra</span> | <span class="coinValue">
-                    <?php echo $libra == "0,00" ? "SOLICITAR COTAÇÃO" : "R$ ".$libra ?></span> 
-                  </li>
-                </ul>
-                <p class="cotation-info">
-                  <small>
-                    Valores já com IOF incluso. <br>
-                    Outras moedas, consulte-nos.
-                  </small>
-                </p>
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <ul class="list-unstyled list-inline pull-right hidden-xs link-img-top">
-              <li>
-                <a href="http://instagram.com/foccocambio/" target="_blank"><img src="images/logo_instagram.png" alt="instagram "></a>
-              </li>
-              <li>
-                <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/logo_fb.jpg" alt="facebook"></a>
-              </li>
-              <li>
-                <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno" class="dash-icon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></a>
-              </li>
-            </ul>
+                <table class="table table-condensed table-responsive">
+                  <tbody>
+                    <tr class="cotation-value">
+                      <td class="coinName">Dólar</td>
+                      <td class="coinValue">
+                       <?php echo $dolar == "0,00" ? "CONSULTE" : "R$ ".$dolar ?></span>
+                     </td>
+                   </tr>
+                   <tr class="cotation-value">
+                    <td class="coinName">Euro</td>
+                    <td class="coinValue">
+                      <?php echo $euro == "0,00" ? "CONSULTE" : "R$ ".$euro ?></span>
+                    </td>
+                  </tr>
+                  <tr class="cotation-value">
+                    <td class="coinName">Libra</td>
+                    <td class="coinValue">
+                      <?php echo $libra == "0,00" ? "CONSULTE" : "R$ ".$libra ?></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="cotation-info hidden-xs">
+                <small>
+                  Valores já com IOF incluso. <br>
+                  Outras moedas, consulte-nos.
+                </small>
+              </p>
+            </blockquote>
           </div>
         </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <ul class="list-unstyled list-inline pull-right hidden-xs link-img-top">
+            <li>
+              <a href="http://instagram.com/foccocambio/" target="_blank"><img src="images/logo_instagram.png" alt="instagram "></a>
+            </li>
+            <li>
+              <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/logo_fb.jpg" alt="facebook"></a>
+            </li>
+            <li>
+              <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno" class="dash-icon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarFocco" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarFocco">
-              <ul class="nav nav-pills nav-justified">
-                <li><a href="/delivery">Delivery <span class="sr-only">(current)</span></a></li>
-                <li><a href="/produtos-servicos">Produtos e serviços</a></li>
-                <li><a href="/remessa-internacional">Remessa Internacional</a></li>
-                <li><a href="/contact">Lojas / Contato</a></li>
-                <li><a href="/seguro-viagem">Seguro viagem</a></li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-      </header>
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarFocco" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarFocco">
+            <ul class="nav nav-pills nav-justified">
+              <li><a href="/delivery">Delivery <span class="sr-only">(current)</span></a></li>
+              <li><a href="/produtos-servicos">Produtos e serviços</a></li>
+              <li><a href="/remessa-internacional">Remessa Internacional</a></li>
+              <li><a href="/contact">Lojas / Contato</a></li>
+              <li><a href="/seguro-viagem">Seguro viagem</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>

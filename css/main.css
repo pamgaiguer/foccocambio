@@ -98,11 +98,21 @@ blockquote{
 .cotation-table{
   margin-left: 15px;
 }
+.cotation-table blockquote{
+  margin: 0 0 2px;
+}
+.cotation-table .table>tbody>tr>td{
+  border-top:  none;
+}
+.cotation-table .table-condensed>tbody>tr>td{
+  padding:  0 5px;
+}
 .cotation-table .cotation-title, .cotation-table .cotation-info{
   font-size: 10px;
 }
 .cotation-table .cotation-title{
   padding-top: 5px;
+  text-indent: 4px;
 }
 .cotation-table ul{
   margin-top: -8px;
@@ -462,5 +472,14 @@ hr {
   }
   .contact-table{
     border-right: none;
+  }
+  ..cotation-table {
+    margin-top: -10px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .table-responsive {
+    border: none;
   }
 }
