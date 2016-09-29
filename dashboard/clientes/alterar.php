@@ -103,7 +103,7 @@ foreach($rows as $r){
             </div>
 
             <div class="input-field col s2">
-              <input id="rgDataExpedicao" name="rgDataExpedicao" type="text" class="datepicker" required value= <?php echo $rgDataExpedicao ?> />
+              <input id="rgDataExpedicao" name="rgDataExpedicao" type="text" class="datepicker" required value= <?php echo date_format(new DateTime($rgDataExpedicao), 'd/m/Y'); ?> />
               <label for="rgDataExpedicao">Data de Expedição</label>
             </div>
           </div>
@@ -163,7 +163,7 @@ foreach($rows as $r){
               </div>
 
               <div class="input-field col s6">
-                <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="text" class="datepicker" value= <?php echo $dataNascimentoConjuge ?> >
+                <input id="dataNascimentoConjuge" name="dataNascimentoConjuge" type="text" class="datepicker" value= <?php echo date_format(new DateTime($dataNascimentoConjuge), 'd/m/Y'); ?> >
                 <label for="nomeConjuge">Data de Nascimento Cônjuge</label>
               </div>
             </div>

@@ -145,12 +145,12 @@ include "../includes/header.php";
               <label for="email" data-error="E-mail com formato inválido">E-mail</label>
             </div>
             <div class="input-field col s3">
-              <input id="telFixo" name="telFixo" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel">
+              <input id="telFixo" name="telFixo" class="telefone" required type="tel">
               <label for="telFixo">Telefone fixo</label>
 
             </div>
             <div class="input-field col s3">
-              <input id="telCelular" name="telCelular" class="telefone" required pattern="^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$" type="tel">
+              <input id="telCelular" name="telCelular" class="telefone" required type="tel">
               <label for="telCelular">Telefone Celular</label>
             </div>
           </div>

@@ -15,26 +15,26 @@
 		switch ($r["categoria"]) {
 	    case 1:
 	      $categoria = "Focco";
-	      $docsObrigatorios = array('CPF', 'RG');
+	      $docsObrigatorios = array('CPF');
 	      break;
 
 	    case 2:
 	      $categoria = "FX53 Simplificado";
-	      $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF');
+	      $docsObrigatorios = array('CPF', 'CR', 'FF');
 	      break;
 
 	    case 3:
 	      $categoria = "FX53 Premier";
-	      $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR');
+	      $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR');
 	      break;
 
 	    case 4:
 	      $categoria = "FX53 Plus";
-	      $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+	      $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
 	      break;
 
 	    default: $categoria = "Focco";
-	    $docsObrigatorios = array('CPF', 'RG');
+	    $docsObrigatorios = array('CPF');
 	    break;
 	  }
 
