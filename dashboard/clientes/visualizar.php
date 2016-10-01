@@ -52,27 +52,27 @@ while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 switch ($categoria) {
 case 1:
   $categoria = "Focco";
-  $docsObrigatorios = array('CPF', 'RG');
+  $docsObrigatorios = array('CPF');
   break;
 
 case 2:
   $categoria = "FX53 Simplificado";
-  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF');
+  $docsObrigatorios = array('CPF', 'CR', 'FF');
   break;
 
 case 3:
   $categoria = "FX53 Premier";
-  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR');
+  $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR');
   break;
 
 case 4:
   $categoria = "FX53 Plus";
-  $docsObrigatorios = array('CPF', 'RG', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+  $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
   break;
 
 default: 
   $categoria = "Focco";
-  $docsObrigatorios = array('CPF', 'RG');
+  $docsObrigatorios = array('CPF');
   break;
 }
 
@@ -270,21 +270,12 @@ if ($vip) $statWarn = true;
               </p>
             </div>
           </div>
-          <?php }; ?>
-
-          <?php if (in_array("PROV", $docs)) { ?>
-            <div class="col s4">
-              <figure>
-                <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-prov.jpg"/>
-                <figcaption>Documento provisório</figcaption>
-              </figure>
-            </div>
-            <?php }; ?>
+          <?php }; ?>          
 
           <?php if (in_array("CPF", $docs)) { ?>
             <div class="col s4">
               <figure>
-                <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg"/>
+                <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg"/>
                 <figcaption>CPF</figcaption>
               </figure>
             </div>
@@ -293,16 +284,20 @@ if ($vip) $statWarn = true;
             <?php if (in_array("RG", $docs)) { ?>
               <div class="col s4">
                 <figure>
-                  <img class="responsive-img"  alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.jpg" width="350px" height="500px" />
+                  <img class="responsive-img"  alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.jpg" width="350px" height="500px" />
                   <figcaption>RG</figcaption>
                 </figure>
               </div>
               <?php }; ?>
 
+              <div class="col s12">
+              <br>  
+              </div>
+
               <?php if (in_array("CR", $docs)) { ?>
                 <div class="col s4">
                   <figure>
-                    <img class="responsive-img"  alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.jpg" width="350px" height="500px" />
+                    <img class="responsive-img"  alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.jpg" width="350px" height="500px" />
                     <figcaption>Comprovante de residência</figcaption>
                   </figure>
                 </div>
@@ -311,16 +306,20 @@ if ($vip) $statWarn = true;
                 <?php if (in_array("FF", $docs)) { ?>
                   <div class="col s4">
                     <figure>
-                      <img class="responsive-img"  alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.jpg" width="350px" height="500px" />
+                      <img class="responsive-img"  alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.jpg" width="350px" height="500px" />
                       <figcaption>Ficha Cadastral Focco</figcaption>
                     </figure>
                   </div>
                   <?php }; ?>
 
+                  <div class="col s12">
+                  <br>  
+                  </div>
+
                   <?php if (in_array("IR", $docs)) { ?>
                     <div class="col s4">
                       <figure>
-                        <img class="responsive-img"  alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.jpg" width="350px" height="500px" />
+                        <img class="responsive-img"  alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.jpg" width="350px" height="500px" />
                         <figcaption>Imposto de Renda</figcaption>
                       </figure>
                     </div>
@@ -329,16 +328,18 @@ if ($vip) $statWarn = true;
                     <?php if (in_array("CA", $docs)) { ?>
                       <div class="col s4">
                         <figure>
-                          <img class="responsive-img"  alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.jpg" width="350px" height="500px" />
+                          <img class="responsive-img"  alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.jpg" width="350px" height="500px" />
                           <figcaption>Cartão de Assinatura</figcaption>
                         </figure>
                       </div>
                       <?php }; ?>
-
+                      <div class="col s12">
+                      <br>  
+                      </div>
                       <?php if (in_array("CPS", $docs)) { ?>
                         <div class="col s4">
                           <figure>
-                            <img class="responsive-img"  alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.jpg" width="350px" height="500px" />
+                            <img class="responsive-img"  alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.jpg" width="350px" height="500px" />
                             <figcaption>Contrato de Prestação de Serviços</figcaption>
                           </figure>
                         </div>
@@ -347,7 +348,7 @@ if ($vip) $statWarn = true;
                         <?php if (in_array("PV", $docs)) { ?>
                           <div class="col s4">
                             <figure>
-                              <img class="responsive-img"  alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.jpg" width="350px" height="500px" />
+                              <img class="responsive-img"  alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.jpg" width="350px" height="500px" />
                               <figcaption>Procuração para a Vision</figcaption>
                             </figure>
                           </div>
@@ -427,3 +428,7 @@ if ($vip) $statWarn = true;
               <?php
               include "../includes/footer.php";
               ?>
+
+              <script type="text/javascript">
+                $("img").elevateZoom({easing : true});
+              </script>
