@@ -55,7 +55,7 @@
 	  	// desbloqueia
 	  	$sql_query = "UPDATE clientes SET bloqueado = 0 WHERE id = ". $r['id'];
 	  	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
-	  	$cor = "red-text";
+	  	$cor = "green-text";
 	  }
 	  else if ($dif && !$r["bloqueado"]){
 	  	// bloqueia

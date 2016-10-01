@@ -657,6 +657,47 @@ focco = {
             $('#modal1').openModal();
             break;
 
+          case "doc-prov":
+            $("#modal-confirm2").click(function(e){
+              e.preventDefault();
+
+
+              login = $("input#login").val();
+              senha = $("input#senha").val();
+
+              $.ajax({
+                url: "/dashboard/checarAdmin.php/",
+                type: "post",
+                data: {login, senha},
+                success: function(r){                  
+                  switch (JSON.parse(r)) {
+                    case "nope":
+                      $("#form-erro").html("O usuário não foi autenticado");
+                    break;
+
+                    case "ok":                      
+                      $.ajax({
+                        url: "/dashboard/clientes/methods/desbloquearDocProv.php/",
+                        type: "post",
+                        data: {clienteId},
+                        success: function(r){
+                          if (JSON.parse(r) == "ok"){
+                            window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId;
+                          }
+                        }
+                      });
+
+
+                    break;
+                  }
+                  
+                }
+              });
+              
+            });
+            $('#modal2').openModal();
+            break;
+
           default:            
             window.location = link;
             break;

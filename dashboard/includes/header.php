@@ -18,6 +18,10 @@
 
 <body>
 
+  <style type="text/css">
+    body{font-size: 0.93em;}
+  </style>
+
   <header>
     <nav class="bg-gray">
       <!-- Barra do topo! -->
