@@ -44,47 +44,43 @@
 	  while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 
 	  $dif = array_diff($docsObrigatorios, $docs);
-	  $cor = "";
-
-	  
+	  $cor = "";	  
 
 	  if (!$dif && !$r["bloqueado"]) {
-	  	$cor = "green-text";
-	  }
-	  else if (!$dif && $r["bloqueado"]){
-	  	// desbloqueia
-	  	$sql_query = "UPDATE clientes SET bloqueado = 0 WHERE id = ". $r['id'];
-	  	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
-	  	$cor = "green-text";
-	  }
-	  else if ($dif && !$r["bloqueado"]){
-	  	// bloqueia
-	  	$sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
-	  	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
-	  	$cor = "red-text";
-	  } else if ($dif || $r["bloqueado"]) 
+      $cor = "green-text";
+    }
+    else if (!$dif && $r["bloqueado"]){
+      // desbloqueia
+      $sql_query = "UPDATE clientes SET bloqueado = 0 WHERE id = ". $r['id'];
+      if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+      $cor = "green-text";
+    }
+    else if ($dif && !$r["bloqueado"]){
+      // bloqueia
+      $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
+      if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+      $cor = "red-text";
+    } else if ($dif || $r["bloqueado"]) 
       $cor = "red-text";
 
-
-	  $sql_query = "SELECT * FROM documentos WHERE tipo = 'PROV' AND clienteId = ". $r['id'];
+    
+    $sql_query = "SELECT * FROM documentos WHERE tipo = 'PROV' AND clienteId = ". $r['id'];
     $result = mysqli_query($conn, $sql_query);
     $docprov = array();
-    while($row = mysqli_fetch_array($result)) $docprov[] = $row["dataUltimaModificacao"];              
-    
-
+    while($row = mysqli_fetch_array($result)) $docprov[] = $row["dataUltimaModificacao"];
     if ((sizeof($docprov) > 0) && $dif){
-
       $hoje = new DateTime(date('Y-m-d H:i:s'));
       $validade = new DateTime($docprov[0]);
       $validade->modify('+1 day');                
-
       if ($validade < $hoje){
-        $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+        $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
         if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
         $cor = "red-text";
+      } else {
+        $cor = "green-text";
       }
-
     }
+
 
     $sql_query = "SELECT * FROM documentos WHERE tipo = 'IR' AND clienteId = ". $r['id'];
     $result = mysqli_query($conn, $sql_query);
@@ -94,13 +90,21 @@
       $vigencia = new DateTime(date('Y')."-05-01 00:00:00");
       $dataIr = new DateTime($docir[0]);
       if ($dataIr < $vigencia){                  
-        $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+        $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 2 WHERE id = ". $r['id'];
         if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
         $cor = "red-text";
       }
     }
 
-	  if ($r["vip"]) $cor = "amber-text";
+    if ($r["vip"]) $cor = "amber-text";              
+
+
+    $docprov = 
+    $cor == "red-text" 
+    ? 
+      '<td><a class="link-acao modal-trigger green-text" href="modal2" data-acao="doc-prov" data-cliente-id="'.$r["id"].'"><i class="material-icons" title="Liberação por documento provisório">lock</i></a></td>' 
+    : 
+      '<td></td>';
 
 		$ret .=
 		  '<tr>
@@ -110,6 +114,8 @@
 		  <td>'.$categoria.'</td>
 		  <th>Em desenvolvimento...</th>
 		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
+
+		  '.$docprov.'
 
 		  <td class="center"><a class="link-acao" data-acao="visualizar" data-cliente-id="'.$r["id"].'" href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'" data-href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
       <td class="center"><a class="link-acao" data-acao="alterar" data-cliente-id="'.$r["id"].'" href="/dashboard/clientes/alterar?clienteId='.$r["id"].'" data-href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>

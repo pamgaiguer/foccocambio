@@ -12,8 +12,8 @@ function TratarData($field){
 }
 
 function TratarFloat($field){
-	if ($field == '') return 0.00;
-	return floatval(str_replace(",", ".", $field));
+	if ($field == '') return 0.00;	
+	return floatval(str_replace(",", ".", str_replace(".", "", $field)));
 }
 
 ?>

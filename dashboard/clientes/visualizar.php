@@ -40,6 +40,7 @@ foreach($rows as $r){
   $limiteOperacionalDia = $r["limiteOperacionalDia"];
   $limiteOperacionalAno = $r["limiteOperacionalAno"];
   $bloqueado = $r["bloqueado"];
+  $motivoBloqueio = $r["motivoBloqueio"];
 }
 
 
@@ -126,7 +127,25 @@ if ((sizeof($docprov) > 0) && $dif){
         <p>Cliente com status Vip Focco</p>
       </div>
       <div class="alert error <?php echo $bloqueado ? "" : "hide" ?>">
-        <p>Status: Cliente bloqueado. Ver motivo abaixo.</p>
+        <p>Status: Cliente bloqueado.</p>
+        <p>
+        <?php 
+
+        switch ($motivoBloqueio) {
+          case 1:
+            echo "Documentação pendente";
+            break;
+          case 2:
+            echo "Documentação vencida";
+            break;
+
+          default:
+            echo "";
+            break;
+        }
+
+        ?>          
+        </p>
       </div>
 
       <div class="spacing"></div>

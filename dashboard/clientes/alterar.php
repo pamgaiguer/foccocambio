@@ -11,7 +11,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 foreach($rows as $r){
   $id = $r['id'];
   $categoria = $r['categoria'];
-  $nome = $r['razaoSocial'];
+  $nome = $r['razaoSocial'];  
   $tipo = $r['tipoPessoa'];
   $cpfCnpj = $r['cpfCnpj'];
   $dataNascimentoAbertura = $r['dataNascimentoAbertura'];
@@ -75,7 +75,7 @@ foreach($rows as $r){
 
           <div class="row">
             <div class="input-field col s6">
-              <input id="razaoSocial" name="razaoSocial" type="text" required value= <?php echo $nome ?> />
+              <input id="razaoSocial" name="razaoSocial" type="text" required value="<?php echo $nome ?>" />
               <label for="razaoSocial">Nome completo</label>
             </div>
 
@@ -571,19 +571,19 @@ foreach($rows as $r){
       <table class="responsive-table">
         <thead>
           <tr>
-            <th>Limite aprovado diário (USD)</th>
+            <!--<th>Limite aprovado diário (USD)</th>-->
             <th>Limite aprovado anual (USD)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><input id="limiteOperacionalDia" name="limiteOperacionalDia"
-              <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
-              value="<?php echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>
+            <!--<td><input id="limiteOperacionalDia" name="limiteOperacionalDia"
+              <?php //echo ($categoria < 3 ? "readonly='true'" : "") ?>
+              value="<?php //echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>-->
 
               <td><input id="limiteOperacionalAno" name="limiteOperacionalAno"
                 <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
-                value="<?php echo number_format($limiteOperacionalAno,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>
+                value="<?php echo number_format($limiteOperacionalAno,2,",",".") ?>" type="text" class="validate currency"></td>
               </tr>
 
             </tbody>

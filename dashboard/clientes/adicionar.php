@@ -224,7 +224,8 @@ include "../includes/header.php";
             <div class="motivoBlock" style="display: none">
               <div class="input-field col s4" >
                 <select id="motivoStatusBlocked" name="motivoStatusBlocked">
-                  <option value="1" selected>Falta de documento</option>
+                  <option value="0" selected></option>
+                  <option value="1">Falta de documento</option>
                   <option value="2">Documento vencido</option>
                   <option value="3">Fraude</option>
                   <option value="4">Outros</option>
@@ -468,17 +469,17 @@ include "../includes/header.php";
               <table class="responsive-table">
                 <thead>
                   <tr>
-                    <th>Limite aprovado diário (USD)</th>
+                    <!--<th>Limite aprovado diário (USD)</th>-->
                     <th>Limite aprovado anual (USD)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <!--<td>
+                      <input id="limiteOperacionalDia" name="limiteOperacionalDia" readonly="true"  value="3000,00" type="text">
+                    </td>-->
                     <td>
-                      <input id="limiteOperacionalDia" name="limiteOperacionalDia" readonly="true"  value="3000,00" type="text" pattern="^\d*(\,\d{2}$)?">
-                    </td>
-                    <td>
-                      <input id="limiteOperacionalAno" name="limiteOperacionalAno" readonly="true"  value="13000,00" type="text" pattern="^\d*(\,\d{2}$)?">
+                      <input id="limiteOperacionalAno" name="limiteOperacionalAno" readonly="true"  value="13000,00" type="text">
                     </td>
                   </tr>
                 </tbody>

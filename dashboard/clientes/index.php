@@ -122,7 +122,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               }
               else if ($dif && !$r["bloqueado"]){
                 // bloqueia
-                $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+                $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
                 if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
                 $cor = "red-text";
               } else if ($dif || $r["bloqueado"]) 
@@ -138,7 +138,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 $validade = new DateTime($docprov[0]);
                 $validade->modify('+1 day');                
                 if ($validade < $hoje){
-                  $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+                  $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
                   if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
                   $cor = "red-text";
                 } else {
@@ -155,7 +155,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 $vigencia = new DateTime(date('Y')."-05-01 00:00:00");
                 $dataIr = new DateTime($docir[0]);
                 if ($dataIr < $vigencia){                  
-                  $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
+                  $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 2 WHERE id = ". $r['id'];
                   if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
                   $cor = "red-text";
                 }

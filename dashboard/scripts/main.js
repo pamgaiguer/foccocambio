@@ -157,6 +157,7 @@ focco = {
     $('select').material_select();   
 
     $('.datepicker').mask("99/99/9999");
+    $('.currency').mask("#.##0,00", {reverse: true});
 
     $("#cnh").keyup(function(){
       if ($(this).val().length > 0) {
@@ -220,10 +221,11 @@ focco = {
       var cpf = $(this).val();
 
       $.ajax({
-        url: "/dashboard/clientes/methods/validarCpf",
+        url: "/dashboard/clientes/methods/validarCpf.php/",
         data: { cpf },
         type: "post",
-        success: function(data){
+        success: function(data){          
+          alert(data);
           if (!JSON.parse(data)){
             $("#input-submit").parent().addClass("disabled");
             $("#validacaoCpf").html("O CPF informado não é válido para cadastro.");
@@ -244,7 +246,7 @@ focco = {
 
       if (categoriaId == 1){
         $("#limiteOperacionalDia").val("3000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -257,7 +259,7 @@ focco = {
       } else
       if (categoriaId == 2){
         $("#limiteOperacionalDia").val("10000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -276,7 +278,7 @@ focco = {
         $("#limiteOperacionalDia").removeAttr("disabled");
         $("#limiteOperacionalAno").removeAttr("disabled");
         $("#limiteOperacionalDia").val("10000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -295,7 +297,7 @@ focco = {
         $("#limiteOperacionalDia").removeAttr("disabled");
         $("#limiteOperacionalAno").removeAttr("disabled");
         $("#limiteOperacionalDia").val("10000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -403,6 +405,7 @@ focco = {
     $('ul.tabs').tabs();
     $('select').material_select();
     $('.datepicker').mask("99/99/9999");
+    $('.currency').mask("#.##0,00", {reverse: true});
 
     $("#estadoCivil").change(function(){
       if ($(this).val() == 2){
@@ -457,7 +460,7 @@ focco = {
 
       if (categoriaId == 1){
         $("#limiteOperacionalDia").val("3000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
 
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
@@ -469,7 +472,7 @@ focco = {
         $(".div-input-file-pv").fadeOut(300);
       } else if (categoriaId == 2){
         $("#limiteOperacionalDia").val("10000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);
@@ -483,7 +486,7 @@ focco = {
         $("#limiteOperacionalDia").removeAttr("readonly");
         $("#limiteOperacionalAno").removeAttr("readonly");
         $("#limiteOperacionalDia").val("10000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);
@@ -497,7 +500,7 @@ focco = {
         $("#limiteOperacionalDia").removeAttr("readonly");
         $("#limiteOperacionalAno").removeAttr("readonly");
         $("#limiteOperacionalDia").val("10000,00");
-        $("#limiteOperacionalAno").val("13000,00");
+        $("#limiteOperacionalAno").val("13.000,00");
         $(".div-input-file-cpf").fadeIn(300);
         $(".div-input-file-rg").fadeIn(300);
         $(".div-input-file-cr").fadeIn(300);

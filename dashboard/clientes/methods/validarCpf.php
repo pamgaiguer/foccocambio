@@ -1,6 +1,18 @@
 <?php
 
-	echo json_encode(validarCpf(preg_replace("/\D+/", "", $_POST['cpf'])));
+	include "../../core/database.php";
+
+	$cpfpost = preg_replace("/\D+/", "", $_POST['cpf']);
+	
+	echo json_encode(validarCpf($cpfpost) && !cpfExistente($cpfpost));
+
+
+	function cpfExistente($cpf = null){
+		global $conn;
+		$sql_query = "SELECT * FROM clientes WHERE ativo = 1 and cpfCnpj = '".$cpf."'";
+		$result = mysqli_query($conn, $sql_query);
+		return  mysqli_num_rows($result) > 0 ? true : false;
+	}
 
 	function validarCPF($cpf = null) {
 
