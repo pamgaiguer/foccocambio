@@ -1,6 +1,5 @@
   $(document).ready(function(){
-    $('#modalRemessa').modal();
-
+    //$('#modalRemessa').modal();
 
   $('a[href="' + this.location.pathname + '"]').parent('li').addClass('active'); //menu bootstrap ativo
 

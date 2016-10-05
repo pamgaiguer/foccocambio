@@ -37,17 +37,6 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           </div>
         </div>
 
-<!--         <ul class="black-text">
-          <li>
-            Nesta tela, os cadastros devem ter cor de identificação (em relação aos documentos):<br>
-            <span class="green-text">Verde</span> para cadastro OK <br>
-            <span class="amber-text">Amarelo</span> para cadastro com atenção <br>
-            <span class="red-text">Vermelho</span> para cadastro inválido <br>
-            <span class="light-blue-text text-darken-4">Azul</span> se aceita receber oferta por facebook
-          </li>
-        </ul> -->
-
-
         <a id="link-adicionar-cliente" class="waves-effect waves-light btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
         </a>
       </div>
@@ -79,27 +68,39 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
               switch ($r["categoria"]) {
                 case 1:
-                  $categoria = "Focco";
-                  $docsObrigatorios = array('CPF');
-                  break;
+                $categoria = "Focco";
+                $docsObrigatorios = array('CPF');
+                break;
 
                 case 2:
-                  $categoria = "FX53 Simplificado";
-                  $docsObrigatorios = array('CPF', 'CR', 'FF');
-                  break;
+                $categoria = "FX53 Simplificado";
+                $docsObrigatorios = array('CPF', 'CR', 'FF');
+                break;
 
                 case 3:
-                  $categoria = "FX53 Premier";
-                  $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR');
-                  break;
+                $categoria = "FX53 Premier";
+                $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR');
+                break;
 
                 case 4:
-                  $categoria = "FX53 Plus";
-                  $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
-                  break;
+                $categoria = "FX53 Plus";
+                $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
+                break;
 
                 default: $categoria = "Focco";
                 $docsObrigatorios = array('CPF');
+                break;
+              }
+
+              switch ($r['origem']) {
+                case 1:
+                $origem =  "Matriz";
+                break;
+                case 2:
+                $origem = "Loja 1";
+                break;
+                default:
+                $origem = "Matriz";
                 break;
               }
 
@@ -125,10 +126,10 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
                 if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
                 $cor = "red-text";
-              } else if ($dif || $r["bloqueado"]) 
-                $cor = "red-text";
+              } else if ($dif || $r["bloqueado"])
+              $cor = "red-text";
 
-              
+
               $sql_query = "SELECT * FROM documentos WHERE tipo = 'PROV' AND clienteId = ". $r['id'];
               $result = mysqli_query($conn, $sql_query);
               $docprov = array();
@@ -136,7 +137,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               if ((sizeof($docprov) > 0) && $dif){
                 $hoje = new DateTime(date('Y-m-d H:i:s'));
                 $validade = new DateTime($docprov[0]);
-                $validade->modify('+1 day');                
+                $validade->modify('+1 day');
                 if ($validade < $hoje){
                   $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
                   if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -154,32 +155,35 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               if (sizeof($docir) > 0){
                 $vigencia = new DateTime(date('Y')."-05-01 00:00:00");
                 $dataIr = new DateTime($docir[0]);
-                if ($dataIr < $vigencia){                  
+                if ($dataIr < $vigencia){
                   $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 2 WHERE id = ". $r['id'];
                   if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
                   $cor = "red-text";
                 }
               }
 
-              if ($r["vip"]) $cor = "amber-text";              
+              if ($r["vip"]) $cor = "amber-text";
 
-              $docprov = 
-                $cor == "red-text" 
-                ? 
-                  '<td><a class="link-acao modal-trigger green-text" href="modal2" data-acao="doc-prov" data-cliente-id="'.$r["id"].'"><i class="material-icons" title="Liberação por documento provisório">lock</i></a></td>' 
-                : 
-                  '<td></td>';
-
-
+              $docprov =
+              $cor == "red-text"
+              ?
+              '<td><a class="link-acao modal-trigger green-text" href="modal2" data-acao="doc-prov" data-cliente-id="'.$r["id"].'"><i class="material-icons" title="Liberação por documento provisório">lock</i></a></td>'
+              :
+              '<td></td>';
 
               echo
               '<tr>
               <td>'.$r["razaoSocial"].'</td>
               <td>'.$r["email"].'</td>
-              <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
-              <td>'.$categoria.'</td>
-              <th>Em desenvolvimento...</th> 
-              <th><i class="material-icons '.$cor.' ">&#xE5CA;</i></th>'
+
+
+
+
+
+              <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).' / ('.substr($r["telFixo"], 0, 2).') '.substr($r["telFixo"], 2, 4).'-'.substr($r["telFixo"], 6).'</td>
+              <td>'.$categoria.' - '.$origem.'</td>
+              <td>Em desenvolvimento...</td>
+              <td><i class="material-icons '.$cor.' ">&#xE5CA;</i></td>'
               .$docprov.
               '<td class="center"><a class="link-acao modal-trigger" href="modal1" data-acao="visualizar" data-cliente-id="'.$r["id"].'" data-href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
               <td class="center"><a class="link-acao modal-trigger" href="modal1" data-acao="alterar" data-cliente-id="'.$r["id"].'" data-href="/dashboard/clientes/alterar?clienteId='.$r["id"].'"><i class="material-icons" title="Editar cliente">&#xE3C9;</i></a></td>
@@ -203,7 +207,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
   <div class="modal-footer">
     <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn">
       <i class="material-icons right">&#xE86C;</i>
-        Confirmar
+      Confirmar
     </a>
 
     <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
@@ -216,23 +220,23 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 <div id="modal2" class="modal">
   <div class="modal-content">
     <h4>Autenticação</h4>
-    <p>Informe as credenciais de administrador para desbloquear o cliente provisóriamente.</p>  
+    <p>Informe as credenciais de administrador para desbloquear o cliente provisóriamente.</p>
     <div class="">
       <label for="login" data-error="Preencha corretamente">Login</label>
-      <input id="login" type="text" class="validate">      
+      <input id="login" type="text" class="validate">
     </div>
-    <div class="">    
+    <div class="">
       <label for="senha">Senha</label>
       <input id="senha" type="password" class="validate">
     </div>
     <div class="section">
       <div id="form-erro" class="center red-text"></div>
-    </div>      
+    </div>
   </div>
   <div class="modal-footer">
     <a id="modal-confirm2" class="modal-action waves-effect waves-light btn">
       <i class="material-icons right">&#xE86C;</i>
-        Confirmar
+      Confirmar
     </a>
 
     <a id="modal-cancel2" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">

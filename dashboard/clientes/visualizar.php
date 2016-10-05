@@ -71,7 +71,7 @@ case 4:
   $docsObrigatorios = array('CPF', 'CR', 'FF', 'IR', 'CA', 'CPS', 'PV');
   break;
 
-default: 
+default:
   $categoria = "Focco";
   $docsObrigatorios = array('CPF');
   break;
@@ -96,7 +96,7 @@ while($row = mysqli_fetch_array($result)) $docprov[] = $row["dataUltimaModificac
 if ((sizeof($docprov) > 0) && $dif){
   $hoje = new DateTime(date('Y-m-d H:i:s'));
   $validade = new DateTime($docprov[0]);
-  $validade->modify('+1 day');                
+  $validade->modify('+1 day');
   if ($validade < $hoje){
     $sql_query = "UPDATE clientes SET bloqueado = 1 WHERE id = ". $r['id'];
     if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -129,7 +129,7 @@ if ((sizeof($docprov) > 0) && $dif){
       <div class="alert error <?php echo $bloqueado ? "" : "hide" ?>">
         <p>Status: Cliente bloqueado.</p>
         <p>
-        <?php 
+        <?php
 
         switch ($motivoBloqueio) {
           case 1:
@@ -144,7 +144,7 @@ if ((sizeof($docprov) > 0) && $dif){
             break;
         }
 
-        ?>          
+        ?>
         </p>
       </div>
 
@@ -208,11 +208,11 @@ if ((sizeof($docprov) > 0) && $dif){
           </tr>
           <tr>
             <td>Passaporte</td>
-            <td><?php echo $passaporte ?></td>
+            <td><?php echo $passaporte == '' ? "Não preenchido" : $passaporte ?></td>
           </tr>
           <tr>
             <td>RG / D.N.I.</td>
-            <td><?php echo $rgDni ?></td>
+            <td><?php echo $rgDni =='' ? "Não preenchido" : $rgDni ?></td>
           </tr>
           <tr>
             <td>Gênero</td>
@@ -273,11 +273,11 @@ if ((sizeof($docprov) > 0) && $dif){
           </tr>
           <tr>
             <td>Contra Senha do Cartão Pré-Pago</td>
-            <td><?php echo $contraSenha ?></td>
+            <td><?php echo $contraSenha == '' ? "Não preenchida" : $contraSenha ?></td>
           </tr>
           <tr>
             <td>Observações</td>
-            <td><?php echo $observacoes ?></td>
+            <td><?php echo $observacoes == '' ? "Não há observacoes" : $observacoes ?></td>
           </tr>
           <tr>
             <td>Ofertas por e-mail</td>
@@ -288,8 +288,8 @@ if ((sizeof($docprov) > 0) && $dif){
             <td><?php echo $infoWhatsapp == '1' ? "Sim" : "Não" ?></td>
           </tr>
           <tr>
-            <td>Limite autorizado (diário)</td>
-            <td><?php echo number_format($limiteOperacionalDia,2,",",".") ?></td>
+            <td>Vip Focco</td>
+            <td><?php echo $vip == '1' ? "Sim" : "Não" ?></td>
           </tr>
           <tr>
             <td>Limite autorizado (anual)</td>
@@ -309,7 +309,7 @@ if ((sizeof($docprov) > 0) && $dif){
               </p>
             </div>
           </div>
-          <?php }; ?>          
+          <?php }; ?>
 
           <?php if (in_array("CPF", $docs)) { ?>
             <div class="col s4">
@@ -330,7 +330,7 @@ if ((sizeof($docprov) > 0) && $dif){
               <?php }; ?>
 
               <div class="col s12">
-              <br>  
+              <br>
               </div>
 
               <?php if (in_array("CR", $docs)) { ?>
@@ -352,7 +352,7 @@ if ((sizeof($docprov) > 0) && $dif){
                   <?php }; ?>
 
                   <div class="col s12">
-                  <br>  
+                  <br>
                   </div>
 
                   <?php if (in_array("IR", $docs)) { ?>
@@ -373,7 +373,7 @@ if ((sizeof($docprov) > 0) && $dif){
                       </div>
                       <?php }; ?>
                       <div class="col s12">
-                      <br>  
+                      <br>
                       </div>
                       <?php if (in_array("CPS", $docs)) { ?>
                         <div class="col s4">
@@ -424,7 +424,7 @@ if ((sizeof($docprov) > 0) && $dif){
                           <tbody>
                             <tr>
                               <td>CEP</td>
-                              <td>'.substr($cep, 0, 5).' - '.substr($cep, 5, 3).'</td>
+                              <td>'.substr($cep, 0, 5).'-'.substr($cep, 5, 3).'</td>
                             </tr>
                             <tr>
                               <td>Logradouro</td>
