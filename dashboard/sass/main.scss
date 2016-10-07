@@ -187,6 +187,9 @@ button.picker__close:focus {
     }
   }
 }
+.disabled{
+  pointer-events: none;
+}
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: $gray;

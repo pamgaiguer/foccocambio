@@ -154,7 +154,7 @@ focco = {
     $('textarea#observacoes').trigger('autoresize');
 
     $('ul.tabs').tabs();
-    $('select').material_select();   
+    $('select').material_select();
 
     $('.datepicker').mask("99/99/9999");
     $('.currency').mask("#.##0,00", {reverse: true});
@@ -225,8 +225,8 @@ focco = {
         url: "/dashboard/clientes/methods/validarCpf.php/",
         data: { cpf, adicionar },
         type: "post",
-        success: function(data){          
-          alert(data);
+        success: function(data){
+          //alert(data);
           if (!JSON.parse(data)){
             $("#input-submit").parent().addClass("disabled");
             $("#validacaoCpf").html("O CPF informado não é válido para cadastro.");
@@ -371,7 +371,7 @@ focco = {
       formData.append( 'ofertasPorEmail', document.getElementsByName('ofertasPorEmail')[0].checked);
       formData.append( 'infoWhatsapp', document.getElementsByName('infoWhatsapp')[0].checked);
       formData.append( 'vip', document.getElementsByName('vip')[0].checked);
-      
+
 
       $("#modal-confirm").click(function(e){
         e.preventDefault();
@@ -483,7 +483,7 @@ focco = {
         $(".div-input-file-ca").fadeOut(300);
         $(".div-input-file-cps").fadeOut(300);
         $(".div-input-file-pv").fadeOut(300);
-      } 
+      }
       else if (categoriaId == 3){
         $("#limiteOperacionalDia").removeAttr("readonly");
         $("#limiteOperacionalAno").removeAttr("readonly");
@@ -612,7 +612,7 @@ focco = {
         data: { "cpf" : search, "adicionar" : false },
         type: "post",
         success: function(data){
-          if (!JSON.parse(data)){            
+          if (!JSON.parse(data)){
             $("#validacaoCpf").html("O CPF informado não é válido.");
             $("#link-adicionar-cliente").addClass("disabled");
           } else {
@@ -632,7 +632,7 @@ focco = {
 
       });
 
-      
+
 
     });
 
@@ -641,9 +641,9 @@ focco = {
       cpf = $("#input-cpfcnpj").val();
       href = $(this).data("href");
 
-      if (cpf != '') { window.location = href + "?cpf=" + cpf; } 
+      if (cpf != '') { window.location = href + "?cpf=" + cpf; }
       else { window.location = href; }
-      
+
     });
 
     $(".link-acao").click(function(e){
@@ -676,13 +676,13 @@ focco = {
                 url: "/dashboard/checarAdmin.php/",
                 type: "post",
                 data: {login, senha},
-                success: function(r){                  
+                success: function(r){
                   switch (JSON.parse(r)) {
                     case "nope":
                       $("#form-erro").html("O usuário não foi autenticado");
                     break;
 
-                    case "ok":                      
+                    case "ok":
                       $.ajax({
                         url: "/dashboard/clientes/methods/desbloquearDocProv.php/",
                         type: "post",
@@ -697,15 +697,15 @@ focco = {
 
                     break;
                   }
-                  
+
                 }
               });
-              
+
             });
             $('#modal2').openModal();
             break;
 
-          default:            
+          default:
             window.location = link;
             break;
       }
@@ -718,7 +718,7 @@ focco = {
   cotacoesFormPost: function(){
 
     $("#form-cotacoes").submit(function(e){
-      e.preventDefault();      
+      e.preventDefault();
       dolar = $("#input-dolar").val();
       euro = $("#input-euro").val();
       libra = $("#input-libra").val();

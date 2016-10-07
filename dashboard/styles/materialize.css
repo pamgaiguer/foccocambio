@@ -6427,6 +6427,9 @@ button.picker__close:focus {
 .cotation-table tbody tr td:first-child {
   font-weight: 700; }
 
+.disabled {
+  pointer-events: none; }
+
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: #707070;
   font-weight: 700; }
