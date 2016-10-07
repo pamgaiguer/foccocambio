@@ -41,7 +41,10 @@ foreach($rows as $r){
   $limiteOperacionalAno = $r["limiteOperacionalAno"];
   $bloqueado = $r["bloqueado"];
   $motivoBloqueio = $r["motivoBloqueio"];
+  $cnh = $r["cnh"];
+  $cnhDataValidade = $r["cnhDataValidade"];
 }
+
 
 
 $sql_query = sprintf("SELECT tipo FROM documentos WHERE clienteId = %s", $_GET['clienteId']);
@@ -207,6 +210,16 @@ if ((sizeof($docprov) > 0) && $dif){
             <td><?php echo date_format(new DateTime ($rgDataExpedicao), 'd/m/Y')  ?></td>
           </tr>
           <tr>
+          <tr>
+            <td>CNH</td>
+            <!-- <td><?php echo $cnh == '' ? "Não preenchido" : $cnh ?></td> -->
+            <td><?php var_dump($cnh); ?></td>
+          </tr>
+          <tr>
+            <td>CNH - Data de Validade</td>
+            <td><?php var_dump($cnhDataValidade); ?></td>
+<!--             <td><?php echo $cnhDataValidade == '' ? "Não preenchido" : $cnhDataValidade ?></td> -->
+          </tr>
             <td>Passaporte</td>
             <td><?php echo $passaporte == '' ? "Não preenchido" : $passaporte ?></td>
           </tr>
