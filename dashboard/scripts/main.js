@@ -219,10 +219,11 @@ focco = {
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
 
       var cpf = $(this).val();
+      var adicionar = true;
 
       $.ajax({
         url: "/dashboard/clientes/methods/validarCpf.php/",
-        data: { cpf },
+        data: { cpf, adicionar },
         type: "post",
         success: function(data){          
           alert(data);
@@ -434,10 +435,11 @@ focco = {
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
 
       var cpf = $(this).val();
+      var adicionar = false;
 
       $.ajax({
         url: "/dashboard/clientes/methods/validarCpf",
-        data: { cpf },
+        data: { cpf, adicionar },
         type: "post",
         success: function(data){
           if (!JSON.parse(data)){
@@ -607,13 +609,15 @@ focco = {
 
       $.ajax({
         url: "/dashboard/clientes/methods/validarCpf",
-        data: { "cpf" : search },
+        data: { "cpf" : search, "adicionar" : false },
         type: "post",
         success: function(data){
           if (!JSON.parse(data)){            
-            $("#validacaoCpf").html("O CPF informado não é válido.");            
+            $("#validacaoCpf").html("O CPF informado não é válido.");
+            $("#link-adicionar-cliente").addClass("disabled");
           } else {
             $("#validacaoCpf").html("");
+            $("#link-adicionar-cliente").removeClass("disabled");
             $.ajax({
               url: "/dashboard/clientes/methods/buscaCliente.php/",
               type: "POST",

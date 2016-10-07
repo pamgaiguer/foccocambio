@@ -38,6 +38,18 @@
 	    break;
 	  }
 
+	  switch ($r['origem']) {
+      case 1:
+      $origem =  "Matriz";
+      break;
+      case 2:
+      $origem = "Loja 1";
+      break;
+      default:
+      $origem = "Matriz";
+      break;
+    }
+
 	  $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
 	  $result = mysqli_query($conn, $sql_query);
 	  $docs = array();
@@ -110,8 +122,8 @@
 		  '<tr>
 		  <td>'.$r["razaoSocial"].'</td>
 		  <td>'.$r["email"].'</td>
-		  <td>'.$r["telCelular"].' / '.$r["telFixo"].'</td>
-		  <td>'.$categoria.'</td>
+		  <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).' / ('.substr($r["telFixo"], 0, 2).') '.substr($r["telFixo"], 2, 4).'-'.substr($r["telFixo"], 6).'</td>
+		  <td>'.$categoria.' - ' .$origem.'</td>
 		  <th>Em desenvolvimento...</th>
 		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
 

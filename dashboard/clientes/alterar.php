@@ -114,7 +114,7 @@ foreach($rows as $r){
               <label for="cnh">C.N.H.</label>
             </div>
             <div class="input-field col s3">
-              <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker" value= <?php echo date_format(new DateTime($cnhDataValidade), 'd/m/Y'); ?>>
+              <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker" value= <?php echo $cnh != "" ? date_format(new DateTime($cnhDataValidade), 'd/m/Y') : ""; ?>>
               <label for="cnhDataValidade">C.N.H. - Data de vencimento</label>
             </div>
             <div class="input-field col s3">

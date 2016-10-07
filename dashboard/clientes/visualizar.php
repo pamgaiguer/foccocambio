@@ -212,13 +212,13 @@ if ((sizeof($docprov) > 0) && $dif){
           <tr>
           <tr>
             <td>CNH</td>
-            <!-- <td><?php echo $cnh == '' ? "Não preenchido" : $cnh ?></td> -->
-            <td><?php var_dump($cnh); ?></td>
+            <td><?php echo $cnh == '' ? "Não preenchido" : $cnh ?></td> 
+            <!--<td><?php //var_dump($cnh); ?></td>-->
           </tr>
           <tr>
             <td>CNH - Data de Validade</td>
-            <td><?php var_dump($cnhDataValidade); ?></td>
-<!--             <td><?php echo $cnhDataValidade == '' ? "Não preenchido" : $cnhDataValidade ?></td> -->
+            <!--<td><?php //var_dump($cnhDataValidade); ?></td>-->
+            <td><?php echo $cnhDataValidade == '' ? "Não preenchido" : date_format(new DateTime($cnhDataValidade), 'd/m/Y') ?></td>
           </tr>
             <td>Passaporte</td>
             <td><?php echo $passaporte == '' ? "Não preenchido" : $passaporte ?></td>

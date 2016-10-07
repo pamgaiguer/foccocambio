@@ -162,6 +162,19 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 }
               }
 
+              
+              if ($r["cnh"] != ""){
+                if (strtotime($r["cnhDataValidade"]) < strtotime(date('Y-m-d h:m:s'))) {
+                  $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 2 WHERE id = ". $r['id'];
+                  if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
+                  $cor = "red-text";
+                }
+              }
+              
+              
+
+
+
               if ($r["vip"]) $cor = "amber-text";
 
               $docprov =

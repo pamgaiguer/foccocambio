@@ -2,9 +2,12 @@
 
 	include "../../core/database.php";
 
-	$cpfpost = preg_replace("/\D+/", "", $_POST['cpf']);
-	
-	echo json_encode(validarCpf($cpfpost) && !cpfExistente($cpfpost));
+	$cpfpost = preg_replace("/\D+/", "", $_POST['cpf']);	
+
+	if (isset($_POST["adicionar"]) && $_POST["adicionar"] == "true")			
+			echo json_encode(validarCpf($cpfpost) && !cpfExistente($cpfpost));	
+	else	
+			echo json_encode(validarCpf($cpfpost));
 
 
 	function cpfExistente($cpf = null){
