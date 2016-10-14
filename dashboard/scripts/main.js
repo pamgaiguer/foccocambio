@@ -618,16 +618,16 @@ focco = {
           } else {
             $("#validacaoCpf").html("");
             $("#link-adicionar-cliente").removeClass("disabled");
-            $.ajax({
-              url: "/dashboard/clientes/methods/buscaCliente.php/",
-              type: "POST",
-              data: { search },
-              success: function(r){
-                $("#table-body-clientes").html(r);
-              }
-            });
-
           }
+
+          $.ajax({
+            url: "/dashboard/clientes/methods/buscaCliente.php/",
+            type: "POST",
+            data: { search },
+            success: function(r){
+              $("#table-body-clientes").html(r);
+            }
+          });
         }
 
       });
