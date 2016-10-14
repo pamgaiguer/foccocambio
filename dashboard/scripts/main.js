@@ -613,7 +613,7 @@ focco = {
         type: "post",
         success: function(data){
           if (!JSON.parse(data)){
-            $("#validacaoCpf").html("O CPF informado não é válido.");
+            $("#validacaoCpf").html("CPF inválido para novo cadastro");
             $("#link-adicionar-cliente").addClass("disabled");
           } else {
             $("#validacaoCpf").html("");
