@@ -609,7 +609,7 @@ focco = {
 
       $.ajax({
         url: "/dashboard/clientes/methods/validarCpf",
-        data: { "cpf" : search, "adicionar" : false },
+        data: { "cpf" : search, "adicionar" : true },
         type: "post",
         success: function(data){
           if (!JSON.parse(data)){

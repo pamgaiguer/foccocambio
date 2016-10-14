@@ -70,6 +70,7 @@ if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 }
 
+/*
 $fileRg = $_FILES["input-file-rg"];
 if (isset($fileRg) && $fileRg["name"] != "" && $fileRg["size"] < 5000000) {
 	//$ext = pathinfo($fileRg['name'], PATHINFO_EXTENSION);
@@ -84,7 +85,7 @@ if (isset($fileRg) && $fileRg["name"] != "" && $fileRg["size"] < 5000000) {
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataEmissao, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s','%s')", $clienteId, 'RG', $target, TratarData($_POST["rgDataExpedicao"]), date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
-}
+}*/
 
 $fileCr = $_FILES["input-file-cr"];
 if (isset($fileCr) && $fileCr["name"] != "" && $fileCr["size"] < 5000000) {

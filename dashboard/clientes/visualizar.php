@@ -328,18 +328,18 @@ if ((sizeof($docprov) > 0) && $dif){
             <div class="col s4">
               <figure>
                 <img class="responsive-img"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg"/>
-                <figcaption>CPF</figcaption>
+                <figcaption>CPF/RG/CNH</figcaption>
               </figure>
             </div>
             <?php }; ?>
 
             <?php if (in_array("RG", $docs)) { ?>
-              <div class="col s4">
+              <!--<div class="col s4">
                 <figure>
                   <img class="responsive-img"  alt="doc-rg" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-rg.jpg" width="350px" height="500px" />
                   <figcaption>RG</figcaption>
                 </figure>
-              </div>
+              </div>-->
               <?php }; ?>
 
               <div class="col s12">

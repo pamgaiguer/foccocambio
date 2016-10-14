@@ -293,7 +293,7 @@ foreach($rows as $r){
             <div class="col s6 div-input-file-cpf">
               <div class="file-field input-field">
                 <div class="btn bg-blue">
-                  <span>C.P.F.</span>
+                  <span>CPF/RG/CNH</span>
                   <input type="file" id="input-file-cpf" name="input-file-cpf">
                 </div>
                 <div class="file-path-wrapper">
@@ -301,7 +301,7 @@ foreach($rows as $r){
                 </div>
               </div>
             </div>
-
+<!--
             <div class="col s6 div-input-file-rg">
               <div class="file-field input-field">
                 <div class="btn bg-blue">
@@ -313,7 +313,7 @@ foreach($rows as $r){
                 </div>
               </div>
             </div>
-
+-->
             <div class="col s6 div-input-file-cr">
               <div class="file-field input-field">
                 <div class="btn bg-blue">

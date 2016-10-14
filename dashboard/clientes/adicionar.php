@@ -252,7 +252,7 @@ include "../includes/header.php";
             <div class="col s6 div-input-file-cpf">
               <div class="file-field input-field">
                 <div class="btn bg-blue">
-                  <span>C.P.F.</span>
+                  <span>CPF/RG/CNH</span>
                   <input type="file" id="input-file-cpf" name="input-file-cpf" accept=".png, .jpg, .jpeg">
                 </div>
                 <div class="file-path-wrapper">
@@ -261,7 +261,7 @@ include "../includes/header.php";
               </div>
             </div>
 
-            <div class="col s6 div-input-file-rg">
+            <!--<div class="col s6 div-input-file-rg">
               <div class="file-field input-field">
                 <div class="btn bg-blue">
                   <span>RG</span>
@@ -271,7 +271,7 @@ include "../includes/header.php";
                   <input class="file-path validate" type="text">
                 </div>
               </div>
-            </div>
+            </div>-->
 
             <div class="col s6 div-input-file-cr">
               <div class="file-field input-field">
