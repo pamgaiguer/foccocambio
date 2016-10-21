@@ -4,13 +4,13 @@
       <div id="slideshow" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <a href="int_moeda.php"><img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block"></a>
+            <a href="compra-venda-moeda.php"><img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block"></a>
           </div>
           <div class="item">
-            <a href="int_travel-insurance.php"><img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block"></a>
+            <a href="seguro-viagem.php"><img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block"></a>
           </div>
           <div class="item">
-            <a href="international_shipping.php"><img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block"></a>
+            <a href="remessa-internacional.php"><img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block"></a>
           </div>
         </div>
         <ol class="carousel-indicators">
@@ -58,19 +58,19 @@
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="media">
               <div class="media-left media-middle">
-                <a href="int_moeda.php">
+                <a href="compra-venda-moeda.php">
                   <img class="media-object" src="images/icon_money_circle.png" />
                 </a>
               </div>
               <div class="media-body">
                 <h4 class="media-heading">Compra e venda de moeda estrangeira</h4>
                 <p>Melhores taxas do mercado, cédulas novas, <br>atendimento diferenciado por uma equipe treinada.</p>
-                <a href="int_moeda.php">Saiba Mais</a>
+                <a href="compra-venda-moeda.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="int_transf_internacional.php">
+                <a href="remessa-internacional.php">
                   <img class="media-object" src="images/icon_transfer_circle.png" />
                 </a>
               </div>
@@ -81,12 +81,12 @@
                   Compra e venda de imóveis / importação e exportação com total segurança.<br>
                   Equipe capacitada com profissionais com ampla experiências no mercado financeiro para indicar a melhor opção.
                 </p>
-                <a href="int_transf_internacional.php">Saiba Mais</a>
+                <a href="remessa-internacional.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="int_western_union.php">
+                <a href="western-union.php">
                   <img class="media-object" src="images/icon_wu_circle.png" />
                 </a>
               </div>
@@ -96,14 +96,14 @@
                   Somos um agente autorizado - Nunca foi tão fácil enviar e receber dinheiro, sem burocracia e de forma rápida e segura.
                   (Manutenção de residente)
                 </p>
-                <a href="int_western_union.php">Saiba Mais</a>
+                <a href="western-union.php">Saiba Mais</a>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="media">
               <div class="media-left media-middle">
-                <a href="int_atend_corporativo.php">
+                <a href="atendimento-corporativo.php">
                   <img class="media-object" src="images/icon_corporativo_circle.png" />
                 </a>
               </div>
@@ -113,12 +113,12 @@
                   Melhores condições e taxas para atender as necessidades de funcionários viajantes, pagamentos internacionais,
                   importação/exportação etc. Sempre com a ajuda de um executivo de contas exclusivo.
                 </p>
-                <a href="int_atend_corporativo.php">Saiba Mais</a>
+                <a href="atendimento-corporativo.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="int_travel-insurance.php">
+                <a href="seguro-viagem.php">
                   <img class="media-object" src="images/icon_seguro_circle.png" />
                 </a>
               </div>
@@ -130,12 +130,12 @@
                   de uma central de atendimento 24h em português, além de outros benefícios e cliente FOCCO tem desconto!<br>
                   Consulte-nos!
                 </p>
-                <a href="int_travel-insurance.php">Saiba Mais</a>
+                <a href="seguro-viagem.php">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="int_cartao_prepago.php">
+                <a href="cartao-travel-money.php">
                   <img class="media-object" src="images/icon_cartao_circle.png" />
                 </a>
               </div>
@@ -144,7 +144,7 @@
                 <p>
                   Seguro, prático, nominal e recarregável, emitido sem custo nenhum e com a abrangência <em>VISA</em> presente em mais de 200 países.
                 </p>
-                <a href="int_cartao_prepago.php">Saiba Mais</a>
+                <a href="cartao-travel-money.php">Saiba Mais</a>
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@
         <div class="row">
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-           <a href="travel-insurance.php">
+           <a href="seguro-viagem.php">
              <h4 class="travel-text text-center">Faça uma <strong>cotação</strong> e descubra quanto custa para <strong>viajar tranquilo</strong></h4>
            </a>
          </div>
