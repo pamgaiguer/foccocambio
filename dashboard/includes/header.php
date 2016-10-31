@@ -1,8 +1,7 @@
-<?php
-
+<?php  
   session_start();
-  error_reporting(E_ERROR);
   
+
   if (!isset($_SESSION['currentUser'])) Header("Location: /dashboard");
   if ($_SESSION['currentUser'] == null) Header("Location: /dashboard");
 
