@@ -1,10 +1,5 @@
 <?php
 
-if(!mail($emaildestinatario, $assunto, $mensagemHTML, $headers ,"-r".$emailsender)){ // Se for Postfix
-    $headers .= "Return-Path: " . $emailsender . $quebra_linha; // Se "não for Postfix"
-    mail($emaildestinatario, $assunto, $mensagemHTML, $headers );
-}
-
 $quebra_linha = "\n";
 $emailsender = "contato@foccocambio.com.br";
 $emaildestinatario = "contato@foccocambio.com.br";
