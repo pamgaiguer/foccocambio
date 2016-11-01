@@ -49,9 +49,6 @@ $libra = number_format($rows[0]['libra'],2,",","");
             </tbody>
           </table>
         </div>
-        <div class="card-action right-align">
-          <a href="cotacoes/">Editar cotações</a>
-        </div>
       </div>
     </div>
   </div>

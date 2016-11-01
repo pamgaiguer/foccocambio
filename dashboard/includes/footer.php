@@ -5,8 +5,9 @@
   <script src="/dashboard/scripts/jquery.elevatezoom.js"></script>
   <script src="/dashboard/scripts/main.js"></script>
   <script>
-
     $(document).ready(function(){
+    $('select').material_select();
+
       focco.sideNav();
       focco.loginFormPost();
     });
