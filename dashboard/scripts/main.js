@@ -631,9 +631,6 @@ focco = {
         }
 
       });
-
-
-
     });
 
     $("#link-adicionar-cliente").click(function(e){
@@ -745,6 +742,51 @@ focco = {
     });
 
 
+  },
+
+  boletagemIndex: function(){
+    $("#form-busca-boletagem").submit(function(e){
+      e.preventDefault();
+
+      search = $("#input-cpfcnpj", $(this)).val();
+
+      $.ajax({
+        url: "/dashboard/boletagem/methods/validarCpf.php/",
+        data: { "cpf" : search, "adicionar" : false },
+        type: "post",
+        success: function(data){
+
+          if (!JSON.parse(data)){
+            $("#validacaoCpf").html("CPF inválido para boletagem");
+            $("#link-adicionar-cliente").addClass("disabled");
+          } else {
+            $("#validacaoCpf").html("");
+            $("#link-adicionar-cliente").removeClass("disabled");
+          }
+
+          $.ajax({
+            url: "/dashboard/boletagem/methods/buscaCliente.php/",
+            type: "POST",
+            data: { search },
+            success: function(r){
+              console.log(r);
+              $("#table-body-boletagem").html(r);
+            }
+          });
+        }
+
+      });
+    });
+
+    $("#link-adicionar-cliente").click(function(e){
+      e.preventDefault();
+      cpf = $("#input-cpfcnpj").val();
+      href = $(this).data("href");
+
+      if (cpf != '') { window.location = href + "?cpf=" + cpf; }
+      else { window.location = href; }
+
+    });
   }
 
 };

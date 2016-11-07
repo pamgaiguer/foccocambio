@@ -53,18 +53,8 @@ include "../core/database.php";
             <th>Boletar</th>
           </tr>
         </thead>
-        <tbody id="table-body-boletagem">
-          <tr>
-            <td>Pamella</td>
-            <td>pamella.gaiguer@gmail.com</td>
-            <td>(11) 9 8483 5858</td>
-            <td>Focco X</td>
-            <td>USD 10.000</td>
-            <td>Sim</td>
-            <td>
-              <a href="adicionar" class="btn-floating waves-effect waves-light"><i class="material-icons">&#xE8B0;</i></a></td>
-            </tr>
-          </tbody>
+        <tbody id="table-body-boletagem">          
+        </tbody>
         </table>
       </div>
     </div>
@@ -74,3 +64,7 @@ include "../core/database.php";
 <?php
 include '../includes/footer.php';
 ?>
+
+<script type="text/javascript">
+  focco.boletagemIndex();
+</script>
