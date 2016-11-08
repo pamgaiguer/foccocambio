@@ -1,8 +1,13 @@
 <?php
 
-  $dbHost = "localhost";
+/*  $dbHost = "localhost";
   $dbUser = "root";
   $dbPwd = "";
+  $dbName = "focco";*/
+
+  $dbHost = "localhost";
+  $dbUser = "root";
+  $dbPwd = "root";
   $dbName = "focco";
 
 /*
