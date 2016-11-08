@@ -1,6 +1,6 @@
 <?php
 
-$quebra_linha = "\n";
+/*$quebra_linha = "\n";
 $emailsender = "contato@foccocambio.com.br";
 $emaildestinatario = "contato@foccocambio.com.br";
 $assunto = "Focco Cambio - Enviado pelo Site";
@@ -29,6 +29,6 @@ $headers .= "Replay-To: ".$emailsender.$quebra_linha;
 
 mail($emaildestinatario, $assunto, $mensagemHTML, $headers, "-r".$emailsender);
 
-print("Mensagem enviada com sucesso!")
+print("Mensagem enviada com sucesso!")*/
 
 ?>

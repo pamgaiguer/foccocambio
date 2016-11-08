@@ -1,6 +1,6 @@
 <?php
 
-if(!mail($emaildestinatario, $assunto, $mensagemHTML, $headers ,"-r".$emailsender)){ // Se for Postfix
+/*if(!mail($emaildestinatario, $assunto, $mensagemHTML, $headers ,"-r".$emailsender)){ // Se for Postfix
     $headers .= "Return-Path: " . $emailsender . $quebra_linha; // Se "não for Postfix"
     mail($emaildestinatario, $assunto, $mensagemHTML, $headers );
 }
@@ -92,6 +92,6 @@ $headers.="Replay-To: ".$emailsender.$quebra_linha;
 
 mail($emaildestinatario, $assunto, $mensagemHTML, $headers, "-r".$emailsender);
 
-print("Mensagem enviada com sucesso!")
+print("Mensagem enviada com sucesso!")*/
 
 ?>
