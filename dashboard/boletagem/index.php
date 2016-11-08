@@ -30,9 +30,8 @@ include "../core/database.php";
           </div>
         </div>
 
-        <a id="link-adicionar-cliente" class="waves-effect waves-light btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i></a>
-        <br><br>
-<p class="right">Esse botão somente aparece caso o cliente não é encontrado na busca</p>
+        <a id="link-adicionar-cliente" class="waves-effect waves-light btn bg-blue right disabled" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i></a>
+        
 
       </div>
 
@@ -66,5 +65,5 @@ include '../includes/footer.php';
 ?>
 
 <script type="text/javascript">
-  focco.boletagemIndex();
+  focco.indexBoletagem();
 </script>

@@ -3,6 +3,19 @@
 include "../includes/header.php";
 include "../core/database.php";
 
+$sql_query = sprintf("SELECT * FROM clientes WHERE id = %s", $_GET['clienteId']);
+$result = mysqli_query($conn, $sql_query);
+
+$rows = array();
+while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+foreach($rows as $r){
+  $id = $r['id'];
+  $categoria = $r['categoria'];
+  $nome = $r['razaoSocial'];
+  $limiteOperacionalAno = $r["limiteOperacionalAno"];  
+}
+
 ?>
 <main>
   <div class="row">
@@ -10,7 +23,7 @@ include "../core/database.php";
       <div class="section"></div>
       <a class="btn waves-effect waves-light bg-blue" href="/dashboard/boletagem/"><i class="material-icons left">&#xE5C4;</i> Voltar para Boletagem</a>
       <br>
-      <p>Iniciando boletagem para cliente [NOMECLIENTE]</p>
+      <p>Iniciando boletagem para cliente <?php echo $nome ?></p>
 
     </div>
   </div>
@@ -19,8 +32,8 @@ include "../core/database.php";
   <div class="row">
     <div class="col s12">
       <div class="input-field col s3">
-        <input placeholder="02/11/2016" id="first_name" type="text" readonly>
-        <label for="first_name">Data (puxar data atual)</label>
+        <input value="<?php echo date_format(new DateTime(),'d/m/Y'); ?>" id="first_name" type="text" readonly>
+        <label for="first_name">Data</label>
       </div>
 
       <div class="input-field col s3">
@@ -44,8 +57,7 @@ include "../core/database.php";
     <div class="col s12">
 
       <div class="input-field col s4">
-        <select>
-          <option value="" disabled selected>Escolha a modalidade</option>
+        <select>          
           <option value="1">Compra</option>
           <option value="2">Venda</option>
         </select>
@@ -53,34 +65,32 @@ include "../core/database.php";
       </div>
 
       <div class="input-field col s4">
-        <select>
-          <option value="" disabled selected>Escolha a operação</option>
+        <select id="select-operacao">          
           <option value="1">Espécie</option>
           <option value="2">Cartão Pré-Pago</option>
-          <option value="3">TransferÇencia internacional</option>
+          <option value="3">Transferência internacional</option>
         </select>
         <label>Tipo de operação</label>
       </div>
 
       <div class="input-field col s4">
-        <select>
-          <option value="" disabled selected>Escolha a moeda</option>
-          <option value="1">USD</option>
-          <option value="2">EUR</option>
-          <option value="3">GBP</option>
-          <option value="4">AUD</option>
-          <option value="5">CAD</option>
-          <option value="6">CHF</option>
-          <option value="7">JPY</option>
-          <option value="8">NZD</option>
-          <option value="9">CLP</option>
-          <option value="10">MXN</option>
-          <option value="11">UYU</option>
-          <option value="12">ZAR</option>
-          <option value="13">ARS</option>
-          <option value="14">CNY</option>
+        <select id="select-moedas" class="browser-default">          
+          <option value="1" data-operacoes="1,2,3">USD</option>
+          <option value="2" data-operacoes="1,2,3">EUR</option>
+          <option value="3" data-operacoes="1,2,3">GBP</option>
+          <option value="4" data-operacoes="1,2,3">AUD</option>
+          <option value="5" data-operacoes="1,2,3">CAD</option>
+          <option value="6" data-operacoes="1">CHF</option>
+          <option value="7" data-operacoes="3">JPY</option>
+          <option value="8" data-operacoes="3">NZD</option>
+          <option value="9" data-operacoes="1">CLP</option>
+          <option value="10" data-operacoes="1">MXN</option>
+          <option value="11" data-operacoes="1">UYU</option>
+          <option value="12" data-operacoes="1">ZAR</option>
+          <option value="13" data-operacoes="2">ARS</option>
+          <option value="14" data-operacoes="1">CNY</option>
         </select>
-        <label>Moedas</label>
+        
       </div>
 
     </div>
@@ -90,13 +100,13 @@ include "../core/database.php";
     <div class="col s12">
 
       <div class="input-field col s3">
-        <input placeholder="Quantidade" id="qtdade" type="text">
+        <input placeholder="Quantidade" id="quantidade" type="text">
         <label for="qtdade">Quantidade</label>
       </div>
 
       <div class="input-field col s3">
-        <input placeholder="Taxa - read only" id="taxa" type="text" readonly>
-        <label for="taxa">Taxa (relacionado com o tipo de operação)</label>
+        <input placeholder="Taxa" id="taxa" type="text">
+        <label for="taxa">Taxa</label>
       </div>
 
       <div class="input-field col s3">
@@ -105,7 +115,8 @@ include "../core/database.php";
       </div>
 
       <div class="input-field col s3">
-        <input placeholder="iof - read only" id="iof" type="text" readonly>
+        <input id="ioftaxa" type="hidden" value="1.1">
+        <input placeholder="IOF" id="iof" type="text">
         <label for="iof">IOF</label>
       </div>
 
@@ -116,17 +127,17 @@ include "../core/database.php";
     <div class="col s12">
 
       <div class="input-field col s4">
-        <input placeholder="swift - campo aberto" id="swift" type="text">
+        <input placeholder="swift" id="swift" type="text">
         <label for="swift">Swift</label>
       </div>
 
       <div class="input-field col s4">
-        <input placeholder="darf - campo aberto" id="darf" type="text">
+        <input placeholder="darf" id="darf" type="text">
         <label for="darf">darf</label>
       </div>
 
       <div class="input-field col s4">
-        <input placeholder="vet - read only" id="vet" type="text">
+        <input placeholder="vet" id="vet" type="text" readonly>
         <label for="vet">vet</label>
       </div>
 
@@ -138,8 +149,8 @@ include "../core/database.php";
     <div class="col s12">
 
       <div class="input-field col s4">
-        <input placeholder="vet Tx - ?" id="vet Tx" type="text">
-        <label for="vet Tx">Swift</label>
+        <input placeholder="vet Tx - ?" id="vettaxa" type="text">
+        <label for="vettaxa">Vet Taxa</label>
       </div>
 
       <div class="input-field col s4">
@@ -160,3 +171,8 @@ include "../core/database.php";
 <?php
 include '../includes/footer.php';
 ?>
+
+
+<script type="text/javascript">
+  focco.adicionarBoletagem();  
+</script>
