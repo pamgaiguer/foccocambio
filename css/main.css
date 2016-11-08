@@ -185,6 +185,27 @@ a:hover, a:focus{
   cursor: pointer;
   outline: none;
 }
+.tel-delivery .media{
+  padding: 0;
+}
+.tel-delivery .media .media-left{
+  padding-right: 0px;
+}
+.tel-delivery .media .media-body{
+  padding-left: 10px;
+}
+.tel-delivery .media .media-body .media-heading{
+  color: #15325C;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 900;
+}
+.tel-delivery .media .media-body .media-text{
+  color: #15325C;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
 
 #slideshow{
   margin-top: -20px;

@@ -103,7 +103,19 @@ $libra = number_format($rows[0]['libra'],2,",","");
           </div>
 
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            delivery
+            <div class="tel-delivery">
+              <div class="media">
+                <div class="media-left">
+                <img class="media-object" src="images/logo_instagram.png">
+                </div>
+                <div class="media-body">
+                  <p class="media-heading">Delivery Focco</p>
+                  <p class="media-text">
+                    <a href="tel:+551150515299">11 5051-5299</a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
