@@ -26,7 +26,7 @@ include "../includes/header.php";
         <div class="row">
           <div class="col s12">
             <div class="spacing"></div>
-            <h5>Dados pessoais</h5>            
+            <h5>Dados pessoais</h5>
           </div>
 
           <input id="tipoPessoa" name="tipoPessoa" type="hidden" value="F"/>
@@ -242,7 +242,7 @@ include "../includes/header.php";
                 <label for="observacoes">Observações</label>
               </div>
             </div>
-          </div>          
+          </div>
 
           <div class="row">
             <div class="col s12">
@@ -489,6 +489,7 @@ include "../includes/header.php";
 
           <div class="col s12">
             <input type="submit" id="input-submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
+            <a href="#" class="waves-effect waves-light btn bg-blue right">Boletar</a>
           </div>
         </div>
       </form>
