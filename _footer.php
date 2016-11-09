@@ -30,7 +30,7 @@
         <ul class="list-unstyled border-blue-right">
           <li><a href="delivery.php">Delivery</a></li>
           <li><a href="produtos-servicos.php">Produtos e Serviços</a></li>
-          <li><a href="remessa-internacional.php">Remessa Internacional</a></li>
+          <li><a href="transferencia-internacional.php">Transferência Internacional</a></li>
           <li><a href="contact.php">Lojas / Contato</a></li>
           <li><a href="seguro-viagem.php">Seguro Viagem</a></li>
         </ul>

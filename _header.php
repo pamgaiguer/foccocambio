@@ -99,14 +99,14 @@ $libra = number_format($rows[0]['libra'],2,",","");
           </div>
 
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <img src="images/logo_topo.png" class="logo-topo img-responsive center-block" alt="Focco Cambio">
+            <a href="/"><img src="images/logo_topo.png" class="logo-topo img-responsive center-block" alt="Focco Cambio"></a>
           </div>
 
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <div class="tel-delivery">
               <div class="media">
                 <div class="media-left">
-                <img class="media-object" src="images/logo_instagram.png">
+                  <img class="media-object" src="images/icon_motorcycle.jpeg">
                 </div>
                 <div class="media-body">
                   <p class="media-heading">Delivery Focco</p>
@@ -148,9 +148,9 @@ $libra = number_format($rows[0]['libra'],2,",","");
               <ul class="nav nav-pills nav-justified">
                 <li><a href="/delivery">Delivery <span class="sr-only">(current)</span></a></li>
                 <li><a href="/produtos-servicos">Produtos e serviços</a></li>
-                <li><a href="/remessa-internacional">Remessa Internacional</a></li>
-                <li><a href="/contact">Lojas / Contato</a></li>
+                <li><a href="/transferencia-internacional">Transferencia Internacional</a></li>
                 <li><a href="/seguro-viagem">Seguro viagem</a></li>
+                <li><a href="/contact">Lojas / Contato</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

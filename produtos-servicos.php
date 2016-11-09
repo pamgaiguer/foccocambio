@@ -28,18 +28,18 @@
 
       <div class="media">
         <div class="media-left media-middle">
-          <a href="remessa-internacional.php">
+          <a href="transferencia-internacional">
             <img class="media-object" src="images/icon_transfer_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
-          <h4 class="media-heading">Remessas Internacionais</h4>
+          <h4 class="media-heading">Transferências Internacionais</h4>
           <p>
             Manutenção de residentes / cursos e congressos / transferências de patrimônio e disponibilidade /
             Compra e venda de imóveis / importação e exportação com total segurança.<br>
             Equipe capacitada com profissionais com ampla experiências no mercado financeiro para indicar a melhor opção.
           </p>
-          <a href="remessa-internacional.php">Saiba Mais</a>
+          <a href="transferencia-internacional">Saiba Mais</a>
         </div>
 
       </div>

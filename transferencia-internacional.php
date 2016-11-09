@@ -7,13 +7,13 @@
 <div class="container blue-text text-center">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <h2 class="text-uppercase">remessas e transferências internacionais</h2>
-      <p class="text-uppercase">
+      <h2 class="text-uppercase">transferências internacionais</h2>
+      <p class="">
         Atraveś da Focco Câmbio e Turismo, o cliente conta com a possibilidade de efetuar ou receber
-        transferências financeiras internacionais devidamente autorizadas e regulamentadas pelo banco
-        central do brasil s.a., com total rapidez, transparência e segurança. <br>
+        transferências financeiras internacionais devidamente autorizadas e regulamentadas pelo Banco
+        Central do Brasil S.A., com total rapidez, transparência e segurança.
         Sempre com um executivo de contas treinado para lhe indicar a melhor
-        opção de remessa
+        opção de transferências
       </p>
 
       <h3><strong>Dentre outros, podemos destacar:</strong></h3>
@@ -46,7 +46,7 @@
       <hr>
       <h4><strong>Transferências Corporativas</strong></h4>
       <p>
-        Remessas, pagamentos e recebimentos internacionais, importação e exportação, etc... Sempre contando com um executivo de contas
+        Transferências, pagamentos e recebimentos internacionais, importação e exportação, etc... Sempre contando com um executivo de contas
         para total suporte em suas operações.
       </p>
       <br>

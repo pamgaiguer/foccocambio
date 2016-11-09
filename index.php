@@ -1,16 +1,23 @@
   <?php include('_header.php'); ?>
+
   <section class="slide">
     <div class="container-fluid">
       <div id="slideshow" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner">
           <div class="item active">
-            <a href="compra-venda-moeda.php"><img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block"></a>
+            <a href="compra-venda-moeda.php">
+              <img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive">
+            </a>
           </div>
           <div class="item">
-            <a href="seguro-viagem.php"><img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block"></a>
+            <a href="seguro-viagem.php">
+              <img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive">
+            </a>
           </div>
           <div class="item">
-            <a href="remessa-internacional.php"><img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block"></a>
+            <a href="transferencia-internacional.php">
+              <img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive">
+            </a>
           </div>
         </div>
         <ol class="carousel-indicators">
@@ -70,18 +77,18 @@
             </div>
             <div class="media">
               <div class="media-left media-middle">
-                <a href="remessa-internacional.php">
+                <a href="transferencia-internacional">
                   <img class="media-object" src="images/icon_transfer_circle.png" />
                 </a>
               </div>
               <div class="media-body">
-                <h4 class="media-heading">Remessas Internacionais</h4>
+                <h4 class="media-heading">Transferências Internacionais</h4>
                 <p>
                   Manutenção de residentes / cursos e congressos / transferências de patrimônio e disponibilidade /
                   Compra e venda de imóveis / importação e exportação com total segurança.<br>
                   Equipe capacitada com profissionais com ampla experiências no mercado financeiro para indicar a melhor opção.
                 </p>
-                <a href="remessa-internacional.php">Saiba Mais</a>
+                <a href="transferencia-internacional">Saiba Mais</a>
               </div>
             </div>
             <div class="media">
@@ -223,22 +230,6 @@
       </div>
     </div>
   </div>
-
-  <a href="remessa-internacional">
-    <div class="modal fade" id="modalRemessa" tabindex="-1" role="dialog" aria-labelledby="modalRemessaLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <img src="images/remessa_focco_modal.jpg" alt="" class="img-responsive">
-          </div>
-          <div class="modal-footer">
-            <a class="btn btn-primary" href="remessa-internacional">Saiba mais</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
 </section>
 
 <?php include '_footer.php';?>
