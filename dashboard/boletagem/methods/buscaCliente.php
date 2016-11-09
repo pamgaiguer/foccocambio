@@ -112,7 +112,7 @@
 
     $boletar = "";
     if ($cor == "green-text")
-      $boletar = '<a class="link-acao btn-floating waves-effect waves-light" data-acao="boletar" data-cliente-id="'.$r["id"].'" href="/dashboard/boletagem/boletar?clienteId='.$r["id"].'" data-href="/dashboard/boletagem/boletar?clienteId='.$r["id"].'"><i class="material-icons" title="Boletar cliente">&#xE8B0;</i></a>';
+      $boletar = '<a class="link-acao btn-floating waves-effect waves-light" data-acao="boletar" data-cliente-id="'.$r["id"].'" href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'" data-href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'"><i class="material-icons" title="Boletar cliente">&#xE8B0;</i></a>';
     
 
 		$ret .=

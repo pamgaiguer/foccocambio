@@ -744,7 +744,7 @@ focco = {
 
   },
 
-  boletagemIndex: function(){
+  indexBoletagem: function(){
     $("#form-busca-boletagem").submit(function(e){
       e.preventDefault();
 
@@ -752,12 +752,12 @@ focco = {
 
       $.ajax({
         url: "/dashboard/boletagem/methods/validarCpf.php/",
-        data: { "cpf" : search, "adicionar" : false },
+        data: { "cpf" : search, "adicionar" : true },
         type: "post",
         success: function(data){
 
           if (!JSON.parse(data)){
-            $("#validacaoCpf").html("CPF inválido para boletagem");
+            //$("#validacaoCpf").html("CPF inválido para boletagem");
             $("#link-adicionar-cliente").addClass("disabled");
           } else {
             $("#validacaoCpf").html("");
@@ -787,6 +787,93 @@ focco = {
       else { window.location = href; }
 
     });
+  },
+
+
+  adicionarBoletagem: function(){
+
+
+    
+
+    $("#select-operacao").change(function(){
+      
+      switch($(this).val()){
+        
+        case "1": $("#ioftaxa").val("1.1");  break;
+        case "2": $("#ioftaxa").val("6.38"); break;
+        case "3": $("#ioftaxa").val("0.38"); break;
+        default: break;
+
+      }
+
+      operacao = $(this).val() + "";
+
+      $("option", "#select-moedas").each(function(){           
+        operacoes = $(this).data("operacoes") + "";
+        
+        if (operacoes.indexOf(operacao) == -1) {
+          $(this).attr("disabled", true);          
+        } else {
+          $(this).removeAttr("disabled");
+        }        
+
+      });
+    });
+
+    toNumber = function(n){      
+      if (n == "") n = 0;
+      n += "";
+      n = n.replace(",", ".");      
+      n = parseFloat(n);
+      if (n === NaN) n = 0;      
+      return parseFloat(n);
+    }
+
+    fromNumber = function(n){
+      n += "";
+      n = n.replace(",", ".");
+      n = parseFloat(n).toFixed(2);      
+      n = n.replace(".", ",");
+      return n;
+    }
+
+    $("#quantidade").blur(function(){      
+      if ($("#taxa").val() > 0.00){
+        $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#taxa").val()) ));
+        $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
+
+      }      
+    });
+
+    $("#taxa").blur(function(){
+      if ($("#quantidade").val() > 0.00){
+        $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) )); 
+        $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
+      }      
+    });
+
+    $("#swift").blur(function(){
+      
+      $("#vet").val(fromNumber( 
+        toNumber($(this).val()) + toNumber($("#iof").val()) + toNumber($("#darf").val())
+      ));
+
+      $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#subtotal").val()) * 100 )+ "%");
+
+
+    });
+
+
+    $("#darf").blur(function(){      
+      $("#vet").val(fromNumber(         
+        toNumber($(this).val()) + toNumber($("#iof").val()) + toNumber($("#swift").val())
+      ));
+
+      $("#vettaxa").val(fromNumber( (toNumber($("#vet").val()) / toNumber($("#subtotal").val())) * 100 ) + "%");
+    });
+
+
+
   }
 
 };
