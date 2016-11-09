@@ -489,7 +489,7 @@ include "../includes/header.php";
 
           <div class="col s12">
             <input type="submit" id="input-submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
-            <a href="#" class="waves-effect waves-light btn bg-blue right">Boletar</a>
+          
           </div>
         </div>
       </form>
@@ -798,6 +798,30 @@ include "../includes/header.php";
     </a>
 
     <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
+      <i class="material-icons right">&#xE5C9;</i>
+      Cancelar
+    </a>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <h4>Cliente cadastrado</h4>
+    <p>Que ação deseja tomar agora?</p>
+  </div>
+  <div class="modal-footer">
+    <a id="modal-confirm2" class="modal-action modal-close waves-effect waves-light btn">
+      <i class="material-icons right">&#xE86C;</i>
+      Boletar
+    </a>
+
+    <a id="modal-confirm3" class="modal-action modal-close waves-effect waves-light btn">
+      <i class="material-icons right">&#xE86C;</i>
+      Adicionar outro cliente
+    </a>
+
+    <a id="modal-cancel2" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
       <i class="material-icons right">&#xE5C9;</i>
       Cancelar
     </a>

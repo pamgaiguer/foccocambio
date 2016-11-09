@@ -32,7 +32,6 @@ $sql_query = sprintf("
 	rgDni,
 	origem,
 	vip,
-	limiteOperacionalDia,
 	limiteOperacionalAno,
 	ondeConheceu,
 	ondeSoube,
@@ -42,13 +41,11 @@ $sql_query = sprintf("
 	cnhDataValidade
 	)
 
-	VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s, %s, '%s', %s, %s, '%s', '%s' )",
+	VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s, '%s', %s, %s, '%s', '%s' )",
 
-	$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], TratarFloat($_POST["limiteOperacionalDia"]), TratarFloat($_POST["limiteOperacionalAno"]), $_POST["ondeConheceuFocco"], $_POST["ondeConheceuFoccoDesc"], $_POST["bloqueado"], $_POST["motivoStatusBlocked"], $_POST["cnh"], TratarData($_POST["cnhDataValidade"])
-	);
-
+	$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], TratarFloat($_POST["limiteOperacionalAno"]), $_POST["ondeConheceuFocco"], $_POST["ondeConheceuFoccoDesc"], $_POST["bloqueado"], $_POST["motivoStatusBlocked"], $_POST["cnh"], TratarData($_POST["cnhDataValidade"])
+	);	
 	
-	echo $sql_query;
 
 if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
 $clienteId = mysqli_insert_id($conn);
@@ -222,5 +219,8 @@ $sql_query = sprintf("
 	$clienteId, 2, $_POST["cep-entrega"], $_POST["logradouro-entrega"], $_POST["numero-entrega"], $_POST["complemento-entrega"], $_POST["bairro-entrega"], $_POST["cidade-entrega"], $_POST["UF-entrega"], $_POST["pais-entrega"]
 	);
 if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
-		echo json_encode("Ok, cadastrado!");
+		
+
+
+		echo json_encode($clienteId);
 ?>

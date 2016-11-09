@@ -61,7 +61,12 @@
             </li>
           </ul>
         </li>
-        <li><a href="/dashboard/cotacoes"><i class="material-icons left">&#xE227;</i> Cotações</a></li>
+        
+        <?php if ($_SESSION['currentUser']['tipo'] < 3)
+          echo
+          '<li><a href="/dashboard/cotacoes"><i class="material-icons left">&#xE227;</i> Cotações</a></li>'
+        ?>
+
         <li><a href="/dashboard/boletagem"><i class="material-icons left">&#xE922;</i> Boletagem</a></li>
       </ul>
     </nav>

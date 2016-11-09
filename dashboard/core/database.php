@@ -7,7 +7,7 @@
 
   $dbHost = "localhost";
   $dbUser = "root";
-  $dbPwd = "root";
+  $dbPwd = "";
   $dbName = "focco";
 
 /*

@@ -381,9 +381,39 @@ focco = {
           type: 'POST',
           data: formData,
           async: false,
-          success: function (data) {
-                //alert(data);
-                window.location = "/dashboard/clientes/";
+          success: function (clienteId) {
+                console.log(clienteId);
+
+                if (clienteId < 1) window.location = "/dashboard/clientes/";
+                
+                $('#modal2').openModal();
+
+                $("#modal-confirm2").click(function(e){
+                  e.preventDefault();
+
+                  $.ajax({
+                    url:"/dashboard/boletagem/methods/validarCliente.php/",
+                    type: "post",
+                    data: {clienteId},
+                    success: function(r){
+                      if (JSON.parse(r)) {
+                        window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
+                      }
+                      else {
+                        window.location = "/dashboard/clientes/";
+                      }
+                    }
+
+                  });
+                  
+                });
+
+                $("#modal-confirm3").click(function(e){
+                  e.preventDefault();
+                  window.location = "/dashboard/clientes/adicionar";                  
+                });
+
+
               },
               cache: false,
               contentType: false,
@@ -394,6 +424,10 @@ focco = {
       });
 
       $('#modal1').openModal();
+
+
+
+
 
     });
 

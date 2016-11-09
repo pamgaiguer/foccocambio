@@ -3,7 +3,7 @@
 	include "../../core/database.php";
 	include "../../core/functions.php";
 
-	$sql_query = "SELECT * FROM clientes WHERE ativo = 1 and cpfCnpj like '".SomenteNumeros($_POST["search"])."%' ORDER BY razaoSocial;";
+	$sql_query = "SELECT * FROM clientes WHERE ativo = 1 and id = ".$_POST["clienteId"];
 	$result = mysqli_query($conn, $sql_query);
 
 	$rows = array();
@@ -117,34 +117,8 @@
     }
 
     if ($r["vip"]) $cor = "amber-text";     
+}
 
-    $boletar = "";
-    if ($cor == "green-text")
-      $boletar = '<a class="link-acao btn-floating waves-effect waves-light" data-acao="boletar" data-cliente-id="'.$r["id"].'" href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'" data-href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'"><i class="material-icons" title="Boletar cliente">&#xE8B0;</i></a>';
-    
+  echo json_encode($cor == "green-text");
 
-		$ret .=
-		  '<tr>
-		  <td>'.$r["razaoSocial"].'</td>
-		  <td>'.$r["email"].'</td>
-		  <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).' / ('.substr($r["telFixo"], 0, 2).') '.substr($r["telFixo"], 2, 4).'-'.substr($r["telFixo"], 6).'</td>
-		  <td>'.$categoria.' - ' .$origem.'</td>
-		  <th>10 conto...</th>
-		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
-		  
-
-		  <td class="center">'.$boletar.'</td>
-		  </tr>
-
-		  <script>
-			  focco.indexBoletagem();
-			</script>
-
-		  ';
-	}
-
-	echo $ret;
 ?>
-
-
-
