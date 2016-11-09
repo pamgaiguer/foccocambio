@@ -60,7 +60,7 @@ if (isset($fileCpf) && $fileCpf["name"] != "" && $fileCpf["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file( $fileCpf['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CPF', $target, date('Y-m-d H:i:s'));
@@ -78,7 +78,7 @@ if (isset($fileRg) && $fileRg["name"] != "" && $fileRg["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileRg['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataEmissao, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s','%s')", $clienteId, 'RG', $target, TratarData($_POST["rgDataExpedicao"]), date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -94,7 +94,7 @@ if (isset($fileCr) && $fileCr["name"] != "" && $fileCr["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileCr['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CR', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -110,7 +110,7 @@ if (isset($fileFf) && $fileFf["name"] != "" && $fileFf["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileFf['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'FF', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -126,7 +126,7 @@ if (isset($fileIr) && $fileIr["name"] != "" && $fileIr["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileIr['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'IR', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -142,7 +142,7 @@ if (isset($fileCa) && $fileCa["name"] != "" && $fileCa["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileCa['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CA', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -158,7 +158,7 @@ if (isset($fileCps) && $fileCps["name"] != "" && $fileCps["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($fileCps['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'CPS', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -174,7 +174,7 @@ if (isset($filePv) && $filePv["name"] != "" && $filePv["size"] < 5000000) {
 	}
 	$target = $_SERVER['DOCUMENT_ROOT'].'/dashboard/clientes/uploads/'.SomenteNumeros($_POST["cpfCnpj"]).'/' .$newname;
 	move_uploaded_file($filePv['tmp_name'], $target);
-	imagejpeg($target,$target, 75);
+	
 
 	$sql_query = sprintf("INSERT into documentos(clienteId, tipo, arquivo, dataUltimaModificacao) VALUES ( %s,'%s','%s','%s')", $clienteId, 'PV', $target, date('Y-m-d H:i:s'));
 	if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
