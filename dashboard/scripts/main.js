@@ -4,7 +4,7 @@ focco = {
     $('.button-collapse').sideNav({
             menuWidth: 240, // Default is 240
             edge: 'left' // Choose the horizontal origin
-        });
+          });
   },
 
 
@@ -62,16 +62,16 @@ focco = {
     .mask("(99) 99999-9999")
     .on("change", function() {
 
-        var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+      var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
 
-        if( last.length == 3 ) {
-            var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
-            var lastfour = move + last;
+      if( last.length == 3 ) {
+        var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+        var lastfour = move + last;
             var first = $(this).val().substr( 0, 9 ); // Change 9 to 8 if you prefer mask without space: (99)9999?9-9999
 
             $(this).val( first + '-' + lastfour );
-        }
-    })
+          }
+        })
     .change();
 
 
@@ -109,16 +109,16 @@ focco = {
     .mask("(99) 99999-9999")
     .on("change", function() {
 
-        var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+      var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
 
-        if( last.length == 3 ) {
-            var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
-            var lastfour = move + last;
+      if( last.length == 3 ) {
+        var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+        var lastfour = move + last;
             var first = $(this).val().substr( 0, 9 ); // Change 9 to 8 if you prefer mask without space: (99)9999?9-9999
 
             $(this).val( first + '-' + lastfour );
-        }
-    })
+          }
+        })
     .change();
 
 
@@ -203,14 +203,14 @@ focco = {
     });
 
     $("#ondeConheceuFocco").change(function(){
-        if($(this).val()== 4){
-          $(".ondeSoubeFocco").fadeIn(300);
-          $("#ondeConheceuFoccoDesc").attr("required", "required");
-        }
-        else {
-          $(".ondeSoubeFocco").fadeOut(300);
-          $("#ondeConheceuFoccoDesc").removeAttr();
-        }
+      if($(this).val()== 4){
+        $(".ondeSoubeFocco").fadeIn(300);
+        $("#ondeConheceuFoccoDesc").attr("required", "required");
+      }
+      else {
+        $(".ondeSoubeFocco").fadeOut(300);
+        $("#ondeConheceuFoccoDesc").removeAttr();
+      }
     });
 
     $("#telFixo").mask("(99) 9999-9999");
@@ -377,19 +377,19 @@ focco = {
         e.preventDefault();
 
         $.ajax({
-            url: "/dashboard/clientes/adicionarPost.php/",
-            type: 'POST',
-            data: formData,
-            async: false,
-            success: function (data) {
+          url: "/dashboard/clientes/adicionarPost.php/",
+          type: 'POST',
+          data: formData,
+          async: false,
+          success: function (data) {
                 //alert(data);
                 window.location = "/dashboard/clientes/";
-            },
-            cache: false,
-            contentType: false,
-            processData: false
+              },
+              cache: false,
+              contentType: false,
+              processData: false
 
-        });
+            });
 
       });
 
@@ -578,17 +578,17 @@ focco = {
         e.preventDefault();
 
         $.ajax({
-            url: "/dashboard/clientes/alterarPost.php/",
-            type: 'POST',
-            data: formData,
-            async: false,
-            success: function (data) {
-                console.log(data);
-                window.location = "/dashboard/clientes/";
-            },
-            cache: false,
-            contentType: false,
-            processData: false
+          url: "/dashboard/clientes/alterarPost.php/",
+          type: 'POST',
+          data: formData,
+          async: false,
+          success: function (data) {
+            console.log(data);
+            window.location = "/dashboard/clientes/";
+          },
+          cache: false,
+          contentType: false,
+          processData: false
         });
 
       });
@@ -651,60 +651,60 @@ focco = {
       link = $(this).data("href");
 
       switch(acao) {
-          case "excluir":
+        case "excluir":
 
-            $("#modal-confirm").click(function(e){
-              e.preventDefault();
-              window.location = link;
-            });
+        $("#modal-confirm").click(function(e){
+          e.preventDefault();
+          window.location = link;
+        });
 
-            $('#modal1').openModal();
-            break;
+        $('#modal1').openModal();
+        break;
 
-          case "doc-prov":
-            $("#modal-confirm2").click(function(e){
-              e.preventDefault();
-
-
-              login = $("input#login").val();
-              senha = $("input#senha").val();
-
-              $.ajax({
-                url: "/dashboard/checarAdmin.php/",
-                type: "post",
-                data: {login, senha},
-                success: function(r){
-                  switch (JSON.parse(r)) {
-                    case "nope":
-                      $("#form-erro").html("O usuário não foi autenticado");
-                    break;
-
-                    case "ok":
-                      $.ajax({
-                        url: "/dashboard/clientes/methods/desbloquearDocProv.php/",
-                        type: "post",
-                        data: {clienteId},
-                        success: function(r){
-                          if (JSON.parse(r) == "ok"){
-                            window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId;
-                          }
-                        }
-                      });
+        case "doc-prov":
+        $("#modal-confirm2").click(function(e){
+          e.preventDefault();
 
 
-                    break;
+          login = $("input#login").val();
+          senha = $("input#senha").val();
+
+          $.ajax({
+            url: "/dashboard/checarAdmin.php/",
+            type: "post",
+            data: {login, senha},
+            success: function(r){
+              switch (JSON.parse(r)) {
+                case "nope":
+                $("#form-erro").html("O usuário não foi autenticado");
+                break;
+
+                case "ok":
+                $.ajax({
+                  url: "/dashboard/clientes/methods/desbloquearDocProv.php/",
+                  type: "post",
+                  data: {clienteId},
+                  success: function(r){
+                    if (JSON.parse(r) == "ok"){
+                      window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId;
+                    }
                   }
+                });
 
-                }
-              });
 
-            });
-            $('#modal2').openModal();
-            break;
+                break;
+              }
 
-          default:
-            window.location = link;
-            break;
+            }
+          });
+
+        });
+        $('#modal2').openModal();
+        break;
+
+        default:
+        window.location = link;
+        break;
       }
 
 
@@ -792,13 +792,23 @@ focco = {
 
   adicionarBoletagem: function(){
 
+    $("#select-caixa").change(function(){
+      switch($(this).val()){
 
-    
+        case "1": $("#boletagemFoccoFoccoX").show(); $("#boletagemFX53").hide();
+        break;
+        case "2": $("#boletagemFoccoFoccoX").show(); $("#boletagemFX53").hide();
+        break;
+        case "3": $("#boletagemFX53").show(); $("#boletagemFoccoFoccoX").hide();
+        break;
+        default: break;
+      }
+    });
 
     $("#select-operacao").change(function(){
-      
+
       switch($(this).val()){
-        
+
         case "1": $("#ioftaxa").val("1.1");  break;
         case "2": $("#ioftaxa").val("6.38"); break;
         case "3": $("#ioftaxa").val("0.38"); break;
@@ -808,55 +818,55 @@ focco = {
 
       operacao = $(this).val() + "";
 
-      $("option", "#select-moedas").each(function(){           
+      $("option", "#select-moedas").each(function(){
         operacoes = $(this).data("operacoes") + "";
-        
+
         if (operacoes.indexOf(operacao) == -1) {
-          $(this).attr("disabled", true);          
+          $(this).attr("disabled", true);
         } else {
           $(this).removeAttr("disabled");
-        }        
+        }
 
       });
     });
 
-    toNumber = function(n){      
+    toNumber = function(n){
       if (n == "") n = 0;
       n += "";
-      n = n.replace(",", ".");      
+      n = n.replace(",", ".");
       n = parseFloat(n);
-      if (n === NaN) n = 0;      
+      if (n === NaN) n = 0;
       return parseFloat(n);
     }
 
     fromNumber = function(n){
       n += "";
       n = n.replace(",", ".");
-      n = parseFloat(n).toFixed(2);      
+      n = parseFloat(n).toFixed(2);
       n = n.replace(".", ",");
       return n;
     }
 
-    $("#quantidade").blur(function(){      
+    $("#quantidade").blur(function(){
       if ($("#taxa").val() > 0.00){
         $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#taxa").val()) ));
         $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
 
-      }      
+      }
     });
 
     $("#taxa").blur(function(){
       if ($("#quantidade").val() > 0.00){
-        $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) )); 
+        $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) ));
         $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
-      }      
+      }
     });
 
     $("#swift").blur(function(){
-      
-      $("#vet").val(fromNumber( 
+
+      $("#vet").val(fromNumber(
         toNumber($(this).val()) + toNumber($("#iof").val()) + toNumber($("#darf").val())
-      ));
+        ));
 
       $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#subtotal").val()) * 100 )+ "%");
 
@@ -864,10 +874,10 @@ focco = {
     });
 
 
-    $("#darf").blur(function(){      
-      $("#vet").val(fromNumber(         
+    $("#darf").blur(function(){
+      $("#vet").val(fromNumber(
         toNumber($(this).val()) + toNumber($("#iof").val()) + toNumber($("#swift").val())
-      ));
+        ));
 
       $("#vettaxa").val(fromNumber( (toNumber($("#vet").val()) / toNumber($("#subtotal").val())) * 100 ) + "%");
     });

@@ -164,7 +164,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
             <h3 class="text-uppercase">Regras de fechamento e delivery</h3>
           </div>
           <div class="modal-body">
-            <h3>Para fechamento</h3>
+            <h3><img src="" alt="" class="img-responsive center-block">Para fechamento</h3>
             <ul>
               <li>
                 <strong>As taxas informadas em nosso site ou em qualquer outra plataforma</strong> de consulta estão sujeitas a variação cambial, e só serão firmadas após a confirmação de nossa equipe de vendas.

@@ -6,17 +6,17 @@
         <div class="carousel-inner">
           <div class="item active">
             <a href="compra-venda-moeda.php">
-              <img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive">
+              <img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block">
             </a>
           </div>
           <div class="item">
             <a href="seguro-viagem.php">
-              <img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive">
+              <img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block">
             </a>
           </div>
           <div class="item">
             <a href="transferencia-internacional.php">
-              <img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive">
+              <img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block">
             </a>
           </div>
         </div>
