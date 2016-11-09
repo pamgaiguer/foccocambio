@@ -133,7 +133,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
           </div>
 
         </div>
-
+<div class="spacing"></div>
         <nav class="navbar">
           <div class="container">
             <div class="navbar-header">
