@@ -106,7 +106,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
             <div class="tel-delivery">
               <div class="media">
                 <div class="media-left">
-                  <img class="media-object" src="images/icon_motorcycle.jpeg">
+                  <img class="media-object" src="images/icon_motorcycle.png">
                 </div>
                 <div class="media-body">
                   <p class="media-heading">Delivery Focco</p>
@@ -161,7 +161,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
            <div class="modal-header">
-            <h3 class="text-uppercase">Regras de fechamento e delivery</h3>
+            <h3 class="text-uppercase"><img src="images/icon-carimbo.png" alt=""> Regras de fechamento e delivery</h3>
           </div>
           <div class="modal-body">
             <h3><img src="" alt="" class="img-responsive center-block">Para fechamento</h3>

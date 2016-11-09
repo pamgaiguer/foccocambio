@@ -31,21 +31,6 @@
 
   <section class="delivery">
     <div class="bg-delivery">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-10 col-sm-8 col-md-12 col-lg-12">
-            <div class="delivery-text">
-              <span>*Frete Grátis</span>
-              <h3><strong>Delivery Focco</strong></h3>
-              <h3><strong><a href="tel:+551150515299">11 5051 5299</a></strong></h3>
-              <p>Seu dinheiro de forma prática e segura <br> e o melhor <strong>*sem custo para entrega.</strong></p>
-              <p><small>*Consulte regiões atendidas. Entregas grátis <br>para valores equivalentes a U$500,00.</small></p>
-            </div>
-          </div>
-          <div class="col-xs-2 col-sm-4 col-md-12 col-lg-12">
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
