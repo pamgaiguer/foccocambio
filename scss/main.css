@@ -1,0 +1,563 @@
+body{
+  font-family: 'Avenir', 'Arial', 'Calibri', sans-serif;
+  padding-top: 170px;
+  overflow-x: hidden;
+  font-style: normal !important;
+}
+header {
+  text-transform: uppercase;
+  box-shadow: 0px -5px 30px #313131;
+  background: white;
+  height: 191px;
+}
+a {
+  color: #15325C;
+}
+a:hover, a:focus{
+  outline: none;
+  text-decoration: none;
+  color: #12315D;
+}
+.spacing{
+  padding-top: 10px;
+}
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.blue-text{
+  color: #15325c;
+}
+.yellow-text{
+  color: #FCD900;
+}
+.blue-line{
+  background-color: #15325c;
+  text-indent: -9999px;
+  height: 20px;
+}
+.gold-line{
+  background-color: #F4D400;
+  text-indent: -9999px;
+  height: 5px;
+}
+.navbar{
+  min-height: 0;
+  height: 41px;
+}
+.navbar-toggle {
+  border-color: #ddd;
+  margin-top: 0;
+}
+.navbar-toggle:hover {
+  background-color: #ddd;
+}
+.navbar-toggle .icon-bar+.icon-bar {
+  margin-top: 4px;
+}
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.nav-pills>li>a {
+  border-radius: 0px;
+  font-weight: bolder;
+  font-style: normal;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #fff;
+  background-color: #15325c;
+  font-weight: bolder;
+}
+.nav>li>a {
+  padding: 10px 10px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  color: white;
+  background-color: #15325C;
+}
+.modal .modal-content{
+  border-radius: 0;
+  color: #7B7B7B;
+}
+.modal .modal-content .modal-header h3{
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+  color: #15325C;
+  font-weight: 900;
+  padding: 10px 20px;
+}
+.modal .modal-content .modal-body h3{
+  color: #15325C;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.modal .modal-content .modal-body ul li strong{
+  color: #313131;
+}
+.modal .modal-footer{
+  background: #002D5E;
+}
+.modal .modal-footer p{
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.link-img-top{
+  margin-top: -5px;
+}
+.link-img-top li{
+  width: 48px;
+  height: 23px;
+  margin-left: 5px;
+  text-align: center;
+}
+.logo-topo{
+  margin-top: 15px;
+  display: inline-block;
+}
+.cotation-table{
+  width: 170px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #12315D;
+  color: white;
+}
+.cotation-table .cotation-title{
+  background-color: #0B1D38;
+  color: #488BEA;
+  padding: 4px 8px;
+  font-weight: 700;
+  font-size: 12px;
+  margin: 0;
+}
+.cotation-table .table{
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.cotation-table .table > tbody > tr{
+  border-top:  none;
+  border-bottom:  1px solid #ccc;
+}
+.cotation-table .table > tbody > tr:last-child{
+  border-bottom:  none;
+}
+.cotation-table .table > tbody > tr > td{
+  padding:  3px 8px;
+}
+.cotation-table .table .cotation-value .coinName{
+  letter-spacing: 0.5px;
+}
+.cotation-table .table .cotation-value .coinValue{
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
+.cotation-table .table .cotation-value .coinValue .currency{
+  font-size: 10px;
+  font-weight: 400;
+}
+.cotation-warning-iof{
+  font-size: 10px;
+  font-weight: 500;
+  color: #7B7B7B;
+  text-align: center;
+  margin: 0;
+}
+.cotation-info a{
+  color: #7B7B7B;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: initial;
+  line-height: 1;
+}
+.cotation-info a:hover, a:focus{
+  color: #7B7B7B;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+.tel-delivery .media{
+  padding: 0;
+  margin-top: 15px;
+}
+.tel-delivery .media .media-left{
+  padding-right: 0px;
+}
+.tel-delivery .media .media-body{
+  padding-left: 10px;
+}
+.tel-delivery .media .media-body .media-heading{
+  color: #15325C;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 900;
+}
+.tel-delivery .media .media-body .media-text{
+  color: #15325C;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+#slideshow{
+  position: relative;
+}
+.carousel-indicators{
+  position: relative;
+  z-index: 5;
+}
+.carousel-control, .carousel-control:hover, .carousel-control:focus {
+  color: #15325c;
+}
+.carousel-control, .carousel-indicators li{
+  z-index: 1;
+}
+.delivery{
+  margin-top: -30px;
+}
+.bg-delivery{
+  background: url(../images/bg_delivery.jpg) no-repeat top center;
+  background-size: contain;
+  min-height: 675px;
+}
+.delivery-text{
+  padding-top: 50px;
+  text-transform: uppercase;
+}
+.delivery-text p, .delivery-text span{
+  color: #525252;
+  font-size: 24px;
+}
+.delivery-text p small{
+  text-transform: none;
+  font-size: 16px;
+}
+.delivery-text h3{
+  color: #15325C;
+  font-size: 28px;
+}
+.bg-products-services{
+  background: url(../images/bg-products-services.jpg) no-repeat top center;
+  min-height: 988px;
+}
+.products-services .products-text h1{
+  color: #15325c;
+}
+.products-text p, .products-text h3{
+  text-transform: uppercase;
+}
+.products-text p{
+  padding: 20px 0;
+  color: #525252;
+  font-size: 18px;
+}
+.products-text h3{
+  color: #15325c;
+  padding-bottom: 50px;
+}
+.media{
+  padding: 25px 0;
+}
+.media .media-body .media-heading, .media .media-body a{
+  text-transform: uppercase;
+  color: #15325c;
+  font-weight: bold;
+}
+.bg-travel-insurance{
+  background: url(../images/bg-travel-insurance.jpg) no-repeat top center;
+  min-height: 905px;
+}
+.travel-text {
+  background-color: #093879;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px 25px;
+  vertical-align: middle;
+  margin-top: 250px;
+}
+.bg-contact-us{
+  background: white;
+  min-height: 600px;
+}
+.contact-text h1{
+  color: #15325c;
+  font-weight: bold;
+}
+.contact-text h3{
+  color: #15325c;
+}
+.contact-text p{
+  color: #525252;
+  font-size: 16px;
+}
+.contact .row:nth-child(2){
+  margin: 25px 0;
+}
+.contact h2{
+  font-weight: bold;
+}
+.contact-table{
+  margin-left: -30px;
+  border-right: 2px solid #15325C;
+}
+.last-table{
+  border-right: none;
+}
+
+.contact-table .thumbnail, .thumbnail{
+  border: none;
+  background-color: transparent;
+}
+.contact-table .thumbnail h3, .contact-table .thumbnail p{
+  color: #15325C;
+}
+
+#formulario input[type='text'],
+#formulario input[type='email'],
+#formulario input[type='tel'],
+#formulario input[type='checkbox'],
+#formulario textarea,
+#formulario select{
+  border: 1px solid #15325c;
+}
+/*input[type^='text']::-webkit-input-placeholder, input[type^='email']::-webkit-input-placeholder{ color: #15325C; }
+input[type^='tel']::-webkit-input-placeholder{color: #15325C;}*/
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #15325C !important;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color:#15325C !important;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color:#15325C !important;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color:#15325C !important;
+}
+textarea{
+  resize: none;
+}
+.btn-primary{
+  background-color: #15325C;
+  border-color: #15325C;
+}
+footer{
+  background-color: #EBEAED;
+  padding: 15px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.border-blue-right{
+  border-right: 1px solid #15325C;
+}
+.links-footer li a {
+  font-size: 18px;
+}
+.img-footer{
+  width: 45%;
+}
+
+/*Sessão Delivery*/
+.delivery-int {
+  color: #15325C;
+}
+
+/*sessão interna - transferencias internacionais*/
+hr {
+  border-top: 1px solid #15325C;
+}
+.box-transf{
+  background-color: #252A5D;
+  color: white;
+  border-radius: 6px;
+  width: 685px;
+  height: 200px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.box-transf p{
+  padding: 15px 0;
+}
+.box-transf a, .box-transf a:hover, .box-transf a:link, .box-transf a:visited{
+  color: white;
+}
+/*interna - cartão pré-pago*/
+.panel{
+  background-color: rgba(021,050, 092, .8);  /* 15325C */
+
+}
+.panel-default{
+  border-color: #14325C;
+}
+.panel-default>.panel-heading{
+  background-color: rgba(021,050, 092, .5);  /* 15325C */
+  border-color: #14325C;
+}
+.panel-default>.panel-heading a{
+  color: #FCD900;
+}
+.panel-body p, .panel-body ul li {
+  color: white;
+}
+.panel-body p small{
+  color: #F9F9F9;
+}
+.panel-body a{
+  color: #FCD900;
+}
+
+/*interna - western union*/
+.boxWU a:hover, .boxWU a:active, .boxWU a:focus{
+  background-color: #14325C;
+}
+.western-union .row:last-child{
+  margin: 25px 0;
+}
+/*seguro viagem*/
+.travel-insurance-int{
+  margin: 25px 0;
+}
+.travel-insurance-int p strong{
+  font-size: 20px;
+}
+.travel-insurance-int h5 strong{
+  font-size: 14px;
+}
+.travel-insurance-int p{
+  line-height: 30px;
+}
+
+/*Atendimento corporativo*/
+.atend-corp p{
+  line-height: 35px;
+}
+.atend-corp h2{
+  margin-bottom: 20px;
+}
+.atend-corp p strong{
+  font-size: 20px;
+}
+.atend-corp .row:last-child{
+  margin: 25px 0;
+}
+
+@media (min-width: 1px) and (max-width: 767px){
+  body{
+    padding-top: 220px;
+  }
+  header {
+    text-transform: uppercase;
+    box-shadow: 0px -5px 30px #313131;
+    background: white;
+    height: 149px;
+  }
+  .navbar-fixed-top{
+    height: 195px;
+  }
+  .nav {
+    background-color: rgba(255,255,255,0.9);
+  }
+  .navbar-toggle {
+    margin-top: 0px;
+  }
+  .top-phone{
+    text-align: center;
+  }
+  p.link-face a{
+    text-align: center;
+  }
+  .bg-products-services{
+    background-size: cover;
+  }
+  .bg-travel-insurance{
+    background-size: cover;
+  }
+  .products-services .products-text{
+    text-align: center;
+  }
+  .contact-us .contact-text{
+    text-align: center;
+  }
+  .contact-table{
+    border-right: none;
+  }
+  .delivery-text p, .delivery-text span{
+    color: #525252;
+  }
+  .box-transf{
+    width: 320px;
+  }
+  footer{
+    text-align: center;
+  }
+}
+
+/*ficha cadastro online*/
+.form-control:focus {
+  border-color: #15325C;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(21,50,92,.75);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(21,50,92,.75);
+}
+@media (min-width: 1px) and (max-width: 766px){
+  .logo-topo{
+    width: 180px;
+    margin-top: -20px;
+  }
+  .navbar-toggle {
+    margin-top: -135px;
+  }
+  .navbar-collapse {
+    margin-top:  -12px;
+  }
+  .cotation-table ul li{
+    display: inline;
+  }
+  .cotation-table .cotation-title{
+    font-size: 9px;
+  }
+  .cotation-table .cotation-value{
+    font-size: 11px;
+  }
+}
+
+
+@media (min-width: 767px) and (max-width: 991px){
+  .bg-products-services{
+    background: url(../images/bg-products-services.jpg) no-repeat top center;
+    min-height: 988px;
+    background-size: cover;
+  }
+  .bg-travel-insurance{
+    background: url(../images/bg-travel-insurance.jpg) no-repeat top center;
+    min-height: 905px;
+    background-size: contain;
+  }
+  .contact-table{
+    border-right: none;
+  }
+  .cotation-table {
+    margin-top: -10px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .table-responsive {
+    border: none;
+  }
+}

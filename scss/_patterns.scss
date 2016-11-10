@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 400;
+  src: local('../fonts/Avenir-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 600;
+  src: local('../fonts/Avenir-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 700;
+  src: local('../fonts/Avenir-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 900;
+  src: local('../fonts/Avenir-Black.woff') format('woff');
+}
+
+//colors default from focco cambio
+$blue-lighter-shadow: #357EE8;
+$blue-light-shadow: #265CA8;
+$blue: #15325c;
+$blue-dark: #12315D;
+$blue-darker: #14325C;
+$blue-dark-shadow: #183969;
+$blue-darker-shadow: #0F2442;
+
+$yellow: #F4D400;
+$yellow-bg: #FCD900;
+
+$gray: #707070;
+$gray-light: #DDDDDD;
+
+$gray-dark: #7B7B7B;
+
+$green: #64cea2;
+$dark-green: #4B9B7A;
+$orange: #f89a46;
+$dark-orange: #C57A38;
+$light-orange: #ffc490;
+$fb-blue: #4564a3;
+$fb-dark-blue: #2F4570;
+$gray-shadow: #b1b1b1;
+$light-gray: #f5f5f5;
+$lighter-gray: #e8e8e8;
+$lighter-gray-plus: #C3C3C3;
+$red: #F07464;
+$white: #FFF;
+$whitesmoke: #F5F5F5;
+
+$yellow-graph: #FFD377;
+$yellow-graph-shadow: #E5BE6B;
+$blue-graph: #02BDDE;
+$blue-graph-shadow: #02A7C4;
+$green-graph: #63CFA2;
+$green-graph-shadow: #57B58E;
+$red-graph: #E4776B;
+$red-graph-shadow: #CA6A5F;
+$purple-graph: #A17EE9;
+$purple-graph-shadow: #8F70CF;
+
+.bg-transparent{
+  background: transparent !important;
+}
+.bg-light-gray{
+  background-color: $light-gray !important;
+}
+.bg-gray{
+  background-color: #fbfbfb !important;
+}
+.bg-white{
+  background-color: $white !important;
+}
+.bg-blue{
+  background-color: $blue !important;
+}
+.bg-yellow{
+  background-color: $yellow !important;
+}
+.blue-focco{
+  color: $blue;
+}
+.blue-text {
+  color: $blue;
+}
+.yellow-text {
+  color: $yellow-bg;
+}
+.yellow{
+  color: $yellow;
+}
+.orange{
+  color: $orange;
+}
+.gray{
+  color: $gray;
+}
+.red{
+  color: $red;
+}
+.green{
+  color: $green;
+}
+.white{
+  color: $white;
+}
+.big-font{
+  font-size: 50px;
+}
+.small-font{
+  font-size: 8px;
+}
+.font-regular{
+  font-weight: 400;
+}
+.font-medium{
+  font-weight: 500;
+}
+.font-semibold{
+  font-weight: 600;
+}
+.font-bold{
+  font-weight: 700;
+}
+.font-14{
+  font-size: 14px;
+}
+.font-12{
+  font-size: 12px;
+}
+.font-10{
+  font-size: 10px;
+}
+.font-italic{
+  font-style: italic;
+}

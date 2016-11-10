@@ -1,0 +1,56 @@
+body{
+  font-family: 'Avenir', 'Arial', 'Calibri', sans-serif;
+  padding-top: 170px;
+  overflow-x: hidden;
+  font-style: normal !important;
+}
+header {
+  text-transform: uppercase;
+  box-shadow: 0px -5px 30px #313131;
+  background: white;
+}
+a {
+  color: #15325C;
+}
+.spacing{
+  padding-top: 10px;
+}
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.blue-text{
+  color: #15325c;
+}
+.yellow-text{
+  color: #FCD900;
+}
+.blue-line{
+  background-color: #15325c;
+  text-indent: -9999px;
+  height: 20px;
+}
+.gold-line{
+  background-color: #F4D400;
+  text-indent: -9999px;
+  height: 5px;
+}
+header navbar-fixed-top{
+  height: 150px
+}
+textarea{
+  resize: none;
+}
+.help-block{
+  display: none;
+}
+.btn-primary{
+  background-color: #15325C;
+  border-color: #15325C;
+}
+.form-control:focus {
+  border-color: #15325C;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(21,50,92,.75);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(21,50,92,.75);
+}

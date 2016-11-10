@@ -1,0 +1,20 @@
+/*sessão interna - transferencias internacionais*/
+
+.box-transf {
+  background-color: #252A5D;
+  color: white;
+  border-radius: 6px;
+  width: 685px;
+  height: 200px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  p {
+    padding: 15px 0;
+  }
+  a {
+    color: white;
+    &:hover, &:link, &:visited {
+      color: white;
+    }
+  }
+}

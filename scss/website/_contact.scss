@@ -1,0 +1,47 @@
+.bg-contact-us {
+  background: white;
+  min-height: 600px;
+}
+
+.contact-text {
+  h1 {
+    color: $blue;
+    font-weight: bold;
+  }
+  h3 {
+    color: $blue;
+  }
+  p {
+    color: #525252;
+    font-size: 16px;
+  }
+}
+
+.contact {
+  .row:nth-child(2) {
+    margin: 25px 0;
+  }
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.contact-table {
+  margin-left: -30px;
+  border-right: 2px solid $blue;
+}
+
+.last-table {
+  border-right: none;
+}
+
+.contact-table .thumbnail, .thumbnail {
+  border: none;
+  background-color: transparent;
+}
+
+.contact-table .thumbnail {
+  h3, p {
+    color: $blue;
+  }
+}

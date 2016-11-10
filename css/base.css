@@ -7978,11 +7978,135 @@ button.close {
 .font-italic {
   font-style: italic; }
 
-/*ficha cadastro online*/
-.form-control:focus {
-  border-color: #15325c;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 50, 92, 0.75);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 50, 92, 0.75); }
+body {
+  font-family: 'Avenir', 'Arial', 'Calibri', sans-serif;
+  padding-top: 170px;
+  overflow-x: hidden; }
 
-/*# sourceMappingURL=cadastro.css.map */
+header {
+  text-transform: uppercase;
+  box-shadow: 0px -5px 30px #313131;
+  background: white;
+  height: 191px; }
+
+a {
+  color: #15325c; }
+  a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+    color: #12315D;
+    cursor: pointer; }
+
+.spacing {
+  padding-top: 10px; }
+
+.blue-line {
+  background-color: #15325c;
+  text-indent: -9999px;
+  height: 20px; }
+
+.gold-line {
+  background-color: #F4D400;
+  text-indent: -9999px;
+  height: 5px; }
+
+.navbar {
+  min-height: 0;
+  height: 41px; }
+
+.navbar-toggle {
+  border-color: #DDDDDD;
+  margin-top: 0; }
+  .navbar-toggle:hover {
+    background-color: #DDDDDD; }
+  .navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #888; }
+    .navbar-toggle .icon-bar + .icon-bar {
+      margin-top: 4px; }
+
+.nav-pills > li > a {
+  border-radius: 0px;
+  font-weight: bolder;
+  font-style: normal; }
+.nav-pills > li.active > a {
+  color: white;
+  background-color: #15325c;
+  font-weight: bolder; }
+  .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: white;
+    background-color: #15325c;
+    font-weight: bolder; }
+
+.nav > li > a {
+  padding: 10px 10px; }
+  .nav > li > a:focus, .nav > li > a:hover {
+    color: white;
+    background-color: #15325c; }
+
+.modal .modal-content {
+  border-radius: 0;
+  color: #7B7B7B; }
+  .modal .modal-content .modal-header h3 {
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    color: #15325c;
+    font-weight: 900;
+    padding: 10px 20px; }
+  .modal .modal-content .modal-body h3 {
+    color: #15325c;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 20px;
+    margin-bottom: 0;
+    margin-top: 0; }
+  .modal .modal-content .modal-body ul li strong {
+    color: #313131; }
+.modal .modal-footer {
+  background: #002D5E; }
+  .modal .modal-footer p {
+    color: white;
+    font-weight: 900;
+    font-size: 20px; }
+
+.link-img-top {
+  margin-top: -5px; }
+  .link-img-top li {
+    width: 48px;
+    height: 23px;
+    margin-left: 5px;
+    text-align: center; }
+
+.logo-topo {
+  margin-top: 15px;
+  display: inline-block; }
+
+hr {
+  border-top: 1px solid #15325c; }
+
+#formulario input[type='text'], #formulario input[type='email'], #formulario input[type='tel'], #formulario input[type='checkbox'] {
+  border: 1px solid #15325c; }
+#formulario textarea, #formulario select {
+  border: 1px solid #15325c; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+input:-moz-placeholder,
+textarea:-moz-placeholder,
+input:-ms-input-placeholder {
+  color: #15325c !important; }
+
+textarea {
+  resize: none; }
+  textarea:-ms-input-placeholder {
+    color: #15325c !important; }
+
+.btn-primary {
+  background-color: #15325c;
+  border-color: #15325c; }
+
+/*# sourceMappingURL=base.css.map */

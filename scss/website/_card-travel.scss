@@ -1,0 +1,29 @@
+
+/*interna - cartão pré-pago*/
+
+.panel {
+  background-color: rgba($blue, 0.8);
+}
+
+.panel-default {
+  border-color: $blue-darker;
+  > .panel-heading {
+    background-color: rgba($blue, 0.8);
+    border-color: $blue-darker;
+    a {
+      color: $yellow-bg;
+    }
+  }
+}
+
+.panel-body {
+  p, ul li {
+    color: white;
+  }
+  p small {
+    color: #F9F9F9;
+  }
+  a {
+    color: $yellow-bg;
+  }
+}

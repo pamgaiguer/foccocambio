@@ -1,0 +1,175 @@
+@import 'bootstrap/bootstrap-sprockets.scss';
+@import 'bootstrap/bootstrap';
+@import 'font-awesome/font-awesome.scss';
+@import 'patterns';
+
+body {
+  font-family: 'Avenir', 'Arial', 'Calibri', sans-serif;
+  padding-top: 170px;
+  overflow-x: hidden;
+}
+
+header {
+  text-transform: uppercase;
+  box-shadow: 0px -5px 30px #313131;
+  background: white;
+  height: 191px;
+}
+a {
+  color: $blue;
+  &:hover, &:focus {
+    outline: none;
+    text-decoration: none;
+    color: $blue-dark;
+    cursor:pointer;
+  }
+}
+.spacing {
+  padding-top: 10px;
+}
+.blue-line {
+  background-color: $blue;
+  text-indent: -9999px;
+  height: 20px;
+}
+.gold-line {
+  background-color: $yellow;
+  text-indent: -9999px;
+  height: 5px;
+}
+.navbar {
+  min-height: 0;
+  height: 41px;
+}
+.navbar-toggle {
+  border-color: $gray-light;
+  margin-top: 0;
+  &:hover {
+    background-color: $gray-light;
+  }
+  .icon-bar {
+    + .icon-bar {
+      margin-top: 4px;
+    }
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #888;
+  }
+}
+
+.nav-pills > li {
+  > a {
+    border-radius: 0px;
+    font-weight: bolder;
+    font-style: normal;
+  }
+  &.active > a {
+    color: white;
+    background-color: $blue;
+    font-weight: bolder;
+    &:focus, &:hover {
+      color: white;
+      background-color: $blue;
+      font-weight: bolder;
+    }
+  }
+}
+
+.nav > li > a {
+  padding: 10px 10px;
+  &:focus, &:hover {
+    color: white;
+    background-color: $blue;
+  }
+}
+
+.modal {
+  .modal-content {
+    border-radius: 0;
+    color: $gray-dark;
+    .modal-header h3 {
+      margin-bottom: 0;
+      margin-top: 0;
+      text-align: center;
+      color: $blue;
+      font-weight: 900;
+      padding: 10px 20px;
+    }
+    .modal-body {
+      h3 {
+        color: $blue;
+        text-transform: uppercase;
+        font-weight: 900;
+        padding: 20px;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      ul li strong {
+        color: #313131;
+      }
+    }
+  }
+  .modal-footer {
+    background: #002D5E;
+    p {
+      color: white;
+      font-weight: 900;
+      font-size: 20px;
+    }
+  }
+}
+
+.link-img-top {
+  margin-top: -5px;
+  li {
+    width: 48px;
+    height: 23px;
+    margin-left: 5px;
+    text-align: center;
+  }
+}
+
+.logo-topo {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+
+hr {
+  border-top: 1px solid $blue;
+}
+#formulario {
+  input {
+    &[type='text'],
+    &[type='email'],
+    &[type='tel'],
+    &[type='checkbox'] {
+      border: 1px solid $blue;
+    }
+  }
+  textarea, select {
+    border: 1px solid $blue;
+  }
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+input:-moz-placeholder,
+textarea:-moz-placeholder,
+input:-ms-input-placeholder {
+  color: $blue !important;
+}
+
+textarea {
+  &:-ms-input-placeholder {
+    color: $blue !important;
+  }
+  resize: none;
+}
+
+.btn-primary {
+  background-color: $blue;
+  border-color: $blue;
+}

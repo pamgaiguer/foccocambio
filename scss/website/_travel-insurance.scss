@@ -1,0 +1,29 @@
+.bg-travel-insurance {
+  background: url(../images/bg-travel-insurance.jpg) no-repeat top center;
+  min-height: 905px;
+}
+
+.travel-text {
+  background-color: #093879;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px 25px;
+  vertical-align: middle;
+  margin-top: 250px;
+}
+
+
+/*seguro viagem*/
+
+.travel-insurance-int {
+  margin: 25px 0;
+  p strong {
+    font-size: 20px;
+  }
+  h5 strong {
+    font-size: 14px;
+  }
+  p {
+    line-height: 30px;
+  }
+}

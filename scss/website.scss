@@ -1,0 +1,200 @@
+@import 'bootstrap/bootstrap-sprockets.scss';
+@import 'bootstrap/bootstrap';
+@import 'font-awesome/font-awesome.scss';
+@import 'patterns';
+
+@import 'base.scss';
+@import 'website/buy-selling';
+@import 'website/card-travel';
+@import 'website/contact';
+@import 'website/corporate-attend';
+@import 'website/delivery';
+@import 'website/index';
+@import 'website/international-transfer';
+@import 'website/products-services';
+@import 'website/travel-insurance';
+@import 'website/western-union';
+
+.cotation-table {
+  width: 170px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: $blue-dark;
+  color: white;
+  .cotation-title {
+    background-color: #0B1D38;
+    color: #488BEA;
+    padding: 4px 8px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0;
+  }
+  .table {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    > tbody > tr {
+      border-top: none;
+      border-bottom: 1px solid #ccc;
+      &:last-child {
+        border-bottom: none;
+      }
+      > td {
+        padding: 3px 8px;
+      }
+    }
+    .cotation-value {
+      .coinName {
+        letter-spacing: 0.5px;
+      }
+      .coinValue {
+        color: white;
+        font-weight: 700;
+        font-size: 12px;
+        .currency {
+          font-size: 10px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.cotation-warning-iof {
+  font-size: 10px;
+  font-weight: 500;
+  color: $gray-dark;
+  text-align: center;
+  margin: 0;
+}
+
+.cotation-info a {
+  color: $gray-dark;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: initial;
+  line-height: 1;
+  &:hover {
+    color: $gray-dark;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.tel-delivery .media {
+  padding: 0;
+  margin-top: 15px;
+  .media-left {
+    padding-right: 0px;
+  }
+  .media-body {
+    padding-left: 10px;
+    .media-heading {
+      color: $blue;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .media-text {
+      color: $blue;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (min-width: 1px) and (max-width: 767px) {
+  body {
+    padding-top: 220px;
+  }
+  header {
+    text-transform: uppercase;
+    box-shadow: 0px -5px 30px #313131;
+    background: white;
+    height: 149px;
+  }
+  .navbar-fixed-top {
+    height: 195px;
+  }
+  .nav {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  .navbar-toggle {
+    margin-top: 0px;
+  }
+  .top-phone, p.link-face a {
+    text-align: center;
+  }
+  .bg-products-services, .bg-travel-insurance {
+    background-size: cover;
+  }
+  .products-services .products-text, .contact-us .contact-text {
+    text-align: center;
+  }
+  .contact-table {
+    border-right: none;
+  }
+  .delivery-text {
+    p, span {
+      color: #525252;
+    }
+  }
+  .box-transf {
+    width: 320px;
+  }
+  footer {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 766px) {
+  .logo-topo {
+    width: 180px;
+    margin-top: -20px;
+  }
+  .navbar-toggle {
+    margin-top: -135px;
+  }
+  .navbar-collapse {
+    margin-top: -12px;
+  }
+  .cotation-table {
+    ul li {
+      display: inline;
+    }
+    .cotation-title {
+      font-size: 9px;
+    }
+    .cotation-value {
+      font-size: 11px;
+    }
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .bg-products-services {
+    background: url(../images/bg-products-services.jpg) no-repeat top center;
+    min-height: 988px;
+    background-size: cover;
+  }
+  .bg-travel-insurance {
+    background: url(../images/bg-travel-insurance.jpg) no-repeat top center;
+    min-height: 905px;
+    background-size: contain;
+  }
+  .contact-table {
+    border-right: none;
+  }
+  .cotation-table {
+    margin-top: -10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    border: none;
+  }
+}

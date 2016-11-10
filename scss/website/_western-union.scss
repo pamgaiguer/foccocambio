@@ -1,0 +1,11 @@
+/*interna - western union*/
+
+.boxWU a {
+  &:hover, &:active, &:focus {
+    background-color: $blue-darker;
+  }
+}
+
+.western-union .row:last-child {
+  margin: 25px 0;
+}
