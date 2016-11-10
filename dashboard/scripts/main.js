@@ -385,7 +385,7 @@ focco = {
                 console.log(clienteId);
 
                 if (clienteId < 1) window.location = "/dashboard/clientes/";
-                
+
                 $('#modal2').openModal();
 
                 $("#modal-confirm2").click(function(e){
@@ -405,12 +405,12 @@ focco = {
                     }
 
                   });
-                  
+
                 });
 
                 $("#modal-confirm3").click(function(e){
                   e.preventDefault();
-                  window.location = "/dashboard/clientes/adicionar";                  
+                  window.location = "/dashboard/clientes/adicionar";
                 });
 
 
@@ -829,11 +829,11 @@ focco = {
     $("#select-caixa").change(function(){
       switch($(this).val()){
 
-        case "1": $("#boletagemFoccoFoccoX").show(); $("#boletagemFX53").hide();
+        case "1": $("#boletagemFocco").show(); $("#boletagemFoccoX").hide(); $("#boletagemFX53").hide();
         break;
-        case "2": $("#boletagemFoccoFoccoX").show(); $("#boletagemFX53").hide();
+        case "2": $("#boletagemFocco").hide(); $("#boletagemFoccoX").show(); $("#boletagemFX53").hide();
         break;
-        case "3": $("#boletagemFX53").show(); $("#boletagemFoccoFoccoX").hide();
+        case "3": $("#boletagemFocco").hide(); $("#boletagemFoccoX").hide(); $("#boletagemFX53").show();
         break;
         default: break;
       }
