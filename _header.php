@@ -179,9 +179,6 @@ $libra = number_format($rows[0]['libra'],2,",","");
               <li>
                 <strong>Cancelamentos de moedas já pagas, será cobrado uma multa de R$ 150,00,</strong>  descontado o valor na TED de devolução. A devolução só será efetuada na mesma conta de origem, mediante carta preenchida e assinada, e o prazo de devolução em até 48h.
               </li>
-              <li>
-                <strong>Operações acima de R$ 10.000,00,</strong> os comprovantes irão fracionados no ato da entrega e posteriormente via e-mail, procedimento este necessário devido ao limite diário do Banco Central.
-              </li>
             </ul>
             <hr>
 
