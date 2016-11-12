@@ -802,8 +802,7 @@ focco = {
             url: "/dashboard/boletagem/methods/buscaCliente.php/",
             type: "POST",
             data: { search },
-            success: function(r){
-              console.log(r);
+            success: function(r){              
               $("#table-body-boletagem").html(r);
             }
           });
@@ -825,19 +824,6 @@ focco = {
 
 
   adicionarBoletagem: function(){
-
-    $("#select-caixa").change(function(){
-      switch($(this).val()){
-
-        case "1": $("#boletagemFocco").show(); $("#boletagemFoccoX").hide(); $("#boletagemFX53").hide();
-        break;
-        case "2": $("#boletagemFocco").hide(); $("#boletagemFoccoX").show(); $("#boletagemFX53").hide();
-        break;
-        case "3": $("#boletagemFocco").hide(); $("#boletagemFoccoX").hide(); $("#boletagemFX53").show();
-        break;
-        default: break;
-      }
-    });
 
     $("#select-operacao").change(function(){
 
