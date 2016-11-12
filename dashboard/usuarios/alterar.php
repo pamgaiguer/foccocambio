@@ -19,46 +19,81 @@ foreach($rows as $r){
 }
 
 ?>
-<main>
+<main class="users">
   <div class="row">
-    <div class="col s12">
-    <br>
-      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
-      <div class="spacing"></div>
+    <div class="col s8">
+      <br>
 
-    <h4 class="title-forms">Alterar usuário <strong><?php echo $nome ?></strong></h4>
-
-      <form action="alterarPost.php" method="POST" class="form-group" id="form-alterar-usuario">
-        <div class="row">
-          <input name="id" id="id" type="hidden" value="<?php echo $id ?>" />
-          <div class="input-field col s6">
-            <input name="nome" id="nome" value="<?php echo $nome ?>" type="text" />
-            <label for="nome">Nome</label>
-          </div>
-          <div class="input-field col s6">
-            <input name="login" id="login" value="<?php echo $login ?>" type="text"/>
-            <label for="login">Login</label>
-          </div>
-          <div class="input-field col s6">
-            <input name="email" id="email" value="<?php echo $email ?>" type="text"/>
-            <label for="login">E-mail</label>
-          </div>
-          <div class="input-field col s6">
-            <select name="tipo" id="tipo" class="form-control">
-              <option value="2" <?php if ($tipo == 2) echo "selected" ?>> Admin</option>
-              <option value="3" <?php if ($tipo == 3) echo "selected" ?>>Usuário</option>
-            </select>
-            <label for="tipo">Tipo de Usuário</label>
-          </div>
+      <nav class="bg-blue">
+        <div class="nav-wrapper">
           <div class="col s12">
-            <input type="submit" value="Alterar" class="waves-effect waves-light btn bg-blue right" />
+            <a href="/dashboard/usuarios/" class="breadcrumb">Usuários</a>
+            <a href="#!" class="breadcrumb">Editar</a>
           </div>
         </div>
-      </form>
+      </nav>
+
+      <div class="spacing"></div>
+
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active left-align" href="#general-data">Dados Gerais</a></li>
+      </ul>
+
+      <div class="spacing"></div>
+
+      <div id="general-data">
+        <div class="col s3">
+          <div class="profile-user">
+            <div class="profile-img">
+              <img class="materialboxed" src="../images/user_placeholder.png">
+            </div>
+          </div>
+        </div>
+        <div class="col s9">
+
+          <form action="alterarPost.php" method="POST" id="form-alterar-usuario" class="form-group">
+            <input name="id" id="id" type="hidden" value="<?php echo $id ?>" />
+
+            <div class="input-field col s6">
+              <i class="material-icons prefix">&#xE7FD;</i>
+              <input name="nome" id="nome" value="<?php echo $nome ?>" type="text" />
+              <label for="nome">Nome</label>
+            </div>
+
+            <div class="input-field col s6">
+              <i class="material-icons prefix">&#xE86F;</i>
+              <input name="login" id="login" value="<?php echo $login ?>" type="text"/>
+              <label for="login">Login</label>
+            </div>
+
+            <div class="input-field col s6">
+              <i class="material-icons prefix">&#xE158;</i>
+              <input name="email" id="email" value="<?php echo $email ?>" type="text"/>
+              <label for="email">E-mail</label>
+            </div>
+
+            <div class="input-field col s6">
+              <i class="material-icons prefix">&#xE851;</i>
+              <select name="tipo" id="tipo" class="form-control">
+                <option value="2" <?php if ($tipo == 2) echo "selected" ?>> Admin</option>
+                <option value="3" <?php if ($tipo == 3) echo "selected" ?>>Usuário</option>
+              </select>
+              <label for="tipo">Tipo de Usuário</label>
+            </div>
+
+            <div class="spacing"></div>
+            <div>
+              <input type="submit" value="Editar" class="btn bg-blue" />
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </main>
-
 
 <?php
 include "../includes/footer.php";

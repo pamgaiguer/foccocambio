@@ -4,8 +4,7 @@ include "../core/database.php";
 include "../core/functions.php";
 include "../includes/header.php";
 ?>
-<main>
-  <div class="section"></div>
+<main class="clients">
 
   <div class="row">
     <div class="col s12">
@@ -489,7 +488,7 @@ include "../includes/header.php";
 
           <div class="col s12">
             <input type="submit" id="input-submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
-          
+
           </div>
         </div>
       </form>

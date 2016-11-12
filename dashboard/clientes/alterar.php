@@ -11,7 +11,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 foreach($rows as $r){
   $id = $r['id'];
   $categoria = $r['categoria'];
-  $nome = $r['razaoSocial'];  
+  $nome = $r['razaoSocial'];
   $tipo = $r['tipoPessoa'];
   $cpfCnpj = $r['cpfCnpj'];
   $dataNascimentoAbertura = $r['dataNascimentoAbertura'];
@@ -46,7 +46,7 @@ foreach($rows as $r){
 ?>
 
 
-<main>
+<main class="clients">
   <div class="section"></div>
 
   <div class="row">
