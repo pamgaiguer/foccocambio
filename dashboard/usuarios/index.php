@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $sql_query);
 $rows = array();
 while($row = mysqli_fetch_array($result)) $rows[] = $row;
 ?>
-<main>
+<main class="users">
   <div class="row">
     <div class="col s12">
 

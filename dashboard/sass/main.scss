@@ -161,9 +161,13 @@ input[type=password]:focus:not([readonly]) + label{
   pointer-events: none;
 }
 
-.user-visualize{
-  .profile-img{
+.users{
+  nav{
+    height: 40px;
+    line-height: 40px;
+  }
 
+  .profile-img{
     img{
       width: 140px;
       height: 140px;

@@ -19,11 +19,20 @@ foreach($rows as $r){
 }
 
 ?>
-<main>
+<main class="users">
   <div class="row">
-    <div class="col s12">
+    <div class="col s8">
       <br>
-      <a class="btn bg-blue" href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
+
+      <nav class="bg-blue">
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <a href="/dashboard/usuarios/" class="breadcrumb">Usuários</a>
+            <a href="#!" class="breadcrumb">Editar</a>
+          </div>
+        </div>
+      </nav>
+
       <div class="spacing"></div>
 
       <ul class="tabs">
@@ -74,7 +83,7 @@ foreach($rows as $r){
 
             <div class="spacing"></div>
             <div>
-              <input type="submit" value="Alterar" class="btn bg-blue" />
+              <input type="submit" value="Editar" class="btn bg-blue" />
             </div>
 
           </form>

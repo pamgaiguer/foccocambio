@@ -19,11 +19,19 @@ foreach($rows as $r){
 }
 
 ?>
-<main class="user-visualize">
+<main class="users">
   <div class="row">
     <div class="col s8">
       <br>
-      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
+
+      <nav class="bg-blue">
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <a href="/dashboard/usuarios/" class="breadcrumb">Usuários</a>
+            <a href="#!" class="breadcrumb">Visualizar</a>
+          </div>
+        </div>
+      </nav>
 
       <div class="spacing"></div>
       <ul class="tabs">

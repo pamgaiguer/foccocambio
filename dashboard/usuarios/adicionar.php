@@ -4,13 +4,20 @@ include "../core/database.php";
 include "../includes/header.php";
 ?>
 
-<main>
+<main class="users">
   <div class="row">
-    <div class="col s12">
+    <div class="col s8">
+      <br>
 
-<br>
+      <nav class="bg-blue">
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <a href="/dashboard/usuarios/" class="breadcrumb">Usuários</a>
+            <a href="#!" class="breadcrumb">Adicionar</a>
+          </div>
+        </div>
+      </nav>
 
-      <a class="btn bg-blue" href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
       <div class="spacing"></div>
 
       <ul class="tabs">
