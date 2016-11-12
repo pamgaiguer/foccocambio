@@ -81,6 +81,31 @@ INSERT INTO `clientes` (`id`, `categoria`, `razaoSocial`, `tipoPessoa`, `cpfCnpj
 (19, 1, 'Thompson', 'F', '14354288702', '1970-01-01 00:00:00', NULL, '269379848', 'detran', '1970-01-01 00:00:00', 'M', 'br', 1, '', '1970-01-01 00:00:00', 'marcia', 'claudio', 'thom.blizz@gmail.com', '1999666638', '19999666380', '21', '', b'0', b'0', '2016-08-05 23:32:52', '2016-08-05 23:51:35', '2121', '2121', 1, b'1');
 
 
+
+
+create table boletagem (
+
+id int primary key auto_increment,
+usuarioId int,
+clienteId int,
+data datetime,
+caixaId int,
+modalidade int,
+tipoOperacao int,
+moeda varchar(5),
+quantidade decimal(10,2),
+taxa decimal(10,2),
+subtotal decimal(10,2),
+iofTaxa decimal(10,2),
+mn decimal(10,2),
+swift decimal(10,2),
+darf decimal(10,2),
+vet decimal(10,2),
+vetTaxa decimal(10,2),
+taxaNivel decimal(10,2)
+
+)
+
 -- --------------------------------------------------------
 
 --

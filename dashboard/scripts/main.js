@@ -901,6 +901,48 @@ focco = {
       $("#vettaxa").val(fromNumber( (toNumber($("#vet").val()) / toNumber($("#subtotal").val())) * 100 ) + "%");
     });
 
+    $("#form-boletagem").submit(function(e){
+      e.preventDefault();
+
+      clienteId = $("#clienteId").val();
+      usuarioId = $("#usuarioId").val();
+      data = $("#data", $(this)).val();
+      caixa = $("#select-caixa", $(this)).val();
+      modalidade = $("#select-modalidade", $(this)).val();      
+      operacao = $("#select-operacao", $(this)).val();
+      moeda = $("#select-moedas", $(this)).val();
+      quantidade = $("#quantidade", $(this)).val();
+      taxa = $("#taxa", $(this)).val();
+      subtotal = $("#subtotal", $(this)).val();
+      iof = $("#iof", $(this)).val();
+      mn = $("#mn", $(this)).val();
+      swift = $("#swift", $(this)).val();
+      darf = $("#darf", $(this)).val();
+      vet = $("#vet", $(this)).val();
+      vettaxa = $("#vettaxa", $(this)).val();
+      txnivel = $("#txNivel", $(this)).val();
+
+
+      $.ajax({
+        url: "/dashboard/boletagem/adicionarPost.php/",
+        type: "post",
+        data: {
+          clienteId, usuarioId, data, caixa, modalidade, 
+          operacao, moeda, quantidade, taxa, subtotal, 
+          iof, mn, swift, darf, vet, vettaxa, txnivel
+        },
+        success: function(r){
+          console.log(r);
+
+          if (JSON.parse(r) == "ok"){
+            window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";
+          }
+        }
+
+      });
+
+    });
+
   }
 
 };

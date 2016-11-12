@@ -71,6 +71,72 @@ foreach($rows as $r){
 
     </div>
   </div>
+
+
+  <div class="row">
+    
+    <table>
+      <thead>
+        <th>Data</th>
+        <th>Caixa</th>
+        <th>Modalidade</th>
+        <th>Operação</th>
+        <th>Moeda</th>
+        <th>Quantidade</th>
+        <th>Taxa</th>
+        <th>Subtotal</th>
+      </thead>
+      <tbody>
+        
+      <?php
+      
+
+        $sql_query = sprintf("SELECT * FROM boletagem WHERE usuarioId = %s", $_GET['usuarioId']);
+        $result = mysqli_query($conn, $sql_query);
+
+        $rows = array();
+        while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+        foreach($rows as $r){
+          
+          switch ($r['caixaId']) {
+            case 1: $caixa = "Focco"; break;
+            case 2: $caixa = "Focco X"; break;
+            case 3: $caixa = "FX 53"; break;
+          }
+
+          $modalidade = $r['modalidade'] == 1 ? "Compra" : "Venda";
+
+          switch ($r['tipoOperacao']) {
+            case 1: $tipoOperacao = "Espécie"; break;
+            case 2: $tipoOperacao = "Cartão pré-pago"; break;
+            case 3: $tipoOperacao = "Transferência internacional"; break;
+          }
+
+          echo 
+          '<tr>
+            <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
+            <td>'.$caixa.'</td>
+            <td>'.$modalidade.'</td>
+            <td>'.$tipoOperacao.'</td>              
+            <td>'.$r['moeda'].'</td>
+            <td>'.number_format($r['quantidade'],2,",",".").'</td>
+            <td>'.number_format($r['taxa'],2,",",".").'</td>
+            <td>'.number_format($r['subtotal'],2,",",".").'</td>
+          </tr>';
+
+        }
+
+
+      ?>
+      </tbody>
+    </table>
+
+
+
+
+  </div>
+
 </main>
 
 <?php

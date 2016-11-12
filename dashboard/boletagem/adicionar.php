@@ -30,35 +30,37 @@ foreach($rows as $r){
 
     </div>
   </div>
+  <form id="form-boletagem">
+    <div class="row">
+      <div class="input-field col s3">
+        <input type="hidden" id="clienteId" value=<?php echo $id ?>>
+        <input type="hidden" id="usuarioId" value=<?php echo $_SESSION['currentUser']['id'] ?>>
 
-  <div class="row">
-    <div class="input-field col s3">
-      <input value="<?php echo date_format(new DateTime(),'d/m/Y'); ?>" type="text" readonly placeholder=" ">
-      <label>Data</label>
-    </div>
+        
 
-    <div class="input-field col s3">
-    </div>
 
-    <div class="input-field col s3">
-    </div>
+        <input id="data" value="<?php echo date_format(new DateTime(),'d/m/Y'); ?>" type="text" readonly placeholder=" ">
+        <label>Data</label>
+      </div>
 
-    <div class="input-field col s3">
-      <select id="select-caixa" class="browser-default">        
-        <option value="1">Focco</option>
-        <option value="2">Focco X</option>
-        <option value="3">FX 53</option>
-      </select>
-    </div>
-  </div>
-    
+      <div class="input-field col s3">
+      </div>
 
-  <div id="div-form-boletagem">
-    
+      <div class="input-field col s3">
+      </div>
+
+      <div class="input-field col s3">
+        <select id="select-caixa" class="browser-default">        
+          <option value="1">Focco</option>
+          <option value="2">Focco X</option>
+          <option value="3">FX 53</option>
+        </select>
+      </div>
+    </div>      
 
     <div class="row">
       <div class="input-field col s4">
-        <select>
+        <select id="select-modalidade">
           <option value="1">Compra</option>
           <option value="2">Venda</option>
         </select>
@@ -76,20 +78,20 @@ foreach($rows as $r){
 
       <div class="input-field col s4">
         <select id="select-moedas" class="browser-default">
-          <option value="1" data-operacoes="1,2,3">USD</option>
-          <option value="2" data-operacoes="1,2,3">EUR</option>
-          <option value="3" data-operacoes="1,2,3">GBP</option>
-          <option value="4" data-operacoes="1,2,3">AUD</option>
-          <option value="5" data-operacoes="1,2,3">CAD</option>
-          <option value="6" data-operacoes="1">CHF</option>
-          <option value="7" data-operacoes="3">JPY</option>
-          <option value="8" data-operacoes="3">NZD</option>
-          <option value="9" data-operacoes="1">CLP</option>
-          <option value="10" data-operacoes="1">MXN</option>
-          <option value="11" data-operacoes="1">UYU</option>
-          <option value="12" data-operacoes="1">ZAR</option>
-          <option value="13" data-operacoes="2">ARS</option>
-          <option value="14" data-operacoes="1">CNY</option>
+          <option value="USD" data-operacoes="1,2,3">USD</option>
+          <option value="EUR" data-operacoes="1,2,3">EUR</option>
+          <option value="GBP" data-operacoes="1,2,3">GBP</option>
+          <option value="AUD" data-operacoes="1,2,3">AUD</option>
+          <option value="CAD" data-operacoes="1,2,3">CAD</option>
+          <option value="CHF" data-operacoes="1">CHF</option>
+          <option value="JPY" data-operacoes="3">JPY</option>
+          <option value="NZD" data-operacoes="3">NZD</option>
+          <option value="CLP" data-operacoes="1">CLP</option>
+          <option value="MXN" data-operacoes="1">MXN</option>
+          <option value="UYU" data-operacoes="1">UYU</option>
+          <option value="ZAR" data-operacoes="1">ZAR</option>
+          <option value="ARS" data-operacoes="2">ARS</option>
+          <option value="CNY" data-operacoes="1">CNY</option>
         </select>
       </div>
     </div>
@@ -152,10 +154,11 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s4">
-        <input type="submit" id="submit" class="btn waves-effect waves-light bg-blue" value="Boletar">
+        <input type="submit" class="btn waves-effect waves-light bg-blue" value="Boletar">
       </div>
     </div>
-  </div>
+    
+  </form>
 
 </main>
 

@@ -104,6 +104,21 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 break;
               }
 
+
+              $dtIni = date('Y')."-01-01 00:00:00";
+              $dtFim = date('Y')."-12-31 23:59:59";
+              $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem 
+              WHERE data between '".$dtIni."' AND '".$dtFim."' 
+              AND clienteId = ". $r['id'];              
+              $result = mysqli_query($conn, $sql_query);
+              $totalQtd = array();
+              while($row = mysqli_fetch_array($result)) $totalQtd[] = $row['quantidade'];
+              $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd[0];
+              
+
+
+
+
               $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
               $result = mysqli_query($conn, $sql_query);
               $docs = array();
@@ -188,14 +203,9 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               '<tr>
               <td>'.$r["razaoSocial"].'</td>
               <td>'.$r["email"].'</td>
-
-
-
-
-
               <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).' / ('.substr($r["telFixo"], 0, 2).') '.substr($r["telFixo"], 2, 4).'-'.substr($r["telFixo"], 6).'</td>
               <td>'.$categoria.' - '.$origem.'</td>
-              <td>Em desenvolvimento...</td>
+              <th>'.number_format($limiteDisponivel,2,",",".").'</th>
               <td><i class="material-icons '.$cor.' ">&#xE5CA;</i></td>'
               .$docprov.
               '<td class="center"><a class="link-acao modal-trigger" href="modal1" data-acao="visualizar" data-cliente-id="'.$r["id"].'" data-href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
