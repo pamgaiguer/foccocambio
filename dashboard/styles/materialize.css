@@ -6240,6 +6240,9 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .bg-yellow {
   background-color: #F4D400 !important; }
 
+.bg-whitesmoke {
+  background-color: #F5F5F5 !important; }
+
 .blue-focco {
   color: #15325c; }
 
@@ -6278,6 +6281,12 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .font-bold {
   font-weight: 700; }
+
+.font-18 {
+  font-size: 18px; }
+
+.font-15 {
+  font-size: 15px; }
 
 .font-14 {
   font-size: 14px; }
@@ -6354,34 +6363,8 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=password]:focus:not([readonly]) + label {
   color: #707070; }
 
-/* valid color
-.input-field input[type=text].valid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
-}
-/* invalid color
-.input-field input[type=text].invalid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
-}
-/* icon prefix focus color */
 .input-field .prefix.active {
   color: #707070; }
-
-.picker__weekday-display {
-  background-color: #183969; }
-
-.picker__date-display {
-  background-color: #15325c; }
-
-.picker__close,
-.picker__today {
-  color: #15325c; }
-
-button.picker__today:focus,
-button.picker__clear:focus,
-button.picker__close:focus {
-  background-color: #357EE8; }
 
 .clearfix:before, .clearfix:after {
   content: " ";
@@ -6390,11 +6373,11 @@ button.picker__close:focus {
   clear: both; }
 
 .tabs .tab a {
-  color: #265CA8; }
+  color: #15325c; }
   .tabs .tab a:hover {
-    color: #15325c; }
+    color: #183969; }
 .tabs .indicator {
-  background-color: #357EE8; }
+  background-color: #183969; }
 
 .table-visualization tbody tr td:first-child {
   font-weight: 600; }
@@ -6430,12 +6413,8 @@ button.picker__close:focus {
 .disabled {
   pointer-events: none; }
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #707070;
-  font-weight: 700; }
-
-@media only screen and (max-width: 992px) {
-  header, main, footer {
-    padding-left: 0; } }
+.user-visualize .profile-img img {
+  width: 140px;
+  height: 140px; }
 
 /*# sourceMappingURL=materialize.css.map */

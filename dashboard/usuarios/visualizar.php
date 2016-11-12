@@ -14,50 +14,55 @@ foreach($rows as $r){
   $nome = $r['nome'];
   $login = $r['login'];
   $email = $r['email'];
-  //$telefone = $r['telefone'];
+//$telefone = $r['telefone'];
   $tipo = $r['tipo'];
 }
 
 ?>
-<main>
+<main class="user-visualize">
   <div class="row">
-    <div class="col s12">
+    <div class="col s8">
       <br>
       <a class="btn waves-effect waves-light bg-blue" href="/dashboard/usuarios/"><i class="material-icons left">&#xE5C4;</i> Voltar para Usuários</a>
-      <div class="spacing"></div>
-      <h4 class="title-forms">Visualizar usuário <strong><?php echo $nome ?></strong></h4>
-      <div class="row">
 
-        <table class="responsive-table">
-          <thead>
-            <tr>
-              <th data-field="campos" colspan="2">Dados do usuário</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Nome</td>
-              <td><?php echo $nome ?></td>
-            </tr>
-            <tr>
-              <td>Login</td>
-              <td><?php echo $login ?></td>
-            </tr>
-            <tr>
-              <td>E-mail</td>
-              <td><?php echo $email ?></td>
-            </tr>
-            <tr>
-              <td>Tipo de usuário</td>
-              <td><?php echo $tipo == 2 ? "Administrador" : "Usuário Simples" ?></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="spacing"></div>
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active left-align" href="#general-data">Dados Gerais</a></li>
+      </ul>
+
+      <div class="spacing"></div>
+
+      <div id="general-data">
+        <div class="col s3">
+          <div class="profile-user">
+            <div class="profile-img">
+              <img class="materialboxed" src="../images/user_placeholder.png">
+            </div>
+          </div>
+        </div>
+        <div class="col s7">
+          <h5><?php echo $nome ?></h5>
+          <p>
+            <i class="material-icons left">&#xE851;</i>
+            <span><?php echo $tipo == 2 ? "Administrador" : "Usuário Simples" ?></span>
+          </p>
+
+          <p>
+            <i class="material-icons left">&#xE158;</i>
+            <span><?php echo $email ?></span>
+          </p>
+
+          <p>
+            <i class="material-icons left">&#xE86F;</i>
+            <span><?php echo $login ?></span>
+          </p>
+        </div>
+        <div class="col s2"></div>
       </div>
+
     </div>
   </div>
 </main>
-
 
 <?php
 include "../includes/footer.php";

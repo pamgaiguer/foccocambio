@@ -1,7 +1,7 @@
 //colors default from focco cambio
 $blue-lighter-shadow: #357EE8;
 $blue-light-shadow: #265CA8;
-$blue: #15325c;
+$blue-focco: #15325c;
 $blue-dark-shadow: #183969;
 $blue-darker-shadow: #0F2442;
 
@@ -23,16 +23,40 @@ $red: #F07464;
 $white: #FFF;
 $whitesmoke: #F5F5F5;
 
-$yellow-graph: #FFD377;
-$yellow-graph-shadow: #E5BE6B;
-$blue-graph: #02BDDE;
-$blue-graph-shadow: #02A7C4;
-$green-graph: #63CFA2;
-$green-graph-shadow: #57B58E;
-$red-graph: #E4776B;
-$red-graph-shadow: #CA6A5F;
-$purple-graph: #A17EE9;
-$purple-graph-shadow: #8F70CF;
+$blue-regular: #5488C7;
+$blue-light: #69ACDF;
+$blue-light-hover: #62A6D9;
+$blue-dark: #3BAFDA;
+$blue-lighter: #4FC1E9;
+$blue-button: #5087C7;
+
+$red-regular: #E9573F;
+$red-dash: #F57156;
+
+$yellow-regular: #F6BB43;
+$yellow-light: #FFCE54;
+
+$gray-dark: #9C9CA2;
+$gray-light: #80848C;
+$gray-number: #676A73;
+$gray-lighter: #D8D8D8;
+$gray-regular: #A4B0B2;
+$gray-light-2: #F4F3F9;
+$gray-light-3: #B0B0B0;
+
+$brown-dark: #A3897A;
+$brown-regular: #caba9f;
+
+$white: #FFF;
+$white-light: #FAFAFA;
+$white-number: #F2F2F2;
+$white-dark: #F5F5F5;
+$white-dark3: #F6F6F6;
+$white-tabs: #EAEAEA;
+$black: #000;
+$black-light: #303030;
+$dark: #373D49;
+$black-medium: #464C58;
 
 .bg-transparent{
   background: transparent !important;
@@ -47,13 +71,16 @@ $purple-graph-shadow: #8F70CF;
   background-color: $white !important;
 }
 .bg-blue{
-  background-color: $blue !important;
+  background-color: $blue-focco !important;
 }
 .bg-yellow{
   background-color: $yellow !important;
 }
+.bg-whitesmoke{
+  background-color: $white-dark !important;
+}
 .blue-focco{
-  color: $blue;
+  color: $blue-focco;
 }
 .yellow{
   color: $yellow;
@@ -90,6 +117,12 @@ $purple-graph-shadow: #8F70CF;
 }
 .font-bold{
   font-weight: 700;
+}
+.font-18{
+  font-size: 18px;
+}
+.font-15{
+  font-size: 15px;
 }
 .font-14{
   font-size: 14px;

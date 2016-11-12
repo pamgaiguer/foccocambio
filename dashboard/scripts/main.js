@@ -7,7 +7,6 @@ focco = {
           });
   },
 
-
   loginFormPost: function(){
 
     $("#form-login").submit(function(e){
@@ -382,44 +381,44 @@ focco = {
           data: formData,
           async: false,
           success: function (clienteId) {
-                console.log(clienteId);
+            console.log(clienteId);
 
-                if (clienteId < 1) window.location = "/dashboard/clientes/";
+            if (clienteId < 1) window.location = "/dashboard/clientes/";
 
-                $('#modal2').openModal();
+            $('#modal2').openModal();
 
-                $("#modal-confirm2").click(function(e){
-                  e.preventDefault();
+            $("#modal-confirm2").click(function(e){
+              e.preventDefault();
 
-                  $.ajax({
-                    url:"/dashboard/boletagem/methods/validarCliente.php/",
-                    type: "post",
-                    data: {clienteId},
-                    success: function(r){
-                      if (JSON.parse(r)) {
-                        window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
-                      }
-                      else {
-                        window.location = "/dashboard/clientes/";
-                      }
-                    }
+              $.ajax({
+                url:"/dashboard/boletagem/methods/validarCliente.php/",
+                type: "post",
+                data: {clienteId},
+                success: function(r){
+                  if (JSON.parse(r)) {
+                    window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
+                  }
+                  else {
+                    window.location = "/dashboard/clientes/";
+                  }
+                }
 
-                  });
-
-                });
-
-                $("#modal-confirm3").click(function(e){
-                  e.preventDefault();
-                  window.location = "/dashboard/clientes/adicionar";
-                });
-
-
-              },
-              cache: false,
-              contentType: false,
-              processData: false
+              });
 
             });
+
+            $("#modal-confirm3").click(function(e){
+              e.preventDefault();
+              window.location = "/dashboard/clientes/adicionar";
+            });
+
+
+          },
+          cache: false,
+          contentType: false,
+          processData: false
+
+        });
 
       });
 
@@ -916,8 +915,8 @@ focco = {
       $("#vettaxa").val(fromNumber( (toNumber($("#vet").val()) / toNumber($("#subtotal").val())) * 100 ) + "%");
     });
 
-
-
   }
 
 };
+
+   $('.materialboxed').materialbox();
