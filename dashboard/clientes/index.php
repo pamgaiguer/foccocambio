@@ -27,7 +27,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               <div class="file-path-wrapper">
                 <div id="validacaoCpf"></div>
                 <input id="input-cpfcnpj" name="cpfCnpj" type="search" required/>
-                <button class="btn waves-effect waves-light bg-blue" type="submit" name="action">
+                <button class="btn bg-blue" type="submit" name="action">
                   Buscar CPF / CNPJ
                   <i class="material-icons right">&#xE8B6;</i>
                 </button>
@@ -37,7 +37,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           </div>
         </div>
 
-        <a id="link-adicionar-cliente" class="waves-effect waves-light btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
+        <a id="link-adicionar-cliente" class="btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
         </a>
       </div>
 
@@ -212,18 +212,20 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 </main>
 
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
+<div id="modal1" class="modal modal-fixed-footer">
+
   <div class="modal-content">
     <h4>Excluir cliente</h4>
     <p>Deseja excluir o cliente selecionado?</p>
   </div>
+
   <div class="modal-footer">
-    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn">
+    <a id="modal-confirm" class="modal-action modal-close btn">
       <i class="material-icons right">&#xE86C;</i>
       Confirmar
     </a>
 
-    <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
+    <a id="modal-cancel" class="modal-action modal-close btn red darken-1 white">
       <i class="material-icons right">&#xE5C9;</i>
       Cancelar
     </a>
@@ -247,12 +249,12 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
     </div>
   </div>
   <div class="modal-footer">
-    <a id="modal-confirm2" class="modal-action waves-effect waves-light btn">
+    <a id="modal-confirm2" class="modal-action btn">
       <i class="material-icons right">&#xE86C;</i>
       Confirmar
     </a>
 
-    <a id="modal-cancel2" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
+    <a id="modal-cancel2" class="modal-action modal-close btn red darken-1 white">
       <i class="material-icons right">&#xE5C9;</i>
       Cancelar
     </a>

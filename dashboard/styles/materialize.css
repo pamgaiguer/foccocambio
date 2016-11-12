@@ -6393,7 +6393,7 @@ input[type=password]:focus:not([readonly]) + label {
   padding: 0px 15px;
   margin-bottom: 10px;
   border: 1px solid transparent;
-  border-radius: 4px; }
+  border-radius: 0px; }
   .alert.success {
     color: #1b5e20;
     background-color: #e8f5e9;
@@ -6419,5 +6419,12 @@ input[type=password]:focus:not([readonly]) + label {
 .users .profile-img img {
   width: 140px;
   height: 140px; }
+
+.clients nav {
+  height: 40px;
+  line-height: 40px; }
+.clients .collection {
+  border: none;
+  border-radius: 0; }
 
 /*# sourceMappingURL=materialize.css.map */

@@ -34,6 +34,7 @@ foreach($rows as $r){
       </nav>
 
       <div class="spacing"></div>
+
       <ul class="tabs">
         <li class="tab col s3"><a class="active left-align" href="#general-data">Dados Gerais</a></li>
       </ul>
