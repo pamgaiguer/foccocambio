@@ -1,7 +1,6 @@
   <?php include('_header.php'); ?>
 
   <section class="slide">
-    <div class="container-fluid">
       <div id="slideshow" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="item active">
@@ -26,7 +25,6 @@
           <li data-target="#slideshow" data-slide-to="2"></li>
         </ol>
       </div>
-    </div>
   </section>
 
   <section class="delivery">
@@ -42,7 +40,7 @@
             <div class="products-text">
               <h1 class="text-center">Serviços e Produtos</h1>
               <p class="text-center">A Focco Câmbio tem produtos especialmente feitos e planejados para facilitar suas <br> viagens para o exterior, desde operações cambiais até seguros de viagem.</p>
-              <h3 class="text-center">Nosso focco é buscar os melhores produtos <br>para superar sempre as suas expectativas</h3>
+              <h3 class="text-center">Nosso <span class="text-uppercase"><strong>focco</strong></span> é buscar os melhores produtos <br>para superar sempre as suas expectativas</h3>
             </div>
           </div>
         </div>
