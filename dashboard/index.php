@@ -38,7 +38,7 @@ include 'includes/header_index.php';
               <div class="left logo-bottom">
                 <img src="images/logo_topo.png" alt="focco cambio" class="responsive-image">
               </div>
-              <button class="btn right bg-blue waves-effect waves-light" type="submit">
+              <button class="btn right bg-blue" type="submit">
                 Entrar
                 <i class="material-icons right">&#xE163;</i>
               </button>

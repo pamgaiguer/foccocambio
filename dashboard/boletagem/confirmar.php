@@ -8,7 +8,7 @@ include "../core/database.php";
   <div class="row">
     <div class="col s12">
       <div class="section"></div>
-      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/boletagem/adicionar/"><i class="material-icons left">&#xE5C4;</i> Voltar para iniciar boletagem</a>
+      <a class="btn bg-blue" href="/dashboard/boletagem/adicionar/"><i class="material-icons left">&#xE5C4;</i> Voltar para iniciar boletagem</a>
       <br>
       <br>
       <h6>Confirmar dados da Boletagem número [] para o cliente [NOMECLIENTE]</h6>
@@ -164,7 +164,7 @@ include "../core/database.php";
       </div>
 
       <div class="input-field col s4">
-        <input type="submit" class="btn waves-effect waves-light bg-blue" value="Boletar">
+        <input type="submit" class="btn bg-blue" value="Boletar">
       </div>
 
     </div>
@@ -179,7 +179,7 @@ include "../core/database.php";
 
 
       <div class="input-field col s4">
-      <a class="waves-effect waves-light btn red white-text">alterar dados</a>
+      <a class="btn red white-text">alterar dados</a>
       </div>
     </div>
   </div>
