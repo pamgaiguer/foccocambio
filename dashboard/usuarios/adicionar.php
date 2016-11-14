@@ -68,7 +68,6 @@ include "../includes/header.php";
             <div>
               <input type="submit" value="Cadastrar" class="btn bg-blue" />
             </div>
-
           </form>
 
         </div>

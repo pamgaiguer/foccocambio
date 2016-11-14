@@ -73,8 +73,7 @@ foreach($rows as $r){
   </div>
 
 
-  <div class="row">
-    
+<!--   <div class="row">
     <table>
       <thead>
         <th>Data</th>
@@ -87,10 +86,8 @@ foreach($rows as $r){
         <th>Subtotal</th>
       </thead>
       <tbody>
-        
-      <?php
-      
 
+      <?php
         $sql_query = sprintf("SELECT * FROM boletagem WHERE usuarioId = %s", $_GET['usuarioId']);
         $result = mysqli_query($conn, $sql_query);
 
@@ -98,7 +95,7 @@ foreach($rows as $r){
         while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
         foreach($rows as $r){
-          
+
           switch ($r['caixaId']) {
             case 1: $caixa = "Focco"; break;
             case 2: $caixa = "Focco X"; break;
@@ -112,37 +109,25 @@ foreach($rows as $r){
             case 2: $tipoOperacao = "Cartão pré-pago"; break;
             case 3: $tipoOperacao = "Transferência internacional"; break;
           }
-
-          echo 
+          echo
           '<tr>
             <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
             <td>'.$caixa.'</td>
             <td>'.$modalidade.'</td>
-            <td>'.$tipoOperacao.'</td>              
+            <td>'.$tipoOperacao.'</td>
             <td>'.$r['moeda'].'</td>
             <td>'.number_format($r['quantidade'],2,",",".").'</td>
             <td>'.number_format($r['taxa'],2,",",".").'</td>
             <td>'.number_format($r['subtotal'],2,",",".").'</td>
           </tr>';
-
         }
-
-
       ?>
       </tbody>
     </table>
-
-
-
-
-  </div>
+  </div> -->
 
 </main>
 
 <?php
 include "../includes/footer.php";
 ?>
-
-<script type="text/javascript">
-  focco.alterarUsuarioFormPost();
-</script>
