@@ -612,3 +612,7 @@ include "../includes/footer.php";
 <script type="text/javascript">
   $("img").elevateZoom({easing : true});
 </script>
+
+<script>
+  focco.alterarClienteFormPost();
+</script>

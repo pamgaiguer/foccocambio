@@ -20,7 +20,7 @@ include "../core/database.php";
               <div class="file-path-wrapper">
                 <div id="validacaoCpf"></div>
                 <input id="input-cpfcnpj" name="cpfCnpj" type="search" required/>
-                <button class="btn waves-effect waves-light bg-blue" type="submit" name="action">
+                <button class="btn bg-blue" type="submit" name="action">
                   Buscar CPF / CNPJ
                   <i class="material-icons right">&#xE8B6;</i>
                 </button>
@@ -30,8 +30,8 @@ include "../core/database.php";
           </div>
         </div>
 
-        <a id="link-adicionar-cliente" class="waves-effect waves-light btn bg-blue right disabled" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i></a>
-        
+        <a id="link-adicionar-cliente" class="btn bg-blue right disabled" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i></a>
+
 
       </div>
 
@@ -52,7 +52,7 @@ include "../core/database.php";
             <th>Boletar</th>
           </tr>
         </thead>
-        <tbody id="table-body-boletagem">          
+        <tbody id="table-body-boletagem">
         </tbody>
         </table>
       </div>

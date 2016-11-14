@@ -51,7 +51,7 @@ foreach($rows as $r){
 
   <div class="row">
     <div class="col s12">
-      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
+      <a class="btn bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>
     </div>
   </div>
 
@@ -592,7 +592,7 @@ foreach($rows as $r){
       </div>
 
       <div class="col s12">
-        <input type="submit" id="input-submit" value="Alterar" class="waves-effect waves-light btn bg-blue right" />
+        <input type="submit" id="input-submit" value="Alterar" class="btn bg-blue right" />
       </div>
 
     </div>
@@ -613,12 +613,12 @@ foreach($rows as $r){
     <p>Deseja alterar o cliente?</p>
   </div>
   <div class="modal-footer">
-    <a id="modal-confirm" class="modal-action modal-close waves-effect waves-light btn">
+    <a id="modal-confirm" class="modal-action modal-close btn">
       <i class="material-icons right">&#xE86C;</i>
       Confirmar
     </a>
 
-    <a id="modal-cancel" class="modal-action modal-close waves-effect waves-light btn red darken-1 white">
+    <a id="modal-cancel" class="modal-action modal-close btn red darken-1 white">
       <i class="material-icons right">&#xE5C9;</i>
       Cancelar
     </a>

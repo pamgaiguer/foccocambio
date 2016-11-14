@@ -24,7 +24,7 @@ foreach($rows as $r){
   <div class="row">
     <div class="col s12">
       <div class="section"></div>
-      <a class="btn waves-effect waves-light bg-blue" href="/dashboard/boletagem/"><i class="material-icons left">&#xE5C4;</i> Voltar para Boletagem</a>
+      <a class="btn bg-blue" href="/dashboard/boletagem/"><i class="material-icons left">&#xE5C4;</i> Voltar para Boletagem</a>
       <br>
       <p>Iniciando boletagem para cliente <strong><?php echo $nome ?></strong></p>
 
@@ -36,7 +36,7 @@ foreach($rows as $r){
         <input type="hidden" id="clienteId" value=<?php echo $id ?>>
         <input type="hidden" id="usuarioId" value=<?php echo $_SESSION['currentUser']['id'] ?>>
 
-        
+
 
 
         <input id="data" value="<?php echo date_format(new DateTime(),'d/m/Y'); ?>" type="text" readonly placeholder=" ">
@@ -50,13 +50,13 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s3">
-        <select id="select-caixa" class="browser-default">        
+        <select id="select-caixa" class="browser-default">
           <option value="1">Focco</option>
           <option value="2">Focco X</option>
           <option value="3">FX 53</option>
         </select>
       </div>
-    </div>      
+    </div>
 
     <div class="row">
       <div class="input-field col s4">
@@ -154,10 +154,10 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s4">
-        <input type="submit" class="btn waves-effect waves-light bg-blue" value="Boletar">
+        <input type="submit" class="btn bg-blue" value="Boletar">
       </div>
     </div>
-    
+
   </form>
 
 </main>

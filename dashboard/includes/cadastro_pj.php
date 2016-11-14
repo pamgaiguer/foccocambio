@@ -287,7 +287,7 @@
         </div>
 
         <div class="col s12">
-          <input type="submit" id="input-submit" value="Cadastrar" class="waves-effect waves-light btn bg-blue right" />
+          <input type="submit" id="input-submit" value="Cadastrar" class="btn bg-blue right" />
         </div>
 
       </form>

@@ -70,7 +70,7 @@ $libra = $rows[0]['libra'];
 
     <div class="row">
       <div class="col s12">
-        <input type="submit" id="input-submit" value="Atualizar valores" class="waves-effect waves-light btn bg-blue" />
+        <input type="submit" id="input-submit" value="Atualizar valores" class="btn bg-blue" />
       </div>
     </div>
   </form>
