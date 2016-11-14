@@ -126,12 +126,12 @@ foreach($rows as $r){
         <label for="mn">M.N</label>
       </div>
 
-      <div class="input-field col s4">
-        <input placeholder="swift" id="swift" type="text">
+      <div class="input-field col s4 div-swift" style="display: none;">
+        <input placeholder="swift" id="swift" type="text" >
         <label for="swift">Swift</label>
       </div>
 
-      <div class="input-field col s4">
+      <div class="input-field col s4 div-darf" style="display: none;">
         <input placeholder="darf" id="darf" type="text">
         <label for="darf">darf</label>
       </div>

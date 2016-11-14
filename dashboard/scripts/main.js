@@ -824,6 +824,20 @@ focco = {
 
   adicionarBoletagem: function(){
 
+    $("#select-caixa").change(function(){
+      console.log($(this).val());
+
+      if ($(this).val() == 3) {
+        $(".div-swift").fadeIn(100);
+        $(".div-darf").fadeIn(100);
+      } else {
+        $(".div-swift").fadeOut(100);
+        $(".div-darf").fadeOut(100);
+        $("#swift").val("");
+        $("#darf").val("");
+      }
+    });
+
     $("#select-operacao").change(function(){
 
       switch($(this).val()){
