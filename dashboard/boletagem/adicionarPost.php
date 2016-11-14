@@ -3,7 +3,7 @@
 	include "../core/functions.php";
 
 	$sql_query = sprintf("
-		INSERT INTO boletagem(clienteId, usuarioId, data, caixaId, modalidade, tipoOperacao, moeda, quantidade, taxa, subtotal, iofTaxa, mn, swift, darf, vet, vetTaxa, taxaNivel) 
+		INSERT INTO boletagem(clienteId, usuarioId, data, caixaId, modalidade, tipoOperacao, moeda, quantidade, taxa, subtotal, iofTaxa, mn, swift, darf, vet, vetTaxa, taxaNivel, status) 
 		VALUES (
 		%s, 
 		%s, 
@@ -21,6 +21,7 @@
 		%s, 
 		%s, 
 		%s, 
+		%s,
 		%s)",
 
 		$_POST["clienteId"], 
@@ -39,7 +40,8 @@
 		TratarFloat($_POST["darf"]),
 		TratarFloat($_POST["vet"]),
 		TratarFloat($_POST["vettaxa"]),
-		TratarFloat($_POST["txnivel"])
+		TratarFloat($_POST["txnivel"], 
+		1)
 		);
 
 	//echo json_encode($sql_query);

@@ -102,7 +102,8 @@ swift decimal(10,2),
 darf decimal(10,2),
 vet decimal(10,2),
 vetTaxa decimal(10,2),
-taxaNivel decimal(10,2)
+taxaNivel decimal(10,2),
+status int
 
 )
 
