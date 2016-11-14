@@ -633,6 +633,51 @@ focco = {
 
   },
 
+  visualizarCliente: function(){
+    $(".link-acao-cancelar").click(function(e){
+      e.preventDefault();      
+      clienteId = $(this).data("cliente-id");
+      boletagemId = $(this).data("boletagem-id");
+      botao = $(this);
+
+      $.ajax({
+        url: "/dashboard/boletagem/methods/cancelar/",
+        type: "post",
+        data: {boletagemId},
+        success: function(r){
+          if (JSON.parse(r) == "ok") {
+            $(botao).html("Cancelado!");
+            $(botao).click(function(e){e.preventDefault()});
+          }
+        }
+      });
+
+    });
+
+    $(".link-acao-reativar").click(function(e){
+      e.preventDefault();      
+      clienteId = $(this).data("cliente-id");
+      boletagemId = $(this).data("boletagem-id");
+      botao = $(this);
+
+      $.ajax({
+        url: "/dashboard/boletagem/methods/reativar/",
+        type: "post",
+        data: {boletagemId},
+        success: function(r){          
+         console.log($(this));
+         if (JSON.parse(r) == "ok") {
+          $(botao).html("Reativado!"); 
+          $(botao).click(function(e){e.preventDefault()});
+
+         }
+
+        }
+      });      
+    });
+
+  },
+
   indexCliente: function(){
 
     $("#form-busca-clientes").submit(function(e){

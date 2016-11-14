@@ -108,7 +108,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               $dtIni = date('Y')."-01-01 00:00:00";
               $dtFim = date('Y')."-12-31 23:59:59";
               $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem 
-              WHERE data between '".$dtIni."' AND '".$dtFim."' 
+              WHERE status = 1 AND data between '".$dtIni."' AND '".$dtFim."' 
               AND clienteId = ". $r['id'];              
               $result = mysqli_query($conn, $sql_query);
               $totalQtd = array();

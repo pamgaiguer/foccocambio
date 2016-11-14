@@ -571,6 +571,7 @@ if ((sizeof($docprov) > 0) && $dif){
             <th>Quantidade</th>
             <th>Taxa</th>
             <th>Subtotal</th>
+            <th></th>
           </thead>
           <tbody>
             <?php
@@ -603,6 +604,16 @@ if ((sizeof($docprov) > 0) && $dif){
                 case 3: $tipoOperacao = "Transferência internacional"; break;
               }
 
+              
+              if ($_SESSION["currentUser"]["tipo"] < 3) {
+
+              if ($r['status'] == 1) 
+                $acao = '<a href="#" class="link-acao-cancelar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
+              else 
+                $acao = '<a href="#" class="link-acao-reativar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
+
+              } else $acao = "";
+
               echo
               '<tr>
               <td>'.$usuario.'</td>
@@ -614,6 +625,7 @@ if ((sizeof($docprov) > 0) && $dif){
               <td>'.number_format($r['quantidade'],2,",",".").'</td>
               <td>'.number_format($r['taxa'],2,",",".").'</td>
               <td>'.number_format($r['subtotal'],2,",",".").'</td>
+              <td>'.$acao.'</td>
             </tr>';
           }
           ?>
@@ -635,5 +647,5 @@ include "../includes/footer.php";
 </script>
 
 <script>
-  focco.alterarClienteFormPost();
+  focco.visualizarCliente();
 </script>
