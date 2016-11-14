@@ -431,13 +431,14 @@ if ((sizeof($docprov) > 0) && $dif){
 
       <div id="resAddress">
         <?php
-        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s", $_GET['clienteId']);
+        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE tipo = 1 AND clienteId = %s", $_GET['clienteId']);
         $result = mysqli_query($conn, $sql_query);
 
         $rows = array();
         while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
         foreach($rows as $r){
+          
           $tipo = $r['tipo'];
           $cep = $r['cep'];
           $endereco = $r['endereco'];
@@ -495,6 +496,26 @@ if ((sizeof($docprov) > 0) && $dif){
             </div>
           </div>
         </div>
+
+        <?php
+        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE tipo = 2 AND clienteId = %s", $_GET['clienteId']);
+        $result = mysqli_query($conn, $sql_query);
+
+        $rows = array();
+        while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+        foreach($rows as $r){          
+          $tipo = $r['tipo'];
+          $cep = $r['cep'];
+          $endereco = $r['endereco'];
+          $numero = $r['numero'];
+          $complemento = $r['complemento'];
+          $bairro = $r['bairro'];
+          $cidade = $r['cidade'];
+          $estado = $r['estado'];
+          $pais = $r['pais'];
+        };
+        ?>
 
         <p>Endereço de Entrega</p>
 
