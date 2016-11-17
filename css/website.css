@@ -16301,17 +16301,19 @@ footer {
   text-align: center;
   margin: 0; }
 
-.cotation-info a {
-  color: #7B7B7B;
-  font-weight: 900;
-  font-size: 12px;
-  text-transform: initial;
-  line-height: 1; }
-  .cotation-info a:hover {
+.cotation-info {
+  margin-left: -10px; }
+  .cotation-info a {
     color: #7B7B7B;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none; }
+    font-weight: 900;
+    font-size: 12px;
+    text-transform: initial;
+    line-height: 1; }
+    .cotation-info a:hover {
+      color: #7B7B7B;
+      text-decoration: none;
+      cursor: pointer;
+      outline: none; }
 
 .tel-delivery .media {
   padding: 0;

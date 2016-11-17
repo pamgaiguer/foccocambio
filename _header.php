@@ -91,7 +91,8 @@ $libra = number_format($rows[0]['libra'],2,",","");
                 Consulte as <br>
                 regras para <br>
                 fechamento <br>
-                e delivery.
+                e delivery. <br>
+                <span style="color: #15325c !important">Clique aqui</span>
               </a>
             </p>
           </div>

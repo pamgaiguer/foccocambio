@@ -19,9 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `focco`
 --
-CREATE DATABASE IF NOT EXISTS `focco` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+/*CREATE DATABASE IF NOT EXISTS `focco` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `focco`;
-
+*/
 -- --------------------------------------------------------
 
 --
@@ -105,7 +105,7 @@ vetTaxa decimal(10,2),
 taxaNivel decimal(10,2),
 status int
 
-)
+);
 
 -- --------------------------------------------------------
 

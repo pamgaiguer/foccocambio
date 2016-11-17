@@ -36,9 +36,6 @@ foreach($rows as $r){
         <input type="hidden" id="clienteId" value=<?php echo $id ?>>
         <input type="hidden" id="usuarioId" value=<?php echo $_SESSION['currentUser']['id'] ?>>
 
-
-
-
         <input id="data" value="<?php echo date_format(new DateTime(),'d/m/Y'); ?>" type="text" readonly placeholder=" ">
         <label>Data</label>
       </div>
@@ -108,7 +105,7 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s3">
-        <input placeholder="Sub Total - read only" id="subtotal" type="text" readonly>
+        <input placeholder="Sub Total" id="subtotal" type="text" readonly>
         <label for="subtotal">Sub Total</label>
       </div>
 
@@ -120,10 +117,9 @@ foreach($rows as $r){
     </div>
 
     <div class="row">
-
       <div class="input-field col s4">
-        <input placeholder="M.N" id="mn" type="text">
-        <label for="mn">M.N</label>
+        <input placeholder="Moeda Nacional" id="mn" type="text">
+        <label for="mn">Moeda Nacional</label>
       </div>
 
       <div class="input-field col s4 div-swift" style="display: none;">
@@ -132,29 +128,42 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s4 div-darf" style="display: none;">
-        <input placeholder="darf" id="darf" type="text">
-        <label for="darf">darf</label>
+        <input placeholder="DARF" id="darf" type="text">
+        <label for="darf">DARF</label>
       </div>
 
       <div class="input-field col s4">
         <input placeholder="vet" id="vet" type="text" readonly>
-        <label for="vet">vet</label>
+        <label for="vet">VET</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input placeholder="Vet Tx" id="vettaxa" type="text">
+        <label for="vettaxa">Vet Tx</label>
+      </div>
+
+      <div class="input-field col s4 div-txnivel" style="display: none;">
+        <input placeholder="Tx de nível" id="txNivel" type="text">
+        <label for="Tx de nível">Tx de nível</label>
       </div>
     </div>
 
     <div class="row">
-      <div class="input-field col s4">
-        <input placeholder="vet Tx - ?" id="vettaxa" type="text">
-        <label for="vettaxa">Vet Taxa</label>
-      </div>
 
       <div class="input-field col s4">
-        <input placeholder="Tx de nível - ?" id="txNivel" type="text">
-        <label for="Tx de nível">Tx de nível</label>
+        <select id="select-formaPgto">
+          <option value="0" disabled>Forma de pagamento</option>
+          <option value="1">Espécie</option>
+          <option value="2">TED</option>
+          <option value="3">DOC</option>
+          <option value="4">Transferência Bancária</option>
+        </select>
+        <label>Forma de Pagamento</label>
       </div>
 
+
       <div class="input-field col s4">
-        <input type="submit" class="btn bg-blue" value="Boletar">
+      <input type="submit" class="btn bg-blue " value="Boletar">
       </div>
     </div>
 

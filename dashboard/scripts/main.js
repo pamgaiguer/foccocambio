@@ -635,7 +635,7 @@ focco = {
 
   visualizarCliente: function(){
     $(".link-acao-cancelar").click(function(e){
-      e.preventDefault();      
+      e.preventDefault();
       clienteId = $(this).data("cliente-id");
       boletagemId = $(this).data("boletagem-id");
       botao = $(this);
@@ -655,7 +655,7 @@ focco = {
     });
 
     $(".link-acao-reativar").click(function(e){
-      e.preventDefault();      
+      e.preventDefault();
       clienteId = $(this).data("cliente-id");
       boletagemId = $(this).data("boletagem-id");
       botao = $(this);
@@ -664,16 +664,16 @@ focco = {
         url: "/dashboard/boletagem/methods/reativar/",
         type: "post",
         data: {boletagemId},
-        success: function(r){          
+        success: function(r){
          console.log($(this));
          if (JSON.parse(r) == "ok") {
-          $(botao).html("Reativado!"); 
+          $(botao).html("Reativado!");
           $(botao).click(function(e){e.preventDefault()});
 
          }
 
         }
-      });      
+      });
     });
 
   },
@@ -846,7 +846,7 @@ focco = {
             url: "/dashboard/boletagem/methods/buscaCliente.php/",
             type: "POST",
             data: { search },
-            success: function(r){              
+            success: function(r){
               $("#table-body-boletagem").html(r);
             }
           });
@@ -875,9 +875,12 @@ focco = {
       if ($(this).val() == 3) {
         $(".div-swift").fadeIn(100);
         $(".div-darf").fadeIn(100);
+        $(".div-txnivel").fadeIn(100);
       } else {
         $(".div-swift").fadeOut(100);
         $(".div-darf").fadeOut(100);
+        $(".div-txnivel").fadeOut(100);
+        $("#txNivel").val("");
         $("#swift").val("");
         $("#darf").val("");
       }
@@ -886,12 +889,10 @@ focco = {
     $("#select-operacao").change(function(){
 
       switch($(this).val()){
-
         case "1": $("#ioftaxa").val("1.1");  break;
         case "2": $("#ioftaxa").val("6.38"); break;
         case "3": $("#ioftaxa").val("0.38"); break;
         default: break;
-
       }
 
       operacao = $(this).val() + "";
@@ -947,7 +948,6 @@ focco = {
       $("#vet").val(fromNumber(
         toNumber($(this).val()) + toNumber($("#iof").val()) + toNumber($("#darf").val())
         ));
-
       $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#subtotal").val()) * 100 )+ "%");
 
 
@@ -969,7 +969,7 @@ focco = {
       usuarioId = $("#usuarioId").val();
       data = $("#data", $(this)).val();
       caixa = $("#select-caixa", $(this)).val();
-      modalidade = $("#select-modalidade", $(this)).val();      
+      modalidade = $("#select-modalidade", $(this)).val();
       operacao = $("#select-operacao", $(this)).val();
       moeda = $("#select-moedas", $(this)).val();
       quantidade = $("#quantidade", $(this)).val();
@@ -983,13 +983,12 @@ focco = {
       vettaxa = $("#vettaxa", $(this)).val();
       txnivel = $("#txNivel", $(this)).val();
 
-
       $.ajax({
         url: "/dashboard/boletagem/adicionarPost.php/",
         type: "post",
         data: {
-          clienteId, usuarioId, data, caixa, modalidade, 
-          operacao, moeda, quantidade, taxa, subtotal, 
+          clienteId, usuarioId, data, caixa, modalidade,
+          operacao, moeda, quantidade, taxa, subtotal,
           iof, mn, swift, darf, vet, vettaxa, txnivel
         },
         success: function(r){
