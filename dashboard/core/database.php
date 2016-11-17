@@ -5,11 +5,11 @@
   $dbPwd = "";
   $dbName = "focco";
 
-/*
-$dbHost = "177.70.106.29";
-$dbUser = "focco_admin";
-$dbPwd = "cambio321";
-$dbName = "foccocambio_dash";
+
+/*$dbHost = "186.232.189.174";
+$dbUser = "foccocam_admin";
+$dbPwd = "foccoCam2855";
+$dbName = "foccocam_dash";
 */
 
 $conn = mysqli_connect($dbHost, $dbUser, $dbPwd, $dbName);
