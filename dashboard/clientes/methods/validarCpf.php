@@ -5,7 +5,8 @@
 	$cpfpost = preg_replace("/\D+/", "", $_POST['cpf']);	
 
 	if (isset($_POST["adicionar"]) && $_POST["adicionar"] == "true")			
-			echo json_encode(validarCpf($cpfpost) && !cpfExistente($cpfpost));	
+			//echo json_encode(validarCpf($cpfpost) && !cpfExistente($cpfpost));	
+		echo json_encode(validarCpf($cpfpost));	
 	else	
 			echo json_encode(validarCpf($cpfpost));
 
