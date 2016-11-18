@@ -156,7 +156,7 @@ focco = {
     $('select').material_select();
 
     $('.datepicker').mask("99/99/9999");
-    $('.currency').mask("#.##0,00", {reverse: true});
+    $('.currency').mask("###0,00", {reverse: true});
 
     $("#cnh").keyup(function(){
       if ($(this).val().length > 0) {
@@ -439,7 +439,7 @@ focco = {
     $('ul.tabs').tabs();
     $('select').material_select();
     $('.datepicker').mask("99/99/9999");
-    $('.currency').mask("#.##0,00", {reverse: true});
+    $('.currency').mask("###0,00", {reverse: true});
 
     $("#estadoCivil").change(function(){
       if ($(this).val() == 2){

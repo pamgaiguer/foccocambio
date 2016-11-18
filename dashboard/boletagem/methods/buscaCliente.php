@@ -50,11 +50,9 @@
       break;
     }
 
-    $dtIni = date('Y')."-01-01 00:00:00";
-    $dtFim = date('Y')."-12-31 23:59:59";
+    $data = date('Y-m-d',strtotime("-360 days")); 
     $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem 
-    WHERE data between '".$dtIni."' AND '".$dtFim."' 
-    AND clienteId = ". $r['id'];              
+    WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];              
     $result = mysqli_query($conn, $sql_query);
     $totalQtd = array();
     while($row = mysqli_fetch_array($result)) $totalQtd[] = $row['quantidade'];

@@ -581,8 +581,7 @@ foreach($rows as $r){
               <?php //echo ($categoria < 3 ? "readonly='true'" : "") ?>
               value="<?php //echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>-->
 
-              <td><input id="limiteOperacionalAno" name="limiteOperacionalAno"
-                <?php echo ($categoria < 3 ? "readonly='true'" : "") ?>
+              <td><input id="limiteOperacionalAno" name="limiteOperacionalAno"                
                 value="<?php echo number_format($limiteOperacionalAno,2,",",".") ?>" type="text" class="validate currency"></td>
               </tr>
 

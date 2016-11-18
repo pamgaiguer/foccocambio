@@ -478,7 +478,7 @@ include "../includes/header.php";
                       <input id="limiteOperacionalDia" name="limiteOperacionalDia" readonly="true"  value="3000,00" type="text">
                     </td>-->
                     <td>
-                      <input id="limiteOperacionalAno" name="limiteOperacionalAno" readonly="true"  value="13000,00" type="text">
+                      <input id="limiteOperacionalAno" name="limiteOperacionalAno" value="13000,00" type="text">
                     </td>
                   </tr>
                 </tbody>
