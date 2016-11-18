@@ -871,15 +871,24 @@ focco = {
 
     $("#select-caixa").change(function(){
       console.log($(this).val());
-
+      
       if ($(this).val() == 3) {
         $(".div-swift").fadeIn(100);
         $(".div-darf").fadeIn(100);
         $(".div-txnivel").fadeIn(100);
+
+        $(".div-formaPgto").fadeOut(100);
+        $(".div-mn").fadeOut(100);
+
+
       } else {
         $(".div-swift").fadeOut(100);
         $(".div-darf").fadeOut(100);
         $(".div-txnivel").fadeOut(100);
+
+        $(".div-formaPgto").fadeIn(100);
+        $(".div-mn").fadeIn(100);
+
         $("#txNivel").val("");
         $("#swift").val("");
         $("#darf").val("");
@@ -936,19 +945,34 @@ focco = {
 
     $("#taxa").blur(function(){
       if ($("#quantidade").val() > 0.00){
-        $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) ));
-        $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
 
-        $("#mn").val(fromNumber( toNumber($("#subtotal").val()) - toNumber($("#iof").val()) ));
+        //caixa fx53
+        if ($("#select-caixa").val() == 3){
+
+          $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) ));
+          $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));          
+          $("#vet").val(fromNumber( toNumber($("#subtotal").val()) + toNumber($("#iof").val()) ));
+          $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#quantidade").val()) ));
+
+        } else {
+
+          $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) ));
+          $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
+          $("#mn").val(fromNumber( toNumber($("#subtotal").val()) - toNumber($("#iof").val()) ));
+          $("#vettaxa").val(fromNumber( toNumber($("#mn").val()) / toNumber($("#quantidade").val()) ));
+          $("#vet").val(fromNumber( toNumber($("#subtotal").val()) ));  
+
+        }
+
       }
     });
 
     $("#swift").blur(function(){
 
       $("#vet").val(fromNumber(
-        toNumber($(this).val()) + toNumber($("#iof").val()) + toNumber($("#darf").val())
+        toNumber($(this).val()) + toNumber($("#subtotal").val()) + toNumber($("#iof").val()) + toNumber($("#darf").val())
         ));
-      $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#subtotal").val()) * 100 )+ "%");
+      $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#quantidade").val()) )+ "%");
 
 
     });
@@ -956,10 +980,10 @@ focco = {
 
     $("#darf").blur(function(){
       $("#vet").val(fromNumber(
-        toNumber($(this).val()) + toNumber($("#iof").val()) + toNumber($("#swift").val())
+        toNumber($(this).val()) + toNumber($("#subtotal").val()) + toNumber($("#iof").val()) + toNumber($("#swift").val())
         ));
 
-      $("#vettaxa").val(fromNumber( (toNumber($("#vet").val()) / toNumber($("#subtotal").val())) * 100 ) + "%");
+      $("#vettaxa").val(fromNumber( (toNumber($("#vet").val()) / toNumber($("#quantidade").val())) ) + "%");
     });
 
     $("#form-boletagem").submit(function(e){
@@ -982,6 +1006,7 @@ focco = {
       vet = $("#vet", $(this)).val();
       vettaxa = $("#vettaxa", $(this)).val();
       txnivel = $("#txNivel", $(this)).val();
+      formaPgto = $("#select-formaPgto", $(this)).val();
 
       $.ajax({
         url: "/dashboard/boletagem/adicionarPost.php/",
@@ -989,7 +1014,7 @@ focco = {
         data: {
           clienteId, usuarioId, data, caixa, modalidade,
           operacao, moeda, quantidade, taxa, subtotal,
-          iof, mn, swift, darf, vet, vettaxa, txnivel
+          iof, mn, swift, darf, vet, vettaxa, txnivel, formaPgto
         },
         success: function(r){
           console.log(r);

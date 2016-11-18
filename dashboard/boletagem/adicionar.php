@@ -117,7 +117,7 @@ foreach($rows as $r){
     </div>
 
     <div class="row">
-      <div class="input-field col s4">
+      <div class="input-field col s4 div-mn">
         <input placeholder="Moeda Nacional" id="mn" type="text">
         <label for="mn">Moeda Nacional</label>
       </div>
@@ -150,9 +150,8 @@ foreach($rows as $r){
 
     <div class="row">
 
-      <div class="input-field col s4">
-        <select id="select-formaPgto">
-          <option value="0" disabled>Forma de pagamento</option>
+      <div class="input-field col s4 div-formaPgto">
+        <select id="select-formaPgto">          
           <option value="1">Espécie</option>
           <option value="2">TED</option>
           <option value="3">DOC</option>

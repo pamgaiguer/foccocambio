@@ -566,6 +566,7 @@ if ((sizeof($docprov) > 0) && $dif){
             <th>Data</th>
             <th>Caixa</th>
             <th>Modalidade</th>
+            <th>Forma Pagto</th>
             <th>Operação</th>
             <th>Moeda</th>
             <th>Quantidade</th>
@@ -598,11 +599,19 @@ if ((sizeof($docprov) > 0) && $dif){
 
               $modalidade = $r['modalidade'] == 1 ? "Compra" : "Venda";
 
+              switch ($r['formaPgto']) {
+                case 1: $formaPagamento = "Espécie"; break;
+                case 2: $formaPagamento = "TED"; break;
+                case 3: $formaPagamento = "DOC"; break;
+                case 4: $formaPagamento = "Transferência bancária"; break;
+                default: $formaPagamento = ""; break;
+              }
+
               switch ($r['tipoOperacao']) {
                 case 1: $tipoOperacao = "Espécie"; break;
                 case 2: $tipoOperacao = "Cartão pré-pago"; break;
                 case 3: $tipoOperacao = "Transferência internacional"; break;
-              }
+              }              
 
               
               if ($_SESSION["currentUser"]["tipo"] < 3) {
@@ -620,6 +629,7 @@ if ((sizeof($docprov) > 0) && $dif){
               <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
               <td>'.$caixa.'</td>
               <td>'.$modalidade.'</td>
+              <td>'.$formaPagamento.'</td>
               <td>'.$tipoOperacao.'</td>
               <td>'.$r['moeda'].'</td>
               <td>'.number_format($r['quantidade'],2,",",".").'</td>
