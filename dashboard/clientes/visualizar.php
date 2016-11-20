@@ -438,7 +438,7 @@ if ((sizeof($docprov) > 0) && $dif){
         while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
         foreach($rows as $r){
-          
+
           $tipo = $r['tipo'];
           $cep = $r['cep'];
           $endereco = $r['endereco'];
@@ -504,7 +504,7 @@ if ((sizeof($docprov) > 0) && $dif){
         $rows = array();
         while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
-        foreach($rows as $r){          
+        foreach($rows as $r){
           $tipo = $r['tipo'];
           $cep = $r['cep'];
           $endereco = $r['endereco'];
@@ -560,7 +560,7 @@ if ((sizeof($docprov) > 0) && $dif){
       </div>
 
       <div id="boletagemHistory">
-        <table>
+        <table class="table">
           <thead>
             <th>Usuario</th>
             <th>Data</th>
@@ -611,14 +611,14 @@ if ((sizeof($docprov) > 0) && $dif){
                 case 1: $tipoOperacao = "Espécie"; break;
                 case 2: $tipoOperacao = "Cartão pré-pago"; break;
                 case 3: $tipoOperacao = "Transferência internacional"; break;
-              }              
+              }
 
-              
+
               if ($_SESSION["currentUser"]["tipo"] < 3) {
 
-              if ($r['status'] == 1) 
+              if ($r['status'] == 1)
                 $acao = '<a href="#" class="link-acao-cancelar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
-              else 
+              else
                 $acao = '<a href="#" class="link-acao-reativar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
 
               } else $acao = "";
