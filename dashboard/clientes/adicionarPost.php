@@ -2,7 +2,7 @@
 include "../core/database.php";
 include "../core/functions.php";
 
-$sql_query = "select 1 from clientes where cpfCnpj like '".SomenteNumeros($_POST["cpfCnpj"])."'";
+$sql_query = "select 1 from clientes where cpfCnpj like '".SomenteNumeros($_POST["cpfCnpj"])."' and ativo=1";
 $result = mysqli_query($conn, $sql_query);
 if (mysqli_num_rows($result) < 1) {
 	$sql_query = sprintf("
