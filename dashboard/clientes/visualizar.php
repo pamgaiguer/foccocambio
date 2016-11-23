@@ -453,24 +453,24 @@ if ((sizeof($docprov) > 0) && $dif){
 
         <div class="line-fields">
           <div class="row">
-          <p>Endereço Residencial</p>
+            <p>Endereço Residencial</p>
 
-          <div class="input-field col s3">
-            <input placeholder="<?php echo substr($cep, 0, 5).'-'.substr($cep, 5, 3); ?>" id="cliente_cep" type="text" readonly>
-            <label for="cliente_cep">CEP</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $endereco; ?>" id="cliente_endereco" type="text" readonly>
-            <label for="cliente_endereco">Logradouro</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $numero; ?>" id="cliente_numero" type="text" readonly>
-            <label for="cliente_numero">Número</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $complemento == '' ? "Não possui" : $complemento; ?>" id="cliente_complemento" type="text" readonly>
-            <label for="cliente_complemento">Complemento</label>
-          </div>
+            <div class="input-field col s3">
+              <input placeholder="<?php echo substr($cep, 0, 5).'-'.substr($cep, 5, 3); ?>" id="cliente_cep" type="text" readonly>
+              <label for="cliente_cep">CEP</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="<?php echo $endereco; ?>" id="cliente_endereco" type="text" readonly>
+              <label for="cliente_endereco">Logradouro</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="<?php echo $numero; ?>" id="cliente_numero" type="text" readonly>
+              <label for="cliente_numero">Número</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="<?php echo $complemento == '' ? "Não possui" : $complemento; ?>" id="cliente_complemento" type="text" readonly>
+              <label for="cliente_complemento">Complemento</label>
+            </div>
           </div>
 
         </div>
@@ -562,6 +562,7 @@ if ((sizeof($docprov) > 0) && $dif){
       <div id="boletagemHistory">
         <table class="table">
           <thead>
+            <th>#ID Boleto</th>
             <th>Usuario</th>
             <th>Data</th>
             <th>Caixa</th>
@@ -591,6 +592,8 @@ if ((sizeof($docprov) > 0) && $dif){
               while($rowu = mysqli_fetch_array($result)) $rowsu[] = $rowu;
               foreach($rowsu as $ru) {$usuario = $ru['nome'];}
 
+              $id = $r['id'];
+
               switch ($r['caixaId']) {
                 case 1: $caixa = "Focco"; break;
                 case 2: $caixa = "Focco X"; break;
@@ -616,35 +619,36 @@ if ((sizeof($docprov) > 0) && $dif){
 
               if ($_SESSION["currentUser"]["tipo"] < 3) {
 
-              if ($r['status'] == 1)
-                $acao = '<a href="#" class="link-acao-cancelar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
-              else
-                $acao = '<a href="#" class="link-acao-reativar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
+                if ($r['status'] == 1)
+                  $acao = '<a href="#" class="link-acao-cancelar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
+                else
+                  $acao = '<a href="#" class="link-acao-reativar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
 
               } else $acao = "";
 
               echo
               '<tr>
-              <td>'.$usuario.'</td>
-              <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
-              <td>'.$caixa.'</td>
-              <td>'.$modalidade.'</td>
-              <td>'.$formaPagamento.'</td>
-              <td>'.$tipoOperacao.'</td>
-              <td>'.$r['moeda'].'</td>
-              <td>'.number_format($r['quantidade'],2,",",".").'</td>
-              <td>'.number_format($r['taxa'],2,",",".").'</td>
-              <td>'.number_format($r['subtotal'],2,",",".").'</td>
-              <td>'.$acao.'</td>
-            </tr>';
-          }
-          ?>
-        </tbody>
-      </table>
-    </div>
+                <td>'.$id.'</td>
+                <td>'.$usuario.'</td>
+                <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
+                <td>'.$caixa.'</td>
+                <td>'.$modalidade.'</td>
+                <td>'.$formaPagamento.'</td>
+                <td>'.$tipoOperacao.'</td>
+                <td>'.$r['moeda'].'</td>
+                <td>'.number_format($r['quantidade'],2,",",".").'</td>
+                <td>'.number_format($r['taxa'],2,",",".").'</td>
+                <td>'.number_format($r['subtotal'],2,",",".").'</td>
+                <td>'.$acao.'</td>
+              </tr>';
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
 
+    </div>
   </div>
-</div>
 </div>
 </main>
 

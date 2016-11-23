@@ -166,7 +166,6 @@ focco = {
       }
     });
 
-
     $("#estadoCivil").change(function(){
       if ($(this).val() == 2){
         $(".dados-conjuge").fadeIn(300);
@@ -179,24 +178,20 @@ focco = {
       }
     });
 
-
     $("#statusCliente").change(function(){
-      if ($(this).val() == 2){
+      if ($(this).val() == 1){
         $(".motivoBlock").fadeIn(300);
         $("#motivoStatusBlocked").attr("required", "required");
       } else {
         $(".motivoBlock").fadeOut(300);
-        $(".motivoBlockDescricao").fadeOut(300);
         $("#motivoStatusBlocked").removeAttr("required");
       }
     });
 
     $("#motivoStatusBlocked").change(function(){
       if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3 || $(this).val() == 4 ){
-        $(".motivoBlockDescricao").fadeIn(300);
         $("#observacoes").attr("required", "required");
       } else {
-        $(".motivoBlockDescricao").fadeOut(300);
         $("#observacoes").removeAttr("required");
       }
     });
@@ -320,7 +315,7 @@ focco = {
         url: "http://api.postmon.com.br/v1/cep/" + cep,
         type: "get",
         success: function(data){
-          console.log(data);
+          //console.log(data);
           $("#logradouro-residencial").val(data.logradouro);
           $("#bairro-residencial").val(data.bairro);
           $("#cidade-residencial").val(data.cidade);
@@ -351,7 +346,7 @@ focco = {
         url: "http://api.postmon.com.br/v1/cep/" + cep,
         type: "get",
         success: function(data){
-          console.log(data);
+          //console.log(data);
           $("#logradouro-entrega").val(data.logradouro);
           $("#bairro-entrega").val(data.bairro);
           $("#cidade-entrega").val(data.cidade);
@@ -381,7 +376,7 @@ focco = {
           data: formData,
           async: false,
           success: function (clienteId) {
-            console.log(clienteId);
+            //console.log(clienteId);
 
             if (clienteId < 1) window.location = "/dashboard/clientes/";
 
@@ -557,7 +552,7 @@ focco = {
         url: "http://api.postmon.com.br/v1/cep/" + cep,
         type: "get",
         success: function(data){
-          console.log(data);
+          //console.log(data);
           $("#logradouro-residencial").val(data.logradouro);
           $("#bairro-residencial").val(data.bairro);
           $("#cidade-residencial").val(data.cidade);
@@ -588,7 +583,7 @@ focco = {
         url: "http://api.postmon.com.br/v1/cep/" + cep,
         type: "get",
         success: function(data){
-          console.log(data);
+          //console.log(data);
           $("#logradouro-entrega").val(data.logradouro);
           $("#bairro-entrega").val(data.bairro);
           $("#cidade-entrega").val(data.cidade);
@@ -616,7 +611,7 @@ focco = {
           data: formData,
           async: false,
           success: function (data) {
-            console.log(data);
+            //console.log(data);
             window.location = "/dashboard/clientes/";
           },
           cache: false,
@@ -665,15 +660,15 @@ focco = {
         type: "post",
         data: {boletagemId},
         success: function(r){
-         console.log($(this));
+         //console.log($(this));
          if (JSON.parse(r) == "ok") {
           $(botao).html("Reativado!");
           $(botao).click(function(e){e.preventDefault()});
 
-         }
-
         }
-      });
+
+      }
+    });
     });
 
   },
@@ -870,8 +865,7 @@ focco = {
   adicionarBoletagem: function(){
 
     $("#select-caixa").change(function(){
-      console.log($(this).val());
-      
+
       if ($(this).val() == 3) {
         $(".div-swift").fadeIn(100);
         $(".div-darf").fadeIn(100);
@@ -879,9 +873,12 @@ focco = {
 
         $(".div-formaPgto").fadeOut(100);
         $(".div-mn").fadeOut(100);
-
-
-      } else {
+        $("#select-operacao option[value='3']").show();
+      }
+      else if($(this).val() != 3){
+        $("#select-operacao option[value='3']").hide();
+      }
+      else {
         $(".div-swift").fadeOut(100);
         $(".div-darf").fadeOut(100);
         $(".div-txnivel").fadeOut(100);
@@ -896,7 +893,6 @@ focco = {
     });
 
     $("#select-operacao").change(function(){
-
       switch($(this).val()){
         case "1": $("#ioftaxa").val("1.1");  break;
         case "2": $("#ioftaxa").val("6.38"); break;
@@ -950,18 +946,16 @@ focco = {
         if ($("#select-caixa").val() == 3){
 
           $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) ));
-          $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));          
+          $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
           $("#vet").val(fromNumber( toNumber($("#subtotal").val()) + toNumber($("#iof").val()) ));
           $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#quantidade").val()) ));
 
         } else {
-
           $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) ));
           $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
           $("#mn").val(fromNumber( toNumber($("#subtotal").val()) - toNumber($("#iof").val()) ));
           $("#vettaxa").val(fromNumber( toNumber($("#mn").val()) / toNumber($("#quantidade").val()) ));
-          $("#vet").val(fromNumber( toNumber($("#subtotal").val()) ));  
-
+          $("#vet").val(fromNumber( toNumber($("#subtotal").val()) ));
         }
 
       }
@@ -1017,7 +1011,7 @@ focco = {
           iof, mn, swift, darf, vet, vettaxa, txnivel, formaPgto
         },
         success: function(r){
-          console.log(r);
+          //console.log(r);
 
           if (JSON.parse(r) == "ok"){
             window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";
@@ -1032,4 +1026,4 @@ focco = {
 
 };
 
-   $('.materialboxed').materialbox();
+$('.materialboxed').materialbox();

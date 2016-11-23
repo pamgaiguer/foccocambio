@@ -32,7 +32,7 @@ foreach($rows as $r){
   </div>
   <form id="form-boletagem">
     <div class="row">
-      <div class="input-field col s3">
+    <div class="input-field col s2">
         <input type="hidden" id="clienteId" value=<?php echo $id ?>>
         <input type="hidden" id="usuarioId" value=<?php echo $_SESSION['currentUser']['id'] ?>>
 
@@ -46,7 +46,8 @@ foreach($rows as $r){
       <div class="input-field col s3">
       </div>
 
-      <div class="input-field col s3">
+      <div class="col s3">
+        <label for="select-caixa">Selecione o Caixa</label>
         <select id="select-caixa" class="browser-default">
           <option value="1">Focco</option>
           <option value="2">Focco X</option>
@@ -56,24 +57,25 @@ foreach($rows as $r){
     </div>
 
     <div class="row">
-      <div class="input-field col s4">
-        <select id="select-modalidade">
-          <option value="1">Compra</option>
+      <div class="col s4">
+        <label for="select-modalidade">Operação</label>
+        <select id="select-modalidade" class="browser-default">
           <option value="2">Venda</option>
+          <option value="1">Compra</option>
         </select>
-        <label>Compra/Venda</label>
       </div>
 
-      <div class="input-field col s4">
-        <select id="select-operacao">
+      <div class="col s4">
+        <label>Tipo de operação</label>
+        <select id="select-operacao" class="browser-default">
           <option value="1">Espécie</option>
           <option value="2">Cartão Pré-Pago</option>
           <option value="3">Transferência internacional</option>
         </select>
-        <label>Tipo de operação</label>
       </div>
 
-      <div class="input-field col s4">
+      <div class="col s4">
+        <label for="select-moedas">Moedas</label>
         <select id="select-moedas" class="browser-default">
           <option value="USD" data-operacoes="1,2,3">USD</option>
           <option value="EUR" data-operacoes="1,2,3">EUR</option>
@@ -151,7 +153,7 @@ foreach($rows as $r){
     <div class="row">
 
       <div class="input-field col s4 div-formaPgto">
-        <select id="select-formaPgto">          
+        <select id="select-formaPgto">
           <option value="1">Espécie</option>
           <option value="2">TED</option>
           <option value="3">DOC</option>
@@ -162,7 +164,7 @@ foreach($rows as $r){
 
 
       <div class="input-field col s4">
-      <input type="submit" class="btn bg-blue " value="Boletar">
+        <input type="submit" class="btn bg-blue " value="Boletar">
       </div>
     </div>
 
