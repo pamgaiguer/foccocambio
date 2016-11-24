@@ -182,6 +182,10 @@ input[type=password]:focus:not([readonly]) + label {
     color: #f57f17;
     background-color: #fffde7;
     border-color: #ffee58; }
+  .alert.observation {
+    color: #464C58;
+    background-color: #FAFAFA;
+    border-color: #373D49; }
 
 .cotation-table tbody tr td:first-child {
   font-weight: 700; }

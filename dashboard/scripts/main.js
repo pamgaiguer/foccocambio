@@ -189,7 +189,7 @@ focco = {
     });
 
     $("#motivoStatusBlocked").change(function(){
-      if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3 || $(this).val() == 4 ){
+      if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3 || $(this).val() == 4 || $(this).val() == 5){
         $("#observacoes").attr("required", "required");
       } else {
         $("#observacoes").removeAttr("required");
@@ -456,6 +456,35 @@ focco = {
       }
     });
 
+
+    $("#statusCliente").change(function(){
+      if ($(this).val() == 1){
+        $(".motivoBlock").fadeIn(300);
+        $("#motivoStatusBlocked").attr("required", "required");
+      } else {
+        $(".motivoBlock").fadeOut(300);
+        $("#motivoStatusBlocked").removeAttr("required");
+      }
+    });
+
+    $("#motivoStatusBlocked").change(function(){
+      if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3 || $(this).val() == 4 || $(this).val() == 5){
+        $("#observacoes").attr("required", "required");
+      } else {
+        $("#observacoes").removeAttr("required");
+      }
+    });
+
+    $("#ondeConheceuFocco").change(function(){
+      if($(this).val()== 4){
+        $(".ondeSoubeFocco").fadeIn(300);
+        $("#ondeConheceuFoccoDesc").attr("required", "required");
+      }
+      else {
+        $(".ondeSoubeFocco").fadeOut(300);
+        $("#ondeConheceuFoccoDesc").removeAttr();
+      }
+    });
 
     $("#telFixo").mask("(99) 9999-9999");
     $("#telCelular").mask("(99) 99999-9999");

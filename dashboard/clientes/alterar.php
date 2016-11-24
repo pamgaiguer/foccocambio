@@ -256,30 +256,32 @@ foreach($rows as $r){
             </div>
 
             <div class="input-field col s4">
-              <select id="bloqueado" name="bloqueado" required>
+              <select id="statusCliente" name="statusCliente" required>
                 <option value="0" selected>Ativo</option>
                 <option value="1">Bloqueado</option>
               </select>
-              <label for="bloqueado">Status</label>
+              <label for="statusCliente">Status</label>
             </div>
 
             <div class="motivoBlock" style="display: none">
               <div class="input-field col s4" >
                 <select id="motivoStatusBlocked" name="motivoStatusBlocked">
-                  <option value="1" selected>Falta de documento</option>
+                  <option value="0" selected></option>
+                  <option value="1">Falta de documento</option>
                   <option value="2">Documento vencido</option>
                   <option value="3">Fraude</option>
-                  <option value="4">Outros</option>
+                  <option value="4">Bloqueado manualmente</option>
+                  <option value="5">Outros</option>
                 </select>
                 <label for="motivoStatusBlocked">Motivo Status Bloqueado</label>
               </div>
             </div>
           </div>
 
-          <div class="motivoBlockDescricao" style="display: none">
+          <div class="motivoBlockDescricao">
             <div class="row">
               <div class="input-field col s12" >
-                <textarea id="observacoes" name="observacoes" class="materialize-textarea" row="" length="120"></textarea>
+                <textarea id="observacoes" name="observacoes" class="materialize-textarea" length="120"><?php echo $observacoes; ?></textarea>
                 <label for="observacoes">Observações</label>
               </div>
             </div>
@@ -581,7 +583,7 @@ foreach($rows as $r){
               <?php //echo ($categoria < 3 ? "readonly='true'" : "") ?>
               value="<?php //echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>-->
 
-              <td><input id="limiteOperacionalAno" name="limiteOperacionalAno"                
+              <td><input id="limiteOperacionalAno" name="limiteOperacionalAno"
                 value="<?php echo number_format($limiteOperacionalAno,2,",",".") ?>" type="text" class="validate currency"></td>
               </tr>
 

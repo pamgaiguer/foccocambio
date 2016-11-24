@@ -146,6 +146,11 @@ input[type=password]:focus:not([readonly]) + label{
     background-color: #fffde7; // lighten-5
     border-color: #ffee58; //normal color
   }
+  &.observation{
+    color: #464C58; //darken-4
+    background-color: #FAFAFA; // lighten-5
+    border-color: #373D49; //normal color
+  }
 }
 
 .cotation-table{
