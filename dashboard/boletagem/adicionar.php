@@ -97,55 +97,55 @@ foreach($rows as $r){
 
     <div class="row">
       <div class="input-field col s3">
-        <input placeholder="Quantidade" id="quantidade" type="text">
+        <input placeholder="Quantidade" id="quantidade" type="text" class="currency">
         <label for="qtdade">Quantidade</label>
       </div>
 
       <div class="input-field col s3">
-        <input placeholder="Taxa" id="taxa" type="text">
+        <input placeholder="Taxa" id="taxa" type="text" class="currency">
         <label for="taxa">Taxa</label>
       </div>
 
       <div class="input-field col s3">
-        <input placeholder="Sub Total" id="subtotal" type="text" readonly>
+        <input placeholder="Sub Total" id="subtotal" type="text" readonly class="currency">
         <label for="subtotal">Sub Total</label>
       </div>
 
       <div class="input-field col s3">
         <input id="ioftaxa" type="hidden" value="1.1">
-        <input placeholder="IOF" id="iof" type="text">
+        <input placeholder="IOF" id="iof" type="text" class="currency">
         <label for="iof">IOF</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s4 div-mn">
-        <input placeholder="Moeda Nacional" id="mn" type="text">
+        <input placeholder="Moeda Nacional" id="mn" type="text" class="currency">
         <label for="mn">Moeda Nacional</label>
       </div>
 
       <div class="input-field col s4 div-swift" style="display: none;">
-        <input placeholder="swift" id="swift" type="text" >
+        <input placeholder="swift" id="swift" type="text" class="currency">
         <label for="swift">Swift</label>
       </div>
 
       <div class="input-field col s4 div-darf" style="display: none;">
-        <input placeholder="DARF" id="darf" type="text">
+        <input placeholder="DARF" id="darf" type="text" class="currency">
         <label for="darf">DARF</label>
       </div>
 
       <div class="input-field col s4">
-        <input placeholder="vet" id="vet" type="text" readonly>
+        <input placeholder="vet" id="vet" type="text" readonly class="currency">
         <label for="vet">VET</label>
       </div>
 
       <div class="input-field col s4">
-        <input placeholder="Vet Tx" id="vettaxa" type="text">
+        <input placeholder="Vet Tx" id="vettaxa" type="text" class="currency5">
         <label for="vettaxa">Vet Tx</label>
       </div>
 
       <div class="input-field col s4 div-txnivel" style="display: none;">
-        <input placeholder="Tx de nível" id="txNivel" type="text">
+        <input placeholder="Tx de nível" id="txNivel" type="text" class="currency">
         <label for="Tx de nível">Tx de nível</label>
       </div>
     </div>

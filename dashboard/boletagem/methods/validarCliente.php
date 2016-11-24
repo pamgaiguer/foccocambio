@@ -2,8 +2,8 @@
 
 	include "../../core/database.php";
 	include "../../core/functions.php";
-
-	$sql_query = "SELECT * FROM clientes WHERE ativo = 1 and id = ".$_POST["clienteId"];
+  	
+  $sql_query = "SELECT * FROM clientes WHERE ativo = 1 and id = ".$_POST["clienteId"];
 	$result = mysqli_query($conn, $sql_query);
 
 	$rows = array();

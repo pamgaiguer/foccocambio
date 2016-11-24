@@ -213,7 +213,7 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s4">
-              <select id="statusCliente" name="statusCliente" required>
+              <select id="bloqueado" name="bloqueado" required>
                 <option value="0" selected>Ativo</option>
                 <option value="1">Bloqueado</option>
               </select>
@@ -479,11 +479,40 @@ include "../includes/header.php";
                       <input id="limiteOperacionalDia" name="limiteOperacionalDia" readonly="true"  value="3000,00" type="text">
                     </td>-->
                     <td>
-                      <input id="limiteOperacionalAno" name="limiteOperacionalAno" value="13000,00" type="text">
+                      <input id="limiteOperacionalAno" class="currency" name="limiteOperacionalAno" value="13000,00" type="text">
                     </td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          <div id="modal4" class="modal">
+            <div class="modal-content">
+              <h4>Autenticação</h4>
+              <p>Informe as credenciais de administrador para desbloquear o cliente provisóriamente.</p>
+              <div class="">
+                <label for="login" data-error="Preencha corretamente">Login</label>
+                <input id="login" type="text" class="validate">
+              </div>
+              <div class="">
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" class="validate">
+              </div>
+              <div class="section">
+                <div id="form-erro" class="center red-text"></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a id="modal-confirm4" class="modal-action btn">
+                <i class="material-icons right">&#xE86C;</i>
+                Confirmar
+              </a>
+
+              <a id="modal-cancel4" class="modal-action modal-close btn red darken-1 white">
+                <i class="material-icons right">&#xE5C9;</i>
+                Cancelar
+              </a>
             </div>
           </div>
 
