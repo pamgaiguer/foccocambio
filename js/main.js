@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  //$('#blackFriday').modal();
+  $('#blackFriday').modal();
 
   $('a[href="' + this.location.pathname + '"]').parent('li').addClass('active'); //menu bootstrap ativo
 
