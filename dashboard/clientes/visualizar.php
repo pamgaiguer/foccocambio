@@ -293,10 +293,6 @@ if ((sizeof($docprov) > 0) && $dif){
             <label for="cliente_vip">VIP Focco</label>
           </div>
 
-          <div class="input-field col s3">
-            <input placeholder="<?php echo number_format($limiteOperacionalAno,2,",",".") ?>" id="cliente_limite" type="text" readonly>
-            <label for="cliente_limite">Limite Autorizado (Anual)</label>
-          </div>
         </div>
 
         <div class="line-fields">
@@ -715,9 +711,9 @@ if ((sizeof($docprov) > 0) && $dif){
             if ($_SESSION["currentUser"]["tipo"] < 3) {
 
               if ($r['status'] == 1)
-                $acao = '<a href="#" class="link-acao-cancelar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
+                $acao = '<a href="#" class="link-acao-cancelar btn red darken-1 white-text" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
               else
-                $acao = '<a href="#" class="link-acao-reativar" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
+                $acao = '<a href="#" class="link-acao-reativar btn teal darken-1 white-text" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
 
             } else $acao = "";
 
