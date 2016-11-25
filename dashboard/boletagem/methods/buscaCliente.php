@@ -127,7 +127,7 @@
     if ($r["vip"]) $cor = "amber-text";     
 
     $boletar = "";
-    if ($cor == "green-text")
+    if ($cor != "red-text")
       $boletar = '<a class="link-acao btn-floating waves-effect waves-light" data-acao="boletar" data-cliente-id="'.$r["id"].'" href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'" data-href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'"><i class="material-icons" title="Boletar cliente">&#xE8B0;</i></a>';
     
 
