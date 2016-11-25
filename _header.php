@@ -100,7 +100,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
             <a href="/"><img src="images/logo_topo.png" class="logo-topo img-responsive center-block" alt="Focco Cambio"></a>
           </div>
 
-          <div class="col-xs-offset-3 col-xs-6 col-sm-2 col-md-2 col-lg-2">
+          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <div class="tel-delivery">
               <div class="media">
                 <div class="media-left">
