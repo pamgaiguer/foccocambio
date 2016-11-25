@@ -45,10 +45,16 @@ foreach($rows as $r){
   $cnhDataValidade = $r["cnhDataValidade"];
 }
 
-$sql_query = sprintf("SELECT tipo FROM documentos WHERE clienteId = %s", $_GET['clienteId']);
+$sql_query = sprintf("SELECT tipo, arquivo FROM documentos WHERE clienteId = %s", $_GET['clienteId']);
 $result = mysqli_query($conn, $sql_query);
 $docs = array();
-while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
+$dirs = array();
+
+while($row = mysqli_fetch_array($result)) {    
+    $docs[] = $row['tipo'];
+    $dirs[] = $row['arquivo'];
+}
+  
 
 switch ($categoria) {
   case 1:
@@ -377,64 +383,140 @@ if ((sizeof($docprov) > 0) && $dif){
         </div>
         <?php }; ?>
 
-        <?php if (in_array("CPF", $docs)) { ?>
+
+
+        <?php 
+        if (in_array("CPF", $docs)) {
+          $index = array_search("CPF", $docs);
+        ?>
         <div class="col s4">
           <figure>
-            <img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cpf.jpg"/>
+          <?php             
+            if (strpos($dirs[$index], '.pdf') > 1) {  
+              echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+              
+            } else {
+
+              echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+            }
+          ?>                          
             <figcaption>CPF/RG/CNH</figcaption>
           </figure>
-        </div>
-        <?php }; ?>
 
-        <?php if (in_array("CR", $docs)) { ?>
+          
+
+        </div>
+        <?php } ?>
+
+        <?php if (in_array("CR", $docs)) { 
+          $index = array_search("CR", $docs);
+        ?>
         <div class="col s4">
           <figure>
-            <img class="responsive-img"  alt="doc-cr" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cr.jpg" width="350px" height="500px" />
+            <?php             
+              if (strpos($dirs[$index], '.pdf') > 1) {  
+                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+                
+              } else {
+
+                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+              }
+            ?>                          
             <figcaption>Comprovante de residência</figcaption>
           </figure>
         </div>
         <?php }; ?>
 
-        <?php if (in_array("FF", $docs)) { ?>
+        <?php if (in_array("FF", $docs)) { 
+          $index = array_search("FF", $docs);
+        ?>
         <div class="col s4">
           <figure>
-            <img class="responsive-img"  alt="doc-ff" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ff.jpg" width="350px" height="500px" />
+            <?php             
+              if (strpos($dirs[$index], '.pdf') > 1) {  
+                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+                
+              } else {
+
+                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+              }
+            ?>
             <figcaption>Ficha Cadastral Focco</figcaption>
           </figure>
         </div>
         <?php }; ?>
 
-        <?php if (in_array("IR", $docs)) { ?>
+        <?php if (in_array("IR", $docs)) { 
+          $index = array_search("IR", $docs);
+        ?>
         <div class="col s4">
           <figure>
-            <img class="responsive-img"  alt="doc-ir" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ir.jpg" width="350px" height="500px" />
+            <?php             
+              if (strpos($dirs[$index], '.pdf') > 1) {  
+                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+                
+              } else {
+
+                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+              }
+            ?>
             <figcaption>Imposto de Renda</figcaption>
           </figure>
         </div>
         <?php }; ?>
 
-        <?php if (in_array("CA", $docs)) { ?>
+        <?php if (in_array("CA", $docs)) { 
+          $index = array_search("CA", $docs);
+        ?>
         <div class="col s4">
           <figure>
-            <img class="responsive-img"  alt="doc-ca" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-ca.jpg" width="350px" height="500px" />
+            <?php             
+              if (strpos($dirs[$index], '.pdf') > 1) {  
+                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+                
+              } else {
+
+                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+              }
+            ?>
             <figcaption>Cartão de Assinatura</figcaption>
           </figure>
         </div>
         <?php }; ?>
 
-        <?php if (in_array("CPS", $docs)) { ?>
+        <?php if (in_array("CPS", $docs)) { 
+          $index = array_search("CPS", $docs);
+        ?>
         <div class="col s4">
           <figure>
-            <img class="responsive-img"  alt="doc-cps" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-cps.jpg" width="350px" height="500px" />
+            <?php             
+              if (strpos($dirs[$index], '.pdf') > 1) {  
+                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+                
+              } else {
+
+                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+              }
+            ?>
             <figcaption>Contrato de Prestação de Serviços</figcaption>
           </figure>
         </div>
         <?php }; ?>
 
-        <?php if (in_array("PV", $docs)) { ?>
+        <?php if (in_array("PV", $docs)) { 
+          $index = array_search("CPS", $docs);
+        ?>
         <div class="col s4">
           <figure>
-            <img class="responsive-img"  alt="doc-pv" src="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.jpg" data-zoom-image="/dashboard/clientes/uploads/<?php echo $cpfCnpj ?>/doc-pv.jpg" width="350px" height="500px" />
+            <?php             
+              if (strpos($dirs[$index], '.pdf') > 1) {  
+                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+                
+              } else {
+
+                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+              }
+            ?>
             <figcaption>Procuração para a Vision</figcaption>
           </figure>
         </div>
