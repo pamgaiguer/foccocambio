@@ -21,7 +21,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Papel Moeda, Cartões de Viagem, Transferências Internacionais e tudo que você precisa para viajar tranquilo!" />
-  <meta name="author" content="Pamella Gaiguer, Leonardo Zaccur" />
+  <meta name="author" content="Pamella Gaiguer, Leonardo Zaccur, Thompson Garcia" />
   <meta name="keywords" content="casa, câmbio, financeiro, western, union, yes, cash, passport, visa, mastercard, dólar, euro,
   libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery, moeda, casa, espécie, especie, real, Câmbio financeiro,
   Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra">
@@ -53,7 +53,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
       <div class="container">
         <div class="row">
 
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2" >
             <div class="cotation-table">
               <p class="cotation-title text-uppercase">cotação</p>
               <table class="table">
@@ -85,7 +85,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
             <p class="cotation-warning-iof">*IOF já incluso</p>
           </div>
 
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
             <p class="cotation-info">
               <a href="#" data-toggle="modal" data-target="#termsOfUse">
                 Consulte as <br>
@@ -96,12 +96,11 @@ $libra = number_format($rows[0]['libra'],2,",","");
               </a>
             </p>
           </div>
-
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <a href="/"><img src="images/logo_topo.png" class="logo-topo img-responsive center-block" alt="Focco Cambio"></a>
           </div>
 
-          <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <div class="col-xs-offset-3 col-xs-6 col-sm-2 col-md-2 col-lg-2">
             <div class="tel-delivery">
               <div class="media">
                 <div class="media-left">

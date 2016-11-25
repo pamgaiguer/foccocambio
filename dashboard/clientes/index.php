@@ -47,7 +47,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
         </div>
 
 
-        <a id="link-adicionar-cliente" class="btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
+         <a id="link-adicionar-cliente" class="btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
         </a>
       </div>
 

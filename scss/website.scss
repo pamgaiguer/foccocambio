@@ -111,7 +111,7 @@
 
 @media (min-width: 1px) and (max-width: 767px) {
   body {
-    padding-top: 220px;
+    padding-top: 270px;
   }
   header {
     text-transform: uppercase;
@@ -120,7 +120,7 @@
     height: 149px;
   }
   .navbar-fixed-top {
-    height: 195px;
+    height: 260px;
   }
   .nav {
     background-color: rgba(255, 255, 255, 0.9);
@@ -131,6 +131,9 @@
   .top-phone, p.link-face a {
     text-align: center;
   }
+  .bg-delivery {
+  min-height: 200px;
+}
   .bg-products-services, .bg-travel-insurance {
     background-size: cover;
   }
@@ -156,10 +159,12 @@
 @media (min-width: 1px) and (max-width: 766px) {
   .logo-topo {
     width: 180px;
-    margin-top: -20px;
+    margin: 0 auto;
+    margin-left: 90px;
+    margin-top: 15px;
   }
   .navbar-toggle {
-    margin-top: -135px;
+    margin-top: -105px;
   }
   .navbar-collapse {
     margin-top: -12px;
@@ -174,6 +179,9 @@
     .cotation-value {
       font-size: 11px;
     }
+  }
+  .cotation-info{
+    float: right;
   }
 }
 

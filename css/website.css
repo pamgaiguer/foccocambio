@@ -16335,7 +16335,7 @@ footer {
 
 @media (min-width: 1px) and (max-width: 767px) {
   body {
-    padding-top: 220px; }
+    padding-top: 270px; }
 
   header {
     text-transform: uppercase;
@@ -16344,7 +16344,7 @@ footer {
     height: 149px; }
 
   .navbar-fixed-top {
-    height: 195px; }
+    height: 260px; }
 
   .nav {
     background-color: rgba(255, 255, 255, 0.9); }
@@ -16354,6 +16354,9 @@ footer {
 
   .top-phone, p.link-face a {
     text-align: center; }
+
+  .bg-delivery {
+    min-height: 200px; }
 
   .bg-products-services, .bg-travel-insurance {
     background-size: cover; }
@@ -16375,10 +16378,12 @@ footer {
 @media (min-width: 1px) and (max-width: 766px) {
   .logo-topo {
     width: 180px;
-    margin-top: -20px; }
+    margin: 0 auto;
+    margin-left: 90px;
+    margin-top: 15px; }
 
   .navbar-toggle {
-    margin-top: -135px; }
+    margin-top: -105px; }
 
   .navbar-collapse {
     margin-top: -12px; }
@@ -16388,7 +16393,10 @@ footer {
   .cotation-table .cotation-title {
     font-size: 9px; }
   .cotation-table .cotation-value {
-    font-size: 11px; } }
+    font-size: 11px; }
+
+  .cotation-info {
+    float: right; } }
 @media (min-width: 767px) and (max-width: 991px) {
   .bg-products-services {
     background: url(../images/bg-products-services.jpg) no-repeat top center;
