@@ -22,7 +22,6 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
       <div class="section">
         <div class="row">
           <div class="col s4">
-
             <form id="form-busca-clientes">
               <div class="file-path-wrapper">
                 <div id="validacaoCpf"></div>
@@ -33,9 +32,20 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
                 </button>
               </div>
             </form>
-
+          </div>
+          <div class="col s4">
+            <form id="form-busca-clientes-nome">
+              <div class="file-path-wrapper-nome">
+                <input id="input-buscaNome" name="buscaNome" type="search" required/>
+                <button class="btn bg-blue" type="submit" name="action">
+                  Buscar cliente por Nome
+                  <i class="material-icons right">&#xE8B6;</i>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
+
 
         <a id="link-adicionar-cliente" class="btn bg-blue right" data-cpf="a" data-href="/dashboard/clientes/adicionar">Adicionar cliente <i class="material-icons right">&#xE7FE;</i>
         </a>
@@ -105,14 +115,14 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               }
 
 
-              $data = date('Y-m-d',strtotime("-360 days")); 
-              $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem 
-              WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];              
+              $data = date('Y-m-d',strtotime("-360 days"));
+              $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem
+              WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
               $result = mysqli_query($conn, $sql_query);
               $totalQtd = array();
               while($row = mysqli_fetch_array($result)) $totalQtd[] = $row['quantidade'];
               $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd[0];
-              
+
 
 
 

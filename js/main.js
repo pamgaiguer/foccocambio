@@ -1,5 +1,5 @@
-  $(document).ready(function(){
-    //$('#modalRemessa').modal();
+$(document).ready(function(){
+  $('#blackFriday').modal();
 
   $('a[href="' + this.location.pathname + '"]').parent('li').addClass('active'); //menu bootstrap ativo
 
@@ -118,67 +118,67 @@ $("#cep-entrega").change(function(){
   });
 });
 
-  $("form").submit(function(e){
-    e.preventDefault();
+$("form").submit(function(e){
+  e.preventDefault();
 
-    $.ajax({
-      url: 'sendCadastro.php',
-      type: 'POST',
-      data: {
-        campo_nome: $("#nome").val(),
-        campo_dataNascimento: $("#dataNascimento").val(),
-        campo_cpf: $("#cpf").val(),
-        campo_rg: $("#rg").val(),
-        campo_rgOrgaoExpedidor: $("#rgOrgaoExpedidor").val(),
-        campo_rgDataExpedicao: $("#rgDataExpedicao").val(),
-        campo_genero: $("#genero option:selected").text(),
-        campo_estadoCivil: $("#estadoCivil option:selected").text(),
-        campo_nacionalidade: $("#nacionalidade").val(),
-        campo_nomeConjuge: $("#nomeConjuge").val(),
-        campo_dataNascimentoConjuge: $("#dataNascimentoConjuge").val(),
-        campo_nomeMae: $("#nomeMae").val(),
-        campo_nomePai: $("#nomePai").val(),
-        campo_email: $("#email").val(),
-        campo_telefoneFixo: $("#telefoneFixo").val(),
-        campo_telefoneCelular: $("#telefoneCelular").val(),
-        campo_ondeConheceuFocco: $("#ondeConheceuFocco option:selected").text(),
-        campo_ofertasEmail: $("#ofertasEmail").is(":checked"),
-        campo_ofertasWhatsapp: $("#ofertasWhatsapp").is(":checked"),
-        campo_cepResidencial: $("#cep-residencial").val(),
-        campo_logradouroResidencial: $("#logradouro-residencial").val(),
-        campo_numeroResidencial: $("#numero-residencial").val(),
-        campo_complementoResidencial: $("#complemento-residencial").val(),
-        campo_bairroResidencial: $("#bairro-residencial").val(),
-        campo_cidadeResidencial: $("#cidade-residencial").val(),
-        campo_estadoResidencial: $("#estado-residencial").val(),
-        campo_cepEntrega: $("#cep-entrega").val(),
-        campo_logradouroEntrega: $("#logradouro-entrega").val(),
-        campo_numeroEntrega: $("#numero-entrega").val(),
-        campo_complementoEntrega: $("#complemento-entrega").val(),
-        campo_bairroEntrega: $("#bairro-entrega").val(),
-        campo_cidadeEntrega: $("#cidade-entrega").val(),
-        campo_estadoEntrega: $("#estado-entrega").val(),
-        campo_pessoaAutorizada: $("#pessoa-autorizada").val(),
-        campo_observacoes: $("#observacoes").val()
-      },
-      error: function(msg) {
-        console.log("Deu erro!" + msg);
-        $requestResult.append(
-          $("<div>", {
-            "class": "alert alert-danger",
-            "text": "E-mail não enviado!"
-          })
-          );
-      },
-      success: function(msg){
-        console.log("Enviado com sucesso!");
-        $requestResult.append(
-          $("<div>", {
-            "class": "alert alert-success",
-            "text": "E-mail enviado com sucesso."
-          })
-          );
-      }
-    });
+  $.ajax({
+    url: 'sendCadastro.php',
+    type: 'POST',
+    data: {
+      campo_nome: $("#nome").val(),
+      campo_dataNascimento: $("#dataNascimento").val(),
+      campo_cpf: $("#cpf").val(),
+      campo_rg: $("#rg").val(),
+      campo_rgOrgaoExpedidor: $("#rgOrgaoExpedidor").val(),
+      campo_rgDataExpedicao: $("#rgDataExpedicao").val(),
+      campo_genero: $("#genero option:selected").text(),
+      campo_estadoCivil: $("#estadoCivil option:selected").text(),
+      campo_nacionalidade: $("#nacionalidade").val(),
+      campo_nomeConjuge: $("#nomeConjuge").val(),
+      campo_dataNascimentoConjuge: $("#dataNascimentoConjuge").val(),
+      campo_nomeMae: $("#nomeMae").val(),
+      campo_nomePai: $("#nomePai").val(),
+      campo_email: $("#email").val(),
+      campo_telefoneFixo: $("#telefoneFixo").val(),
+      campo_telefoneCelular: $("#telefoneCelular").val(),
+      campo_ondeConheceuFocco: $("#ondeConheceuFocco option:selected").text(),
+      campo_ofertasEmail: $("#ofertasEmail").is(":checked"),
+      campo_ofertasWhatsapp: $("#ofertasWhatsapp").is(":checked"),
+      campo_cepResidencial: $("#cep-residencial").val(),
+      campo_logradouroResidencial: $("#logradouro-residencial").val(),
+      campo_numeroResidencial: $("#numero-residencial").val(),
+      campo_complementoResidencial: $("#complemento-residencial").val(),
+      campo_bairroResidencial: $("#bairro-residencial").val(),
+      campo_cidadeResidencial: $("#cidade-residencial").val(),
+      campo_estadoResidencial: $("#estado-residencial").val(),
+      campo_cepEntrega: $("#cep-entrega").val(),
+      campo_logradouroEntrega: $("#logradouro-entrega").val(),
+      campo_numeroEntrega: $("#numero-entrega").val(),
+      campo_complementoEntrega: $("#complemento-entrega").val(),
+      campo_bairroEntrega: $("#bairro-entrega").val(),
+      campo_cidadeEntrega: $("#cidade-entrega").val(),
+      campo_estadoEntrega: $("#estado-entrega").val(),
+      campo_pessoaAutorizada: $("#pessoa-autorizada").val(),
+      campo_observacoes: $("#observacoes").val()
+    },
+    error: function(msg) {
+      console.log("Deu erro!" + msg);
+      $requestResult.append(
+        $("<div>", {
+          "class": "alert alert-danger",
+          "text": "E-mail não enviado!"
+        })
+        );
+    },
+    success: function(msg){
+      console.log("Enviado com sucesso!");
+      $requestResult.append(
+        $("<div>", {
+          "class": "alert alert-success",
+          "text": "E-mail enviado com sucesso."
+        })
+        );
+    }
   });
+});
 });

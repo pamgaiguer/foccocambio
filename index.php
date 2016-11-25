@@ -215,4 +215,19 @@
   </div>
 </section>
 
+<!-- Modal -->
+<div class="modal fade" id="blackFriday" tabindex="-1" role="dialog" aria-labelledby="blackFridayLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <img src="images/blackFriday.jpg" class="img-responsive" alt="modalBlackFriday">
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <?php include '_footer.php';?>
