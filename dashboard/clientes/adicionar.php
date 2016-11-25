@@ -217,7 +217,7 @@ include "../includes/header.php";
                 <option value="0" selected>Ativo</option>
                 <option value="1">Bloqueado</option>
               </select>
-              <label for="statusCliente">Status</label>
+              <label for="bloqueado">Status</label>
             </div>
 
             <div class="motivoBlock" style="display: none">

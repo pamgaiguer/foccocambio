@@ -178,7 +178,7 @@ focco = {
       }
     });
 
-    $("#statusCliente").change(function(){
+    $("#bloqueado").change(function(){
       if ($(this).val() == 1){
         $(".motivoBlock").fadeIn(300);
         $("#motivoStatusBlocked").attr("required", "required");
@@ -389,7 +389,7 @@ focco = {
                 url:"/dashboard/boletagem/methods/validarCliente.php/",
                 type: "post",
                 data: {clienteId},
-                success: function(r){                  
+                success: function(r){
                   if (r == "true") {
                     window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
                   }
@@ -435,7 +435,7 @@ focco = {
                     $("#modal4").openModal();
 
 
-                    
+
 
                     //window.location = "/dashboard/clientes/";
                   }
@@ -500,7 +500,7 @@ focco = {
     });
 
 
-    $("#statusCliente").change(function(){
+    $("#bloqueado").change(function(){
       if ($(this).val() == 1){
         $(".motivoBlock").fadeIn(300);
         $("#motivoStatusBlocked").attr("required", "required");
@@ -794,7 +794,7 @@ focco = {
         }
       });
 
-      
+
     });
 
     $("#link-adicionar-cliente").click(function(e){
@@ -957,7 +957,7 @@ focco = {
 
     $('.currency').mask("#.##0,00", {reverse: true});
     $('.currency5').mask("#.##0,00000", {reverse: true});
-    
+
 
     $("#select-caixa").change(function(){
 
@@ -970,8 +970,8 @@ focco = {
         $(".div-formaPgto").fadeOut(100);
         $(".div-mn").fadeOut(100);
         $("#select-operacao option[value='3']").show();
-      }      
-      else {        
+      }
+      else {
         $(".div-swift").fadeOut(100);
         $(".div-darf").fadeOut(100);
         $(".div-txnivel").fadeOut(100);
@@ -1015,7 +1015,7 @@ focco = {
       n = n.replace(".", "");
       n = n.replace(",", ".");
       n = parseFloat(n);
-      if (n === NaN) n = 0;      
+      if (n === NaN) n = 0;
       return parseFloat(n);
     }
 
@@ -1027,14 +1027,14 @@ focco = {
     };
 
     fromNumber = function(n){
-      n += "";      
+      n += "";
       n = n.replace(",", ".");
       n = parseFloat(n).formatDecimal(2, 3, '.', ',');
       return n;
     }
 
     fromNumber5 = function(n){
-      n += "";      
+      n += "";
       n = n.replace(",", ".");
       n = parseFloat(n).formatDecimal(5, 3, '.', ',');
       n = n.replace(".", ",");
@@ -1049,7 +1049,7 @@ focco = {
       }
     });
 
-    $("#taxa").blur(function(){      
+    $("#taxa").blur(function(){
       if (toNumber($("#quantidade").val()) > 0.00){
 
         //caixa fx53

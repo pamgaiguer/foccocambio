@@ -114,9 +114,11 @@ foreach($rows as $r){
               <label for="cnh">C.N.H.</label>
             </div>
             <div class="input-field col s3">
-              <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker" value= <?php echo $cnh != "" ? date_format(new DateTime($cnhDataValidade), 'd/m/Y') : ""; ?>>
+            <input id="cnhDataValidade" name="cnhDataValidade" type="text" class="datepicker" value='<?php echo $cnhDataValidade < '1900-01-01 00:00:00' ? '' : date_format(new DateTime($cnhDataValidade), 'd/m/Y'); ?>'>
               <label for="cnhDataValidade">C.N.H. - Data de vencimento</label>
             </div>
+
+
             <div class="input-field col s3">
               <input id="numPassaporte" name="numPassaporte" type="text" value= <?php echo $passaporte ?> >
               <label for="numPassaporte">Passaporte</label>
@@ -315,179 +317,106 @@ foreach($rows as $r){
                 </div>
               </div>
             </div>
--->
-            <div class="col s6 div-input-file-cr">
-              <div class="file-field input-field">
-                <div class="btn bg-blue">
-                  <span>C. R.</span>
-                  <input type="file" id="input-file-cr"
-                  name="input-file-cr" title="Comprovante de residência">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
+          -->
+          <div class="col s6 div-input-file-cr">
+            <div class="file-field input-field">
+              <div class="btn bg-blue">
+                <span>C. R.</span>
+                <input type="file" id="input-file-cr"
+                name="input-file-cr" title="Comprovante de residência">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
               </div>
             </div>
+          </div>
 
-            <div class="col s6 div-input-file-ff" <?php echo ($categoria == 1 ? "style='display: none;'" : "") ?> >
-              <div class="file-field input-field">
-                <div class="btn bg-blue">
-                  <span>F. F.</span>
-                  <input type="file" id="input-file-ff"
-                  name="input-file-ff" title="Ficha cadastral focco">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
+          <div class="col s6 div-input-file-ff" <?php echo ($categoria == 1 ? "style='display: none;'" : "") ?> >
+            <div class="file-field input-field">
+              <div class="btn bg-blue">
+                <span>F. F.</span>
+                <input type="file" id="input-file-ff"
+                name="input-file-ff" title="Ficha cadastral focco">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
               </div>
             </div>
+          </div>
 
-            <div class="col s6 div-input-file-ir" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
-              <div class="file-field input-field">
-                <div class="btn bg-blue">
-                  <span>I. R.</span>
-                  <input type="file" id="input-file-ir"
-                  name="input-file-ir" title="Declaração do imposto de renda">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
+          <div class="col s6 div-input-file-ir" <?php echo ($categoria < 3 ? "style='display: none;'" : "") ?>>
+            <div class="file-field input-field">
+              <div class="btn bg-blue">
+                <span>I. R.</span>
+                <input type="file" id="input-file-ir"
+                name="input-file-ir" title="Declaração do imposto de renda">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
               </div>
             </div>
+          </div>
 
-            <div class="col s6 div-input-file-ca" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
-              <div class="file-field input-field">
-                <div class="btn bg-blue">
-                  <span>C. A.</span>
-                  <input type="file" id="input-file-ca"
-                  name="input-file-ca" title="Cartão de assinatura">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
+          <div class="col s6 div-input-file-ca" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
+            <div class="file-field input-field">
+              <div class="btn bg-blue">
+                <span>C. A.</span>
+                <input type="file" id="input-file-ca"
+                name="input-file-ca" title="Cartão de assinatura">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
               </div>
             </div>
+          </div>
 
-            <div class="col s6 div-input-file-cps" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
-              <div class="file-field input-field">
-                <div class="btn bg-blue">
-                  <span>C. P. S.</span>
-                  <input type="file" id="input-file-cps"
-                  name="input-file-cps" title="Contrato de prestação de serviços">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
+          <div class="col s6 div-input-file-cps" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
+            <div class="file-field input-field">
+              <div class="btn bg-blue">
+                <span>C. P. S.</span>
+                <input type="file" id="input-file-cps"
+                name="input-file-cps" title="Contrato de prestação de serviços">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
               </div>
             </div>
+          </div>
 
-            <div class="col s6 div-input-file-pv" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
-              <div class="file-field input-field">
-                <div class="btn bg-blue">
-                  <span>P. V.</span>
-                  <input type="file" id="input-file-pv"
-                  name="input-file-pv" title="Procuração para a Vision">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
+          <div class="col s6 div-input-file-pv" <?php echo ($categoria < 4 ? "style='display: none;'" : "") ?>>
+            <div class="file-field input-field">
+              <div class="btn bg-blue">
+                <span>P. V.</span>
+                <input type="file" id="input-file-pv"
+                name="input-file-pv" title="Procuração para a Vision">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
               </div>
             </div>
-
-
           </div>
 
 
-
-          <?php
-
-          $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 1);
-          $result = mysqli_query($conn, $sql_query);
-          $rows = array();
-          while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
-          $tipo = "";
-          $cep = "";
-          $endereco = "";
-          $numero = "";
-          $complemento = "";
-          $bairro = "";
-          $cidade = "";
-          $estado = "";
-          $pais = "";
-
-          foreach($rows as $r){
-            $tipo = $r['tipo'];
-            $cep = $r['cep'];
-            $endereco = $r['endereco'];
-            $numero = $r['numero'];
-            $complemento = $r['complemento'];
-            $bairro = $r['bairro'];
-            $cidade = $r['cidade'];
-            $estado = $r['estado'];
-            $pais = $r['pais'];
-          }
-          ?>
-
-
-
-
-          <div class="row">
-            <div class="col s12">
-             <h5>Endereço Residencial</h5>
-           </div>
-         </div>
-
-         <div class="row">
-          <div class="input-field col s3">
-            <input id="cep-residencial" name="cep-residencial" type="text" required value='<?php echo $cep ?>' >
-            <label for="cep-residencial">CEP</label>
-          </div>
-          <div class="input-field col s9">
-            <input id="logradouro-residencial" name="logradouro-residencial" type="text" required value='<?php echo $endereco ?>' >
-            <label for="logradouro-residencial">Logradouro</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s4">
-            <input id="numero-residencial" name="numero-residencial" type="text" required value='<?php echo $numero ?>'>
-            <label for="numero-residencial">Número</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="complemento-residencial" name="complemento-residencial" type="text" value='<?php echo $complemento ?>'>
-            <label for="complemento-residencial">Complemento</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="bairro-residencial" name="bairro-residencial" type="text" required value='<?php echo $bairro ?>'>
-            <label for="bairro-residencial">Bairro</label>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="input-field col s4">
-            <input id="cidade-residencial" name="cidade-residencial" type="text" required value='<?php echo $cidade ?>'>
-            <label for="cidade-residencial">Cidade</label>
-          </div>
-          <div class="input-field col s4" >
-            <input id="UF-residencial" name="UF-residencial" type="text" required value='<?php echo $estado ?>'>
-            <label for="UF-residencial">UF</label>
-          </div>
-          <div class="input-field col s4">
-            <input id="pais-residencial" name="pais-residencial" type="text" required value='<?php echo $pais ?>'>
-            <label for="pais-residencial">País</label>
-          </div>
         </div>
 
 
 
         <?php
 
-        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 2);
+        $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 1);
         $result = mysqli_query($conn, $sql_query);
         $rows = array();
         while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+        $tipo = "";
+        $cep = "";
+        $endereco = "";
+        $numero = "";
+        $complemento = "";
+        $bairro = "";
+        $cidade = "";
+        $estado = "";
+        $pais = "";
 
         foreach($rows as $r){
           $tipo = $r['tipo'];
@@ -507,78 +436,151 @@ foreach($rows as $r){
 
         <div class="row">
           <div class="col s12">
-           <h5>Endereço para entrega</h5>
-           <div class="spacing"></div>
-           <div>
-            <input type="checkbox" class="filled-in" id="filled-in-box">
-            <label for="filled-in-box">Marque se o endereço de entrega é o mesmo que o residencial</label>
-          </div>
-        </div>
-      </div>
-      <div class="spacing"></div>
-
-      <div id="div-endereco-entrega">
+           <h5>Endereço Residencial</h5>
+         </div>
+       </div>
 
        <div class="row">
         <div class="input-field col s3">
-          <input id="cep-entrega" name="cep-entrega" type="text" value='<?php echo $cep ?>'>
-          <label for="cep-entrega">CEP</label>
+          <input id="cep-residencial" name="cep-residencial" type="text" required value='<?php echo $cep ?>' >
+          <label for="cep-residencial">CEP</label>
         </div>
         <div class="input-field col s9">
-          <input id="logradouro-entrega" name="logradouro-entrega" type="text" value='<?php echo $endereco ?>'>
-          <label for="logradouro-entrega">Logradouro</label>
+          <input id="logradouro-residencial" name="logradouro-residencial" type="text" required value='<?php echo $endereco ?>' >
+          <label for="logradouro-residencial">Logradouro</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s4">
-          <input id="numero-entrega" name="numero-entrega" type="text" value='<?php echo $numero ?>'>
-          <label for="numero-entrega">Número</label>
+          <input id="numero-residencial" name="numero-residencial" type="text" required value='<?php echo $numero ?>'>
+          <label for="numero-residencial">Número</label>
         </div>
         <div class="input-field col s4">
-          <input id="complemento-entrega" name="complemento-entrega" type="text" value='<?php echo $complemento ?>'>
-          <label for="complemento-entrega">Complemento</label>
+          <input id="complemento-residencial" name="complemento-residencial" type="text" value='<?php echo $complemento ?>'>
+          <label for="complemento-residencial">Complemento</label>
         </div>
         <div class="input-field col s4">
-          <input id="bairro-entrega" name="bairro-entrega" type="text" value='<?php echo $bairro ?>'>
-          <label for="bairro-entrega">Bairro</label>
+          <input id="bairro-residencial" name="bairro-residencial" type="text" required value='<?php echo $bairro ?>'>
+          <label for="bairro-residencial">Bairro</label>
         </div>
       </div>
 
 
       <div class="row">
         <div class="input-field col s4">
-          <input id="cidade-entrega" name="cidade-entrega" type="text" value='<?php echo $cidade ?>'>
-          <label for="cidade-entrega">Cidade</label>
+          <input id="cidade-residencial" name="cidade-residencial" type="text" required value='<?php echo $cidade ?>'>
+          <label for="cidade-residencial">Cidade</label>
+        </div>
+        <div class="input-field col s4" >
+          <input id="UF-residencial" name="UF-residencial" type="text" required value='<?php echo $estado ?>'>
+          <label for="UF-residencial">UF</label>
         </div>
         <div class="input-field col s4">
-          <input id="UF-entrega" name="UF-entrega" type="text" value='<?php echo $estado ?>'>
-          <label for="UF-entrega">UF</label>
+          <input id="pais-residencial" name="pais-residencial" type="text" required value='<?php echo $pais ?>'>
+          <label for="pais-residencial">País</label>
         </div>
-        <div class="input-field col s4">
-          <input id="pais-entrega" name="pais-entrega" type="text" value='<?php echo $pais ?>'>
-          <label for="pais-entrega">País</label>
+      </div>
+
+
+
+      <?php
+
+      $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE clienteId = %s and tipo = %s", $_GET['clienteId'], 2);
+      $result = mysqli_query($conn, $sql_query);
+      $rows = array();
+      while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+      foreach($rows as $r){
+        $tipo = $r['tipo'];
+        $cep = $r['cep'];
+        $endereco = $r['endereco'];
+        $numero = $r['numero'];
+        $complemento = $r['complemento'];
+        $bairro = $r['bairro'];
+        $cidade = $r['cidade'];
+        $estado = $r['estado'];
+        $pais = $r['pais'];
+      }
+      ?>
+
+
+
+
+      <div class="row">
+        <div class="col s12">
+         <h5>Endereço para entrega</h5>
+         <div class="spacing"></div>
+         <div>
+          <input type="checkbox" class="filled-in" id="filled-in-box">
+          <label for="filled-in-box">Marque se o endereço de entrega é o mesmo que o residencial</label>
         </div>
+      </div>
+    </div>
+    <div class="spacing"></div>
+
+    <div id="div-endereco-entrega">
+
+     <div class="row">
+      <div class="input-field col s3">
+        <input id="cep-entrega" name="cep-entrega" type="text" value='<?php echo $cep ?>'>
+        <label for="cep-entrega">CEP</label>
+      </div>
+      <div class="input-field col s9">
+        <input id="logradouro-entrega" name="logradouro-entrega" type="text" value='<?php echo $endereco ?>'>
+        <label for="logradouro-entrega">Logradouro</label>
       </div>
     </div>
 
     <div class="row">
-      <div class="col s12">
-       <h5>Limites Operacionais (USD)</h5>
-     </div>
-   </div>
+      <div class="input-field col s4">
+        <input id="numero-entrega" name="numero-entrega" type="text" value='<?php echo $numero ?>'>
+        <label for="numero-entrega">Número</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="complemento-entrega" name="complemento-entrega" type="text" value='<?php echo $complemento ?>'>
+        <label for="complemento-entrega">Complemento</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="bairro-entrega" name="bairro-entrega" type="text" value='<?php echo $bairro ?>'>
+        <label for="bairro-entrega">Bairro</label>
+      </div>
+    </div>
 
-   <div class="row">
+
+    <div class="row">
+      <div class="input-field col s4">
+        <input id="cidade-entrega" name="cidade-entrega" type="text" value='<?php echo $cidade ?>'>
+        <label for="cidade-entrega">Cidade</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="UF-entrega" name="UF-entrega" type="text" value='<?php echo $estado ?>'>
+        <label for="UF-entrega">UF</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="pais-entrega" name="pais-entrega" type="text" value='<?php echo $pais ?>'>
+        <label for="pais-entrega">País</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col s12">
-      <table class="responsive-table">
-        <thead>
-          <tr>
-            <!--<th>Limite aprovado diário (USD)</th>-->
-            <th>Limite aprovado anual (USD)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
+     <h5>Limites Operacionais (USD)</h5>
+   </div>
+ </div>
+
+ <div class="row">
+  <div class="col s12">
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <!--<th>Limite aprovado diário (USD)</th>-->
+          <th>Limite aprovado anual (USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
             <!--<td><input id="limiteOperacionalDia" name="limiteOperacionalDia"
               <?php //echo ($categoria < 3 ? "readonly='true'" : "") ?>
               value="<?php //echo number_format($limiteOperacionalDia,2,",","") ?>" type="text" pattern="\d+(,\d{2})?" class="validate"></td>-->

@@ -50,11 +50,11 @@ $result = mysqli_query($conn, $sql_query);
 $docs = array();
 $dirs = array();
 
-while($row = mysqli_fetch_array($result)) {    
+while($row = mysqli_fetch_array($result)) {
     $docs[] = $row['tipo'];
     $dirs[] = $row['arquivo'];
 }
-  
+
 
 switch ($categoria) {
   case 1:
@@ -339,7 +339,7 @@ if ((sizeof($docprov) > 0) && $dif){
         </div>
 
         <div class="input-field col s3">
-          <input placeholder="<?php echo $cnhDataValidade == '' ? "Não preenchido" : date_format(new DateTime($cnhDataValidade), 'd/m/Y') ?>" id="cliente_cnh_data" type="text" readonly>
+          <input placeholder="<?php echo $cnhDataValidade < '1900-01-01 00:00:00' ? 'Não preenchido' : date_format(new DateTime($cnhDataValidade), 'd/m/Y') ?>" id="cliente_cnh_data" type="text" readonly>
           <label for="cliente_cnh_data">CNH Data Validade</label>
         </div>
 
@@ -385,57 +385,57 @@ if ((sizeof($docprov) > 0) && $dif){
 
 
 
-        <?php 
+        <?php
         if (in_array("CPF", $docs)) {
           $index = array_search("CPF", $docs);
         ?>
         <div class="col s4">
           <figure>
-          <?php             
-            if (strpos($dirs[$index], '.pdf') > 1) {  
+          <?php
+            if (strpos($dirs[$index], '.pdf') > 1) {
               echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-              
+
             } else {
 
               echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
             }
-          ?>                          
+          ?>
             <figcaption>CPF/RG/CNH</figcaption>
           </figure>
 
-          
+
 
         </div>
         <?php } ?>
 
-        <?php if (in_array("CR", $docs)) { 
+        <?php if (in_array("CR", $docs)) {
           $index = array_search("CR", $docs);
         ?>
         <div class="col s4">
           <figure>
-            <?php             
-              if (strpos($dirs[$index], '.pdf') > 1) {  
+            <?php
+              if (strpos($dirs[$index], '.pdf') > 1) {
                 echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-                
+
               } else {
 
                 echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
               }
-            ?>                          
+            ?>
             <figcaption>Comprovante de residência</figcaption>
           </figure>
         </div>
         <?php }; ?>
 
-        <?php if (in_array("FF", $docs)) { 
+        <?php if (in_array("FF", $docs)) {
           $index = array_search("FF", $docs);
         ?>
         <div class="col s4">
           <figure>
-            <?php             
-              if (strpos($dirs[$index], '.pdf') > 1) {  
+            <?php
+              if (strpos($dirs[$index], '.pdf') > 1) {
                 echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-                
+
               } else {
 
                 echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
@@ -446,15 +446,15 @@ if ((sizeof($docprov) > 0) && $dif){
         </div>
         <?php }; ?>
 
-        <?php if (in_array("IR", $docs)) { 
+        <?php if (in_array("IR", $docs)) {
           $index = array_search("IR", $docs);
         ?>
         <div class="col s4">
           <figure>
-            <?php             
-              if (strpos($dirs[$index], '.pdf') > 1) {  
+            <?php
+              if (strpos($dirs[$index], '.pdf') > 1) {
                 echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-                
+
               } else {
 
                 echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
@@ -465,15 +465,15 @@ if ((sizeof($docprov) > 0) && $dif){
         </div>
         <?php }; ?>
 
-        <?php if (in_array("CA", $docs)) { 
+        <?php if (in_array("CA", $docs)) {
           $index = array_search("CA", $docs);
         ?>
         <div class="col s4">
           <figure>
-            <?php             
-              if (strpos($dirs[$index], '.pdf') > 1) {  
+            <?php
+              if (strpos($dirs[$index], '.pdf') > 1) {
                 echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-                
+
               } else {
 
                 echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
@@ -484,15 +484,15 @@ if ((sizeof($docprov) > 0) && $dif){
         </div>
         <?php }; ?>
 
-        <?php if (in_array("CPS", $docs)) { 
+        <?php if (in_array("CPS", $docs)) {
           $index = array_search("CPS", $docs);
         ?>
         <div class="col s4">
           <figure>
-            <?php             
-              if (strpos($dirs[$index], '.pdf') > 1) {  
+            <?php
+              if (strpos($dirs[$index], '.pdf') > 1) {
                 echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-                
+
               } else {
 
                 echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
@@ -503,15 +503,15 @@ if ((sizeof($docprov) > 0) && $dif){
         </div>
         <?php }; ?>
 
-        <?php if (in_array("PV", $docs)) { 
+        <?php if (in_array("PV", $docs)) {
           $index = array_search("CPS", $docs);
         ?>
         <div class="col s4">
           <figure>
-            <?php             
-              if (strpos($dirs[$index], '.pdf') > 1) {  
+            <?php
+              if (strpos($dirs[$index], '.pdf') > 1) {
                 echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-                
+
               } else {
 
                 echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';

@@ -2420,8 +2420,6 @@ td, th {
         position: absolute;
         top: 16px;
         right: 16px; }
-    .collection .collection-item:last-child {
-      border-bottom: none; }
     .collection .collection-item.active {
       background-color: #26a69a;
       color: #eafaf9; }
