@@ -3,11 +3,20 @@
 	include "../../core/database.php";
 	include "../../core/functions.php";
 
-	$sql_query = "SELECT * FROM clientes WHERE ativo = 1 and cpfCnpj like '".SomenteNumeros($_POST["search"])."%' ORDER BY razaoSocial;";
-	$result = mysqli_query($conn, $sql_query);
-
 	$rows = array();
-	while($row = mysqli_fetch_array($result)) $rows[] = $row;
+  if ($_POST["tipo"] == "cpf"){
+
+    $sql_query = "SELECT * FROM clientes WHERE ativo = 1 and cpfCnpj like '".SomenteNumeros($_POST["search"])."%' ORDER BY razaoSocial;";
+  	$result = mysqli_query($conn, $sql_query);  	
+  	while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+  } else {
+
+    $sql_query = "SELECT * FROM clientes WHERE ativo = 1 and razaoSocial like '".$_POST["search"]."%' ORDER BY razaoSocial;";
+    $result = mysqli_query($conn, $sql_query);    
+    while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+  }
 
 	$ret = "";
 	foreach($rows as $r){

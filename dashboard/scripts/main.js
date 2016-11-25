@@ -751,6 +751,7 @@ focco = {
       e.preventDefault();
 
       search = $("#input-cpfcnpj", $(this)).val();
+      tipo = "cpf";
 
       $.ajax({
         url: "/dashboard/clientes/methods/validarCpf",
@@ -768,7 +769,7 @@ focco = {
           $.ajax({
             url: "/dashboard/clientes/methods/buscaCliente.php/",
             type: "POST",
-            data: { search },
+            data: { search, tipo },
             success: function(r){
               $("#table-body-clientes").html(r);
             }
@@ -776,6 +777,24 @@ focco = {
         }
 
       });
+    });
+
+    $("#form-busca-clientes-nome").submit(function(e){
+      e.preventDefault();
+
+      search = $("#input-nome", $(this)).val();
+      tipo = "nome";
+
+      $.ajax({
+        url: "/dashboard/clientes/methods/buscaCliente.php/",
+        type: "POST",
+        data: { search, tipo },
+        success: function(r){
+          $("#table-body-clientes").html(r);
+        }
+      });
+
+      
     });
 
     $("#link-adicionar-cliente").click(function(e){

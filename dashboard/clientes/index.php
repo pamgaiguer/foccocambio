@@ -36,7 +36,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           <div class="col s4">
             <form id="form-busca-clientes-nome">
               <div class="file-path-wrapper-nome">
-                <input id="input-buscaNome" name="buscaNome" type="search" required/>
+                <input id="input-nome" name="input-nome" type="search" required/>
                 <button class="btn bg-blue" type="submit" name="action">
                   Buscar cliente por Nome
                   <i class="material-icons right">&#xE8B6;</i>
