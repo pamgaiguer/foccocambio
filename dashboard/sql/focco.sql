@@ -46,7 +46,8 @@ INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefo
 (2, 'pam', '123qwe', 1, 'Pamella', 'pamella.gaiguer@gmail.com', '(11) 11111-1111'),
 (3, 'leo', 'meutimaoeo', 2, 'Leonardo', 'leozac@gmail.com', '(11) 11111-1111'),
 (4, 'tatiane', '240601', 2, 'Tatiane Marchi', 'tatiane.marchi@foccocambio.com.br', '(11) 11111-1111'),
-(5, 'allison', 'REDEFINIR', 2, 'Allison Marchi', 'allison@foccocambio.com.br', '(11) 11111-1111');
+(5, 'allison', '2424281911', 2, 'Allison Marchi', 'allison@foccocambio.com.br', '(11) 11111-1111'),
+(6, 'teste', 'REDEFINIR', 2, 'Teste Focco', 'teste@foccocambio.com.br', '(11) 11111-1111');
 
 --
 -- Estrutura da tabela `clientes`
@@ -98,14 +99,6 @@ CREATE TABLE `clientes` (
 
 --
 -- Extraindo dados da tabela `clientes`
---
-
--- INSERT INTO `clientes` (`id`, `categoria`, `razaoSocial`, `tipoPessoa`, `cpfCnpj`, `dataNascimentoAbertura`, `inscricaoMunicipal`, `rgInscricaoEstadual`, `rgOrgaoExpedidor`, `rgDataExpedicao`, `sexo`, `nacionalidade`, `estadoCivil`, `nomeConjuge`, `dataNascimentoConjuge`, `nomeMae`, `nomePai`, `email`, `telFixo`, `telCelular`, `contraSenha`, `observacoes`, `ofertasPorEmail`, `infoWhatsapp`, `dataCadastro`, `dataModificacao`, `passaporte`, `rgDni`, `origem`, `vip`) VALUES
--- (18, 1, 'Thais', 'F', '37479967870', '2016-12-09 00:00:00', NULL, '387006175', 'SSP', '1970-01-01 00:00:00', 'F', 'br', 1, '', '1970-01-01 00:00:00', 'huhuh', 'hehe', 'thaisalvesdasilva@uol.com.br', '1120937563', '11967372206', '1553', '', b'1', b'0', '2016-08-05 21:14:25', '2016-08-05 23:43:01', 'xxxxxx', 'yyyyyyyyyy', NULL, NULL),
--- (19, 1, 'Thompson', 'F', '14354288702', '1970-01-01 00:00:00', NULL, '269379848', 'detran', '1970-01-01 00:00:00', 'M', 'br', 1, '', '1970-01-01 00:00:00', 'marcia', 'claudio', 'thom.blizz@gmail.com', '1999666638', '19999666380', '21', '', b'0', b'0', '2016-08-05 23:32:52', '2016-08-05 23:51:35', '2121', '2121', 1, b'1');
-
-
-
 
 create table boletagem (
 
@@ -169,15 +162,6 @@ CREATE TABLE `documentos` (
 --
 -- Extraindo dados da tabela `documentos`
 --
-
--- INSERT INTO `documentos` (`id`, `clienteId`, `tipo`, `arquivo`, `dataEmissao`, `dataUltimaModificacao`) VALUES
--- (17, 19, 'CPF', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-cpf.png', NULL, '2016-08-05 23:32:52'),
--- (18, 19, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-rg.png', '1970-01-01 00:00:00', '2016-08-05 23:32:52'),
--- (19, 19, 'CR', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/14354288702/doc-cr.png', NULL, '2016-08-05 23:32:52'),
--- (14, 18, 'CPF', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/37479967870/doc-cpf.png', NULL, '2016-08-05 21:14:25'),
--- (15, 18, 'RG', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/37479967870/doc-rg.png', '1970-01-01 00:00:00', '2016-08-05 21:14:25'),
--- (16, 18, 'CR', 'C:/wamp64/www/foccocambio/dashboard/clientes/uploads/37479967870/doc-cr.png', NULL, '2016-08-05 21:14:25');
-
 -- --------------------------------------------------------
 
 --
@@ -204,14 +188,6 @@ CREATE TABLE `enderecoscliente` (
 --
 -- Extraindo dados da tabela `enderecoscliente`
 --
-
--- INSERT INTO `enderecoscliente` (`id`, `clienteId`, `tipo`, `cep`, `endereco`, `numero`, `complemento`, `bairro`, `municipioId`, `estadoId`, `paisId`, `cidade`, `estado`, `pais`) VALUES
--- (23, 18, 1, '03407050', 'Rua AntÃ´nio de Lucena', '22', '111', 'ChÃ¡cara CalifÃ³rnia', NULL, NULL, NULL, 'SÃ£o Paulo', 'SP', 'Brasil'),
--- (24, 18, 2, '03407050', 'Rua AntÃ´nio de Lucena', '22', '111', 'ChÃ¡cara CalifÃ³rnia', NULL, NULL, NULL, 'SÃ£o Paulo', 'SP', 'Brasil'),
--- (25, 19, 1, '13105-808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil'),
--- (26, 19, 2, '13105-808', 'Rua do Flautim', '306', '', 'Residencial Parque das AraucÃ¡rias', NULL, NULL, NULL, 'Campinas', 'SP', 'Brasil');
-
-
 -- Indexes for dumped tables
 --
 -- Indexes for table `clientes`
@@ -242,22 +218,22 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `enderecoscliente`
 --
 ALTER TABLE `enderecoscliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Limitadores para a tabela `enderecoscliente`
 --

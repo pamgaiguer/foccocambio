@@ -178,7 +178,7 @@ focco = {
       }
     });
 
-    $("#bloqueado").change(function(){
+    $("#statusCliente").change(function(){
       if ($(this).val() == 1){
         $(".motivoBlock").fadeIn(300);
         $("#motivoStatusBlocked").attr("required", "required");
@@ -500,7 +500,7 @@ focco = {
     });
 
 
-    $("#bloqueado").change(function(){
+    $("#statusCliente").change(function(){
       if ($(this).val() == 1){
         $(".motivoBlock").fadeIn(300);
         $("#motivoStatusBlocked").attr("required", "required");
