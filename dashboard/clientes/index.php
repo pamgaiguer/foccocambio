@@ -124,9 +124,6 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd[0];
 
 
-
-
-
               $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
               $result = mysqli_query($conn, $sql_query);
               $docs = array();
@@ -211,7 +208,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
               '<tr>
               <td>'.$r["razaoSocial"].'</td>
               <td>'.$r["email"].'</td>
-              <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).' / ('.substr($r["telFixo"], 0, 2).') '.substr($r["telFixo"], 2, 4).'-'.substr($r["telFixo"], 6).'</td>
+              <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).'</td>
               <td>'.$categoria.' - '.$origem.'</td>
               <th>'.number_format($limiteDisponivel,2,",",".").'</th>
               <td><i class="material-icons '.$cor.' ">&#xE5CA;</i></td>'

@@ -33,6 +33,7 @@ foreach($rows as $r){
   $observacoes = $r['observacoes'];
   $ofertasPorEmail = $r['ofertasPorEmail'];
   $infoWhatsapp = $r['infoWhatsapp'];
+  $dataCadastro = $r['dataCadastro'];
   $passaporte = $r['passaporte'];
   $rgDni = $r['rgDni'];
   $vip = $r['vip'];
@@ -291,6 +292,11 @@ if ((sizeof($docprov) > 0) && $dif){
           <div class="input-field col s3">
             <input placeholder="<?php echo $vip == '1' ? "Sim" : "Não" ?>" id="cliente_vip" type="text" readonly>
             <label for="cliente_vip">VIP Focco</label>
+          </div>
+
+          <div class="input-field col s3">
+            <input placeholder="<?php echo date_format(new DateTime($dataCadastro), 'd/m/Y'); ?>" id="dataCadastroCliente" type="text" readonly>
+            <label for="dataCadastroCliente">Data Cadastro</label>
           </div>
 
         </div>

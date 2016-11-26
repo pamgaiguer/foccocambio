@@ -79,6 +79,12 @@ input[type=password]:focus:not([readonly]) + label{
 .input-field .prefix.active {
   color: $gray;
 }
+input{
+  text-transform: uppercase;
+}
+input[type=email]{
+  text-transform: initial;
+}
 
 .clearfix {
   &:before,

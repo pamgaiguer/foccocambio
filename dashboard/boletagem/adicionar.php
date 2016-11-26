@@ -32,7 +32,7 @@ foreach($rows as $r){
   </div>
   <form id="form-boletagem">
     <div class="row">
-    <div class="input-field col s2">
+      <div class="input-field col s4">
         <input type="hidden" id="clienteId" value=<?php echo $id ?>>
         <input type="hidden" id="usuarioId" value=<?php echo $_SESSION['currentUser']['id'] ?>>
 
@@ -40,13 +40,10 @@ foreach($rows as $r){
         <label>Data</label>
       </div>
 
-      <div class="input-field col s3">
+      <div class="input-field col s4">
       </div>
 
-      <div class="input-field col s3">
-      </div>
-
-      <div class="col s3">
+      <div class="col s4">
         <label for="select-caixa">Selecione o Caixa</label>
         <select id="select-caixa" class="browser-default">
           <option value="1">Focco</option>
@@ -102,40 +99,40 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s3">
-        <input placeholder="Taxa" id="taxa" type="text" class="currency">
+        <input placeholder="Taxa" id="taxa" type="text" class="currency5">
         <label for="taxa">Taxa</label>
       </div>
 
       <div class="input-field col s3">
-        <input placeholder="Sub Total" id="subtotal" type="text" readonly class="currency">
+        <input placeholder="Sub Total" id="subtotal" type="text" readonly class="currency5">
         <label for="subtotal">Sub Total</label>
       </div>
 
       <div class="input-field col s3">
         <input id="ioftaxa" type="hidden" value="1.1">
-        <input placeholder="IOF" id="iof" type="text" class="currency">
+        <input placeholder="IOF" id="iof" type="text" class="currency5">
         <label for="iof">IOF</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s4 div-mn">
-        <input placeholder="Moeda Nacional" id="mn" type="text" class="currency">
+        <input placeholder="Moeda Nacional" id="mn" type="text" class="currency5">
         <label for="mn">Moeda Nacional</label>
       </div>
 
       <div class="input-field col s4 div-swift" style="display: none;">
-        <input placeholder="swift" id="swift" type="text" class="currency">
+        <input placeholder="swift" id="swift" type="text" class="currency5">
         <label for="swift">Swift</label>
       </div>
 
       <div class="input-field col s4 div-darf" style="display: none;">
-        <input placeholder="DARF" id="darf" type="text" class="currency">
+        <input placeholder="DARF" id="darf" type="text" class="currency5">
         <label for="darf">DARF</label>
       </div>
 
       <div class="input-field col s4">
-        <input placeholder="vet" id="vet" type="text" readonly class="currency">
+        <input placeholder="vet" id="vet" type="text" readonly class="currency5">
         <label for="vet">VET</label>
       </div>
 
@@ -145,14 +142,14 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s4 div-txnivel" style="display: none;">
-        <input placeholder="Tx de nível" id="txNivel" type="text" class="currency">
+        <input placeholder="Tx de nível" id="txNivel" type="text" class="currency5">
         <label for="Tx de nível">Tx de nível</label>
       </div>
     </div>
 
     <div class="row">
 
-      <div class="input-field col s4 div-formaPgto">
+      <div class="input-field col s3 div-formaPgto">
         <select id="select-formaPgto">
           <option value="1">Espécie</option>
           <option value="2">TED</option>
@@ -162,8 +159,30 @@ foreach($rows as $r){
         <label>Forma de Pagamento</label>
       </div>
 
+      <div class="input-field col s3 div-formaEntrega">
+        <select id="select-formaEntrega">
+          <option value="1" class="text-uppercase">Loja</option>
+          <option value="2" class="text-uppercase">Delivery</option>
+        </select>
+        <label>Forma de entrega</label>
+      </div>
 
-      <div class="input-field col s4">
+      <div class="field-entregas" style="display: none;">
+        <div class="input-field col s3 dtEntrega">
+          <input id="dtEntrega" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" class="datepicker">
+          <label for="dtEntrega">Data da Entrega</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input id="entregaACombinar" name="entregaACombinar" type="checkbox" class="filled-in">
+          <label for="entregaACombinar">À Combinar</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
         <input type="submit" class="btn bg-blue " value="Boletar">
       </div>
     </div>

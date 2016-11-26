@@ -50,9 +50,9 @@
       break;
     }
 
-    $data = date('Y-m-d',strtotime("-360 days")); 
-    $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem 
-    WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];              
+    $data = date('Y-m-d',strtotime("-360 days"));
+    $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem
+    WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
     $result = mysqli_query($conn, $sql_query);
     $totalQtd = array();
     while($row = mysqli_fetch_array($result)) $totalQtd[] = $row['quantidade'];
@@ -64,7 +64,7 @@
 	  while($row = mysqli_fetch_array($result)) $docs[] = $row['tipo'];
 
 	  $dif = array_diff($docsObrigatorios, $docs);
-	  $cor = "";	  
+	  $cor = "";
 
 	  if (!$dif && !$r["bloqueado"]) {
       $cor = "green-text";
@@ -80,10 +80,10 @@
       $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
       if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
       $cor = "red-text";
-    } else if ($dif || $r["bloqueado"]) 
+    } else if ($dif || $r["bloqueado"])
       $cor = "red-text";
 
-    
+
     $sql_query = "SELECT * FROM documentos WHERE tipo = 'PROV' AND clienteId = ". $r['id'];
     $result = mysqli_query($conn, $sql_query);
     $docprov = array();
@@ -91,7 +91,7 @@
     if ((sizeof($docprov) > 0) && $dif){
       $hoje = new DateTime(date('Y-m-d H:i:s'));
       $validade = new DateTime($docprov[0]);
-      $validade->modify('+1 day');                
+      $validade->modify('+1 day');
       if ($validade < $hoje){
         $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 1 WHERE id = ". $r['id'];
         if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
@@ -109,7 +109,7 @@
     if (sizeof($docir) > 0){
       $vigencia = new DateTime(date('Y')."-05-01 00:00:00");
       $dataIr = new DateTime($docir[0]);
-      if ($dataIr < $vigencia){                  
+      if ($dataIr < $vigencia){
         $sql_query = "UPDATE clientes SET bloqueado = 1, motivoBloqueio = 2 WHERE id = ". $r['id'];
         if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
         $cor = "red-text";
@@ -124,22 +124,22 @@
       }
     }
 
-    if ($r["vip"]) $cor = "amber-text";     
+    if ($r["vip"]) $cor = "amber-text";
 
     $boletar = "";
     if ($cor != "red-text")
       $boletar = '<a class="link-acao btn-floating waves-effect waves-light" data-acao="boletar" data-cliente-id="'.$r["id"].'" href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'" data-href="/dashboard/boletagem/adicionar?clienteId='.$r["id"].'"><i class="material-icons" title="Boletar cliente">&#xE8B0;</i></a>';
-    
+
 
 		$ret .=
 		  '<tr>
 		  <td>'.$r["razaoSocial"].'</td>
 		  <td>'.$r["email"].'</td>
-		  <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).' / ('.substr($r["telFixo"], 0, 2).') '.substr($r["telFixo"], 2, 4).'-'.substr($r["telFixo"], 6).'</td>
+		  <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).'</td>
 		  <td>'.$categoria.' - ' .$origem.'</td>
 		  <th>'.number_format($limiteDisponivel,2,",",".").'</th>
 		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
-		  
+
 
 		  <td class="center">'.$boletar.'</td>
 		  </tr>

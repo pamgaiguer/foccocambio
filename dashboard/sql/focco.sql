@@ -121,7 +121,7 @@ vet decimal(10,2),
 vetTaxa decimal(10,2),
 taxaNivel decimal(10,2),
 status int,
-formaPgto int
+formaPgto int,
 
 );
 

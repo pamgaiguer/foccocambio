@@ -615,8 +615,6 @@ focco = {
 
     });
 
-
-
     $("#cep-residencial").change(function(){
       cep = $(this).val();
 
@@ -957,7 +955,28 @@ focco = {
 
     $('.currency').mask("#.##0,00", {reverse: true});
     $('.currency5').mask("#.##0,00000", {reverse: true});
+    $('.datepicker').mask("99/99/9999");
+    $("#select-operacao option[value='3']").hide();
+    var verificaCheck =$('#entregaACombinar:checked').val();
 
+
+    $("#select-formaEntrega").change(function(){
+      if($(this).val()== 2){
+        $(".field-entregas").fadeIn(300);
+      }
+      else {
+        $(".field-entregas").fadeIn(300);
+      }
+    });
+
+    $("#entregaACombinar").click(function(){
+      if($(this).is(':checked')){
+        $(".dtEntrega").hide();
+      }
+      else{
+        $(".dtEntrega").show();
+      }
+    });
 
     $("#select-caixa").change(function(){
 
@@ -1021,7 +1040,7 @@ focco = {
 
     Number.prototype.formatDecimal = function(n, x, s, c) {
       var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
-          num = this.toFixed(Math.max(0, ~~n));
+      num = this.toFixed(Math.max(0, ~~n));
 
       return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
     };
