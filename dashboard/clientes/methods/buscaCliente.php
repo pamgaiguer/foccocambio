@@ -136,7 +136,9 @@
       }
     }
 
-    if ($r["vip"]) $cor = "amber-text";              
+    if ($r["vip"]) $cor = "amber-text";    
+
+    if ($r["bloqueioManual"]) $cor = "red-text";          
 
 
     $docprov = 

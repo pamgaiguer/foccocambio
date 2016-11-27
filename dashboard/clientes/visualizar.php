@@ -41,6 +41,7 @@ foreach($rows as $r){
   $limiteOperacionalDia = $r["limiteOperacionalDia"];
   $limiteOperacionalAno = $r["limiteOperacionalAno"];
   $bloqueado = $r["bloqueado"];
+  $bloqueadoManualmente = $r["bloqueioManual"];
   $motivoBloqueio = $r["motivoBloqueio"];
   $cnh = $r["cnh"];
   $cnhDataValidade = $r["cnhDataValidade"];
@@ -113,13 +114,18 @@ if ((sizeof($docprov) > 0) && $dif){
     if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
     $statOk = true;
     $bloqueado = false;
-  }
+  }  
+}
+
+if ($bloqueadoManualmente){
+  $statOk = false;
+  $bloqueado = true;
 }
 
 ?>
 <main class="clients">
   <div class="row">
-    <div class="col s12">
+    <div class="col s12">    
       <div class="spacing"></div>
 
       <nav class="bg-blue">

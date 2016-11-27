@@ -178,7 +178,7 @@ focco = {
       }
     });
 
-    $("#statusCliente").change(function(){
+    $("#bloqueioManual").change(function(){
       if ($(this).val() == 1){
         $(".motivoBlock").fadeIn(300);
         $("#motivoStatusBlocked").attr("required", "required");
@@ -390,55 +390,11 @@ focco = {
                 type: "post",
                 data: {clienteId},
                 success: function(r){
-                  if (r == "true") {
+                  if (r == "true") 
                     window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
-                  }
-                  else {
-
-                    $("#modal-confirm4").click(function(e){
-                      e.preventDefault();
-
-                      login = $("input#login").val();
-                      senha = $("input#senha").val();
-
-                      $.ajax({
-                        url: "/dashboard/checarAdmin.php/",
-                        type: "post",
-                        data: {login, senha},
-                        success: function(r){
-                          switch (JSON.parse(r)) {
-                            case "nope":
-                            $("#form-erro").html("O usuário não foi autenticado");
-                            break;
-
-                            case "ok":
-                            $.ajax({
-                              url: "/dashboard/clientes/methods/desbloquearDocProv.php/",
-                              type: "post",
-                              data: {clienteId},
-                              success: function(r){
-                                if (JSON.parse(r) == "ok"){
-                                  window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
-                                }
-                              }
-                            });
-
-
-                            break;
-                          }
-
-                        }
-                      });
-
-                    });
-
-                    $("#modal4").openModal();
-
-
-
-
-                    //window.location = "/dashboard/clientes/";
-                  }
+                  else 
+                    window.location = "/dashboard/boletagem?clienteId=" + clienteId;
+                                    
                 }
 
               });
@@ -500,7 +456,7 @@ focco = {
     });
 
 
-    $("#statusCliente").change(function(){
+    $("#bloqueioManual").change(function(){
       if ($(this).val() == 1){
         $(".motivoBlock").fadeIn(300);
         $("#motivoStatusBlocked").attr("required", "required");
@@ -847,6 +803,7 @@ focco = {
                   type: "post",
                   data: {clienteId},
                   success: function(r){
+                    console.log(r);
                     if (JSON.parse(r) == "ok"){
                       window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId;
                     }
@@ -948,6 +905,62 @@ focco = {
       else { window.location = href; }
 
     });
+
+    $(".link-acao").click(function(e){
+      e.preventDefault();
+
+      acao = $(this).data("acao");
+      clienteId = $(this).data("cliente-id");
+      link = $(this).data("href");
+
+      switch(acao) {        
+        case "doc-prov":
+        $("#modal-confirm2").click(function(e){
+          e.preventDefault();
+
+          login = $("input#login").val();
+          senha = $("input#senha").val();
+
+          $.ajax({
+            url: "/dashboard/checarAdmin.php/",
+            type: "post",
+            data: {login, senha},
+            success: function(r){
+              switch (JSON.parse(r)) {
+                case "nope":
+                $("#form-erro").html("O usuário não foi autenticado");
+                break;
+
+                case "ok":
+                $.ajax({
+                  url: "/dashboard/clientes/methods/desbloquearDocProv.php/",
+                  type: "post",
+                  data: {clienteId},
+                  success: function(r){
+                    console.log(r);
+                    if (JSON.parse(r) == "ok"){
+                      window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
+                    }
+                  }
+                });
+                break;
+              }
+
+            }
+          });
+
+        });
+        $('#modal2').openModal();
+        break;
+
+        default:
+        window.location = link;
+        break;
+      }
+
+
+    });
+
   },
 
 

@@ -39,14 +39,15 @@ if (mysqli_num_rows($result) < 1) {
 		ondeConheceu,
 		ondeSoube,
 		bloqueado,
+		bloqueioManual,
 		motivoBloqueio,
 		cnh,
 		cnhDataValidade
 		)
 
-		VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s, '%s', %s, %s, '%s', '%s' )",
+		VALUES ( %s,'%s','%s','%s','%s','%s','%s','%s','%s','%s',%s,'%s','%s','%s','%s','%s','%s','%s', '%s','%s',%s,%s,'%s','%s', '%s', '%s', %s, %s, %s, %s, '%s', %s, %s, %s, '%s', '%s' )",
 
-		$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], TratarFloat($_POST["limiteOperacionalAno"]), $_POST["ondeConheceuFocco"], $_POST["ondeConheceuFoccoDesc"], $_POST["bloqueado"], $_POST["motivoStatusBlocked"], $_POST["cnh"], TratarData($_POST["cnhDataValidade"])
+		$_POST["categoria"], $_POST["razaoSocial"], $_POST["tipoPessoa"], SomenteNumeros($_POST["cpfCnpj"]), TratarData($_POST["dataNascimento"]), SomenteNumeros($_POST["rg"]), $_POST["rgOrgaoExpedidor"], TratarData($_POST["rgDataExpedicao"]), $_POST["sexo"], $_POST["nacionalidade"], $_POST["estadoCivil"], $_POST["nomeConjuge"], TratarData($_POST["dataNascimentoConjuge"]), $_POST["nomeMae"], $_POST["nomePai"], $_POST["email"], SomenteNumeros($_POST["telFixo"]), SomenteNumeros($_POST["telCelular"]), $_POST["contraSenha"], $_POST["observacoes"], $_POST["ofertasPorEmail"], $_POST["infoWhatsapp"], date('Y-m-d H:i:s'), date('Y-m-d H:i:s'), $_POST["numPassaporte"], $_POST["rgDni"], $_POST["origem"], $_POST["vip"], TratarFloat($_POST["limiteOperacionalAno"]), $_POST["ondeConheceuFocco"], $_POST["ondeConheceuFoccoDesc"], $_POST["bloqueado"], $_POST["bloqueioManual"], $_POST["motivoStatusBlocked"], $_POST["cnh"], TratarData($_POST["cnhDataValidade"])
 		);	
 		
 

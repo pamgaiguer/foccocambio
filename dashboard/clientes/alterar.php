@@ -38,6 +38,8 @@ foreach($rows as $r){
   $vip = $r['vip'];
   $limiteOperacionalDia = $r["limiteOperacionalDia"];
   $limiteOperacionalAno = $r["limiteOperacionalAno"];
+  $bloqueado = $r["bloqueado"];
+  $bloqueioManual = $r["bloqueioManual"];
 
   $cnh = $r["cnh"];
   $cnhDataValidade = $r["cnhDataValidade"];
@@ -258,11 +260,12 @@ foreach($rows as $r){
             </div>
 
             <div class="input-field col s4">
-              <select id="statusCliente" name="statusCliente" required>
-                <option value="0" selected>Ativo</option>
-                <option value="1">Bloqueado</option>
+              <input type="hidden" id="bloqueado" name="bloqueado" value=""/>
+              <select id="bloqueioManual" name="bloqueioManual" required>
+                <option value="0" <?php echo $bloqueioManual == 0 ? "selected" : "" ?> >Ativo</option>
+                <option value="1" <?php echo $bloqueioManual == 1 ? "selected" : "" ?>>Bloqueado</option>
               </select>
-              <label for="statusCliente">Status</label>
+              <label for="bloqueioMnual">Status</label>
             </div>
 
             <div class="motivoBlock" style="display: none">

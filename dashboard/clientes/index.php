@@ -196,6 +196,8 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
 
               if ($r["vip"]) $cor = "amber-text";
+              if ($r["bloqueioManual"]) $cor = "red-text";
+
 
               $docprov =
               $cor == "red-text"

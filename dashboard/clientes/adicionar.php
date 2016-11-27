@@ -213,11 +213,13 @@ include "../includes/header.php";
             </div>
 
             <div class="input-field col s4">
-              <select id="bloqueado" name="bloqueado" required>
+              <input type="hidden" name="bloqueado" id="bloqueado" value="0"/>
+
+              <select id="bloqueioManual" name="bloqueioManual" required>
                 <option value="0" selected>Ativo</option>
                 <option value="1">Bloqueado</option>
               </select>
-              <label for="bloqueado">Status</label>
+              <label for="bloqueioManual">Status</label>
             </div>
 
             <div class="motivoBlock" style="display: none">

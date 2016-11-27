@@ -125,6 +125,14 @@
     }
 
     if ($r["vip"]) $cor = "amber-text";
+    if ($r["bloqueioManual"]) $cor = "red-text";
+
+    $docprov = 
+    $cor == "red-text" 
+    ? 
+      '<td><a class="link-acao modal-trigger green-text" href="modal2" data-acao="doc-prov" data-cliente-id="'.$r["id"].'"><i class="material-icons" title="Liberação por documento provisório">lock</i></a></td>' 
+    : 
+      '<td></td>';
 
     $boletar = "";
     if ($cor != "red-text")
@@ -138,9 +146,8 @@
 		  <td>('.substr($r["telCelular"], 0, 2).') '.substr($r["telCelular"], 2, 5).'-'.substr($r["telCelular"], 7).'</td>
 		  <td>'.$categoria.' - ' .$origem.'</td>
 		  <th>'.number_format($limiteDisponivel,2,",",".").'</th>
-		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>
-
-
+		  <th><i class="material-icons '.$cor.' ">&#xE5CA;</i>   </th>'.$docprov.'
+      <td class="center"><a class="link-acao" data-acao="visualizar" data-cliente-id="'.$r["id"].'" href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'" data-href="/dashboard/clientes/visualizar?clienteId='.$r["id"].'"><i class="material-icons" title="Visualizar cliente">&#xE85D;</i></a></td>
 		  <td class="center">'.$boletar.'</td>
 		  </tr>
 
