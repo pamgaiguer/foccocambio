@@ -1199,8 +1199,7 @@ focco = {
           iof, mn, swift, darf, vet, vettaxa, txnivel, 
           formaPgto, formaEntrega, dataEntrega, aCombinar
         },
-        success: function(r){
-
+        success: function(r){          
           if (JSON.parse(r) == "ok"){
             window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";
           }

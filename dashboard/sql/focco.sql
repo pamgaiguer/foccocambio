@@ -54,7 +54,7 @@ INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefo
 --
 
 CREATE TABLE `clientes` (
-  `id` int(11) NOT NULL,
+  `id` int(11) AUTO_INCREMENT NOT NULL,
   `categoria` int(11) DEFAULT NULL,
   `razaoSocial` varchar(255) DEFAULT NULL,
   `tipoPessoa` char(1) DEFAULT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE `clientes` (
 -- Extraindo dados da tabela `clientes`
 
 CREATE TABLE `boletagem` (
-  `id` int(11) NOT NULL,
+  `id` int(11) AUTO_INCREMENT NOT NULL,
   `clienteId` int(11) DEFAULT NULL,
   `data` datetime DEFAULT NULL,
   `caixaId` int(11) DEFAULT NULL,

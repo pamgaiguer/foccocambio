@@ -1,5 +1,5 @@
 <?php 
-session_start(); 
+
 if ((isset($_SESSION['currentUser'])) && $_SESSION['currentUser'] != null)  Header("Location: /dashboard/home");
 ?>
 <!DOCTYPE html>
