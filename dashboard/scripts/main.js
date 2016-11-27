@@ -390,11 +390,11 @@ focco = {
                 type: "post",
                 data: {clienteId},
                 success: function(r){
-                  if (r == "true") 
+                  if (r == "true")
                     window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
-                  else 
+                  else
                     window.location = "/dashboard/boletagem?clienteId=" + clienteId;
-                                    
+
                 }
 
               });
@@ -913,7 +913,7 @@ focco = {
       clienteId = $(this).data("cliente-id");
       link = $(this).data("href");
 
-      switch(acao) {        
+      switch(acao) {
         case "doc-prov":
         $("#modal-confirm2").click(function(e){
           e.preventDefault();
@@ -973,7 +973,6 @@ focco = {
     $("#select-operacao option[value='4']").hide();
     var verificaCheck =$('#entregaACombinar:checked').val();
 
-
     $("#select-formaEntrega").change(function(){
       if($(this).val()== 2){
         $(".field-entregas").fadeIn(300);
@@ -998,7 +997,7 @@ focco = {
       if ($(this).val() == 3) {
         $(".div-swift").fadeIn(100);
         $(".div-darf").fadeIn(100);
-        $(".div-txnivel").fadeIn(100);        
+        $(".div-txnivel").fadeIn(100);
         $(".div-mn").fadeOut(100);
         $("#select-operacao option[value='3']").show();
         $("#select-operacao option[value='4']").show();
@@ -1006,7 +1005,7 @@ focco = {
       else {
         $(".div-swift").fadeOut(100);
         $(".div-darf").fadeOut(100);
-        $(".div-txnivel").fadeOut(100);        
+        $(".div-txnivel").fadeOut(100);
         $(".div-mn").fadeIn(100);
 
         $("#txNivel").val("");
@@ -1025,10 +1024,10 @@ focco = {
       //venda
       if ($(this).val() == 2) {
         //cartao prepago
-        if ($("#select-operacao").val() == 2) $("#ioftaxa").val("6.38");        
+        if ($("#select-operacao").val() == 2) $("#ioftaxa").val("6.38");
       } else {
         //cartao prepago
-        if ($("#select-operacao").val() == 2) $("#ioftaxa").val("0.38");        
+        if ($("#select-operacao").val() == 2) $("#ioftaxa").val("0.38");
       }
 
     });
@@ -1036,13 +1035,13 @@ focco = {
     $("#select-operacao").change(function(){
       switch($(this).val()){
         case "1": $("#ioftaxa").val("1.1");  break;
-        case "2": 
-          if ($("#select-modalidade").val() == 2) 
-            $("#ioftaxa").val("6.38");
-          else 
-            $("#ioftaxa").val("0.38");
-          break;
-        
+        case "2":
+        if ($("#select-modalidade").val() == 2)
+          $("#ioftaxa").val("6.38");
+        else
+          $("#ioftaxa").val("0.38");
+        break;
+
         case "3": $("#ioftaxa").val("0.38"); break;
         case "4": $("#ioftaxa").val("0"); break;
         default: break;
@@ -1100,16 +1099,16 @@ focco = {
         $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
 
         var debitoLimite = ( toNumber($(this).val()) * toNumber($("#taxa").val())) / toNumber($("#taxaDolar").val());
-  
+
         //estourou limite
         if (toNumber($("#limiteDisponivel").val()) < debitoLimite) {
           $("#input-submit").addClass("disabled");
-          $("#p-limite-excedido").html("Limite do cliente excedido");
-        } else {
-          $("#input-submit").removeClass("disabled");
-          $("#p-limite-excedido").html("");
+          $("#limite-excedido").html("<div class='alert error'><p>Limite do cliente excedido</p></div>");
         }
-
+        else {
+          $("#input-submit").removeClass("disabled");
+          $("#limite-excedido").html("");
+        }
       }
     });
 
@@ -1133,7 +1132,7 @@ focco = {
         }
 
         var debitoLimite = ( toNumber($("#quantidade").val()) * toNumber($(this).val())) / toNumber($("#taxaDolar").val());
-        
+
         //estourou limite
         if (toNumber($("#limiteDisponivel").val()) < debitoLimite) {
           $("#input-submit").addClass("disabled");
@@ -1189,17 +1188,17 @@ focco = {
       formaEntrega = $("#select-formaEntrega", $(this)).val();
       dataEntrega = $("#dtEntrega", $(this)).val();
       aCombinar = document.getElementsByName('entregaACombinar')[0].checked;
-      
+
       $.ajax({
         url: "/dashboard/boletagem/adicionarPost.php/",
         type: "post",
         data: {
           clienteId, usuarioId, data, caixa, modalidade,
           operacao, moeda, quantidade, taxa, subtotal,
-          iof, mn, swift, darf, vet, vettaxa, txnivel, 
+          iof, mn, swift, darf, vet, vettaxa, txnivel,
           formaPgto, formaEntrega, dataEntrega, aCombinar
         },
-        success: function(r){          
+        success: function(r){
           if (JSON.parse(r) == "ok"){
             window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";
           }

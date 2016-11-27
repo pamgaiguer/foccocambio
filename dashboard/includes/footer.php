@@ -1,5 +1,5 @@
 
-<div class="preloader-wrapper active">
+<!-- <div class="preloader-wrapper active">
 <div class="spinner-layer spinner-blue-only">
     <div class="circle-clipper left">
       <div class="circle"></div>
@@ -11,7 +11,7 @@
       <div class="circle"></div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <script src="/dashboard/scripts/jquery-2.2.4.min.js"></script>

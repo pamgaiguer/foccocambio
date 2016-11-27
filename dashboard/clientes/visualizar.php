@@ -55,7 +55,7 @@ $data = date('Y-m-d',strtotime("-360 days"));
 $sql_query = "SELECT sum((quantidade*taxa)/dolar) quantidade from boletagem, cotacoes
 WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
 $result = mysqli_fetch_array(mysqli_query($conn, $sql_query));
-$totalQtd = $result['quantidade'];    
+$totalQtd = $result['quantidade'];
 $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
 
 $sql_query = sprintf("SELECT tipo, arquivo FROM documentos WHERE clienteId = %s", $_GET['clienteId']);
@@ -64,8 +64,8 @@ $docs = array();
 $dirs = array();
 
 while($row = mysqli_fetch_array($result)) {
-    $docs[] = $row['tipo'];
-    $dirs[] = $row['arquivo'];
+  $docs[] = $row['tipo'];
+  $dirs[] = $row['arquivo'];
 }
 
 
@@ -125,7 +125,7 @@ if ((sizeof($docprov) > 0) && $dif){
     if (!mysqli_query($conn, $sql_query)) echo json_encode(mysqli_error($conn));
     $statOk = true;
     $bloqueado = false;
-  }  
+  }
 }
 
 if ($bloqueadoManualmente){
@@ -136,7 +136,7 @@ if ($bloqueadoManualmente){
 ?>
 <main class="clients">
   <div class="row">
-    <div class="col s12">    
+    <div class="col s12">
       <div class="spacing"></div>
 
       <nav class="bg-blue">
@@ -207,7 +207,8 @@ if ($bloqueadoManualmente){
         </div>
       </div>
       <div class="col s9">
-        <h5>ID: <?php echo $id ?> - <?php echo $nome ?> - Limite disponível: $<?php echo number_format($limiteDisponivel,2,",","."); ?></h5>
+        <h5>ID: <?php echo $id ?> - <?php echo $nome ?> </h5>
+        <h6 class="">Limite disponível: $<?php echo number_format($limiteDisponivel,2,",","."); ?></h6>
 
         <div class="spacing"></div>
 
@@ -407,32 +408,10 @@ if ($bloqueadoManualmente){
         <?php
         if (in_array("CPF", $docs)) {
           $index = array_search("CPF", $docs);
-        ?>
-        <div class="col s4">
-          <figure>
-          <?php
-            if (strpos($dirs[$index], '.pdf') > 1) {
-              echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-
-            } else {
-
-              echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
-            }
           ?>
-            <figcaption>CPF/RG/CNH</figcaption>
-          </figure>
-
-
-
-        </div>
-        <?php } ?>
-
-        <?php if (in_array("CR", $docs)) {
-          $index = array_search("CR", $docs);
-        ?>
-        <div class="col s4">
-          <figure>
-            <?php
+          <div class="col s4">
+            <figure>
+              <?php
               if (strpos($dirs[$index], '.pdf') > 1) {
                 echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
 
@@ -440,342 +419,364 @@ if ($bloqueadoManualmente){
 
                 echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
               }
+              ?>
+              <figcaption>CPF/RG/CNH</figcaption>
+            </figure>
+
+
+
+          </div>
+          <?php } ?>
+
+          <?php if (in_array("CR", $docs)) {
+            $index = array_search("CR", $docs);
             ?>
-            <figcaption>Comprovante de residência</figcaption>
-          </figure>
-        </div>
-        <?php }; ?>
+            <div class="col s4">
+              <figure>
+                <?php
+                if (strpos($dirs[$index], '.pdf') > 1) {
+                  echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
 
-        <?php if (in_array("FF", $docs)) {
-          $index = array_search("FF", $docs);
+                } else {
+
+                  echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+                }
+                ?>
+                <figcaption>Comprovante de residência</figcaption>
+              </figure>
+            </div>
+            <?php }; ?>
+
+            <?php if (in_array("FF", $docs)) {
+              $index = array_search("FF", $docs);
+              ?>
+              <div class="col s4">
+                <figure>
+                  <?php
+                  if (strpos($dirs[$index], '.pdf') > 1) {
+                    echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+
+                  } else {
+
+                    echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+                  }
+                  ?>
+                  <figcaption>Ficha Cadastral Focco</figcaption>
+                </figure>
+              </div>
+              <?php }; ?>
+
+              <?php if (in_array("IR", $docs)) {
+                $index = array_search("IR", $docs);
+                ?>
+                <div class="col s4">
+                  <figure>
+                    <?php
+                    if (strpos($dirs[$index], '.pdf') > 1) {
+                      echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+
+                    } else {
+
+                      echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+                    }
+                    ?>
+                    <figcaption>Imposto de Renda</figcaption>
+                  </figure>
+                </div>
+                <?php }; ?>
+
+                <?php if (in_array("CA", $docs)) {
+                  $index = array_search("CA", $docs);
+                  ?>
+                  <div class="col s4">
+                    <figure>
+                      <?php
+                      if (strpos($dirs[$index], '.pdf') > 1) {
+                        echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+
+                      } else {
+
+                        echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+                      }
+                      ?>
+                      <figcaption>Cartão de Assinatura</figcaption>
+                    </figure>
+                  </div>
+                  <?php }; ?>
+
+                  <?php if (in_array("CPS", $docs)) {
+                    $index = array_search("CPS", $docs);
+                    ?>
+                    <div class="col s4">
+                      <figure>
+                        <?php
+                        if (strpos($dirs[$index], '.pdf') > 1) {
+                          echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+
+                        } else {
+
+                          echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+                        }
+                        ?>
+                        <figcaption>Contrato de Prestação de Serviços</figcaption>
+                      </figure>
+                    </div>
+                    <?php }; ?>
+
+                    <?php if (in_array("PV", $docs)) {
+                      $index = array_search("CPS", $docs);
+                      ?>
+                      <div class="col s4">
+                        <figure>
+                          <?php
+                          if (strpos($dirs[$index], '.pdf') > 1) {
+                            echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
+
+                          } else {
+
+                            echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
+                          }
+                          ?>
+                          <figcaption>Procuração para a Vision</figcaption>
+                        </figure>
+                      </div>
+                      <?php }; ?>
+                    </div>
+                  </div>
+
+                  <div id="resAddress">
+                    <?php
+                    $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE tipo = 1 AND clienteId = %s", $_GET['clienteId']);
+                    $result = mysqli_query($conn, $sql_query);
+
+                    $rows = array();
+                    while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+                    foreach($rows as $r){
+
+                      $tipo = $r['tipo'];
+                      $cep = $r['cep'];
+                      $endereco = $r['endereco'];
+                      $numero = $r['numero'];
+                      $complemento = $r['complemento'];
+                      $bairro = $r['bairro'];
+                      $cidade = $r['cidade'];
+                      $estado = $r['estado'];
+                      $pais = $r['pais'];
+                    };
+                    ?>
+
+                    <div class="line-fields">
+                      <div class="row">
+                        <p>Endereço Residencial</p>
+
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo substr($cep, 0, 5).'-'.substr($cep, 5, 3); ?>" id="cliente_cep" type="text" readonly>
+                          <label for="cliente_cep">CEP</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo $endereco; ?>" id="cliente_endereco" type="text" readonly>
+                          <label for="cliente_endereco">Logradouro</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo $numero; ?>" id="cliente_numero" type="text" readonly>
+                          <label for="cliente_numero">Número</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo $complemento == '' ? "Não possui" : $complemento; ?>" id="cliente_complemento" type="text" readonly>
+                          <label for="cliente_complemento">Complemento</label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="line-fields">
+                      <div class="row">
+
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo $bairro; ?>" id="cliente_bairro" type="text" readonly>
+                          <label for="cliente_bairro">Bairro</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo $cidade; ?>" id="cliente_cidade" type="text" readonly>
+                          <label for="cliente_cidade">Cidade</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo $estado; ?>" id="cliente_estadp" type="text" readonly>
+                          <label for="cliente_estadp">Estado</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input placeholder="<?php echo $pais; ?>" id="cliente_pais" type="text" readonly>
+                          <label for="cliente_pais">País</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <?php
+                    $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE tipo = 2 AND clienteId = %s", $_GET['clienteId']);
+                    $result = mysqli_query($conn, $sql_query);
+
+                    $rows = array();
+                    while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+                    foreach($rows as $r){
+                      $tipo = $r['tipo'];
+                      $cep = $r['cep'];
+                      $endereco = $r['endereco'];
+                      $numero = $r['numero'];
+                      $complemento = $r['complemento'];
+                      $bairro = $r['bairro'];
+                      $cidade = $r['cidade'];
+                      $estado = $r['estado'];
+                      $pais = $r['pais'];
+                    };
+                    ?>
+
+                    <p>Endereço de Entrega</p>
+
+                    <div class="line-fields">
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo substr($cep, 0, 5).'-'.substr($cep, 5, 3); ?>" id="cliente_cep" type="text" readonly>
+                        <label for="cliente_cep">CEP</label>
+                      </div>
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo $endereco; ?>" id="cliente_endereco" type="text" readonly>
+                        <label for="cliente_endereco">Logradouro</label>
+                      </div>
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo $numero; ?>" id="cliente_numero" type="text" readonly>
+                        <label for="cliente_numero">Número</label>
+                      </div>
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo $complemento == '' ? "Não possui" : $complemento; ?>" id="cliente_complemento" type="text" readonly>
+                        <label for="cliente_complemento">Complemento</label>
+                      </div>
+                    </div>
+
+                    <div class="line-fields">
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo $bairro; ?>" id="cliente_bairro" type="text" readonly>
+                        <label for="cliente_bairro">Bairro</label>
+                      </div>
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo $cidade; ?>" id="cliente_cidade" type="text" readonly>
+                        <label for="cliente_cidade">Cidade</label>
+                      </div>
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo $estado; ?>" id="cliente_estadp" type="text" readonly>
+                        <label for="cliente_estadp">Estado</label>
+                      </div>
+                      <div class="input-field col s3">
+                        <input placeholder="<?php echo $pais; ?>" id="cliente_pais" type="text" readonly>
+                        <label for="cliente_pais">País</label>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div id="boletagemHistory">
+                    <table class="table">
+                      <thead>
+                        <th>#ID Boleto</th>
+                        <th>Usuario</th>
+                        <th>Data</th>
+                        <th>Caixa</th>
+                        <th>Modalidade</th>
+                        <th>Forma Pagto</th>
+                        <th>Operação</th>
+                        <th>Moeda</th>
+                        <th>Quantidade</th>
+                        <th>Taxa</th>
+                        <th>Subtotal</th>
+                        <th>VET</th>
+                        <th></th>
+                      </thead>
+                      <tbody>
+                        <?php
+                        $sql_query = sprintf("SELECT * FROM boletagem WHERE clienteId = %s", $_GET['clienteId']);
+                        $result = mysqli_query($conn, $sql_query);
+
+                        $rows = array();
+                        while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
+                        foreach($rows as $r){
+
+                          $sql_query = sprintf("SELECT * FROM usuarios WHERE id = %s", $r['usuarioId']);
+
+                          $result = mysqli_query($conn, $sql_query);
+                          $rowsu = array();
+                          while($rowu = mysqli_fetch_array($result)) $rowsu[] = $rowu;
+                          foreach($rowsu as $ru) {$usuario = $ru['nome'];}
+
+                          $id = $r['id'];
+
+                          switch ($r['caixaId']) {
+                            case 1: $caixa = "Focco"; break;
+                            case 2: $caixa = "Focco X"; break;
+                            case 3: $caixa = "FX 53"; break;
+                          }
+
+                          $modalidade = $r['modalidade'] == 1 ? "Compra" : "Venda";
+
+                          switch ($r['formaPgto']) {
+                            case 1: $formaPagamento = "Espécie"; break;
+                            case 2: $formaPagamento = "TED"; break;
+                            case 3: $formaPagamento = "DOC"; break;
+                            case 4: $formaPagamento = "Transferência bancária"; break;
+                            default: $formaPagamento = ""; break;
+                          }
+
+                          switch ($r['tipoOperacao']) {
+                            case 1: $tipoOperacao = "Espécie"; break;
+                            case 2: $tipoOperacao = "Cartão pré-pago"; break;
+                            case 3: $tipoOperacao = "Transferência internacional"; break;
+                          }
+
+
+                          if ($_SESSION["currentUser"]["tipo"] < 3) {
+
+                            if ($r['status'] == 1)
+                              $acao = '<a href="#" class="link-acao-cancelar btn red darken-1 white-text" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
+                            else
+                              $acao = '<a href="#" class="link-acao-reativar btn teal darken-1 white-text" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
+
+                          } else $acao = "";
+
+                          echo
+                          '<tr>
+                          <td>'.$id.'</td>
+                          <td>'.$usuario.'</td>
+                          <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
+                          <td>'.$caixa.'</td>
+                          <td>'.$modalidade.'</td>
+                          <td>'.$formaPagamento.'</td>
+                          <td>'.$tipoOperacao.'</td>
+                          <td>'.$r['moeda'].'</td>
+                          <td>'.number_format($r['quantidade'],2,",",".").'</td>
+                          <td>'.number_format($r['taxa'],5,",",".").'</td>
+                          <td>'.number_format($r['subtotal'],2,",",".").'</td>
+                          <td>'.number_format($r['vet'],2,",",".").'</td>
+                          <td>'.$acao.'</td>
+                        </tr>';
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <?php
+        include "../includes/footer.php";
         ?>
-        <div class="col s4">
-          <figure>
-            <?php
-              if (strpos($dirs[$index], '.pdf') > 1) {
-                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
 
-              } else {
+        <script type="text/javascript">
+          $("img").elevateZoom({easing : true});
+        </script>
 
-                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
-              }
-            ?>
-            <figcaption>Ficha Cadastral Focco</figcaption>
-          </figure>
-        </div>
-        <?php }; ?>
-
-        <?php if (in_array("IR", $docs)) {
-          $index = array_search("IR", $docs);
-        ?>
-        <div class="col s4">
-          <figure>
-            <?php
-              if (strpos($dirs[$index], '.pdf') > 1) {
-                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-
-              } else {
-
-                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
-              }
-            ?>
-            <figcaption>Imposto de Renda</figcaption>
-          </figure>
-        </div>
-        <?php }; ?>
-
-        <?php if (in_array("CA", $docs)) {
-          $index = array_search("CA", $docs);
-        ?>
-        <div class="col s4">
-          <figure>
-            <?php
-              if (strpos($dirs[$index], '.pdf') > 1) {
-                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-
-              } else {
-
-                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
-              }
-            ?>
-            <figcaption>Cartão de Assinatura</figcaption>
-          </figure>
-        </div>
-        <?php }; ?>
-
-        <?php if (in_array("CPS", $docs)) {
-          $index = array_search("CPS", $docs);
-        ?>
-        <div class="col s4">
-          <figure>
-            <?php
-              if (strpos($dirs[$index], '.pdf') > 1) {
-                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-
-              } else {
-
-                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
-              }
-            ?>
-            <figcaption>Contrato de Prestação de Serviços</figcaption>
-          </figure>
-        </div>
-        <?php }; ?>
-
-        <?php if (in_array("PV", $docs)) {
-          $index = array_search("CPS", $docs);
-        ?>
-        <div class="col s4">
-          <figure>
-            <?php
-              if (strpos($dirs[$index], '.pdf') > 1) {
-                echo '<a class=""  href="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" target="_blank">Clique para visualizar</a>';
-
-              } else {
-
-                echo '<img class="responsive-img materialboxed"  alt="doc-cpf" src="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'" data-zoom-image="/dashboard/clientes/uploads/'.$cpfCnpj.'/'.$dirs[$index].'"/>';
-              }
-            ?>
-            <figcaption>Procuração para a Vision</figcaption>
-          </figure>
-        </div>
-        <?php }; ?>
-      </div>
-    </div>
-
-    <div id="resAddress">
-      <?php
-      $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE tipo = 1 AND clienteId = %s", $_GET['clienteId']);
-      $result = mysqli_query($conn, $sql_query);
-
-      $rows = array();
-      while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
-      foreach($rows as $r){
-
-        $tipo = $r['tipo'];
-        $cep = $r['cep'];
-        $endereco = $r['endereco'];
-        $numero = $r['numero'];
-        $complemento = $r['complemento'];
-        $bairro = $r['bairro'];
-        $cidade = $r['cidade'];
-        $estado = $r['estado'];
-        $pais = $r['pais'];
-      };
-      ?>
-
-      <div class="line-fields">
-        <div class="row">
-          <p>Endereço Residencial</p>
-
-          <div class="input-field col s3">
-            <input placeholder="<?php echo substr($cep, 0, 5).'-'.substr($cep, 5, 3); ?>" id="cliente_cep" type="text" readonly>
-            <label for="cliente_cep">CEP</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $endereco; ?>" id="cliente_endereco" type="text" readonly>
-            <label for="cliente_endereco">Logradouro</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $numero; ?>" id="cliente_numero" type="text" readonly>
-            <label for="cliente_numero">Número</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $complemento == '' ? "Não possui" : $complemento; ?>" id="cliente_complemento" type="text" readonly>
-            <label for="cliente_complemento">Complemento</label>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="line-fields">
-        <div class="row">
-
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $bairro; ?>" id="cliente_bairro" type="text" readonly>
-            <label for="cliente_bairro">Bairro</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $cidade; ?>" id="cliente_cidade" type="text" readonly>
-            <label for="cliente_cidade">Cidade</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $estado; ?>" id="cliente_estadp" type="text" readonly>
-            <label for="cliente_estadp">Estado</label>
-          </div>
-          <div class="input-field col s3">
-            <input placeholder="<?php echo $pais; ?>" id="cliente_pais" type="text" readonly>
-            <label for="cliente_pais">País</label>
-          </div>
-        </div>
-      </div>
-
-      <?php
-      $sql_query = sprintf("SELECT * FROM enderecoscliente WHERE tipo = 2 AND clienteId = %s", $_GET['clienteId']);
-      $result = mysqli_query($conn, $sql_query);
-
-      $rows = array();
-      while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
-      foreach($rows as $r){
-        $tipo = $r['tipo'];
-        $cep = $r['cep'];
-        $endereco = $r['endereco'];
-        $numero = $r['numero'];
-        $complemento = $r['complemento'];
-        $bairro = $r['bairro'];
-        $cidade = $r['cidade'];
-        $estado = $r['estado'];
-        $pais = $r['pais'];
-      };
-      ?>
-
-      <p>Endereço de Entrega</p>
-
-      <div class="line-fields">
-        <div class="input-field col s3">
-          <input placeholder="<?php echo substr($cep, 0, 5).'-'.substr($cep, 5, 3); ?>" id="cliente_cep" type="text" readonly>
-          <label for="cliente_cep">CEP</label>
-        </div>
-        <div class="input-field col s3">
-          <input placeholder="<?php echo $endereco; ?>" id="cliente_endereco" type="text" readonly>
-          <label for="cliente_endereco">Logradouro</label>
-        </div>
-        <div class="input-field col s3">
-          <input placeholder="<?php echo $numero; ?>" id="cliente_numero" type="text" readonly>
-          <label for="cliente_numero">Número</label>
-        </div>
-        <div class="input-field col s3">
-          <input placeholder="<?php echo $complemento == '' ? "Não possui" : $complemento; ?>" id="cliente_complemento" type="text" readonly>
-          <label for="cliente_complemento">Complemento</label>
-        </div>
-      </div>
-
-      <div class="line-fields">
-        <div class="input-field col s3">
-          <input placeholder="<?php echo $bairro; ?>" id="cliente_bairro" type="text" readonly>
-          <label for="cliente_bairro">Bairro</label>
-        </div>
-        <div class="input-field col s3">
-          <input placeholder="<?php echo $cidade; ?>" id="cliente_cidade" type="text" readonly>
-          <label for="cliente_cidade">Cidade</label>
-        </div>
-        <div class="input-field col s3">
-          <input placeholder="<?php echo $estado; ?>" id="cliente_estadp" type="text" readonly>
-          <label for="cliente_estadp">Estado</label>
-        </div>
-        <div class="input-field col s3">
-          <input placeholder="<?php echo $pais; ?>" id="cliente_pais" type="text" readonly>
-          <label for="cliente_pais">País</label>
-        </div>
-      </div>
-
-    </div>
-
-    <div id="boletagemHistory">
-      <table class="table">
-        <thead>
-          <th>#ID Boleto</th>
-          <th>Usuario</th>
-          <th>Data</th>
-          <th>Caixa</th>
-          <th>Modalidade</th>
-          <th>Forma Pagto</th>
-          <th>Operação</th>
-          <th>Moeda</th>
-          <th>Quantidade</th>
-          <th>Taxa</th>
-          <th>Subtotal</th>
-          <th>VET</th>
-          <th></th>
-        </thead>
-        <tbody>
-          <?php
-          $sql_query = sprintf("SELECT * FROM boletagem WHERE clienteId = %s", $_GET['clienteId']);
-          $result = mysqli_query($conn, $sql_query);
-
-          $rows = array();
-          while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
-          foreach($rows as $r){
-
-            $sql_query = sprintf("SELECT * FROM usuarios WHERE id = %s", $r['usuarioId']);
-
-            $result = mysqli_query($conn, $sql_query);
-            $rowsu = array();
-            while($rowu = mysqli_fetch_array($result)) $rowsu[] = $rowu;
-            foreach($rowsu as $ru) {$usuario = $ru['nome'];}
-
-            $id = $r['id'];
-
-            switch ($r['caixaId']) {
-              case 1: $caixa = "Focco"; break;
-              case 2: $caixa = "Focco X"; break;
-              case 3: $caixa = "FX 53"; break;
-            }
-
-            $modalidade = $r['modalidade'] == 1 ? "Compra" : "Venda";
-
-            switch ($r['formaPgto']) {
-              case 1: $formaPagamento = "Espécie"; break;
-              case 2: $formaPagamento = "TED"; break;
-              case 3: $formaPagamento = "DOC"; break;
-              case 4: $formaPagamento = "Transferência bancária"; break;
-              default: $formaPagamento = ""; break;
-            }
-
-            switch ($r['tipoOperacao']) {
-              case 1: $tipoOperacao = "Espécie"; break;
-              case 2: $tipoOperacao = "Cartão pré-pago"; break;
-              case 3: $tipoOperacao = "Transferência internacional"; break;
-            }
-
-
-            if ($_SESSION["currentUser"]["tipo"] < 3) {
-
-              if ($r['status'] == 1)
-                $acao = '<a href="#" class="link-acao-cancelar btn red darken-1 white-text" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Cancelar</a>';
-              else
-                $acao = '<a href="#" class="link-acao-reativar btn teal darken-1 white-text" data-cliente-id='.$id.' data-boletagem-id='.$r["id"].'>Reativar</a>';
-
-            } else $acao = "";
-
-            echo
-            '<tr>
-            <td>'.$id.'</td>
-            <td>'.$usuario.'</td>
-            <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
-            <td>'.$caixa.'</td>
-            <td>'.$modalidade.'</td>
-            <td>'.$formaPagamento.'</td>
-            <td>'.$tipoOperacao.'</td>
-            <td>'.$r['moeda'].'</td>
-            <td>'.number_format($r['quantidade'],2,",",".").'</td>
-            <td>'.number_format($r['taxa'],5,",",".").'</td>
-            <td>'.number_format($r['subtotal'],2,",",".").'</td>
-            <td>'.number_format($r['vet'],2,",",".").'</td>
-            <td>'.$acao.'</td>
-          </tr>';
-        }
-        ?>
-      </tbody>
-    </table>
-  </div>
-
-</div>
-</div>
-</div>
-</main>
-
-<?php
-include "../includes/footer.php";
-?>
-
-<script type="text/javascript">
-  $("img").elevateZoom({easing : true});
-</script>
-
-<script>
-  focco.visualizarCliente();
-</script>
+        <script>
+          focco.visualizarCliente();
+        </script>

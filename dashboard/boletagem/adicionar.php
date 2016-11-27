@@ -25,7 +25,7 @@ $data = date('Y-m-d',strtotime("-360 days"));
 $sql_query = "SELECT sum((quantidade*taxa)/dolar) quantidade from boletagem, cotacoes
 WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
 $result = mysqli_fetch_array(mysqli_query($conn, $sql_query));
-$totalQtd = $result['quantidade'];    
+$totalQtd = $result['quantidade'];
 $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
 ?>
 <main>
@@ -37,7 +37,7 @@ $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
       <a class="btn bg-blue" href="/dashboard/boletagem/"><i class="material-icons left">&#xE5C4;</i> Voltar para Boletagem</a>
       <br>
       <p>Iniciando boletagem para cliente <strong><?php echo $nome ?></strong></p>
-      <p id="p-limite-excedido"></p>
+      <div id="limite-excedido"></div>
 
     </div>
   </div>
@@ -57,14 +57,14 @@ $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
       <div class="col s4">
         <label for="select-caixa">Caixa</label>
         <select id="select-caixa" class="browser-default">
-          <?php 
-            if ($categoria == 1) echo '<option value="1">Focco</option>';
-            if ($categoria == 2 || $categoria == 3 || $categoria == 4) echo '<option value="3">FX 53</option>';
-            
+          <?php
+          if ($categoria == 1) echo '<option value="1">Focco</option>';
+          if ($categoria == 2 || $categoria == 3 || $categoria == 4) echo '<option value="3">FX 53</option>';
+
           ?>
-          
+
           <!--<option value="2">Focco X</option>-->
-          
+
         </select>
       </div>
     </div>
