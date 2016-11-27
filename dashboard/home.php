@@ -24,14 +24,12 @@ $libra = number_format($rows[0]['libra'],2,",","");
     </div>
   </div>
 
-
   <div class="row">
-    <div class="col s4">
 
+    <div class="col s4">
       <div class="card bg-gray">
         <div class="card-content">
           <span class="card-title">Cotação de venda agora</span>
-
           <table>
             <thead>
               <tr>
@@ -51,9 +49,17 @@ $libra = number_format($rows[0]['libra'],2,",","");
         </div>
       </div>
     </div>
+
+    <div class="col s5">
+      <div class="card bg-gray">
+        <div class="card-content">
+          <span class="card-title">Valor Econômico - Notícias</span>
+
+        </div>
+      </div>
+    </div>
+
   </div>
-
-
 </main>
 
 <?php

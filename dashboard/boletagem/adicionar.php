@@ -68,6 +68,7 @@ foreach($rows as $r){
           <option value="1">Espécie</option>
           <option value="2">Cartão Pré-Pago</option>
           <option value="3">Transferência internacional</option>
+          <option value="4">Transferência internacional - Importação (IOF: 0,00)</option>
         </select>
       </div>
 
