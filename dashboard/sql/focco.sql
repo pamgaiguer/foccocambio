@@ -54,7 +54,7 @@ INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefo
 --
 
 CREATE TABLE `clientes` (
-  `id` int(11) AUTO_INCREMENT NOT NULL,
+  `id` int(11) NOT NULL,
   `categoria` int(11) DEFAULT NULL,
   `razaoSocial` varchar(255) DEFAULT NULL,
   `tipoPessoa` char(1) DEFAULT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE `clientes` (
 -- Extraindo dados da tabela `clientes`
 
 CREATE TABLE `boletagem` (
-  `id` int(11) AUTO_INCREMENT NOT NULL,
+  `id` int(11) NOT NULL,
   `clienteId` int(11) DEFAULT NULL,
   `data` datetime DEFAULT NULL,
   `caixaId` int(11) DEFAULT NULL,
@@ -195,6 +195,8 @@ CREATE TABLE `enderecoscliente` (
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `boletagem`
+  ADD PRIMARY KEY (`id`);
 --
 -- Indexes for table `documentos`
 --
@@ -219,6 +221,11 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `boletagem`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `documentos`
 --
