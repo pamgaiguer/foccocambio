@@ -51,11 +51,15 @@
               <a class="collapsible-header"><i class="material-icons left">&#xE3C9;</i> Cadastros<i class="material-icons right">&#xE5C5;</i></a>
               <div class="collapsible-body">
                 <ul>
-                  <?php if ($_SESSION['currentUser']['tipo'] < 3)
+                  <?php 
+                  if ($_SESSION['currentUser']['tipo'] < 3)
                     echo
-                    '<li><a href="/dashboard/usuarios/"><i class="material-icons left">&#xE8D3;</i> Usuários</a></li>'
+                    '<li><a href="/dashboard/usuarios/"><i class="material-icons left">&#xE8D3;</i> Usuários</a></li>';
+
+                  if ($_SESSION['currentUser']['tipo'] < 4)
+                    echo '<li><a href="/dashboard/clientes/"><i class="material-icons left">&#xE7FE;</i> Clientes</a></li>';
                   ?>
-                  <li><a href="/dashboard/clientes/"><i class="material-icons left">&#xE7FE;</i> Clientes</a></li>
+                  
                 </ul>
               </div>
             </li>

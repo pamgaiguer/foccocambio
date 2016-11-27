@@ -17,6 +17,16 @@ foreach($rows as $r){
   $limiteOperacionalAno = $r["limiteOperacionalAno"];
 }
 
+$sql_query = "SELECT dolar FROM cotacoes;";
+$result = mysqli_query($conn, $sql_query);
+$taxaDolar = floatval(mysqli_fetch_array($result)['dolar']);
+
+$data = date('Y-m-d',strtotime("-360 days"));
+$sql_query = "SELECT sum((quantidade*taxa)/dolar) quantidade from boletagem, cotacoes
+WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
+$result = mysqli_fetch_array(mysqli_query($conn, $sql_query));
+$totalQtd = $result['quantidade'];    
+$limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
 ?>
 <main>
 
@@ -27,6 +37,7 @@ foreach($rows as $r){
       <a class="btn bg-blue" href="/dashboard/boletagem/"><i class="material-icons left">&#xE5C4;</i> Voltar para Boletagem</a>
       <br>
       <p>Iniciando boletagem para cliente <strong><?php echo $nome ?></strong></p>
+      <p id="p-limite-excedido"></p>
 
     </div>
   </div>
@@ -44,11 +55,16 @@ foreach($rows as $r){
       </div>
 
       <div class="col s4">
-        <label for="select-caixa">Selecione o Caixa</label>
+        <label for="select-caixa">Caixa</label>
         <select id="select-caixa" class="browser-default">
-          <option value="1">Focco</option>
-          <option value="2">Focco X</option>
-          <option value="3">FX 53</option>
+          <?php 
+            if ($categoria == 1) echo '<option value="1">Focco</option>';
+            if ($categoria == 2 || $categoria == 3 || $categoria == 4) echo '<option value="3">FX 53</option>';
+            
+          ?>
+          
+          <!--<option value="2">Focco X</option>-->
+          
         </select>
       </div>
     </div>
@@ -100,6 +116,10 @@ foreach($rows as $r){
       </div>
 
       <div class="input-field col s3">
+        <input type="hidden" id="taxaDolar" name="taxaDolar" value="<?php echo number_format($taxaDolar,5,",",".") ?>" />
+
+        <input type="hidden" id="limiteDisponivel" name="limiteDisponivel" value="<?php echo number_format($limiteDisponivel,2,",",".") ?>" />
+
         <input placeholder="Taxa" id="taxa" type="text" class="currency5">
         <label for="taxa">Taxa</label>
       </div>
@@ -184,7 +204,7 @@ foreach($rows as $r){
 
     <div class="row">
       <div class="input-field col s12">
-        <input type="submit" class="btn bg-blue " value="Boletar">
+        <input type="submit" class="btn bg-blue " id="input-submit" value="Boletar">
       </div>
     </div>
 

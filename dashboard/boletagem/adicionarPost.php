@@ -3,7 +3,7 @@
 	include "../core/functions.php";
 
 	$sql_query = sprintf("
-		INSERT INTO boletagem(clienteId, usuarioId, data, caixaId, modalidade, tipoOperacao, moeda, quantidade, taxa, subtotal, iofTaxa, mn, swift, darf, vet, vetTaxa, taxaNivel, status, formaPgto) 
+		INSERT INTO boletagem(clienteId, usuarioId, data, caixaId, modalidade, tipoOperacao, moeda, quantidade, taxa, subtotal, iofTaxa, mn, swift, darf, vet, vetTaxa, taxaNivel, status, formaPgto, formaEntrega, dataEntrega, aCombinar) 
 		VALUES (
 		%s, 
 		%s, 
@@ -23,6 +23,9 @@
 		%s, 
 		%s,
 		%s, 
+		%s,
+		%s,
+		'%s',
 		%s)",
 
 		$_POST["clienteId"], 
@@ -43,10 +46,12 @@
 		TratarFloat($_POST["vettaxa"]),
 		TratarFloat($_POST["txnivel"]), 
 		1,
-		$_POST["formaPgto"]
+		$_POST["formaPgto"],
+		$_POST["formaEntrega"],
+		TratarData($_POST["dataEntrega"]),
+		$_POST["aCombinar"]
 		);
 
-	//echo json_encode($sql_query);
 
 	if (mysqli_query($conn, $sql_query)) echo json_encode("ok");
 	else echo json_encode("nope");

@@ -970,6 +970,7 @@ focco = {
     $('.currency5').mask("#.##0,00000", {reverse: true});
     $('.datepicker').mask("99/99/9999");
     $("#select-operacao option[value='3']").hide();
+    $("#select-operacao option[value='4']").hide();
     var verificaCheck =$('#entregaACombinar:checked').val();
 
 
@@ -997,18 +998,15 @@ focco = {
       if ($(this).val() == 3) {
         $(".div-swift").fadeIn(100);
         $(".div-darf").fadeIn(100);
-        $(".div-txnivel").fadeIn(100);
-
-        $(".div-formaPgto").fadeOut(100);
+        $(".div-txnivel").fadeIn(100);        
         $(".div-mn").fadeOut(100);
         $("#select-operacao option[value='3']").show();
+        $("#select-operacao option[value='4']").show();
       }
       else {
         $(".div-swift").fadeOut(100);
         $(".div-darf").fadeOut(100);
-        $(".div-txnivel").fadeOut(100);
-
-        $(".div-formaPgto").fadeIn(100);
+        $(".div-txnivel").fadeOut(100);        
         $(".div-mn").fadeIn(100);
 
         $("#txNivel").val("");
@@ -1016,14 +1014,37 @@ focco = {
         $("#darf").val("");
 
         $("#select-operacao option[value='3']").hide();
+        $("#select-operacao option[value='4']").hide();
       }
+    });
+
+    $("#select-caixa").change();
+
+    $("#select-modalidade").change(function(){
+
+      //venda
+      if ($(this).val() == 2) {
+        //cartao prepago
+        if ($("#select-operacao").val() == 2) $("#ioftaxa").val("6.38");        
+      } else {
+        //cartao prepago
+        if ($("#select-operacao").val() == 2) $("#ioftaxa").val("0.38");        
+      }
+
     });
 
     $("#select-operacao").change(function(){
       switch($(this).val()){
         case "1": $("#ioftaxa").val("1.1");  break;
-        case "2": $("#ioftaxa").val("6.38"); break;
+        case "2": 
+          if ($("#select-modalidade").val() == 2) 
+            $("#ioftaxa").val("6.38");
+          else 
+            $("#ioftaxa").val("0.38");
+          break;
+        
         case "3": $("#ioftaxa").val("0.38"); break;
+        case "4": $("#ioftaxa").val("0"); break;
         default: break;
       }
 
@@ -1078,6 +1099,17 @@ focco = {
         $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#taxa").val()) )).blur();
         $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
 
+        var debitoLimite = ( toNumber($(this).val()) * toNumber($("#taxa").val())) / toNumber($("#taxaDolar").val());
+  
+        //estourou limite
+        if (toNumber($("#limiteDisponivel").val()) < debitoLimite) {
+          $("#input-submit").addClass("disabled");
+          $("#p-limite-excedido").html("Limite do cliente excedido");
+        } else {
+          $("#input-submit").removeClass("disabled");
+          $("#p-limite-excedido").html("");
+        }
+
       }
     });
 
@@ -1098,6 +1130,17 @@ focco = {
           $("#mn").val(fromNumber( toNumber($("#subtotal").val()) - toNumber($("#iof").val()) ));
           $("#vettaxa").val(fromNumber5( toNumber($("#mn").val()) / toNumber($("#quantidade").val()) ));
           $("#vet").val(fromNumber( toNumber($("#subtotal").val()) ));
+        }
+
+        var debitoLimite = ( toNumber($("#quantidade").val()) * toNumber($(this).val())) / toNumber($("#taxaDolar").val());
+        
+        //estourou limite
+        if (toNumber($("#limiteDisponivel").val()) < debitoLimite) {
+          $("#input-submit").addClass("disabled");
+          $("#p-limite-excedido").html("Limite do cliente excedido");
+        } else {
+          $("#input-submit").removeClass("disabled");
+          $("#p-limite-excedido").html("");
         }
 
       }
@@ -1143,17 +1186,20 @@ focco = {
       vettaxa = $("#vettaxa", $(this)).val();
       txnivel = $("#txNivel", $(this)).val();
       formaPgto = $("#select-formaPgto", $(this)).val();
-
+      formaEntrega = $("#select-formaEntrega", $(this)).val();
+      dataEntrega = $("#dtEntrega", $(this)).val();
+      aCombinar = document.getElementsByName('entregaACombinar')[0].checked;
+      
       $.ajax({
         url: "/dashboard/boletagem/adicionarPost.php/",
         type: "post",
         data: {
           clienteId, usuarioId, data, caixa, modalidade,
           operacao, moeda, quantidade, taxa, subtotal,
-          iof, mn, swift, darf, vet, vettaxa, txnivel, formaPgto
+          iof, mn, swift, darf, vet, vettaxa, txnivel, 
+          formaPgto, formaEntrega, dataEntrega, aCombinar
         },
         success: function(r){
-          //console.log(r);
 
           if (JSON.parse(r) == "ok"){
             window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";

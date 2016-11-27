@@ -86,44 +86,44 @@ CREATE TABLE `clientes` (
   `vip` bit(1) DEFAULT NULL,
   `limiteOperacionalDia` decimal(10,2) DEFAULT NULL,
   `limiteOperacionalAno` decimal(10,2) DEFAULT NULL,
-  `ativo` bit(1) DEFAULT 1,
-  `bloqueado` bit(1) DEFAULT 0,
+  `ativo` bit(1) DEFAULT b'1',
+  `bloqueado` bit(1) DEFAULT b'0',
   `motivoBloqueio` int(11) DEFAULT NULL,
   `ondeConheceu` int(11) DEFAULT NULL,
   `ondeSoube` varchar(255) DEFAULT NULL,
   `cnh` varchar(20) DEFAULT NULL,
-  `cnhDataValidade` datetime DEFAULT NULL
-
-
+  `cnhDataValidade` datetime DEFAULT NULL,
+  `bloqueioManual` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `clientes`
 
-create table boletagem (
-
-id int primary key auto_increment,
-usuarioId int,
-clienteId int,
-data datetime,
-caixaId int,
-modalidade int,
-tipoOperacao int,
-moeda varchar(5),
-quantidade decimal(10,2),
-taxa decimal(10,2),
-subtotal decimal(10,2),
-iofTaxa decimal(10,2),
-mn decimal(10,2),
-swift decimal(10,2),
-darf decimal(10,2),
-vet decimal(10,2),
-vetTaxa decimal(10,2),
-taxaNivel decimal(10,2),
-status int,
-formaPgto int,
-
-);
+CREATE TABLE `boletagem` (
+  `id` int(11) NOT NULL,
+  `clienteId` int(11) DEFAULT NULL,
+  `data` datetime DEFAULT NULL,
+  `caixaId` int(11) DEFAULT NULL,
+  `modalidade` int(11) DEFAULT NULL,
+  `tipoOperacao` int(11) DEFAULT NULL,
+  `moeda` varchar(5) DEFAULT NULL,
+  `quantidade` decimal(10,2) DEFAULT NULL,
+  `taxa` decimal(10,5) DEFAULT NULL,
+  `subtotal` decimal(10,2) DEFAULT NULL,
+  `ioftaxa` decimal(10,5) DEFAULT NULL,
+  `mn` decimal(10,2) DEFAULT NULL,
+  `swift` decimal(10,2) DEFAULT NULL,
+  `darf` decimal(10,5) DEFAULT NULL,
+  `vet` decimal(10,2) DEFAULT NULL,
+  `vettaxa` decimal(10,5) DEFAULT NULL,
+  `taxaNivel` decimal(10,5) DEFAULT NULL,
+  `usuarioId` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `formaPgto` int(11) DEFAULT NULL,
+  `formaEntrega` int(11) DEFAULT NULL,
+  `dataEntrega` datetime DEFAULT NULL,
+  `aCombinar` bit(1) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

@@ -42,12 +42,28 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           <?php
 
           foreach($rows as $r){
+            switch ($r["tipo"]) {
+              case 2:
+                $tipoUsuario = "Admin";
+                break;
+
+              case 3:
+                $tipoUsuario = "Usuário";
+                break;
+              
+              default:
+                $tipoUsuario = "Usuário (boletagem)";
+                break;
+            }
+
+            
+
             echo
             '<tr>
             <td>'.$r["login"].'</td>
             <td>'.$r["nome"].'</td>
             <td>'.$r["email"].'</td>
-            <td>'.($r["tipo"] == 2 ? "Admin" : "Usuário").'</td>
+            <td>'.$tipoUsuario.'</td>
             <td class="center"><a href="/dashboard/usuarios/visualizar?usuarioId='.$r["id"].'"><i class="material-icons" title="Visualizar usuaŕio">assignment</i></a></td>
             <td class="center"><a href="/dashboard/usuarios/alterar?usuarioId='.$r["id"].'"><i class="material-icons" title="Editar Usuário">&#xE3C9;</i></a></td>
             <td class="center"><a href="/dashboard/usuarios/excluir?usuarioId='.$r["id"].'"><i class="material-icons" title="Excluir usuário">&#xE92B;</i></a></td>

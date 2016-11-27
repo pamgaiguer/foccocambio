@@ -61,6 +61,7 @@ include "../includes/header.php";
               <select name="tipo" id="tipo">
                 <option value="2" class="bg-blue"> Admin</option>
                 <option value="3" selected>Usuário</option>
+                <option value="4">Usuário (boletagem)</option>
               </select>
               <label for="tipo">Tipo de Usuário</label>
             </div>

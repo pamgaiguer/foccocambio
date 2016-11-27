@@ -59,16 +59,12 @@
       break;
     }
 
-    $dtIni = date('Y')."-01-01 00:00:00";
-    $dtFim = date('Y')."-12-31 23:59:59";
-
-    $data = date('Y-m-d',strtotime("-360 days")); 
-    $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem 
-    WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];              
-    $result = mysqli_query($conn, $sql_query);
-    $totalQtd = array();
-    while($row = mysqli_fetch_array($result)) $totalQtd[] = $row['quantidade'];
-    $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd[0];
+    $data = date('Y-m-d',strtotime("-360 days"));
+    $sql_query = "SELECT sum((quantidade*taxa)/dolar) quantidade from boletagem, cotacoes
+    WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
+    $result = mysqli_fetch_array(mysqli_query($conn, $sql_query));
+    $totalQtd = $result['quantidade'];    
+    $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
 
 	  $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
 	  $result = mysqli_query($conn, $sql_query);

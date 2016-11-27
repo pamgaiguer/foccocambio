@@ -47,6 +47,17 @@ foreach($rows as $r){
   $cnhDataValidade = $r["cnhDataValidade"];
 }
 
+$sql_query = "SELECT dolar FROM cotacoes;";
+$result = mysqli_query($conn, $sql_query);
+$taxaDolar = floatval(mysqli_fetch_array($result)['dolar']);
+
+$data = date('Y-m-d',strtotime("-360 days"));
+$sql_query = "SELECT sum((quantidade*taxa)/dolar) quantidade from boletagem, cotacoes
+WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
+$result = mysqli_fetch_array(mysqli_query($conn, $sql_query));
+$totalQtd = $result['quantidade'];    
+$limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
+
 $sql_query = sprintf("SELECT tipo, arquivo FROM documentos WHERE clienteId = %s", $_GET['clienteId']);
 $result = mysqli_query($conn, $sql_query);
 $docs = array();
@@ -196,7 +207,7 @@ if ($bloqueadoManualmente){
         </div>
       </div>
       <div class="col s9">
-        <h5>ID: <?php echo $id ?> - <?php echo $nome ?></h5>
+        <h5>ID: <?php echo $id ?> - <?php echo $nome ?> - Limite disponível: $<?php echo number_format($limiteDisponivel,2,",","."); ?></h5>
 
         <div class="spacing"></div>
 
@@ -676,6 +687,7 @@ if ($bloqueadoManualmente){
           <th>Quantidade</th>
           <th>Taxa</th>
           <th>Subtotal</th>
+          <th>VET</th>
           <th></th>
         </thead>
         <tbody>
@@ -740,8 +752,9 @@ if ($bloqueadoManualmente){
             <td>'.$tipoOperacao.'</td>
             <td>'.$r['moeda'].'</td>
             <td>'.number_format($r['quantidade'],2,",",".").'</td>
-            <td>'.number_format($r['taxa'],2,",",".").'</td>
+            <td>'.number_format($r['taxa'],5,",",".").'</td>
             <td>'.number_format($r['subtotal'],2,",",".").'</td>
+            <td>'.number_format($r['vet'],2,",",".").'</td>
             <td>'.$acao.'</td>
           </tr>';
         }

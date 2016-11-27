@@ -116,12 +116,11 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
 
               $data = date('Y-m-d',strtotime("-360 days"));
-              $sql_query = "SELECT sum(quantidade) quantidade FROM boletagem
+              $sql_query = "SELECT sum((quantidade*taxa)/dolar) quantidade from boletagem, cotacoes
               WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
-              $result = mysqli_query($conn, $sql_query);
-              $totalQtd = array();
-              while($row = mysqli_fetch_array($result)) $totalQtd[] = $row['quantidade'];
-              $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd[0];
+              $result = mysqli_fetch_array(mysqli_query($conn, $sql_query));
+              $totalQtd = $result['quantidade'];    
+              $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
 
 
               $sql_query = "SELECT tipo FROM documentos WHERE clienteId = ". $r['id'];
