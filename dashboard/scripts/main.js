@@ -19,7 +19,11 @@ focco = {
         type: "post",
         data: {login, senha},
         //error: function(data){alert(data);},
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
         success: function(data){
+          $(".main-loader").fadeOut(100);
           if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi autenticado");
           else if (JSON.parse(data).length > 10) window.location = JSON.parse(data);
           else window.location = "/dashboard/home";
@@ -90,7 +94,12 @@ focco = {
         type: "post",
         data: {id, nome, login, email, telefone, tipo},
         error: function(data){},
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
+
         success: function(data){
+          $(".main-loader").fadeOut(100);
           if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi alterado");
           else window.location = "/dashboard/usuarios/";
         }
@@ -135,7 +144,11 @@ focco = {
         type: "post",
         data: {nome, login, email, telefone, tipo},
         error: function(data){},
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
         success: function(data){
+          $(".main-loader").fadeOut(100);
           if (JSON.parse(data) == "nope") $("#form-erro").html("O usuário não foi adicionado");
           else window.location = "/dashboard/usuarios/";
         }
@@ -389,7 +402,11 @@ focco = {
                 url:"/dashboard/boletagem/methods/validarCliente.php/",
                 type: "post",
                 data: {clienteId},
+                beforeSend: function(){
+                  $(".main-loader").fadeIn(100);
+                },
                 success: function(r){
+                  $(".main-loader").fadeOut(100);
                   if (r == "true")
                     window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
                   else
@@ -636,7 +653,11 @@ focco = {
           type: 'POST',
           data: formData,
           async: false,
+          beforeSend: function(){
+            $(".main-loader").fadeIn(100);
+          },
           success: function (data) {
+            $(".main-loader").fadeOut(100);
             //console.log(data);
             window.location = "/dashboard/clientes/";
           },
@@ -724,8 +745,12 @@ focco = {
             url: "/dashboard/clientes/methods/buscaCliente.php/",
             type: "POST",
             data: { search, tipo },
-            success: function(r){
+            beforeSend: function(){
+              $(".main-loader").fadeIn(100);
+            },
+            success: function(r){              
               $("#table-body-clientes").html(r);
+              $(".main-loader").fadeOut(100);
             }
           });
         }
@@ -743,8 +768,12 @@ focco = {
         url: "/dashboard/clientes/methods/buscaCliente.php/",
         type: "POST",
         data: { search, tipo },
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
         success: function(r){
           $("#table-body-clientes").html(r);
+          $(".main-loader").fadeOut(100);
         }
       });
 
@@ -791,7 +820,11 @@ focco = {
             url: "/dashboard/checarAdmin.php/",
             type: "post",
             data: {login, senha},
+            beforeSend: function(){
+              $(".main-loader").fadeIn(100);
+            },
             success: function(r){
+              $(".main-loader").fadeOut(100);
               switch (JSON.parse(r)) {
                 case "nope":
                 $("#form-erro").html("O usuário não foi autenticado");
@@ -843,7 +876,11 @@ focco = {
         url: "/dashboard/cotacoes/alterarPost.php/",
         type: "post",
         data: {dolar, euro, libra},
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
         success: function(r){
+          $(".main-loader").fadeOut(100);
           if (JSON.parse(r) == "ok"){
             $("div.success").fadeIn(100);
           } else {
@@ -887,8 +924,12 @@ focco = {
             url: "/dashboard/boletagem/methods/buscaCliente.php/",
             type: "POST",
             data: { search },
+            beforeSend: function(){
+              $(".main-loader").fadeIn(100);
+            },
             success: function(r){
               $("#table-body-boletagem").html(r);
+              $(".main-loader").fadeOut(100);
             }
           });
         }
@@ -936,8 +977,11 @@ focco = {
                   url: "/dashboard/clientes/methods/desbloquearDocProv.php/",
                   type: "post",
                   data: {clienteId},
+                  beforeSend: function(){
+                    $(".main-loader").fadeIn(100);
+                  },
                   success: function(r){
-                    console.log(r);
+                    $(".main-loader").fadeOut(100);
                     if (JSON.parse(r) == "ok"){
                       window.location = "/dashboard/boletagem/adicionar?clienteId=" + clienteId;
                     }
@@ -1198,7 +1242,11 @@ focco = {
           iof, mn, swift, darf, vet, vettaxa, txnivel,
           formaPgto, formaEntrega, dataEntrega, aCombinar
         },
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
         success: function(r){
+          $(".main-loader").fadeOut(100);
           if (JSON.parse(r) == "ok"){
             window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";
           }
