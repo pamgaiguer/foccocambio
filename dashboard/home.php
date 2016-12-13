@@ -18,18 +18,13 @@ $libra = number_format($rows[0]['libra'],2,",","");
 ?>
 
 <main>
-  <div class="row">
-    <div class="col s12">
-      <h4 class="">Dashboard</h4>
-    </div>
-  </div>
 
   <div class="row">
 
-    <div class="col s4">
+    <div class="col s6">
       <div class="card bg-gray">
         <div class="card-content">
-          <span class="card-title">Cotação de venda agora</span>
+          <span class="card-title center-align">Cotação de venda agora</span>
           <table>
             <thead>
               <tr>
@@ -53,12 +48,21 @@ $libra = number_format($rows[0]['libra'],2,",","");
     <div class="col s5">
       <div class="card bg-gray">
         <div class="card-content">
-          <span class="card-title">Valor Econômico - Notícias</span>
-
+          <span class="card-title center-align">Valor Econômico - Notícias</span>
         </div>
       </div>
     </div>
 
+  </div>
+
+  <div class="row">
+    <div class="col s4">
+      <div class="card bg-gray">
+        <div class="card-content">
+          <span class="card-title center-align">Blog do Economista João</span>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 

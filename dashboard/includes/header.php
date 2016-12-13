@@ -1,6 +1,6 @@
-<?php  
+<?php
   session_start();
-  
+
 
   if (!isset($_SESSION['currentUser'])) Header("Location: /dashboard");
   if ($_SESSION['currentUser'] == null) Header("Location: /dashboard");
@@ -51,7 +51,7 @@
               <a class="collapsible-header"><i class="material-icons left">&#xE3C9;</i> Cadastros<i class="material-icons right">&#xE5C5;</i></a>
               <div class="collapsible-body">
                 <ul>
-                  <?php 
+                  <?php
                   if ($_SESSION['currentUser']['tipo'] < 3)
                     echo
                     '<li><a href="/dashboard/usuarios/"><i class="material-icons left">&#xE8D3;</i> Usuários</a></li>';
@@ -59,19 +59,20 @@
                   if ($_SESSION['currentUser']['tipo'] < 4)
                     echo '<li><a href="/dashboard/clientes/"><i class="material-icons left">&#xE7FE;</i> Clientes</a></li>';
                   ?>
-                  
+
                 </ul>
               </div>
             </li>
           </ul>
         </li>
-        
+
         <?php if ($_SESSION['currentUser']['tipo'] < 3)
           echo
           '<li><a href="/dashboard/cotacoes"><i class="material-icons left">&#xE227;</i> Cotações</a></li>'
         ?>
 
         <li><a href="/dashboard/boletagem"><i class="material-icons left">&#xE922;</i> Boletagem</a></li>
+        <li><a href="/dashboard/orcamento"><i class="material-icons left">&#xE85D;</i> Orçamento</a></li>
       </ul>
     </nav>
 
