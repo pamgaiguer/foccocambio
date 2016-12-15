@@ -49,7 +49,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
       <div class="card bg-gray">
         <div class="card-content">
           <span class="card-title center-align">Valor Econômico - Notícias</span>
-          <a class="twitter-timeline" data-lang="pt" data-width="445" data-height="300" data-theme="light" data-link-color="#15325c" href="https://twitter.com/valor_economico"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-lang="pt" data-width="445" data-height="250" data-theme="light" data-link-color="#15325c" href="https://twitter.com/valor_economico">Tweets by valor_economico</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
     </div>
