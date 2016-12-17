@@ -19,10 +19,6 @@
 
 <body>
 
-  <style type="text/css">
-    body{font-size: 0.93em;}
-  </style>
-
   <header>
     <nav class="bg-gray">
       <!-- Barra do topo! -->
@@ -73,12 +69,11 @@
 
         <li><a href="/dashboard/boletagem"><i class="material-icons left">&#xE922;</i> Boletagem</a></li>
         <li><a href="/dashboard/orcamento"><i class="material-icons left">&#xE85D;</i> Orçamento</a></li>
-        
-        <?php if ($_SESSION['currentUser']['tipo'] < 3) 
+
+        <?php if ($_SESSION['currentUser']['tipo'] < 3)
           echo '<li><a href="/dashboard/compraMoedas"><i class="material-icons left">&#xE8CC;</i> Compra de Moedas</a></li>';
         ?>
-
-
+        <li><a href="/dashboard/calculadora"><i class="material-icons left">&#xE0BC;</i> Calculadora</a></li>
       </ul>
     </nav>
 
