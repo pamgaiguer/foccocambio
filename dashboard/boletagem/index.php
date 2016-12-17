@@ -115,7 +115,7 @@ if (isset($_GET["clienteId"]) && $_GET["clienteId"] > 0) {
                 }
 
                 $data = date('Y-m-d',strtotime("-360 days"));
-                $sql_query = "SELECT sum((quantidade*taxa)/dolar) quantidade from boletagem, cotacoes
+                $sql_query = "SELECT sum(debito) quantidade from boletagem
                 WHERE status = 1 AND data > '".$data."' AND clienteId = ". $r['id'];
                 $result = mysqli_fetch_array(mysqli_query($conn, $sql_query));
                 $totalQtd = $result['quantidade'];    

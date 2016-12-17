@@ -52,11 +52,11 @@
               <div class="collapsible-body">
                 <ul>
                   <?php
-                  if ($_SESSION['currentUser']['tipo'] < 3)
+                  if ($_SESSION['currentUser']['tipo'] < 4)
                     echo
                     '<li><a href="/dashboard/usuarios/"><i class="material-icons left">&#xE8D3;</i> Usuários</a></li>';
 
-                  if ($_SESSION['currentUser']['tipo'] < 4)
+                  if ($_SESSION['currentUser']['tipo'] < 5)
                     echo '<li><a href="/dashboard/clientes/"><i class="material-icons left">&#xE7FE;</i> Clientes</a></li>';
                   ?>
 
@@ -66,7 +66,7 @@
           </ul>
         </li>
 
-        <?php if ($_SESSION['currentUser']['tipo'] < 3)
+        <?php if ($_SESSION['currentUser']['tipo'] < 4)
           echo
           '<li><a href="/dashboard/cotacoes"><i class="material-icons left">&#xE227;</i> Cotações</a></li>'
         ?>

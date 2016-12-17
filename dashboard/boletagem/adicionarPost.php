@@ -3,7 +3,7 @@
 	include "../core/functions.php";
 
 	$sql_query = sprintf("
-		INSERT INTO boletagem(clienteId, usuarioId, data, caixaId, modalidade, tipoOperacao, moeda, quantidade, taxa, subtotal, iofTaxa, mn, swift, darf, vet, vetTaxa, taxaNivel, status, formaPgto, formaEntrega, dataEntrega, aCombinar) 
+		INSERT INTO boletagem(clienteId, usuarioId, data, caixaId, modalidade, tipoOperacao, moeda, quantidade, taxa, subtotal, iofTaxa, mn, swift, darf, vet, vetTaxa, taxaNivel, status, formaPgto, formaEntrega, dataEntrega, aCombinar, debito) 
 		VALUES (
 		%s, 
 		%s, 
@@ -26,6 +26,7 @@
 		%s,
 		%s,
 		'%s',
+		%s,
 		%s)",
 
 		$_POST["clienteId"], 
@@ -49,7 +50,9 @@
 		$_POST["formaPgto"],
 		$_POST["formaEntrega"],
 		TratarData($_POST["dataEntrega"]),
-		$_POST["aCombinar"]
+		$_POST["aCombinar"],
+		TratarFloat($_POST["debito"])
+
 		);
 
 

@@ -59,9 +59,10 @@ include "../includes/header.php";
             <div class="input-field col s6">
               <i class="material-icons prefix">&#xE851;</i>
               <select name="tipo" id="tipo">
-                <option value="2" class="bg-blue"> Admin</option>
-                <option value="3" selected>Usuário</option>
-                <option value="4">Usuário (boletagem)</option>
+                <option value="2" class="bg-blue"> Diretoria</option>
+                <option value="3" selected>Gerencia</option>
+                <option value="4" selected>Analista</option>
+                <option value="5">Analista (boletagem)</option>
               </select>
               <label for="tipo">Tipo de Usuário</label>
             </div>

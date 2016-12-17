@@ -58,7 +58,7 @@ $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
         <label for="select-caixa">Caixa</label>
         <select id="select-caixa" class="browser-default">
           <?php
-          if ($categoria == 1) echo '<option value="1">Focco</option>';
+          /*if ($categoria == 1)*/ echo '<option value="1">Focco</option>';
           if ($categoria == 2 || $categoria == 3 || $categoria == 4) echo '<option value="3">FX 53</option>';
 
           ?>
@@ -120,7 +120,7 @@ $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
 
         <input type="hidden" id="limiteDisponivel" name="limiteDisponivel" value="<?php echo number_format($limiteDisponivel,2,",",".") ?>" />
 
-        <input placeholder="Taxa" id="taxa" type="text" class="currency5">
+        <input placeholder="Taxa" id="taxa" type="text" class="">
         <label for="taxa">Taxa</label>
       </div>
 
@@ -137,7 +137,7 @@ $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
     </div>
 
     <div class="row">
-      <div class="input-field col s4 div-mn">
+      <div class="input-field col s4 div-mn hide">
         <input placeholder="Moeda Nacional" id="mn" type="text" class="currency5">
         <label for="mn">Moeda Nacional</label>
       </div>

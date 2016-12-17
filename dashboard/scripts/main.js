@@ -36,6 +36,11 @@ focco = {
 
   },
 
+  home: function(){
+
+  
+  },
+
   redefinirSenhaFormPost : function(){
     $("#form-redefinir-senha").submit(function(e){
 
@@ -866,6 +871,16 @@ focco = {
 
   cotacoesFormPost: function(){
 
+    $.ajax({
+      url: "http://api.fixer.io/latest?base=BRL",
+      type: "get",
+      success: function(r){        
+        for (x in r.rates) {
+          $("#td-" + x).html((1/r.rates[x]).toFixed(5));
+        }
+      }
+    });
+
     $("#form-cotacoes").submit(function(e){
       e.preventDefault();
       dolar = $("#input-dolar").val();
@@ -893,8 +908,6 @@ focco = {
         }
 
       });
-
-
     });
 
 
@@ -1109,7 +1122,7 @@ focco = {
       if (n == "") n = 0;
       n += "";
       n = n.replace(".", "");
-      n = n.replace(",", ".");
+      n = n.replace(",", ".");      
       n = parseFloat(n);
       if (n === NaN) n = 0;
       return parseFloat(n);
@@ -1170,9 +1183,9 @@ focco = {
         } else {
           $("#subtotal").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) ));
           $("#iof").val(fromNumber( (toNumber($("#subtotal").val()) * $("#ioftaxa").val()) / 100 ));
-          $("#mn").val(fromNumber( toNumber($("#subtotal").val()) - toNumber($("#iof").val()) ));
+          $("#mn").val(fromNumber( toNumber($("#subtotal").val()) + toNumber($("#iof").val()) ));
           $("#vettaxa").val(fromNumber5( toNumber($("#mn").val()) / toNumber($("#quantidade").val()) ));
-          $("#vet").val(fromNumber( toNumber($("#subtotal").val()) ));
+          $("#vet").val(fromNumber( toNumber($("#subtotal").val()) + toNumber($("#iof").val()) ));
         }
 
         var debitoLimite = ( toNumber($("#quantidade").val()) * toNumber($(this).val())) / toNumber($("#taxaDolar").val());
@@ -1194,7 +1207,7 @@ focco = {
       $("#vet").val(fromNumber(
         toNumber($(this).val()) + toNumber($("#subtotal").val()) + toNumber($("#iof").val()) + toNumber($("#darf").val())
         ));
-      $("#vettaxa").val(fromNumber( toNumber($("#vet").val()) / toNumber($("#quantidade").val()) ));
+      $("#vettaxa").val(fromNumber5( toNumber($("#vet").val()) / toNumber($("#quantidade").val()) ));
 
 
     });
@@ -1234,25 +1247,35 @@ focco = {
       aCombinar = document.getElementsByName('entregaACombinar')[0].checked;
 
       $.ajax({
-        url: "/dashboard/boletagem/adicionarPost.php/",
-        type: "post",
-        data: {
-          clienteId, usuarioId, data, caixa, modalidade,
-          operacao, moeda, quantidade, taxa, subtotal,
-          iof, mn, swift, darf, vet, vettaxa, txnivel,
-          formaPgto, formaEntrega, dataEntrega, aCombinar
-        },
-        beforeSend: function(){
-          $(".main-loader").fadeIn(100);
-        },
-        success: function(r){
-          $(".main-loader").fadeOut(100);
-          if (JSON.parse(r) == "ok"){
-            window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";
-          }
-        }
+        url: "http://api.fixer.io/latest?base=BRL",
+        type: "get",
+        success: function(r){                  
+          debito = fromNumber((toNumber(quantidade) * toNumber(taxa)) / (1/r.rates["USD"]));          
+          
+          $.ajax({
+            url: "/dashboard/boletagem/adicionarPost.php/",
+            type: "post",
+            data: {
+              clienteId, usuarioId, data, caixa, modalidade,
+              operacao, moeda, quantidade, taxa, subtotal,
+              iof, mn, swift, darf, vet, vettaxa, txnivel,
+              formaPgto, formaEntrega, dataEntrega, aCombinar, debito
+            },
+            beforeSend: function(){
+              $(".main-loader").fadeIn(100);
+            },
+            success: function(r){
+              $(".main-loader").fadeOut(100);
+              if (JSON.parse(r) == "ok"){
+                window.location = "/dashboard/clientes/visualizar?clienteId=" + clienteId + "#boletagemHistory";
+              }
+            }
 
-      });
+          });
+
+
+        }
+      });      
 
     });
 

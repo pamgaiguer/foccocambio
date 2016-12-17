@@ -75,8 +75,10 @@ foreach($rows as $r){
             <div class="input-field col s6">
               <i class="material-icons prefix">&#xE851;</i>
               <select name="tipo" id="tipo" class="form-control">
-                <option value="2" <?php if ($tipo == 2) echo "selected" ?>> Admin</option>
-                <option value="3" <?php if ($tipo == 3) echo "selected" ?>>Usuário</option>
+                <option value="2" <?php if ($tipo == 2) echo "selected" ?>> Diretoria </option>
+                <option value="3" <?php if ($tipo == 3) echo "selected" ?>> Gerencia </option>
+                <option value="4" <?php if ($tipo == 4) echo "selected" ?>> Analista </option>
+                <option value="5" <?php if ($tipo == 5) echo "selected" ?>> Analista (boletagem) </option>
               </select>
               <label for="tipo">Tipo de Usuário</label>
             </div>

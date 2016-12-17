@@ -44,38 +44,38 @@ $libra = $rows[0]['libra'];
         <table class="cotation-table">
           <thead>
             <tr>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Dólar Americano">USD</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Euro">EUR</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Libra">GBP</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Dólar Australiano">AUD</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Dólar Canadense">CAD</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Franco Suíco">CHF</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Iên">JPY</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Dólar Neozelandês">NZD</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Peso Chileno">CLP</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Peso Mexicano">MXN</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Peso Uruguaio">UYU</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Peso Argentino">ARS </th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Rand Sul Africano">ZAR</th>
-              <th class="tooltipped" data-position="top" data-delay="50" data-tooltip="Yuan Chinês">CNY</th>
+              <th class="tooltipped" data-moeda="USD" data-position="top" data-delay="50" data-tooltip="Dólar Americano">USD</th>
+              <th class="tooltipped" data-moeda="EUR" data-position="top" data-delay="50" data-tooltip="Euro">EUR</th>
+              <th class="tooltipped" data-moeda="GBP" data-position="top" data-delay="50" data-tooltip="Libra">GBP</th>
+              <th class="tooltipped" data-moeda="AUD" data-position="top" data-delay="50" data-tooltip="Dólar Australiano">AUD</th>
+              <th class="tooltipped" data-moeda="CAD" data-position="top" data-delay="50" data-tooltip="Dólar Canadense">CAD</th>
+              <th class="tooltipped" data-moeda="CHF" data-position="top" data-delay="50" data-tooltip="Franco Suíco">CHF</th>
+              <th class="tooltipped" data-moeda="JPY" data-position="top" data-delay="50" data-tooltip="Iên">JPY</th>
+              <th class="tooltipped" data-moeda="NZD" data-position="top" data-delay="50" data-tooltip="Dólar Neozelandês">NZD</th>
+              <th class="tooltipped" data-moeda="CLP" data-position="top" data-delay="50" data-tooltip="Peso Chileno">CLP</th>
+              <th class="tooltipped" data-moeda="MXN" data-position="top" data-delay="50" data-tooltip="Peso Mexicano">MXN</th>
+              <th class="tooltipped" data-moeda="UYU" data-position="top" data-delay="50" data-tooltip="Peso Uruguaio">UYU</th>
+              <th class="tooltipped" data-moeda="ARS" data-position="top" data-delay="50" data-tooltip="Peso Argentino">ARS </th>
+              <th class="tooltipped" data-moeda="ZAR" data-position="top" data-delay="50" data-tooltip="Rand Sul Africano">ZAR</th>
+              <th class="tooltipped" data-moeda="CNY" data-position="top" data-delay="50" data-tooltip="Yuan Chinês">CNY</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>item1</td>
-              <td>item2</td>
-              <td>item3</td>
-              <td>item4</td>
-              <td>item5</td>
-              <td>item6</td>
-              <td>item7</td>
-              <td>item8</td>
-              <td>item9</td>
-              <td>item10</td>
-              <td>item11</td>
-              <td>item12</td>
-              <td>item13</td>
-              <td>item14</td>
+              <td id="td-USD"></td>
+              <td id="td-EUR"></td>
+              <td id="td-GBP"></td>
+              <td id="td-AUD"></td>
+              <td id="td-CAD"></td>
+              <td id="td-CHF"></td>
+              <td id="td-JPY"></td>
+              <td id="td-NZD"></td>
+              <td id="td-CLP"></td>
+              <td id="td-MXN"></td>
+              <td id="td-UYU"></td>
+              <td id="td-ARS"></td>
+              <td id="td-ZAR"></td>
+              <td id="td-CNY"></td>
             </tr>
           </tbody>
         </table>
