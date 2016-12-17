@@ -122,7 +122,8 @@ CREATE TABLE `boletagem` (
   `formaPgto` int(11) DEFAULT NULL,
   `formaEntrega` int(11) DEFAULT NULL,
   `dataEntrega` datetime DEFAULT NULL,
-  `aCombinar` bit(1) DEFAULT NULL
+  `aCombinar` bit(1) DEFAULT NULL,
+  `debito` decimal(10,2) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
