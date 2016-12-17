@@ -12,25 +12,26 @@ include "../core/database.php";
   </div>
 
   <form id="form-adicionar-compraMoedas">
+    <input type="hidden" id="usuarioId" value=<?php echo $_SESSION['currentUser']['id'] ?> />
 
     <div class="row">
       <div class="col s4">
         <label for="select-moedas">Moedas</label>
         <select id="select-moedas" class="browser-default">
-          <option value="USD" data-operacoes="1,2,3">USD</option>
-          <option value="EUR" data-operacoes="1,2,3">EUR</option>
-          <option value="GBP" data-operacoes="1,2,3">GBP</option>
-          <option value="AUD" data-operacoes="1,2,3">AUD</option>
-          <option value="CAD" data-operacoes="1,2,3">CAD</option>
-          <option value="CHF" data-operacoes="1">CHF</option>
-          <option value="JPY" data-operacoes="3">JPY</option>
-          <option value="NZD" data-operacoes="3">NZD</option>
-          <option value="CLP" data-operacoes="1">CLP</option>
-          <option value="MXN" data-operacoes="1">MXN</option>
-          <option value="UYU" data-operacoes="1">UYU</option>
-          <option value="ZAR" data-operacoes="1">ZAR</option>
-          <option value="ARS" data-operacoes="2">ARS</option>
-          <option value="CNY" data-operacoes="1">CNY</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="AUD">AUD</option>
+          <option value="CAD">CAD</option>
+          <option value="CHF">CHF</option>
+          <option value="JPY">JPY</option>
+          <option value="NZD">NZD</option>
+          <option value="CLP">CLP</option>
+          <option value="MXN">MXN</option>
+          <option value="UYU">UYU</option>
+          <option value="ZAR">ZAR</option>
+          <option value="ARS">ARS</option>
+          <option value="CNY">CNY</option>
         </select>
       </div>
 
@@ -51,27 +52,27 @@ include "../core/database.php";
    <div class="row">
 
       <div class="col s2">
-        <label for="dataHoraCompra">Data/Hora</label>
-        <select id="dataHoraCompra" class="browser-default">
-          <option value="1">Hoje</option>
-          <option value="2">Amanhã</option>
-          <option value="3">Hoje + 2</option>
+        <label for="data">Data/Hora</label>
+        <select id="data" class="browser-default">
+          <option value="<?php echo date('d/m/Y'); ?>"><?php echo date('d/m/Y'); ?> (D0)</option>
+          <option selected value="<?php echo date('d/m/Y',strtotime('+1 day')); ?>"><?php echo date('d/m/Y',strtotime('+1 days')); ?> (D1)</option>
+          <option value="<?php echo date('d/m/Y',strtotime('+2 days')); ?>"><?php echo date('d/m/Y',strtotime('+2 days')); ?> (D2)</option>
         </select>
       </div>
 
       <div class="input-field col s2">
         <input id="quantidade" name="quantidade" class="currency" type="text" required>
-        <label for="quantidade">Qtdade Moeda</label>
+        <label for="quantidade">Quantidade</label>
       </div>
 
       <div class="input-field col s2">
         <input id="taxa" name="taxa" type="text" required>
-        <label for="taxa">Taxa Moeda</label>
+        <label for="taxa">Taxa</label>
       </div>
 
       <div class="input-field col s2">
         <input id="total" name="total" class="currency" type="text" readonly>
-        <label for="total">Total Moeda</label>
+        <label for="total">Total</label>
       </div>
 
       <div class="input-field col s2">
@@ -81,10 +82,10 @@ include "../core/database.php";
 
       <div class="input-field col s2">
         <select id="entrega" name="entrega" required>
-          <option value="" selected>Banco Paulista</option>
-          <option value="">Rendimento</option>
-          <option value="">Vision</option>
-          <option value="">Carro Forte</option>
+          <option value="Banco Paulista" selected>Banco Paulista</option>
+          <option value="Rendimento">Rendimento</option>
+          <option value="Vision">Vision</option>
+          <option value="Carro Forte">Carro Forte</option>
         </select>
         <label for="entrega">Entrega da Moeda</label>
       </div>

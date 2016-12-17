@@ -126,6 +126,22 @@ CREATE TABLE `boletagem` (
   `debito` decimal(10,2) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+
+
+CREATE TABLE `compras` (
+  `id` int(11) NOT NULL,
+  `usuarioId` int(11) DEFAULT NULL,
+  `moeda` varchar(5) DEFAULT NULL,
+  `caixaId` int(11) DEFAULT NULL,
+  `data` datetime DEFAULT NULL,
+  `quantidade` decimal(10,2) DEFAULT NULL,
+  `taxa` decimal(10,5) DEFAULT NULL,
+  `total` decimal(10,2) DEFAULT NULL,
+  `fechamento` varchar(100) DEFAULT NULL,
+  `entrega` varchar(100) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
 -- --------------------------------------------------------
 
 --
@@ -198,6 +214,9 @@ ALTER TABLE `clientes`
 
 ALTER TABLE `boletagem`
   ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`id`);  
 --
 -- Indexes for table `documentos`
 --
@@ -227,6 +246,9 @@ ALTER TABLE `clientes`
 ALTER TABLE `boletagem`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `compras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `documentos`
 --
@@ -247,8 +269,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `enderecoscliente`
   ADD CONSTRAINT `enderecoscliente_ibfk_1` FOREIGN KEY (`clienteId`) REFERENCES `clientes` (`id`);
-
-UPDATE `boletagem` set status = 1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

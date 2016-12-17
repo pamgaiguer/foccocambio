@@ -1021,7 +1021,82 @@ focco = {
   },
 
   adicionarCompraMoedas: function(){
-    
+    $('.currency').mask("#.##0,00", {reverse: true});
+
+    toNumber = function(n){
+      if (n == "") n = 0;
+      n += "";
+      n = n.replace(".", "");
+      n = n.replace(",", ".");      
+      n = parseFloat(n);
+      if (n === NaN) n = 0;
+      return parseFloat(n);
+    }
+
+    Number.prototype.formatDecimal = function(n, x, s, c) {
+      var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
+      num = this.toFixed(Math.max(0, ~~n));
+
+      return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
+    };
+
+    fromNumber = function(n){
+      n += "";
+      n = n.replace(",", ".");
+      n = parseFloat(n).formatDecimal(2, 3, '.', ',');
+      return n;
+    }
+
+    $("#quantidade").blur(function(){
+      if (toNumber($("#taxa").val()) > 0.00){
+        $("#total").val(fromNumber( toNumber($(this).val()) * toNumber($("#taxa").val()) )).blur();                        
+      }
+    });
+
+    $("#taxa").blur(function(){
+      if (toNumber($("#quantidade").val()) > 0.00){
+        $("#total").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) )).blur();
+      }
+    });
+
+
+    $("#form-adicionar-compraMoedas").submit(function(e){
+      e.preventDefault();
+
+      usuarioId = $("#usuarioId").val();
+      moeda = $("#select-moedas", $(this)).val();
+      caixa = $("#select-caixa", $(this)).val();
+      data = $("#data", $(this)).val();
+      quantidade = $("#quantidade", $(this)).val();
+      taxa = $("#taxa", $(this)).val();
+      total = $("#total", $(this)).val();      
+      fechamento = $("#fechamento", $(this)).val();
+      entrega = $("#entrega", $(this)).val();
+      
+      $.ajax({
+        url: "/dashboard/compraMoedas/adicionarPost.php/",
+        type: "post",
+        data: {
+          usuarioId, moeda, caixa, data, quantidade, 
+          taxa, total, fechamento, entrega 
+        },
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
+        success: function(r){
+          console.log(r);
+          $(".main-loader").fadeOut(100);
+          if (JSON.parse(r) == "ok"){
+            window.location = "/dashboard/compraMoedas/";
+          }
+        }
+
+      });
+
+
+
+    });
+
   },
 
 
