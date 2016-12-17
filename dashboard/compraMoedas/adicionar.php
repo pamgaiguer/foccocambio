@@ -49,11 +49,14 @@ include "../core/database.php";
 
 
    <div class="row">
-    <div class="col s12">
 
-      <div class="input-field col s2">
-        <input id="dataCompra" name="dataCompra" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" class="datepicker" required>
-        <label for="dataCompra">Data / hora</label>
+      <div class="col s2">
+        <label for="dataHoraCompra">Data/Hora</label>
+        <select id="dataHoraCompra" class="browser-default">
+          <option value="1">Hoje</option>
+          <option value="2">Amanhã</option>
+          <option value="3">Hoje + 2</option>
+        </select>
       </div>
 
       <div class="input-field col s2">
@@ -86,7 +89,6 @@ include "../core/database.php";
         <label for="entrega">Entrega da Moeda</label>
       </div>
 
-    </div>
   </div>
 
   <div class="row">
