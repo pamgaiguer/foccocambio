@@ -11,6 +11,8 @@ include "../core/database.php";
     </div>
   </div>
 
+  <form id="form-adicionar-compraMoedas">
+
     <div class="row">
       <div class="col s4">
         <label for="select-moedas">Moedas</label>
@@ -46,55 +48,62 @@ include "../core/database.php";
     </div>
 
 
- <div class="row">
-  <div class="col s12">
+   <div class="row">
+    <div class="col s12">
 
-    <div class="input-field col s2">
-      <input id="dataCompra" name="dataCompra" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" class="datepicker" required>
-      <label for="dataCompra">Data / hora</label>
+      <div class="input-field col s2">
+        <input id="dataCompra" name="dataCompra" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" class="datepicker" required>
+        <label for="dataCompra">Data / hora</label>
+      </div>
+
+      <div class="input-field col s2">
+        <input id="quantidade" name="quantidade" class="currency" type="text" required>
+        <label for="quantidade">Qtdade Moeda</label>
+      </div>
+
+      <div class="input-field col s2">
+        <input id="taxa" name="taxa" type="text" required>
+        <label for="taxa">Taxa Moeda</label>
+      </div>
+
+      <div class="input-field col s2">
+        <input id="total" name="total" class="currency" type="text" readonly>
+        <label for="total">Total Moeda</label>
+      </div>
+
+      <div class="input-field col s2">
+        <input id="fechamento" name="fechamento" type="text">
+        <label for="fechamento">Fechamento</label>
+      </div>
+
+      <div class="input-field col s2">
+        <select id="entrega" name="entrega" required>
+          <option value="" selected>Banco Paulista</option>
+          <option value="">Rendimento</option>
+          <option value="">Vision</option>
+          <option value="">Carro Forte</option>
+        </select>
+        <label for="entrega">Entrega da Moeda</label>
+      </div>
+
     </div>
-
-    <div class="input-field col s2">
-      <input id="qtdMoeda" name="qtdMoeda" type="text" required>
-      <label for="qtdMoeda">Qtdade Moeda</label>
-    </div>
-
-    <div class="input-field col s2">
-      <input id="taxaMoeda" name="taxaMoeda" type="text" required>
-      <label for="taxaMoeda">Taxa Moeda</label>
-    </div>
-
-    <div class="input-field col s2">
-      <input id="totalMoeda" name="totalMoeda" type="text" readonly>
-      <label for="totalMoeda">Total Moeda</label>
-    </div>
-
-    <div class="input-field col s2">
-      <input id="fechamento" name="fechamento" type="text">
-      <label for="fechamento">Fechamento</label>
-    </div>
-
-    <div class="input-field col s2">
-      <select id="entregaMoeda" name="entregaMoeda" required>
-        <option value="" selected>Banco Paulista</option>
-        <option value="">Rendimento</option>
-        <option value="">Vision</option>
-        <option value="">Carro Forte</option>
-      </select>
-      <label for="entregaMoeda">Entrega da Moeda</label>
-    </div>
-
   </div>
-</div>
 
-<div class="row">
-  <div class="col s12">
-    <a class="btn bg-blue right">Comprar moeda</a>
+  <div class="row">
+    <div class="col s12">
+      <input type="submit" class="btn bg-blue right" value="Comprar moeda" />
+    </div>
   </div>
-</div>
+
+</form>
 
 </main>
 
 <?php
 include '../includes/footer.php';
 ?>
+
+
+<script type="text/javascript">
+  focco.adicionarCompraMoedas();
+</script>

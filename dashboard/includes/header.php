@@ -73,7 +73,12 @@
 
         <li><a href="/dashboard/boletagem"><i class="material-icons left">&#xE922;</i> Boletagem</a></li>
         <li><a href="/dashboard/orcamento"><i class="material-icons left">&#xE85D;</i> Orçamento</a></li>
-        <li><a href="/dashboard/compraMoedas"><i class="material-icons left">&#xE8CC;</i> Compra de Moedas</a></li>
+        
+        <?php if ($_SESSION['currentUser']['tipo'] < 3) 
+          echo '<li><a href="/dashboard/compraMoedas"><i class="material-icons left">&#xE8CC;</i> Compra de Moedas</a></li>';
+        ?>
+
+
       </ul>
     </nav>
 

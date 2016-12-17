@@ -79,7 +79,7 @@ include "../core/database.php";
 
   <div class="row">
     <div class="col s12">
-    <button class="btn bg-blue right">Comprar moeda</button>
+    <a class="btn bg-blue right" href="/dashboard/compraMoedas/adicionar">Comprar moeda</a>
     </div>
   </div>
 
@@ -89,3 +89,4 @@ include "../core/database.php";
 <?php
 include '../includes/footer.php';
 ?>
+

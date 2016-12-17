@@ -1020,6 +1020,10 @@ focco = {
 
   },
 
+  adicionarCompraMoedas: function(){
+    
+  },
+
 
   adicionarBoletagem: function(){
 
