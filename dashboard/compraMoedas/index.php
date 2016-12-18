@@ -12,16 +12,19 @@ include "../core/database.php";
     </div>
   </div>
 
-  <div class="row">
-    <div class="col s2">
-      <input type="search">
-      <button class="btn bg-blue">
-        Filtrar dia
-        <i class="material-icons right">&#xE8B6;</i>
-      </button>
-    </div>
+  
+  <form id="form-busca-compraMoedas">
+    <div class="row">
+      <div class="col s2">
+        <input type="search" id="search">
+        <button class="btn bg-blue" type="submit">
+          Filtrar dia
+          <i class="material-icons right">&#xE8B6;</i>
+        </button>
+      </div>
 
-  </div>
+    </div>
+  </form>
 
   <div class="row">
 
@@ -31,13 +34,13 @@ include "../core/database.php";
     </div>
 
     <div class="input-field col s3">
-      <input id="totalDolar" name="totalDolar" type="text">
-      <label for="totalDolar">Total Dólar</label>
+      <input id="totalMoeda" name="totalMoeda" type="text">
+      <label for="totalMoeda">Total Dólar</label>
     </div>
 
     <div class="input-field col s3">
       <input id="mediaPonderada" name="mediaPonderada" type="text">
-      <label for="mediaPonderada">Real / Dólar</label>
+      <label for="mediaPonderada">Real / Moeda</label>
     </div>
 
   </div>
@@ -60,7 +63,7 @@ include "../core/database.php";
             <th>Entrega</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="table-body-compras">
           <tr>
             <td>Data/hora</td>
             <td>Usuario</td>
@@ -90,3 +93,8 @@ include "../core/database.php";
 include '../includes/footer.php';
 ?>
 
+
+
+<script type="text/javascript">
+  focco.indexCompraMoedas();
+</script>

@@ -8,7 +8,7 @@
 		$_POST["usuarioId"], 
 		$_POST["moeda"],
 		$_POST["caixa"],
-		TratarData($_POST["data"]), 
+		$_POST["data"], 
 		TratarFloat($_POST["quantidade"]),
 		TratarFloat($_POST["taxa"]),
 		TratarFloat($_POST["total"]),

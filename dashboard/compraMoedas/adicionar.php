@@ -54,9 +54,9 @@ include "../core/database.php";
       <div class="col s2">
         <label for="data">Data/Hora</label>
         <select id="data" class="browser-default">
-          <option value="<?php echo date('d/m/Y'); ?>"><?php echo date('d/m/Y'); ?> (D0)</option>
-          <option selected value="<?php echo date('d/m/Y',strtotime('+1 day')); ?>"><?php echo date('d/m/Y',strtotime('+1 days')); ?> (D1)</option>
-          <option value="<?php echo date('d/m/Y',strtotime('+2 days')); ?>"><?php echo date('d/m/Y',strtotime('+2 days')); ?> (D2)</option>
+          <option value="<?php echo date('Y-m-d h:m:s'); ?>"><?php echo date('d/m/Y'); ?> (D0)</option>
+          <option selected value="<?php echo date('Y-m-d h:m:s',strtotime('+1 day')); ?>"><?php echo date('d/m/Y',strtotime('+1 days')); ?> (D1)</option>
+          <option value="<?php echo date('Y-m-d h:m:s',strtotime('+2 days')); ?>"><?php echo date('d/m/Y',strtotime('+2 days')); ?> (D2)</option>
         </select>
       </div>
 

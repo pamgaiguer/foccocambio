@@ -1020,6 +1020,50 @@ focco = {
 
   },
 
+  indexCompraMoedas: function(){
+
+    $("#search").mask("00/00/0000");
+    $("#totalMoeda").mask("#.##0,00", {reverse: true});
+    $("#totalReal").mask("#.##0,00", {reverse: true});
+    $("#mediaPonderada").mask("#.##0,00", {reverse: true});
+
+    $("#form-busca-compraMoedas").submit(function(e){
+      e.preventDefault();
+
+      search = $("#search", $(this)).val();
+
+      $.ajax({
+        url: "/dashboard/compraMoedas/methods/buscar.php/",
+        type: "post",
+        data: { search },
+        beforeSend: function(){
+          $(".main-loader").fadeIn(100);
+        },
+        success: function(r){
+          $("#table-body-compras").html(r);
+          
+          $.ajax({
+            url: "/dashboard/compraMoedas/methods/totais.php/",
+            type: "post",
+            data: { search },            
+            success: function(r){   
+              r = JSON.parse(r);              
+              
+              $("#totalMoeda").val(r[0].toFixed(2)).mask("#.##0,00");
+              $("#totalReal").val(r[1].toFixed(2)).mask("#.##0,00");
+              $("#mediaPonderada").val(r[2].toFixed(5)).mask("0,00000");
+
+              $(".main-loader").fadeOut(100);
+
+            }
+          });          
+          
+        }
+      });
+
+    });
+  },
+
   adicionarCompraMoedas: function(){
     $('.currency').mask("#.##0,00", {reverse: true});
 
