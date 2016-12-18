@@ -1,3 +1,4 @@
+
 focco = {
 
   sideNav: function(){
@@ -1066,30 +1067,7 @@ focco = {
 
   adicionarCompraMoedas: function(){
     $('.currency').mask("#.##0,00", {reverse: true});
-
-    toNumber = function(n){
-      if (n == "") n = 0;
-      n += "";
-      n = n.replace(".", "");
-      n = n.replace(",", ".");      
-      n = parseFloat(n);
-      if (n === NaN) n = 0;
-      return parseFloat(n);
-    }
-
-    Number.prototype.formatDecimal = function(n, x, s, c) {
-      var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
-      num = this.toFixed(Math.max(0, ~~n));
-
-      return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
-    };
-
-    fromNumber = function(n){
-      n += "";
-      n = n.replace(",", ".");
-      n = parseFloat(n).formatDecimal(2, 3, '.', ',');
-      return n;
-    }
+    
 
     $("#quantidade").blur(function(){
       if (toNumber($("#taxa").val()) > 0.00){
@@ -1140,6 +1118,38 @@ focco = {
 
 
     });
+
+  },
+
+  calculadora: function(){    
+
+    $.ajax({
+      url: "http://api.fixer.io/latest?base=BRL",
+      type: "get",
+      success: function(r){        
+        for (x in r.rates) {
+
+          comercial = $("#" + x + "-comercial");
+          if (comercial == undefined) continue;
+
+          custo = $("#" + x + "-custo");
+          custoFocco = ("#" + x + "-custoFocco")
+          
+
+
+
+
+
+          $(comercial).val(fromNumber5((1/r.rates[x])));
+          $(custoFocco).val(fromNumber5( toNumber($(comercial).val()) + (toNumber($(comercial).val()) * toNumber($(custo).val())) / 100 ));
+
+
+
+
+        }
+      }
+    });
+
 
   },
 
@@ -1241,37 +1251,7 @@ focco = {
       });
     });
 
-    toNumber = function(n){
-      if (n == "") n = 0;
-      n += "";
-      n = n.replace(".", "");
-      n = n.replace(",", ".");      
-      n = parseFloat(n);
-      if (n === NaN) n = 0;
-      return parseFloat(n);
-    }
-
-    Number.prototype.formatDecimal = function(n, x, s, c) {
-      var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
-      num = this.toFixed(Math.max(0, ~~n));
-
-      return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
-    };
-
-    fromNumber = function(n){
-      n += "";
-      n = n.replace(",", ".");
-      n = parseFloat(n).formatDecimal(2, 3, '.', ',');
-      return n;
-    }
-
-    fromNumber5 = function(n){
-      n += "";
-      n = n.replace(",", ".");
-      n = parseFloat(n).formatDecimal(5, 3, '.', ',');
-      n = n.replace(".", ",");
-      return n;
-    }
+    
 
     $("#quantidade").blur(function(){
       if (toNumber($("#taxa").val()) > 0.00){
@@ -1407,3 +1387,36 @@ focco = {
 };
 
 $('.materialboxed').materialbox();
+
+
+toNumber = function(n){
+  if (n == "") n = 0;
+  n += "";
+  n = n.replace(".", "");
+  n = n.replace(",", ".");      
+  n = parseFloat(n);
+  if (n === NaN) n = 0;
+  return parseFloat(n);
+}
+
+Number.prototype.formatDecimal = function(n, x, s, c) {
+  var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
+  num = this.toFixed(Math.max(0, ~~n));
+
+  return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
+};
+
+fromNumber = function(n){
+  n += "";
+  n = n.replace(",", ".");
+  n = parseFloat(n).formatDecimal(2, 3, '.', ',');
+  return n;
+}
+
+fromNumber5 = function(n){
+  n += "";
+  n = n.replace(",", ".");
+  n = parseFloat(n).formatDecimal(5, 3, '.', ',');
+  n = n.replace(".", ",");
+  return n;
+}

@@ -29,17 +29,17 @@ include "../core/database.php";
   <div class="row">
 
     <div class="input-field col s3">
-      <input id="totalReal" name="totalReal" type="text">
+      <input id="totalReal" name="totalReal" type="text" placeholder="0">
       <label for="totalReal">Total Real</label>
     </div>
 
     <div class="input-field col s3">
-      <input id="totalMoeda" name="totalMoeda" type="text">
+      <input id="totalMoeda" name="totalMoeda" type="text" placeholder="0">
       <label for="totalMoeda">Total Dólar</label>
     </div>
 
     <div class="input-field col s3">
-      <input id="mediaPonderada" name="mediaPonderada" type="text">
+      <input id="mediaPonderada" name="mediaPonderada" type="text" placeholder="0">
       <label for="mediaPonderada">Real / Moeda</label>
     </div>
 
