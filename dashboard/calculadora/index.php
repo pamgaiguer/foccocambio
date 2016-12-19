@@ -71,7 +71,7 @@ include "../core/database.php";
           <td><input type="text" value="0.053"></td>
           <td><input type="text" value="3.4920"></td>
           <td><input type="text" value="3.5304"></td>
-          <td>acima de 5.000 -1</td>
+          <td>acima de 2.000 -1</td>
           <td><input type="text" value="0.0000"></td>
           <td><input type="text" value="0.0384"></td>
           <td><input type="text" value="1.5178"></td>
@@ -127,7 +127,7 @@ include "../core/database.php";
           <td><input type="text" value="0.053"></td>
           <td><input type="text" value="3.4920"></td>
           <td><input type="text" value="3.5304"></td>
-          <td>acima de 5.000 -1</td>
+          <td>a combinar gerência</td>
           <td><input type="text" value="0.0000"></td>
           <td><input type="text" value="0.0384"></td>
           <td><input type="text" value="1.5178"></td>
@@ -141,7 +141,7 @@ include "../core/database.php";
           <td><input type="text" value="0.053"></td>
           <td><input type="text" value="3.4920"></td>
           <td><input type="text" value="3.5304"></td>
-          <td>acima de 5.000 -1</td>
+          <td>acima de 5.000 -2</td>
           <td><input type="text" value="0.0000"></td>
           <td><input type="text" value="0.0384"></td>
           <td><input type="text" value="1.5178"></td>
@@ -155,7 +155,7 @@ include "../core/database.php";
           <td><input type="text" value="0.053"></td>
           <td><input type="text" value="3.4920"></td>
           <td><input type="text" value="3.5304"></td>
-          <td>acima de 5.000 -1</td>
+          <td>a combinar gerência</td>
           <td><input type="text" value="0.0000"></td>
           <td><input type="text" value="0.0384"></td>
           <td><input type="text" value="1.5178"></td>
@@ -169,7 +169,7 @@ include "../core/database.php";
           <td><input type="text" value="0.053"></td>
           <td><input type="text" value="3.4920"></td>
           <td><input type="text" value="3.5304"></td>
-          <td>acima de 5.000 -1</td>
+          <td>acima de 5.000 -1,5</td>
           <td><input type="text" value="0.0000"></td>
           <td><input type="text" value="0.0384"></td>
           <td><input type="text" value="1.5178"></td>
@@ -183,7 +183,7 @@ include "../core/database.php";
           <td><input type="text" value="0.053"></td>
           <td><input type="text" value="3.4920"></td>
           <td><input type="text" value="3.5304"></td>
-          <td>acima de 5.000 -1</td>
+          <td><strong>ENGESSADO</strong></td>
           <td><input type="text" value="0.0000"></td>
           <td><input type="text" value="0.0384"></td>
           <td><input type="text" value="1.5178"></td>
@@ -197,7 +197,7 @@ include "../core/database.php";
           <td><input type="text" value="0.053"></td>
           <td><input type="text" value="3.4920"></td>
           <td><input type="text" value="3.5304"></td>
-          <td>acima de 5.000 -1</td>
+          <td>a combinar gerência</td>
           <td><input type="text" value="0.0000"></td>
           <td><input type="text" value="0.0384"></td>
           <td><input type="text" value="1.5178"></td>
