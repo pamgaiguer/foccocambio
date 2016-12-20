@@ -4,7 +4,7 @@ include "../includes/header.php";
 include "../core/database.php";
 
 ?>
-<main>
+<main class="calculadora">
   <div class="row">
     <div class="col s12">
       <h4>Calculadora</h4>

@@ -159,15 +159,6 @@ input[type=email]{
   }
 }
 
-.cotation-table{
-  tbody{
-    tr{
-      td:first-child{
-        font-weight: 700;
-      }
-    }
-  }
-}
 .disabled{
   pointer-events: none;
 }
@@ -186,6 +177,27 @@ input[type=email]{
   }
 }
 
+.cotacoes{
+  .cotation-table{
+    thead{
+      th{
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    tbody{
+      tr{
+        td{
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
 .clients{
   nav{
     height: 40px;
@@ -197,6 +209,37 @@ input[type=email]{
     border-radius: 0;
 
     .collection-item{
+    }
+  }
+}
+
+.calculadora{
+  table{
+    thead{
+      th{
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align:center;
+      }
+    }
+    tbody{
+      tr{
+        .moeda-name{
+          font-weight: 700;
+          color: $blue-focco;
+        }
+        td{
+          input[type="text"]{
+            text-align: center;
+          }
+          &:nth-child(8){
+            font-weight: 700;
+            text-align: center;
+            color: $blue-focco;
+          }
+        }
+      }
     }
   }
 }

@@ -6415,9 +6415,6 @@ input[type=email] {
     background-color: #FAFAFA;
     border-color: #373D49; }
 
-.cotation-table tbody tr td:first-child {
-  font-weight: 700; }
-
 .disabled {
   pointer-events: none; }
 
@@ -6428,11 +6425,35 @@ input[type=email] {
   width: 140px;
   height: 140px; }
 
+.cotacoes .cotation-table thead th {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center; }
+.cotacoes .cotation-table tbody tr td {
+  font-size: 12px;
+  text-align: center; }
+
 .clients nav {
   height: 40px;
   line-height: 40px; }
 .clients .collection {
   border: none;
   border-radius: 0; }
+
+.calculadora table thead th {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center; }
+.calculadora table tbody tr .moeda-name {
+  font-weight: 700;
+  color: #15325c; }
+.calculadora table tbody tr td input[type="text"] {
+  text-align: center; }
+.calculadora table tbody tr td:nth-child(8) {
+  font-weight: 700;
+  text-align: center;
+  color: #15325c; }
 
 /*# sourceMappingURL=materialize.css.map */

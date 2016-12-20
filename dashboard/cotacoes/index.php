@@ -3,20 +3,8 @@
 include "../includes/header.php";
 include "../core/database.php";
 
-$sql_query = "SELECT * FROM cotacoes;";
-$result = mysqli_query($conn, $sql_query);
-
-
-$rows = array();
-while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
-$dolar = $rows[0]['dolar'];
-$euro = $rows[0]['euro'];
-$libra = $rows[0]['libra'];
-
-
 ?>
-<main>
+<main class="cotacoes">
   <div class="row">
     <div class="col s12">
       <h4>Cotações</h4>
@@ -25,17 +13,6 @@ $libra = $rows[0]['libra'];
       </blockquote>
     </div>
   </div>
-
-<!--   <div class="row">
-    <div class="col s12">
-      <div class="alert success" style="display: none;">
-        <p>Tabela atualizada com sucesso</p>
-      </div>
-      <div class="alert error" style="display: none;">
-        <p>Erro ao tentar atualizar a tabela</p>
-      </div>
-    </div>
-  </div> -->
 
   <form id="form-cotacoes">
     <div class="row">
