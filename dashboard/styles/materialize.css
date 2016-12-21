@@ -6426,12 +6426,11 @@ input[type=email] {
   height: 140px; }
 
 .cotacoes .cotation-table thead th {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center; }
 .cotacoes .cotation-table tbody tr td {
-  font-size: 12px;
   text-align: center; }
 
 .clients nav {
@@ -6440,6 +6439,10 @@ input[type=email] {
 .clients .collection {
   border: none;
   border-radius: 0; }
+.clients #boletagemHistory table thead {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700; }
 
 .calculadora table thead th {
   font-size: 10px;

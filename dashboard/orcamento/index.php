@@ -15,17 +15,17 @@ include "../core/database.php";
   </div>
 
   <div class="row">
-    <div class="col s4">
-      <form id="form-busca-clientes">
-        <div class="file-path-wrapper">
-          <div id="validacaoCpf"></div>
-          <input id="input-cpfcnpj" name="cpfCnpj" type="search" required/>
-          <button class="btn bg-blue" type="submit" name="action">
-            Buscar CPF Cliente
-            <i class="material-icons right">&#xE8B6;</i>
-          </button>
-        </div>
-      </form>
+    <div class="col s3">
+      <div class="input-field">
+      <input  id="nomeCliente" type="text">
+        <label for="nomeCliente">Nome Cliente</label>
+      </div>
+    </div>
+    <div class="col s3">
+      <div class="input-field">
+      <input  id="emailCliente" type="text">
+        <label for="emailCliente">E-mail do cliente</label>
+      </div>
     </div>
   </div>
 
@@ -95,7 +95,11 @@ include "../core/database.php";
 
   <div class="row">
     <div class="col s12">
-      <button class="btn bg-blue right">Criar orçamento</button>
+      <button class="btn bg-blue right">
+      Enviar orçamento por e-mail
+<i class="material-icons right">send</i>
+      </button>
+
     </div>
   </div>
 </main>

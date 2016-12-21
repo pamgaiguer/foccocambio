@@ -146,12 +146,12 @@ if ($bloqueadoManualmente){
       </nav>
 
       <ul class="tabs">
-        <li class="tab col s3"><a class="active left-align" href="#general-data">Dados Gerais</a></li>
-        <li class="tab col s3"><a class="left-align" href="#documents">Documentação</a></li>
-        <li class="tab col s3"><a class="left-align" href="#contact">Contato</a></li>
-        <li class="tab col s3"><a class="left-align" href="#documentsImages">Anexos</a></li>
-        <li class="tab col s3"><a class="left-align" href="#resAddress">Endereços</a></li>
-        <li class="tab col s3"><a class="left-align" href="#boletagemHistory">Histórico Boletagem</a></li>
+        <li class="tab col s3"><a class="active " href="#general-data">Dados Gerais</a></li>
+        <li class="tab col s3"><a class="" href="#documents">Documentação</a></li>
+        <li class="tab col s3"><a class="" href="#contact">Contato</a></li>
+        <li class="tab col s3"><a class="" href="#documentsImages">Anexos</a></li>
+        <li class="tab col s3"><a class="" href="#resAddress">Endereços</a></li>
+        <li class="tab col s3"><a class="" href="#boletagemHistory">Histórico Boletagem</a></li>
       </ul>
 
       <div class="spacing"></div>
@@ -672,21 +672,23 @@ if ($bloqueadoManualmente){
                   </div>
 
                   <div id="boletagemHistory">
-                    <table class="table">
+                    <table>
                       <thead>
-                        <th>#ID Boleto</th>
-                        <th>Usuario</th>
-                        <th>Data</th>
-                        <th>Caixa</th>
-                        <th>Modalidade</th>
-                        <th>Forma Pagto</th>
-                        <th>Operação</th>
-                        <th>Moeda</th>
-                        <th>Quantidade</th>
-                        <th>Taxa</th>
-                        <th>Subtotal</th>
-                        <th>VET</th>
-                        <th></th>
+                        <tr>
+                          <th>#ID Boleto</th>
+                          <th>Usuario</th>
+                          <th>Data</th>
+                          <th>Caixa</th>
+                          <th>Modalidade</th>
+                          <th>Forma Pagto</th>
+                          <th>Operação</th>
+                          <th>Moeda</th>
+                          <th>Quantidade</th>
+                          <th>Taxa</th>
+                          <th>Subtotal</th>
+                          <th>VET</th>
+                          <th></th>
+                        </tr>
                       </thead>
                       <tbody>
                         <?php

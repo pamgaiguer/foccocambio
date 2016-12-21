@@ -181,7 +181,7 @@ input[type=email]{
   .cotation-table{
     thead{
       th{
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 700;
         text-transform: uppercase;
         text-align: center;
@@ -190,7 +190,6 @@ input[type=email]{
     tbody{
       tr{
         td{
-          font-size: 12px;
           text-align: center;
         }
       }
@@ -209,6 +208,15 @@ input[type=email]{
     border-radius: 0;
 
     .collection-item{
+    }
+  }
+  #boletagemHistory{
+    table{
+      thead{
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
     }
   }
 }

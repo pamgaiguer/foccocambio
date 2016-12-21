@@ -95,6 +95,7 @@ include "../core/database.php";
   <div class="row">
     <div class="col s12">
       <input type="submit" class="btn bg-blue right" value="Comprar moeda" />
+
     </div>
   </div>
 
