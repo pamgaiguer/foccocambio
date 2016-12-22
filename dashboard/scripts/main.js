@@ -1133,16 +1133,32 @@ focco = {
           if (comercial == undefined) continue;
 
           custo = $("#" + x + "-custo");
-          custoFocco = ("#" + x + "-custoFocco")
-          
+          custoFocco = $("#" + x + "-custoFocco");
+          margPonto = $("#" + x + "-margPonto");
+          txSIof = $("#" + x+ "-txSIof");
+          txCIof = $("#" + x + "-txCIof");
+          txSIofBoletagem = $("#" + x + "-txSIofBoletagem");
+          margLiquidaPercent = $("#" + x + "-margLiquidaPercent");
+          margLiquida = $("#" + x + "-margLiquida");
 
-
-
-
+          txFinal = $("#" + x + "-txFinal");
 
           $(comercial).val(fromNumber5((1/r.rates[x])));
           $(custoFocco).val(fromNumber5( toNumber($(comercial).val()) + (toNumber($(comercial).val()) * toNumber($(custo).val())) / 100 ));
+          $(txSIof).val(fromNumber5( toNumber ($(custoFocco).val()) + toNumber($(margPonto).val()) ));
+          $(txCIof).val(fromNumber5( toNumber($(txSIof).val()) + (toNumber($(txSIof).val()) * 1.1/100) ));
 
+          $(margLiquidaPercent).val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($(txSIof).val()))-1) ));
+
+          $(txFinal).blur(function(){            
+            
+            m = $(this).attr("id").substr(0, 3);            
+            $("#" + m + "-txSIofBoletagem").val(fromNumber5( toNumber($(txSIof).val()) - (toNumber($(txCIof).val()) - toNumber($(this).val())) ));
+            $("#" + m + "-margLiquida").val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($("#" + m + "-txSIofBoletagem").val()))-1) ));
+
+
+
+          });
 
 
 
