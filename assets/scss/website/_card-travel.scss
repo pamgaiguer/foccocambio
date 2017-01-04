@@ -2,13 +2,13 @@
 /*interna - cartão pré-pago*/
 
 .panel {
-  background-color: rgba($blue, 0.8);
+  background-color: rgba($blue-focco, 0.8);
 }
 
 .panel-default {
   border-color: $blue-darker;
   > .panel-heading {
-    background-color: rgba($blue, 0.8);
+    background-color: rgba($blue-focco, 0.8);
     border-color: $blue-darker;
     a {
       color: $yellow-bg;

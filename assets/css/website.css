@@ -16067,10 +16067,13 @@ a {
 hr {
   border-top: 1px solid #15325c; }
 
-#formulario input[type='text'], #formulario input[type='email'], #formulario input[type='tel'], #formulario input[type='checkbox'] {
+.form-control {
   border: 1px solid #15325c; }
-#formulario textarea, #formulario select {
-  border: 1px solid #15325c; }
+  .form-control:focus {
+    border-color: #15325c;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 50, 92, 0.75);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(21, 50, 92, 0.75); }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,

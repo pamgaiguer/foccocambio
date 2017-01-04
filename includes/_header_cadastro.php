@@ -2,16 +2,6 @@
 
 include "dashboard/core/database.php";
 
-$sql_query = "SELECT * FROM cotacoes;";
-$result = mysqli_query($conn, $sql_query);
-
-$rows = array();
-while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
-$dolar = number_format($rows[0]['dolar'],2,",","");
-$euro = number_format($rows[0]['euro'],2,",","");
-$libra = number_format($rows[0]['libra'],2,",","");
-
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +16,6 @@ $libra = number_format($rows[0]['libra'],2,",","");
   libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery, moeda, casa, espécie, especie, real, Câmbio financeiro,
   Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra">
   <title>Focco Câmbio - Câmbio e Turismo</title>
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/cadastro.css">
   <link rel="shortcut icon" href="favicon.ico" />
   <script>
@@ -40,7 +28,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
     ga('send', 'pageview');
   </script>
   <body>
-    <header class="navbar-fixed-top" style="height: 150px">
+  <header class="navbar-fixed-top">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blue-line">
@@ -53,11 +41,11 @@ $libra = number_format($rows[0]['libra'],2,",","");
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <a href="index.php" title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="images/logo_topo.png" class="center-block" alt="Focco Cambio"></h1></a>
-            <h4 class="text-center blue-text" style="margin-left: 12px;"><strong>Formulário de Cadastro</strong></h4>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="border:1px solid #f0f"></div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"  style="border:1px solid #f0f">
+            <a title="Focco Câmbio e Turismo"><h1 class="logo-topo"><img src="assets/images/logo_topo.png" alt="Focco Cambio"></h1></a>
+            <h4 class="text-center blue-text"><strong>Cadastro</strong></h4>
           </div>
-          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"  style="border:1px solid #f0f"></div>
         </div>
       </header>

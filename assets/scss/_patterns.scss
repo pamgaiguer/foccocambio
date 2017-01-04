@@ -26,7 +26,7 @@
 //colors default from focco cambio
 $blue-lighter-shadow: #357EE8;
 $blue-light-shadow: #265CA8;
-$blue: #15325c;
+$blue-focco: #15325c;
 $blue-dark: #12315D;
 $blue-darker: #14325C;
 $blue-dark-shadow: #183969;
@@ -79,16 +79,16 @@ $purple-graph-shadow: #8F70CF;
   background-color: $white !important;
 }
 .bg-blue{
-  background-color: $blue !important;
+  background-color: $blue-focco !important;
 }
 .bg-yellow{
   background-color: $yellow !important;
 }
 .blue-focco{
-  color: $blue;
+  color: $blue-focco;
 }
 .blue-text {
-  color: $blue;
+  color: $blue-focco;
 }
 .yellow-text {
   color: $yellow-bg;

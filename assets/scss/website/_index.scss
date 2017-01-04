@@ -9,9 +9,9 @@
 }
 
 .carousel-control {
-  color: $blue;
+  color: $blue-focco;
   &:hover, &:focus {
-    color: $blue;
+    color: $blue-focco;
   }
   z-index: 1;
 }
@@ -25,7 +25,7 @@
 }
 
 .bg-delivery {
-  background: url(assets/images/bg_delivery.jpg) no-repeat top center;
+  background: url(../images/bg_delivery.jpg) no-repeat top center;
   background-size: contain;
   min-height: 600px;
 }
@@ -39,7 +39,7 @@ footer {
 }
 
 .border-blue-right {
-  border-right: 1px solid $blue;
+  border-right: 1px solid $blue-focco;
 }
 
 .links-footer li a {
