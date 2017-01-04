@@ -1,6 +1,6 @@
-<?php include '_header.php';?>
+  <?php include 'includes/_header.php'; ?>
 <div class="container-fluid">
-  <img src="images/banner_int_produtos_servicos.jpg" alt="Produtos e Serviços" class="img-responsive center-block">
+  <img src="assets/images/banner_int_produtos_servicos.jpg" alt="Produtos e Serviços" class="img-responsive center-block">
 </div>
 
 <div class="container">
@@ -16,7 +16,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="compra-venda-moeda.php">
-            <img class="media-object" src="images/icon_money_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="assets/images/icon_money_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -29,7 +29,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="transferencia-internacional">
-            <img class="media-object" src="images/icon_transfer_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="assets/images/icon_transfer_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -47,7 +47,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="seguro-viagem.php">
-            <img class="media-object" src="images/icon_seguro_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="assets/images/icon_seguro_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -65,7 +65,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="atendimento-corporativo.php">
-            <img class="media-object" src="images/icon_corporativo_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="assets/images/icon_corporativo_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -84,7 +84,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="cartao-travel-money.php">
-            <img class="media-object" src="images/icon_cartao_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="assets/images/icon_cartao_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -99,7 +99,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="delivery.php">
-            <img class="media-object" src="images/icon_delivery_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="assets/images/icon_delivery_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -116,7 +116,7 @@
       <div class="media">
         <div class="media-left media-middle">
           <a href="western-union.php">
-            <img class="media-object" src="images/icon_wu_circle.png" alt="produtos e serviços">
+            <img class="media-object" src="assets/images/icon_wu_circle.png" alt="produtos e serviços">
           </a>
         </div>
         <div class="media-body">
@@ -135,4 +135,4 @@
 
 </div>
 
-<?php include '_footer.php';?>
+  <?php include 'includes/_footer.php'; ?>

@@ -1,7 +1,7 @@
-<?php include '_header.php';?>
+<?php include 'includes/_header.php';?>
 
 <div class="container-fluid">
-<img class="img-responsive center-block" src="images/internas/interna_atendimento_corp.jpg" alt="Atendimento Corporativo">
+<img class="img-responsive center-block" src="assets/images/internas/interna_atendimento_corp.jpg" alt="Atendimento Corporativo">
 </div>
 
 <div class="container text-center blue-text atend-corp">
@@ -30,4 +30,4 @@
   </div>
 </div>
 
-<?php include '_footer.php';?>
+<?php include 'includes/_footer.php';?>

@@ -1,7 +1,7 @@
-<?php include '_header.php';?>
+<?php include 'includes/_header.php';?>
 
 <div class="container-fluid">
-  <img src="images/internas/interna_transacoes.jpg" alt="banner" class="img-responsive center-block">
+  <img src="assets/images/internas/interna_transacoes.jpg" alt="banner" class="img-responsive center-block">
 </div>
 
 <div class="container blue-text text-center">
@@ -70,4 +70,4 @@
   </div>
 </div>
 
-<?php include '_footer.php';?>
+<?php include 'includes/_footer.php';?>

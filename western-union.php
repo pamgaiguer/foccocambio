@@ -1,7 +1,7 @@
-<?php include '_header.php';?>
+<?php include 'includes/_header.php';?>
 
 <div class="container-fluid">
-  <img src="images/internas/interna_westernunion.jpg" alt="banner" class="img-responsive center-block">
+  <img src="assets/images/internas/interna_westernunion.jpg" alt="banner" class="img-responsive center-block">
 </div>
 
 <div class="container blue-text text-center western-union">
@@ -20,19 +20,19 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="boxWU">
         <a class="btn btn-primary" title="Clique para saber mais!" data-toggle="collapse" href="#wuEnviar" aria-expanded="false" aria-controls="wuEnviar">
-          <img src="images/wu_comoenviar.png" class="img-responsive" alt="western union enviar dinheiro">
+          <img src="assets/images/wu_comoenviar.png" class="img-responsive" alt="western union enviar dinheiro">
         </a>
         <br><br>
         <div class="collapse" id="wuEnviar">
-          <img src="images/wu_envio_aberto.png" alt="enviar dinheiro" class="img-responsive center-block">
+          <img src="assets/images/wu_envio_aberto.png" alt="enviar dinheiro" class="img-responsive center-block">
         </div>
 
         <a class="btn btn-primary" title="Clique para saber mais!" data-toggle="collapse" href="#wuReceber" aria-expanded="false" aria-controls="wuReceber">
-          <img src="images/wu_comoreceber.png" class="img-responsive center-block" alt="western union receber dinheiro">
+          <img src="assets/images/wu_comoreceber.png" class="img-responsive center-block" alt="western union receber dinheiro">
         </a>
         <br><br>
         <div class="collapse" id="wuReceber">
-          <img src="images/wu_recebimento_aberto.png" alt="receber dinheiro" class="img-responsive center-block">
+          <img src="assets/images/wu_recebimento_aberto.png" alt="receber dinheiro" class="img-responsive center-block">
         </div>
       </div>
     </div>
@@ -48,4 +48,4 @@
 
 </div>
 
-<?php include '_footer.php';?>
+<?php include 'includes/_footer.php';?>

@@ -1,7 +1,7 @@
-<?php include '_header.php';?>
+<?php include 'includes/_header.php';?>
 
 <div class="container-fluid">
-  <img class="img-responsive center-block" src="images/internas/interna_seguro.jpg" alt="Produtos e Serviços" title="Produtos e Serviços">
+  <img class="img-responsive center-block" src="assets/images/internas/interna_seguro.jpg" alt="Produtos e Serviços" title="Produtos e Serviços">
 </div>
 <div class="container text-center blue-text">
   <div class="row">
@@ -22,7 +22,7 @@
 
   <div class="row">
     <div class="col-xs-12">
-<img src="images/seguro_viagem_img.png" alt="seguro viagem ilustração" class="img-responsive center-block">
+<img src="assets/images/seguro_viagem_img.png" alt="seguro viagem ilustração" class="img-responsive center-block">
     </div>
   </div>
 
@@ -40,4 +40,4 @@
 
 </div>
 
-<?php include '_footer.php';?>
+<?php include 'includes/_footer.php';?>

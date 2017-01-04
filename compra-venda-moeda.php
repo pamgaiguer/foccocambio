@@ -1,7 +1,7 @@
-<?php include '_header.php';?>
+<?php include 'includes/_header.php';?>
 
 <div class="container-fluid">
-  <img src="images/internas/interna_moedas.jpg" alt="banner" class="img-responsive center-block">
+  <img src="assets/images/internas/interna_moedas.jpg" alt="banner" class="img-responsive center-block">
 </div>
 
 <div class="container blue-text text-center">
@@ -15,7 +15,7 @@
     </p>
     <div class="row">
      <div class="col-xs-12">
-      <img src="images/moedas_interna.jpg" class="img-responsive">
+      <img src="assets/images/moedas_interna.jpg" class="img-responsive">
     </div>
   </div>
 </div>
@@ -39,4 +39,4 @@
 
 </div>
 
-<?php include '_footer.php';?>
+<?php include 'includes/_footer.php';?>

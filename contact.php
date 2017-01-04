@@ -1,7 +1,7 @@
-<?php include '_header.php';?>
+<?php include 'includes/_header.php';?>
 
 <div class="container-fluid">
-  <img class="img-responsive center-block" src="images/internas/interna_contato.jpg" alt="contato" >
+  <img class="img-responsive center-block" src="assets/images/internas/interna_contato.jpg" alt="contato" >
 </div>
 
 <div class="container blue-text text-center contact">
@@ -15,7 +15,7 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table">
         <div class="thumbnail">
-          <img src="images/contact_icon_phone.png" class="img-responsive" alt="phone">
+          <img src="assets/images/contact_icon_phone.png" class="img-responsive" alt="phone">
           <div class="caption">
             <h3><strong>Telefones</strong></h3>
             <p class="text-uppercase">matriz / delivery</p>
@@ -29,7 +29,7 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table">
         <div class="thumbnail">
-          <img src="images/contact_icon_mail.png" class="img-responsive" alt="email">
+          <img src="assets/images/contact_icon_mail.png" class="img-responsive" alt="email">
           <div class="caption">
             <h3><strong>E-mail</strong></h3>
             <p class="text-uppercase">contato</p>
@@ -43,7 +43,7 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table">
         <div class="thumbnail">
-          <img src="images/contact_icon_map.png" class="img-responsive" alt="email">
+          <img src="assets/images/contact_icon_map.png" class="img-responsive" alt="email">
           <div class="caption">
             <h3><strong>Lojas</strong></h3>
             <p class="text-uppercase">Pompéia</p>
@@ -56,7 +56,7 @@
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
       <div class="contact-table last-table">
         <div class="thumbnail">
-          <img src="images/contact_icon_whatsapp.png" class="img-responsive" alt="whatsapp">
+          <img src="assets/images/contact_icon_whatsapp.png" class="img-responsive" alt="whatsapp">
           <div class="caption">
             <h3><strong>Whatsapp</strong></h3>
             <p class="text-uppercase">Atendimento Personalizado<br>Delivery de moedas</p>
@@ -81,7 +81,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
       <div class="thumbnail">
-        <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/contact_icon_face.png" class="img-responsive" alt="facebook"></a>
+        <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="assets/images/contact_icon_face.png" class="img-responsive" alt="facebook"></a>
         <div class="caption">
           <p><a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">facebook.com/<strong>focco.cambioeturismo</strong></a></p>
         </div>
@@ -89,7 +89,7 @@
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
       <div class="thumbnail">
-        <a href="http://www.instagram.com/foccocambio/" target="_blank"><img src="images/contact_icon_instagram.png" class="img-responsive" alt="instagram"></a>
+        <a href="http://www.instagram.com/foccocambio/" target="_blank"><img src="assets/images/contact_icon_instagram.png" class="img-responsive" alt="instagram"></a>
         <div class="caption">
           <p><a href="http://www.instagram.com/foccocambio/" target="_blank">instagram.com/<strong>focco.cambioeturismo</strong></a></p>
         </div>
@@ -100,4 +100,4 @@
 
 </div>
 
-<?php include '_footer.php';?>
+<?php include 'includes/_footer.php';?>

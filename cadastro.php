@@ -1,4 +1,4 @@
-<?php include '_header_cadastro.php';?>
+<?php include 'includes/.php';?>
 
 <div class="container">
   <div class="row">
@@ -325,9 +325,9 @@
     </div>
   </div>
 </div>
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mask.min.js"></script>
-<script src="js/main.js"></script>
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.mask.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
