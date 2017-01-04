@@ -26,9 +26,9 @@ $libra = number_format($rows[0]['libra'],2,",","");
   libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery, moeda, casa, espécie, especie, real, Câmbio financeiro,
   Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra">
   <title>Focco Câmbio - Câmbio e Turismo</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/cadastro.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
   <link rel="shortcut icon" href="favicon.ico" />
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

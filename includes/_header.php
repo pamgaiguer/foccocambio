@@ -26,7 +26,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
   libra, cotação, casa de câmbio, casa de cambio, focco, atendimento, corporativo, delivery, moeda, casa, espécie, especie, real, Câmbio financeiro,
   Casa de Câmbio, Entrega de moedas em São Paulo, Dólar, Euro, Libra">
   <title>Focco Câmbio - Câmbio e Turismo</title>
-  <link rel="stylesheet" href="css/website.css">
+  <link rel="stylesheet" href="assets/css/website.css">
   <link rel="shortcut icon" href="favicon.ico" />
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -97,14 +97,14 @@ $libra = number_format($rows[0]['libra'],2,",","");
             </p>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <a href="/"><img src="images/logo_topo.png" class="logo-topo img-responsive center-block" alt="Focco Cambio"></a>
+            <a href="/"><img src="assets/images/logo_topo.png" class="logo-topo img-responsive center-block" alt="Focco Cambio"></a>
           </div>
 
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <div class="tel-delivery">
               <div class="media">
                 <div class="media-left">
-                  <img class="media-object" src="images/icon_motorcycle.png">
+                  <img class="media-object" src="assets/images/icon_motorcycle.png">
                 </div>
                 <div class="media-body">
                   <p class="media-heading">Delivery Focco</p>
@@ -119,10 +119,10 @@ $libra = number_format($rows[0]['libra'],2,",","");
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <ul class="list-unstyled list-inline pull-right hidden-xs link-img-top">
               <li>
-                <a href="http://instagram.com/foccocambio/" target="_blank"><img src="images/logo_instagram.png" alt="instagram "></a>
+                <a href="http://instagram.com/foccocambio/" target="_blank"><img src="assets/images/logo_instagram.png" alt="instagram "></a>
               </li>
               <li>
-                <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="images/logo_fb.jpg" alt="facebook"></a>
+                <a href="http://www.facebook.com/focco.cambioeturismo" target="_blank"><img src="assets/images/logo_fb.jpg" alt="facebook"></a>
               </li>
               <li>
                 <a href="/dashboard" title="Acesso ao Dashboard Focco - Interno" class="dash-icon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></a>
@@ -159,7 +159,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
            <div class="modal-header">
-            <h3 class="text-uppercase"><img src="images/icon-carimbo.png" alt=""> Regras de fechamento e delivery</h3>
+            <h3 class="text-uppercase"><img src="assets/images/icon-carimbo.png" alt=""> Regras de fechamento e delivery</h3>
           </div>
           <div class="modal-body">
             <h3><img src="" alt="" class="img-responsive center-block">Para fechamento</h3>

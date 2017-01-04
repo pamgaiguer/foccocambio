@@ -1,21 +1,21 @@
-  <?php include('_header.php'); ?>
+  <?php include 'includes/_header.php'; ?>
 
   <section class="slide">
       <div id="slideshow" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="item active">
             <a href="compra-venda-moeda.php">
-              <img src="images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block">
+              <img src="assets/images/fundo_slide_home1.jpg" alt="focco1" class="img-responsive center-block">
             </a>
           </div>
           <div class="item">
             <a href="seguro-viagem.php">
-              <img src="images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block">
+              <img src="assets/images/fundo_slide_home2.jpg" alt="focco2" class="img-responsive center-block">
             </a>
           </div>
           <div class="item">
             <a href="transferencia-internacional.php">
-              <img src="images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block">
+              <img src="assets/images/fundo_slide_home3.jpg" alt="focco3" class="img-responsive center-block">
             </a>
           </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="compra-venda-moeda.php">
-                  <img class="media-object" src="images/icon_money_circle.png" />
+                  <img class="media-object" src="assets/images/icon_money_circle.png" />
                 </a>
               </div>
               <div class="media-body">
@@ -61,7 +61,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="transferencia-internacional">
-                  <img class="media-object" src="images/icon_transfer_circle.png" />
+                  <img class="media-object" src="assets/images/icon_transfer_circle.png" />
                 </a>
               </div>
               <div class="media-body">
@@ -77,7 +77,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="western-union.php">
-                  <img class="media-object" src="images/icon_wu_circle.png" />
+                  <img class="media-object" src="assets/images/icon_wu_circle.png" />
                 </a>
               </div>
               <div class="media-body">
@@ -94,7 +94,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="atendimento-corporativo.php">
-                  <img class="media-object" src="images/icon_corporativo_circle.png" />
+                  <img class="media-object" src="assets/images/icon_corporativo_circle.png" />
                 </a>
               </div>
               <div class="media-body">
@@ -109,7 +109,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="seguro-viagem.php">
-                  <img class="media-object" src="images/icon_seguro_circle.png" />
+                  <img class="media-object" src="assets/images/icon_seguro_circle.png" />
                 </a>
               </div>
               <div class="media-body">
@@ -126,7 +126,7 @@
             <div class="media">
               <div class="media-left media-middle">
                 <a href="cartao-travel-money.php">
-                  <img class="media-object" src="images/icon_cartao_circle.png" />
+                  <img class="media-object" src="assets/images/icon_cartao_circle.png" />
                 </a>
               </div>
               <div class="media-body">
@@ -215,4 +215,4 @@
   </div>
 </section>
 
-<?php include '_footer.php';?>
+<?php include 'includes/_footer.php';?>

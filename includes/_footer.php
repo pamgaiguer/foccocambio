@@ -12,7 +12,7 @@
         <div>
           <div class="media-left media-middle">
             <a href="https://www.facebook.com/focco.cambioeturismo" target="_blank">
-              <img class="media-object" src="images/logo_fb_footer.png" alt="facebook">
+              <img class="media-object" src="assets/images/logo_fb_footer.png" alt="facebook">
             </a>
           </div>
           <div class="media-body border-blue-right">
@@ -45,19 +45,19 @@
         </ul>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-        <img class="img-footer img-responsive center-block" src="images/focco_logo_footer.png">
+        <img class="img-footer img-responsive center-block" src="assets/images/focco_logo_footer.png">
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="images/bacen_authorization.png" alt="bacen" class="img-responsive center-block">
+        <img src="assets/images/bacen_authorization.png" alt="bacen" class="img-responsive center-block">
       </div>
     </div>
   </div>
 </footer>
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mask.min.js"></script>
-<script src="js/main.js"></script>
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.mask.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
