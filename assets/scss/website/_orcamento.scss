@@ -1,0 +1,102 @@
+.orcamento{
+
+  padding-top: 70px;
+  margin-bottom: 150px;
+
+  height: 450px;
+
+  .bg-blue{
+    background-image: url('../images/cotacao-topo-fundo.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 0;
+    margin: 0 auto;
+
+    .logo{
+      margin-top: 25px;
+      margin-left: 25px;
+    }
+    .link-white{
+      font-weight: 700;
+      color: white;
+      font-size: 24px;
+      padding-top: 80px;
+      padding-right: 30px;
+      float: right;
+    }
+  }
+  .gray-stripe{
+    background-color: #e7e7e7;
+    height: 120px;
+
+    .table{
+      text-transform: uppercase;
+
+      thead > tr > th {
+        font-size: 12px;
+        font-weight: 700;
+        color: black;
+        vertical-align: middle;
+        border-bottom: none;
+      }
+      tbody > tr > td {
+        font-size: 12px;
+        font-weight: 500;
+        color: #15264E;
+        vertical-align: middle;
+        border-top: none;
+        border-bottom: 1px dashed #15264E;
+      }
+    }
+  }
+
+  .bg-blue-2{
+    background-color: #15325C;
+  }
+  .bg-gray-table{
+    background-color: #e7e7e7;
+  }
+  .cotacao-resume{
+    p{
+      color: #95ACEA;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      span{
+        color: #E7E7E7;
+      }
+    }
+  }
+
+  hr {
+    border-top: 1px solid #E7E7E7;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .total-vet{
+    color: #e7e7e7;
+    font-size: 17px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    span{
+      font-size: 21px;
+    }
+  }
+  .bg-dark-blue{
+    background-color: #0A2041;
+
+    h3{
+      color: #D4D4D4;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+}

@@ -16262,6 +16262,79 @@ footer {
 .western-union .row:last-child {
   margin: 25px 0; }
 
+.orcamento {
+  padding-top: 70px;
+  margin-bottom: 150px;
+  height: 450px; }
+  .orcamento .bg-blue {
+    background-image: url("../images/cotacao-topo-fundo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 0;
+    margin: 0 auto; }
+    .orcamento .bg-blue .logo {
+      margin-top: 25px;
+      margin-left: 25px; }
+    .orcamento .bg-blue .link-white {
+      font-weight: 700;
+      color: white;
+      font-size: 24px;
+      padding-top: 80px;
+      padding-right: 30px;
+      float: right; }
+  .orcamento .gray-stripe {
+    background-color: #e7e7e7;
+    height: 120px; }
+    .orcamento .gray-stripe .table {
+      text-transform: uppercase; }
+      .orcamento .gray-stripe .table thead > tr > th {
+        font-size: 12px;
+        font-weight: 700;
+        color: black;
+        vertical-align: middle;
+        border-bottom: none; }
+      .orcamento .gray-stripe .table tbody > tr > td {
+        font-size: 12px;
+        font-weight: 500;
+        color: #15264E;
+        vertical-align: middle;
+        border-top: none;
+        border-bottom: 1px dashed #15264E; }
+  .orcamento .bg-blue-2 {
+    background-color: #15325C; }
+  .orcamento .bg-gray-table {
+    background-color: #e7e7e7; }
+  .orcamento .cotacao-resume p {
+    color: #95ACEA;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase; }
+    .orcamento .cotacao-resume p span {
+      color: #E7E7E7; }
+  .orcamento hr {
+    border-top: 1px solid #E7E7E7;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .orcamento .total-vet {
+    color: #e7e7e7;
+    font-size: 17px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    .orcamento .total-vet span {
+      font-size: 21px; }
+  .orcamento .bg-dark-blue {
+    background-color: #0A2041; }
+    .orcamento .bg-dark-blue h3 {
+      color: #D4D4D4;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+      margin-top: 15px;
+      margin-bottom: 15px; }
+
 .cotation-table {
   width: 170px;
   border-bottom-left-radius: 10px;
