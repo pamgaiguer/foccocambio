@@ -171,13 +171,13 @@ $libra = number_format($rows[0]['libra'],2,",","");
                 <strong>São aceitos fechamentos de operação,</strong> via telefone, e-mail,  ou presencialmente em nossa loja. Devido à grande oscilação do mercado, necessitamos caso tenha interesse em finalizar que a confirmação deste seja imediata e o pagamento deverá ser efetuado até às 17h do mesmo dia.
               </li>
               <li>
-                <strong>O horário para reserva</strong> de moedas é entre 09h/17h.
+                <strong>O horário para reserva</strong> de moedas é entre 09h/17h (Horário de Brasília).
               </li>
               <li>
-                Após reserva da moeda, a cotação não será alterada, independente das oscilações do mercado. Em caso de cancelamento, o cadastro ficará bloqueado em nosso sistema perdendo o direito ao desconto em futuras compras.
+                <strong>Após reserva da moeda, a cotação não será alterada, independente das oscilações do mercado.</strong> Em caso de cancelamento, o cadastro ficará bloqueado em nosso sistema perdendo o direito ao desconto em futuras compras.
               </li>
               <li>
-                <strong>Cancelamentos de moedas já pagas, será cobrado uma multa de R$ 150,00,</strong>  descontado o valor na TED de devolução. A devolução só será efetuada na mesma conta de origem, mediante carta preenchida e assinada, e o prazo de devolução em até 48h.
+                <strong>Cancelamentos de moedas já pagas, será cobrado uma multa de 10%</strong> do valor da operação mais o custo do TED de devolução. A devolução só será efetuada na mesma conta de origem, mediante carta preenchida e assinada, e o prazo de devolução em até 48h.
               </li>
             </ul>
             <hr>
@@ -188,7 +188,7 @@ $libra = number_format($rows[0]['libra'],2,",","");
                 <strong>O delivery será agendado no fechamento da moeda com o prazo máximo de 48h</strong> após confirmação de pagamento. Será entregue em horário comercial entre 09h/18h, <strong>incluindo horário de almoço</strong> (Em caso de ausência informar responsável pelo recebimento e conferencia do mesmo). <br>
                 <strong>No caso de ausência no ato da entrega,</strong> será reagendado em até 48h com uma taxa de R$ 30,00. <br>
                 <strong>Por motivos de segurança</strong> e cláusula contratual de seguro, não marcamos horário de entrega. <br>
-                <strong>Alterações de endereço </strong> não poderão ser feitas na mesma data da entrega, a mesma deverá sem reagendada. <br>
+                <strong>Alterações de endereço </strong> não poderão ser feitas na mesma data da entrega, a mesma deverá ser reagendada. <br>
                 <strong>Em caso de entrega na portaria</strong> (mediante autorização do cliente), não nos responsabilizamos por extravios e inconformidade de quantia adquirida.
               </li>
             </ul>
