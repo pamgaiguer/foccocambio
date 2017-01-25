@@ -229,7 +229,20 @@ focco = {
     $("#telFixo").mask("(99) 9999-9999");
     $("#telCelular").mask("(99) 99999-9999");
 
+
+    $("#numPassaporte").keyup(function(){
+      if ($(this).val().length > 0) $("#cpfCnpj").removeAttr("required");
+      else $("#cpfCnpj").attr("required", "required");      
+    });
+
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
+      
+
+      if ($("#numPassaporte").val().length > 0) {
+        $("#validacaoCpf").html("");
+        $("#input-submit").parent().removeClass("disabled");
+        return;
+      }
 
       var cpf = $(this).val();
       var adicionar = true;
@@ -511,7 +524,18 @@ focco = {
     $("#telFixo").mask("(99) 9999-9999");
     $("#telCelular").mask("(99) 99999-9999");
 
+    $("#numPassaporte").keyup(function(){
+      if ($(this).val().length > 0) $("#cpfCnpj").removeAttr("required");
+      else $("#cpfCnpj").attr("required", "required");      
+    });
+
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
+
+      if ($("#numPassaporte").val().length > 0) {
+        $("#validacaoCpf").html("");
+        $("#input-submit").parent().removeClass("disabled");
+        return;
+      }
 
       var cpf = $(this).val();
       var adicionar = false;
@@ -1123,27 +1147,32 @@ focco = {
 
   calculadora: function(){    
 
+
     $.ajax({
-      url: "http://api.fixer.io/latest?base=BRL",
+      url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
       type: "get",
       success: function(r){        
-        for (x in r.rates) {
+        for(var x in r){
+          o = r[x];
+          
+          if (o.COD.indexOf("BRL") == -1) continue;          
+          sigla = o.COD.substr(0, 3);
 
-          comercial = $("#" + x + "-comercial");
+          comercial = $("#" + sigla + "-comercial");
           if (comercial == undefined) continue;
 
-          custo = $("#" + x + "-custo");
-          custoFocco = $("#" + x + "-custoFocco");
-          margPonto = $("#" + x + "-margPonto");
-          txSIof = $("#" + x+ "-txSIof");
-          txCIof = $("#" + x + "-txCIof");
-          txSIofBoletagem = $("#" + x + "-txSIofBoletagem");
-          margLiquidaPercent = $("#" + x + "-margLiquidaPercent");
-          margLiquida = $("#" + x + "-margLiquida");
+          custo = $("#" + sigla + "-custo");
+          custoFocco = $("#" +  sigla + "-custoFocco");
+          margPonto = $("#" +  sigla + "-margPonto");
+          txSIof = $("#" +  sigla + "-txSIof");
+          txCIof = $("#" +  sigla + "-txCIof");
+          txSIofBoletagem = $("#" +  sigla + "-txSIofBoletagem");
+          margLiquidaPercent = $("#" +  sigla + "-margLiquidaPercent");
+          margLiquida = $("#" +  sigla + "-margLiquida");
 
-          txFinal = $("#" + x + "-txFinal");
+          txFinal = $("#" +  sigla + "-txFinal");
 
-          $(comercial).val(fromNumber5((1/r.rates[x])));
+          $(comercial).val(fromNumber5((o.OCP)));
           $(custoFocco).val(fromNumber5( toNumber($(comercial).val()) + (toNumber($(comercial).val()) * toNumber($(custo).val())) / 100 ));
           $(txSIof).val(fromNumber5( toNumber ($(custoFocco).val()) + toNumber($(margPonto).val()) ));
           $(txCIof).val(fromNumber5( toNumber($(txSIof).val()) + (toNumber($(txSIof).val()) * 1.1/100) ));
@@ -1152,7 +1181,7 @@ focco = {
 
           $(txFinal).blur(function(){            
             
-            m = $(this).attr("id").substr(0, 3);            
+            m = $(this).attr("id").substr(0, 3);
             $("#" + m + "-txSIofBoletagem").val(fromNumber5( toNumber($(txSIof).val()) - (toNumber($(txCIof).val()) - toNumber($(this).val())) ));
             $("#" + m + "-margLiquida").val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($("#" + m + "-txSIofBoletagem").val()))-1) ));
 
@@ -1165,7 +1194,6 @@ focco = {
         }
       }
     });
-
 
   },
 
