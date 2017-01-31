@@ -7,7 +7,7 @@ include "../core/database.php";
 <main>
   <div class="row">
     <div class="col s12">
-      <h4>Compra de Moedas</h4>
+      <h4>Interbancários</h4>
     </div>
   </div>
 
@@ -82,10 +82,10 @@ include "../core/database.php";
 
       <div class="input-field col s2">
         <select id="entrega" name="entrega" required>
-          <option value="Banco Paulista" selected>Banco Paulista</option>
+          <option value="Carro Forte" selected>Carro Forte</option>
+          <option value="Banco Paulista">Banco Paulista</option>
           <option value="Rendimento">Rendimento</option>
           <option value="Vision">Vision</option>
-          <option value="Carro Forte">Carro Forte</option>
         </select>
         <label for="entrega">Entrega da Moeda</label>
       </div>

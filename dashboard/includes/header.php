@@ -40,7 +40,7 @@
       <ul id="slide-out" class="side-nav fixed bg-gray white-text">
         <li class="brand-logo center"><img class="" src="/dashboard/images/logo_topo_minor.png" alt="logotipo"></li>
         <li><a href="#!"></a></li>
-        <li><a href="/dashboard/home"><i class="material-icons left">&#xE871;</i> Dashboard</a></li>
+        <li><a href="/dashboard/home"><i class="material-icons left">&#xE871;</i> Início</a></li>
         <li class="">
           <ul class="collapsible collapsible-accordion">
             <li>
@@ -55,6 +55,9 @@
                   if ($_SESSION['currentUser']['tipo'] < 5)
                     echo '<li><a href="/dashboard/clientes/"><i class="material-icons left">&#xE7FE;</i> Clientes</a></li>';
                   ?>
+
+                  <li><a href="/dashboard/mural"><i class="material-icons left">&#xE1B2;</i> Mural</a></li>
+                  <li><a href="/dashboard/blog/"><i class="material-icons left">&#xE8CD;</i> Blog do João</a></li>
 
                 </ul>
               </div>
@@ -71,7 +74,7 @@
         <li><a href="/dashboard/orcamento"><i class="material-icons left">&#xE85D;</i> Orçamento</a></li>
 
         <?php if ($_SESSION['currentUser']['tipo'] < 3)
-          echo '<li><a href="/dashboard/compraMoedas"><i class="material-icons left">&#xE8CC;</i> Compra de Moedas</a></li>';
+          echo '<li><a href="/dashboard/compraMoedas"><i class="material-icons left">&#xE8CC;</i> Interbancários</a></li>';
         ?>
         <li><a href="/dashboard/calculadora"><i class="material-icons left">&#xE0BC;</i> Calculadora</a></li>
       </ul>

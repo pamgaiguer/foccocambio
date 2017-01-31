@@ -191,6 +191,10 @@ input[type=email]{
       tr{
         td{
           text-align: center;
+          &:first-child{
+            font-weight: 700;
+            color: $blue-focco;
+          }
         }
       }
     }

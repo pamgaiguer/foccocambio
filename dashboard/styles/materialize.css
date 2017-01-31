@@ -6432,6 +6432,9 @@ input[type=email] {
   text-align: center; }
 .cotacoes .cotation-table tbody tr td {
   text-align: center; }
+  .cotacoes .cotation-table tbody tr td:first-child {
+    font-weight: 700;
+    color: #15325c; }
 
 .clients nav {
   height: 40px;
