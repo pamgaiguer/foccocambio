@@ -14,6 +14,7 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 </style>
+
 <div class="main-loader" style="display: none;">
   <div class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue-only">
@@ -36,6 +37,8 @@
 <script src="/dashboard/scripts/jquery.mask.min.js"></script>
 <script src="/dashboard/scripts/materialize.min.js"></script>
 <script src="/dashboard/scripts/jquery.elevatezoom.js"></script>
+<script src="/dashboard/scripts/froala/froala_editor.pkgd.min.js"></script>
+<script src="/dashboard/scripts/froala/pt_br.js"></script>
 <script src="/dashboard/scripts/main.js"></script>
 <script>
   $(document).ready(function(){
