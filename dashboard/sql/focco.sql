@@ -202,6 +202,17 @@ CREATE TABLE `enderecoscliente` (
   `pais` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE `blog` (
+  `id` int(11) NOT NULL,
+  `usuarioId` int(11) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
+  `subtitulo` varchar(255) DEFAULT NULL,
+  `conteudo` varchar(21844) DEFAULT NULL,
+  `data` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
 --
 -- Extraindo dados da tabela `enderecoscliente`
 --
@@ -221,6 +232,9 @@ ALTER TABLE `compras`
 -- Indexes for table `documentos`
 --
 ALTER TABLE `documentos`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `blog`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -263,6 +277,9 @@ ALTER TABLE `enderecoscliente`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Limitadores para a tabela `enderecoscliente`

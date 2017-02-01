@@ -1145,8 +1145,7 @@ focco = {
 
   },
 
-  calculadora: function(){    
-
+  calculadora: function(){
 
     $.ajax({
       url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
@@ -1195,6 +1194,54 @@ focco = {
       }
     });
 
+  },
+
+  blogAdicionar: function(){    
+    $('#postContent').froalaEditor({
+      language:'pt_br',
+      charCounterMax: 1000,
+      saveInterval: 2500,
+      fontFamily: {
+        'Avenir-Regular,sans-serif': 'Font 1',
+        'Roboto,sans-serif': 'Font 2',
+      },
+      imageAllowedTypes: ['jpeg', 'jpg', 'png']
+    });
+
+
+    $("#form-blog-adicionar").submit(function(e){
+      e.preventDefault();
+
+      usuarioId = $("#usuarioId").val();
+      titulo = $("#titulo").val();
+      subtitulo = $("#subtitulo").val();
+      conteudo = $("#postContent").val();
+
+      $("#modal-confirm").click(function(e){
+        e.preventDefault();
+
+        $.ajax({
+          url: "/dashboard/blog/adicionarPost.php/",
+          type: "post",
+          data: {usuarioId, titulo, subtitulo, conteudo},
+          beforeSend: function(){
+            $(".main-loader").fadeIn(100);
+          },
+          success: function(r){
+            $(".main-loader").fadeOut(100);
+            window.location = "/dashboard/blog";
+
+          }
+        });
+
+      });
+
+      $('#modal1').openModal();
+
+
+      
+
+    });
   },
 
 

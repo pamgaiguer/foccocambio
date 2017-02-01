@@ -3,8 +3,15 @@
 include "../includes/header.php";
 include "../core/database.php";
 
+$sql_query = "SELECT * FROM blog ORDER BY data DESC;";
+$result = mysqli_query($conn, $sql_query);
+
+
+$rows = array();
+while($row = mysqli_fetch_array($result)) $rows[] = $row;
+
 ?>
-<main class="calculadora">
+<main class="blog">
   <div class="row">
     <div class="col s12">
       <h4>Blog do João</h4>
@@ -19,74 +26,54 @@ include "../core/database.php";
       <table class="striped">
         <thead>
           <tr>
-            <th>Título <i class="material-icons">keyboard_arrow_up</i></th>
+            <th>Título</th>
             <th>Autor</th>
             <th>Data</th>
           </tr>
         </thead>
         <tbody>
+
+        <?php 
+
+        foreach($rows as $r){
+
+          $usuarios = array();
+          $sql_query = sprintf("SELECT * FROM usuarios WHERE id = %s", $r['usuarioId']);
+          $result = mysqli_query($conn, $sql_query);
+          while($row = mysqli_fetch_array($result)) $usuarios[] = $row;
+
+
+          echo '
           <tr>
-            <td><a class="modal-trigger" href="#modal1">Lorem ipsum dolor sit amet, consectetur </a></td>
-            <td>João</td>
-            <td>23/01/2017</td>
+            <td><a target="_blank" href="/dashboard/blog/post?id='.$r['id'].'">'.$r['titulo'].'</a></td>
+            <td>'.$usuarios[0]["nome"].'</td>
+            <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
           </tr>
-          <tr>
-            <td><a class="modal-trigger" href="#modal2">Lorem ipsum dolor sit amet, consectetur </a></td>
-            <td>João</td>
-            <td>23/01/2017</td>
-          </tr>
-          <tr>
-            <td><a class="modal-trigger" href="#modal3">Lorem ipsum dolor sit amet, consectetur </a></td>
-            <td>João</td>
-            <td>23/01/2017</td>
-          </tr>
+          ';
+
+        } 
+
+        ?>
+          
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Titulo do posto do blog</h4>
-      <p>texto do blog</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close btn-flat">Agree</a>
-    </div>
-  </div>
-
-
-  <!-- Modal Structure -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <h4>Titulo do posto do blog</h4>
-      <p>texto do blog</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close btn-flat">Agree</a>
-    </div>
-  </div>
-
-
-  <!-- Modal Structure -->
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <h4>Titulo do posto do blog</h4>
-      <p>texto do blog</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close btn-flat">Agree</a>
-    </div>
-  </div>
 
 
 
+  <?php 
+
+  if ($_SESSION['currentUser']['tipo'] < 3) echo '  
   <div class="row">
     <div class="col s12">
-      <a class="btn bg-blue right">Redigir post</a>
+      <a class="btn bg-blue right" href="/dashboard/blog/adicionar">Redigir post</a>
     </div>
   </div>
+  ';
+
+  ?>
 
 </main>
 
