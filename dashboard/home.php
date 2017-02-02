@@ -17,13 +17,33 @@ $libra = number_format($rows[0]['libra'],2,",","");
 
 ?>
 
-<main>
+<main class="home">
+  <div class="row">
+    <div class="col s12">
+      <div class="card bg-gray">
+        <div class="card-content">
+          <span class="card-title center-align"><strong>Mural</strong></span>
+
+          <ul>
+            <li>Aviso 1 do mural</li>
+            <li>Aviso 2 do mural</li>
+            <li>Aviso 3 do mural</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col s6">
       <div class="card bg-gray">
         <div class="card-content">
-          <span class="card-title center-align">Blog do João</span>
+          <span class="card-title center-align"><strong>Blog do João</strong></span>
+          <ul>
+            <li>Post blog 1</li>
+            <li>Post blog 2</li>
+            <li>Post blog 3</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -38,10 +58,10 @@ $libra = number_format($rows[0]['libra'],2,",","");
     </div>
 
 
-  <div class="row">
+    <div class="row">
 
-</main>
+    </main>
 
-<?php
-include 'includes/footer.php'
-?>
+    <?php
+    include 'includes/footer.php'
+    ?>
