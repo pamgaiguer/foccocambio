@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
         </thead>
         <tbody>
 
-        <?php 
+        <?php
 
         foreach($rows as $r){
 
@@ -42,37 +42,30 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           $result = mysqli_query($conn, $sql_query);
           while($row = mysqli_fetch_array($result)) $usuarios[] = $row;
 
-
           echo '
           <tr>
-            <td><a target="_blank" href="/dashboard/blog/post?id='.$r['id'].'">'.$r['titulo'].'</a></td>
+            <td><a href="/dashboard/blog/post?id='.$r['id'].'">'.$r['titulo'].'</a></td>
             <td>'.$usuarios[0]["nome"].'</td>
             <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
           </tr>
           ';
-
-        } 
-
+        }
         ?>
-          
+
         </tbody>
       </table>
     </div>
   </div>
 
+  <?php
 
-
-
-  <?php 
-
-  if ($_SESSION['currentUser']['tipo'] < 3) echo '  
+  if ($_SESSION['currentUser']['tipo'] < 3) echo '
   <div class="row">
     <div class="col s12">
-      <a class="btn bg-blue right" href="/dashboard/blog/adicionar">Redigir post</a>
+      <a class="btn bg-blue right" href="/dashboard/blog/adicionar">Postar nova matéria</a>
     </div>
   </div>
   ';
-
   ?>
 
 </main>
@@ -80,25 +73,3 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
 <?php
 include '../includes/footer.php';
 ?>
-
-<script>
-  $(document).ready(function(){
-
-
-    $(".modal-trigger").click(function(e){
-      e.preventDefault();
-      $('#modal1').openModal();
-    });
-
-    $(".modal-trigger").click(function(e){
-      e.preventDefault();
-      $('#modal2').openModal();
-    });
-
-    $(".modal-trigger").click(function(e){
-      e.preventDefault();
-      $('#modal3').openModal();
-    });
-
-  });
-</script>

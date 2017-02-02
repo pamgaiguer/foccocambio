@@ -5,7 +5,7 @@ include "../core/functions.php";
 include "../includes/header.php";
 ?>
 <main class="clients">
-
+<div class="spacing"></div>
   <div class="row">
     <div class="col s12">
       <a class="btn bg-blue" href="/dashboard/clientes/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de Clientes</a>

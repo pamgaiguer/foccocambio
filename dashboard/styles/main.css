@@ -85,7 +85,7 @@ header, main, footer {
 
 body {
   color: #707070;
-  font-family: 'Avenir-Regular'; }
+  font-family: 'Roboto', sans-serif; }
 
 .loginForm {
   background-color: #f5f5f5; }
@@ -239,5 +239,26 @@ input[type=email] {
   font-weight: 700;
   text-align: center;
   color: #15325c; }
+
+.mb-0 {
+  margin-bottom: 0; }
+
+.blog p {
+  margin: 0; }
+.blog .title {
+  font-size: 30px;
+  font-weight: 300; }
+.blog .subtitle {
+  font-size: 18px;
+  font-style: italic; }
+.blog .post-date {
+  font-size: 14px;
+  font-weight: 400; }
+.blog .post-author {
+  font-size: 14px;
+  font-weight: 700; }
+.blog .post-content {
+  font-size: 12px;
+  font-weight: 400; }
 
 /*# sourceMappingURL=main.css.map */

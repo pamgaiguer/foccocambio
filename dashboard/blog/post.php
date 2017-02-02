@@ -17,35 +17,63 @@ foreach($rows as $r){
   $usuarioId = $r['usuarioId'];
   $conteudo = $r['conteudo'];
 
-	 $usuarios = array();
+  $usuarios = array();
   $sql_query = sprintf("SELECT * FROM usuarios WHERE id = %s", $r['usuarioId']);
   $result = mysqli_query($conn, $sql_query);
   while($row = mysqli_fetch_array($result)) $usuarios[] = $row;
 
 }
-
 ?>
-<main class="users">
+<main class="blog">
+  <div class="spacing"></div>
   <div class="row">
-    
-
-      <div id="general-data">
-        
-        <div class="col s12">
-          <h2><?php echo $titulo ?></h2>          
-          <h3><?php echo $subtitulo ?></h3>
-          <h4><?php echo $usuarios[0]["nome"] ?></h4>
-          <h5><?php echo date_format(new DateTime($data), 'd/m/Y') ?></h5>
-
-          <div><?php echo $conteudo ?></div>  
-        </div>
-        
-      </div>
-
-    
+    <div class="col s12">
+      <a class="btn bg-blue" href="/dashboard/blog/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de posts</a>
+    </div>
   </div>
+  <div id="general-data">
+    <div class="row mb-0">
+      <div class="col s12">
+        <p class="title">
+          Título: <?php echo $titulo; ?>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <p class="subtitle">
+          Subtítulo: <?php echo $subtitulo; ?>
+        </p>
+      </div>
+    </div>
+
+    <div class="spacing"></div>
 
 
+    <div class="row">
+      <div class="col s6">
+        <p class="post-author">
+          Postado por: <?php echo $usuarios[0]["nome"]; ?>
+        </p>
+      </div>
+      <div class="col s6">
+        <p class="post-date">
+          Postado em: <?php echo date_format(new DateTime($data), 'd/m/Y'); ?>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+
+        <div class="post-content">
+          Texto:
+          <?php echo $conteudo; ?>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <?php

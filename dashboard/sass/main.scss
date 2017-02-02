@@ -11,7 +11,7 @@ header, main, footer {
 }
 body{
   color: $gray;
-  font-family: 'Avenir-Regular';
+  font-family: 'Roboto', sans-serif;
 }
 
 .loginForm{
@@ -253,5 +253,35 @@ input[type=email]{
         }
       }
     }
+  }
+}
+.mb-0{
+  margin-bottom: 0;
+}
+
+.blog{
+  p{
+    margin: 0;
+  }
+
+  .title{
+    font-size: 30px;
+    font-weight: 300;
+  }
+  .subtitle{
+    font-size: 18px;
+    font-style: italic;
+  }
+  .post-date{
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .post-author{
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .post-content{
+    font-size: 12px;
+    font-weight: 400;
   }
 }

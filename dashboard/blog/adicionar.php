@@ -13,7 +13,7 @@ include "../core/database.php";
     </div>
   </div>
 
-  
+
   <form id="form-blog-adicionar">
     <input type="hidden" id="usuarioId" value=<?php echo $_SESSION['currentUser']['id'] ?> />
 
@@ -25,7 +25,7 @@ include "../core/database.php";
 
       <div class="input-field col s4">
         <input id="subtitulo" placeholder="A crise economica no Brasil" type="text">
-        <label>Titulo do post</label>
+        <label>Subtitulo do post</label>
       </div>
 
       <div class="spacing"></div>
@@ -39,12 +39,12 @@ include "../core/database.php";
 
     <div class="row">
       <div class="col s12">
-        <input class="btn bg-blue right" type="submit">Postar no blog</a>
+        <input class="btn bg-blue right" type="submit" value="Postar"></a>
       </div>
     </div>
 
   </form>
-  
+
 
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -64,7 +64,7 @@ include "../core/database.php";
     </div>
   </div>
 
-  
+
 </main>
 
 <?php
