@@ -38,7 +38,7 @@ while($row = mysqli_fetch_array($result)) $blog[] = $row;
           <ul>
 
             <?php 
-              foreach($mural as $m) echo '<li><h4>'.$m['titulo'].' - '.$m['subtitulo'].'</h4></li>';
+              foreach($mural as $m) echo '<li><h4><a target="_blank" href="/dashboard/mural/post?id='.$m['id'].'">'.$m['titulo'].' - '.$m['subtitulo'].'</a></h4></li>';
             ?>
             
           </ul>
@@ -54,7 +54,7 @@ while($row = mysqli_fetch_array($result)) $blog[] = $row;
           <span class="card-title center-align"><strong>Blog do João</strong></span>
           <ul>
             <?php 
-              foreach($blog as $b) echo '<li><h5>'.$b['titulo'].' - '.$b['subtitulo'].'</h5></li>';
+              foreach($blog as $b) echo '<li><h5><a target="_blank" href="/dashboard/blog/post?id='.$b['id'].'">'.$b['titulo'].' - '.$b['subtitulo'].'</a></h5></li>';
             ?>
           </ul>
         </div>
