@@ -29,6 +29,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <th>Título</th>
             <th>Autor</th>
             <th>Data</th>
+            <th class="center">Excluir</th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +48,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
             <td><a href="/dashboard/mural/post?id='.$r['id'].'">'.$r['titulo'].'</a></td>
             <td>'.$usuarios[0]["nome"].'</td>
             <td>'.date_format(new DateTime($r['data']), 'd/m/Y').'</td>
+            <td class="center"><a href="/dashboard/mural/excluir?id='.$r["id"].'"><i class="material-icons" title="Excluir postagem">&#xE92B;</i></a></td>
           </tr>
           ';
         }
