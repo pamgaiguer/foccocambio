@@ -3,7 +3,7 @@
 include "../core/database.php";
 include "../includes/header.php";
 
-$sql_query = sprintf("SELECT * FROM blog WHERE id = %s", $_GET['id']);
+$sql_query = sprintf("SELECT * FROM mural WHERE id = %s", $_GET['id']);
 $result = mysqli_query($conn, $sql_query);
 
 $rows = array();
@@ -24,11 +24,11 @@ foreach($rows as $r){
 
 }
 ?>
-<main class="blog">
+<main class="mural">
   <div class="spacing"></div>
   <div class="row">
     <div class="col s12">
-      <a class="btn bg-blue" href="/dashboard/blog/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de posts</a>
+      <a class="btn bg-blue" href="/dashboard/mural/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de posts</a>
     </div>
   </div>
   <div id="general-data">

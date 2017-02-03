@@ -7,13 +7,24 @@ include "core/database.php";
 
 $sql_query = "SELECT * FROM cotacoes;";
 $result = mysqli_query($conn, $sql_query);
-
 $rows = array();
 while($row = mysqli_fetch_array($result)) $rows[] = $row;
-
 $dolar = number_format($rows[0]['dolar'],2,",","");
 $euro = number_format($rows[0]['euro'],2,",","");
 $libra = number_format($rows[0]['libra'],2,",","");
+
+
+
+$sql_query = "SELECT * FROM mural order by id desc limit 3;";
+$result = mysqli_query($conn, $sql_query);
+$mural = array();
+while($row = mysqli_fetch_array($result)) $mural[] = $row;
+
+
+$sql_query = "SELECT * FROM blog order by id desc limit 3;";
+$result = mysqli_query($conn, $sql_query);
+$blog = array();
+while($row = mysqli_fetch_array($result)) $blog[] = $row;
 
 ?>
 
@@ -25,9 +36,11 @@ $libra = number_format($rows[0]['libra'],2,",","");
           <span class="card-title center-align"><strong>Mural</strong></span>
 
           <ul>
-            <li>Aviso 1 do mural</li>
-            <li>Aviso 2 do mural</li>
-            <li>Aviso 3 do mural</li>
+
+            <?php 
+              foreach($mural as $m) echo '<li><h4>'.$m['titulo'].' - '.$m['subtitulo'].'</h4></li>';
+            ?>
+            
           </ul>
         </div>
       </div>
@@ -40,9 +53,9 @@ $libra = number_format($rows[0]['libra'],2,",","");
         <div class="card-content">
           <span class="card-title center-align"><strong>Blog do João</strong></span>
           <ul>
-            <li>Post blog 1</li>
-            <li>Post blog 2</li>
-            <li>Post blog 3</li>
+            <?php 
+              foreach($blog as $b) echo '<li><h5>'.$b['titulo'].' - '.$b['subtitulo'].'</h5></li>';
+            ?>
           </ul>
         </div>
       </div>
