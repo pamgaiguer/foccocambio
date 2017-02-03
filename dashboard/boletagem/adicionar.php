@@ -58,7 +58,7 @@ $limiteDisponivel = floatval($r['limiteOperacionalAno']) - $totalQtd;
         <label for="select-caixa">Caixa</label>
         <select id="select-caixa" class="browser-default">
           <?php
-          /*if ($categoria == 1)*/ echo '<option value="1">Focco</option>';
+          if ($categoria == 1) echo '<option value="3">Focco</option>';//antigamente era 1, mas agora tem q padronizar fx53 pra evebari
           if ($categoria == 2 || $categoria == 3 || $categoria == 4) echo '<option value="3">FX 53</option>';
 
           ?>
