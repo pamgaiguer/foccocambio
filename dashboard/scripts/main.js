@@ -896,15 +896,30 @@ focco = {
 
   cotacoesFormPost: function(){
 
-    $.ajax({
-      url: "http://api.fixer.io/latest?base=BRL",
-      type: "get",
-      success: function(r){        
-        for (x in r.rates) {
-          $("#td-" + x).html((1/r.rates[x]).toFixed(5));
+    var r = function(){
+
+      $.ajax({
+        url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
+        type: "get",
+        success: function(r){        
+          for(var x in r){
+            o = r[x];
+            
+            if (o.COD.indexOf("BRL") == -1) continue;          
+            sigla = o.COD.substr(0, 3);
+
+            comercial = $("#td-" + sigla);            
+            if (comercial == undefined) continue;            
+            $(comercial).html(fromNumber5((o.OCP)));
+
+          }
         }
-      }
-    });
+      });
+
+      setTimeout(function() {r();}, 3000);
+    }
+
+    r();    
 
     $("#form-cotacoes").submit(function(e){
       e.preventDefault();
@@ -1147,53 +1162,59 @@ focco = {
 
   calculadora: function(){
 
-    $.ajax({
-      url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
-      type: "get",
-      success: function(r){        
-        for(var x in r){
-          o = r[x];
-          
-          if (o.COD.indexOf("BRL") == -1) continue;          
-          sigla = o.COD.substr(0, 3);
+    var r = function(){
 
-          comercial = $("#" + sigla + "-comercial");
-          if (comercial == undefined) continue;
-
-          custo = $("#" + sigla + "-custo");
-          custoFocco = $("#" +  sigla + "-custoFocco");
-          margPonto = $("#" +  sigla + "-margPonto");
-          txSIof = $("#" +  sigla + "-txSIof");
-          txCIof = $("#" +  sigla + "-txCIof");
-          txSIofBoletagem = $("#" +  sigla + "-txSIofBoletagem");
-          margLiquidaPercent = $("#" +  sigla + "-margLiquidaPercent");
-          margLiquida = $("#" +  sigla + "-margLiquida");
-
-          txFinal = $("#" +  sigla + "-txFinal");
-
-          $(comercial).val(fromNumber5((o.OCP)));
-          $(custoFocco).val(fromNumber5( toNumber($(comercial).val()) + (toNumber($(comercial).val()) * toNumber($(custo).val())) / 100 ));
-          $(txSIof).val(fromNumber5( toNumber ($(custoFocco).val()) + toNumber($(margPonto).val()) ));
-          $(txCIof).val(fromNumber5( toNumber($(txSIof).val()) + (toNumber($(txSIof).val()) * 1.1/100) ));
-
-          $(margLiquidaPercent).val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($(txSIof).val()))-1) ));
-
-          $(txFinal).blur(function(){            
+      $.ajax({
+        url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
+        type: "get",
+        success: function(r){        
+          for(var x in r){
+            o = r[x];
             
-            m = $(this).attr("id").substr(0, 3);
-            $("#" + m + "-txSIofBoletagem").val(fromNumber5( toNumber($(txSIof).val()) - (toNumber($(txCIof).val()) - toNumber($(this).val())) ));
-            $("#" + m + "-margLiquida").val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($("#" + m + "-txSIofBoletagem").val()))-1) ));
+            if (o.COD.indexOf("BRL") == -1) continue;          
+            sigla = o.COD.substr(0, 3);
+
+            comercial = $("#" + sigla + "-comercial");
+            if (comercial == undefined) continue;
+
+            custo = $("#" + sigla + "-custo");
+            custoFocco = $("#" +  sigla + "-custoFocco");
+            margPonto = $("#" +  sigla + "-margPonto");
+            txSIof = $("#" +  sigla + "-txSIof");
+            txCIof = $("#" +  sigla + "-txCIof");
+            txSIofBoletagem = $("#" +  sigla + "-txSIofBoletagem");
+            margLiquidaPercent = $("#" +  sigla + "-margLiquidaPercent");
+            margLiquida = $("#" +  sigla + "-margLiquida");
+
+            txFinal = $("#" +  sigla + "-txFinal");
+
+            $(comercial).val(fromNumber5((o.OCP)));
+            $(custoFocco).val(fromNumber5( toNumber($(comercial).val()) + (toNumber($(comercial).val()) * toNumber($(custo).val())) / 100 ));
+            $(txSIof).val(fromNumber5( toNumber ($(custoFocco).val()) + toNumber($(margPonto).val()) ));
+            $(txCIof).val(fromNumber5( toNumber($(txSIof).val()) + (toNumber($(txSIof).val()) * 1.1/100) ));
+
+            $(margLiquidaPercent).val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($(txSIof).val()))-1) ));
+
+            $(txFinal).blur(function(){            
+              
+              m = $(this).attr("id").substr(0, 3);
+              $("#" + m + "-txSIofBoletagem").val(fromNumber5( toNumber($(txSIof).val()) - (toNumber($(txCIof).val()) - toNumber($(this).val())) ));
+              $("#" + m + "-margLiquida").val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($("#" + m + "-txSIofBoletagem").val()))-1) ));
 
 
 
-          });
+            });
 
 
 
+          }
         }
-      }
-    });
+      });
 
+      setTimeout(function() {r();}, 3000);
+    }
+
+    r();
   },
 
   blogAdicionar: function(){    
@@ -1483,11 +1504,16 @@ focco = {
       aCombinar = document.getElementsByName('entregaACombinar')[0].checked;
 
       $.ajax({
-        url: "http://api.fixer.io/latest?base=BRL",
+        url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
         type: "get",
-        success: function(r){                  
-          debito = fromNumber((toNumber(quantidade) * toNumber(taxa)) / (1/r.rates["USD"]));          
-          
+        success: function(r){        
+          for(var x in r){
+            o = r[x];
+
+            if (o.COD.indexOf("BRL") == -1) continue;          
+            if (o.COD.indexOf("USD") != -1) debito = fromNumber((toNumber(quantidade) * toNumber(taxa)) / (o.OCP));
+          }
+
           $.ajax({
             url: "/dashboard/boletagem/adicionarPost.php/",
             type: "post",
@@ -1508,10 +1534,10 @@ focco = {
             }
 
           });
-
-
         }
-      });      
+      });
+
+            
 
     });
 
