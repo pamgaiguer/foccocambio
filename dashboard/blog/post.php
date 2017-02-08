@@ -9,7 +9,7 @@ $result = mysqli_query($conn, $sql_query);
 $rows = array();
 while($row = mysqli_fetch_array($result)) $rows[] = $row;
 
-foreach($rows as $r){    
+foreach($rows as $r){
   $id = $r['id'];
   $titulo = $r['titulo'];
   $subtitulo = $r['subtitulo'];
@@ -28,7 +28,7 @@ foreach($rows as $r){
   <div class="spacing"></div>
   <div class="row">
     <div class="col s12">
-      <a class="btn bg-blue" href="/dashboard/blog/"><i class="material-icons left">&#xE5C4;</i> Voltar para tela de posts</a>
+      <a class="btn bg-blue" href="/dashboard/home/"><i class="material-icons left">&#xE5C4;</i> Voltar para início</a>
     </div>
   </div>
   <div id="general-data">
@@ -69,7 +69,7 @@ foreach($rows as $r){
 
         <div class="post-content">
           Texto:
-          <?php           
+          <?php
           echo $conteudo; ?>
         </div>
       </div>

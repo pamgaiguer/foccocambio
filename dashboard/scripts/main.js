@@ -39,7 +39,7 @@ focco = {
 
   home: function(){
 
-  
+
   },
 
   redefinirSenhaFormPost : function(){
@@ -232,11 +232,11 @@ focco = {
 
     $("#numPassaporte").keyup(function(){
       if ($(this).val().length > 0) $("#cpfCnpj").removeAttr("required");
-      else $("#cpfCnpj").attr("required", "required");      
+      else $("#cpfCnpj").attr("required", "required");
     });
 
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
-      
+
 
       if ($("#numPassaporte").val().length > 0) {
         $("#validacaoCpf").html("");
@@ -526,7 +526,7 @@ focco = {
 
     $("#numPassaporte").keyup(function(){
       if ($(this).val().length > 0) $("#cpfCnpj").removeAttr("required");
-      else $("#cpfCnpj").attr("required", "required");      
+      else $("#cpfCnpj").attr("required", "required");
     });
 
     $("#cpfCnpj").mask("999.999.999-99").keyup(function(){
@@ -778,7 +778,7 @@ focco = {
             beforeSend: function(){
               $(".main-loader").fadeIn(100);
             },
-            success: function(r){              
+            success: function(r){
               $("#table-body-clientes").html(r);
               $(".main-loader").fadeOut(100);
             }
@@ -901,25 +901,28 @@ focco = {
       $.ajax({
         url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
         type: "get",
-        success: function(r){        
+        success: function(r){
           for(var x in r){
             o = r[x];
-            
-            if (o.COD.indexOf("BRL") == -1) continue;          
+
+            if (o.COD.indexOf("BRL") == -1) continue;
             sigla = o.COD.substr(0, 3);
 
-            comercial = $("#td-" + sigla);            
-            if (comercial == undefined) continue;            
+            comercial = $("#td-" + sigla);
+            if (comercial == undefined) continue;
             $(comercial).html(fromNumber5((o.OCP)));
 
           }
         }
       });
 
-      setTimeout(function() {r();}, 3000);
+      setTimeout(function() {
+        console.log('cotacoes atualizadas a cada 1s');
+        r();
+      }, 1000);
     }
 
-    r();    
+    r();
 
     $("#form-cotacoes").submit(function(e){
       e.preventDefault();
@@ -1081,14 +1084,14 @@ focco = {
         },
         success: function(r){
           $("#table-body-compras").html(r);
-          
+
           $.ajax({
             url: "/dashboard/compraMoedas/methods/totais.php/",
             type: "post",
-            data: { search },            
-            success: function(r){   
-              r = JSON.parse(r);              
-              
+            data: { search },
+            success: function(r){
+              r = JSON.parse(r);
+
               $("#totalMoeda").val(r[0].toFixed(2)).mask("#.##0,00");
               $("#totalReal").val(r[1].toFixed(2)).mask("#.##0,00");
               $("#mediaPonderada").val(r[2].toFixed(5)).mask("0,00000");
@@ -1096,8 +1099,8 @@ focco = {
               $(".main-loader").fadeOut(100);
 
             }
-          });          
-          
+          });
+
         }
       });
 
@@ -1106,11 +1109,11 @@ focco = {
 
   adicionarCompraMoedas: function(){
     $('.currency').mask("#.##0,00", {reverse: true});
-    
+
 
     $("#quantidade").blur(function(){
       if (toNumber($("#taxa").val()) > 0.00){
-        $("#total").val(fromNumber( toNumber($(this).val()) * toNumber($("#taxa").val()) )).blur();                        
+        $("#total").val(fromNumber( toNumber($(this).val()) * toNumber($("#taxa").val()) )).blur();
       }
     });
 
@@ -1130,16 +1133,16 @@ focco = {
       data = $("#data", $(this)).val();
       quantidade = $("#quantidade", $(this)).val();
       taxa = $("#taxa", $(this)).val();
-      total = $("#total", $(this)).val();      
+      total = $("#total", $(this)).val();
       fechamento = $("#fechamento", $(this)).val();
       entrega = $("#entrega", $(this)).val();
-      
+
       $.ajax({
         url: "/dashboard/compraMoedas/adicionarPost.php/",
         type: "post",
         data: {
-          usuarioId, moeda, caixa, data, quantidade, 
-          taxa, total, fechamento, entrega 
+          usuarioId, moeda, caixa, data, quantidade,
+          taxa, total, fechamento, entrega
         },
         beforeSend: function(){
           $(".main-loader").fadeIn(100);
@@ -1167,11 +1170,11 @@ focco = {
       $.ajax({
         url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
         type: "get",
-        success: function(r){        
+        success: function(r){
           for(var x in r){
             o = r[x];
-            
-            if (o.COD.indexOf("BRL") == -1) continue;          
+
+            if (o.COD.indexOf("BRL") == -1) continue;
             sigla = o.COD.substr(0, 3);
 
             comercial = $("#" + sigla + "-comercial");
@@ -1195,29 +1198,26 @@ focco = {
 
             $(margLiquidaPercent).val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($(txSIof).val()))-1) ));
 
-            $(txFinal).blur(function(){            
-              
+            $(txFinal).blur(function(){
+
               m = $(this).attr("id").substr(0, 3);
               $("#" + m + "-txSIofBoletagem").val(fromNumber5( toNumber($(txSIof).val()) - (toNumber($(txCIof).val()) - toNumber($(this).val())) ));
               $("#" + m + "-margLiquida").val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($("#" + m + "-txSIofBoletagem").val()))-1) ));
-
-
-
             });
-
-
-
           }
         }
       });
 
-      setTimeout(function() {r();}, 3000);
+      setTimeout(function() {
+        console.log('calculadora atualizada a cada 3s');
+        r();
+      }, 3000);
     }
 
     r();
   },
 
-  blogAdicionar: function(){    
+  blogAdicionar: function(){
     $('#postContent').froalaEditor({
       language:'pt_br',
       charCounterMax: 1000,
@@ -1257,12 +1257,12 @@ focco = {
 
       });
 
-      $('#modal1').openModal();      
+      $('#modal1').openModal();
 
     });
   },
 
-  muralAdicionar: function(){    
+  muralAdicionar: function(){
     $('#postContent').froalaEditor({
       language:'pt_br',
       charCounterMax: 1000,
@@ -1302,7 +1302,7 @@ focco = {
 
       });
 
-      $('#modal1').openModal();      
+      $('#modal1').openModal();
 
     });
   },
@@ -1405,7 +1405,7 @@ focco = {
       });
     });
 
-    
+
 
     $("#quantidade").blur(function(){
       if (toNumber($("#taxa").val()) > 0.00){
@@ -1506,11 +1506,11 @@ focco = {
       $.ajax({
         url: "http://webservice.enfoque.com.br/wsFoccoCambio/cotacoes.asmx/MoedasJSON?login=wsFoccoCambio2016&senha=Moedas2016",
         type: "get",
-        success: function(r){        
+        success: function(r){
           for(var x in r){
             o = r[x];
 
-            if (o.COD.indexOf("BRL") == -1) continue;          
+            if (o.COD.indexOf("BRL") == -1) continue;
             if (o.COD.indexOf("USD") != -1) debito = fromNumber((toNumber(quantidade) * toNumber(taxa)) / (o.OCP));
           }
 
@@ -1537,7 +1537,7 @@ focco = {
         }
       });
 
-            
+
 
     });
 
@@ -1552,7 +1552,7 @@ toNumber = function(n){
   if (n == "") n = 0;
   n += "";
   n = n.replace(".", "");
-  n = n.replace(",", ".");      
+  n = n.replace(",", ".");
   n = parseFloat(n);
   if (n === NaN) n = 0;
   return parseFloat(n);

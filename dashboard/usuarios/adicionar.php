@@ -60,7 +60,7 @@ include "../includes/header.php";
               <i class="material-icons prefix">&#xE851;</i>
               <select name="tipo" id="tipo">
                 <option value="2" class="bg-blue"> Diretoria</option>
-                <option value="3" selected>Gerencia</option>
+                <option value="3">Gerencia</option>
                 <option value="4" selected>Analista</option>
                 <option value="5">Analista (boletagem)</option>
               </select>

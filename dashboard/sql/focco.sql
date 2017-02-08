@@ -47,7 +47,10 @@ INSERT INTO `usuarios` (`id`, `login`, `senha`, `tipo`, `nome`, `email`, `telefo
 (3, 'leo', 'meutimaoeo', 2, 'Leonardo', 'leozac@gmail.com', '(11) 11111-1111'),
 (4, 'tatiane', '240601', 2, 'Tatiane Marchi', 'tatiane.marchi@foccocambio.com.br', '(11) 11111-1111'),
 (5, 'allison', '2424281911', 2, 'Allison Marchi', 'allison@foccocambio.com.br', '(11) 11111-1111'),
-(6, 'teste', 'REDEFINIR', 2, 'Teste Focco', 'teste@foccocambio.com.br', '(11) 11111-1111');
+(6, 'teste', '2424281911', 2, 'Teste Focco', 'teste@foccocambio.com.br', '(11) 11111-1111'),
+(7, 'gerente', '2424281911', 3, 'Gerente Teste', 'gerente@foccocambio.com.br', '(11) 11111-1111'),
+(8, 'analista', '2424281911', 4, 'Analista Teste', 'analista@foccocambio.com.br', '(11) 11111-1111'),
+(9, 'boletador', '2424281911', 5, 'Boletador', 'boletador@foccocambio.com.br', '(11) 11111-1111');
 
 --
 -- Estrutura da tabela `clientes`
@@ -237,7 +240,7 @@ ALTER TABLE `boletagem`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `compras`
-  ADD PRIMARY KEY (`id`);  
+  ADD PRIMARY KEY (`id`);
 --
 -- Indexes for table `documentos`
 --

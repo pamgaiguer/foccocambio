@@ -285,3 +285,22 @@ input[type=email]{
     font-weight: 400;
   }
 }
+
+.card-mural, .card-blog{
+  .collection-item.avatar .title {
+    line-height: 40px;
+  }
+  .collection{
+    .collection-item{
+      a{
+        color: $blue-focco;
+
+        &:hover, &:visited, &:focus{
+          color: $blue-dark-shadow;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -44,19 +44,25 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
           foreach($rows as $r){
             switch ($r["tipo"]) {
               case 2:
-                $tipoUsuario = "Admin";
+                $tipoUsuario = "Diretoria";
                 break;
 
               case 3:
-                $tipoUsuario = "Usuário";
+                $tipoUsuario = "Gerente";
                 break;
-              
+
+              case 4:
+                $tipoUsuario = "Analista";
+                break;
+
+              case 5:
+                $tipoUsuario = "Analista (boletagem)";
+                break;
+
               default:
                 $tipoUsuario = "Usuário (boletagem)";
                 break;
             }
-
-            
 
             echo
             '<tr>

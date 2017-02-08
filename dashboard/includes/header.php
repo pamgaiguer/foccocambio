@@ -60,20 +60,25 @@ date_default_timezone_set('America/Sao_Paulo');
                   if ($_SESSION['currentUser']['tipo'] < 5)
                     echo '<li><a href="/dashboard/clientes/"><i class="material-icons left">&#xE7FE;</i> Clientes</a></li>';
                   ?>
-
-                  <li><a href="/dashboard/mural"><i class="material-icons left">&#xE1B2;</i> Mural</a></li>
-                  <li><a href="/dashboard/blog/"><i class="material-icons left">&#xE8CD;</i> Blog do João</a></li>
-
                 </ul>
               </div>
             </li>
           </ul>
         </li>
 
+        <?php
+        if ($_SESSION['currentUser']['tipo'] < 2)
+          echo '
+        <li><a href="/dashboard/mural"><i class="material-icons left">&#xE1B2;</i> Mural</a></li>
+        <li><a href="/dashboard/blog/"><i class="material-icons left">&#xE8CD;</i> Blog do João</a></li>
+        ';
+        ?>
+
         <?php if ($_SESSION['currentUser']['tipo'] < 4)
         echo
         '<li><a href="/dashboard/cotacoes"><i class="material-icons left">&#xE227;</i> Cotações</a></li>'
         ?>
+
 
         <li><a href="/dashboard/boletagem"><i class="material-icons left">&#xE922;</i> Boletagem</a></li>
         <li><a href="/dashboard/orcamento"><i class="material-icons left">&#xE85D;</i> Orçamento</a></li>

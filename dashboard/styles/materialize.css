@@ -6698,4 +6698,13 @@ input[type=email] {
   font-size: 12px;
   font-weight: 400; }
 
+.card-mural .collection-item.avatar .title, .card-blog .collection-item.avatar .title {
+  line-height: 40px; }
+.card-mural .collection .collection-item a, .card-blog .collection .collection-item a {
+  color: #15325c; }
+  .card-mural .collection .collection-item a:hover, .card-mural .collection .collection-item a:visited, .card-mural .collection .collection-item a:focus, .card-blog .collection .collection-item a:hover, .card-blog .collection .collection-item a:visited, .card-blog .collection .collection-item a:focus {
+    color: #183969;
+    text-decoration: underline;
+    cursor: pointer; }
+
 /*# sourceMappingURL=materialize.css.map */

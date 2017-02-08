@@ -64,7 +64,7 @@ while($row = mysqli_fetch_array($result)) $rows[] = $row;
   if ($_SESSION['currentUser']['tipo'] < 3) echo '
   <div class="row">
     <div class="col s12">
-      <a class="btn bg-blue right" href="/dashboard/mural/adicionar">Postar nova matéria</a>
+      <a class="btn bg-blue right" href="/dashboard/mural/adicionar">Postar novo lembrete</a>
     </div>
   </div>
   ';

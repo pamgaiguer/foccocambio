@@ -10,13 +10,15 @@ include "../core/database.php";
       <h4>Cotações</h4>
       <blockquote>
         Área para visualização dos valores comerciais do robô de câmbio - valores enviados pela Enfoque.
+        <br>
+        Intervalo entre o envio das cotações: 1s
       </blockquote>
     </div>
   </div>
 
   <form id="form-cotacoes">
     <div class="row">
-    <div class="col s3">
+      <div class="col s3">
 
         <table class="cotation-table striped">
           <thead>
