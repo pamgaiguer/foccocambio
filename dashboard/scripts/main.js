@@ -908,18 +908,22 @@ focco = {
             if (o.COD.indexOf("BRL") == -1) continue;
             sigla = o.COD.substr(0, 3);
 
-            comercial = $("#td-" + sigla);
+            comercial = $("#td-" + sigla + " span");
             if (comercial == undefined) continue;
+            $(comercial).fadeOut(100);
             $(comercial).html(fromNumber5((o.OCP)));
+            $(comercial) .fadeIn(500);
+            
+            
 
           }
         }
       });
 
       setTimeout(function() {
-        console.log('cotacoes atualizadas a cada 1s');
+        console.log('cotacoes atualizadas a cada 2s');
         r();
-      }, 1000);
+      }, 2000);
     }
 
     r();
