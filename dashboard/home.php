@@ -25,16 +25,23 @@ while($row = mysqli_fetch_array($result)) $blog[] = $row;
 
           <ul class="collection">
             <?php
-            foreach($mural as $m) echo '
+            foreach($mural as $m) {
+              $usuarios = array();
+              $sql_query = sprintf("SELECT * FROM usuarios WHERE id = %s", $m['usuarioId']);
+              $result = mysqli_query($conn, $sql_query);
+              while($row = mysqli_fetch_array($result)) $usuarios[] = $row;
+
+              echo '
               <li class="collection-item avatar">
                 <i class="material-icons circle">&#xE1B2;</i>
                 <a href="/dashboard/mural/post?id='.$m['id'].'">
                   <span class="title">'.$m['titulo'].'</span>
                   <p>
-                    <small><em>por autor</em></small>
+                    <small><em>'.$usuarios[0]["nome"].'</em></small>
                   </p></a>
                   <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
                 </li>';
+              }
                 ?>
               </ul>
             </div>
@@ -49,16 +56,23 @@ while($row = mysqli_fetch_array($result)) $blog[] = $row;
               <span class="card-title center-align"><strong>Blog do João</strong></span>
               <ul class="collection">
                 <?php
-                foreach($blog as $b) echo '
+                foreach($blog as $b) {
+                  $usuarios = array();
+                  $sql_query = sprintf("SELECT * FROM usuarios WHERE id = %s", $b['usuarioId']);
+                  $result = mysqli_query($conn, $sql_query);
+                  while($row = mysqli_fetch_array($result)) $usuarios[] = $row;
+
+                  echo '
                   <li class="collection-item avatar">
                     <i class="material-icons circle">&#xE8CD;</i>
-                    <a href="/dashboard/mural/post?id='.$b['id'].'">
+                    <a href="/dashboard/blog/post?id='.$b['id'].'">
                       <span class="title">'.$b['titulo'].'</span>
                       <p>
-                        <small><em>por autor</em></small>
+                        <small><em>'.$usuarios[0]["nome"].'</em></small>
                       </p></a>
                       <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
                     </li>';
+                  }
                     ?>
                   </ul>
                 </div>
