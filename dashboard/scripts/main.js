@@ -908,10 +908,12 @@ focco = {
             if (o.COD.indexOf("BRL") == -1) continue;
             sigla = o.COD.substr(0, 3);
 
+            console.log(sigla + ": R$ " + o.OVD);
+
             comercial = $("#td-" + sigla + " span");
             if (comercial == undefined) continue;
             $(comercial).fadeOut(100);
-            $(comercial).html(fromNumber5((o.OCP)));
+            $(comercial).html(fromNumber5((o.OVD)));
             $(comercial) .fadeIn(500);
             
             
@@ -1195,7 +1197,7 @@ focco = {
 
             txFinal = $("#" +  sigla + "-txFinal");
 
-            $(comercial).val(fromNumber5((o.OCP)));
+            $(comercial).val(fromNumber5((o.OVD)));
             $(custoFocco).val(fromNumber5( toNumber($(comercial).val()) + (toNumber($(comercial).val()) * toNumber($(custo).val())) / 100 ));
             $(txSIof).val(fromNumber5( toNumber ($(custoFocco).val()) + toNumber($(margPonto).val()) ));
             $(txCIof).val(fromNumber5( toNumber($(txSIof).val()) + (toNumber($(txSIof).val()) * 1.1/100) ));
@@ -1213,9 +1215,9 @@ focco = {
       });
 
       setTimeout(function() {
-        console.log('calculadora atualizada a cada 3s');
+        console.log('calculadora atualizada a cada 2s');
         r();
-      }, 3000);
+      }, 2000);
     }
 
     r();
@@ -1515,7 +1517,7 @@ focco = {
             o = r[x];
 
             if (o.COD.indexOf("BRL") == -1) continue;
-            if (o.COD.indexOf("USD") != -1) debito = fromNumber((toNumber(quantidade) * toNumber(taxa)) / (o.OCP));
+            if (o.COD.indexOf("USD") != -1) debito = fromNumber((toNumber(quantidade) * toNumber(taxa)) / (o.OVD));
           }
 
           $.ajax({
