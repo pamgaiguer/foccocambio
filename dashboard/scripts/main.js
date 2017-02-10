@@ -1313,6 +1313,115 @@ focco = {
     });
   },
 
+  orcamentoCalculos: function(){
+    $(".orcOperacao").change(function(e){
+      contexto = $(e.currentTarget).parent().parent();
+
+      switch($(this).val()){
+        case "1": $(".orcIOF", contexto).val("1,1");  break;
+        case "2":
+        if ($(".orcModalidade", contexto).val() == 2)
+          $(".orcIOF", contexto).val("6,38");
+        else
+          $(".orcIOF", contexto).val("0,38");
+        break;
+
+        case "3": $(".orcIOF", contexto).val("0,38"); break;
+        case "4": $(".orcIOF", contexto).val("0"); break;
+        default: break;
+      }
+      $(".orcIOF").blur();
+      
+    });
+
+    $(".orcOperacao").change();
+
+
+    $(".orcQtd").blur(function(e){
+      contexto = $(e.currentTarget).parent().parent();
+      if (toNumber($(".orcTaxa", contexto).val()) > 0.00){
+        $(".orcTotalSIOF", contexto).val(fromNumber( toNumber($(this).val()) * toNumber($(".orcTaxa", contexto).val()) )).blur();
+      }
+    });
+
+    $(".orcTaxa").blur(function(e){
+      contexto = $(e.currentTarget).parent().parent();
+      
+      if (toNumber($(".orcQtd", contexto).val()) > 0.00){        
+        $(".orcTotalSIOF", contexto).val(fromNumber( toNumber($(this).val()) * toNumber($(".orcQtd", contexto).val()) )).blur();        
+        $(".orcVET", contexto).val(fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcDARF", contexto).val()) + (toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100) ));        
+      }
+    });
+
+    $(".orcDARF").blur(function(e){            
+      contexto = $(e.currentTarget).parent().parent();
+
+      $(".orcVET", contexto).val(fromNumber(
+        toNumber($(this).val()) + (toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100)
+      ));
+
+      
+      $(".orcTaxa", contexto).blur();
+
+    });
+
+    $(".orcIOF").blur(function(e){
+      contexto = $(e.currentTarget).parent().parent();
+
+      $(".orcVET", contexto).val(fromNumber(
+        toNumber($(".orcDARF", contexto).val()) + (toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100)
+      ));
+
+    });
+  },
+
+  orcamento: function(){
+    $("#link-adicionar-orcamento").click(function(e){
+
+      e.preventDefault();
+      model = $("#div-linha-orcamento-model").clone();
+      model.attr("id", "");      
+
+      $("#div-linhas-orcamento").append(model[0]);      
+      $("#div-linhas-orcamento").append("<script type='text/javascript'> focco.orcamentoCalculos(); </script>");
+      
+    });
+
+    $("#btn-enviar-orcamento").click(function(e){
+      e.preventDefault();
+
+      
+      trs = "";
+      $(".div-linha-orcamento").each(function(key, contexto){        
+        taxa = $(".orcTaxa", contexto).val();
+        if (toNumber(taxa) == 0) return;
+        
+        moeda = $(".orcMoedas", contexto).val();
+        modalidade = $(".orcModalidade", contexto).val();        
+        operacao = $(".orcOperacao option:selected", contexto).text();
+        quantidade = fromNumber($(".orcQtd", contexto).val());
+        iof = fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100 );
+        subtotal = fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100 );
+
+
+        linha = "<tr> "+
+        "  <td>"+moeda+"</td> "+
+        "  <td>"+(modalidade == 2 ? 'VENDA' : 'COMPRA')+"</td>"+
+        "  <td>"+operacao+"</td>"+
+        "  <td>"+quantidade+"</td>"+
+        "  <td>"+fromNumber5(toNumber(taxa).toFixed(5))+"</td>"+
+        "  <td>"+iof+"</td>"+
+        "  <td>"+subtotal+"</td>"+
+        "</tr>";
+
+        trs += linha;
+      });
+
+      console.log(trs); //essa variável vai ter q entrar no .html() do <tbody> no email 
+
+    });
+  },
+
 
   adicionarBoletagem: function(){
 
@@ -1479,7 +1588,7 @@ focco = {
     $("#darf").blur(function(){
       $("#vet").val(fromNumber(
         toNumber($(this).val()) + toNumber($("#subtotal").val()) + toNumber($("#iof").val()) + toNumber($("#swift").val())
-        ));
+      ));
 
       $("#vettaxa").val(fromNumber5( (toNumber($("#vet").val()) / toNumber($("#quantidade").val())) ));
     });
