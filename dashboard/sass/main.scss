@@ -1,5 +1,8 @@
 @import 'patterns';
 
+
+
+
 /*Sidebar Fixed CSS fix*/
 header, main, footer {
   padding-left: 240px;
@@ -13,6 +16,62 @@ body{
   color: $gray;
   font-family: 'Roboto', sans-serif;
 }
+
+$max: 72;
+$step: 4;
+
+@for $size from 0 through ceil($max/$step) {
+  .mb-#{$size*$step} { margin-bottom: #{$size*$step}px; }
+  .mr-#{$size*$step} { margin-right: #{$size*$step}px; }
+  .ml-#{$size*$step} { margin-left: #{$size*$step}px; }
+  .mt-#{$size*$step} { margin-top: #{$size*$step}px; }
+}
+
+@for $size from 0 through ceil($max/$step) {
+  .pb-#{$size*$step} { padding-bottom: #{$size*$step}px; }
+  .pr-#{$size*$step} { padding-right: #{$size*$step}px; }
+  .pl-#{$size*$step} { padding-left: #{$size*$step}px; }
+  .pt-#{$size*$step} { padding-top: #{$size*$step}px; }
+}
+
+.scrollToTop {
+  width: 42px;
+  height: 42px;
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: none;
+  cursor: pointer;
+  border: none;
+  background-color: rgba($gray, 0.8);
+  z-index: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+
+  &:hover, &:visited, &:focus {
+    text-decoration: none;
+    background-color: $gray;
+    color: #fff;
+  }
+
+  i {
+    line-height: 24px;
+  }
+}
+
+
 
 .loginForm{
   background-color: $light-gray;
@@ -300,6 +359,25 @@ input[type=email]{
           color: $blue-dark-shadow;
           text-decoration: underline;
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.interbancarios{
+  table{
+    thead{
+      tr{
+        th{
+          text-transform: uppercase;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          //text-align: center;
         }
       }
     }

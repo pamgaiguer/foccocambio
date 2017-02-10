@@ -2,7 +2,7 @@
 include "../includes/header.php";
 include "../core/database.php";
 ?>
-<main>
+<main class="interbancarios">
   <div class="row">
     <div class="col s12">
       <h4>Interbancários</h4>
@@ -12,68 +12,155 @@ include "../core/database.php";
     </div>
   </div>
 
-
-  <form id="form-busca-compraMoedas">
-    <div class="row">
-      <div class="col s2">
-        <input type="search" id="search">
-        <button class="btn bg-blue" type="submit">
-          Filtrar dia
-          <i class="material-icons right">&#xE8B6;</i>
-        </button>
-      </div>
-
-    </div>
-  </form>
-
   <div class="row">
-
-    <div class="input-field col s3">
-      <input id="totalReal" name="totalReal" type="text" placeholder="0">
-      <label for="totalReal">Total Real</label>
-    </div>
-
-    <div class="input-field col s3">
-      <input id="totalMoeda" name="totalMoeda" type="text" placeholder="0">
-      <label for="totalMoeda">Total Dólar</label>
-    </div>
-
-    <div class="input-field col s3">
-      <input id="mediaPonderada" name="mediaPonderada" type="text" placeholder="0">
-      <label for="mediaPonderada">Real / Moeda</label>
-    </div>
-
-  </div>
-
-  <div class="spacing"></div>
-
-  <div class="row">
-    <div class="col s12">
-      <table>
+    <div class="col s4">
+      <table class="responsive-table striped">
         <thead>
           <tr>
-            <th>Data/hora</th>
-            <th>Usuario</th>
             <th>Moeda</th>
-            <th>Caixa</th>
-            <th>Qtdade</th>
-            <th>Taxa</th>
-            <th>Total</th>
-            <th>Fechamento</th>
-            <th>Entrega</th>
+            <th>FoccoX</th>
+            <th>Focco</th>
+            <th>Banco</th>
+            <th>FX53</th>
+            <th>Carro-Forte</th>
           </tr>
         </thead>
-        <tbody id="table-body-compras">
+        <tbody>
           <tr>
-            <td>Data/hora</td>
-            <td>Usuario</td>
-            <td>Moeda</td>
-            <td>Caixa</td>
-            <td>Qtdade</td>
-            <td>Taxa</td>
-            <td>Total</td>
-            <td>Fechamento</td>
-            <td>Entrega</td>
+            <td><strong>USD</strong></td>
+            <td>Total FoccoX</td>
+            <td>Total Focco</td>
+            <td>Total Banco</td>
+            <td>Total FX53</td>
+            <td>Total Carro Forte</td>
+          </tr>
+          <tr>
+            <td><strong>EUR</strong></td>
+            <td>Total FoccoX</td>
+            <td>Total Focco</td>
+            <td>Total Banco</td>
+            <td>Total FX53</td>
+            <td>Total Carro Forte</td>
+          </tr>
+          <tr>
+            <td><strong>GBP</strong></td>
+            <td>Total FoccoX</td>
+            <td>Total Focco</td>
+            <td>Total Banco</td>
+            <td>Total FX53</td>
+            <td>Total Carro Forte</td>
+          </tr>
+          <tr>
+            <td><strong>JPY</strong></td>
+            <td>Total FoccoX</td>
+            <td>Total Focco</td>
+            <td>Total Banco</td>
+            <td>Total FX53</td>
+            <td>Total Carro Forte</td>
+          </tr>
+          <tr>
+            <td><strong>CAD</strong></td>
+            <td>Total FoccoX</td>
+            <td>Total Focco</td>
+            <td>Total Banco</td>
+            <td>Total FX53</td>
+            <td>Total Carro Forte</td>
+          </tr>
+          <tr>
+            <td><strong>XXX</strong></td>
+            <td>Total FoccoX</td>
+            <td>Total Focco</td>
+            <td>Total Banco</td>
+            <td>Total FX53</td>
+            <td>Total Carro Forte</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Real $</strong></td>
+            <td><strong>Real $</strong></td>
+            <td><strong>Real $</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="col s3">
+      <table class="responsive-table striped">
+        <thead>
+          <tr>
+            <th>VTM</th>
+            <th>FoccoX</th>
+            <th>Focco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>VTG</strong></td>
+            <td>Valor</td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td><strong>VTM</strong></td>
+            <td>Valor</td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td><strong>VTM</strong></td>
+            <td>Valor</td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td><strong>VTM</strong></td>
+            <td>Valor</td>
+            <td>Valor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col s3">
+      <table class="responsive-table striped">
+        <thead>
+          <tr>
+            <th>Moeda</th>
+            <th>Remessa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>RRR</strong></td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td><strong>RRR</strong></td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td><strong>RRR</strong></td>
+            <td>Valor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col s2">
+      <table class="responsive-table striped">
+        <thead>
+          <tr>
+            <th>Moeda (vision)</th>
+            <th>FX53</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>XXX</strong></td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td><strong>XXX</strong></td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td><strong>XXX</strong></td>
+            <td>Valor</td>
           </tr>
         </tbody>
       </table>
@@ -82,19 +169,14 @@ include "../core/database.php";
 
   <div class="row">
     <div class="col s12">
-    <a class="btn bg-blue right" href="/dashboard/compraMoedas/adicionar">Comprar moeda</a>
-    </div>
-  </div>
+      <a class="btn bg-blue right" href="adicionar.php">Comprar moeda <i class="material-icons right">shopping_cart</i></a>
+     </div>
+   </div>
 
+ </main>
 
-</main>
-
-<?php
-include '../includes/footer.php';
-?>
-
-
-
-<script type="text/javascript">
-  focco.indexCompraMoedas();
-</script>
+ <?php
+ include '../includes/footer.php';
+ ?>
+ <script type="text/javascript">
+ </script>
