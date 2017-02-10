@@ -6537,7 +6537,8 @@ body {
 
 .dropdown-content li > a,
 .dropdown-content li > span {
-  color: #15325c; }
+  color: #15325c;
+  line-height: 64px; }
 
 blockquote {
   border-left: 5px solid #15325c; }
