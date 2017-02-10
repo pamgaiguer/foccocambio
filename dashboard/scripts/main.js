@@ -1419,6 +1419,19 @@ focco = {
 
       console.log(trs); //essa variável vai ter q entrar no .html() do <tbody> no email 
 
+
+      $.ajax({
+        url: "/dashboard/core/email.php/",
+        type: "post",
+        //data: {nome : "thom", email: "thom.blizz@gmail.com", assunto: "olar", body: "eita nós"},
+        data: {nome : "pancakes", email: "pamella.gaiguer@gmail.com", assunto: "olar", body: "eita nós"},
+        success: function(r){
+          console.log(r);
+        }
+      });
+
+
+
     });
   },
 
