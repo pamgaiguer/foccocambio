@@ -33,7 +33,7 @@ include "../core/database.php";
     <div class="col s12">
       <a id="link-adicionar-orcamento" class="btn bg-blue right" href="#">Adicionar orçamento <i class="material-icons right">shopping_cart</i></a>
     </div>
-  </div>  
+  </div>
 
 
   <div class="hide">
@@ -77,40 +77,37 @@ include "../core/database.php";
       </div>
 
       <div class="input-field col s1">
-        <input id="orcQtd" class="orcQtd" type="text">
+        <input id="orcQtd" class="orcQtd" type="text"  placeholder=" ">
         <label for="orcQtd">Quantidade</label>
       </div>
 
       <div class="input-field col s1">
-        <input id="orcTaxa" class="orcTaxa" type="text">
+        <input id="orcTaxa" class="orcTaxa" type="text" placeholder=" ">
         <label for="orcTaxa">Taxa</label>
       </div>
 
       <div class="input-field col s1">
-        <input id="orcIOF" class="orcIOF" type="text">
+        <input id="orcIOF" class="orcIOF" type="text" placeholder=" ">
         <label for="orcIOF">IOF (%)</label>
       </div>
 
       <div class="input-field col s1">
-        <input id="orcTotalSIOF" class="orcTotalSIOF" type="text">
+        <input id="orcTotalSIOF" class="orcTotalSIOF" type="text" placeholder=" ">
         <label for="orcTotalSIOF">Total s/ IOF</label>
       </div>
 
       <div class="input-field col s1">
-        <input id="orcDARF" class="orcDARF" type="text">
+        <input id="orcDARF" class="orcDARF" type="text" placeholder=" ">
         <label for="orcDARF">DARF</label>
       </div>
       <div class="input-field col s1">
-        <input id="orcVET" class="orcVET" type="text">
+        <input id="orcVET" class="orcVET" type="text" placeholder=" ">
         <label for="orcVET">VET</label>
       </div>
     </div>
   </div>
 
-  <div id="div-linhas-orcamento">
-    
-  </div>
-
+  <div id="div-linhas-orcamento"></div>
 
   <div class="row">
     <div class="col s12">
@@ -118,7 +115,6 @@ include "../core/database.php";
         Enviar orçamento por e-mail
         <i class="material-icons right">send</i>
       </button>
-
     </div>
   </div>
 </main>
