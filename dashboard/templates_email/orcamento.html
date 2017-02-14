@@ -20,7 +20,7 @@
             <td>
               <table  border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td width="260" valign="middle" style="padding: 55px 0 20px 0; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 12px; color: #9C9CA2">Sexta-feira, 09 de setembro de 2016</td>
+                  <td width="260" valign="middle" style="padding: 55px 0 20px 0; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 12px; color: #9C9CA2">{{data}}</td>
                   <td width="260" align="right" valign="middle" style="padding: 55px 0 20px 0; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 10px; color: #9C9CA2"><a href="#" style="color: #9C9CA2">Abrir no navegador</a></td>
                 </tr>
               </table>
@@ -32,7 +32,7 @@
             <td style="padding: 30px 30px 0px 30px">
               <table  border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td valign="middle"><img src="images/logo_topo.png" alt="foccocambio" /></td >
+                  <td valign="middle"><img src="http://www.foccocambio.com.br/assets/images/logo_topo.png" alt="foccocambio" /></td >
                   </tr>
                 </table>
               </td>
@@ -49,14 +49,14 @@
                   </tr>
                   <tr>
                     <td style="text-align: center; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 14; font-weight: 300;">
-                      Data: {{dd/mm/yyyy}} <br />
+                      Data: {{data}} <br />
                     </td>
                   </tr>
                   <tr>
                     <td style="padding: 50px 0 50px 0; font-family: 'Lato', Calibri, Arial, sans-serif; text-align: center;">
 
 
-                      <table cellspacing="0" cellpadding="0" border="0" width="600" >
+                      <table cellspacing="0" cellpadding="0" border="0" width="600" id="table-linhas-orcamento">
                         <tr style="text-align: center; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 14px; font-weight: 600;">
                           <th>Moeda</th>
                           <th>Operação</th>
@@ -69,27 +69,10 @@
                         <tr>
                           <td>&nbsp;</td>
                         </tr>
-                        <tr style="text-align: center; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 12px; font-weight: 400;">
-                          <td>usd dólar americano</td>
-                          <td>Compra</td>
-                          <td>Espécie</td>
-                          <td>3.000,00</td>
-                          <td>3,28</td>
-                          <td>5.000,00</td>
-                          <td>15.000,00</td>
-                        </tr>
+                        {{linhas}}
                         <tr>
                           <td>&nbsp;</td>
-                        </tr>
-                        <tr style="text-align: center; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 12px; font-weight: 400;">
-                          <td>usd dólar americano</td>
-                          <td>Compra</td>
-                          <td>Espécie</td>
-                          <td>3.000,00</td>
-                          <td>3,28</td>
-                          <td>5.000,00</td>
-                          <td>15.000,00</td>
-                        </tr>
+                        </tr>                        
                       </table>
                     </td>
                   </tr>
@@ -98,17 +81,17 @@
                   </tr>
                   <tr>
                     <td style="text-align: left; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 15px; font-weight: 400;">
-                      <strong>Total de IOF:</strong> R$ 150,00 <br /><br />
+                      <strong>Total de IOF:</strong> R$ {{totIof}} <br /><br />
                     </td>
                   </tr>
                   <tr>
                     <td style="text-align: left; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 15px; font-weight: 400;">
-                      <strong>Custo da operação:</strong> R$ 150,00 <br /><br />
+                      <strong>Custo da operação:</strong> R$ {{totOperacao}} <br /><br />
                     </td>
                   </tr>
                   <tr>
                     <td style="text-align: left; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 15px; font-weight: 400;">
-                      <strong>DARF:</strong> R$ 150,00
+                      <strong>DARF:</strong> R$ {{totDarf}}
                     </td>
                   </tr>
                   <tr>
@@ -120,7 +103,7 @@
 
                   <tr>
                     <td style="text-align: center; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 30px; font-weight: 600;">
-                      <strong>Total VET:</strong> R$ 450,00
+                      <strong>Total VET:</strong> R$ {{totVet}}
                     </td>
                   </tr>
                   <tr>
@@ -144,7 +127,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
                     <td style="padding-bottom: 20px">
-                      <img src="images/logo_footer.png" style="display: block; margin: 0 auto;" />
+                      <img src="http://www.foccocambio.com.br/assets/images/focco_logo_footer.png" style="display: block; margin: 0 auto;" />
                     </td>
                   </tr>
                   <tr>

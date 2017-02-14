@@ -1392,6 +1392,12 @@ focco = {
 
       
       trs = "";
+      
+      totIof = 0;
+      totOperacao = 0;
+      totDarf = 0;
+      totVet = 0;
+
       $(".div-linha-orcamento").each(function(key, contexto){        
         taxa = $(".orcTaxa", contexto).val();
         if (toNumber(taxa) == 0) return;
@@ -1399,12 +1405,19 @@ focco = {
         moeda = $(".orcMoedas", contexto).val();
         modalidade = $(".orcModalidade", contexto).val();        
         operacao = $(".orcOperacao option:selected", contexto).text();
-        quantidade = fromNumber($(".orcQtd", contexto).val());
-        iof = fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100 );
+        quantidade = fromNumber($(".orcQtd", contexto).val());                
+        iof = fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100 );
         subtotal = fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100 );
+        darf = fromNumber( toNumber($(".orcDARF", contexto).val()) );
+
+        totIof += toNumber(iof);
+        totDarf += toNumber(darf);
+        totOperacao += toNumber(subtotal);
+
+        totVet += totDarf + totOperacao;
 
 
-        linha = "<tr> "+
+        linha = "<tr style='text-align: center; color: #464C58; font-family: 'Lato', Calibri, Arial, sans-serif; font-size: 14px; font-weight: 600;'> "+
         "  <td>"+moeda+"</td> "+
         "  <td>"+(modalidade == 2 ? 'VENDA' : 'COMPRA')+"</td>"+
         "  <td>"+operacao+"</td>"+
@@ -1415,20 +1428,36 @@ focco = {
         "</tr>";
 
         trs += linha;
+      });      
+
+      body = "";
+      $.get("/dashboard/templates_email/orcamento.html",function(r){
+        
+        r = r.replace("{{cliente}}", $("#nomeCliente").val());
+        r = r.replace("{{data}}", new Date(Date.now()).toLocaleString());
+        r = r.replace("{{data}}", new Date(Date.now()).toLocaleString());//é pra deixar as duas linhas iguais
+        r = r.replace("{{linhas}}", trs);
+        r = r.replace("{{totIof}}", fromNumber(totIof));
+        r = r.replace("{{totDarf}}", fromNumber(totDarf));
+        r = r.replace("{{totOperacao}}", fromNumber(totOperacao));
+        r = r.replace("{{totVet}}", fromNumber(totVet));        
+
+        $.ajax({
+          url: "/dashboard/core/email.php/",
+          type: "post",
+          data: {nome : $("#nomeCliente").val(), email: $("#emailCliente").val(), assunto: "Focco - Orçamento", body: r},
+          beforeSend: function(){
+            $(".main-loader").fadeIn(100);
+          },
+          success: function(r){
+            $(".main-loader").fadeOut(100);
+            window.location = "/dashboard/orcamento";
+          }
+        });
+
       });
-
-      console.log(trs); //essa variável vai ter q entrar no .html() do <tbody> no email 
-
-
-      $.ajax({
-        url: "/dashboard/core/email.php/",
-        type: "post",
-        //data: {nome : "thom", email: "thom.blizz@gmail.com", assunto: "olar", body: "eita nós"},
-        data: {nome : "pancakes", email: "pamella.gaiguer@gmail.com", assunto: "olar", body: "eita nós"},
-        success: function(r){
-          console.log(r);
-        }
-      });
+      
+      
 
 
 
