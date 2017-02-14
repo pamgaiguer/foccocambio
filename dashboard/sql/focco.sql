@@ -226,6 +226,30 @@ CREATE TABLE `mural` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
+CREATE TABLE `focco`.`moedas` (
+  `id` INT NOT NULL,
+  `sigla` VARCHAR(45) NULL,
+  `nome` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `focco`.`moedas`
+(`id`, `sigla`, `nome`)
+VALUES
+(1, 'USD', 'Dólar Americano'),
+(2, 'EUR', 'Euro'),
+(3, 'GBP', 'Libra Esterlina'),
+(4, 'AUD', 'Dólar Australiano'),
+(5, 'CAD', 'Dólar Canadense'),
+(6, 'CHF', 'Franco Suíco'),
+(7, 'JPY', 'Iên'),
+(8, 'NZD', 'Dólar Neozelandês'),
+(9, 'CLP', 'Peso Chileno'),
+(10, 'MXN', 'Peso Mexicano'),
+(11, 'UYU', 'Peso Uruguaio'),
+(12, 'ARS', 'Peso Argentino'),
+(13, 'ZAR', 'Rand Sul Africano'),
+(14, 'CNY', 'Yuan Chinês');
+
 --
 -- Extraindo dados da tabela `enderecoscliente`
 --
