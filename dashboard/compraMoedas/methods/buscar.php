@@ -14,9 +14,31 @@
   while($row = mysqli_fetch_array($result)) $rows[] = $row;
 	
   $ret ="";
-	foreach($rows as $r){
+  $compras = array();
+	
 
-    $usuarioId = $r["usuarioId"];
+  foreach($rows as $r){    
+    
+    $compra = array(
+      "usuarioId" => $r["usuarioId"],
+      "data" => $r["data"],
+      "moeda" => $r["moeda"],
+      "caixaId" => $r["caixaId"],
+      "quantidade" => number_format($r["quantidade"],2,",","."),
+      "taxa" => number_format($r["taxa"],5,",","."),
+      "total" => $r["total"],
+      "fechamento" => $r["fechamento"],
+      "entrega" => $r["entrega"]
+    );
+
+
+    $compras[] = $compra;
+
+  }
+
+  echo json_encode($compras);
+
+    /*$usuarioId = $r["usuarioId"];
     $data = $r["data"];
     $moeda = $r["moeda"];
     $caixaId = $r["caixaId"];
@@ -54,9 +76,8 @@
       </tr>		  
 
 		  ';
-	}
-
-	echo $ret;
+      */
+	
 ?>
 
 

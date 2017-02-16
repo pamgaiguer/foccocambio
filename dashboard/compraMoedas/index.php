@@ -12,160 +12,81 @@ include "../core/database.php";
     </div>
   </div>
 
+  <form id="form-busca-compraMoedas">
+    <div class="row">
+      <div class="col s2">
+        <input type="search" id="search">
+        <button class="btn bg-blue" type="submit">
+          Filtrar dia
+          <i class="material-icons right">&#xE8B6;</i>
+        </button>
+      </div>
+
+    </div>
+  </form>
+
+
   <div class="row">
-    <div class="col s4">
+    <div class="col s12">
       <table class="responsive-table striped">
         <thead>
           <tr>
             <th>Moeda</th>
             <th>FoccoX</th>
-            <th>Focco</th>
-            <th>Banco</th>
+            <th>Focco</th>            
             <th>FX53</th>
-            <th>Carro-Forte</th>
+            <th>Carro Forte</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>USD</strong></td>
-            <td>Total FoccoX</td>
-            <td>Total Focco</td>
-            <td>Total Banco</td>
-            <td>Total FX53</td>
-            <td>Total Carro Forte</td>
+            <td class="td-2 td-USD-2"></td>
+            <td class="td-1 td-USD-1"></td>            
+            <td class="td-3 td-USD-3"></td>
+            <td class="td-tot"></td>
           </tr>
           <tr>
             <td><strong>EUR</strong></td>
-            <td>Total FoccoX</td>
-            <td>Total Focco</td>
-            <td>Total Banco</td>
-            <td>Total FX53</td>
-            <td>Total Carro Forte</td>
+            <td class="td-2 td-EUR-2"></td>
+            <td class="td-1 td-EUR-1"></td>            
+            <td class="td-3 td-EUR-3"></td>
+            <td class="td-tot"></td>
           </tr>
           <tr>
             <td><strong>GBP</strong></td>
-            <td>Total FoccoX</td>
-            <td>Total Focco</td>
-            <td>Total Banco</td>
-            <td>Total FX53</td>
-            <td>Total Carro Forte</td>
+            <td class="td-2 td-GBP-2"></td>
+            <td class="td-1 td-GBP-1"></td>            
+            <td class="td-3 td-GBP-3"></td>
+            <td class="td-tot"></td>
           </tr>
           <tr>
             <td><strong>JPY</strong></td>
-            <td>Total FoccoX</td>
-            <td>Total Focco</td>
-            <td>Total Banco</td>
-            <td>Total FX53</td>
-            <td>Total Carro Forte</td>
+            <td class="td-2 td-JPY-2"></td>
+            <td class="td-1 td-JPY-1"></td>            
+            <td class="td-3 td-JPY-3"></td>
+            <td class="td-tot"></td>
           </tr>
           <tr>
             <td><strong>CAD</strong></td>
-            <td>Total FoccoX</td>
-            <td>Total Focco</td>
-            <td>Total Banco</td>
-            <td>Total FX53</td>
-            <td>Total Carro Forte</td>
-          </tr>
-          <tr>
-            <td><strong>XXX</strong></td>
-            <td>Total FoccoX</td>
-            <td>Total Focco</td>
-            <td>Total Banco</td>
-            <td>Total FX53</td>
-            <td>Total Carro Forte</td>
-          </tr>
+            <td class="td-2 td-CAD-2"></td>
+            <td class="td-1 td-CAD-1"></td>            
+            <td class="td-3 td-CAD-3"></td>
+            <td class="td-tot"></td>
+          </tr>          
         </tbody>
         <tfoot>
           <tr>
-            <td><strong>Real $</strong></td>
-            <td><strong>Real $</strong></td>
-            <td><strong>Real $</strong></td>
+            <td><strong>Real $</strong></td>                        
+            <td class="td-tot-2"></td>
+            <td class="td-tot-1"></td>
+            <td class="td-tot-3"></td>
+            <td></td>
           </tr>
         </tfoot>
       </table>
     </div>
-    <div class="col s3">
-      <table class="responsive-table striped">
-        <thead>
-          <tr>
-            <th>VTM</th>
-            <th>FoccoX</th>
-            <th>Focco</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>VTG</strong></td>
-            <td>Valor</td>
-            <td>Valor</td>
-          </tr>
-          <tr>
-            <td><strong>VTM</strong></td>
-            <td>Valor</td>
-            <td>Valor</td>
-          </tr>
-          <tr>
-            <td><strong>VTM</strong></td>
-            <td>Valor</td>
-            <td>Valor</td>
-          </tr>
-          <tr>
-            <td><strong>VTM</strong></td>
-            <td>Valor</td>
-            <td>Valor</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col s3">
-      <table class="responsive-table striped">
-        <thead>
-          <tr>
-            <th>Moeda</th>
-            <th>Remessa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>RRR</strong></td>
-            <td>Valor</td>
-          </tr>
-          <tr>
-            <td><strong>RRR</strong></td>
-            <td>Valor</td>
-          </tr>
-          <tr>
-            <td><strong>RRR</strong></td>
-            <td>Valor</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col s2">
-      <table class="responsive-table striped">
-        <thead>
-          <tr>
-            <th>Moeda (vision)</th>
-            <th>FX53</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>XXX</strong></td>
-            <td>Valor</td>
-          </tr>
-          <tr>
-            <td><strong>XXX</strong></td>
-            <td>Valor</td>
-          </tr>
-          <tr>
-            <td><strong>XXX</strong></td>
-            <td>Valor</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    
 
   <div class="row">
     <div class="col s12">
@@ -179,4 +100,5 @@ include "../core/database.php";
  include '../includes/footer.php';
  ?>
  <script type="text/javascript">
+  focco.indexCompraMoedas();
  </script>

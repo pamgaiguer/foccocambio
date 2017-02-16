@@ -1078,6 +1078,21 @@ focco = {
     $("#totalReal").mask("#.##0,00", {reverse: true});
     $("#mediaPonderada").mask("#.##0,00", {reverse: true});
 
+    $(".td-1").bind("DOMSubtreeModified", function(){
+      contexto = $(this).parent();
+      $(".td-tot", contexto).html(fromNumber(toNumber($(this).html()) + toNumber($(".td-2").html()) + toNumber($(".td-3").html())));
+    });
+
+    $(".td-2").bind("DOMSubtreeModified", function(){
+      contexto = $(this).parent();
+      $(".td-tot", contexto).html(fromNumber(toNumber($(this).html()) + toNumber($(".td-1").html()) + toNumber($(".td-3").html())));
+    });
+
+    $(".td-3").bind("DOMSubtreeModified", function(){
+      contexto = $(this).parent();
+      $(".td-tot", contexto).html(fromNumber(toNumber($(this).html()) + toNumber($(".td-2").html()) + toNumber($(".td-1").html())));
+    });
+
     $("#form-busca-compraMoedas").submit(function(e){
       e.preventDefault();
 
@@ -1091,28 +1106,65 @@ focco = {
           $(".main-loader").fadeIn(100);
         },
         success: function(r){
-          $("#table-body-compras").html(r);
+          compras = JSON.parse(r);          
 
-          $.ajax({
-            url: "/dashboard/compraMoedas/methods/totais.php/",
-            type: "post",
-            data: { search },
-            success: function(r){
-              r = JSON.parse(r);
-
-              $("#totalMoeda").val(r[0].toFixed(2)).mask("#.##0,00");
-              $("#totalReal").val(r[1].toFixed(2)).mask("#.##0,00");
-              $("#mediaPonderada").val(r[2].toFixed(5)).mask("0,00000");
-
-              $(".main-loader").fadeOut(100);
-
-            }
+          $.grep(compras, function(c,i){            
+            td = $(".td-"+c.moeda+"-"+c.caixaId);
+            valor = fromNumber($(td).html() || "");            
+            valor += toNumber(c.quantidade);            
+            $(td).html(fromNumber(valor));
           });
+
+          comprasFocco = $.grep(compras, function(c,i){ return c.caixaId == 1; });
+          comprasFoccox = $.grep(compras, function(c,i){ return c.caixaId == 2; });
+          comprasFX53 = $.grep(compras, function(c,i){ return c.caixaId == 3; });
+
+          totFocco = 0;
+          $.grep(comprasFocco, function(c,i){            
+            totFocco += toNumber(c.quantidade) * toNumber(c.taxa);
+          });
+          $(".td-tot-1").html(fromNumber(totFocco));
+          
+
+          totFoccoX = 0;
+          $.grep(comprasFoccox, function(c,i){            
+            totFoccoX += toNumber(c.quantidade) * toNumber(c.taxa);
+          });
+          $(".td-tot-2").html(fromNumber(totFoccoX));
+
+          totFX53 = 0;
+          $.grep(comprasFX53, function(c,i){            
+            totFX53 += toNumber(c.quantidade) * toNumber(c.taxa);
+          });
+          $(".td-tot-3").html(fromNumber(totFX53));
+
+          $(".main-loader").fadeOut(100);
+
+         
 
         }
       });
 
     });
+  },
+
+  compraMoedasCalculos: function(){
+
+    $(".quantidade").blur(function(e){
+      contexto = $(e.currentTarget).parent().parent();
+      if (toNumber($(".taxa", contexto).val()) > 0.00){
+        $(".total", contexto).val(fromNumber( toNumber($(this).val()) * toNumber($(".taxa", contexto).val()) )).blur();
+      }
+    });
+
+    $(".taxa").blur(function(e){
+      contexto = $(e.currentTarget).parent().parent();
+
+      if (toNumber($(".quantidade", contexto).val()) > 0.00){
+        $(".total", contexto).val(fromNumber( toNumber($(this).val()) * toNumber($(".quantidade", contexto).val()) )).blur();        
+      }
+    });
+
   },
 
   adicionarCompraMoedas: function(){
@@ -1124,62 +1176,49 @@ focco = {
       model.attr("id", "");
 
       $("#div-linhas-interbancario").append(model[0]);
-      $("#div-linhas-interbancario").append("<script type='text/javascript'> focco.orcamentoCalculos(); </script>");
+      $("#div-linhas-interbancario").append("<script type='text/javascript'> focco.compraMoedasCalculos(); </script>");
 
     });
-
-
-
-    $('.currency').mask("#.##0,00", {reverse: true});
-
-
-    $("#quantidade").blur(function(){
-      if (toNumber($("#taxa").val()) > 0.00){
-        $("#total").val(fromNumber( toNumber($(this).val()) * toNumber($("#taxa").val()) )).blur();
-      }
-    });
-
-    $("#taxa").blur(function(){
-      if (toNumber($("#quantidade").val()) > 0.00){
-        $("#total").val(fromNumber( toNumber($(this).val()) * toNumber($("#quantidade").val()) )).blur();
-      }
-    });
+    //$('.currency').mask("#.##0,00", {reverse: true});    
 
 
     $("#form-adicionar-compraMoedas").submit(function(e){
       e.preventDefault();
+      
+      $(".main-loader").fadeIn(100);
 
       usuarioId = $("#usuarioId").val();
-      moeda = $("#select-moedas", $(this)).val();
-      caixa = $("#select-caixa", $(this)).val();
-      data = $("#data", $(this)).val();
-      quantidade = $("#quantidade", $(this)).val();
-      taxa = $("#taxa", $(this)).val();
-      total = $("#total", $(this)).val();
-      fechamento = $("#fechamento", $(this)).val();
-      entrega = $("#entrega", $(this)).val();
+      $(".div-linha-interbancario").each(function(key, contexto){
 
-      $.ajax({
-        url: "/dashboard/compraMoedas/adicionarPost.php/",
-        type: "post",
-        data: {
-          usuarioId, moeda, caixa, data, quantidade,
-          taxa, total, fechamento, entrega
-        },
-        beforeSend: function(){
-          $(".main-loader").fadeIn(100);
-        },
-        success: function(r){
-          console.log(r);
-          $(".main-loader").fadeOut(100);
-          if (JSON.parse(r) == "ok"){
-            window.location = "/dashboard/compraMoedas/";
+        taxa = $(".taxa", contexto).val();
+        quantidade = $(".quantidade", contexto).val();
+        if (toNumber(taxa) == 0 || toNumber(quantidade) == 0) return;
+
+        moeda = $(".select-moedas", contexto).val();
+        caixa = $(".select-caixa", contexto).val();
+        data = $(".data", contexto).val();        
+        total = $(".total", contexto).val();
+        fechamento = $(".fechamento", contexto).val();
+        entrega = $(".entrega", contexto).val();
+
+        $.ajax({
+          url: "/dashboard/compraMoedas/adicionarPost.php/",
+          type: "post",
+          data: {
+            usuarioId, moeda, caixa, data, quantidade,
+            taxa, total, fechamento, entrega
+          },
+          success: function(r){            
+            //if (JSON.parse(r) == "ok")
           }
-        }
+
+        });
+
 
       });
 
-
+      $(".main-loader").fadeOut(100);
+      window.location = "/dashboard/compraMoedas/";
 
     });
 
@@ -1739,6 +1778,7 @@ Number.prototype.formatDecimal = function(n, x, s, c) {
 };
 
 fromNumber = function(n){
+  if (n == "") return 0;  
   n += "";
   n = n.replace(",", ".");
   n = parseFloat(n).formatDecimal(2, 3, '.', ',');
@@ -1746,6 +1786,7 @@ fromNumber = function(n){
 }
 
 fromNumber5 = function(n){
+  if (n == "") return 0;
   n += "";
   n = n.replace(",", ".");
   n = parseFloat(n).formatDecimal(5, 3, '.', ',');
