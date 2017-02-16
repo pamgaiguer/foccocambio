@@ -915,8 +915,8 @@ focco = {
             $(comercial).fadeOut(100);
             $(comercial).html(fromNumber5((o.OVD)));
             $(comercial) .fadeIn(500);
-            
-            
+
+
 
           }
         }
@@ -1114,6 +1114,20 @@ focco = {
   },
 
   adicionarCompraMoedas: function(){
+
+    $("#link-adicionar-interbancario").click(function(e){
+
+      e.preventDefault();
+      model = $("#div-linha-interbancario-model").clone();
+      model.attr("id", "");
+
+      $("#div-linhas-interbancario").append(model[0]);
+      $("#div-linhas-interbancario").append("<script type='text/javascript'> focco.orcamentoCalculos(); </script>");
+
+    });
+
+
+
     $('.currency').mask("#.##0,00", {reverse: true});
 
 
@@ -1331,7 +1345,7 @@ focco = {
         default: break;
       }
       $(".orcIOF").blur();
-      
+
     });
 
     $(".orcOperacao").change();
@@ -1346,21 +1360,21 @@ focco = {
 
     $(".orcTaxa").blur(function(e){
       contexto = $(e.currentTarget).parent().parent();
-      
-      if (toNumber($(".orcQtd", contexto).val()) > 0.00){        
-        $(".orcTotalSIOF", contexto).val(fromNumber( toNumber($(this).val()) * toNumber($(".orcQtd", contexto).val()) )).blur();        
-        $(".orcVET", contexto).val(fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcDARF", contexto).val()) + (toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100) ));        
+
+      if (toNumber($(".orcQtd", contexto).val()) > 0.00){
+        $(".orcTotalSIOF", contexto).val(fromNumber( toNumber($(this).val()) * toNumber($(".orcQtd", contexto).val()) )).blur();
+        $(".orcVET", contexto).val(fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcDARF", contexto).val()) + (toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100) ));
       }
     });
 
-    $(".orcDARF").blur(function(e){            
+    $(".orcDARF").blur(function(e){
       contexto = $(e.currentTarget).parent().parent();
 
       $(".orcVET", contexto).val(fromNumber(
         toNumber($(this).val()) + (toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100)
-      ));
+        ));
 
-      
+
       $(".orcTaxa", contexto).blur();
 
     });
@@ -1370,7 +1384,7 @@ focco = {
 
       $(".orcVET", contexto).val(fromNumber(
         toNumber($(".orcDARF", contexto).val()) + (toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100)
-      ));
+        ));
 
     });
   },
@@ -1380,32 +1394,32 @@ focco = {
 
       e.preventDefault();
       model = $("#div-linha-orcamento-model").clone();
-      model.attr("id", "");      
+      model.attr("id", "");
 
-      $("#div-linhas-orcamento").append(model[0]);      
+      $("#div-linhas-orcamento").append(model[0]);
       $("#div-linhas-orcamento").append("<script type='text/javascript'> focco.orcamentoCalculos(); </script>");
-      
+
     });
 
     $("#btn-enviar-orcamento").click(function(e){
       e.preventDefault();
 
-      
+
       trs = "";
-      
+
       totIof = 0;
       totOperacao = 0;
       totDarf = 0;
       totVet = 0;
 
-      $(".div-linha-orcamento").each(function(key, contexto){        
+      $(".div-linha-orcamento").each(function(key, contexto){
         taxa = $(".orcTaxa", contexto).val();
         if (toNumber(taxa) == 0) return;
-        
+
         moeda = $(".orcMoedas", contexto).val();
-        modalidade = $(".orcModalidade", contexto).val();        
+        modalidade = $(".orcModalidade", contexto).val();
         operacao = $(".orcOperacao option:selected", contexto).text();
-        quantidade = fromNumber($(".orcQtd", contexto).val());                
+        quantidade = fromNumber($(".orcQtd", contexto).val());
         iof = fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100 );
         subtotal = fromNumber( toNumber($(".orcTotalSIOF", contexto).val()) + toNumber($(".orcTotalSIOF", contexto).val()) * toNumber($(".orcIOF", contexto).val()) / 100 );
         darf = fromNumber( toNumber($(".orcDARF", contexto).val()) );
@@ -1428,11 +1442,11 @@ focco = {
         "</tr>";
 
         trs += linha;
-      });      
+      });
 
       body = "";
       $.get("/dashboard/templates_email/orcamento.html",function(r){
-        
+
         r = r.replace("{{cliente}}", $("#nomeCliente").val());
         r = r.replace("{{data}}", new Date(Date.now()).toLocaleString());
         r = r.replace("{{data}}", new Date(Date.now()).toLocaleString());//é pra deixar as duas linhas iguais
@@ -1440,7 +1454,7 @@ focco = {
         r = r.replace("{{totIof}}", fromNumber(totIof));
         r = r.replace("{{totDarf}}", fromNumber(totDarf));
         r = r.replace("{{totOperacao}}", fromNumber(totOperacao));
-        r = r.replace("{{totVet}}", fromNumber(totVet));        
+        r = r.replace("{{totVet}}", fromNumber(totVet));
 
         $.ajax({
           url: "/dashboard/core/email.php/",
@@ -1456,8 +1470,8 @@ focco = {
         });
 
       });
-      
-      
+
+
 
 
 
@@ -1630,7 +1644,7 @@ focco = {
     $("#darf").blur(function(){
       $("#vet").val(fromNumber(
         toNumber($(this).val()) + toNumber($("#subtotal").val()) + toNumber($("#iof").val()) + toNumber($("#swift").val())
-      ));
+        ));
 
       $("#vettaxa").val(fromNumber5( (toNumber($("#vet").val()) / toNumber($("#quantidade").val())) ));
     });
