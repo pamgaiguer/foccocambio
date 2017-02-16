@@ -50,7 +50,7 @@ date_default_timezone_set('America/Sao_Paulo');
           <li><a href="/dashboard/blog/"><i class="material-icons left">&#xE8CD;</i> Blog do João</a></li>
           ';
           ?>
-          <?php if ($_SESSION['currentUser']['tipo'] < 4)
+          <?php if ($_SESSION['currentUser']['tipo'] < 5)
           echo
           '<li><a href="/dashboard/cotacoes"><i class="material-icons left">&#xE227;</i> Cotações</a></li>'
           ?>

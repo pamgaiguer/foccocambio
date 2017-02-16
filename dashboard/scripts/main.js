@@ -912,6 +912,8 @@ focco = {
 
             comercial = $("#td-" + sigla + " span");
             if (comercial == undefined) continue;
+            if (comercial.html() == fromNumber5((o.OVD))) continue;
+
             $(comercial).fadeOut(100);
             $(comercial).html(fromNumber5((o.OVD)));
             $(comercial) .fadeIn(500);
