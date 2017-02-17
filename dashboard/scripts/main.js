@@ -1262,8 +1262,9 @@ focco = {
             $(txFinal).blur(function(){
 
               m = $(this).attr("id").substr(0, 3);
-              $("#" + m + "-txSIofBoletagem").val(fromNumber5( toNumber($(txSIof).val()) - (toNumber($(txCIof).val()) - toNumber($(this).val())) ));
-              $("#" + m + "-margLiquida").val(fromNumber5( (-100) * ((toNumber($(custoFocco).val())/ toNumber($("#" + m + "-txSIofBoletagem").val()))-1) ));
+
+              $("#" + m + "-txSIofBoletagem").val(fromNumber5( toNumber($("#" +  m + "-txSIof").val()) - ( toNumber($("#" +  m + "-txCIof").val()) - toNumber($(this).val()) ) ));
+              $("#" + m + "-margLiquida").val(fromNumber5( (-100) * ((toNumber($("#" +  m + "-custoFocco").val())/ toNumber($("#" + m + "-txSIofBoletagem").val()))-1) ));
             });
           }
         }
